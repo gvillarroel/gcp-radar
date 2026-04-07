@@ -110,7 +110,7 @@ async function ensureDataset(projectId, datasetId, location) {
     'mk',
     '--dataset',
     `--location=${location}`,
-    '--description=Step 01 dataset for gcp-radar',
+    '--description=Step_01_dataset_for_gcp-radar',
     datasetRef,
   ]);
   return datasetRef;
