@@ -6,6 +6,8 @@ import path from 'node:path';
 import { promisify } from 'node:util';
 
 const execFileAsync = promisify(execFile);
+const BQ = process.platform === 'win32' ? 'bq.cmd' : 'bq';
+const GCLOUD = process.platform === 'win32' ? 'gcloud.cmd' : 'gcloud';
 
 function parseArgs(argv) {
   const args = {};
@@ -45,6 +47,7 @@ async function capture(command, args) {
   const result = await execFileAsync(command, args, {
     windowsHide: true,
     maxBuffer: 1024 * 1024 * 20,
+    shell: process.platform === 'win32',
   });
 
   return result.stdout.trim();
@@ -54,7 +57,7 @@ async function run(command, args) {
   await new Promise((resolve, reject) => {
     const child = spawn(command, args, {
       stdio: 'inherit',
-      shell: false,
+      shell: process.platform === 'win32',
       windowsHide: true,
     });
 
@@ -72,7 +75,7 @@ async function run(command, args) {
 
 async function resourceExists(resource) {
   try {
-    await capture('bq', ['show', '--format=prettyjson', resource]);
+    await capture(BQ, ['show', '--format=prettyjson', resource]);
     return true;
   } catch {
     return false;
@@ -89,7 +92,7 @@ async function resolveProjectId() {
     return envProject;
   }
 
-  const configuredProject = await capture('gcloud', ['config', 'get-value', 'project']);
+  const configuredProject = await capture(GCLOUD, ['config', 'get-value', 'project']);
   if (!configuredProject || configuredProject === '(unset)') {
     throw new Error('No active GCP project found. Pass --project-id.');
   }
@@ -103,7 +106,7 @@ async function ensureDataset(projectId, datasetId, location) {
     return datasetRef;
   }
 
-  await run('bq', [
+  await run(BQ, [
     'mk',
     '--dataset',
     `--location=${location}`,
@@ -167,12 +170,12 @@ Options:
   console.log(`Local output: ${localRunDir}`);
 
   await ensureDataset(projectId, datasetId, location);
-  await run('bq', ['cp', `--location=${location}`, sourceTable, snapshotTable]);
+  await run(BQ, ['cp', `--location=${location}`, sourceTable, snapshotTable]);
 
-  const metadataJson = await capture('bq', ['show', '--format=prettyjson', snapshotTable]);
+  const metadataJson = await capture(BQ, ['show', '--format=prettyjson', snapshotTable]);
   const metadata = JSON.parse(metadataJson);
 
-  await run('bq', [
+  await run(BQ, [
     'extract',
     `--location=${location}`,
     '--destination_format=PARQUET',
@@ -183,7 +186,7 @@ Options:
   await fs.mkdir(localRunDir, { recursive: true });
 
   if (!skipLocalDownload) {
-    await run('gcloud', [
+    await run(GCLOUD, [
       'storage',
       'cp',
       `gs://${bucket}/${gcsRunPrefix}/*.parquet`,
