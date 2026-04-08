@@ -6,4 +6,6 @@ Step 01 is currently intended for product and feature discovery from official Go
 
 Current raw acquisition target:
 
-- `raw/google_cloud_release_notes/<run_id>/` for Parquet exports and manifest files generated from the official Google Cloud release notes BigQuery table
+- `raw/google_cloud_release_notes/current/release_notes.parquet` for the canonical local release-note dataset
+- `raw/google_cloud_release_notes/current/state.json` for sync state
+- `raw/google_cloud_release_notes/deltas/<run_id>/` for Parquet deltas downloaded from the official Google Cloud release notes BigQuery table

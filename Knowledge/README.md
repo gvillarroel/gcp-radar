@@ -1,4 +1,4 @@
-# Knowledge
+# knowledge
 
 This directory stores the repository's local knowledge base.
 

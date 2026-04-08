@@ -28,9 +28,11 @@ Adopt the following repository structure as the initial standard:
 - `AGENTS.md` as the repository-wide operating guide
 - `.specs/specs.md` as the workflow and project specification
 - `.specs/ADRs/` for architecture decision records
+- `artifacts/` for validated source-of-truth documentation
 - `docs/` for canonical user-facing documentation
+- `radar/` for final report outputs
 - `data/` for all project data
-- `Knowledge/` for reusable validated research
+- `knowledge/` for reusable validated research
 - `scripts/` for executable workflow stages
 - `skills/` for repository-specific skills
 - `evaluations/` for Skill Arena and related evaluation artifacts
@@ -45,7 +47,7 @@ Agents should read documents in this order:
 1. `AGENTS.md`
 2. `.specs/specs.md`
 3. relevant ADRs
-4. relevant `Knowledge/` entries
+4. relevant `knowledge/` entries
 
 ## Consequences
 
@@ -54,6 +56,8 @@ Benefits:
 - agents have a shared entry point
 - workflow intent is separated from implementation
 - user-facing canonical documentation has a clear home
+- validated artifacts have a canonical home
+- final reports have a canonical home
 - project data has a single canonical home
 - important decisions are preserved explicitly
 - research and evaluations have dedicated homes

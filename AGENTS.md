@@ -21,13 +21,15 @@ The goal is to collect, validate, and organize product intelligence into hierarc
 
 All project documentation must be written in English.
 
+All directory names must be lowercase.
+
 This includes:
 
 - `AGENTS.md`
 - `.specs/specs.md`
 - ADRs under `.specs/ADRs/`
 - canonical documentation under `docs/`
-- knowledge documents under `Knowledge/`
+- knowledge documents under `knowledge/`
 - evaluation notes, benchmarks, and skill-related documentation
 
 ## Canonical Documents
@@ -37,7 +39,7 @@ Agents working in this repository should read these documents in this order:
 1. `AGENTS.md`
 2. `.specs/specs.md`
 3. relevant ADRs in `.specs/ADRs/`
-4. relevant knowledge entries in `Knowledge/`
+4. relevant knowledge entries in `knowledge/`
 
 ## Repository Structure
 
@@ -46,9 +48,11 @@ Expected top-level structure:
 - `.specs/`
 - `.specs/specs.md`
 - `.specs/ADRs/`
+- `artifacts/`
 - `docs/`
+- `radar/`
 - `data/`
-- `Knowledge/`
+- `knowledge/`
 - `scripts/`
 - `skills/`
 - `evaluations/`
@@ -86,6 +90,24 @@ Canonical project documentation.
 
 Use `docs/` for stable, user-facing, canonical documentation.
 
+### `artifacts/`
+
+Canonical validated documentation.
+
+`artifacts/` is the source of truth for validated documentation that is considered correct enough to support final reporting.
+
+Artifacts must be organized hierarchically:
+
+- one folder per Google product
+- within each product, one folder per feature
+- within each feature folder, the validated documentation for that feature
+
+### `radar/`
+
+Final report outputs.
+
+`radar/` stores the final reports generated from the validated source-of-truth content in `artifacts/`.
+
 ### `data/`
 
 Canonical project data storage.
@@ -102,7 +124,7 @@ Use step-oriented subdirectories such as:
 - `data/step-02/`
 - `data/step-03/`
 
-### `Knowledge/`
+### `knowledge/`
 
 The local knowledge base for research gathered during the project.
 
@@ -136,7 +158,7 @@ This project combines ideas and tooling patterns from other repositories in the 
 
 - `zx`-based scripting for pipeline execution
 - CodeAssist / PMono-driven script generation and problem solving
-- `Knowledge` for incremental research capture and retrieval
+- `knowledge` for incremental research capture and retrieval
 - Skill Arena for evaluating and evolving repository-specific skills
 
 Agents should preserve compatibility with those workflows when adding structure here.
@@ -152,8 +174,9 @@ Current planned direction:
 3. Map official documentation to the correct product or feature.
 4. Extract structured feature details, including security and IAM information.
 5. Validate extracted information against source evidence.
-6. Build hierarchical cards or maps for each GCP product.
-7. Evolve the extraction and evaluation skills over time.
+6. Organize validated documentation in `artifacts/` by product and feature.
+7. Generate final reports in `radar/` from the validated artifacts.
+8. Evolve the extraction and evaluation skills over time.
 
 ## Source Policy
 
@@ -168,6 +191,7 @@ When creating or updating documentation:
 - prefer concise, factual writing
 - separate facts from assumptions
 - record source provenance whenever possible
+- keep directory names lowercase in all examples and new paths
 - update `.specs/specs.md` when the workflow changes
 - add an ADR when a decision affects architecture, storage, workflow, evaluation strategy, or source policy
 
@@ -177,6 +201,8 @@ Create an ADR when changing:
 
 - repository structure
 - step-oriented folder layout
+- validated artifact organization
+- final reporting layout
 - canonical data model
 - extraction pipeline design
 - source selection policy

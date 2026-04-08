@@ -6,8 +6,14 @@ Step 01 is currently intended for product and feature discovery from official Go
 
 Current script:
 
-- `download-release-notes.mjs` to snapshot the official Google Cloud release notes BigQuery table, export it to Parquet in GCS, and download the shards into `data/step-01/raw/`
+- `download-release-notes.mjs` to incrementally sync the official Google Cloud release notes BigQuery table into a canonical local Parquet file and timestamped delta folders
 
 Run it with:
 
-- `node scripts/step-01/download-release-notes.mjs --bucket=<gcs-bucket>`
+- `zx scripts/step-01/download-release-notes.mjs <gcs-bucket> [gcp-project]`
+
+Current local contract:
+
+- `data/step-01/raw/google_cloud_release_notes/current/release_notes.parquet` as the canonical local file
+- `data/step-01/raw/google_cloud_release_notes/current/state.json` as the sync state
+- `data/step-01/raw/google_cloud_release_notes/deltas/<run_id>/` for downloaded Parquet deltas

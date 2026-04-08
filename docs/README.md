@@ -21,6 +21,8 @@ The long-term goal is to produce structured product and feature cards that captu
 - security capabilities
 - IAM roles and permissions when explicitly documented
 - evidence links and supporting documentation
+- validated source-of-truth feature documentation
+- final radar reports
 
 Each important fact should eventually be attributable to source evidence.
 
@@ -46,12 +48,15 @@ The repository is organized as a stage-based workflow.
 The current intended flow is:
 
 1. discover GCP products and features from official sources
-2. normalize names, IDs, lifecycle states, and relevant dates
-3. map official documentation to the correct product or feature
-4. extract structured facts such as security capabilities and IAM requirements
-5. validate extracted facts against source evidence
-6. build hierarchical cards or maps for each product
-7. evaluate and improve the skills that support the workflow
+2. segregate those findings into stable per-product product and feature inventories
+3. discover and score the best official Google documentation URLs for each product
+4. clean and curate the documentation selected from those Step 03 rankings before deep research
+5. extract the current IAM role and permission inventory with `gcloud` and
+   materialize it into reusable JSON outputs with optional Parquet exports
+6. validate extracted facts against source evidence
+7. organize validated documentation in `artifacts/`
+8. generate final reports in `radar/`
+9. capture reusable knowledge and improve the skills that support the workflow
 
 This workflow is intentionally explicit so that scripts, data outputs, and validation steps remain easy to audit.
 
@@ -61,8 +66,10 @@ The repository uses a canonical structure defined by accepted ADRs.
 
 - `docs/` stores canonical user-facing documentation
 - `.specs/` stores workflow specifications and architecture decisions
+- `artifacts/` stores validated source-of-truth documentation organized by product and feature
+- `radar/` stores final report outputs
 - `data/` stores canonical machine-readable project artifacts
-- `Knowledge/` stores reusable validated research findings
+- `knowledge/` stores reusable validated research findings
 - `scripts/` stores executable workflow stages
 - `skills/` stores repository-specific skills
 - `evaluations/` stores evaluation and Skill Arena artifacts
@@ -102,9 +109,31 @@ Use `data/` for canonical machine-readable artifacts produced by the workflow.
 
 Expected contents include raw captures, normalized outputs, intermediate artifacts, validation outputs, and generated cards.
 
-### Knowledge
+This directory is not the final source of truth for validated feature documentation.
 
-Use `Knowledge/` for reusable research findings that should survive beyond a single execution.
+Validated documentation should be promoted into `artifacts/`, and final reports should be generated into `radar/`.
+
+### artifacts
+
+Use `artifacts/` for validated source-of-truth documentation.
+
+Expected structure:
+
+- one folder per Google product
+- within each product, one folder per feature
+- within each feature, the validated documentation for that feature
+
+This content is the authoritative source used to generate final reports.
+
+### radar
+
+Use `radar/` for final report outputs.
+
+Final reports should be generated from the validated content stored in `artifacts/`.
+
+### knowledge
+
+Use `knowledge/` for reusable research findings that should survive beyond a single execution.
 
 Examples include terminology notes, source inventories, naming conventions, lifecycle interpretation guidance, and extraction heuristics.
 
@@ -133,12 +162,16 @@ The next practical milestones are:
 1. define the canonical schema for products, features, and evidence
 2. implement the first Step 1 discovery scripts
 3. define the stage-specific data layout in more detail
-4. add validation checks for source coverage and lifecycle evidence
-5. establish the first evaluation loop for repository-specific skills
+4. define the promotion rules from workflow data into `artifacts/`
+5. define the report structure under `radar/`
+6. add validation checks for source coverage and lifecycle evidence
+7. establish the first evaluation loop for repository-specific skills
 
 ## Documentation Rules
 
 All project documentation must be written in English.
+
+All directory names must be lowercase.
 
 When documentation changes the workflow, storage model, evaluation methodology, or source policy, the change should also be reflected in `.specs/specs.md` and, when material, recorded as an ADR.
 
@@ -156,7 +189,7 @@ If you are new to the repository, read the documents in this order:
 1. `AGENTS.md`
 2. `.specs/specs.md`
 3. relevant ADRs in `.specs/ADRs/`
-4. relevant entries in `Knowledge/`
+4. relevant entries in `knowledge/`
 5. this manual and the README files inside the stage directories you plan to work on
 
 ## Intended Audience
@@ -172,4 +205,6 @@ This repository is intended for:
 
 This manual explains the repository's purpose, scope, layout, and operating model.
 
-Detailed implementation choices such as card schemas, evidence schemas, and script interfaces should be documented through future ADRs and stage-specific documentation as those decisions become concrete.
+Detailed implementation choices such as card schemas, evidence schemas, and
+script interfaces should be documented through future ADRs and stage-specific
+documentation as those decisions become concrete.
