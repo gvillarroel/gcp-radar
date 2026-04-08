@@ -355,8 +355,9 @@ async function main() {
     const product_name = parseProductMarkdown(await readFile(step02Path, "utf8"));
     return { product_name, product_slug, step02_source_path: step02Path };
   }));
-  const mergedProducts = [...step02Products];
-  const seenSlugs = new Set(step02Products.map((item) => item.product_slug));
+  const canonicalStep02Products = step02Products.filter((item) => !(item.product_slug === "index" && /step 02 product feature markdown/i.test(item.product_name)));
+  const mergedProducts = [...canonicalStep02Products];
+  const seenSlugs = new Set(canonicalStep02Products.map((item) => item.product_slug));
   for (const supplemental of await readSupplementalProducts()) {
     if (!seenSlugs.has(supplemental.product_slug)) {
       seenSlugs.add(supplemental.product_slug);
