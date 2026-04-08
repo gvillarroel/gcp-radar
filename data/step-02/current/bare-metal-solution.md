@@ -1,0 +1,82 @@
+# Bare Metal Solution
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 33
+Unique features: 68
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2025-12-29 | SLES12SP5SAP OS image support | 2025-12-29 | Support for the SLES12SP5SAP operating-system image on Bare Metal Solution is deprecated; deprecated on 2025-12-29. |
+| 2024-06-10 | BIOS_PUR043.37.14.021 (TS24.02) firmware support | 2024-06-10 | Support for BIOS_PUR043.37.14.021 (TS24.02) firmware on Bare Metal Solution is deprecated; deprecated on 2024-06-10. |
+| 2024-06-10 | BIOS_PUR043.37.16.023 (TS24.05) firmware support | 2024-06-10 | Support for BIOS_PUR043.37.16.023 (TS24.05) firmware on Bare Metal Solution is deprecated; deprecated on 2024-06-10. |
+| 2024-05-28 | One-month commitment term ordering for Bare Metal Solution resources |  | Bare Metal Solution now supports ordering storage and Partner Interconnect resources with a one-month commitment term. |
+| 2024-05-21 | Performance SSD storage for Bare Metal Solution |  | You can now order Performance SSD storage for Bare Metal Solution. |
+| 2024-05-02 | Ops Agent setup on Bare Metal Solution servers |  | You can now set up Ops Agent on Bare Metal Solution servers to view solution metrics. |
+| 2024-05-02 | Oracle Linux 9 support on Bare Metal Solution |  | Bare Metal Solution now supports Oracle Linux 9. |
+| 2024-03-20 | VRF creation and management for Bare Metal Solution networks |  | You can now create and manage VRFs for networks in Bare Metal Solution. |
+| 2024-02-12 | Pod selection during Bare Metal Solution intake form ordering |  | You can now select the pod for Bare Metal Solution resources through the Google Cloud console intake form. |
+| 2024-02-06 | Bare Metal Solution server OS details view |  | You can now view the operating-system details of a Bare Metal Solution server. |
+| 2023-12-09 | Encryption and SSH key configuration during provisioning and reimaging |  | You can now configure encryption keys and SSH keys when provisioning or reimaging a Bare Metal Solution server. |
+| 2023-10-02 | Self-service ordering after one-time order form in Bare Metal Solution |  | You can now use Bare Metal Solution self-service to order resources after submitting a one-time order form. |
+| 2023-09-22 | Pod visibility for Bare Metal Solution resources |  | You can now view pod assignments for Bare Metal Solution servers, networks, volumes, and NFS shares. |
+| 2023-09-14 | Bare Metal Solution server activity status monitoring |  | Bare Metal Solution now provides a Google Cloud console view of server activity status and infrastructure issues. |
+| 2023-09-14 | Bare Metal Solution storage volume observability |  | Bare Metal Solution now supports observability features for storage volumes. |
+| 2023-08-30 | Bare Metal Solution maintenance events management |  | Users can now view and respond to Bare Metal Solution maintenance events in the Google Cloud console. |
+| 2023-06-20 | Bare Metal Solution resource renaming |  | Users can now rename Bare Metal Solution servers, networks, storage volumes, and NFS shares. |
+| 2023-06-20 | Bare Metal Solution storage volume and LUN metrics |  | Bare Metal Solution now exposes storage volume and LUN metrics in the Google Cloud console. |
+| 2023-04-11 | Bare Metal Solution delete cooling-off bypass |  | The cooling-off period can now be skipped when deleting a LUN or storage volume in Bare Metal Solution. |
+| 2023-03-31 | Bare Metal Solution infrastructure metrics in console |  | Users can now view Bare Metal Solution infrastructure metrics in the Google Cloud console. |
+| 2023-03-17 | Bare Metal Solution interactive serial console access |  | Bare Metal Solution servers can now be accessed through an interactive serial console. |
+| 2022-12-09 | RHEL 8.4 support on Bare Metal Solution general-purpose servers |  | Bare Metal Solution now supports Red Hat Enterprise Linux (RHEL) 8.4 on general-purpose servers. |
+| 2022-11-11 | TS54 firmware for Bare Metal Solution servers |  | TS54 is introduced as the latest available firmware version for Bare Metal Solution servers. |
+| 2022-11-09 | Bare Metal Solution advanced networking |  | Bare Metal Solution now supports attaching a server to multiple networks and viewing advanced networking information in the console. |
+| 2022-11-09 | Bare Metal Solution boot volume snapshot management |  | Users can create, delete, and restore Bare Metal Solution boot volume snapshots. |
+| 2022-11-09 | Bare Metal Solution network management |  | Users can create, attach, detach, and delete networks, and manage VLAN attachments for Bare Metal Solution resources. |
+| 2022-11-09 | Bare Metal Solution NFS file storage management |  | Users can create, update, and delete NFS storage volumes in Bare Metal Solution. |
+| 2022-11-09 | Bare Metal Solution resource labeling |  | Users can organize Bare Metal Solution resources by labels and apply labels to servers, networks, storage volumes, and NFS storage. |
+| 2022-11-09 | Bare Metal Solution server power management |  | Users can power on, power off, restart, and check the status of Bare Metal Solution servers. |
+| 2022-08-22 | Oracle Linux 8.4 support on Bare Metal Solution servers | 2022-08-22 | Support for Oracle Linux 8.4 on Bare Metal Solution servers is deprecated; deprecated on 2022-08-22. |
+| 2022-08-22 | Oracle Linux 8.5 support on Bare Metal Solution |  | Adds support for provisioning Bare Metal Solution servers with the Oracle Linux 8.5 operating system. |
+| 2022-08-22 | Red Hat Enterprise Linux 8.5 support on Bare Metal Solution |  | Adds support for provisioning Bare Metal Solution servers with the RHEL 8.5 operating system. |
+| 2022-08-22 | RHEL for SAP Solutions 7.6 support on Bare Metal Solution servers | 2022-08-22 | Support for RHEL for SAP Solutions 7.6 on Bare Metal Solution servers is deprecated; deprecated on 2022-08-22. |
+| 2022-08-22 | RHEL for SAP Solutions 7.7 support on Bare Metal Solution servers | 2022-08-22 | Support for RHEL for SAP Solutions 7.7 on Bare Metal Solution servers is deprecated; deprecated on 2022-08-22. |
+| 2022-07-29 | Advanced networking information access for Bare Metal Solution |  | Introduces enhanced access to advanced networking information for Bare Metal Solution users. |
+| 2022-07-29 | Change operating system on Bare Metal Solution servers |  | Allows customers to change the operating system of an existing Bare Metal Solution server. |
+| 2022-07-29 | Enable hyperthreading on Bare Metal Solution servers |  | Adds the ability to enable hyperthreading for Bare Metal Solution server instances. |
+| 2022-07-29 | IP address management for Bare Metal Solution |  | Implements IP address management capabilities for Bare Metal Solution resources. |
+| 2022-07-29 | Provision storage volume resources in Bare Metal Solution |  | Adds support for provisioning storage volume resources in Bare Metal Solution. |
+| 2022-07-29 | Remove storage volume resources in Bare Metal Solution |  | Adds support for removing storage volume resources from Bare Metal Solution. |
+| 2022-06-15 | Connect Bare Metal Solution to multiple VPCs |  | Allows a Bare Metal Solution environment to connect to more than one VPC in a Google Cloud project. |
+| 2022-06-15 | Multiple VLAN attachments over Partner Interconnect in Bare Metal Solution |  | Enables configuring multiple VLAN attachments over a Partner Interconnect connection. |
+| 2022-06-15 | Multiple VLANs on bonded Bare Metal Solution server interfaces |  | Allows users to add multiple VLANs to the same bonded server interface. |
+| 2022-06-15 | Network templates for Bare Metal Solution deployments |  | Introduces network templates to support active/active and active/backup high-availability designs. |
+| 2022-03-28 | and API resource views for Bare Metal Solution |  | Adds full Console, gcloud, and API support when viewing Bare Metal Solution resources. |
+| 2022-03-28 | Console |  | Adds full Console, gcloud, and API support when viewing Bare Metal Solution resources. |
+| 2022-03-28 | gcloud |  | Adds full Console, gcloud, and API support when viewing Bare Metal Solution resources. |
+| 2022-03-28 | Monitor long-running operations in Bare Metal Solution via gcloud and API |  | Adds visibility of long-running operations via gcloud and API commands. |
+| 2022-03-28 | Monitor NFS file storage in Bare Metal Solution via gcloud and API |  | Adds monitoring support for NFS file storage through gcloud and API interfaces. |
+| 2022-03-28 | Resource labeling and filtered monitoring in Bare Metal Solution |  | Allows labeling of Bare Metal Solution resources and filtering of monitoring command output by label. |
+| 2022-03-28 | Restart running Bare Metal Solution servers |  | Enables restarting a Bare Metal Solution server that is currently running. |
+| 2022-03-28 | Start stopped Bare Metal Solution servers |  | Allows operators to start a Bare Metal Solution server that has stopped. |
+| 2022-03-22 | Assign existing client networks during server deployment |  | Allows deployment of new Bare Metal Solution servers using an existing client network. |
+| 2022-03-22 | Associate Partner Interconnect connections with client networks |  | Enables adding existing Partner Interconnect connections to a client network in intake workflows. |
+| 2022-03-22 | Draft request support in Bare Metal Solution intake form |  | Allows saving intake requests as drafts and submitting them later. |
+| 2022-03-22 | Quota provisioning across multiple requests via signed Order Form |  | Adds the ability to provision quota from a signed order form across multiple request entries. |
+| 2022-03-22 | Real-time IP address validation in Bare Metal Solution intake |  | Adds real-time validation to prevent conflicting IP addresses in Bare Metal Solution networks. |
+| 2022-03-22 | Real-time quota validation for Bare Metal Solution requests |  | Adds real-time quota checks to prevent over-provisioning in the request flow. |
+| 2022-01-19 | Network specification in Bare Metal Solution Order Form |  | Supports detailed network configuration in the Bare Metal Solution intake form, including names, interconnect settings, and IP/service ranges. |
+| 2022-01-19 | Server attribute configuration in Bare Metal Solution Order Form |  | Allows setting server name, type, operating system, and hyperthreading settings during order form deployment. |
+| 2022-01-19 | Server network and IP assignment in Bare Metal Solution Order Form |  | Enables assigning networks and IP addresses to each server as part of Order Form deployment. |
+| 2022-01-19 | Storage LUN and access control assignment in Bare Metal Solution Order Form |  | Supports selecting LUNs and assigning which servers can access a storage volume. |
+| 2022-01-19 | Storage snapshot selection in Bare Metal Solution Order Form |  | Adds the ability to choose storage snapshots when creating storage volumes in the intake form. |
+| 2022-01-19 | Storage volume configuration in Bare Metal Solution Order Form |  | Allows selecting storage volume name, type, size, and protocol during server deployment requests. |
+| 2022-01-13 | View Bare Metal Solution networking resources via gcloud and API |  | Enables listing and inspecting networking resources through gcloud and API commands. |
+| 2022-01-13 | View Bare Metal Solution storage resources via gcloud and API |  | Enables listing and inspecting storage resources through gcloud and API commands. |
+| 2021-09-24 | View Bare Metal Solution servers via gcloud and API |  | Allows users to list Bare Metal Solution servers and view full server details using gcloud and API commands. |
+| 2021-08-30 | RHEL 7.7 image availability on Bare Metal Solution | 2021-08-30 | Deprecates the RHEL 7.7 image for Bare Metal Solution servers, with availability restricted to certain SAP-subscription cases; deprecated on 2021-08-30. |
+
+Source file slug: `bare-metal-solution.md`
+

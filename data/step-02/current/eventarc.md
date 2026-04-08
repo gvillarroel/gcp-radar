@@ -1,0 +1,78 @@
+# Eventarc
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 45
+Unique features: 64
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2025-11-11 | Access policies for Eventarc Advanced bus publishing |  | Eventarc Advanced lets publishers use access policies to control access when publishing event messages to a bus. |
+| 2025-09-24 | Multi-project publishing in Eventarc Advanced |  | Eventarc Advanced can publish events from multiple projects. |
+| 2025-05-15 | Custom organization policy constraints for Eventarc resources |  | Eventarc Advanced and Eventarc Standard can create custom organization policy constraints for some Eventarc resources. |
+| 2025-01-29 | CMEK organization policy constraints for Eventarc |  | Eventarc Advanced and Eventarc Standard integrate with organization policy constraints that help enforce CMEK usage across an organization. |
+| 2024-10-31 | Eventarc Advanced |  | Eventarc Advanced receives, filters, transforms, routes, and delivers messages between services, apps, and systems. |
+| 2024-10-31 | Eventarc Standard |  | Eventarc Standard delivers events from providers to destinations using triggers that filter events. |
+| 2024-08-15 | Direct event triggers from Apigee API hub |  | Eventarc can create triggers for direct events from Apigee API hub. |
+| 2024-05-01 | Direct event triggers from Cloud Speech-to-Text |  | Eventarc can create triggers for direct events from Cloud Speech-to-Text. |
+| 2024-04-02 | Direct event triggers from Cloud Deploy |  | Eventarc can create triggers for direct events from Cloud Deploy. |
+| 2024-03-19 | Direct event triggers from Network Services |  | Eventarc can create triggers for direct events from Network Services. |
+| 2024-03-06 | Direct event triggers from Batch |  | Eventarc can create triggers for direct events from Batch. |
+| 2024-01-29 | Direct event triggers from Cloud Firestore |  | Eventarc can create triggers for direct events from Cloud Firestore; Eventarc supports direct triggers for Cloud Firestore events in Preview. |
+| 2024-01-25 | Direct event triggers from Cloud Firestore with authentication context |  | Eventarc can create triggers for direct events from Cloud Firestore that include authentication context. |
+| 2023-10-20 | Internal HTTP endpoints as event destinations |  | Eventarc supports internal HTTP endpoints as event destinations in Preview. |
+| 2023-08-31 | Direct event triggers from AlloyDB for PostgreSQL |  | Eventarc can create triggers for direct events from AlloyDB for PostgreSQL; Eventarc can create triggers for direct events from AlloyDB for PostgreSQL in Preview. |
+| 2023-08-31 | Direct event triggers from API Gateway |  | Eventarc can create triggers for direct events from API Gateway; Eventarc can create triggers for direct events from API Gateway in Preview. |
+| 2023-08-31 | Direct event triggers from Apigee Registry |  | Eventarc can create triggers for direct events from Apigee Registry; Eventarc can create triggers for direct events from Apigee Registry in Preview. |
+| 2023-08-31 | Direct event triggers from Backup for GKE |  | Eventarc can create triggers for direct events from Backup for GKE; Eventarc can create triggers for direct events from Backup for GKE in Preview. |
+| 2023-08-31 | Direct event triggers from BeyondCorp |  | Eventarc can create triggers for direct events from BeyondCorp; Eventarc can create triggers for direct events from BeyondCorp in Preview. |
+| 2023-08-31 | Direct event triggers from Certificate Manager |  | Eventarc can create triggers for direct events from Certificate Manager; Eventarc can create triggers for direct events from Certificate Manager in Preview. |
+| 2023-08-31 | Direct event triggers from Cloud Data Fusion |  | Eventarc can create triggers for direct events from Cloud Data Fusion; Eventarc can create triggers for direct events from Cloud Data Fusion in Preview. |
+| 2023-08-31 | Direct event triggers from Cloud Dataplex |  | Eventarc can create triggers for direct events from Cloud Dataplex; Eventarc can create triggers for direct events from Cloud Dataplex in Preview. |
+| 2023-08-31 | Direct event triggers from Cloud Functions |  | Eventarc can create triggers for direct events from Cloud Functions; Eventarc can create triggers for direct events from Cloud Functions in Preview. |
+| 2023-08-31 | Direct event triggers from Cloud Memorystore for Memcached |  | Eventarc can create triggers for direct events from Cloud Memorystore for Memcached; Eventarc can create triggers for direct events from Cloud Memorystore for Memcached in Preview. |
+| 2023-08-31 | Direct event triggers from Database Migration |  | Eventarc can create triggers for direct events from Database Migration; Eventarc can create triggers for direct events from Database Migration in Preview. |
+| 2023-08-31 | Direct event triggers from Dataflow |  | Eventarc can create triggers for direct events from Dataflow. |
+| 2023-08-31 | Direct event triggers from Dataproc Metastore |  | Eventarc can create triggers for direct events from Dataproc Metastore; Eventarc can create triggers for direct events from Dataproc Metastore in Preview. |
+| 2023-08-31 | Direct event triggers from Datastream |  | Eventarc can create triggers for direct events from Datastream; Eventarc can create triggers for direct events from Datastream in Preview. |
+| 2023-08-31 | Direct event triggers from Firebase Alerts |  | Eventarc can create triggers for direct events from Firebase Alerts. |
+| 2023-08-31 | Direct event triggers from Firebase Remote Config |  | Eventarc can create triggers for direct events from Firebase Remote Config. |
+| 2023-08-31 | Direct event triggers from Firebase Test Lab |  | Eventarc can create triggers for direct events from Firebase Test Lab. |
+| 2023-08-31 | Direct event triggers from GKE Hub |  | Eventarc can create triggers for direct events from GKE Hub; Eventarc can create triggers for direct events from GKE Hub in Preview. |
+| 2023-08-31 | Direct event triggers from Google Cloud Memorystore for Redis |  | Eventarc can create triggers for direct events from Google Cloud Memorystore for Redis; Eventarc can create triggers for direct events from Google Cloud Memorystore for Redis in Preview. |
+| 2023-08-31 | Direct event triggers from Network Connectivity |  | Eventarc can create triggers for direct events from Network Connectivity; Eventarc can create triggers for direct events from Network Connectivity in Preview. |
+| 2023-08-31 | Direct event triggers from Network Management |  | Eventarc can create triggers for direct events from Network Management; Eventarc can create triggers for direct events from Network Management in Preview. |
+| 2023-08-31 | Direct event triggers from Transcoder |  | Eventarc can create triggers for direct events from Transcoder. |
+| 2023-08-31 | Direct event triggers from user-managed notebooks |  | Eventarc can create triggers for direct events from user-managed notebooks; Eventarc can create triggers for direct events from user-managed notebooks in Preview. |
+| 2023-08-31 | Direct event triggers from Vision AI |  | Eventarc can create triggers for direct events from Vision AI; Eventarc can create triggers for direct events from Vision AI in Preview. |
+| 2023-08-31 | Direct event triggers from VM Migration |  | Eventarc can create triggers for direct events from VM Migration; Eventarc can create triggers for direct events from VM Migration in Preview. |
+| 2023-08-31 | Workflow triggers |  | Eventarc can create triggers for direct events from Workflows; Eventarc can create triggers for direct events from Workflows in Preview. |
+| 2023-06-02 | Direct event triggers from Transcoder API |  | Eventarc supports direct triggers for Transcoder API events in Preview. |
+| 2023-04-03 | Event payload content type selection |  | Eventarc supports specifying event payload encoding with the eventDataContentType field. |
+| 2023-03-28 | Direct event triggers from Cloud Dataflow |  | Eventarc supports direct triggers for Cloud Dataflow events in Preview. |
+| 2023-03-21 | Workflow triggers within service perimeter |  | Eventarc supports triggering a workflow within a service perimeter using VPC Service Controls. |
+| 2022-12-02 | Customer-managed encryption keys (CMEK) |  | Eventarc supports customer-managed encryption keys. |
+| 2022-09-14 | Direct events from Cloud IoT | 2023-08-16 | Eventarc direct events from Cloud IoT are retired; Eventarc can receive direct events from Cloud IoT sources; deprecated on 2023-08-16. |
+| 2022-08-02 | Third-party SaaS event delivery |  | Eventarc can deliver third-party events from SaaS providers to interested subscribers. |
+| 2022-07-14 | CMEK support in Cloud Console |  | Eventarc can use customer-managed encryption keys when configured through Cloud Console. |
+| 2022-06-30 | CMEK support in Google Cloud CLI |  | Eventarc can use customer-managed encryption keys when configured through Google Cloud CLI. |
+| 2022-06-27 | Firebase Realtime Database triggers |  | Eventarc can trigger on Firebase Realtime Database events. |
+| 2022-05-30 | Dedicated user interface |  | Eventarc provides a dedicated user interface. |
+| 2022-05-12 | Eventarc for Google Kubernetes Engine |  | Eventarc can receive and route events for Google Kubernetes Engine. |
+| 2022-03-31 | Workflows triggers |  | Eventarc can create triggers for Workflows destinations from the Eventarc page in Cloud Console; Eventarc can trigger Workflows destinations. |
+| 2022-03-21 | Firebase Alerts triggers |  | Eventarc can trigger on Firebase Alerts events. |
+| 2022-03-07 | Firebase Remote Config triggers |  | Eventarc can trigger on Firebase Remote Config events. |
+| 2022-03-07 | Firebase Test Lab triggers |  | Eventarc can trigger on Firebase Test Lab events. |
+| 2022-02-22 | Path pattern filtering |  | Eventarc supports path pattern matching in trigger filters. |
+| 2021-12-22 | Cloud Storage triggers |  | Eventarc supports Cloud Storage triggers in general availability; Eventarc supports Cloud Storage triggers in preview. |
+| 2021-12-16 | Eventarc for Cloud Run for Anthos |  | Eventarc is available in preview for Cloud Run for Anthos. |
+| 2021-12-13 | Eventarc console UI |  | A dedicated Eventarc user interface is available in preview. |
+| 2021-10-28 | VPC Service Controls support |  | Eventarc supports VPC Service Controls in general availability; Eventarc supports VPC Service Controls in preview. |
+| 2021-09-13 | Data location support |  | Eventarc can be configured for data location and can be used as a resource location. |
+| 2021-07-22 | Cloud Asset Inventory resource type support |  | Eventarc is supported as a Cloud Asset Inventory resource type. |
+| 2021-04-09 | Default Pub/Sub service account IAM grant |  | Eventarc grants roles/iam.serviceAccountTokenCreator to the Pub/Sub service account by default. |
+
+Source file slug: `eventarc.md`
+

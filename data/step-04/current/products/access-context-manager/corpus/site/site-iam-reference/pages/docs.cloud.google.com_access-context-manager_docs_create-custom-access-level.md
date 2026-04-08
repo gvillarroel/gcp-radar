@@ -1,0 +1,339 @@
+---
+title: "Creating a custom access level \_|\_ Access Context Manager \_|\_ Google Cloud\
+  \ Documentation"
+url: https://docs.cloud.google.com/access-context-manager/docs/create-custom-access-level
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/access-context-manager/docs/overview
+source_metadata:
+  url: https://docs.cloud.google.com/access-context-manager/docs/create-custom-access-level
+  title: "Creating a custom access level \_|\_ Access Context Manager \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: browser_cdp
+  cdp_url: http://127.0.0.1:9222
+---
+
+Creating a custom access level | Access Context Manager | Google Cloud Documentation
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+More
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+Access Context Manager
+Start free
+Overview
+Guides
+Reference
+Resources
+More
+Technology areas
+More
+Overview
+Guides
+Reference
+Resources
+Cross-product tools
+More
+Console
+How-to guides
+All how-to guides
+Access control with IAM
+Create an access policy
+Create a basic access level
+Create a custom access level
+Use mobile devices with access levels
+Manage an access policy
+Create custom constraints
+Manage access levels
+Make bulk changes to access levels
+Audit logging
+Use Context-Aware Access
+Set up context-aware access
+Define access policies using access levels
+Apply policies to user groups with access bindings
+Configure session controls for re-authentication
+Configure a credential strength policy
+Configure Chrome browser attributes
+Configure enterprise certificate conditions
+Configure time and date conditions
+Manage access bindings
+Context-aware access enforcement points
+Use certificate-based access
+Certificate-based access overview
+Understand mutual TLS at Google Cloud
+Set up certificate-based access
+Create access levels for certificate-based access
+Enforce certificate-based access for a user group
+Enforce certificate-based access with VPC Service Controls
+Enable certificate-based access in client applications
+Enable certificate-based access for web applications
+Enable certificate-based access for VMs
+Setting up Endpoint Verification
+Enable certificate-based access with your enterprise certificates
+Enable certificate-based access with Endpoint Verification certificates
+Configure certificate-based access for Workload Identity Federation
+Concepts
+All concepts
+Overview
+Scoped policies
+Custom access levels
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+Home
+Documentation
+Security
+Access Context Manager
+Guides
+Was this helpful?
+Send feedback
+Creating a custom access level
+Stay organized with collections
+Save and categorize content based on your preferences.
+After a custom access level is created, it can
+be managed in the same manner as basic access levels .
+For details about building Common Expression Language (CEL) expressions for
+custom access levels, refer to the
+custom access level specification .
+Important: You must have a paid subscription to use device attributes
+in custom access level expressions. You can sign up
+if interested.
+Console gcloud REST RPC
+More
+To create a custom access level:
+Open the Access Context Manager page in the Google Cloud console.
+Open the Access Context Manager page
+If you are prompted, select your organization.
+At the top of the Access Context Manager page, click New .
+In the New Access Level pane:
+In the Access level title box, enter a title for the access level.
+The title must be at most 50 characters, start with a letter, and can
+contain only numbers, letters, underscores, and spaces.
+Following Create Conditions in , select Advanced Mode .
+In the Conditions section, enter the expressions for your custom
+access level. The condition must resolve to a single boolean value.
+For examples and more information about Common Expression Language
+(CEL) support and custom access levels, see the Custom access level
+specification .
+Click Save .
+Before you begin
+If it doesn't exist yet, create an access policy for
+your organization.
+To create a custom access level using the gcloud command-line tool, use the
+gcloud access-context-manager levels create command.
+gcloud access-context-manager levels create LEVEL_NAME \
+--title = TITLE \
+--custom-level-spec = FILE \
+--description = DESCRIPTION \
+--policy = POLICY_NAME
+Where:
+LEVEL_NAME is a unique name for the access level. It must
+begin with a letter and include only letters, numbers, and
+underscores. The name can be a maximum of 50 characters.
+TITLE is the short, human-readable title for the access
+level.
+FILE is a .yaml file that contains your CEL expression
+formatted as a single key-value pair:
+expression: " CEL_EXPRESSION " .
+For examples and more information about Common Expression Language (CEL)
+support and custom access levels, see the
+Custom access level specification .
+DESCRIPTION (optional) is a human-readable description of the
+access level.
+POLICY_NAME is the numeric name of your organization's
+access policy.
+Optionally, you can include any of the
+gcloud -wide flags .
+custom-level-spec YAML file
+When you use the gcloud command-line tool to create a custom access level, you must provide
+a .yaml file for the custom-level-spec option. The .yaml file defines
+a CEL expression that resolves to a single boolean value. The .yaml file
+must contain a single key-value pair formatted as
+expression: " CEL_EXPRESSION " . The value for expression must
+be a string.
+Example YAML file
+expression: "device.encryption_status == DeviceEncryptionStatus.ENCRYPTED && (origin.region_code in ['US'] || device.is_admin_approved_device)"
+Example command
+gcloud access-context-manager levels create Custom_Trust \
+--custom-level-spec = customspec.yaml \
+--description = "Custom access level for corp." \
+--title = "Custom Trust Level" \
+--policy = 1521580097614100
+Before you begin
+If it doesn't exist yet, create an access policy for
+your organization.
+To create a custom access level, use the
+accessPolicies.accessLevels.create
+method.
+Request body
+In the request body for the call, include an instance of the AccessLevel
+object.
+{
+"name" : s tr i n g ,
+"title" : s tr i n g ,
+"description" : s tr i n g ,
+"custom" : {
+"expr" : {
+"expression" : s tr i n g ,
+"title" : s tr i n g ,
+"description" : s tr i n g
+}
+}
+}
+For the custom field, create an object that includes the CEL expressions
+for your custom access level. The complete expression must resolve to a
+boolean value. The title and description fields are optional.
+Example
+{
+"name" : "example_custom_level" ,
+"title" : "Example custom level" ,
+"description" : "An example custom access level." ,
+"custom" : {
+"expr" : {
+"expression" : "device.is_corp_owned == true || (device.os_type != OsType.OS_UNSPECIFIED && device.is_admin_approved_device == true)" ,
+"title" : "Check for known devices" ,
+"description" : "Permits requests from corp-owned devices and admin-approved devices with a known OS."
+}
+}
+}
+Before you begin
+If it doesn't exist yet, create an access policy for
+your organization.
+To create a custom access level, call
+CreateAccessLevel .
+For the access_level field, include an instance of AccessLevel .
+Fields
+name
+Type
+string
+Description
+Required.
+The resource name for the access level. The
+POLICY_ID is the numeric name of your
+Organization's access policy. The SHORT_NAME
+must begin with a letter, and
+include only letters, numbers, and underscores.
+Format:
+accessPolicies/ policy_id /accessLevels/ short_name
+title
+Type
+string
+Description
+A human-readable label for the access level. Access levels
+must have unique names.
+description
+Type
+string
+Description
+A description of the access level.
+custom
+Type
+string
+Description
+The CEL expressions for your custom access level. The
+complete expression must resolve to a boolean value.
+Was this helpful?
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-02 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+close
+Welcome to Cloud Shell
+Cloud Shell is a development environment that you can use in the browser:
+Activate Cloud Shell to explore Google Cloud with a terminal and an editor
+Start a free trial to get $300 in free credits
+Activate Cloud Shell
+Start a free trial

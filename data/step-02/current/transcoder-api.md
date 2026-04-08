@@ -1,0 +1,30 @@
+# Transcoder API
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 13
+Unique features: 16
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2021-07-13 | Transcoder v1 API |  | The Transcoder v1 API is the new stable API version introduced for Google Cloud Transcoder. |
+| 2021-07-13 | Transcoder v1beta1 API | 2021-07-13 | The Transcoder v1beta1 API is the original (legacy) version of Google Cloud Transcoder that is being retired and replaced by the v1 API; deprecated on 2021-07-13. |
+| 2021-03-31 | VPC Service Controls support |  | Transcoder API added beta-stage support for operating under VPC Service Controls. |
+| 2021-02-26 | Sprite sheet aspect ratio preservation |  | Sprite sheet generation now preserves source aspect ratio by auto-calculating one dimension when only sprite width or height is provided. |
+| 2021-02-26 | Sprite sheet quality setting |  | Sprite sheets now support selectable image compression levels via a quality setting. |
+| 2021-02-26 | Video black padding |  | Transcoder API now supports padding videos with black. |
+| 2020-11-16 | AES-128 content protection |  | Added support in Transcoder API for AES-128 content protection for HLS and DASH outputs in fMP4 and TS containers. |
+| 2020-11-16 | Cloud SDK support for Transcoder API |  | The Cloud SDK added support for interacting with the Transcoder API. |
+| 2020-11-16 | Cropping support |  | Transcoder API now supports cropping in media transcoding workflows. |
+| 2020-11-16 | FairPlay SAMPLE-AES content encryption |  | Added support in Transcoder API for FairPlay content encryption using SAMPLE-AES in HLS TS and HLS fMP4 outputs. |
+| 2020-11-16 | Overlays support |  | Transcoder API now supports overlays in transcoded outputs. |
+| 2020-11-16 | Shaka player DASH and HLS CEA608/CEA708 support |  | Added Shaka player compatibility for DASH and HLS streams using CEA-608/CEA-708 captioning. |
+| 2020-11-16 | Source aspect ratio preservation |  | Transcoder API now preserves the original source video's aspect ratio during transcoding. |
+| 2020-11-16 | Transcoder API client libraries release |  | Released updated client libraries for the Transcoder API. |
+| 2020-11-16 | Widevine/PlayReady DASH MPEG-CENC encryption |  | Added support in Transcoder API for Widevine and PlayReady content encryption using MPEG-CENC for DASH fMP4 outputs. |
+| 2020-11-16 | Widevine/PlayReady HLS MPEG-CENC encryption |  | Added support in Transcoder API for Widevine and PlayReady content encryption using MPEG-CENC for HLS fMP4 outputs. |
+
+Source file slug: `transcoder-api.md`
+

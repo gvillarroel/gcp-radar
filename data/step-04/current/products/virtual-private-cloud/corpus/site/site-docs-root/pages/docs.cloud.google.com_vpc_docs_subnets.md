@@ -1,0 +1,1077 @@
+---
+title: "Subnets \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/vpc/docs/subnets
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/vpc/docs
+source_metadata:
+  url: https://docs.cloud.google.com/vpc/docs/subnets
+  title: "Subnets \_|\_ Virtual Private Cloud \_|\_ Google Cloud Documentation"
+  fetched_via: browser_cdp
+  cdp_url: http://127.0.0.1:9222
+---
+
+Subnets | Virtual Private Cloud | Google Cloud Documentation
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+More
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+Virtual Private Cloud
+Start free
+Overview
+Guides
+Reference
+Resources
+More
+Technology areas
+More
+Overview
+Guides
+Reference
+Resources
+Cross-product tools
+More
+Console
+Discover
+Virtual Private Cloud overview
+Get started
+VPC networks
+Subnets
+IPv6 support
+Create and manage VPC networks
+Add networking features
+Add IP addresses
+Overview
+Reserve internal IP addresses
+Reserve external IP addresses
+Move an external IPv4 address to a different project
+Add alias IP ranges
+Overview
+Configure alias IP ranges
+Bring your own IP addresses (BYOIP)
+Overview
+Planning and architecture
+Create a public advertised prefix
+Create public delegated prefixes
+Create IPv4 sub-prefixes and IP addresses
+Create and use IPv6 sub-prefixes
+Manage BGP announcement
+Deprovision BYOIP
+Add routes
+Routes overview
+Static routes overview
+Use routes
+Add policy-based routes
+Overview
+Use policy-based-routes
+Change MTU
+Overview
+Change MTU of a VPC network
+Create and verify a jumbo frame MTU network
+Access IPv4 destinations from IPv6-only instances
+Overview
+Configure IPv6-only subnets and instances with DNS64 and NAT64
+Configure VMs
+Add network tags
+Add VMs with multiple network interfaces
+Overview
+Create VMs with multiple network interfaces
+Configure Dynamic NICs
+Add Dynamic NICs
+Delete Dynamic NICs
+Configure routing for an additional network interface
+Troubleshoot
+Add capabilities
+Network Connectivity Center
+VPC Network Peering
+Overview
+About peering connections
+Set up and manage VPC Network Peering
+Peer two VPC networks
+Shared VPC
+Overview
+Provision Shared VPC
+Deprovision Shared VPC
+Hybrid Subnets
+About migrating to Google Cloud with Hybrid Subnets
+Prepare for Hybrid Subnets connectivity
+Migrate to Google Cloud with Hybrid Subnets
+Disable hybrid subnet routing
+Internal ranges
+Overview
+Create and use internal ranges
+Network profiles for specific use cases
+Overview
+RDMA network profiles
+Create a VPC network for RDMA NICs
+View network profiles
+Access APIs and services
+Choose a private access option
+Private Service Connect
+Overview
+Compatibility
+Deployment patterns
+Architecture
+Security
+Create and access your own service
+Overview
+Create a load-balanced service
+Make the service accessible to other VPC networks
+Access the service from another VPC network
+Service consumers
+Endpoints
+Published services
+About accessing published services
+Access published services
+Manage endpoints that access published services
+Global Google APIs
+About accessing global Google APIs
+Access global Google APIs
+Regional Google APIs
+About accessing regional Google APIs
+Access regional Google APIs
+About propagated connections
+Backends
+About backends
+Create a backend
+Access published services
+Access regional Google APIs
+Access global Google APIs
+Network attachments
+About network attachments
+Create network attachments
+Configure security
+Service connection policies
+About service connectivity automation
+About service connection policies
+Configure connectivity to services
+Configure service connection policies
+Deploy service instances
+Manage consumer security
+Service producers
+Published services
+About published services
+About controlling access to published services
+Publish services
+Manage published services
+DNS configuration for services
+Private Service Connect health
+About Private Service Connect health
+Configure Private Service Connect health for failover
+View, update, and delete Private Service Connect health configurations
+Port mapping
+About port mapping
+Create port mapping services
+Update port mapping services
+Migrate peering services to Private Service Connect
+About migrating peering services
+Migrate peering services
+Interfaces
+About interfaces
+Create interfaces
+Configure routing
+Configure security
+Manage destination overlap
+Manage producer security
+Monitor connections
+Private Google Access
+Overview
+Configure Private Google Access
+Private Google Access for on-premises hosts
+Overview
+Configure Private Google Access for on-premises hosts
+Access APIs from VMs with external IP addresses
+Private services access
+Overview
+Configure private services access
+Send serverless traffic to a VPC network
+Overview
+Configure serverless traffic
+Monitor
+VPC Flow Logs
+Overview
+About VPC Flow Logs records
+About traffic flows
+Configure VPC Flow Logs
+Configure organization policy constraints
+Access flow logs
+Audit logging
+VPC audit logging
+Private services access audit logging
+Serverless VPC Access audit logging
+Packet Mirroring
+Overview
+Use Packet Mirroring
+Monitor Packet Mirroring
+Packet Mirroring partner providers
+Control access
+Manage resources by using custom constraints
+Create and manage tags for VPC resources
+Troubleshoot
+Troubleshoot internal connectivity between VMs
+Troubleshoot policy and access problems
+Advanced topics
+Advanced VPC concepts
+Legacy networks
+Overview
+Manage legacy networks
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+On this page
+Networks and subnets
+Types of subnets
+Purposes of subnets
+Limitations for naming subnets
+IPv4 subnet ranges Limitations for IPv4 subnet ranges
+Valid IPv4 ranges
+Prohibited IPv4 subnet ranges
+Unusable addresses in IPv4 subnet ranges
+Auto mode IPv4 ranges
+Additional considerations
+IPv6 subnet ranges IPv6 specifications
+IPv6 range assignment
+Unusable addresses in IPv6 subnet ranges
+What's next
+Home
+Documentation
+Networking
+Virtual Private Cloud
+Guides
+Was this helpful?
+Send feedback
+On this page
+Networks and subnets
+Types of subnets
+Purposes of subnets
+Limitations for naming subnets
+IPv4 subnet ranges Limitations for IPv4 subnet ranges
+Valid IPv4 ranges
+Prohibited IPv4 subnet ranges
+Unusable addresses in IPv4 subnet ranges
+Auto mode IPv4 ranges
+Additional considerations
+IPv6 subnet ranges IPv6 specifications
+IPv6 range assignment
+Unusable addresses in IPv6 subnet ranges
+What's next
+Subnets
+Stay organized with collections
+Save and categorize content based on your preferences.
+Virtual Private Cloud (VPC) networks are global resources. Each
+VPC network consists of one or more IP
+address ranges called subnets . Subnets are regional resources, and have IP
+address ranges associated with them.
+In Google Cloud, the terms subnet and subnetwork are synonymous. They
+are used interchangeably in the Google Cloud console, Google Cloud CLI commands, and
+API documentation.
+Networks and subnets
+A network must have at least one subnet before you can use it. Auto mode
+VPC networks create subnets in each region automatically. Custom
+mode VPC networks start with no subnets, giving you full control
+over subnet creation. You can create more than one subnet per region. For
+information about the differences between auto mode and custom mode
+VPC networks, see types of VPC
+networks .
+When you create a resource in Google Cloud, you choose a network and
+subnet. For resources other than instance templates, you also select a
+zone
+or a region. Selecting a zone implicitly selects its parent region. Because
+subnets are regional objects, the region that you select for a resource
+determines the subnets that it can use:
+When you create a virtual machine (VM) instance ,
+you select a zone for the instance. If you don't select a network for the VM,
+the default VPC network is used, which has a subnet in every
+region. If you do select a network for the VM, you must select a network that
+contains a subnet in the selected zone's parent region.
+When you create a managed instance
+group ,
+you select a zone or region, depending on the group type, and an instance
+template. The instance template defines which VPC network to use.
+Therefore, when you create a managed instance group, you must select an instance
+template with an appropriate configuration; the template must specify a
+VPC network that has subnets in the selected zone or region. Auto
+mode VPC networks always have a subnet in every region.
+The process of creating a Kubernetes container
+cluster
+involves selecting a zone or region (depending on the cluster type), a
+network, and a subnet. You must select a subnet that is available
+in the selected zone or region.
+Types of subnets
+VPC networks support subnets with the following stack types.
+A single VPC network can contain any combination of these
+subnets.
+Stack type
+Subnet ranges
+Compatible VM network interfaces
+IPv4-only (single-stack)
+Only IPv4 subnet ranges
+IPv4-only interfaces
+IPv4 and IPv6 (dual-stack)
+Both IPv4 and IPv6 subnet ranges
+IPv4-only, dual-stack, and IPv6-only interfaces
+IPv6-only (single-stack)
+Only IPv6 subnet ranges
+IPv6-only interfaces
+When you create a subnet, you specify which stack type to use. You can also
+change the stack type of a subnet in the following scenarios:
+If the subnet is IPv4-only, you can change it to dual-stack .
+If the subnet is dual-stack and has an external IPv6 address range,
+you can change it to IPv4-only .
+Subnets with IPv6 address ranges are supported on custom mode VPC
+networks only. Subnets with IPv6 address ranges aren't supported on auto mode
+VPC networks or legacy networks.
+Note: If you want to create subnets with IPv6 address ranges in an auto mode
+VPC network, you must first convert an auto mode VPC network to
+custom mode .
+When you create an IPv4 subnet range, you provide the following information:
+Subnet setting
+Valid values
+Details
+IPv4 range
+A valid range that you choose
+Required
+Secondary IPv4 range
+A valid range that you choose
+Optional
+When you create an IPv6 subnet range, you specify the access type and the
+source of the IP addresses:
+Access type
+Address type and source
+Internal (not internet routable)
+ULAs : Automatically assigned from the VPC network's /48 ULA range .
+If you use bring your own IP addresses (BYOIP), you can privately use your own IPv6 GUAs .
+External (internet routable)
+GUAs : Automatically assigned from Google's regional external IPv6 addresses .
+If you use BYOIP, you can use your own IPv6 GUAs .
+Purposes of subnets
+When you create a subnet, you select a purpose for the subnet:
+Regular subnets ( PRIVATE ): This is the default subnet type. Regular
+subnets are created by users or automatically created in auto mode
+VPC networks to be used with VM instances. The purpose is
+displayed as None in the Google Cloud console.
+Hybrid Subnets are regular subnets that are configured with a
+different routing behavior ( --allow-cidr-routes-overlap ).
+Hybrid Subnets logically extend to an on-premises or
+source network, letting you migrate workloads to Google Cloud
+without needing to change IP addresses . You
+can enable or disable hybrid routing for a subnet at any time.
+Private Service Connect subnets
+( PRIVATE_SERVICE_CONNECT ): A subnet that you use to publish a managed
+service by using
+Private Service Connect .
+Proxy-only subnets ( GLOBAL_MANAGED_PROXY and REGIONAL_MANAGED_PROXY ):
+A proxy-only subnet that you use
+with Envoy-based load balancers and Secure Web Proxy.
+Private NAT subnets ( PRIVATE_NAT ): A subnet that is reserved
+for use as the source range for
+Private NAT .
+Peer migration subnets ( PEER_MIGRATION ): A subnet that you use to
+migrate a Shared VPC service to
+Private Service Connect .
+After migration is complete, you can convert the peer migration subnet to a
+regular subnet.
+In most cases, you can't change the purpose setting of a subnet after it has
+been created. For more information, see the gcloud compute networks subnets
+update command
+reference.
+Limitations for naming subnets
+Subnet names have the following limitations:
+Within a Google Cloud project, a subnet cannot have the same name as a VPC
+network unless it is a member of that network. Within a project, subnets in
+the same region must have unique names. For example, a network named
+production can have multiple subnets also named production as long as
+each of those subnets is in a unique region.
+You cannot change the name or region of a subnet after you create it.
+However, you can delete a subnet and replace it as long as no resources are
+using it.
+IPv4 subnet ranges
+Each IPv4-only or dual-stack subnet must have a primary IPv4 address range . When a subnet's
+purpose is PRIVATE or NONE , the primary IPv4 range can be used
+by the following:
+Primary internal IPv4 addresses of Compute Engine VM network
+interfaces, including GKE nodes.
+Alias IP ranges of VM network interfaces.
+Forwarding rules used by internal protocol
+forwarding .
+Forwarding rules used by internal Application Load Balancers ,
+internal proxy Network Load Balancers , and
+internal passthrough Network Load Balancers .
+Cloud DNS inbound server policy entry points .
+Private Service Connect endpoints for published services .
+Subnets can optionally have one or more secondary IPv4 address ranges , which
+can only be used by alias IP ranges. An alias IP range can come from either the
+primary IPv4 range or a secondary IPv4 range of a subnet.
+Your IPv4 subnets don't need to form a predefined contiguous CIDR block, but you
+can do that if you prefer. For example, auto mode VPC networks do
+create subnets that fit within a predefined auto mode IP range. However, the
+primary range of a subnet can be 10.0.0.0/24 , while the primary range of
+another subnet in the same network can be 192.168.0.0/16 .
+Limitations for IPv4 subnet ranges
+IPv4 subnet ranges have the following limitations:
+Each primary or secondary IPv4 range for all subnets in a VPC
+network must be a unique valid CIDR block .
+The number of secondary IP address ranges you can define is described in
+per network limits .
+After you create a subnet, the primary IPv4 range for the subnet
+can be expanded but not
+replaced or shrunk.
+You can remove and replace a subnet's secondary IPv4 address range only
+if no instances are using that range.
+The minimum primary or secondary range size is eight IPv4 addresses. In
+other words, the longest subnet mask that you can use is /29 .
+The shortest subnet mask that you can use is /4 . However, for most
+/4 IP address ranges, additional validations prevent you from creating
+a subnet that is this large. For example, a subnet range cannot overlap
+with a private IPv4 range or other reserved range. To minimize the chance
+of choosing an invalid subnet range, we recommend that you limit your
+maximum subnet size to /8 .
+You can't create primary and secondary ranges for subnets that overlap with any
+allocated range , any primary or
+secondary range of another subnet in the same network, or any IPv4 ranges
+of subnets in peered networks . Google Cloud prevents
+the creation of overlapping subnet ranges in these scenarios.
+Google Cloud creates corresponding subnet
+routes for both primary and secondary IP
+ranges. Subnet routes, and therefore subnet IP ranges, must have the most
+specific IP ranges by definition.
+Ensure that primary and secondary ranges don't conflict with on-premises IP ranges if
+you have connected your VPC network to another network
+with Cloud VPN ,
+Dedicated Interconnect, or Partner Interconnect . For more information, see
+Check overlapping subnet ranges .
+Subnet IPv4 ranges cannot conflict with destinations for static
+routes .
+Avoid using IPv4 addresses from the 10.128.0.0/9 block for a subnet's primary
+or secondary IPv4 ranges. Automatically created subnets in auto mode
+VPC networks use IPv4 addresses from this block.
+If you use IP addresses in the 10.128.0.0/9 block, you cannot connect your network to an auto mode VPC network
+using VPC Network Peering or with Cloud VPN tunnels.
+Subnet ranges cannot match, be narrower, or be broader than a restricted
+range . For example, 169.0.0.0/8 is not a valid subnet
+range because it overlaps with the link-local range 169.254.0.0/16 (RFC
+3927), which is a restricted range.
+Subnet ranges cannot span an RFC range (described in the previous table)
+and a privately used public IP address range. For example, 172.0.0.0/10 is
+not a valid subnet range because it includes both the 172.16.0.0/12 private
+IP address range and public IP addresses.
+Subnet ranges cannot span multiple RFC ranges. For example, 192.0.0.0/8
+isn't a valid subnet range because it includes both 192.168.0.0/16 (from RFC
+1918) and 192.0.0.0/24 (from RFC 6890). However, you can create two subnets
+with different primary ranges, one with 192.168.0.0/16 and one with
+192.0.0.0/24 . Or, you could use both of these ranges on the same subnet if
+you make one of them a secondary range.
+Valid IPv4 ranges
+A subnet's primary and secondary IPv4 address ranges are regional internal IPv4
+addresses. The following table describes valid ranges.
+Range
+Description
+Private IPv4 address ranges
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16
+Private IP addresses RFC 1918
+For information about using 172.17.0.0/16 , see
+Additional considerations .
+100.64.0.0/10
+Shared address space RFC 6598
+192.0.0.0/24
+IETF protocol assignments RFC 6890
+192.0.2.0/24 (TEST-NET-1)
+198.51.100.0/24 (TEST-NET-2)
+203.0.113.0/24 (TEST-NET-3)
+Documentation RFC 5737
+192.88.99.0/24
+IPv6 to IPv4 relay (deprecated) RFC 7526
+198.18.0.0/15
+Benchmark testing RFC 2544
+240.0.0.0/4
+Reserved for future use (Class E) as noted in
+RFC 5735 and
+RFC 1112 .
+Some operating systems don't support the use of this range, so verify that
+your OS supports it before creating subnets that use this range.
+Privately used public IP address ranges
+Privately used public IPv4 addresses
+Privately used public IPv4 addresses:
+Are IPv4 addresses that are normally routable on the internet,
+but that are used privately in a VPC
+network
+Cannot belong to a prohibited
+subnet range
+When you use these addresses as subnet ranges,
+Google Cloud does not announce these routes to the
+internet and does not route traffic from the internet to them.
+If you have imported public IP addresses to Google using
+Bring your own IP (BYOIP) , your
+BYOIP ranges and privately used public IP address ranges in the same
+VPC network must not overlap.
+For VPC Network Peering , subnet
+routes for public IP addresses are not automatically exchanged. The subnet
+routes are automatically exported by default, but peer networks must be
+explicitly configured to import them in order to use them.
+Prohibited IPv4 subnet ranges
+Prohibited subnet ranges include Google public IP addresses and commonly
+reserved RFC ranges, as described in the following table. These ranges cannot be
+used for subnet ranges.
+Range
+Description
+Public IP addresses for Google APIs and services, including
+Google Cloud netblocks.
+You can find these IP addresses at
+https://gstatic.com/ipranges/goog.txt .
+199.36.153.4/30
+and
+199.36.153.8/30
+Private Google Access-specific virtual IP addresses
+0.0.0.0/8
+Current (local) network RFC 1122
+127.0.0.0/8
+Local host RFC 1122
+169.254.0.0/16
+Link-local RFC 3927
+224.0.0.0/4
+Multicast (Class D) RFC 5771
+255.255.255.255/32
+Limited broadcast destination address RFC 8190 and
+RFC 919
+Unusable addresses in IPv4 subnet ranges
+Google Cloud uses the first two and last two IPv4 addresses
+in each subnet primary IPv4 address range to host the subnet.
+Google Cloud lets you use all addresses in
+secondary IPv4 ranges.
+Unusable IPv4 address
+Description
+Example
+Network address
+First address in the primary IPv4 range
+10.1.2.0 from range 10.1.2.0/24
+Default gateway address
+Second address in the primary IPv4 range
+10.1.2.1 from range 10.1.2.0/24
+Second-to-last address
+Second-to-last address in the primary IPv4 range
+This range is reserved by Google Cloud for potential future use.
+10.1.2.254 from range 10.1.2.0/24
+Broadcast address
+Last address in the primary IPv4 range
+10.1.2.255 from range 10.1.2.0/24
+Note: Google Cloud software-defined networking reserves a virtual gateway
+IP address for the primary IP ranges of each subnet in a VPC
+network. However, virtual gateways do not respond to ICMP traffic or
+decrement IP TTL headers.
+Subnet secondary IP ranges don't have a reserved virtual gateway IP address.
+Thus, a default gateway doesn't respond to ping and doesn't appear when you
+run traceroute from a VM instance.
+Tools that ping the gateway IP address as a connectivity test must be configured
+so that they don't consider the inability to ping a virtual gateway to be a
+failure condition.
+Auto mode IPv4 ranges
+This table lists the IPv4 ranges for the automatically created subnets in an auto
+mode VPC network. IP ranges for these subnets fit inside the
+10.128.0.0/9 CIDR block. Auto mode VPC networks are built with
+one subnet per region at creation time and automatically receive new subnets in
+new regions. Unused portions of 10.128.0.0/9 are reserved for future
+Google Cloud use.
+Region
+IP range (CIDR)
+Default gateway
+Usable addresses (inclusive)
+africa-south1
+10.218.0.0/20
+10.218.0.1
+10.218.0.2 to 10.218.15.253
+asia-east1
+10.140.0.0/20
+10.140.0.1
+10.140.0.2 to 10.140.15.253
+asia-east2
+10.170.0.0/20
+10.170.0.1
+10.170.0.2 to 10.170.15.253
+asia-northeast1
+10.146.0.0/20
+10.146.0.1
+10.146.0.2 to 10.146.15.253
+asia-northeast2
+10.174.0.0/20
+10.174.0.1
+10.174.0.2 to 10.174.15.253
+asia-northeast3
+10.178.0.0/20
+10.178.0.1
+10.178.0.2 to 10.178.15.253
+asia-south1
+10.160.0.0/20
+10.160.0.1
+10.160.0.2 to 10.160.15.253
+asia-south2
+10.190.0.0/20
+10.190.0.1
+10.190.0.2 to 10.190.15.253
+asia-southeast1
+10.148.0.0/20
+10.148.0.1
+10.148.0.2 to 10.148.15.253
+asia-southeast2
+10.184.0.0/20
+10.184.0.1
+10.184.0.2 to 10.184.15.253
+asia-southeast3
+10.232.0.0/20
+10.232.0.1
+10.232.0.2 to 10.232.15.253
+australia-southeast1
+10.152.0.0/20
+10.152.0.1
+10.152.0.2 to 10.152.15.253
+australia-southeast2
+10.192.0.0/20
+10.192.0.1
+10.192.0.2 to 10.192.15.253
+europe-central2
+10.186.0.0/20
+10.186.0.1
+10.186.0.2 to 10.186.15.253
+europe-north1
+10.166.0.0/20
+10.166.0.1
+10.166.0.2 to 10.166.15.253
+europe-north2
+10.226.0.0/20
+10.226.0.1
+10.226.0.2 to 10.226.15.253
+europe-west1
+10.132.0.0/20
+10.132.0.1
+10.132.0.2 to 10.132.15.253
+europe-west2
+10.154.0.0/20
+10.154.0.1
+10.154.0.2 to 10.154.15.253
+europe-west3
+10.156.0.0/20
+10.156.0.1
+10.156.0.2 to 10.156.15.253
+europe-west4
+10.164.0.0/20
+10.164.0.1
+10.164.0.2 to 10.164.15.253
+europe-west6
+10.172.0.0/20
+10.172.0.1
+10.172.0.2 to 10.172.15.253
+europe-west8
+10.198.0.0/20
+10.198.0.1
+10.198.0.2 to 10.198.15.253
+europe-west9
+10.200.0.0/20
+10.200.0.1
+10.200.0.2 to 10.200.15.253
+europe-west10
+10.214.0.0/20
+10.214.0.1
+10.214.0.2 to 10.214.15.253
+europe-west12
+10.210.0.0/20
+10.210.0.1
+10.210.0.2 to 10.210.15.253
+europe-southwest1
+10.204.0.0/20
+10.204.0.1
+10.204.0.2 to 10.204.15.253
+me-central1
+10.212.0.0/20
+10.212.0.1
+10.212.0.2 to 10.212.15.253
+me-central2
+10.216.0.0/20
+10.216.0.1
+10.216.0.2 to 10.216.15.253
+me-west1
+10.208.0.0/20
+10.208.0.1
+10.208.0.2 to 10.208.15.253
+northamerica-northeast1
+10.162.0.0/20
+10.162.0.1
+10.162.0.2 to 10.162.15.253
+northamerica-northeast2
+10.188.0.0/20
+10.188.0.1
+10.188.0.2 to 10.188.15.253
+northamerica-south1
+10.224.0.0/20
+10.224.0.1
+10.224.0.2 to 10.224.15.253
+southamerica-east1
+10.158.0.0/20
+10.158.0.1
+10.158.0.2 to 10.158.15.253
+southamerica-west1
+10.194.0.0/20
+10.194.0.1
+10.194.0.2 to 10.194.15.253
+us-central1
+10.128.0.0/20
+10.128.0.1
+10.128.0.2 to 10.128.15.253
+us-east1
+10.142.0.0/20
+10.142.0.1
+10.142.0.2 to 10.142.15.253
+us-east4
+10.150.0.0/20
+10.150.0.1
+10.150.0.2 to 10.150.15.253
+us-east5
+10.202.0.0/20
+10.202.0.1
+10.202.0.2 to 10.202.15.253
+us-south1
+10.206.0.0/20
+10.206.0.1
+10.206.0.2 to 10.206.15.253
+us-west1
+10.138.0.0/20
+10.138.0.1
+10.138.0.2 to 10.138.15.253
+us-west2
+10.168.0.0/20
+10.168.0.1
+10.168.0.2 to 10.168.15.253
+us-west3
+10.180.0.0/20
+10.180.0.1
+10.180.0.2 to 10.180.15.253
+us-west4
+10.182.0.0/20
+10.182.0.1
+10.182.0.2 to 10.182.15.253
+Additional considerations
+Ensure that all subnet primary and secondary IPv4 address ranges don't
+conflict with the IPv4 address ranges that software running within your
+VMs needs to use. Some Google and third-party products use 172.17.0.0/16 for
+routing within the guest operating system. For example, the
+default Docker bridge network uses this range. If you depend on a product that
+uses 172.17.0.0/16 , don't use it as any subnet primary and secondary IPv4
+address range.
+IPv6 subnet ranges
+When you create a subnet with an IPv6 address range or enable IPv6 on an existing subnet
+in a VPC network, you choose an IPv6 access type for the
+subnet. The IPv6 access type determines whether the subnet is configured with
+internal IPv6 addresses or external IPv6
+addresses .
+Internal IPv6 addresses are used for VM to VM communication within
+VPC networks. They can only be routed within the scope of
+VPC networks and cannot be routed to the internet.
+External IPv6 addresses can be used for VM to VM communication within
+VPC networks, and are also routable on the internet.
+If a VM interface is connected to a subnet that has an IPv6 subnet range, you
+can configure IPv6 addresses on the
+VM . The
+IPv6 access type of the subnet determines whether the VM is assigned an internal
+IPv6 address or an external IPv6 address.
+IPv6 specifications
+Subnets with IPv6 address ranges are available in all regions, supporting both
+external and internal IPv6 subnet ranges.
+Subnets with IPv6 address ranges have the following limitations:
+You can't change the IPv6 access type (internal or external) of a subnet.
+You can't change a dual-stack subnet to IPv4-only if the IPv6 access
+type is internal.
+You can't change a dual-stack or IPv4-only subnet to
+IPv6-only. Conversely,
+you can't change an IPv6-only subnet to IPv4-only or dual-stack.
+External IPv6 specifications
+External IPv6 address ranges are global unicast
+addresses (GUAs) .
+External IPv6 addresses are available
+only in Premium Tier .
+A subnet's external IPv6 address range comes from one of the following sources:
+By default : Google Cloud assigns an unused /64 GUA range from
+Google's regional external IPv6 addresses .
+If you're using BYOIP : You can assign a /64 GUA range from within a
+BYOIP sub-prefix .
+The resources that can use a subnet's external IPv6 address range depend on the
+source of the address range.
+BYOIP-provided external IPv6 subnet ranges can only be used
+for external /96 IPv6 address ranges of VM network interfaces. You can
+assign IPv6 BYOIP addresses to forwarding rules ,
+but those addresses aren't part of a subnet.
+Google-provided external IPv6 subnet ranges can be used as follows:
+External /96 IPv6 address ranges of VM network interfaces can use the
+first half ( /65 ) of the subnet's /64 range.
+External /96 IPv6 address ranges of forwarding rules for
+external protocol
+forwarding or
+backend service-based
+external passthrough Network Load Balancers
+can use the second half ( /65 ) of the subnet's /64 range.
+You must create the preceding resources using IP addresses from the
+corresponding /65 range allocated for the resource; otherwise, Google Cloud
+returns an error.
+Consider an example in which a subnet's external IPv6 address range is 2001:db8:981:4:0:0:0:0/64 :
+The /65 range allocated for use by VM instances is
+2001:db8:981:4:0:0:0:0/65 .
+The /65 range allocated for use by Cloud Load Balancing is
+2001:db8:981:4:8000:0 .
+To check the source of a subnet's external IPv6 address range, you can
+describe the subnet .
+If the ipv6AccessType property is EXTERNAL and the ipCollection property
+isn't empty, the subnet was created with an IPv6 BYOIP address range.
+External /96 IPv6 address ranges can be assigned in the following ways:
+If not specified, Google Cloud automatically assigns
+an ephemeral external IPv6 /96 address range.
+You can specify a reserved static regional external IPv6 /96 address range .
+If you reserve a static regional external IPv6 /96 range from a
+BYOIP-provided IPv6 subnet range, you must specify VM for the endpoint type.
+For VM instances and regional forwarding rules, you can specify a custom
+ephemeral external IPv6 /96 address range.
+Internal IPv6 specifications
+Internal IPv6 subnet ranges aren't publicly routable and can't be reached
+from the internet. A subnet's internal IPv6 address range comes from one of the
+following sources:
+By default : Google Cloud assigns an unused /64 range from the
+VPC network's /48 ULA range.
+If you're using BYOIP : You can assign a /64 GUA range from within a
+BYOIP sub-prefix .
+Although GUAs are typically public addresses, in this configuration they are
+used privately and function in the same way as
+Google Cloud-provisioned ULAs.
+Before you can use Google-provided ULA addresses as an internal IPv6 subnet
+range, you must first assign a /48 ULA range to the VPC network .
+When you assign an internal ULA range to a subnet, Google Cloud
+automatically selects an unused /64 IPv6 range from the VPC
+network's /48 ULA IPv6 range. If you want to prevent the assignment of a
+specific ULA range in a VPC network, you can
+create an internal range resource
+for the reserved part of the IPv6 address range.
+Keep the following in mind when assigning a /48 ULA IPv6 range to a
+VPC network:
+The /48 ULA IPv6 range for each VPC network must be unique
+with Google Cloud. This eliminates the possibility of overlapping IPv6
+subnet ranges when using VPC Network Peering .
+You can let Google Cloud assign the VPC network's /48
+ULA IPv6 range automatically, or you can provide a /48 ULA IPv6 range to
+use. If the /48 ULA IPv6 range you provide is already used by another
+Google Cloud VPC network, you receive an error.
+The option to provide a /48 ULA IPv6 range is useful to avoid conflicts
+between your VPC network and connected on-premises networks or
+networks in other cloud providers.
+After a VPC network has been assigned a /48 ULA IPv6 range,
+you can't remove or change the /48 ULA IPv6 range.
+Internal subnet /64 IPv6 ranges can be used by the following, regardless
+of the type of addresses:
+Internal /96 IPv6 address ranges of VM network interfaces
+Internal /96 IPv6 address ranges of forwarding rules for the following:
+Internal protocol forwarding
+Internal passthrough Network Load Balancers
+Private Service Connect endpoints
+Internal /96 IPv6 address ranges can be assigned in the following ways:
+If not specified, Google Cloud automatically assigns
+an ephemeral internal IPv6 /96 address range.
+You can specify a reserved static regional internal IPv6 /96 address range .
+For VM instances and regional forwarding rules, you can specify a custom
+ephemeral internal IPv6 /96 address range.
+IPv6 range assignment
+IPv6 address ranges are assigned to networks, subnets, virtual machine instances
+(VMs), and forwarding rules.
+Resource type
+Range size
+Details
+VPC network
+/48
+To enable an internal ULA range for a subnet, you must first
+assign an internal IPv6 ULA range to the
+VPC network .
+A /48 ULA range from within fd20::/20 is
+assigned to the network. All internal ULA subnet ranges in the
+network are assigned from this /48 range.
+The /48 range can be automatically assigned, or you can
+select a specific range from within fd20::/20 .
+Subnet
+/64
+The IPv6 access type setting controls whether the IPv6 addresses are internal or external.
+A subnet can have either internal or external IPv6 addresses, but not both.
+When you enable IPv6, the following occurs:
+If you enable internal IPv6 on a subnet, a /64
+range of internal ULAs is assigned from your VPC network's
+/48 range.
+If you enable external IPv6 on a subnet, a /64
+range of external GUAs is automatically assigned by
+Google Cloud. Google Cloud allocates each half of the
+/64 range for a specific purpose as follows:
+The /65 range that represents the first half
+of the subnet is allocated for VM instances.
+The /65 range that represents the second half
+of the subnet is allocated for Cloud Load Balancing.
+Alternatively, you can allocate an internal or external subnet
+range from an imported BYOIP IPv6 sub-prefix. For more
+information, see
+Bring your own IP .
+VM instance
+/96
+When you configure a dual-stack or IPv6-only network interface on a
+VM, the interface is assigned a /96 IP address range from
+the interface's subnet. Google Cloud provides the first IP
+address in the /96 range by using DHCPv6.
+Whether a VM network interface uses an internal or external IPv6
+/96 address range depends on the IPv6 access type of the
+interface's subnet.
+Forwarding rule for an internal passthrough Network Load Balancer, external passthrough Network Load Balancer, or protocol forwarding
+/96 or specified by a BYOIP sub-prefix
+The IPv6 address range of a forwarding rule for internal protocol
+forwarding
+or an internal passthrough Network Load Balancer is an internal /96 IP address
+range from a subnet's internal IPv6 address range. Internal
+/96 IP address
+ranges can be selected automatically by Google Cloud or
+you can
+reserve
+a static regional internal IPv6 /96 address range .
+The IPv6 address range of a forwarding rule for external protocol forwarding
+or an external passthrough Network Load Balancer is one of the following:
+If using Google-provided external IPv6 addresses, the IPv6 address
+range is an external /96 address range selected
+automatically by Google Cloud from a subnet's external IPv6
+address range.
+If using BYOIP external IPv6 addresses, the IPv6 address range comes from
+a BYOIP
+IPv6 address sub-prefix in forwarding rule creation mode . The size of
+the IPv6 range is determined by the allocatable prefix length of the
+sub-prefix.
+Unusable addresses in IPv6 subnet ranges
+The first and last /96 range of a subnet's internal /64 range cannot be specified
+manually because Google Cloud reserves the first and last /96 range of a subnet's
+internal /64 range for system use. You can manually specify any other valid /96 IPv6
+range from the subnet's internal /64 range to be assigned to your VM network interfaces.
+Unusable IPv6 address
+Description
+Example
+The first /96 range from the subnet's internal /64 IPv6 range
+Reserved for system use
+fd20:db8::/96 from range fd20:db8::/64
+The last /96 range from the subnet's internal /64 IPv6 range
+Reserved for system use
+fd20:db8:0:0:ffff:ffff::/96 from range fd20:db8::/64
+What's next
+Learn more about Geography and regions
+Create VPC networks
+Assign an internal IPv6 range for a VPC network
+Create a subnet
+Learn about using a hybrid subnet to migrate workloads to a VPC network without changing IP addresses
+Try it for yourself
+If you're new to Google Cloud, create an account to evaluate how
+Cloud NAT performs in real-world
+scenarios. New customers also get $300 in free credits to run, test, and
+deploy workloads.
+Try Cloud NAT free
+Was this helpful?
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-02 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+close
+Welcome to Cloud Shell
+Cloud Shell is a development environment that you can use in the browser:
+Activate Cloud Shell to explore Google Cloud with a terminal and an editor
+Start a free trial to get $300 in free credits
+Activate Cloud Shell
+Start a free trial

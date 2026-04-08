@@ -1,0 +1,322 @@
+---
+title: "Overview of model preparation \_|\_ Anti Money Laundering AI \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/overview-model-preparation
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs
+source_metadata:
+  url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/overview-model-preparation
+  title: "Overview of model preparation \_|\_ Anti Money Laundering AI \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: browser_cdp
+  cdp_url: http://127.0.0.1:9222
+---
+
+Overview of model preparation | Anti Money Laundering AI | Google Cloud Documentation
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+More
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+Anti Money Laundering AI
+Start free
+Overview
+Guides
+Reference
+Resources
+More
+Technology areas
+More
+Overview
+Guides
+Reference
+Resources
+Cross-product tools
+More
+Console
+Discover
+Product overview
+Process overview
+Architectural overview
+Security and compliance features
+Documentation policy
+Glossary
+Quickstart
+Train and test models designed to detect money laundering
+Get started
+Set up a project and permissions
+Create an instance
+Prepare Big Query datasets and tables
+Prepare data for AML AI
+Understand the AML data model and requirements
+Understand data scope and duration
+Select data for best performance and typology coverage
+Create and manage AML AI datasets
+Generate a model and evaluate performance
+Overview of model preparation
+Configure an engine
+Manage engine versions
+Create and manage engine configs
+Generate a model
+Create and manage models
+Evaluate a model
+Copy models to new instances
+Create and manage backtest results
+Generate risk scores and explainability
+Register your parties
+Party registration sharing for multiple instances
+Prepare to generate prediction outputs
+Create and manage prediction results
+Understand prediction outputs
+Best practices for your investigation process
+Prepare for model and risk governance
+Collect model and risk governance artifacts
+Evaluate model fairness
+Troubleshoot
+Troubleshoot AML AI
+Data validation errors
+Administer AML AI
+Access control
+Access control with IAM
+Authenticate to AML AI
+Data residency
+VPC service controls
+Encryption
+Understand encryption in transit
+Encrypt data at rest (CMEK)
+Monitor AML AI resources
+Use audit logs
+Use platform logs
+Manage instances
+Manage long-running operations
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+On this page
+Overview of stages
+Before you begin
+Dataset requirements Dataset time ranges
+Dataset consistency
+Home
+Documentation
+Industry solutions
+Anti Money Laundering AI
+Guides
+Was this helpful?
+Send feedback
+Overview of model preparation
+Stay organized with collections
+Save and categorize content based on your preferences.
+On this page
+Overview of stages
+Before you begin
+Dataset requirements Dataset time ranges
+Dataset consistency
+This page leads you through the steps to prepare an AML AI
+model, assuming you have already set up an instance and prepared the necessary
+datasets.
+Overview of stages
+The process to prepare a model is in covered in the following three stages:
+Stage 1 :
+Configure an engine ,
+including selecting the source of hyperparameters:
+Tuning: Automatic tuning of hyperparameters
+Inherit: Inherit hyperparameters from a previous engine config
+that was created with an earlier engine version within the same
+tuning version .
+This setting lets you avoid re-tuning each time you adopt a new model
+engine version.
+Creating an engine config
+stores the results from tuning or inheritance in an
+EngineConfig resource .
+Stage 2 :
+Generate a model
+Creating a model
+triggers training, storing the results as a
+Model resource .
+Stage 3 :
+Evaluate a model
+Creating backtest results
+evaluates model performance on a specified set of months, storing summary
+results in a
+BacktestResult resource .
+Optionally,
+creating prediction results
+lets you evaluate per-party outputs of the model.
+Once you have completed the earlier stages and model performance meets your
+needs, see the guidance in sections Generate risk scores and explainability and
+Prepare for model and risk governance .
+Before you begin
+Before you begin, you will need the following:
+One or more
+datasets
+A selected
+engine version
+to use
+Dataset requirements
+For detailed guidance on the data model and schema, see the pages under
+Prepare Data for AML AI . This section covers how to make sure that the datasets
+used in engine tuning, training, and evaluation work well together.
+Note : Most model governance policies define a requirement to track data lineage used
+across all ML operations from engine configuration, training, and evaluation. To ensure data remains unchanged, we recommend that you
+create a BigQuery table snapshot
+of your BigQuery tables after they pass data validation and reference the snapshot in
+the AML AI dataset. If you reference regularly updated tables, AML AI
+operations read the BigQuery tables each time an operation uses the AML AI
+dataset, so changes to the underlying BigQuery tables could impact tuning, training,
+backtesting, and predictions.
+Dataset time ranges
+Each dataset used for tuning, training, backtesting and prediction operations
+should contain valid data for a time range ending at the end of the last full
+calendar month prior to the end_time specified in the API call. The length of
+this time range depends on the table, Engine Version and operation. The minimum
+time range is covered in detail in Understand data scope and duration .
+For example, for engine tuning with v004.004 engine versions, the Transaction
+table should cover at least 30 months.
+Configuring an engine, training, and evaluation (backtesting) can be completed
+with a single dataset; see the following image. To ensure good production
+performance by avoiding overfitting, you should ensure that the period used for
+evaluation (that is, creating backtest results) is after the period used for
+training (that is, creating a model).
+For example: if using 3 periods for backtesting and using periods up to the end
+of February 2024 for training (that is, end time in early March 2024), then you
+could use periods up to the end of May 2024 for backtesting (that is, end time
+in early June 2024).
+Dataset consistency
+When using different datasets for the engine tuning, training, and evaluation
+stages, make the datasets consistent in which fields are populated and how they
+are populated. This is important for AML model stability and performance.
+Similarly, for a high-quality risk score , the
+dataset used to create prediction results with a model should be consistent with
+the dataset used to train that model.
+In particular, ensure the following:
+The same logic is used to populate each field. Changing the logic used
+to populate a field can introduce feature skew between model training and
+prediction or evaluation.
+The same selection of RECOMMENDED fields are populated. For example,
+removing a field that was populated during model training can cause features
+that the model relies on to be skewed or missing during evaluation or
+prediction.
+The same logic is used to provide values. In the
+PartySupplementaryData table, the same logic is used to
+provide values for each party_supplementary_data_id field.
+Using the same data, but with different party_supplementary_data_id
+values, causes the model to use data incorrectly. For example, a
+particular field uses ID 5 in the
+PartySupplementaryData table for one dataset, but then
+uses ID 7 in another dataset.
+Removing a party_supplementary_data_id value that a model relies on
+may have unpredictable effects. For example, ID 3 is used in the
+PartySupplementaryData table in one dataset but is
+omitted from another dataset.
+Now you have a dataset ready for engine tuning, training, and evaluation. Note
+that model operations can take tens of hours . For information on how to
+check if an operation is still running or has completed (failed or succeeded),
+see
+Manage long-running operations .
+Was this helpful?
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-06 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-06 UTC."],[],[]]
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+close
+Welcome to Cloud Shell
+Cloud Shell is a development environment that you can use in the browser:
+Activate Cloud Shell to explore Google Cloud with a terminal and an editor
+Start a free trial to get $300 in free credits
+Activate Cloud Shell
+Start a free trial

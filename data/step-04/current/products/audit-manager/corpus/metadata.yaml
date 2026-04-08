@@ -1,0 +1,48 @@
+version: 1
+name: corpus
+created_at: '2026-04-07T22:32:00+00:00'
+updated_at: '2026-04-08T06:02:36+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/audit-manager/docs/view-audit
+  created_at: '2026-04-08T06:01:53+00:00'
+  updated_at: '2026-04-08T06:01:53+00:00'
+  update_command: know sync site https://docs.cloud.google.com/audit-manager/docs/view-audit
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/audit-manager/docs/view-audit
+    max_depth: 1
+    max_pages: 0
+    compact_output: true
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/iam/docs/roles-permissions/auditmanager
+  created_at: '2026-04-08T06:02:15+00:00'
+  updated_at: '2026-04-08T06:02:15+00:00'
+  update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/auditmanager
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/iam/docs/roles-permissions/auditmanager
+    max_depth: 1
+    max_pages: 0
+    compact_output: true
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/python/docs/reference/google-cloud-auditmanager/latest/summary_class
+  created_at: '2026-04-08T06:02:36+00:00'
+  updated_at: '2026-04-08T06:02:36+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/google-cloud-auditmanager/latest/summary_class
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/google-cloud-auditmanager/latest/summary_class
+    max_depth: 1
+    max_pages: 0
+    compact_output: true

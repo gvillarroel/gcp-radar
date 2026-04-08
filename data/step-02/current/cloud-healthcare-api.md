@@ -1,0 +1,127 @@
+# Cloud Healthcare API
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 124
+Unique features: 113
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-02-08 | FHIR bulk-delete operation |  | The FHIR bulk-delete operation is generally available in Cloud Healthcare API, enabling deletion or purging of multiple FHIR resources in one long-running operation using filters such as resource type and last updated time; The FHIR bulk-delete operation is generally available in Cloud Healthcare API, enabling deletion or purging of multiple FHIR resources in one long-running operation using filters such as resource type and last updated time. |
+| 2025-12-22 | DICOM transcoding transfer syntax support |  | Cloud Healthcare API DICOM transcoding now supports additional transfer syntaxes, including Deflated Explicit VR Little Endian and JPEG/HTJ2K-related encodings; Cloud Healthcare API DICOM transcoding now supports additional transfer syntaxes, including Deflated Explicit VR Little Endian and JPEG/HTJ2K-related encodings. |
+| 2025-12-17 | RetrieveRenderedFrames multipart requests |  | RetrieveRenderedFrames now supports multipart requests so multiple rendered frames can be retrieved in a single API call; RetrieveRenderedFrames now supports multipart requests so multiple rendered frames can be retrieved in a single API call. |
+| 2025-12-02 | DICOM exports to BigQuery JSON schema option |  | DICOM exports to BigQuery now support a new JSON schema option with fewer columns for better handling of public DICOM tags; DICOM exports to BigQuery now support a new JSON schema option with fewer columns for better handling of public DICOM tags. |
+| 2025-12-02 | DICOM streaming to BigQuery change data capture |  | DICOM streaming to BigQuery now supports Change Data Capture in the new JSON schema workflow. |
+| 2025-11-03 | GetFhirStoreMetrics VersionedStorageSizeBytes field |  | GetFhirStoreMetrics now includes VersionedStorageSizeBytes in its output; GetFhirStoreMetrics now includes VersionedStorageSizeBytes in its output. |
+| 2025-10-25 | Cloud Healthcare API regional availability |  | Cloud Healthcare API became available in the new me-central1 (Qatar) and me-central2 (KSA) regions. |
+| 2025-10-25 | Cloud Healthcare API regional availability expansion |  | Cloud Healthcare API is now available in the me-central1 (Qatar) and me-central2 (KSA) regions. |
+| 2025-10-23 | DICOM Studio in Cloud Console |  | A new Cloud Console application called DICOM Studio was added to provide a web interface for exploring and managing DICOM Stores; A new Cloud Console application called DICOM Studio was added to provide a web interface for exploring and managing DICOM Stores. |
+| 2025-09-12 | DICOM frame compression via Accept-Encoding |  | DICOM frame requests containing uncompressed pixel data now support Accept-Encoding to return compressed results, with compression optional by omitting the header; DICOM frame requests containing uncompressed pixel data now support Accept-Encoding to return compressed results, with compression optional by omitting the header. |
+| 2025-08-26 | DICOM Updates and Patches |  | Cloud Healthcare API launched DICOM Updates and Patches, enabling in-place updates to DICOM studies, series, and instances. |
+| 2025-05-27 | Healthcare Natural Language API | 2026-05-27 | The Healthcare Natural Language API is deprecated and has a scheduled shutdown date; The Healthcare Natural Language API is deprecated and has a scheduled shutdown date; deprecated on 2026-05-27. |
+| 2025-04-21 | DICOM tag size limit |  | DICOM files now support a 4 GB per-tag limit, except for values that use undefined length; DICOM files now support a 4 GB per-tag limit, except for values that use undefined length. |
+| 2025-02-20 | DICOM viewport URL parameter |  | The DICOM "viewport" URL parameter is now supported when rendering DICOM instances and frames; The DICOM "viewport" URL parameter is now supported when rendering DICOM instances and frames. |
+| 2025-02-19 | Cloud Healthcare API single-region availability in australia-southeast2 |  | Cloud Healthcare API adds single-region support in the australia-southeast2 (Melbourne, Australia) region; Cloud Healthcare API adds single-region support in the australia-southeast2 (Melbourne, Australia) region. |
+| 2024-09-23 | DICOMweb API floating-point pixel data support |  | DICOMweb API now supports floating-point pixel data and DICOM images with a Bits Allocated value of 1; DICOMweb API now supports floating-point pixel data and DICOM images with a Bits Allocated value of 1. |
+| 2024-08-20 | FHIR Encounter resource full-detail retrieval |  | The FHIR API provides a preview feature to retrieve all details of FHIR Encounter resources. |
+| 2024-07-09 | Cloud Healthcare API dataset encryption with CMEK |  | Cloud Healthcare API datasets can be encrypted using customer-managed encryption keys (CMEK) in general availability; Cloud Healthcare API datasets can be encrypted using customer-managed encryption keys (CMEK) in general availability. |
+| 2024-05-16 | FHIR API GA quota metrics replacing legacy fhir_ops |  | The FHIR API introduces generally available fhir_read_ops, fhir_write_ops, and fhir_search_ops quota metrics, replacing the legacy fhir_ops metric; The FHIR API introduces generally available fhir_read_ops, fhir_write_ops, and fhir_search_ops quota metrics, replacing the legacy fhir_ops metric. |
+| 2024-05-14 | FHIR history bundle import and export via Cloud Storage |  | FHIR resources, including historical versions, can be imported and exported as history bundles via Cloud Storage in preview. |
+| 2024-05-07 | HL7v2 export filtering to Cloud Storage |  | Exporting HL7v2 messages to Cloud Storage now supports a filter option and is generally available in preview; Exporting HL7v2 messages to Cloud Storage now supports a filter option and is generally available in preview. |
+| 2024-03-20 | FHIR data access explanation |  | Cloud Healthcare API adds a Preview feature to explain FHIR data access. |
+| 2024-03-20 | Healthcare Natural Language API Oncology entity mention support |  | The Healthcare Natural Language API adds support for recognizing Oncology entity mentions in text. |
+| 2024-03-20 | Healthcare Natural Language API PHI entity mention support |  | The Healthcare Natural Language API adds support for recognizing Protected Health Information (PHI) entity mentions in text. |
+| 2024-03-20 | Healthcare Natural Language API social determinants of health (SDOH) entity mention support |  | The Healthcare Natural Language API adds support for recognizing Social Determinants of Health (SDOH) entity mentions in text. |
+| 2024-02-01 | DICOM store metrics in Google Cloud Console |  | Users can view DICOM store metrics directly from the Google Cloud console. |
+| 2024-02-01 | HL7v2 store metrics in Google Cloud Console |  | Users can view HL7v2 store metrics directly from the Google Cloud console. |
+| 2024-01-08 | FHIR implementation guide enablement in Google Cloud Console |  | Cloud Healthcare API users can enable FHIR implementation guides from the Google Cloud console. |
+| 2023-12-20 | DICOM RetrieveBulkdata endpoint |  | Cloud Healthcare API adds the DICOM RetrieveBulkdata endpoint in Preview, enabling RetrieveMetadata to return BulkDataURIs for bulkdata tags. |
+| 2023-11-06 | DICOM blob storage settings configuration |  | Cloud Healthcare API introduces preview support for configuring DICOM blob storage settings, including storage class selection for import and storage and storage class changes. |
+| 2023-11-03 | SMART on FHIR connectivity in Cloud Healthcare API |  | Cloud Healthcare API adds Preview support for connecting applications using SMART on FHIR. |
+| 2023-10-26 | FHIR point-in-time recovery (PITR) |  | Cloud Healthcare API makes Recover FHIR resources with PITR available in Preview. |
+| 2023-10-06 | Europe (eu) multi-region support |  | Cloud Healthcare API now offers multi-region support in the Europe (eu) region; Cloud Healthcare API now offers multi-region support in the Europe (eu) region. |
+| 2023-09-25 | FHIR access control with admin cascading policy |  | Cloud Healthcare API added Preview support for FHIR access control using admin cascading policy. |
+| 2023-08-18 | Pub/Sub notifications for DICOM store bulk import |  | Pub/Sub notifications for DICOM store bulk import are now generally available. |
+| 2023-08-14 | FHIR conditional create operation using identifier search parameter |  | The fhir.create conditional operation is generally available using the FHIR identifier search parameter. |
+| 2023-08-14 | FHIR conditional delete operation using identifier search parameter |  | The fhir.conditionalDelete conditional operation is generally available using the FHIR identifier search parameter. |
+| 2023-08-14 | FHIR conditional patch operation using identifier search parameter |  | The fhir.conditionalPatch conditional operation is generally available using the FHIR identifier search parameter. |
+| 2023-08-14 | FHIR conditional update operation using identifier search parameter |  | The fhir.conditionalUpdate conditional operation is generally available using the FHIR identifier search parameter. |
+| 2023-07-31 | Healthcare Natural Language API FHIR R4 bundle output |  | The nlp.analyzeEntities method now supports Healthcare Natural Language API entity extraction output as an additional FHIR R4 Bundle format; The nlp.analyzeEntities method now supports Healthcare Natural Language API entity extraction output as an additional FHIR R4 Bundle format. |
+| 2023-07-07 | DICOM metadata streaming to BigQuery |  | Streaming DICOM metadata to BigQuery is now generally available. |
+| 2023-05-30 | FHIR store notificationConfig object | 2023-05-30 | The notificationConfig object on a FHIR store has been deprecated and replaced by notificationConfigs; deprecated on 2023-05-30. |
+| 2023-04-21 | Cloud Healthcare API single-region support in northamerica-northeast2 |  | Cloud Healthcare API added single-region availability in the northamerica-northeast2 (Toronto) region; Cloud Healthcare API added single-region availability in the northamerica-northeast2 (Toronto) region. |
+| 2023-03-27 | Cloud Healthcare API single-region support in me-west1 |  | Cloud Healthcare API added single-region availability in the me-west1 (Tel Aviv) region; Cloud Healthcare API added single-region availability in the me-west1 (Tel Aviv) region. |
+| 2022-11-08 | V3 HL7v2 store parser version |  | The V3 parser version for HL7v2 stores is now generally available. |
+| 2022-09-30 | Single-region support in asia-east1 and asia-northeast2 |  | Cloud Healthcare API adds single-region availability for the asia-east1 (Taiwan) and asia-northeast2 (Osaka, Japan) regions; Cloud Healthcare API adds single-region availability for the asia-east1 (Taiwan) and asia-northeast2 (Osaka, Japan) regions. |
+| 2022-09-23 | DICOM metadata export includes LastUpdated and Type columns |  | When exporting DICOM metadata to BigQuery, generated tables now include LastUpdated and Type columns that capture instance-deleted metadata; When exporting DICOM metadata to BigQuery, generated tables now include LastUpdated and Type columns that capture instance-deleted metadata. |
+| 2022-06-28 | Single-region support in asia-southeast2 |  | Cloud Healthcare API adds single-region availability for the asia-southeast2 (Jakarta, Indonesia) region; Cloud Healthcare API adds single-region availability for the asia-southeast2 (Jakarta, Indonesia) region. |
+| 2022-06-27 | FHIR viewer large resource search performance improvement |  | FHIR viewer search performance has been improved for large FHIR resources; FHIR viewer search performance has been improved for large FHIR resources. |
+| 2022-06-15 | complexDataTypeReferenceParsing in FHIR store |  | FHIR Store adds the complexDataTypeReferenceParsing field to parse references inside complex FHIR data types, including extensions; FHIR Store adds the complexDataTypeReferenceParsing field to parse references inside complex FHIR data types, including extensions. |
+| 2022-06-01 | FHIR Pub/Sub notifications include full resource payload |  | FHIR resource modification events can now publish the full FHIR resource content in Pub/Sub notifications. |
+| 2022-04-22 | FHIR _content search requires resource type | 2022-05-23 | FHIR searches using the _content parameter without an explicit FHIR resource type are being deprecated; deprecated on 2022-05-23. |
+| 2022-04-22 | FHIR search with _content without resource type | 2022-05-23 | Cloud Healthcare API is deprecating FHIR searches using the _content parameter without specifying a FHIR resource type; deprecated on 2022-05-23. |
+| 2022-04-01 | PATCH requests in FHIR bundles |  | The API now supports specifying PATCH requests inside a FHIR bundle. |
+| 2022-03-31 | Single-region availability in us-east1 (South Carolina) |  | Cloud Healthcare API adds single-region support in the us-east1 (South Carolina) region. |
+| 2022-03-31 | Single-region availability in us-west1 (Oregon) |  | Cloud Healthcare API adds single-region support in the us-west1 (Oregon) region. |
+| 2022-03-31 | Single-region availability in us-west3 (Salt Lake City) |  | Cloud Healthcare API adds single-region support in the us-west3 (Salt Lake City) region. |
+| 2022-03-09 | FHIR store export filtering with _type and _since |  | The fhirStores.export method now accepts _type and _since parameters to filter exported resources. |
+| 2022-02-22 | FHIR-to-BigQuery streaming and export with analytics schema |  | Cloud Healthcare API can now stream and export FHIR resources to BigQuery using the FHIR analytics schema, including repeated extension columns and JSON-string contained resources. |
+| 2022-01-28 | Vertex AI-based Healthcare Natural Language model for medical insights |  | Healthcare Natural Language API now uses Vertex AI with a healthcare-specific model for extracting medical text insights. |
+| 2022-01-12 | FHIR resource validation against profiles |  | Cloud Healthcare API now supports validating a FHIR resource against a specific profile or all profiles defined for a FHIR store. |
+| 2021-11-04 | FHIR base resource validation level via fhirStores.patch |  | The projects.locations.datasets.fhirStores.patch method can now determine the base resource validation level. |
+| 2021-08-18 | Cloud Console interactive quickstart for Cloud Healthcare API |  | An interactive quickstart for Cloud Healthcare API is now available in the Google Cloud Console. |
+| 2021-07-06 | Cloud Healthcare API regional availability in asia-northeast3 |  | The Cloud Healthcare API added single-region availability in the asia-northeast3 (Seoul) region. |
+| 2021-07-06 | Cloud Healthcare API regional availability in europe-west3 |  | The Cloud Healthcare API added single-region availability in the europe-west3 (Frankfurt) region. |
+| 2021-07-06 | Single-region availability in asia-south1 (Mumbai) |  | Cloud Healthcare API adds single-region support in the asia-south1 (Mumbai) region. |
+| 2021-04-23 | Cloud Healthcare API reference patterns documentation |  | Cloud Healthcare API introduced a reference patterns document with sample code and technical reference guides for common use cases. |
+| 2021-02-11 | Healthcare API LRO visibility in Cloud Console |  | It became possible to view in-process long-running operation (LRO) details from the Healthcare Browser in the Cloud Console. |
+| 2021-02-09 | FHIR export writeDisposition configuration |  | The Cloud Healthcare API added support for setting the writeDisposition enum value when exporting FHIR resources. |
+| 2021-02-08 | Bulk HL7v2 message retrieval |  | The Cloud Healthcare API added support for retrieving HL7v2 messages in bulk. |
+| 2021-02-04 | Cloud Healthcare API quickstart documentation for command-line clients |  | The Quickstart using curl or Windows PowerShell was updated with additional guidance for storing and viewing DICOM, FHIR, and HL7v2 data. |
+| 2021-01-29 | Cloud Healthcare API regional availability in us-east4 |  | The Cloud Healthcare API added single-region availability in the us-east4 (North Virginia) region. |
+| 2020-11-26 | CDA XML to JSON conversion (XmlToJson) |  | The Cloud Healthcare API added the XmlToJson tool to convert CDA XML files to JSON. |
+| 2020-11-05 | Cloud Healthcare API regional availability in europe-west6 |  | The Cloud Healthcare API added single-region availability in the europe-west6 (Zurich, Switzerland) region. |
+| 2020-10-12 | WriteDisposition enum support for Healthcare API export methods |  | The WriteDisposition enum can now be used to control overwrite versus append behavior for DICOM, FHIR, and annotation store export operations. |
+| 2020-10-08 | Healthcare API Consent Management API beta launch |  | The Cloud Healthcare API made the Consent Management API available in beta. |
+| 2020-10-07 | Cloud Healthcare API single-region support in australia-southeast1 |  | The Cloud Healthcare API added single-region support in the australia-southeast1 (Sydney, Australia) region. |
+| 2020-10-07 | Cloud Healthcare API single-region support in southamerica-east1 |  | The Cloud Healthcare API added single-region support in the southamerica-east1 (Osasco, Brazil) region. |
+| 2020-09-17 | HL7v2 store ParserVersion configuration with V2 parser |  | Cloud Healthcare API HL7v2 stores now support configuring ParserVersion, including a new V2 unschematized parser that includes every non-empty message field according to HL7v2. |
+| 2020-09-08 | Healthcare API location IAM permissions |  | The new IAM permissions healthcare.locations.get and healthcare.locations.list were added and are required by the API’s GetLocation and ListLocations methods. |
+| 2020-08-03 | HL7v2 message import from Cloud Storage |  | Cloud Healthcare API now supports importing HL7v2 messages from Cloud Storage. |
+| 2020-06-08 | In-console de-identification in Healthcare Browser |  | The Healthcare Browser in Google Cloud Console now allows users to de-identify data directly within the Cloud Healthcare interface. |
+| 2020-06-02 | Healthcare Browser DICOM import from Cloud Storage |  | The Cloud Healthcare Browser now supports importing DICOM data from Cloud Storage. |
+| 2020-06-02 | Healthcare Browser DICOM import/export with BigQuery |  | The Cloud Healthcare Browser now supports importing DICOM data to BigQuery and exporting DICOM data from BigQuery. |
+| 2020-05-29 | Cloud Healthcare API single-region support in asia-east2 |  | The Cloud Healthcare API added single-region support in the asia-east2 (Hong Kong) region. |
+| 2020-04-23 | Cloud Healthcare API v1 code samples |  | Code samples for Cloud Healthcare API v1 were published for Go, Java, Node.js, and Python. |
+| 2020-04-07 | Cloud Healthcare API v1 general availability |  | Cloud Healthcare API reached general availability with release version v1. |
+| 2020-04-07 | FHIR store BigQuery change export via streamConfigs |  | FHIR stores can now export resource changes to BigQuery on create, update, patch, and delete events using a new streamConfigs field. |
+| 2020-04-07 | HL7v2 store multi-topic Pub/Sub notifications |  | HL7v2 stores can now be configured with multiple Pub/Sub topics and message filters to route notifications to different topics. |
+| 2020-02-10 | executeBundle audit logging |  | Execution of the executeBundle operation now emits logging records. |
+| 2020-02-10 | FHIR store access control changes |  | FHIR store permission rules were updated so API-level access no longer implies configuration read access and executeBundle no longer implies create, update, delete, or get permissions. |
+| 2020-02-10 | FHIR store version support |  | Cloud Healthcare API FHIR stores now support the major FHIR release versions DSTU2, STU3, and R4 during creation. |
+| 2019-10-24 | Filter-based de-identification for DICOM and FHIR |  | The API introduced filter-based de-identification options for both DICOM and FHIR data. |
+| 2019-10-24 | Store-level DICOM/FHIR de-identification |  | Cloud Healthcare API added support for configuring de-identification at the individual DICOM and FHIR store level. |
+| 2019-09-16 | Single-region expansion to asia-southeast1 and us-west2 |  | Cloud Healthcare API added single-region availability in Singapore (asia-southeast1) and Los Angeles (us-west2). |
+| 2019-09-12 | Cloud Healthcare API gcloud beta commands |  | Cloud Healthcare API tooling support was added to the Google Cloud CLI (gcloud) beta commands. |
+| 2019-08-13 | DICOM de-identification UID preservation option |  | DICOM de-identification gained an option to avoid automatically regenerating UIDs such as StudyInstanceUID, SeriesInstanceUID, and SOPInstanceUID. |
+| 2019-07-26 | Single-region expansion to asia-northeast1 |  | Cloud Healthcare API added single-region availability in the asia-northeast1 (Tokyo) region. |
+| 2019-07-15 | Single-region expansion to europe-west4 |  | Cloud Healthcare API added single-region availability in europe-west4 (Netherlands). |
+| 2019-07-10 | Multi-region expansion to us |  | Cloud Healthcare API added multi-region service availability for the US (united states) location. |
+| 2019-06-19 | Lossless DICOM de-identification output support |  | DICOM de-identification now supports lossless image output quality when lossless input formats are provided. |
+| 2019-04-04 | and FHIR stores |  | User labels were added to DICOM, HL7v2, and FHIR stores to support resource filtering and billing charge views by label. |
+| 2019-04-04 | Cloud Healthcare API |  | Cloud Healthcare API was announced in public beta as a managed Google Cloud platform for storing and accessing healthcare data. |
+| 2019-04-04 | Cloud Healthcare API Google Cloud Console UI |  | The Google Cloud Console gained a user interface for managing Cloud Healthcare datasets and stores, permissions, and long-running operations. |
+| 2019-04-04 | DICOM fuzzy patient-name matching |  | DICOM search now supports fuzzy matching on patient names. |
+| 2019-04-04 | DICOM QIDO-RS result pagination |  | The DICOM QIDO-RS API now supports paginated query results. |
+| 2019-04-04 | DICOM transfer syntax transcoding expansion |  | DICOM transcoding support was expanded to additional transfer syntaxes, including lossless JPEG. |
+| 2019-04-04 | DICOMweb performance improvements |  | DICOMweb performance in Cloud Healthcare API was improved. |
+| 2019-04-04 | Expanded DICOM/FHIR de-identification configuration |  | Cloud Healthcare API introduced additional de-identification configuration options for DICOM and FHIR data, including more control over resource handling. |
+| 2019-04-04 | HL7v2 |  | User labels were added to DICOM, HL7v2, and FHIR stores to support resource filtering and billing charge views by label. |
+| 2019-04-04 | Single-part DICOM STOW-RS requests |  | The API now supports single-part STOW-RS requests to avoid client-side multipart header handling. |
+| 2019-04-04 | Single-part DICOM WADO-RS requests |  | The API now supports single-part WADO-RS requests to avoid client-side multipart header handling. |
+| 2019-04-04 | User labels for DICOM |  | User labels were added to DICOM, HL7v2, and FHIR stores to support resource filtering and billing charge views by label. |
+
+Source file slug: `cloud-healthcare-api.md`
+

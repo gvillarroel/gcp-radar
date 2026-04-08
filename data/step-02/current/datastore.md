@@ -1,0 +1,102 @@
+# Datastore
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 87
+Unique features: 88
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-03-23 | Private Service Connect support for Datastore API endpoints |  | Private Service Connect can be used to connect to Datastore API regional and multi-regional endpoints. |
+| 2026-03-23 | Regional and multi-regional Datastore API endpoints |  | Datastore API endpoints can be targeted regionally or multi-regionally so requests stay within the same location as the database. |
+| 2026-02-02 | Database status column in Google Cloud console |  | The Firestore databases page in the Google Cloud console shows a status column for database lifecycle and operation states. |
+| 2025-10-27 | Database clone |  | Database clone lets you create a new database from an existing database state; Database clone lets you create a new database from an existing database at a selected timestamp. |
+| 2025-09-02 | Query insights |  | Query insights provides query performance metrics for a database; Query insights provides query performance metrics for a database. |
+| 2025-04-22 | Committed use discounts |  | Committed use discounts provide discounted pricing for sustained read, write, and delete spend commitments. |
+| 2025-03-24 | Location support: nam7 |  | Firestore in Datastore mode supports the nam7 multi-region in the United States Central and East geography. |
+| 2025-03-04 | Location support: europe-north2 |  | Firestore in Datastore mode supports the europe-north2 Stockholm region. |
+| 2024-11-22 | Active Assist reliability recommendations |  | Active Assist provides recommendations and insights to improve database reliability. |
+| 2024-11-18 | Location support: northamerica-south1 |  | Firestore in Datastore mode supports the northamerica-south1 Queretaro region. |
+| 2024-11-06 | Managed bulk delete service |  | The managed bulk delete service deletes entities in bulk. |
+| 2024-10-02 | Property transforms in REST API |  | The REST API supports property transforms such as increment operations. |
+| 2024-10-01 | Client-side tracing for Java client library |  | The Java client library supports client-side tracing for Firestore in Datastore mode. |
+| 2024-10-01 | Customer-managed encryption keys (CMEK) |  | Customer-managed encryption keys let Datastore data be protected with user-managed encryption keys; Customer-managed encryption keys let Datastore data be protected with user-managed encryption keys. |
+| 2024-07-29 | Range and inequality filters on multiple fields |  | Queries can apply range and inequality filters across multiple fields; Queries can apply range and inequality filters across multiple fields. |
+| 2024-06-28 | Scheduled backups |  | Scheduled backups automatically create backups on a schedule; Scheduled backups automatically create backups on a schedule. |
+| 2024-04-29 | Location support: us-south1 |  | Firestore in Datastore mode supports the us-south1 Dallas region. |
+| 2024-04-08 | Location support: africa-south1 |  | Firestore in Datastore mode supports the africa-south1 Johannesburg region. |
+| 2024-04-08 | Location support: europe-north1 |  | Firestore in Datastore mode supports the europe-north1 Finland region. |
+| 2024-04-08 | Location support: europe-southwest1 |  | Firestore in Datastore mode supports the europe-southwest1 Madrid region. |
+| 2024-04-08 | Location support: europe-west10 |  | Firestore in Datastore mode supports the europe-west10 Berlin region. |
+| 2024-04-08 | Location support: europe-west12 |  | Firestore in Datastore mode supports the europe-west12 Turin region. |
+| 2024-04-08 | Location support: europe-west8 |  | Firestore in Datastore mode supports the europe-west8 Milan region. |
+| 2024-04-08 | Location support: southamerica-west1 |  | Firestore in Datastore mode supports the southamerica-west1 Santiago region. |
+| 2024-04-08 | Location support: us-central1 |  | Firestore in Datastore mode supports the us-central1 Iowa region. |
+| 2024-04-08 | Location support: us-east5 |  | Firestore in Datastore mode supports the us-east5 Columbus region. |
+| 2024-03-27 | Query Explain |  | Query Explain returns query plans and billing and performance statistics for query execution. |
+| 2024-03-05 | Firestore emulator support for Datastore mode |  | The Firestore emulator can be used to test Firestore in Datastore mode behavior. |
+| 2024-01-29 | Cloud Functions (2nd gen) event support |  | Firestore in Datastore mode supports Eventarc and Firestore events for Cloud Functions 2nd gen; Firestore in Datastore mode supports Eventarc and Firestore in Datastore mode events for Cloud Functions 2nd gen. |
+| 2024-01-10 | Multiple databases per project |  | A project can contain multiple Firestore in Datastore mode databases; A project can contain multiple Firestore in Datastore mode databases. |
+| 2024-01-02 | Location support: europe-west1 |  | Firestore in Datastore mode supports the europe-west1 Belgium region. |
+| 2024-01-02 | Location support: me-central2 |  | Firestore in Datastore mode supports the me-central2 Dammam region. |
+| 2023-12-20 | Index scans in Key Visualizer |  | Key Visualizer can display index scan activity. |
+| 2023-12-15 | Non-default database management in Google Cloud console |  | The Google Cloud console can create and delete non-default databases. |
+| 2023-11-10 | Point-in-time recovery (PITR) |  | Point-in-time recovery protects against accidental deletion or writes by enabling recovery to an earlier point in time; Point-in-time recovery protects against accidental deletion or writes by enabling recovery to an earlier point in time. |
+| 2023-09-25 | Location support: europe-west9 |  | Firestore in Datastore mode supports the europe-west9 Paris region. |
+| 2023-09-25 | Location support: me-central1 |  | Firestore in Datastore mode supports the me-central1 Doha region. |
+| 2023-09-25 | Location support: me-west1 |  | Firestore in Datastore mode supports the me-west1 Tel Aviv region. |
+| 2023-08-28 | Aggregation functions: sum and avg |  | Aggregation queries support the sum and avg functions. |
+| 2023-08-25 | Multiple database visibility in Google Cloud console |  | The Google Cloud console can view and list multiple databases. |
+| 2023-08-07 | Key Visualizer heatmap for entity keys |  | Key Visualizer can visualize heatmap patterns for entity keys to help predict workload patterns. |
+| 2023-07-11 | Location support: northamerica-northeast2 |  | Firestore in Datastore mode supports the northamerica-northeast2 Toronto region. |
+| 2023-05-23 | Location support: asia-south2 |  | Firestore in Datastore mode supports the asia-south2 Delhi region. |
+| 2023-04-24 | Aggregation function: count |  | Aggregation queries support the count function; Aggregation queries support the count function. |
+| 2023-04-14 | Regional endpoints |  | Regional endpoints let Firestore in Datastore mode API traffic be directed to regional endpoints. |
+| 2023-03-24 | OR queries |  | Queries can combine conditions with OR logic. |
+| 2023-03-13 | Location support: europe-west4 |  | Firestore in Datastore mode supports the europe-west4 Netherlands region. |
+| 2022-12-19 | Location support: australia-southeast2 |  | Firestore in Datastore mode supports the australia-southeast2 Melbourne region. |
+| 2022-10-11 | Time-to-live (TTL) policies |  | Time-to-live policies automatically expire and delete data based on configured retention rules; Time-to-live policies automatically expire and delete data based on configured retention rules. |
+| 2022-09-30 | Entity editing in Google Cloud console | 2022-09-30 | The Google Cloud console provides pages for editing an entity; deprecated on 2022-09-30. |
+| 2022-06-29 | and NOT_IN query filters |  | Queries support the not-equal, IN, and NOT_IN filter operators in client libraries; Queries support the not-equal, IN, and NOT_IN filter operators in the console and client libraries. |
+| 2022-06-29 | IN |  | Queries support the not-equal, IN, and NOT_IN filter operators in client libraries; Queries support the not-equal, IN, and NOT_IN filter operators in the console and client libraries. |
+| 2022-06-29 | Not-equal |  | Queries support the not-equal, IN, and NOT_IN filter operators in client libraries; Queries support the not-equal, IN, and NOT_IN filter operators in the console and client libraries. |
+| 2022-06-01 | VPC Service Controls |  | VPC Service Controls provides service perimeter protection for Datastore resources; VPC Service Controls provides service perimeter protection for Datastore resources. |
+| 2022-04-28 | Custom IAM roles for datastore.databases.getMetadata |  | The datastore.databases.getMetadata permission can be used in custom IAM roles to support operations such as unlinking a database from App Engine. |
+| 2021-12-15 | Key Visualizer for Datastore |  | Key Visualizer for Datastore provides heatmap-style analysis of Datastore key and performance patterns. |
+| 2021-11-04 | Data Access audit logs |  | Data Access audit logs record DATA_READ and DATA_WRITE operations for Datastore; Data Access audit logs record DATA_READ and DATA_WRITE operations for Datastore. |
+| 2021-06-15 | Custom IAM roles |  | Custom IAM roles let you define Datastore access using user-defined role compositions. |
+| 2021-06-14 | Regional availability: asia-east1 |  | Datastore is available in the asia-east1 region. |
+| 2021-06-14 | Regional availability: asia-southeast1 |  | Datastore is available in the asia-southeast1 region. |
+| 2021-06-14 | Regional availability: us-west1 |  | Datastore is available in the us-west1 region. |
+| 2021-05-13 | Import and export operation history in Google Cloud Console |  | The Google Cloud Console can display recent Datastore import and export operations. |
+| 2021-04-13 | Regional availability: europe-central2 |  | Datastore is available in the europe-central2 region. |
+| 2020-09-16 | Export and import billing label |  | The goog-firestoremanaged billing report label identifies costs for Datastore export and import operations. |
+| 2020-06-08 | Regional availability: asia-southeast2 |  | Datastore is available in the asia-southeast2 region. |
+| 2020-04-20 | Regional availability: us-west4 |  | Datastore is available in the us-west4 region. |
+| 2020-03-11 | Regional availability: asia-northeast3 |  | Datastore is available in the asia-northeast3 region. |
+| 2020-03-11 | Regional availability: us-west3 |  | Datastore is available in the us-west3 region. |
+| 2020-02-13 | Index configuration via REST API |  | Datastore indexes can be configured using the REST API. |
+| 2019-11-18 | Managed export and import in Google Cloud Console |  | The Google Cloud Console can start managed Datastore export and import operations. |
+| 2019-04-18 | Regional availability: asia-northeast2 |  | Datastore is available in the asia-northeast2 region. |
+| 2019-04-15 | Regional availability: europe-west6 |  | Datastore is available in the europe-west6 region. |
+| 2019-01-31 | Cloud Firestore in Datastore mode |  | Cloud Firestore in Datastore mode provides Datastore API compatibility on the Cloud Firestore storage layer; Cloud Firestore in Datastore mode lets applications use Datastore client libraries on an improved Cloud Firestore storage layer. |
+| 2018-10-22 | Regional availability: asia-east2 |  | Datastore is available in the asia-east2 region. |
+| 2018-07-10 | Regional availability: us-west2 |  | Datastore is available in the us-west2 region. |
+| 2018-02-28 | Cloud Datastore Administration API v1 |  | Cloud Datastore Administration API v1 provides Datastore administration operations such as export and import; Cloud Datastore Administration API v1 provides export, import, and long-running operation management for Datastore. |
+| 2018-02-28 | Cloud Datastore Administration API v1beta1 | 2018-02-28 | Cloud Datastore Administration API v1beta1 is an older administration API version for Datastore; deprecated on 2018-02-28. |
+| 2018-02-28 | Datastore Admin backup | 2019-02-28 | Datastore Admin backup is the legacy backup capability being replaced by managed export and import; deprecated on 2019-02-28. |
+| 2018-01-30 | Transaction retry with previousTransaction |  | The Datastore Data API supports specifying previousTransaction when retrying a read-write transaction. |
+| 2018-01-30 | TransactionOptions for read-only and read-write transactions |  | TransactionOptions lets Datastore Data API clients choose read-only or read-write transaction behavior. |
+| 2018-01-10 | Regional availability: northamerica-northeast1 |  | Datastore is available in the northamerica-northeast1 region. |
+| 2017-10-31 | Regional availability: asia-south1 |  | Datastore is available in the asia-south1 region. |
+| 2017-09-05 | Regional availability: southamerica-east1 |  | Datastore is available in the southamerica-east1 region. |
+| 2017-08-01 | Regional availability: europe-west3 |  | Datastore is available in the europe-west3 region. |
+| 2017-07-18 | Regional availability: australia-southeast1 |  | Datastore is available in the australia-southeast1 region. |
+| 2017-06-06 | Regional availability: europe-west2 |  | Datastore is available in the europe-west2 region. |
+| 2016-08-16 | Cloud Datastore API v1 |  | Cloud Datastore API v1 is the general Datastore API for application access. |
+| 2016-08-16 | Cloud Datastore API v1beta3 | 2016-08-16 | Cloud Datastore API v1beta3 is an older beta version of the Datastore API; deprecated on 2016-08-16. |
+
+Source file slug: `datastore.md`
+

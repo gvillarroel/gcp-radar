@@ -1,0 +1,2296 @@
+{
+  "schema_version": "step-03-url-score-v1",
+  "generated_at": "2026-04-08T17:20:48.760Z",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "step02_source_path": "data/step-02/current/eventarc.md",
+  "rounds": 3,
+  "search_count": 8,
+  "reprocess_requested": false,
+  "pi_model": "",
+  "dominant_doc_family": "eventarc",
+  "dominant_python_slug": "eventarc",
+  "dominant_java_slug": "google-cloud-eventarc-publishing",
+  "candidates_scored_by_api": 18,
+  "search_runs": [
+    {
+      "round": 1,
+      "intent": "api_reference",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\"",
+      "official_result_count": 5,
+      "results": [
+        {
+          "title": "Configure event-driven function retries | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/tips/function-retries?authuser=2",
+          "description": "Refer to the Eventarc documentation on retry events. Pub/Sub defaults to using the immediate redelivery policy for all subscriptions. Refer to the Pub/Sub documentation on handling message failures and retry requests. Functions created using the Cloud Functions v2 API, for example, using the Cloud Functions gcloud CLI, the REST API, or Terraform, will create and manage event triggers on your behalf.",
+          "rank": 1
+        },
+        {
+          "title": "Create an event handler that receives and processes a Pub/Sub message event | Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/samples/eventarc-pubsub-handler",
+          "description": "To authenticate to Eventarc, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. // Sample pubsub is a Cloud Run service which handles Pub/Sub messages. package main import ( &quot;encoding/json&quot; &quot;fmt&quot; &quot;log&quot; &quot;net/http&quot; &quot;os&quot; ) // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Message struct { Data []byte `json:&quot;data,omitempty&quot;` ID string `json:&quot;id&quot;` } `json:&quot;message&quot;` Subscription string `json:&quot;subscription&quot;` } // HelloEventsPubSub receives and processes a Pub/Sub push message.",
+          "rank": 2
+        },
+        {
+          "title": "Develop event receivers | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/event-receivers",
+          "description": "// See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Message struct { Data []byte `json:&quot;data,omitempty&quot;` ID string `json:&quot;id&quot;` } `json:&quot;message&quot;` Subscription string `json:&quot;subscription&quot;` } // HelloEventsPubSub receives and processes a Pub/Sub push message.",
+          "rank": 3
+        },
+        {
+          "title": "Trigger functions from log entries | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/triggering/trigger-functions-from-log-entries",
+          "description": "// Package log contains examples for handling Cloud Functions logs. package log import ( &quot;context&quot; &quot;log&quot; ) // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Data []byte `json:&quot;data&quot;` } // ProcessLogEntry processes a Pub/Sub message from Cloud Logging.",
+          "rank": 4
+        },
+        {
+          "title": "Cloud Pub/Sub (2nd Gen) | Cloud Run functions | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/functions/docs/samples/functions-cloudevent-pubsub",
+          "description": "// Package helloworld provides a set of Cloud Functions samples. package helloworld import ( &quot;context&quot; &quot;fmt&quot; &quot;log&quot; &quot;github.com/GoogleCloudPlatform/functions-framework-go/functions&quot; &quot;github.com/cloudevents/sdk-go/v2/event&quot; ) func init() { functions.CloudEvent(&quot;HelloPubSub&quot;, helloPubSub) } // MessagePublishedData contains the full Pub/Sub message // See the documentation for more details: // https://cloud.google.com/eventarc/docs/cloudevents#pubsub type MessagePublishedData struct { Message PubSubMessage } // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Data []byte `json:&quot;data&quot;` } // helloPubSub consumes a CloudEvent message and extracts the Pub/Sub message.",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Eventarc\" official documentation OR site:developers.google.com \"eventarc\" official documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Trigger Cloud Run with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-events",
+          "description": "<strong>By default, when you create a Pub/Sub trigger, Eventarc creates a topic under the covers for you to use as a transport topic between your application and a Cloud Run service</strong>. This is useful to easily and quickly create a Pub/Sub backed trigger but sometimes you want might to use an existing topic.",
+          "rank": 1
+        },
+        {
+          "title": "Build an event-driven orchestration with Eventarc and Workflows | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-event-driven-orchestration",
+          "description": "<strong>The source code of the application is in the processing-pipelines folder of the eventarc-samples repo</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Trigger Kubernetes services with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/eventarc-events-gke",
+          "description": "You can check the documentation page on events supported by Eventarc.You can also explore the events using gcloud.",
+          "rank": 3
+        },
+        {
+          "title": "Triggering Workflows with Eventarc | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/eventarc-workflows-cloud-run",
+          "description": "Learn how to configure Eventarc to trigger Workflows that integrate with Cloud Run and Pub/Sub to execute a customer rewards business process.",
+          "rank": 4
+        },
+        {
+          "title": "Triggering Event Processing from Cloud Storage using Eventarc and Cloud Run functions | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/triggering-cloud-functions-from-cloud-storage",
+          "description": "Learn how to use Cloud Storage bucket events to trigger Cloud Run functions with Eventarc to analyze data and process images using Google’s Vision API and save the resulting image information as object metadata in Cloud Storage.",
+          "rank": 5
+        },
+        {
+          "title": "Configuring Eventarc to trigger Workflows that integrate with GKE Autopilot and Pub/Sub | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/eventarc-workflows-gke-autopilot",
+          "description": "Learn how to configure Eventarc to trigger Workflows that integrate with GKE Autopilot and Pub/Sub to execute a customer rewards business process.",
+          "rank": 6
+        },
+        {
+          "title": "Eventarc API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/eventarc/v1?hl=Zh-TW",
+          "description": "This page contains information about getting started with the Eventarc API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
+          "rank": 7
+        },
+        {
+          "title": "Getting started with Cloud Run functions | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-starting-cloudfunctions-v2",
+          "description": "To use Cloud Audit Log functions, you must enable Audit Logs for Eventarc.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/roles-permissions",
+          "description": "<strong>By default, this role includes the permissions necessary for full access to most Google Cloud resources</strong>. Otherwise, required roles must be granted by an administrator on the appropriate resource to the appropriate principal (also known as a member).",
+          "rank": 1
+        },
+        {
+          "title": "Roles and permissions for Workflows targets | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions",
+          "description": "<strong>By default, this role includes the permissions necessary for full access to most Google Cloud resources</strong>. Otherwise, required roles must be granted by an administrator on the appropriate resource to the appropriate principal (also known as a member).",
+          "rank": 2
+        },
+        {
+          "title": "Eventarc roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/eventarc",
+          "description": "This page lists the IAM roles and permissions for Eventarc.",
+          "rank": 3
+        },
+        {
+          "title": "Roles and permissions for an internal HTTP endpoint in a VPC network | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal",
+          "description": "<strong>By default, this role includes the permissions necessary for full access to most Google Cloud resources</strong>. Otherwise, required roles must be granted by an administrator on the appropriate resource to the appropriate principal (also known as a member).",
+          "rank": 4
+        },
+        {
+          "title": "All roles and permissions | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/all-roles-permissions",
+          "description": "Grant Identity and Access Management (IAM) roles to service accounts so that Eventarc can receive events from sources, and deliver the events to a target workflow.",
+          "rank": 5
+        },
+        {
+          "title": "Access control with IAM | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+          "description": "The following table lists the Eventarc predefined IAM roles with a corresponding list of all the permissions each role includes. The predefined roles address most typical use cases. If your use case isn&#x27;t covered by the predefined roles, you can create an IAM custom role. For more information on Eventarc Standard roles and permissions, see All roles and permissions.",
+          "rank": 6
+        },
+        {
+          "title": "Support a cross-project service account | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/use-cross-project-service-account",
+          "description": "Grant roles and permissions so that you can create an Eventarc trigger using a cross-project service account.",
+          "rank": 7
+        },
+        {
+          "title": "Route Transcoder API events to Workflows | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/route-trigger-transcoder",
+          "description": "Enable the Eventarc, Eventarc Publishing, Workflows, and Workflow Executions APIs. ... If applicable, enable the API related to the direct events. For example, for Transcoder API events, enable the Transcoder API API. If you don&#x27;t already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for a target workflow.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "java_client",
+      "query": "site:docs.cloud.google.com/java/docs/reference \"Eventarc\"",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Class PublisherClient (0.81.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient",
+          "description": "Service Description: <strong>Eventarc</strong> processes events generated by an event provider and delivers them to a subscriber.",
+          "rank": 1
+        },
+        {
+          "title": "Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview",
+          "description": "Eventarc Publishing Description: <strong>Lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Class CloudEvent.Builder (0.82.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.CloudEvent.Builder",
+          "description": "map&lt;string, .google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue&gt; attributes = 5 [(.google.api.field_behavior) = OPTIONAL];",
+          "rank": 3
+        },
+        {
+          "title": "Class ListChannelsRequest (1.78.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc/latest/com.google.cloud.eventarc.v1.ListChannelsRequest",
+          "description": "Protobuf type google.cloud.eventarc.v1.ListChannelsRequest",
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "product_docs",
+      "query": "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Eventarc documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs",
+          "description": "<strong>Eventarc lets you build event-driven architectures without having to implement, customize, or maintain the underlying infrastructure</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Eventarc overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/overview",
+          "description": "Eventarc is offered in two editions: Eventarc Advanced and Eventarc Standard. Both editions offer a scalable, serverless, and fully managed eventing solution that lets you asynchronously route messages from sources to targets using loosely coupled services that are triggered by and react to state changes known as events. Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you.",
+          "rank": 2
+        },
+        {
+          "title": "Eventarc Standard documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs?hl=en",
+          "description": "<strong>Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services</strong>. ... Use Eventarc to listen to events from Cloud Pub/Sub, Cloud Storage, and Audit Logs and pass ...",
+          "rank": 3
+        },
+        {
+          "title": "Google event types supported by Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/event-types",
+          "description": "Eventarc Standard supports the following Google event types: ... Note: Google Cloud IoT Core was retired on August 16, 2023, and Cloud IoT events were deprecated at that time.",
+          "rank": 4
+        },
+        {
+          "title": "Eventarc Standard overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
+          "description": "When triggered, Eventarc Standard routes these events to various destinations (in this document, see Event destinations) while managing delivery, security, authorization, observability, and error-handling for you. You can manage Eventarc from the Google Cloud console, from the command line ...",
+          "rank": 5
+        },
+        {
+          "title": "Eventarc Advanced overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs/overview",
+          "description": "<strong>All Eventarc resources must belong to a Google Cloud project</strong>. However, there is no requirement for the provider (event source), bus (administrator), and pipeline (event target) to be in the same project.",
+          "rank": 6
+        },
+        {
+          "title": "Eventarc Advanced documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs",
+          "description": "Unify and centralize orchestration of event-driven and message-based architectures in Google Cloud.",
+          "rank": 7
+        },
+        {
+          "title": "Use Eventarc to receive events from Cloud Storage | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+          "description": "<strong>Create an Eventarc trigger that routes events from the Cloud Storage bucket to the Cloud Run service</strong>. Generate an event by uploading a file to the Cloud Storage bucket and view the event in the Cloud Run logs.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "python_client",
+      "query": "site:docs.cloud.google.com/python/docs/reference \"Eventarc\"",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Python Client for Eventarc bookmark_border",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest",
+          "description": "Eventarc: <strong>lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/changelog",
+          "description": "[google-cloud-eventarc] upgrade gRPC service registration func An update to Go gRPC Protobuf generation will change service registration function signatures to use an interface instead of a concrete type in generated .pb.go service files. This change should affect very few client library users.",
+          "rank": 2
+        },
+        {
+          "title": "Package types (1.17.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.types",
+          "description": "A GoogleChannelConfig is a resource that stores the custom settings respected by <strong>Eventarc</strong> first-party triggers in the matching region.",
+          "rank": 3
+        },
+        {
+          "title": "Class LogSeverity (1.19.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.types.LoggingConfig.LogSeverity",
+          "description": "The different severities for logging supported by <strong>Eventarc</strong> Advanced resources. This enum is an exhaustive list of log severities and is FROZEN.",
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "api_reference",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"APIs and reference\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "APIs and references | Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/apis",
+          "description": "Get started with the Cloud Client Libraries for the Eventarc API. Reference for the Eventarc gcloud CLI. Reference for the Eventarc gcloud CLI (beta). ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are ...",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Eventarc\" reference OR site:developers.google.com \"eventarc\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Trigger Cloud Run with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-events",
+          "description": "<strong>Eventarc makes it easy to connect various services (Cloud Run, Cloud Functions, Workfklows) with events from a variety of sources</strong>. It allows you to build event-driven architectures in which microservices are loosely coupled and distributed.",
+          "rank": 1
+        },
+        {
+          "title": "Triggering Event Processing from Cloud Storage using Eventarc and Cloud Run functions | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/triggering-cloud-functions-from-cloud-storage",
+          "description": "Grant the eventarc.eventReceiver role to allow receive events from providers:",
+          "rank": 2
+        },
+        {
+          "title": "Triggering Workflows with Eventarc | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/eventarc-workflows-cloud-run",
+          "description": "In this lab, you will create an Eventarc trigger that connects a Pub/Sub topic to the Workflows service. Eventarc allows you to decouple service to service communication - making your solution more extensible and event-driven. You will create a workflow that includes multiple steps to execute a business process to calculate customer reward points for ordering at Cymbal Eats.",
+          "rank": 3
+        },
+        {
+          "title": "Build an event-driven orchestration with Eventarc and Workflows | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-event-driven-orchestration",
+          "description": "<strong>The source code of the application is in the processing-pipelines folder of the eventarc-samples repo</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Trigger Kubernetes services with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/eventarc-events-gke",
+          "description": "In this codelab, you will use Eventarc to read events from Pub/Sub, Cloud Storage and Cloud Audit Logs and pass them to a Kubernetes service running on Google Kubernetes Engine (GKE).",
+          "rank": 5
+        },
+        {
+          "title": "Configuring Eventarc to trigger Workflows that integrate with GKE Autopilot and Pub/Sub | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/eventarc-workflows-gke-autopilot",
+          "description": "In this lab, you will create an Eventarc trigger that connects a Pub/Sub topic to the Workflows service. Eventarc allows you to decouple service to service communication - making your solution more extensible and event-driven. You will create a workflow that includes multiple steps to execute a business process to calculate customer reward points for ordering at Cymbal Eats.",
+          "rank": 6
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/eventarc/v1",
+          "description": "Google.Apis.Eventarc.v1 · Eventarc API v1 · Google.Apis.FactCheckTools.v1alpha1 · Fact Check Tools API v1alpha1 · Google.Apis.Fcmdata.v1beta1 · Firebase Cloud Messaging Data API v1beta1 · Google.Apis.FirebaseAppDistribution.v1 · Firebase App Distribution API v1 ·",
+          "rank": 7
+        },
+        {
+          "title": "Route Datadog monitoring alerts to Google Cloud with Eventarc (Part 1) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-route-datadog-eventarc-part-one",
+          "description": "In this codelab, you will learn how to route Datadog monitoring alerts to Google Cloud with Eventarc.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Access control with IAM | Eventarc Advanced | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs/access-control",
+          "description": "Eventarc uses <strong>Identity and Access Management (IAM)</strong> for access control.",
+          "rank": 1
+        },
+        {
+          "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/roles-permissions",
+          "description": "This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud and other sources to Cloud Run services using Eventarc.",
+          "rank": 2
+        },
+        {
+          "title": "Roles and permissions for Workflows targets | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions",
+          "description": "This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud and other sources to target workflows using Eventarc.",
+          "rank": 3
+        },
+        {
+          "title": "Access control with IAM | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+          "description": "Eventarc uses <strong>Identity and Access Management (IAM)</strong> for access control.",
+          "rank": 4
+        },
+        {
+          "title": "Control publishing access | Eventarc Advanced | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs/control-publishing-access",
+          "description": "Each access policy is a set of rules that lets you identify principals and define conditions which determine the applicability of a rule, and that lets you enable fine-grained access control. For example, depending on the evaluation of a Common Expression Language (CEL) expression applied to an event context attribute, you can allow or deny the permission to publish a subset of event messages to an Eventarc Advanced bus.",
+          "rank": 5
+        },
+        {
+          "title": "Roles and permissions for an internal HTTP endpoint in a VPC network | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal",
+          "description": "This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud to an internal HTTP endpoint in a Virtual Private Cloud (VPC) network using Eventarc.",
+          "rank": 6
+        },
+        {
+          "title": "Troubleshoot issues | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/troubleshooting",
+          "description": "Otherwise, verify that it has Eventarc Service Agent role. A service agent acts as the identity of a given Google Cloud service for a particular project. For more information, see Service agents and view the Identity and Access Management (IAM) permissions for the Eventarc Service Agent role (roles/eventarc.serviceAgent).",
+          "rank": 7
+        },
+        {
+          "title": "Package google.iam.v1 | Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/reference/rpc/google.iam.v1",
+          "description": "Access control is <strong>applied when a principal (user or service account), takes some action on a resource exposed by a service</strong>. Resources, identified by URI-like names, are the unit of access control specification.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "java_client",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"Java client libraries\"",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview",
+          "description": "Eventarc Publishing Description: <strong>Lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>. In order to use this library, you first need to go through the ...",
+          "rank": 1
+        },
+        {
+          "title": "Class ListChannelsRequest (1.78.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc/latest/com.google.cloud.eventarc.v1.ListChannelsRequest",
+          "description": "Protobuf type google.cloud.eventarc.v1.ListChannelsRequest",
+          "rank": 2
+        },
+        {
+          "title": "Class PublisherClient (0.81.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient",
+          "description": "<strong>ChannelConnection is a first-class Eventarc resource that is created and managed by the partner in their Google Cloud project</strong>. A ChannelConnection represents a connection between a partner and a subscriber&#x27;s Channel.",
+          "rank": 3
+        },
+        {
+          "title": "Class CloudEvent.Builder (0.82.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.CloudEvent.Builder",
+          "description": "Protobuf type google.cloud.eventarc.publishing.v1.CloudEvent · Object &gt; AbstractMessageLite.Builder&lt;MessageType,BuilderType&gt; &gt; AbstractMessage.Builder&lt;BuilderType&gt; &gt; GeneratedMessageV3.Builder &gt; CloudEvent.Builder · CloudEventOrBuilder ·",
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "product_docs",
+      "query": "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Eventarc overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/overview",
+          "description": "Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you. Note that the underlying data model for both editions of Eventarc is the same. As a use case grows in complexity, you have the option of seamlessly transitioning from using Eventarc Standard to using Eventarc Advanced. The following is an overview of both editions.",
+          "rank": 1
+        },
+        {
+          "title": "Eventarc documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs",
+          "description": "Eventarc <strong>lets you build event-driven architectures without having to implement, customize, or maintain the underlying infrastructure</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Eventarc Standard overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
+          "description": "When triggered, Eventarc Standard routes these events to various destinations (in this document, see Event destinations) while managing delivery, security, authorization, observability, and error-handling for you. You can manage Eventarc from the Google Cloud console, from the command line ...",
+          "rank": 3
+        },
+        {
+          "title": "Eventarc Advanced overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs/overview",
+          "description": "An overview of Eventarc Advanced which <strong>supports the ingestion, orchestration, and delivery of event data through messages across applications, services, and endpoints</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Eventarc Standard documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs?hl=en",
+          "description": "<strong>Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services</strong>. ... Use Eventarc to listen to events from Cloud Pub/Sub, Cloud Storage, and Audit Logs and pass ...",
+          "rank": 5
+        },
+        {
+          "title": "Overview of event-driven architectures with Eventarc | Datastore | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/datastore/docs/eventarc",
+          "description": "<strong>Eventarc offers a standardized solution to manage the flow of state changes, called events, between decoupled microservices</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Event-driven architectures | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/event-driven-architectures",
+          "description": "In an event-driven system, events are generated by event producers, ingested and filtered by an event router (or broker), and then fanned out to the appropriate event consumers (or sinks). The events are forwarded to the consumers based on subscriptions defined by one or more matching enrollments (when using Eventarc Advanced) or one or more matching triggers (when using Eventarc Standard).",
+          "rank": 7
+        },
+        {
+          "title": "Choose Eventarc Advanced or Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs/choose-product-edition?hl=en",
+          "description": "Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you. Note that the underlying data model for both editions of Eventarc is the same. As a use case grows in complexity, you have the option of seamlessly transitioning from using Eventarc Standard to using Eventarc Advanced. The following is an overview of both editions.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "python_client",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"Python client libraries\"",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest",
+          "description": "Our client libraries are <strong>compatible with all current active and maintenance versions of Python</strong>. ... If you are using an end-of-life version of Python, we recommend that you update as soon as possible to an actively supported version. python3 ...",
+          "rank": 1
+        },
+        {
+          "title": "Class LogSeverity (1.19.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.types.LoggingConfig.LogSeverity",
+          "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 1.19.0 (latest) 1.18.0 · 1.17.0 · 1.16.0 · 1.15.3 · 1.14.0 · 1.13.2 · 1.12.0 · 1.11.5 · 1.10.0 · 1.9.2 · 1.8.1 · 1.7.0 · 1.6.3 · 1.5.1 · 1.4.2 · 1.3.0 · 1.2.1 · 1.1.0 · 1.0.2 · 0.2.4 · 0.1.0 · LogSeverity(value) The different severities for logging supported by Eventarc Advanced resources.",
+          "rank": 2
+        },
+        {
+          "title": "Package types (1.17.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.types",
+          "description": "API documentation for eventarc_v1.types package. A representation of the Channel resource. A Channel is a resource on which event providers publish their events. The published events are delivered through the transport associated with the channel. Note that a channel is associated with exactly one event provider. .. _oneof: https://proto-plus-python...",
+          "rank": 3
+        },
+        {
+          "title": "Authenticate to Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/authentication",
+          "description": "For select languages, you can use service account impersonation to create a local ADC file for use by client libraries. This approach is supported only for the Go, Java, Node.js, and Python client libraries—it is not supported for the other languages.",
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "api_reference",
+      "query": "site:docs.cloud.google.com \"Eventarc\" \"API reference\"",
+      "official_result_count": 3,
+      "results": [
+        {
+          "title": "APIs and references | Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/apis",
+          "description": "Eventarc RPC reference. Get started with the Cloud Client Libraries for the Eventarc API.",
+          "rank": 1
+        },
+        {
+          "title": "Node.js client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nodejs/docs/reference/eventarc-publishing/latest",
+          "description": "The Eventarc Publishing API Node.js Client API Reference documentation also contains samples.",
+          "rank": 2
+        },
+        {
+          "title": "Create push subscriptions | Pub/Sub | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/pubsub/docs/create-push-subscription",
+          "description": "When routing events through Eventarc to Workflows destinations for which the push endpoint is set to a Workflows execution, you can only create new push subscriptions through Eventarc.",
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Eventarc\" overview OR site:developers.google.com \"eventarc\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Trigger Cloud Run with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-events",
+          "description": "Eventarc <strong>makes it easy to connect various services (Cloud Run, Cloud Functions, Workfklows) with events from a variety of sources</strong>. It allows you to build event-driven architectures in which microservices are loosely coupled and distributed.",
+          "rank": 1
+        },
+        {
+          "title": "Build an event-driven orchestration with Eventarc and Workflows | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-event-driven-orchestration",
+          "description": "Eventarc <strong>makes it easy to connect Cloud Run services with events from a variety of sources</strong>. It allows you to build event-driven architectures in which microservices are loosely coupled and distributed.",
+          "rank": 2
+        },
+        {
+          "title": "Triggering Workflows with Eventarc | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/eventarc-workflows-cloud-run",
+          "description": "Eventarc <strong>allows you to build event-driven architectures without having to implement, customize, or maintain the underlying infrastructure</strong>. Eventarc offers a standardized solution to manage the flow of state changes, called events, between decoupled microservices.",
+          "rank": 3
+        },
+        {
+          "title": "Trigger Kubernetes services with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/eventarc-events-gke",
+          "description": "Eventarc <strong>makes it easy to connect various services (Cloud Run, Kubernetes, Workflows) with events from a variety of sources</strong>. It allows you to build event-driven architectures in which microservices are loosely coupled and distributed. It also takes care of event ingestion, delivery, security, ...",
+          "rank": 4
+        },
+        {
+          "title": "Triggering Event Processing from Cloud Storage using Eventarc and Cloud Run functions | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/triggering-cloud-functions-from-cloud-storage",
+          "description": "Learn how to use Cloud Storage bucket events to trigger Cloud Run functions with Eventarc to analyze data and process images using Google’s Vision API and save the resulting image information as object metadata in Cloud Storage.",
+          "rank": 5
+        },
+        {
+          "title": "Configuring Eventarc to trigger Workflows that integrate with GKE Autopilot and Pub/Sub | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/eventarc-workflows-gke-autopilot",
+          "description": "Eventarc <strong>allows you to build event-driven architectures without having to implement, customize, or maintain the underlying infrastructure</strong>. Eventarc offers a standardized solution to manage the flow of state changes, called events, between decoupled microservices.",
+          "rank": 6
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/eventarc/v1",
+          "description": "Google.Apis.Eventarc.v1 · Eventarc API v1 · Google.Apis.FactCheckTools.v1alpha1 · Fact Check Tools API v1alpha1 · Google.Apis.Fcmdata.v1beta1 · Firebase Cloud Messaging Data API v1beta1 · Google.Apis.FirebaseAppDistribution.v1 · Firebase App Distribution API v1 ·",
+          "rank": 7
+        },
+        {
+          "title": "Route Datadog monitoring alerts to Google Cloud with Eventarc (Part 2) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-route-datadog-eventarc-part-two",
+          "description": "Eventarc <strong>makes it easy to connect Google Cloud services with events from a variety of sources</strong>. It allows you to build event-driven architectures in which microservices are loosely coupled and distributed.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Eventarc roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/eventarc",
+          "description": "This page lists the IAM roles and permissions for Eventarc.",
+          "rank": 1
+        },
+        {
+          "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/roles-permissions",
+          "description": "If you are routing events to an authenticated Cloud Run target service, grant the Cloud Run Invoker role (run.invoker) on the Cloud Run service to the user-managed service account associated with your Eventarc trigger: gcloud run services add-iam-policy-binding SERVICE_NAME \\ --member=serviceAccount:SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \\ --role=roles/run.invoker",
+          "rank": 2
+        },
+        {
+          "title": "Roles and permissions for Workflows targets | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions",
+          "description": "This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud and other sources to target workflows using Eventarc.",
+          "rank": 3
+        },
+        {
+          "title": "Access control with IAM | Eventarc Advanced | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/advanced/docs/access-control",
+          "description": "For an introduction to IAM and its features, see the IAM overview. To learn how to grant and revoke access using allow policies, see Manage access to projects, folders, and organizations. To control publishing access in Eventarc Advanced using access policies, see Control publishing access. For lists of the permissions and roles ...",
+          "rank": 4
+        },
+        {
+          "title": "Roles and permissions for an internal HTTP endpoint in a VPC network | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal",
+          "description": "This document shows you how to grant Identity and Access Management (IAM) roles and permissions to support routing events from Google Cloud to an internal HTTP endpoint in a Virtual Private Cloud (VPC) network using Eventarc.",
+          "rank": 5
+        },
+        {
+          "title": "All roles and permissions | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/all-roles-permissions",
+          "description": "Grant Identity and Access Management (IAM) roles to service accounts so that Eventarc can receive events from sources, and deliver the events to a target Google Kubernetes Engine (GKE) destination (including the public endpoints of private and public services running in a GKE cluster).",
+          "rank": 6
+        },
+        {
+          "title": "Access control with IAM | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+          "description": "Provisioning the service agent ... Permission denied errors. To view and assign IAM roles for Eventarc, <strong>you must enable the Eventarc APIs for your project</strong>....",
+          "rank": 7
+        },
+        {
+          "title": "Troubleshoot issues | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/troubleshooting",
+          "description": "service-PROJECT_NUMBER@gcp-sa-eventarc.iam.gserviceaccount.com · Verify that the service agent has the Eventarc Service Agent role. If the service agent doesn&#x27;t have the role, then grant the role. Warning: Don&#x27;t grant service agent roles to any principals except service agents. If you are trying to use a cross-project service account and you encounter a permission denied error for iam.serviceAccounts.getAccessToken or iam.serviceAccounts.actAs, or if you receive an error message similar to ...cross-project service accounts are disabled or Failed to impersonate..., confirm that permissions are configured correctly.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "java_client",
+      "query": "site:developers.google.com \"Eventarc\" \"Java client library\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "product_docs",
+      "query": "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Eventarc documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs",
+          "description": "<strong>Eventarc lets you build event-driven architectures without having to implement, customize, or maintain the underlying infrastructure</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Eventarc Standard documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs?hl=en",
+          "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Use Eventarc to listen to events from Cloud Pub/Sub, Cloud Storage, and Audit Logs and pass the events to Cloud Run.",
+          "rank": 2
+        },
+        {
+          "title": "Eventarc overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/overview",
+          "description": "Eventarc is offered in two editions: Eventarc Advanced and Eventarc Standard. Both editions offer a scalable, serverless, and fully managed eventing solution that lets you asynchronously route messages from sources to targets using loosely coupled services that are triggered by and react to state changes known as events. Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you.",
+          "rank": 3
+        },
+        {
+          "title": "Package google.cloud.eventarc.v1beta1 | Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/reference/rpc/google.cloud.eventarc.v1beta1",
+          "description": "<strong>Eventarc allows users to subscribe to various events that are provided by Google Cloud services and forward them to supported destinations</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Eventarc Standard overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
+          "description": "For more information, see the Google Cloud CLI reference. ... Events using Cloud Audit Logs are delivered in under a minute. (Note that although a Cloud Audit Logs trigger is created immediately, it can take up to two minutes for a trigger to propagate and filter events.) Events using Pub/Sub are delivered in seconds. There is no in-order, first-in-first-out delivery guarantee. Note that having strict ordering would undermine Eventarc...",
+          "rank": 5
+        },
+        {
+          "title": "Eventarc API | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/reference/rest",
+          "description": "Eventarc · Reference · Send feedback · Build event-driven applications on Google Cloud Platform. REST Resource: v1.projects.locations · REST Resource: v1.projects.locations.channelConnections · REST Resource: v1.projects.locations.channels · REST Resource: v1.projects.locations.enrollments ·",
+          "rank": 6
+        },
+        {
+          "title": "Eventarc client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/reference/libraries",
+          "description": "This page shows how to get started with the Cloud Client Libraries for the Eventarc API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
+          "rank": 7
+        },
+        {
+          "title": "APIs and references | Eventarc | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/apis",
+          "description": "Eventarc RPC reference. Get started with the Cloud Client Libraries for the Eventarc API.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "python_client",
+      "query": "site:googleapis.dev/python \"Eventarc\"",
+      "official_result_count": 3,
+      "results": [
+        {
+          "title": "Python client library | Google Cloud",
+          "url": "https://googleapis.dev/python/eventarc/latest/index.html",
+          "description": "Eventarc: <strong>lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Python Client for Eventarc — google-cloud-eventarc documentation",
+          "url": "https://googleapis.dev/python/eventarc/latest",
+          "description": "Eventarc: <strong>lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "google.cloud.eventarc_v1.services.eventarc.pagers — google-cloud-eventarc documentation",
+          "url": "https://googleapis.dev/python/eventarc/1.0.0/_modules/google/cloud/eventarc_v1/services/eventarc/pagers.html",
+          "description": "If multiple requests are made, only the most recent response is retained, and thus used for attribute lookup. &quot;&quot;&quot; def __init__( self, method: Callable[..., Awaitable[eventarc.ListTriggersResponse]], request: eventarc.ListTriggersRequest, response: eventarc.ListTriggersResponse, *, metadata: Sequence[Tuple[str, str]] = () ): &quot;&quot;&quot;Instantiates the pager.",
+          "rank": 3
+        }
+      ]
+    }
+  ],
+  "scored_urls": [
+    {
+      "title": "Eventarc documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs",
+      "description": "<strong>Eventarc lets you build event-driven architectures without having to implement, customize, or maintain the underlying infrastructure</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Eventarc overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/overview",
+      "description": "Eventarc is offered in two editions: Eventarc Advanced and Eventarc Standard. Both editions offer a scalable, serverless, and fully managed eventing solution that lets you asynchronously route messages from sources to targets using loosely coupled services that are triggered by and react to state changes known as events. Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/roles-permissions",
+      "description": "<strong>By default, this role includes the permissions necessary for full access to most Google Cloud resources</strong>. Otherwise, required roles must be granted by an administrator on the appropriate resource to the appropriate principal (also known as a member).",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Eventarc Standard documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs?hl=en",
+      "description": "<strong>Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services</strong>. ... Use Eventarc to listen to events from Cloud Pub/Sub, Cloud Storage, and Audit Logs and pass ...",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Access control with IAM | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+      "description": "The following table lists the Eventarc predefined IAM roles with a corresponding list of all the permissions each role includes. The predefined roles address most typical use cases. If your use case isn&#x27;t covered by the predefined roles, you can create an IAM custom role. For more information on Eventarc Standard roles and permissions, see All roles and permissions.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Eventarc Standard overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
+      "description": "When triggered, Eventarc Standard routes these events to various destinations (in this document, see Event destinations) while managing delivery, security, authorization, observability, and error-handling for you. You can manage Eventarc from the Google Cloud console, from the command line ...",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Roles and permissions for an internal HTTP endpoint in a VPC network | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/vpc-endpoints/roles-permissions-internal",
+      "description": "<strong>By default, this role includes the permissions necessary for full access to most Google Cloud resources</strong>. Otherwise, required roles must be granted by an administrator on the appropriate resource to the appropriate principal (also known as a member).",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Roles and permissions for Workflows targets | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/roles-permissions",
+      "description": "<strong>By default, this role includes the permissions necessary for full access to most Google Cloud resources</strong>. Otherwise, required roles must be granted by an administrator on the appropriate resource to the appropriate principal (also known as a member).",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "All roles and permissions | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/all-roles-permissions",
+      "description": "Grant Identity and Access Management (IAM) roles to service accounts so that Eventarc can receive events from sources, and deliver the events to a target workflow.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "APIs and references | Eventarc | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/apis",
+      "description": "Get started with the Cloud Client Libraries for the Eventarc API. Reference for the Eventarc gcloud CLI. Reference for the Eventarc gcloud CLI (beta). ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are ...",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"API reference\"",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "api_reference",
+        "product_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Troubleshoot issues | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/troubleshooting",
+      "description": "Otherwise, verify that it has Eventarc Service Agent role. A service agent acts as the identity of a given Google Cloud service for a particular project. For more information, see Service agents and view the Identity and Access Management (IAM) permissions for the Eventarc Service Agent role (roles/eventarc.serviceAgent).",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 67,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class CloudEvent.Builder (0.82.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.CloudEvent.Builder",
+      "description": "map&lt;string, .google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue&gt; attributes = 5 [(.google.api.field_behavior) = OPTIONAL];",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class PublisherClient (0.81.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/com.google.cloud.eventarc.publishing.v1.PublisherClient",
+      "description": "Service Description: <strong>Eventarc</strong> processes events generated by an event provider and delivers them to a subscriber.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc-publishing/latest/overview",
+      "description": "Eventarc Publishing Description: <strong>Lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "java_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Python Client for Eventarc bookmark_border",
+      "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest",
+      "description": "Eventarc: <strong>lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Package types (1.17.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.types",
+      "description": "A GoogleChannelConfig is a resource that stores the custom settings respected by <strong>Eventarc</strong> first-party triggers in the matching region.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class LogSeverity (1.19.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.types.LoggingConfig.LogSeverity",
+      "description": "The different severities for logging supported by <strong>Eventarc</strong> Advanced resources. This enum is an exhaustive list of log severities and is FROZEN.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/eventarc/v1",
+      "description": "Google.Apis.Eventarc.v1 · Eventarc API v1 · Google.Apis.FactCheckTools.v1alpha1 · Fact Check Tools API v1alpha1 · Google.Apis.Fcmdata.v1beta1 · Firebase Cloud Messaging Data API v1beta1 · Google.Apis.FirebaseAppDistribution.v1 · Firebase App Distribution API v1 ·",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Eventarc\" reference OR site:developers.google.com \"eventarc\" reference",
+        "site:developers.google.com \"Eventarc\" overview OR site:developers.google.com \"eventarc\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 67,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Access control with IAM | Eventarc Advanced | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/advanced/docs/access-control",
+      "description": "Eventarc uses <strong>Identity and Access Management (IAM)</strong> for access control.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Eventarc Advanced overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/advanced/docs/overview",
+      "description": "<strong>All Eventarc resources must belong to a Google Cloud project</strong>. However, there is no requirement for the provider (event source), bus (administrator), and pipeline (event target) to be in the same project.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class ListChannelsRequest (1.78.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc/latest/com.google.cloud.eventarc.v1.ListChannelsRequest",
+      "description": "Protobuf type google.cloud.eventarc.v1.ListChannelsRequest",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 26,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class ListChannelsRequest (1.78.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-eventarc/latest/overview",
+      "description": "Protobuf type google.cloud.eventarc.v1.ListChannelsRequest",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Eventarc\"",
+        "site:docs.cloud.google.com \"Eventarc\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 26,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "java_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 3,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Eventarc roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/eventarc",
+      "description": "This page lists the IAM roles and permissions for Eventarc.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Eventarc\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 24,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Authenticate to Eventarc | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/authentication",
+      "description": "For select languages, you can use service account impersonation to create a local ADC file for use by client libraries. This approach is supported only for the Go, Java, Node.js, and Python client libraries—it is not supported for the other languages.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google event types supported by Eventarc | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/event-types",
+      "description": "Eventarc Standard supports the following Google event types: ... Note: Google Cloud IoT Core was retired on August 16, 2023, and Cloud IoT events were deprecated at that time.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Eventarc client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/reference/libraries",
+      "description": "This page shows how to get started with the Cloud Client Libraries for the Eventarc API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Eventarc API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/reference/rest",
+      "description": "Eventarc · Reference · Send feedback · Build event-driven applications on Google Cloud Platform. REST Resource: v1.projects.locations · REST Resource: v1.projects.locations.channelConnections · REST Resource: v1.projects.locations.channels · REST Resource: v1.projects.locations.enrollments ·",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Package google.cloud.eventarc.v1beta1 | Eventarc | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/reference/rpc/google.cloud.eventarc.v1beta1",
+      "description": "<strong>Eventarc allows users to subscribe to various events that are provided by Google Cloud services and forward them to supported destinations</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Package google.iam.v1 | Eventarc | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/reference/rpc/google.iam.v1",
+      "description": "Access control is <strong>applied when a principal (user or service account), takes some action on a resource exposed by a service</strong>. Resources, identified by URI-like names, are the unit of access control specification.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create an event handler that receives and processes a Pub/Sub message event | Eventarc | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/samples/eventarc-pubsub-handler",
+      "description": "To authenticate to Eventarc, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. // Sample pubsub is a Cloud Run service which handles Pub/Sub messages. package main import ( &quot;encoding/json&quot; &quot;fmt&quot; &quot;log&quot; &quot;net/http&quot; &quot;os&quot; ) // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Message struct { Data []byte `json:&quot;data,omitempty&quot;` ID string `json:&quot;id&quot;` } `json:&quot;message&quot;` Subscription string `json:&quot;subscription&quot;` } // HelloEventsPubSub receives and processes a Pub/Sub push message.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Support a cross-project service account | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/use-cross-project-service-account",
+      "description": "Grant roles and permissions so that you can create an Eventarc trigger using a cross-project service account.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/changelog",
+      "description": "[google-cloud-eventarc] upgrade gRPC service registration func An update to Go gRPC Protobuf generation will change service registration function signatures to use an interface instead of a concrete type in generated .pb.go service files. This change should affect very few client library users.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Eventarc\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Eventarc API Client Library for .NET | Google Developers",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/eventarc/v1?hl=Zh-TW",
+      "description": "This page contains information about getting started with the Eventarc API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Eventarc\" official documentation OR site:developers.google.com \"eventarc\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Eventarc Advanced documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/advanced/docs",
+      "description": "Unify and centralize orchestration of event-driven and message-based architectures in Google Cloud.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Choose Eventarc Advanced or Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/advanced/docs/choose-product-edition?hl=en",
+      "description": "Both editions support a range of event providers and destinations—including Google Cloud services, custom applications, SaaS applications, and third-party services—while managing delivery, security, authorization, observability, and error-handling for you. Note that the underlying data model for both editions of Eventarc is the same. As a use case grows in complexity, you have the option of seamlessly transitioning from using Eventarc Standard to using Eventarc Advanced. The following is an overview of both editions.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Control publishing access | Eventarc Advanced | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/advanced/docs/control-publishing-access",
+      "description": "Each access policy is a set of rules that lets you identify principals and define conditions which determine the applicability of a rule, and that lets you enable fine-grained access control. For example, depending on the evaluation of a Common Expression Language (CEL) expression applied to an event context attribute, you can allow or deny the permission to publish a subset of event messages to an Eventarc Advanced bus.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Event-driven architectures | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/event-driven-architectures",
+      "description": "In an event-driven system, events are generated by event producers, ingested and filtered by an event router (or broker), and then fanned out to the appropriate event consumers (or sinks). The events are forwarded to the consumers based on subscriptions defined by one or more matching enrollments (when using Eventarc Advanced) or one or more matching triggers (when using Eventarc Standard).",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Develop event receivers | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/event-receivers",
+      "description": "// See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Message struct { Data []byte `json:&quot;data,omitempty&quot;` ID string `json:&quot;id&quot;` } `json:&quot;message&quot;` Subscription string `json:&quot;subscription&quot;` } // HelloEventsPubSub receives and processes a Pub/Sub push message.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Route Transcoder API events to Workflows | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/route-trigger-transcoder",
+      "description": "Enable the Eventarc, Eventarc Publishing, Workflows, and Workflow Executions APIs. ... If applicable, enable the API related to the direct events. For example, for Transcoder API events, enable the Transcoder API API. If you don&#x27;t already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for a target workflow.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "google.cloud.eventarc_v1.services.eventarc.pagers — google-cloud-eventarc documentation",
+      "url": "https://googleapis.dev/python/eventarc/1.0.0/_modules/google/cloud/eventarc_v1/services/eventarc/pagers.html",
+      "description": "If multiple requests are made, only the most recent response is retained, and thus used for attribute lookup. &quot;&quot;&quot; def __init__( self, method: Callable[..., Awaitable[eventarc.ListTriggersResponse]], request: eventarc.ListTriggersRequest, response: eventarc.ListTriggersResponse, *, metadata: Sequence[Tuple[str, str]] = () ): &quot;&quot;&quot;Instantiates the pager.",
+      "rank": 3,
+      "query_hits": [
+        "site:googleapis.dev/python \"Eventarc\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 44,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Eventarc — google-cloud-eventarc documentation",
+      "url": "https://googleapis.dev/python/eventarc/latest",
+      "description": "Eventarc: <strong>lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:googleapis.dev/python \"Eventarc\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 44,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/eventarc/latest/index.html",
+      "description": "Eventarc: <strong>lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Eventarc\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 44,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Overview of event-driven architectures with Eventarc | Datastore | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/datastore/docs/eventarc",
+      "description": "<strong>Eventarc offers a standardized solution to manage the flow of state changes, called events, between decoupled microservices</strong>.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Node.js client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nodejs/docs/reference/eventarc-publishing/latest",
+      "description": "The Eventarc Publishing API Node.js Client API Reference documentation also contains samples.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create push subscriptions | Pub/Sub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/pubsub/docs/create-push-subscription",
+      "description": "When routing events through Eventarc to Workflows destinations for which the push endpoint is set to a Workflows execution, you can only create new push subscriptions through Eventarc.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure event-driven function retries | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/tips/function-retries?authuser=2",
+      "description": "Refer to the Eventarc documentation on retry events. Pub/Sub defaults to using the immediate redelivery policy for all subscriptions. Refer to the Pub/Sub documentation on handling message failures and retry requests. Functions created using the Cloud Functions v2 API, for example, using the Cloud Functions gcloud CLI, the REST API, or Terraform, will create and manage event triggers on your behalf.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Cloud Pub/Sub (2nd Gen) | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/samples/functions-cloudevent-pubsub",
+      "description": "// Package helloworld provides a set of Cloud Functions samples. package helloworld import ( &quot;context&quot; &quot;fmt&quot; &quot;log&quot; &quot;github.com/GoogleCloudPlatform/functions-framework-go/functions&quot; &quot;github.com/cloudevents/sdk-go/v2/event&quot; ) func init() { functions.CloudEvent(&quot;HelloPubSub&quot;, helloPubSub) } // MessagePublishedData contains the full Pub/Sub message // See the documentation for more details: // https://cloud.google.com/eventarc/docs/cloudevents#pubsub type MessagePublishedData struct { Message PubSubMessage } // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Data []byte `json:&quot;data&quot;` } // helloPubSub consumes a CloudEvent message and extracts the Pub/Sub message.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "deterministic_score": 76,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 76,
+        "parent_page_likelihood": 4,
+        "product_match": 3,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 70,
+      "keep": false
+    },
+    {
+      "title": "Use Eventarc to receive events from Cloud Storage | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+      "description": "<strong>Create an Eventarc trigger that routes events from the Cloud Storage bucket to the Cloud Run service</strong>. Generate an event by uploading a file to the Cloud Storage bucket and view the event in the Cloud Run logs.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "deterministic_score": 55,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 55,
+        "parent_page_likelihood": 3,
+        "product_match": 3,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 52,
+      "keep": false
+    },
+    {
+      "title": "Trigger functions from log entries | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/triggering/trigger-functions-from-log-entries",
+      "description": "// Package log contains examples for handling Cloud Functions logs. package log import ( &quot;context&quot; &quot;log&quot; ) // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Data []byte `json:&quot;data&quot;` } // ProcessLogEntry processes a Pub/Sub message from Cloud Logging.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": -28,
+      "deterministic_score": 37,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 37,
+        "parent_page_likelihood": 2,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 36,
+      "keep": false
+    }
+  ]
+}

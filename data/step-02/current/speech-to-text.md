@@ -1,0 +1,64 @@
+# Speech-to-Text
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 41
+Unique features: 50
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2025-11-13 | Chirp 3 model |  | Speech-to-Text introduced the chirp_3 transcription model in public preview in the asia-south1, europe-west2, europe-west3, and northamerica-northeast1 regions. |
+| 2025-10-13 | Automatic language detection |  | The Chirp 3: Transcription model added automatic language detection for multilingual audio; Cloud Speech-to-Text can automatically detect the language in an audio file when multiple alternative languages are provided. |
+| 2025-10-13 | Built-in denoiser for transcription |  | Chirp 3: Transcription added a built-in denoiser to improve transcription quality on noisy audio. |
+| 2025-10-13 | Chirp 3: Transcription (Speech-to-Text V2) |  | Speech-to-Text announced general availability of the Chirp 3: Transcription model in the Speech-to-Text API V2. |
+| 2025-10-13 | Recognition method support for chirp_3 |  | Chirp 3: Transcription added support for StreamingRecognize, Recognize, and BatchRecognize methods. |
+| 2025-10-13 | Speaker diarization |  | The Chirp 3: Transcription model introduced speaker diarization support to identify different speakers in audio; Makes Speaker Diarization available on Latest models for en-US, enabling recognition of multiple speakers in the same audio clip. |
+| 2025-10-13 | Speech adaptation with custom vocabularies |  | Chirp 3: Transcription introduced speech adaptation capabilities for custom vocabularies. |
+| 2025-08-29 | Speech-to-Text Chirp 3: Transcription |  | Speech-to-Text Chirp 3: Transcription is launched in Public Preview, expanding transcription to over 85 languages and locales and supporting StreamingRecognize and SyncRecognize for real-time and short-form audio with improved accuracy and speed; Speech-to-Text Chirp 3: Transcription is launched in Private Preview as a new generation multilingual ASR model with improved accuracy and speed, including support for BatchRecognize requests in the Speech-to-Text v2 API for long-form audio. |
+| 2025-01-27 | Speech-to-Text Chirp 2 model general availability |  | The Chirp 2 model became generally available in the asia-southeast1, us-central1, and europe-west4 regions. |
+| 2024-10-07 | Speech-to-Text Chirp 2 model adaptation |  | The Chirp 2 model added support for model adaptation in Speech-to-Text. |
+| 2024-10-07 | Speech-to-Text Chirp 2 model ASR accuracy and speed improvements |  | The Chirp 2 model was updated to improve ASR accuracy and recognition speed. |
+| 2024-10-07 | Speech-to-Text Chirp 2 multilingual ASR support |  | The Chirp 2 model gained enhanced multilingual capabilities. |
+| 2024-10-07 | Speech-to-Text Chirp 2 speech translation |  | Speech-to-Text enabled speech translation support through the Chirp 2 model. |
+| 2024-10-07 | Speech-to-Text Chirp 2 streaming recognition |  | The Chirp 2 model added support for Streaming Recognizer requests in addition to sync and batch recognition. |
+| 2024-10-07 | Speech-to-Text Chirp 2 word-level timestamps |  | The Chirp 2 model added support for word-level timestamps in recognition output. |
+| 2024-01-09 | latest_long model adaptation |  | Model adaptation is now available for the Speech-to-Text latest_long model in 13 languages. |
+| 2024-01-09 | latest_short model quality improvement |  | Speech-to-Text now includes substantially improved recognition quality for the latest_short model. |
+| 2024-01-08 | chirp_telephony model |  | Speech-to-Text launched the chirp_telephony model, a telephony-focused fine-tuned USM-based model for phone-call audio sampled at 8 kHz. |
+| 2023-11-06 | Speech-to-Text telephony model |  | Introduces the telephony model for recognizing phone-call audio using the latest version of the legacy phone_call model. |
+| 2023-11-06 | Speech-to-Text telephony_short model |  | Introduces the telephony_short model for phone-call audio recognition as an updated variant of the existing phone_call model. |
+| 2021-11-08 | Medical speech recognition models |  | Speech-to-Text introduced medical speech recognition models optimized for vocabulary commonly used in medical settings. |
+| 2021-06-28 | Multi-region endpoints |  | Speech-to-Text added GA support for multi-region endpoints. |
+| 2021-05-24 | Speech-to-Text Spoken Emoji |  | Speech-to-Text preview feature for transcribing spoken emoji cues into emoji characters. |
+| 2021-05-24 | Speech-to-Text Spoken Punctuation |  | Speech-to-Text preview feature for converting spoken punctuation cues into punctuation in transcriptions. |
+| 2021-05-07 | Speech-to-Text Model Adaptation |  | Model adaptation capability in Speech-to-Text reached general availability; Speech-to-Text now supports Model Adaptation by allowing users to create custom classes and phrase sets to improve transcription quality. |
+| 2021-03-23 | Speech-to-Text long-running transcription output to Cloud Storage |  | Speech-to-Text now allows long-running transcription results to be uploaded directly to a Cloud Storage bucket. |
+| 2021-01-26 | Speech-to-Text regional endpoints |  | Speech-to-Text now supports regional EU and US endpoints. |
+| 2020-08-25 | Speech-to-Text On-Prem API |  | Speech-to-Text launched the On-Prem API to enable integration of Google speech recognition into on-premises solutions. |
+| 2020-03-05 | Automatic punctuation |  | Cloud Speech-to-Text added automatic punctuation for additional supported languages. |
+| 2020-03-05 | Cloud Speech-to-Text language support |  | Cloud Speech-to-Text added support for seven new languages: Burmese, Estonian, Uzbek, Punjabi, Albanian, Macedonian, and Mongolian. |
+| 2020-03-05 | Enhanced telephony model |  | Cloud Speech-to-Text added the enhanced telephony model feature for additional supported languages. |
+| 2020-03-05 | Speech adaptation boost |  | Cloud Speech-to-Text added the speech adaptation boost feature for additional supported languages. |
+| 2019-07-23 | Endless streaming transcription |  | Cloud Speech-to-Text provides endless streaming support for transcribing an infinite audio stream. |
+| 2019-07-23 | Speech adaptation hints |  | Cloud Speech-to-Text now supports speech adaptation by allowing users to supply hints that influence speech recognition. |
+| 2019-06-18 | MP3 audio transcription support |  | Cloud Speech-to-Text added beta support for transcribing MP3-encoded audio data through the v1p1beta1 API. |
+| 2019-06-18 | Streaming recognition 5-minute duration limit |  | Cloud Speech-to-Text added support for streaming recognition sessions up to 5 minutes, available via the v1p1beta1 API. |
+| 2019-04-04 | Cloud Speech-to-Text v1beta API version | 2019-04-04 | The Cloud Speech-to-Text v1beta API version is no longer available and users are required to migrate to v1 or v1p1beta1; deprecated on 2019-04-04. |
+| 2019-02-20 | Cloud Speech-to-Text data logging |  | Cloud Speech-to-Text introduced data logging for general use, allowing Google to log data to help reduce usage costs by improving the service; Cloud Speech-to-Text can provide speech recognition data logging for transcription workflows. |
+| 2019-02-20 | Cloud Speech-to-Text enhanced models |  | Cloud Speech-to-Text now offers enhanced models to improve transcription accuracy; Cloud Speech-to-Text can use enhanced speech recognition models to improve transcription quality. |
+| 2019-02-20 | Cloud Speech-to-Text model selection |  | Cloud Speech-to-Text allows users to select different speech recognition models, including a model optimized for video file audio. |
+| 2019-02-20 | Cloud Speech-to-Text multi-channel transcription |  | Cloud Speech-to-Text supports transcribing audio data that contains multiple channels. |
+| 2019-02-20 | Cloud Speech-to-Text recognition metadata |  | Cloud Speech-to-Text supports including recognition metadata with transcription requests to improve speech recognition results. |
+| 2018-07-24 | Multi-channel transcription |  | Cloud Speech-to-Text can transcribe audio data that includes multiple channels. |
+| 2018-07-24 | Word-level confidence |  | Cloud Speech-to-Text can return confidence scores for each recognized word in a transcript. |
+| 2018-04-09 | Cloud Speech-to-Text punctuation insertion |  | Cloud Speech-to-Text can insert punctuation such as commas, periods, and question marks into transcription results. |
+| 2018-04-09 | Recognition metadata in transcription requests |  | Cloud Speech-to-Text now supports including additional audio source metadata in transcription requests to improve recognition results. |
+| 2018-04-09 | Speech recognition model selection |  | Cloud Speech-to-Text now lets you choose among different recognition models for transcription requests, including a model optimized for transcribing audio from video files. |
+| 2018-01-16 | OGG_OPUS sample rate support in Cloud Speech-to-Text |  | Cloud Speech-to-Text expanded support for the OGG_OPUS audio encoding to include 8,000 Hz, 12,000 Hz, 16,000 Hz, 24,000 Hz, and 48,000 Hz input sample rates. |
+| 2017-08-10 | Word time offsets in Speech-to-Text recognition |  | Cloud Speech-to-Text now supports returning begin and end timestamps for each recognized word when the enableWordTimeOffsets request parameter is enabled. |
+| 2017-04-18 | Cloud Speech-to-Text API v1 |  | The Cloud Speech-to-Text v1 version was released. |
+
+Source file slug: `speech-to-text.md`
+

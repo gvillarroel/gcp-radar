@@ -1,0 +1,190 @@
+# App Engine standard environment Java
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 212
+Unique features: 176
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-03-02 | Email migration from legacy Mail API to SMTP providers |  | App Engine standard environment supports migrating applications from the legacy Mail API to SMTP-based email services such as SendGrid, Mailgun, or Mailjet; App Engine standard environment recommends migrating from the legacy Mail API to SMTP-based email services such as SendGrid, Mailgun, or Mailjet, in Preview. |
+| 2026-02-12 | Migration of standard environment apps to Cloud Run |  | Standard environment applications can be migrated to Cloud Run using the gcloud beta app migrate-to-run command. |
+| 2026-01-31 | Java 8 runtime support | 2026-03-02 | The Java 8 runtime is deprecated for deployment, while existing Java 8 applications remain running and continue receiving traffic; deprecated on 2026-03-02. |
+| 2025-12-22 | Java 25 runtime |  | The Java 25 runtime is now generally available in App Engine standard environment; The Java 25 runtime is available in Preview for App Engine standard environment. |
+| 2025-10-20 | TLS 1.2+ and secure cipher suite support |  | App Engine standard environment now supports TLS version 1.2 and later with a corresponding secure set of cipher suites. |
+| 2025-08-07 | TLS 1.1 and earlier support | March 2025 | Support for TLS versions 1.1 and earlier is deprecated, and applications should move to TLS 1.2+ with secure cipher suites; deprecated on March 2025. |
+| 2025-06-30 | URL Fetch API certificate validation by default |  | New App Engine deployments now validate the certificate of target hosts by default when using the URL Fetch API. |
+| 2025-03-03 | Default max instances for automatic scaling in new projects |  | For App Engine standard environment projects created after March 2025, the default automatic-scaling max_instances is set to 20 unless overridden at deployment. |
+| 2024-12-09 | Custom organization policies for Serverless VPC Access connectors |  | Serverless VPC Access connectors now support custom organization policies that can be applied to projects, folders, or organizations. |
+| 2024-07-30 | App Engine version filtering by runtime lifecycle stage |  | The App Engine versions view in the Google Cloud console now supports filtering by runtime lifecycle stage and displays warning icons for runtimes nearing or past support milestones. |
+| 2024-07-16 | App Engine Java HTTP connector |  | App Engine Java applications can now be configured to use an HTTP connector via the appengine.use.httpconnector system property in appengine-web.xml. |
+| 2024-02-26 | Java 21 runtime for App Engine standard environment |  | Java 21 is now generally available for App Engine standard environment; Java 21 is now available in preview for App Engine standard environment with runtime configuration updates required by your existing setup. |
+| 2024-01-23 | Serverless VPC Access connector update configuration |  | Updating Serverless VPC Access connectors is now generally available, including editing connector machine type and instance scaling bounds; The capability to update Serverless VPC Access connectors became available in preview, including machine type and instance count configuration. |
+| 2023-06-22 | Maven wrapper support for App Engine Java |  | The Java runtime now supports managing project Maven dependencies using Maven wrappers. |
+| 2023-04-27 | Search API for App Engine legacy bundled services |  | The Search API is now available in App Engine legacy bundled services for second-generation runtimes through the App Engine API JAR. |
+| 2022-12-13 | App-level default service account selection for App Engine |  | App Engine now allows any configured service account in a Cloud project to be used as the app-level default service account. |
+| 2022-11-01 | Build environment variables support in App Engine |  | Build-time environment variables are now generally available in App Engine standard environment Java. |
+| 2022-07-01 | Java 17 runtime for App Engine standard environment |  | The Java 17 runtime is now generally available for App Engine standard environment; The App Engine Standard Environment added preview support for the Java 17 runtime. |
+| 2022-05-18 | Per-version service account configuration for App Engine deployment |  | Specifying a user-managed service account for each App Engine version at deployment time is now generally available. |
+| 2022-04-13 | App Engine legacy bundled services for Java 11 and Java 17 |  | App Engine legacy bundled services for Java 11/17 are now generally available, with billing at standard API rates. |
+| 2022-03-24 | Serverless VPC Access connectors in Shared VPC host projects |  | Serverless VPC Access connectors can now be configured for Shared VPC host projects in GA. |
+| 2022-03-15 | App Engine Java release artifact distribution model by version |  | App Engine Java released artifacts now use the open source release mechanism for 2.x.x versions, while 1.9.9xx and earlier use the internal build system. |
+| 2021-11-03 | Serverless VPC Access egress settings |  | Serverless VPC Access egress settings became generally available, allowing control of outbound traffic routing for external destinations; Serverless VPC Access egress settings became available, enabling control of whether external destination traffic uses the connector. |
+| 2021-09-27 | Legacy App Engine APIs in second-generation runtimes |  | Selected legacy App Engine APIs were made available to Java 11 second-generation runtimes via language-idiomatic libraries in preview. |
+| 2021-06-30 | User-managed service account per App Engine version |  | Deployment now supports assigning a user-managed service account to each App Engine version in preview. |
+| 2021-06-14 | and asia-east1 |  | App Engine became available in the us-west1, asia-southeast1, and asia-east1 regions. |
+| 2021-06-14 | App Engine regional expansion to us-west1 |  | App Engine became available in the us-west1, asia-southeast1, and asia-east1 regions. |
+| 2021-06-14 | asia-southeast1 |  | App Engine became available in the us-west1, asia-southeast1, and asia-east1 regions. |
+| 2021-04-20 | Build environment variables support |  | Support for build-time environment variables was introduced in preview. |
+| 2021-04-14 | Serverless VPC Access support for Shared VPC |  | Serverless VPC Access support for Shared VPC was made generally available. |
+| 2021-04-13 | App Engine regional expansion to europe-central2 |  | App Engine became available in the europe-central2 (Warsaw) region. |
+| 2021-03-26 | CPU Utilization metric in App Engine standard environment |  | App Engine standard environment introduced a CPU Utilization metric that reports average CPU utilization across active instances. |
+| 2020-09-25 | Cloud Load Balancing network ingress controls for App Engine |  | App Engine can restrict inbound traffic so apps only accept requests that pass through Cloud Load Balancing. |
+| 2020-07-23 | Shared VPC support for Serverless VPC Access |  | Serverless VPC Access support for App Engine was added for Shared VPC environments. |
+| 2020-07-08 | External HTTPS Load Balancing support for App Engine via serverless NEGs |  | App Engine gained support for External HTTP(S) Load Balancing through serverless network endpoint groups, including Cloud CDN usage. |
+| 2020-06-08 | App Engine regional availability in asia-southeast2 |  | App Engine is available in the asia-southeast2 (Jakarta) region. |
+| 2020-05-14 | Fine-grained App Engine billing visibility with labels and BigQuery |  | App Engine users can label services and export billing data to BigQuery for per-resource, queryable billing analysis. |
+| 2020-04-20 | App Engine regional availability in us-west4 |  | App Engine is available in the us-west4 (Las Vegas) region. |
+| 2020-03-13 | App Engine regional availability in asia-northeast3 |  | App Engine is available in the asia-northeast3 (Seoul) region. |
+| 2020-03-06 | App Engine regional availability in us-west3 |  | App Engine is available in the us-west3 (Salt Lake City) region. |
+| 2020-02-11 | Regionalized App Engine application URLs |  | App Engine added optional region-based URLs (PROJECT_ID.REGION_ID.r.appspot.com) to improve request routing. |
+| 2020-02-06 | Applying new spending limits to projects | 2020-02-06 | Creating new spending limits for projects is no longer supported, while existing limits continue to function; deprecated on 2020-02-06. |
+| 2019-12-11 | Serverless VPC Access for App Engine |  | Serverless VPC Access reached General Availability for App Engine. |
+| 2019-12-07 | App Engine Java SDK |  | The App Engine Java SDK was updated to version 1.9.77; The App Engine Java SDK was updated to version 1.9.76. |
+| 2019-12-07 | Jakarta Jasper JSP compiler version 9.0.24 |  | The Jakarta Jasper JSP compiler used by App Engine was upgraded to version 9.0.24. |
+| 2019-10-17 | App Engine standard environment Java 11 runtime |  | The Java 11 runtime for the App Engine standard environment reached general availability; The Java 11 runtime for the App Engine standard environment entered beta. |
+| 2019-07-30 | App Engine SDK delivery via Cloud SDK |  | App Engine SDK functionality is now delivered exclusively through the Cloud SDK. |
+| 2019-07-30 | AppCfg tooling | 2020-07-30 | AppCfg tooling was deprecated with support set to be removed on July 30, 2020; deprecated on 2020-07-30. |
+| 2019-07-30 | legacy standalone App Engine SDK | 2020-07-30 | The legacy standalone App Engine SDK distribution (including GoogleAppEngineLauncher.dmg, GoogleAppEngine.msi, and google_appengine.zip) was deprecated and scheduled for support shutdown on July 30, 2020; deprecated on 2020-07-30. |
+| 2019-06-03 | Google App Engine API JAR Java compatibility |  | The Google App Engine API JAR is now compiled for the Java 8 target. |
+| 2019-04-18 | App Engine standard environment region availability (europe-west6) |  | App Engine standard environment became available in the asia-northeast2 (Osaka, Japan) region; App Engine standard environment became available in the europe-west6 (Zürich, Switzerland) region. |
+| 2019-02-13 | App Engine Java 7 runtime support | 2019-01-25 | Building Java 7 applications is no longer supported in the App Engine standard environment; App deployments using the Java 7 runtime are blocked and existing Java 7 apps are automatically migrated to Java 8; deprecated on 2019-01-25. |
+| 2018-12-28 | App Engine Java bytecode processing (ASM library) |  | The ASM library was upgraded to improve support for Java 11 bytecode handling. |
+| 2018-12-28 | App Engine Java JSP compilation classpath dependencies |  | The ECJ (Eclipse Compiler for Java) is no longer bundled in the JSP compilation classpath. |
+| 2018-12-19 | App Engine Search API DeleteSchema method |  | The DeleteSchema method on com.google.appengine.api.search.Index is now supported. |
+| 2018-12-06 | Jetty runtime in App Engine Java |  | Jetty was updated to version 9.4.14.v20181114. |
+| 2018-10-22 | App Engine Standard Environment Java region availability (us-west2) |  | App Engine Standard Environment in Java became available in the asia-east2 (Hong Kong) region; App Engine Standard Environment in Java became available in the us-west2 (Los Angeles) region. |
+| 2018-10-03 | App Engine Java runtime server component (Jetty) |  | Jetty in the App Engine Java runtime was updated to version 9.4.12.v20180830. |
+| 2018-09-19 | App Engine enhance_jdos command behavior |  | The `enhance_jdos` process was changed to fail when it raises an exception. |
+| 2018-09-19 | App Engine Java minimum instances setting |  | The `min-instances` setting in `appengine-web.xml` can now be set to 0. |
+| 2018-09-19 | DatastoreType replication mode behavior |  | The `DatastoreType` value now always reports high replication. |
+| 2018-09-19 | Java 11 support on App Engine Java 8 runtime |  | App Engine improved support for developing and deploying applications with Java 11 on the Java 8 runtime. |
+| 2018-08-24 | Cloud Endpoints Frameworks v1 for App Engine standard environment | 2017-08-02 | Cloud Endpoints Frameworks v1 for App Engine standard environment was deprecated and identified for shutdown, with migration to Endpoints Frameworks v2 required; deprecated on 2017-08-02. |
+| 2018-05-31 | App Engine Java SDK update |  | The App Engine Java SDK was updated to version 1.9.64; The App Engine Java SDK was updated to version 1.9.63. |
+| 2018-05-31 | Deployment filename validation for carriage returns |  | Deployment now blocks deployment attempts when filenames contain carriage return characters. |
+| 2018-05-31 | dev_appserver.py --application flag |  | Added the --application flag to dev_appserver.py. |
+| 2018-05-15 | Automatic scaling instance state labeling |  | Automatic scaling now labels all App Engine instances as Dynamic rather than introducing Resident instances. |
+| 2018-05-15 | Automatic scaling max instances setting |  | Automatic scaling now supports a max instances setting to cap the total number of instances scheduled. |
+| 2018-05-15 | Automatic scaling min instances setting |  | Automatic scaling now supports a min instances setting to keep a minimum number of instances running. |
+| 2018-05-15 | Automatic scaling target CPU utilization setting |  | Automatic scaling now supports a target CPU utilization tuning setting to balance latency and cost. |
+| 2018-05-15 | Automatic scaling target throughput utilization setting |  | Automatic scaling now supports a target throughput utilization setting for concurrent-request-based scaling behavior. |
+| 2018-01-22 | App Engine Java SDK patch release |  | Java SDK version 1.9.61 was patched, and users of that version were instructed to reinstall the SDK. |
+| 2017-12-20 | appcfg enable_new_staging_defaults flag |  | A new appcfg flag named enable_new_staging_defaults was added to prepare Java deployments for improved default values with future Cloud SDK integration. |
+| 2017-12-20 | Java 7 deployment/runtime deprecation warning | 2017-12-20 | Deploying or running Java 7 applications now emits a deprecation warning; deprecated on 2017-12-20. |
+| 2017-12-20 | Java 8 local development server character encoding configuration |  | The local Java 8 development server now defaults to UTF-8 character encoding and allows explicit configuration via the appengine.file.encoding system property. |
+| 2017-12-14 | App Engine IAM deployment permissions documentation |  | Access control documentation was improved to clarify deploying App Engine applications with IAM roles and service accounts and required permissions. |
+| 2017-12-14 | Java local development server native URLStreamHandler default |  | The Java local development server now defaults the url-stream-handler configuration parameter to native behavior. |
+| 2017-10-31 | App Engine standard environment region support in asia-south1 |  | App Engine became available in the asia-south1 (Mumbai, India) region. |
+| 2017-10-11 | App Engine firewall |  | App Engine Firewall was announced as generally available. |
+| 2017-10-11 | Jetty 9 JSP compiler Java 9 target level |  | The Jetty 9 JSP compiler now uses Java target version 1.8 when building with JDK 9. |
+| 2017-09-25 | App Engine Java 8 runtime general availability |  | The App Engine Java 8 runtime was declared generally available. |
+| 2017-09-25 | App Engine Java SDK 1.9.57 update |  | The App Engine Java SDK was updated to version 1.9.57. |
+| 2017-09-25 | Cloud Endpoints v1 support for App Engine Java 8 runtime | 2017-09-25 | Support for Cloud Endpoints v1 was removed from the Java 8 App Engine runtime; deprecated on 2017-09-25. |
+| 2017-09-25 | Java 8 runtime support for JDK 9 JARs containing module-info.class | 2017-09-25 | The Java 8 runtime no longer supports JDK 9 JAR files that include a module-info.class file; deprecated on 2017-09-25. |
+| 2017-09-25 | Local development server classpath support for google_sql.jar | 2017-09-25 | The local development server no longer supports google_sql.jar on its runtime path; deprecated on 2017-09-25. |
+| 2017-09-25 | Local development server support for -Xbootclasspath/p | 2017-09-25 | The local development server no longer supports using the -Xbootclasspath/p JVM option; deprecated on 2017-09-25. |
+| 2017-09-18 | appengine-gradle-plugin release 1.3.3 |  | Version 1.3.3 of com.google.cloud.tools:appengine-gradle-plugin was released. |
+| 2017-09-18 | exploreWar task copy-to-sync behavior change |  | The explodeWar task now uses sync instead of copy during execution. |
+| 2017-09-18 | Local development server file-based output logging |  | The local development server now writes its output to dev_appserver.out. |
+| 2017-09-18 | Preservation of datastore-indexes-auto.xml on non-clean rebuilds |  | The local development/server rebuild process no longer removes datastore-indexes-auto.xml during non-clean rebuilds. |
+| 2017-09-13 | App Engine custom domain mapping APIs |  | Custom domain mapping support via gcloud and the Admin API became generally available, including `gcloud domains verify` and `apps.authorizedDomains.list`. |
+| 2017-09-13 | Managed certificates for custom domains |  | Managed certificates became available in beta for App Engine custom domains, enabling automatic SSL provisioning, renewal, and revocation when domains are unlinked. |
+| 2017-09-13 | Managed SSL certificates for App Engine custom domains |  | Existing domain mappings and certificates continue to work, with support for upgrading those mappings to managed SSL certificates. |
+| 2017-09-11 | GAE runtime environment variables in App Engine Java SDK |  | The Java SDK added support for the `GAE_RUNTIME` and `GAE_ENV` environment variables. |
+| 2017-09-11 | Google App Engine Java SDK 1.9.56 |  | The Java SDK was updated to version 1.9.56. |
+| 2017-09-11 | session_affinity support in appengine-web.xml |  | The SDK update added `session_affinity` configuration support in `appengine-web.xml` for compatible flexible runtimes. |
+| 2017-09-11 | subnetwork_name support in appengine-web.xml |  | The SDK update added `appengine-web.xml` support for the `subnetwork_name` setting in flexible runtimes compatible with standard environment APIs. |
+| 2017-09-11 | Updated liveness and readiness health checks in appengine-web.xml |  | The SDK update added updated liveness and readiness health-check configuration support in `appengine-web.xml` for compatible flexible runtimes. |
+| 2017-09-05 | App Engine southamerica-east1 region availability |  | App Engine became available in the southamerica-east1 (São Paulo, Brazil) region. |
+| 2017-09-05 | Appstats filter error message for Java 8 |  | The Java runtime now emits an explicit error message when the appstats filter is used with Java 8. |
+| 2017-09-05 | Google App Engine Java SDK 1.9.55 |  | The Java SDK was updated to version 1.9.55. |
+| 2017-08-01 | App Engine europe-west3 region availability |  | App Engine became available in the europe-west3 (Frankfurt, Germany) region. |
+| 2017-07-18 | App Engine australia-southeast1 region availability |  | App Engine became available in the australia-southeast1 (Sydney, Australia) region. |
+| 2017-06-28 | App Engine Java 8 runtime for Standard Environment |  | The Java 8 runtime for App Engine standard environment was introduced in Beta, enabling OpenJDK 8, Servlet 3.1, and Jetty 9.3. |
+| 2017-06-28 | App Engine Java SDK 1.9.54 |  | The Java SDK version 1.9.54 was aligned to support the Java 8 runtime. |
+| 2017-06-28 | Read-only metadata server values in App Engine Java 8 runtime |  | The Java 8 runtime added read-only access to GCP Metadata Server project and service account values. |
+| 2017-06-28 | Removal of Java class whitelisting in App Engine Java 8 runtime |  | The Java 8 runtime removed class whitelisting for public Java APIs. |
+| 2017-06-28 | Removal of Java security manager in App Engine Java 8 runtime |  | The Java 8 runtime removed the Java security manager. |
+| 2017-06-06 | App Engine region availability (us-east4) |  | App Engine became available in the europe-west2 (London) region; App Engine became available in the us-east4 (Northern Virginia) region. |
+| 2017-06-06 | Custom domains and SSL certificate management via Admin API and gcloud |  | Beta-level features were enabled in the Admin API and gcloud CLI to create and manage custom domains and SSL certificates. |
+| 2017-05-08 | App Engine local development server environment variable loading |  | The local development server now reads and applies environment variables from appengine-web.xml. |
+| 2017-05-08 | Google Cloud Tools App Engine Maven/Gradle plugin release |  | Version 1.3.1 of the com.google.cloud.tools App Engine Maven/Gradle plugin was released; Version 1.3.0 of the com.google.cloud.tools.appengine Maven/Gradle plugin was released. |
+| 2017-05-08 | Maven/Gradle environment variable configuration parameter |  | An environment parameter was added to Maven/Gradle configuration to include additional environment variables. |
+| 2017-05-02 | App Engine Gradle configuration deployment tasks |  | New Gradle tasks were added to deploy cron, dispatch, dos, index, and queue configurations. |
+| 2017-05-02 | App Engine Maven configuration deployment goals |  | New Maven goals were added to deploy cron, dispatch, dos, index, and queue configurations. |
+| 2017-05-02 | Flexible app staging behavior for Maven/Gradle |  | Staging flexible apps with Maven/Gradle now copies only app.yaml into build/target, with deployment config files expected from src/main/appengine. |
+| 2017-04-19 | App Engine Java SDK 1.9.52 |  | Updated the App Engine Java SDK to version 1.9.52. |
+| 2017-04-19 | Java 8 alpha standard environment runtime support |  | Improved support for the Java 8 alpha standard environment runtime. |
+| 2017-04-19 | Jetty runtime for Java 8 alpha standard environment |  | Upgraded the Java 8 alpha standard environment runtime to Jetty 9.3.18. |
+| 2017-04-19 | Quickstart web.xml processing for Java 8 Spring Boot |  | Improved quickstart-web.xml processing with newer Jetty capabilities to better support Java 8 SpringBoot applications. |
+| 2017-03-29 | App Engine Java SDK 1.9.51 |  | Updated the App Engine Java SDK to version 1.9.51. |
+| 2017-03-29 | Local development server support for Java 8 alpha web.xml-less apps |  | Enabled Java 8 alpha applications without a web.xml file to run in the local development server. |
+| 2017-03-21 | App Engine Gradle plugin version 1.1.1 |  | Updated the com.google.cloud.tools:appengine-gradle-plugin dependency to version 1.1.1. |
+| 2017-03-06 | App Engine Maven plugin version 1.2.1 |  | Updated the com.google.cloud.tools:appengine-maven-plugin dependency to version 1.2.1. |
+| 2017-03-01 | App Engine Java SDK 1.9.50 |  | Updated the App Engine Java SDK to version 1.9.50. |
+| 2017-03-01 | Automatic web.xml suppression for Java 7 Servlet 3.1 apps |  | Stopped auto-generating web.xml for Java 7 runtime applications that already use the servlet 3.1 web.xml schema. |
+| 2017-03-01 | Local development server multi-service testing support |  | Added support for testing multiple services with the local development server. |
+| 2017-03-01 | Packaging Java class files in deployment archives |  | Adjusted deployment packaging to include Java class files in zip archives even when no JSPs are present. |
+| 2017-02-17 | App Engine Gradle plugin for Java |  | The App Engine Gradle plugin for Java was updated to version 1.1.0. |
+| 2017-02-17 | App Engine Maven plugin for Java |  | The App Engine Maven plugin for Java was updated to version 1.2.0. |
+| 2017-02-17 | clearDatastore flag |  | A clearDatastore flag was added to clear the local datastore when startup occurs. |
+| 2017-02-17 | source-context tasks and goals |  | Source-context tasks/goals were added to the App Engine Java build tooling. |
+| 2016-11-03 | App Engine Java Runtime |  | The App Engine Java runtime was updated to version 1.9.46; The App Engine Java runtime was updated to version 1.9.44. |
+| 2016-10-27 | App Engine Channel service | 2017-10-31 | The App Engine Channel service was deprecated and scheduled for shutdown; deprecated on 2017-10-31. |
+| 2016-10-27 | App Engine XMPP service | 2017-10-31 | The App Engine XMPP service was deprecated and scheduled for shutdown; deprecated on 2017-10-31. |
+| 2016-10-17 | BlobInfo Cloud Storage property |  | BlobInfo gained a new property that is set when a Blobstore blob is stored in Cloud Storage. |
+| 2016-08-01 | App Engine Admin API v1 |  | Version 1 of the App Engine Admin API reached general availability. |
+| 2016-08-01 | App Engine Java runtime and SDK |  | App Engine Java components were updated to version 1.9.42. |
+| 2016-07-18 | 64-bit Java runtime auto-upgrade |  | All Java applications were automatically migrated to the 64-bit Java runtime through a rolling upgrade. |
+| 2016-07-18 | App Engine dashboard per-URL error metrics |  | The App Engine dashboard now reports server and client status errors with per-URL accuracy. |
+| 2016-07-18 | App Engine guided walkthrough in Cloud Console |  | App Engine now offers an in-console guided walkthrough that launches interactive tutorials for the selected language. |
+| 2016-07-18 | Cron task limit |  | The maximum number of cron tasks was increased to 250. |
+| 2016-07-18 | LeaseTasksByTag request rate limit |  | LeaseTasksByTag requests were limited to 25 requests per second. |
+| 2016-05-25 | Cloud Datastore cross-group transaction version consistency |  | Cross-group Datastore commits now return identical version numbers for all new and updated entities, regardless of entity group. |
+| 2016-05-25 | URL Fetch invalid-port request error normalization |  | URL Fetch now consistently returns INVALID_URL when requests target disallowed port ranges. |
+| 2016-04-18 | App Engine Java mail service quota increase requests | 2016-04-18 | The App Engine Java runtime stopped accepting quota increase requests for its mail service and recommends using SendGrid instead; deprecated on 2016-04-18. |
+| 2016-04-18 | App Engine Users API IAM role and group-based admin recognition |  | The App Engine Users API now treats project Owners, Editors, Viewers, and App Engine Admins as admins via IAM roles or group membership. |
+| 2016-04-18 | OverQuota exception detail messages |  | Error responses for the OverQuota exception now include available error details. |
+| 2016-03-16 | App Engine Java SDK 1.9.34 release |  | This release makes Java SDK version 1.9.34 available for App Engine Java. |
+| 2016-03-04 | URL Fetch default quota increase for billed applications |  | Version 1.9.34 increases the default URL Fetch quota for billed App Engine Java applications. |
+| 2016-02-17 | /form request path now allowed |  | The runtime now allows requests to the "/form" path to be forwarded to applications, where that path was previously blocked. |
+| 2016-02-03 | Datastore Transaction.rollback() failure logging behavior |  | The low-level Datastore API now logs an INFO message for `Transaction.rollback()` failures instead of throwing an exception. |
+| 2016-01-14 | Google Group-based App Engine access |  | App Engine now supports granting App Engine access to all members of a Google Group when the group is added to a project. |
+| 2015-12-30 | App Engine Java runtime version 1.9.29 |  | The App Engine Standard Environment for Java released runtime version 1.9.29. |
+| 2015-12-30 | Endpoints @Api discoverability toggle |  | Endpoints API now provides a discoverable boolean parameter on `@Api` to let developers disable API discovery for their services. |
+| 2015-12-30 | Task Queue Content-Length header for payload-less push requests |  | Push Queue requests for tasks without payloads now include a `Content-Length: 0` header. |
+| 2015-12-30 | Task Queue queue-depth suppression for invalid/deleted queues |  | Task Queue no longer calculates or stores queue depth for non-existent queues, queues marked for deletion, or during queue table outages. |
+| 2015-10-29 | App Engine Java runtime version 1.9.28 |  | The App Engine Standard Environment for Java released runtime version 1.9.28. |
+| 2015-10-29 | Java DevAppServer Files API | 2015-10-29 | The Java Files API was disabled in the Java DevAppServer; deprecated on 2015-10-29. |
+| 2015-10-29 | Search Geo filtering accuracy |  | Geo filtering behavior in Search queries was improved for better query accuracy. |
+| 2015-09-25 | App Engine Java runtime version 1.9.27 |  | The App Engine Standard Environment for Java released runtime version 1.9.27. |
+| 2015-09-25 | Datastore |  | Datastore was identified as a featured capability in this App Engine Java release. |
+| 2015-09-25 | Default unlimited daily budget for newly enabled applications |  | Newly enabled applications now default to an unlimited daily budget unless users set a custom budget. |
+| 2015-09-25 | Faceted Search |  | Faceted Search reached general availability in App Engine Standard Environment for Java. |
+| 2015-08-27 | App Engine Java runtime version 1.9.26 |  | The App Engine Standard Environment for Java released runtime version 1.9.26. |
+| 2015-08-27 | Java URLFetch defaultDeadline configuration |  | The Java URLFetch API added appengine.api.urlfetch.defaultDeadline in appengine-web.xml to set a default request timeout in seconds. |
+| 2015-08-27 | Load-based elastic provisioning |  | Applications can now be provisioned for current load and configured for elastic provisioning using VM and app-level metrics. |
+| 2015-08-27 | MVM application log context menu |  | A "show in context" menu was added for MVM application logs to sort entries by thread_id or request_id. |
+| 2015-08-27 | oauth2client library version 1.4.2 upgrade |  | The oauth2client library used by the platform was upgraded to version 1.4.2. |
+| 2015-08-27 | Remote API OAuth2 access with application default credentials |  | Remote API access can now use OAuth2 credentials via Google application default credentials. |
+| 2015-08-27 | URLFetch large payload exception handling |  | URLFetch requests with oversized payloads now use RequestPayloadTooLargeException. |
+| 2015-08-14 | Admin Console migration to Cloud Console |  | Admin Console menus now redirect to Cloud Console, while services such as Admin Logs continue to be available in Admin Console. |
+| 2015-08-14 | App Engine Java SDK/runtime version 1.9.25 |  | The App Engine Java platform release includes version 1.9.25. |
+| 2015-08-14 | Datastore empty list property support |  | Datastore now supports properties that can represent empty lists. |
+| 2015-08-14 | PyAMF 0.7.2 (Beta) support |  | PyAMF version 0.7.2 (Beta) was added. |
+| 2015-08-14 | Queue retry behavior for retry_limit zero |  | Failed tasks in queues with retry_limit set to zero are no longer retried. |
+
+Source file slug: `app-engine-standard-environment-java.md`
+

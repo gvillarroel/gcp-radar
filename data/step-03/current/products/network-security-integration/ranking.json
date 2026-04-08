@@ -1,0 +1,962 @@
+{
+  "schema_version": "step-03-url-score-v1",
+  "generated_at": "2026-04-08T17:38:45.792Z",
+  "product_name": "Network Security Integration",
+  "product_slug": "network-security-integration",
+  "step02_source_path": "data/step-02/current/network-security-integration.md",
+  "rounds": 3,
+  "search_count": 8,
+  "reprocess_requested": false,
+  "pi_model": "",
+  "dominant_doc_family": "network-security-integration",
+  "dominant_python_slug": "networksecurity",
+  "dominant_java_slug": "",
+  "candidates_scored_by_api": 18,
+  "search_runs": [
+    {
+      "round": 1,
+      "intent": "api_reference",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"reference/rest\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Network Security Integration\" official documentation OR site:developers.google.com \"network security integration\" official documentation",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "In-band Network Security Integration (NSI) Codelab | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/network-security-integration-in-band",
+          "description": "In this codelab, you will learn how to deploy an In-band Network Security Integration. Network Security Integration <strong>allows you to place a third-party network appliance in the path of network traffic for transparent inspection</strong>.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"roles and permissions\"",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Set up consumer services | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/configure-consumer-service",
+          "description": "Make sure that you have the following Identity and Access Management (IAM) roles and permissions: For security profile groups and security profile, the Compute Network Admin role (roles/compute.networkAdmin) on the organization.",
+          "rank": 1
+        },
+        {
+          "title": "Create and manage intercept endpoint groups | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-intercept-endpoint-groups",
+          "description": "To check the progress of the operations listed on this page, make sure that your user role has the Intercept Endpoint Admin (roles/networksecurity.interceptEndpointAdmin) and Intercept Deployment User (roles/networksecurity.interceptDeploymentUser) roles and permissions. The Intercept Deployment User role (roles/networksecurity.interceptDeploymentUser) is required on the producer project so that you can connect the consumer&#x27;s intercept endpoint group to the producer&#x27;s intercept deployment group. Create an intercept endpoint group and link it with the producer&#x27;s intercept deployment group. We recommend that you create the intercept endpoint group in a project owned by your security administrator.",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "java_client",
+      "query": "site:docs.cloud.google.com/java/docs/reference \"Network Security Integration\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "product_docs",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Network Security Integration overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/nsi-overview",
+          "description": "Network Security Integration <strong>uses the Generic Network Virtualization Encapsulation (GENEVE) protocol</strong>. GENEVE delivers original packets and metadata to network security appliance VMs from one or more of your VPC networks based on firewall rules ...",
+          "rank": 1
+        },
+        {
+          "title": "Network Security Integration documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs",
+          "description": "Network Security Integration <strong>helps you integrate your network appliances or service deployments with your Google Cloud workloads</strong>. This integration lets you maintain consistent policies across hybrid and multi-cloud environments without changing ...",
+          "rank": 2
+        },
+        {
+          "title": "Out-of-band integration overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview",
+          "description": "Figure 1. The high-level deployment ... integration service (click to enlarge). A producer VPC network contains a set of load-balanced collector instances that are capable of receiving Geneve-encapsulated packets from a consumer network. Instances in the instance group are referred to as collector instances. When you specify the collector instances, you enter the name of a forwarding rule that is associated with the internal passthrough Network Load Balancer. Google Cloud then forwards ...",
+          "rank": 3
+        },
+        {
+          "title": "Understand GENEVE format | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/understand-geneve",
+          "description": "Understand GENEVE protocol format, Google Cloud-specific options, and MTU requirements for network security integrations.",
+          "rank": 4
+        },
+        {
+          "title": "Security profiles overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/security-profiles-overview",
+          "description": "A collector receives mirrored traffic from the consumer network for inspection. This document <strong>provides an overview of security profiles and their specific configuration capabilities</strong>.",
+          "rank": 5
+        },
+        {
+          "title": "Set up consumer services | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/configure-consumer-service",
+          "description": "Network Security Integration · ... workflow that describes how to configure these consumer components. <strong>Sign in to your Google Cloud account.</strong>...",
+          "rank": 6
+        },
+        {
+          "title": "Create and manage firewall rules | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-firewall-rules",
+          "description": "gcloud compute network-firewall-policies rules create PRIORITY \\ --action APPLY_SECURITY_PROFILE_GROUP \\ --firewall-policy FIREWALL_POLICY \\ --security-profile-group organizations/ORGANIZATION_ID/locations/global/securityProfileGroups/SECURITY_PROFILE_GROUP_ID \\ --direction DIRECTION \\ --layer4-configs LAYER4_CONIFG \\ --src-ip-ranges SRC_IP_RANGE \\ [--dest-ip-ranges DEST_IP_RANGE] \\ --global-firewall-policy",
+          "rank": 7
+        },
+        {
+          "title": "Support for Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/getting-support",
+          "description": "To get support for Network Security Integration, see the following resources. Google Cloud offers different support packages to meet different needs, such as 24/7 coverage, phone support, and access to a technical support manager.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "python_client",
+      "query": "site:docs.cloud.google.com/python/docs/reference \"Network Security Integration\"",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Package mirroring (0.13.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest/google.cloud.network_security_v1.services.mirroring",
+          "description": "PM2 is the &quot;out-of-band&quot; flavor of the <strong>Network Security Integration</strong>s product.",
+          "rank": 1
+        },
+        {
+          "title": "Class MirroringClient (0.13.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest/google.cloud.network_security_v1.services.mirroring.MirroringClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import network_security_v1 def sample_create_mirroring_deployment(): # Create a client client = network_security_v1.MirroringClient() # Initialize request argument(s) mirroring_deployment = network_security_v1.MirroringDeployment() mirroring_deployment.forwarding_rule = &quot;forwarding_rule_value&quot; mirroring_deployment.mirroring_deployment_group = &quot;mirroring_deployment_group_value&quot; request = network_security_v1.",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "api_reference",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"APIs and reference\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "APIs and reference | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/apis",
+          "description": "Use the Network security APIs to create and manage Network Security Integration resources.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Network Security Integration\" reference OR site:developers.google.com \"network security integration\" reference",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "In-band Network Security Integration (NSI) Codelab | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/network-security-integration-in-band",
+          "description": "In this codelab, you will learn how to deploy an In-band Network Security Integration. Network Security Integration <strong>allows you to place a third-party network appliance in the path of network traffic for transparent inspection</strong>.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"access control\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "java_client",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"Java client libraries\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "product_docs",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Network Security Integration overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/nsi-overview",
+          "description": "Figure 1. High-level deployment architecture of the Network Security Integration services (click to enlarge). In the previous diagram, the producer-consumer model divides the network into two: a service producer network and a service consumer network. A service producer network contains a set of scalable network appliances that inspect traffic. A service consumer network contains Google Cloud VMs.",
+          "rank": 1
+        },
+        {
+          "title": "Network Security Integration documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs",
+          "description": "Network Security Integration <strong>helps you integrate your network appliances or service deployments with your Google Cloud workloads</strong>. This integration lets you maintain consistent policies across hybrid and multi-cloud environments without changing ...",
+          "rank": 2
+        },
+        {
+          "title": "Security profiles overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/security-profiles-overview",
+          "description": "Security profiles define how the Network Security Integration service handles your network traffic. You use security profiles to to associate an endpoint group with the Virtual Private Cloud (VPC) network. When used with a firewall rule, a security profile directs the network traffic to the intercept endpoint group. This page provides a detailed overview of security profiles and their capabilities.",
+          "rank": 3
+        },
+        {
+          "title": "Out-of-band integration overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview",
+          "description": "Figure 1. The high-level deployment architecture of the out-of-band integration service (click to enlarge). A producer VPC network contains a set of load-balanced collector instances that are capable of receiving Geneve-encapsulated packets from a consumer network. Instances in the instance group are referred to as collector instances. When you specify the collector instances, you enter the name of a forwarding rule that is associated with the internal passthrough Network Load Balancer. Google Cloud then forwards the mirrored traffic to the collector instances.",
+          "rank": 4
+        },
+        {
+          "title": "Set up consumer services | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/configure-consumer-service",
+          "description": "Network Security Integration · ... rules · Firewall policies · This document <strong>provides a high-level workflow that describes how to configure these consumer components</strong>....",
+          "rank": 5
+        },
+        {
+          "title": "In-band integration overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+          "description": "Network Security Integration <strong>offers in-band integration using Cloud Next Generation Firewall and Packet Intercept technologies, providing a service-centric approach to packet processing pipelines</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "APIs and reference | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/apis",
+          "description": "Use the Network security APIs to create and manage Network Security Integration resources.",
+          "rank": 7
+        },
+        {
+          "title": "Understand GENEVE format | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/understand-geneve",
+          "description": "Understand GENEVE protocol format, Google Cloud-specific options, and MTU requirements for network security integrations.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "python_client",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"Python client libraries\"",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Class MirroringClient (0.13.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest/google.cloud.network_security_v1.services.mirroring.MirroringClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import network_security_v1 def sample_create_mirroring_deployment(): # Create a client client = network_security_v1.MirroringClient() # Initialize request argument(s) mirroring_deployment = network_security_v1.MirroringDeployment() mirroring_deployment.forwarding_rule = &quot;forwarding_rule_value&quot; mirroring_deployment.mirroring_deployment_group = &quot;mirroring_deployment_group_value&quot; request = network_security_v1.",
+          "rank": 1
+        },
+        {
+          "title": "Package mirroring (0.13.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest/google.cloud.network_security_v1.services.mirroring",
+          "description": "Python · Client libraries · Send feedback · 0.13.0 (latest) 0.12.0 · 0.11.0 · 0.10.0 · 0.9.21 · 0.8.0 · 0.7.2 · 0.6.1 · 0.5.0 · 0.4.2 · 0.3.2 · 0.2.0 · 0.1.5 · API documentation for network_security_v1.services.mirroring package. PM2 is the &quot;out-of-band&quot; flavor of the Network Security Integrations product.",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "api_reference",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" \"API reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Network Security Integration\" overview OR site:developers.google.com \"network security integration\" overview",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "In-band Network Security Integration (NSI) Codelab | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/network-security-integration-in-band",
+          "description": "In this codelab, you will learn how to deploy an In-band Network Security Integration. Network Security Integration <strong>allows you to place a third-party network appliance in the path of network traffic for transparent inspection</strong>.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" IAM roles permissions",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Security profiles overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/security-profiles-overview",
+          "description": "The following table describes the Identity and Access Management (IAM) roles required for managing the security profiles: If you don&#x27;t have the Security Profile Admin role (networksecurity.securityProfileAdmin), you can create custom intercept security profile with the following permissions:",
+          "rank": 1
+        },
+        {
+          "title": "Create and manage intercept deployments | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-intercept-deployments",
+          "description": "resource &quot;google_network_security_intercept_deployment&quot; &quot;default&quot; { intercept_deployment_id = &quot;intercept-deployment&quot; location = &quot;us-central1-a&quot; forwarding_rule = google_compute_forwarding_rule.default.id intercept_deployment_group = google_network_security_intercept_deployment_group.default.id } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. You can view the details of an intercept deployment, including its name, its forwarding rule, and its location. To perform this task, you must have been granted the following permissions or one of the following IAM roles on your project.",
+          "rank": 2
+        },
+        {
+          "title": "Create and manage intercept endpoint groups | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-intercept-endpoint-groups",
+          "description": "We recommend that you create the intercept endpoint group in a project owned by your security administrator. To perform this task, you must have been granted the following permissions or one of the following IAM roles on your project. ... Intercept Deployment User role (networksecurity.interceptDeploymentUser), or Intercept Deployment External User role (networksecurity.interceptDeploymentExternalUser) if the user is in another organization",
+          "rank": 3
+        },
+        {
+          "title": "Configure resource-based access | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/configuring-resource-based-access",
+          "description": "Network Security Integration · Parameter Manager · Pub/Sub Lite · Secret Manager · Spanner · Important: Review Important usage considerations for resource-based conditions at the bottom of this page before applying a condition of this type in a production environment. To get the permissions that you need to manage conditional role bindings, ask your administrator to grant you the following IAM roles: To manage access to projects: Project IAM Admin (roles/resourcemanager.projectIamAdmin) on the project ·",
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "java_client",
+      "query": "site:developers.google.com \"Network Security Integration\" \"Java client library\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "product_docs",
+      "query": "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Network Security Integration overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/nsi-overview",
+          "description": "Figure 1. High-level deployment architecture of the Network Security Integration services (click to enlarge). In the previous diagram, the producer-consumer model divides the network into two: a service producer network and a service consumer network. A service producer network contains a set of scalable network appliances that inspect traffic. A service consumer network contains Google Cloud VMs.",
+          "rank": 1
+        },
+        {
+          "title": "Network Security Integration documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs",
+          "description": "Network Security Integration pricing · Quotas and limits · Release notes · Billing questions · Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. Training · Training and tutorials · Perform basic networking tasks on Google Cloud. 75 minutes introductory Free ·",
+          "rank": 2
+        },
+        {
+          "title": "Out-of-band integration overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview",
+          "description": "Figure 1. The high-level deployment ... integration service (click to enlarge). A producer VPC network contains a set of load-balanced collector instances that are capable of receiving Geneve-encapsulated packets from a consumer network. Instances in the instance group are referred to as collector instances. When you specify the collector instances, you enter the name of a forwarding rule that is associated with the internal passthrough Network Load Balancer. Google Cloud then forwards ...",
+          "rank": 3
+        },
+        {
+          "title": "Network Security API | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/reference/rest",
+          "description": "<strong>https://networksecurity.googleapis.com/$discovery/rest?version=v1beta1</strong>",
+          "rank": 4
+        },
+        {
+          "title": "Understand GENEVE format | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/understand-geneve",
+          "description": "Understand GENEVE protocol format, Google Cloud-specific options, and MTU requirements for network security integrations.",
+          "rank": 5
+        },
+        {
+          "title": "In-band integration overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+          "description": "Network Security Integration <strong>offers in-band integration using Cloud Next Generation Firewall and Packet Intercept technologies, providing a service-centric approach to packet processing pipelines</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Security profiles overview | Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/security-profiles-overview",
+          "description": "Security profiles define how the Network Security Integration service handles your network traffic. You use security profiles to to associate an endpoint group with the Virtual Private Cloud (VPC) network.",
+          "rank": 7
+        },
+        {
+          "title": "Support for Network Security Integration | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-security-integration/docs/getting-support",
+          "description": "To get support for Network Security Integration, see the following resources. Google Cloud offers different support packages to meet different needs, such as 24/7 coverage, phone support, and access to a technical support manager.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "python_client",
+      "query": "site:googleapis.dev/python \"Network Security Integration\"",
+      "official_result_count": 0,
+      "results": []
+    }
+  ],
+  "scored_urls": [
+    {
+      "title": "Network Security Integration documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs",
+      "description": "Network Security Integration <strong>helps you integrate your network appliances or service deployments with your Google Cloud workloads</strong>. This integration lets you maintain consistent policies across hybrid and multi-cloud environments without changing ...",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Network Security Integration overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/nsi-overview",
+      "description": "Network Security Integration <strong>uses the Generic Network Virtualization Encapsulation (GENEVE) protocol</strong>. GENEVE delivers original packets and metadata to network security appliance VMs from one or more of your VPC networks based on firewall rules ...",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Out-of-band integration overview | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview",
+      "description": "Figure 1. The high-level deployment ... integration service (click to enlarge). A producer VPC network contains a set of load-balanced collector instances that are capable of receiving Geneve-encapsulated packets from a consumer network. Instances in the instance group are referred to as collector instances. When you specify the collector instances, you enter the name of a forwarding rule that is associated with the internal passthrough Network Load Balancer. Google Cloud then forwards ...",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Understand GENEVE format | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/understand-geneve",
+      "description": "Understand GENEVE protocol format, Google Cloud-specific options, and MTU requirements for network security integrations.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Support for Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/getting-support",
+      "description": "To get support for Network Security Integration, see the following resources. Google Cloud offers different support packages to meet different needs, such as 24/7 coverage, phone support, and access to a technical support manager.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Create and manage intercept endpoint groups | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-intercept-endpoint-groups",
+      "description": "To check the progress of the operations listed on this page, make sure that your user role has the Intercept Endpoint Admin (roles/networksecurity.interceptEndpointAdmin) and Intercept Deployment User (roles/networksecurity.interceptDeploymentUser) roles and permissions. The Intercept Deployment User role (roles/networksecurity.interceptDeploymentUser) is required on the producer project so that you can connect the consumer&#x27;s intercept endpoint group to the producer&#x27;s intercept deployment group. Create an intercept endpoint group and link it with the producer&#x27;s intercept deployment group. We recommend that you create the intercept endpoint group in a project owned by your security administrator.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Network Security Integration\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "In-band integration overview | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+      "description": "Network Security Integration <strong>offers in-band integration using Cloud Next Generation Firewall and Packet Intercept technologies, providing a service-centric approach to packet processing pipelines</strong>.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Security profiles overview | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/security-profiles-overview",
+      "description": "Security profiles define how the Network Security Integration service handles your network traffic. You use security profiles to to associate an endpoint group with the Virtual Private Cloud (VPC) network. When used with a firewall rule, a security profile directs the network traffic to the intercept endpoint group. This page provides a detailed overview of security profiles and their capabilities.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Network Security Integration\" IAM roles permissions",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Set up consumer services | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/configure-consumer-service",
+      "description": "Make sure that you have the following Identity and Access Management (IAM) roles and permissions: For security profile groups and security profile, the Compute Network Admin role (roles/compute.networkAdmin) on the organization.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "iam_permissions",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Package mirroring (0.13.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest",
+      "description": "PM2 is the &quot;out-of-band&quot; flavor of the <strong>Network Security Integration</strong>s product.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Network Security Integration\"",
+        "site:docs.cloud.google.com \"Network Security Integration\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 82,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Package mirroring (0.13.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest/google.cloud.network_security_v1.services.mirroring",
+      "description": "PM2 is the &quot;out-of-band&quot; flavor of the <strong>Network Security Integration</strong>s product.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Network Security Integration\"",
+        "site:docs.cloud.google.com \"Network Security Integration\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 82,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class MirroringClient (0.13.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/networksecurity/latest/google.cloud.network_security_v1.services.mirroring.MirroringClient",
+      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import network_security_v1 def sample_create_mirroring_deployment(): # Create a client client = network_security_v1.MirroringClient() # Initialize request argument(s) mirroring_deployment = network_security_v1.MirroringDeployment() mirroring_deployment.forwarding_rule = &quot;forwarding_rule_value&quot; mirroring_deployment.mirroring_deployment_group = &quot;mirroring_deployment_group_value&quot; request = network_security_v1.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Network Security Integration\"",
+        "site:docs.cloud.google.com \"Network Security Integration\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 30,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "APIs and reference | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/apis",
+      "description": "Use the Network security APIs to create and manage Network Security Integration resources.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "api_reference",
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Create and manage firewall rules | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-firewall-rules",
+      "description": "gcloud compute network-firewall-policies rules create PRIORITY \\ --action APPLY_SECURITY_PROFILE_GROUP \\ --firewall-policy FIREWALL_POLICY \\ --security-profile-group organizations/ORGANIZATION_ID/locations/global/securityProfileGroups/SECURITY_PROFILE_GROUP_ID \\ --direction DIRECTION \\ --layer4-configs LAYER4_CONIFG \\ --src-ip-ranges SRC_IP_RANGE \\ [--dest-ip-ranges DEST_IP_RANGE] \\ --global-firewall-policy",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create and manage intercept deployments | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-intercept-deployments",
+      "description": "resource &quot;google_network_security_intercept_deployment&quot; &quot;default&quot; { intercept_deployment_id = &quot;intercept-deployment&quot; location = &quot;us-central1-a&quot; forwarding_rule = google_compute_forwarding_rule.default.id intercept_deployment_group = google_network_security_intercept_deployment_group.default.id } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands. You can view the details of an intercept deployment, including its name, its forwarding rule, and its location. To perform this task, you must have been granted the following permissions or one of the following IAM roles on your project.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Network Security API | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/reference/rest",
+      "description": "<strong>https://networksecurity.googleapis.com/$discovery/rest?version=v1beta1</strong>",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Security profiles overview | Network Security Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-security-integration/docs/security-profiles-overview",
+      "description": "A collector receives mirrored traffic from the consumer network for inspection. This document <strong>provides an overview of security profiles and their specific configuration capabilities</strong>.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 86,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure resource-based access | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/configuring-resource-based-access",
+      "description": "Network Security Integration · Parameter Manager · Pub/Sub Lite · Secret Manager · Spanner · Important: Review Important usage considerations for resource-based conditions at the bottom of this page before applying a condition of this type in a production environment. To get the permissions that you need to manage conditional role bindings, ask your administrator to grant you the following IAM roles: To manage access to projects: Project IAM Admin (roles/resourcemanager.projectIamAdmin) on the project ·",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Network Security Integration\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 36,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    }
+  ]
+}

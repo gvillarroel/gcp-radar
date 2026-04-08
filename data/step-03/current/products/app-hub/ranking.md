@@ -1,0 +1,32 @@
+# App Hub Step 03 URL Ranking
+
+This file lists the official Google documentation URLs selected and scored for this product.
+
+| Final score | Keep | Classification | URL | Query coverage | Rationale |
+| ---: | --- | --- | --- | ---: | --- |
+| 100 | yes | product_root | https://docs.cloud.google.com/app-hub/docs | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/app-hub/docs/application-centric-google-cloud | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | yes | product_root | https://docs.cloud.google.com/app-hub/docs/overview | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/app-hub/docs/prepare-for-app-lifecycle-management | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | yes | product_reference | https://docs.cloud.google.com/app-hub/docs/reference | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | product_root | https://docs.cloud.google.com/hub/docs/overview | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/hub/docs/setup-cloud-hub | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | yes | iam_reference | https://docs.cloud.google.com/app-hub/docs/manage-applications | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | no | supporting_page | https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | yes | iam_reference | https://docs.cloud.google.com/app-hub/docs/roles-permissions | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | no | iam_reference | https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | no | irrelevant | https://docs.cloud.google.com/app-hub/docs/supported-resources | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | yes | java_reference | https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/overview | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 97 | no | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/apphub | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 93 | no | irrelevant | https://docs.cloud.google.com/app-hub/docs/best-practices | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 93 | no | iam_reference | https://docs.cloud.google.com/app-hub/docs/grant-access-applications | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 93 | no | iam_reference | https://docs.cloud.google.com/app-hub/docs/set-up-app-hub | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/application-design-center/docs/key-concepts | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | iam_reference | https://docs.cloud.google.com/application-design-center/docs/setup | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.AppHub.V1/latest/Google.Cloud.AppHub.V1 | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | iam_reference | https://docs.cloud.google.com/resource-manager/docs/manage-applications | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | iam_reference | https://docs.cloud.google.com/resource-manager/docs/manage-applications?hl=en | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 81 | no | iam_reference | https://docs.cloud.google.com/hub/docs/deployments | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 40 | no | supporting_page | https://docs.cloud.google.com/hub/docs/app-project-views | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+

@@ -1,0 +1,37 @@
+# Video Intelligence API
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 21
+Unique features: 23
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2021-11-01 | Video Intelligence API Streaming API AutoML Action Recognition |  | Allows AutoML Action Recognition using custom AutoML models on real-time video streams via the Streaming API. |
+| 2021-05-04 | Video Intelligence API Face Detection |  | Detects faces in video content and identifies attributes such as whether glasses are being worn. |
+| 2021-05-04 | Video Intelligence API Person Detection |  | Detects people in video content and identifies person attributes and 2D facial landmarks. |
+| 2020-05-21 | Face detection |  | Face detection locates faces within a video and identifies attributes such as whether glasses are worn. |
+| 2020-05-21 | Person detection |  | Person detection locates people in a video and identifies attributes and 2D landmarks. |
+| 2020-03-31 | Logo recognition |  | Logo recognition detects, tracks, and recognizes the presence of brands and logos in video content; Logo recognition is available as a beta capability in the Video Intelligence API for identifying logos in media. |
+| 2019-10-30 | Celebrity recognition |  | Celebrity recognition detects and tracks human faces in videos and matches them to a curated celebrity database. |
+| 2019-09-17 | Custom AutoML models for streaming video annotation |  | Video Intelligence API now supports using customer-owned AutoML models for label detection and object tracking on streaming video. |
+| 2019-09-17 | Object-tracking annotation model improvements in Video Intelligence API v1 |  | Video Intelligence API v1 now includes improved annotation models for object tracking. |
+| 2019-09-17 | Text detection annotation model improvements in Video Intelligence API v1 |  | Video Intelligence API v1 now includes improved annotation models for text detection. |
+| 2019-09-17 | Video Intelligence API Label Detection model version specification |  | The API now allows callers to choose the Label Detection model by setting LabelDetectionConfig.model to builtin/stable or builtin/latest. |
+| 2019-09-17 | Video Intelligence API Shot Change Detection model version specification |  | The API now allows callers to choose the Shot Change Detection model by setting ShotChangeDetectionConfig.model to builtin/stable or builtin/latest. |
+| 2019-04-10 | Live streaming video annotation |  | Video Intelligence API provides live streaming video annotation capabilities as a beta feature. |
+| 2019-04-10 | Streaming from a file |  | Video Intelligence API provides support for streaming input from a file as a beta feature. |
+| 2019-04-10 | Text detection (OCR) |  | Text detection (OCR) in Video Intelligence API became generally available for extracting text from video content. |
+| 2019-04-10 | Video Intelligence API Object Tracking |  | Object tracking support in Video Intelligence API is now generally available. |
+| 2018-12-07 | Speech transcription |  | Video Intelligence API introduced generally available speech transcription to transcribe spoken text from video audio, including support for multiple speakers and punctuation handling; Adds speech transcription support for video content as a beta feature. |
+| 2018-10-26 | Object Tracking |  | Cloud Video Intelligence supports object tracking by following an object across consecutive moments in a video. |
+| 2018-10-26 | Video OCR |  | The Video Intelligence API supports detecting text in videos using optical character recognition (OCR). |
+| 2017-06-26 | SafeSearch detection |  | Adds SafeSearch detection to inspect video frames for potentially adult imagery via annotate calls. |
+| 2017-05-18 | Cloud Video Intelligence API |  | The Cloud Video Intelligence API became available as a beta release. |
+| 2017-05-18 | Label detection |  | Label detection analyzes an input video across its full length or a segment to identify entities, using the annotate method with a LABEL_DETECTION request. |
+| 2017-05-18 | Shot change detection |  | Shot change detection analyzes a video and identifies scene transitions via the annotate method using SHOT_CHANGE_DETECTION requests. |
+
+Source file slug: `video-intelligence-api.md`
+

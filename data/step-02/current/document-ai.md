@@ -1,0 +1,250 @@
+# Document AI
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 149
+Unique features: 236
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-03-31 | Fine-tuned custom extractor processor version upgrade |  | This preview feature lets you upgrade a fine-tuned custom extractor processor to a newer base version while preserving the previous configuration. |
+| 2026-03-27 | Custom splitter model pretrained-splitter-v1.5-2025-07-14 |  | This custom splitter model version is generally available; This custom splitter model version is generally available. |
+| 2026-03-23 | Custom classifier model pretrained-classifier-v1.6-2026-03-09 |  | This custom classifier model version is available in Preview; This custom classifier model version is available in Preview. |
+| 2026-03-23 | Custom classifier model pretrained-classifier-v1.6-pro-2026-03-09 |  | This custom classifier model version is available in Preview; This custom classifier model version is available in Preview. |
+| 2026-03-23 | Custom splitter model pretrained-splitter-v1.6-2026-03-09 |  | This custom splitter model version is available in Preview; This custom splitter model version is available in Preview. |
+| 2026-03-23 | Custom splitter model pretrained-splitter-v1.6-pro-2026-03-09 |  | This custom splitter model version is available in Preview; This custom splitter model version is available in Preview. |
+| 2026-03-03 | Custom classifier model pretrained-classifier-v1.5-2025-08-05 |  | This custom classifier model version is generally available; This custom classifier model version is generally available. |
+| 2026-02-17 | Pretrained 1099-G parser v1.0-2021-05-27 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained 1099-G parser v1.1-2021-12-10 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained 1099-INT parser v1.1-2021-12-10 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained 1099-MISC parser v1.1-2021-12-10 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained 1099-NEC parser v1.0-2021-08-11 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained 1099-R parser v2.0-2022-07-25 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained 1120 parser v3.0-2022-04-26 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained foundation model v1.0-2023-08-22 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained French driver license parser v1.0-2021-06-14 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained lending document split parser v1.0-2021-12-08 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained lending document split parser v2.0-2021-12-09 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained mortgage statement parser v1.0-2021-10-17 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained procurement splitter v1.1-2021-04-09 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained procurement splitter v1.2-2022-08-19 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained SSA-1099 parser v1.0-2021-08-09 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained US passport parser v1.0-2021-06-14 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained utility parser v1.1-2021-04-09 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained utility parser v1.2-2022-12-15 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained W-9 parser v1.0-2020-09-25 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained W-9 parser v1.1-2021-12-10 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained W-9 parser v1.2-2022-01-27 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-17 | Pretrained W-9 parser v2.0-2022-06-23 | 2026-06-30 | This processor version is deprecated and will be discontinued on 2026-06-30; This processor version is deprecated and will be discontinued on 2026-06-30; deprecated on 2026-06-30. |
+| 2026-02-16 | Layout parser web interface |  | This preview web interface lets you inspect processed PDFs, parsed JSON, block layout, and image or table annotations, and adjust layout configuration from the console; A preview web interface for layout parser that displays processed PDFs, parsed JSON, block layouts, and image or table annotations. |
+| 2026-02-09 | Layout parser model pretrained-layout-parser-v1.6-2026-01-13 |  | A preview layout parser model version powered by Gemini 3 Flash LLM with ML processing capabilities in the US and EU. |
+| 2026-01-27 | Custom extractor model pretrained-foundation-model-v1.6-2026-01-13 |  | A preview custom extractor model version powered by Gemini 3 Flash LLM with ML processing capabilities in the US and EU. |
+| 2026-01-27 | Custom extractor model pretrained-foundation-model-v1.6-pro-2025-12-01 |  | A preview custom extractor model version powered by Gemini 3 Pro LLM with ML processing capabilities in the US and EU. |
+| 2026-01-27 | Layout parser model pretrained-layout-parser-v1.6-pro-2025-12-01 |  | A preview layout parser model version powered by Gemini 3 Pro LLM with ML processing capabilities in the US and EU. |
+| 2026-01-12 | Document-level prompting for custom document processors |  | A feature that lets custom document processors use a document-level prompt to inject business context and improve extraction quality. |
+| 2025-12-15 | Document AI Monitoring Dashboard |  | A web-based monitoring dashboard lets you track project- and processor-level metrics over time. |
+| 2025-12-15 | Monitoring dashboard web interface |  | A preview web interface for monitoring processed pages and sync processing latency at the project and processor levels. |
+| 2025-11-12 | Custom extractor schema generation |  | You can automatically generate a document schema from a test document and then approve, edit, or decline it. |
+| 2025-11-07 | Gemini layout parser |  | The Gemini layout parser improves table recognition, reading order, and text recognition for PDF files; The Gemini layout parser improves table recognition, reading order, and text recognition for PDF files. |
+| 2025-11-04 | Layout parser office file support |  | Layout parser support for DOCX, PPTX, XLSX, and XLSM files makes structured document content easier to access and chunk; Layout parser support for DOCX, PPTX, XLSX, and XLSM files makes structured document content easier to access and chunk. |
+| 2025-10-31 | Custom splitter model |  | The custom splitter model supports zero-shot splitting, classification, and confidence scoring; The custom splitter model supports zero-shot splitting, classification, and confidence scoring. |
+| 2025-10-17 | Layout parser image and table annotations |  | Layout parser can detect images and tables in parsed documents and annotate them as descriptive text blocks; Layout parser can detect images and tables in parsed documents and annotate them as descriptive text blocks. |
+| 2025-10-06 | Confidence scores for custom classifier models |  | Custom classifier models support confidence scores in Preview; Custom classifier models support confidence scores in Preview. |
+| 2025-10-06 | Custom extractor model |  | The custom extractor model supports improved adaptive few-shot learning; The custom extractor model supports improved adaptive few-shot learning. |
+| 2025-09-03 | Custom extractor model pretrained-foundation-model-v1.5-pro-2025-06-20 |  | The pretrained-foundation-model-v1.5-pro-2025-06-20 custom extractor model is generally available; The pretrained-foundation-model-v1.5-pro-2025-06-20 custom extractor model is generally available. |
+| 2025-08-29 | Derived entity detection for custom extractor models |  | Custom extractor models can infer entities that are not explicitly present in the document text. |
+| 2025-08-29 | Signature detection for custom extractor models |  | Custom extractor models can detect handwritten signatures using visual cues in documents. |
+| 2025-07-04 | IAM deny policies |  | Document AI supports IAM deny policies that block specified principals from using permissions on Google Cloud resources; Document AI supports IAM deny policies that block specified principals from using permissions on Google Cloud resources. |
+| 2025-07-04 | VPC Service Controls identity groups |  | Document AI VPC Service Controls integration supports identity groups in ingress and egress rules. |
+| 2025-07-04 | VPC Service Controls identity groups support |  | Document AI VPC Service Controls integration supports identity groups. |
+| 2025-07-03 | Cross-page nested entity merging |  | The Document AI CDE processor can merge child entities of nested entities that span multiple pages; The Document AI CDE processor can merge child entities of nested entities that span multiple pages. |
+| 2025-06-30 | Custom extractor model pretrained-foundation-model-v1.5-2025-05-05 |  | The custom extractor model pretrained-foundation-model-v1.5-2025-05-05 is generally available and supports fine-tuning in the US and EU; The custom extractor model pretrained-foundation-model-v1.5-2025-05-05 is generally available and supports fine-tuning in the US and EU. |
+| 2025-06-19 | Online processing file size limit |  | Document AI online processing requests now accept files up to 40 MB; Document AI online processing requests now accept files up to 40 MB. |
+| 2025-05-19 | Cross-region import of fine-tuned models |  | Document AI supports cross-region import of fine-tuned models for processor versions based on Gemini 1.5 and later; Document AI supports cross-region import of fine-tuned models for processor versions based on Gemini 1.5 and later. |
+| 2025-05-05 | Custom extractor model pretrained-foundation-model-v1.5-2025-04-25 |  | The custom extractor model pretrained-foundation-model-v1.5-2025-04-25 is available as Public Preview in US regions; The Custom Extractor model version pretrained-foundation-model-v1.5-2025-04-25 is available in Public Preview in US regions and supports up to 15 pages per minute for online process requests. |
+| 2025-04-02 | Maximum page limit for online and synchronous requests |  | All processors can extend the maximum page limit for online and synchronous requests to 30 pages by enabling imageless_mode in ProcessRequest; All processors can extend the maximum page limit for online and synchronous requests to 30 pages by enabling imageless_mode in ProcessRequest. |
+| 2025-03-24 | Custom Extractor model pretrained-foundation-model-v1.2-2024-05-10 | 2025-09-24 | The Custom Extractor model version pretrained-foundation-model-v1.2-2024-05-10 will no longer be accessible effective 2025-09-24; deprecated on 2025-09-24. |
+| 2025-03-24 | Custom Extractor model pretrained-foundation-model-v1.3-2024-08-31 | 2025-09-24 | The Custom Extractor model version pretrained-foundation-model-v1.3-2024-08-31 will no longer be accessible effective 2025-09-24; deprecated on 2025-09-24. |
+| 2025-03-19 | Custom Extractor fine tuning |  | Fine-tuning for the Custom Extractor v1.4 model is available in Preview in the US and EU; Custom Extractor fine-tuning is available in public preview for versions v1.2 and v1.3. |
+| 2025-03-19 | Custom extractor model pretrained-foundation-model-v1.4-2025-02-05 | 2026-02-05 | The pretrained-foundation-model-v1.4-2025-02-05 custom extractor model will no longer be accessible; The pretrained-foundation-model-v1.4-2025-02-05 custom extractor model will no longer be accessible; deprecated on 2026-02-05. |
+| 2025-02-03 | Enterprise Document OCR model pretrained-ocr-v2.1-2024-08-07 |  | The Enterprise Document OCR model version pretrained-ocr-v2.1-2024-08-07 is generally available in the US and EU. |
+| 2025-02-03 | Enterprise Document OCR model pretrained-ocr-v2.1.1-2025-01-31 |  | The Enterprise Document OCR model version pretrained-ocr-v2.1.1-2025-01-31 is available as a Release Candidate in multiple regions. |
+| 2025-01-27 | CMEK support for imported fine-tuned processor versions |  | Customer-managed encryption keys are supported when importing fine-tuned Custom Extractor processor versions based on v1.2 and v1.3. |
+| 2024-12-19 | Property descriptions |  | Property descriptions are generally available for Custom Extractor and let you provide additional context to improve extraction accuracy; Property descriptions can be configured in the Document AI console during Custom Extractor processor creation and edited after schema creation. |
+| 2024-12-12 | Copy processor versions between projects |  | Processor versions can be copied between projects by using Import a processor version. |
+| 2024-10-01 | Custom Extractor model versions | 2025-04-09 | Custom Extractor model versions v1.2 and v1.3 are now Stable; Custom Extractor model versions v1.0 and v1.1 will no longer be accessible starting April 9, 2025; deprecated on 2025-04-09. |
+| 2024-09-26 | Enterprise Document OCR | 2025-04-30 | Earlier Enterprise Document OCR versions are discontinued in the US and EU starting April 30, 2025; deprecated on 2025-04-30. |
+| 2024-09-23 | Expense Parser | 2025-04-30 | Earlier Expense Parser versions are discontinued in the US and EU starting April 30, 2025; Expense Parser model versions v1.3.2 and v1.4.2 are available as release candidates; deprecated on 2025-04-30. |
+| 2024-09-20 | Custom Extractor property descriptions |  | Custom Extractor property descriptions let you add context to entity properties to improve extraction accuracy. |
+| 2024-08-23 | Document AI OCR 2.1 |  | Document AI OCR 2.1 improves printed text recognition, checkbox detection, and reading order. |
+| 2024-08-21 | Custom Extractor date and currency normalization |  | Custom Extractor date and currency normalization uses document region to disambiguate ambiguous dates and currencies. |
+| 2024-06-04 | Layout Parser |  | Layout Parser is generally available and turns documents into structured content with context-aware chunks. |
+| 2024-05-06 | Layout Parser batch processing |  | Layout Parser batch processing is available. |
+| 2024-05-01 | Layout Parser online processing |  | Layout Parser online processing is available for transforming documents into structured content with paragraphs, tables, lists, and layout elements. |
+| 2024-02-29 | Custom Extractor nested extraction |  | Custom Extractor supports three levels of nesting for extracting structured data from complex documents and tables. |
+| 2024-02-29 | Custom Extractor processor version model type |  | The processorVersions API exposes the model type powering a Custom Extractor processor version. |
+| 2024-02-29 | Custom Extractor with generative AI |  | Custom Extractor with generative AI is available in the asia-southeast1 region; Custom Extractor with generative AI is generally available for production workloads. |
+| 2024-01-09 | Individual page selection |  | Developers can specify which pages Document AI should process within a document. |
+| 2023-12-20 | Custom Extractor generative AI demo |  | Custom Extractor can demo generative AI extraction results alongside output from other Document AI products. |
+| 2023-09-21 | Checkbox extraction |  | Checkbox extraction detects and returns marked or unmarked checkbox status in OCR responses. |
+| 2023-09-21 | Enterprise Document OCR v2.0 |  | Enterprise Document OCR v2.0 provides an upgraded OCR model with a visual-element detector for boxed characters. |
+| 2023-09-21 | Font-style detection |  | Font-style detection identifies word-level font properties such as type, style, handwriting, weight, and color. |
+| 2023-09-21 | Math OCR |  | Math OCR identifies, recognizes, and extracts formulas from documents in LaTeX output format. |
+| 2023-09-21 | OCR add-ons |  | OCR add-ons extend Enterprise Document OCR with additional extraction capabilities. |
+| 2023-08-25 | Document AI Workbench Summarizer |  | Document AI Workbench Summarizer generates customizable summaries for documents up to 250 pages. |
+| 2023-08-25 | Template-based training |  | Template-based training lets Custom Extractor learn accurate predictions from documents with consistent layouts. |
+| 2023-08-18 | Expense Processor |  | The Expense Processor now has a release-candidate version in asia-southeast1 with improved normalization for dates and currency entities. |
+| 2023-08-01 | Dataset APIs |  | Dataset APIs let you manage Workbench dataset documents through import, retrieval, update, and batch deletion. |
+| 2023-08-01 | Dataset schema APIs |  | Dataset schema APIs let you update and retrieve dataset schemas in Document AI Workbench. |
+| 2023-08-01 | Default dataset storage option |  | Workbench now offers a default Cloud Storage option for new processor datasets. |
+| 2023-08-01 | Document AI Workbench programmatic model training APIs |  | Document AI Workbench adds public APIs for creating and training models programmatically. |
+| 2023-08-01 | Quick Tables |  | Quick Tables helps Custom Document Extractor users label tables in bulk by applying the first-row pattern to the rest of the table. |
+| 2023-08-01 | Selective labeling |  | Selective labeling recommends documents to label in Custom Document Extractor based on clustering results. |
+| 2023-07-18 | Form Parser checkbox detection |  | Form Parser v2.0 includes enhanced checkbox detection. |
+| 2023-07-18 | Form Parser general field extraction |  | Form Parser v2.0 can extract 11 different entity types from documents. |
+| 2023-07-18 | Form Parser internationalization |  | Form Parser v2.0 supports more than 200 languages. |
+| 2023-07-18 | Form Parser key-value pair detection |  | Form Parser v2.0 includes an upgraded key-value pair detection model. |
+| 2023-07-18 | Form Parser v2.1 |  | Form Parser v2.1 is in public preview and uses native PDF text extraction on PDF documents. |
+| 2023-07-17 | CDS bulk labeling on import |  | Custom Document Splitter can bulk label documents at import across multiple folders. |
+| 2023-07-17 | CDS document size limits |  | Custom Document Splitter supports up to 1,000-page documents for async or batch prediction and up to 200 pages for import, labeling, training, or evaluation. |
+| 2023-07-17 | CDS error messaging |  | Custom Document Splitter now uses document names in error messages to improve troubleshooting. |
+| 2023-07-17 | CDS model evaluation |  | Custom Document Splitter adds model evaluation for document splitting and classification. |
+| 2023-07-17 | CDS side-by-side review |  | Custom Document Splitter improves labeling and evaluation with side-by-side review of splits and classifications while viewing individual pages. |
+| 2023-07-17 | Custom Document Splitter |  | Custom Document Splitter is generally available for splitting and classifying multiple documents within a single file. |
+| 2023-07-17 | Schema name hyphen support |  | Custom Document Splitter now allows hyphens in schema names. |
+| 2023-06-29 | ID proofing photocopy detection |  | The ID proofing processor adds a photocopy-detection entity that indicates whether an attached image may be a photocopy. |
+| 2023-06-28 | Document OCR DOCX support |  | Document OCR now supports preview processing of DOCX files up to 15 pages synchronously or 30 pages asynchronously. |
+| 2023-06-28 | Document OCR intelligent document-quality analysis |  | Document OCR now includes intelligent document-quality analysis. |
+| 2023-06-28 | Document OCR language hints |  | Document OCR now supports language hints to prefer specified languages over inferred languages; Document OCR supports language hints that let the OCR engine prefer specified languages over inferred languages. |
+| 2023-06-28 | Document OCR native text from digital PDF |  | Document OCR now extracts native text from digital PDF files. |
+| 2023-06-28 | Document OCR symbol-level extraction |  | Document OCR now supports symbol-level extraction. |
+| 2023-06-28 | Document proto-to-Vision proto conversion tool |  | The proto conversion tool helps convert Document protos to AnnotateFileResponse protos for migration from Vision API text detection to Document OCR; The proto conversion tool converts Document protos to AnnotateFileResponse protos to support migration comparisons with Vision API text detection. |
+| 2023-04-25 | Async prediction page limits |  | Custom Document Extractor asynchronous prediction can extract data from documents up to 200 pages long. |
+| 2023-04-25 | Automatic dataset labeling |  | Custom Document Extractor can automatically label dataset documents by using a deployed processor version. |
+| 2023-04-25 | Checkbox extraction accuracy |  | Custom Document Extractor improves the accuracy of checkbox extraction. |
+| 2023-04-25 | Custom Document Extractor language support |  | Custom Document Extractor now supports an additional 42 global languages. |
+| 2023-04-25 | Processor version import |  | Custom Document Extractor can import processor versions across projects and processors to simplify environment management. |
+| 2023-03-27 | Document OCR legacy layout detection |  | Document OCR supports a heuristics-based layout detection algorithm as an alternative to the ML-based layout detector. |
+| 2023-03-27 | Document OCR symbol-level data |  | Document OCR can populate symbol-level data in the document response when enabled. |
+| 2023-02-21 | Automatic schema label creation |  | Custom Document Extractor can create schema labels automatically from pre-labeled documents. |
+| 2023-02-21 | Custom Document Extractor public APIs |  | Custom Document Extractor adds public APIs for creating and managing models and datasets. |
+| 2023-02-21 | DocAI Toolkit labeled document converter |  | The new DocAI Toolkit includes a labeled document converter. |
+| 2023-02-21 | Labeling UI |  | The labeling UI has been upgraded. |
+| 2023-02-21 | Manage versions table |  | The manage versions table has been upgraded. |
+| 2023-02-21 | Processor gallery |  | The processor gallery has been upgraded. |
+| 2023-02-21 | Schema editor |  | The schema editor has been upgraded. |
+| 2023-02-21 | Schema label editing |  | Custom Document Extractor lets you edit schema label data types and occurrence settings before training. |
+| 2023-02-21 | Training pipeline |  | The training pipeline has been upgraded. |
+| 2022-12-19 | OCR advanced versioning |  | OCR outputs can be pinned to a historical model version for consistent results. |
+| 2022-12-19 | OCR native PDF parsing |  | OCR can extract embedded text from digital PDFs and fall back to optical OCR for non-digital regions. |
+| 2022-12-12 | Form Parser enhanced table parsing model |  | Form Parser table extraction now uses an enhanced vision-based table parsing model. |
+| 2022-12-12 | Form Parser multilingual key-value and table extraction |  | Form Parser key-value pair and table extraction now support more than 200 languages in public preview. |
+| 2022-12-12 | Generic entity extraction |  | Form Parser adds public-preview support for extracting common entities such as email, date, address, person, organization, quantity, price, ID, and page number. |
+| 2022-12-08 | Expense Parser single-region availability |  | Expense Parser is available in the australia-southeast1 and northamerica-northeast1 single-region locations. |
+| 2022-12-08 | Invoice Parser single-region availability |  | Invoice Parser is available in the australia-southeast1 and northamerica-northeast1 single-region locations. |
+| 2022-11-16 | Identity document detection |  | Detects whether an image contains a recognized identity document. |
+| 2022-11-16 | Image manipulation detection |  | Detects whether an identity document image was altered or tampered with using editing tools. |
+| 2022-11-16 | Online duplicate detection |  | Detects whether an identity document image can be found online. |
+| 2022-11-16 | Suspicious words detection |  | Detects words that are not typical on identity documents. |
+| 2022-10-31 | Document OCR defect detection |  | OCR can detect document defects and return image quality scores for eight defect types. |
+| 2022-10-21 | Invoice currency and date normalization |  | Invoice Processor improves currency and date normalization. |
+| 2022-10-21 | Invoice line item extraction |  | Invoice Processor improves line item extraction. |
+| 2022-10-21 | Invoice multilingual support |  | Invoice Processor adds support for seven new languages. |
+| 2022-10-21 | Invoice uptraining support |  | Invoice Processor supports uptraining through Document AI Workbench. |
+| 2022-09-29 | Custom Document Extractor annotated JSON import |  | Custom Document Extractor can directly import annotated JSON files as training or test datasets. |
+| 2022-09-29 | Custom Document Extractor auto-labeling at import |  | Custom Document Extractor can auto-label imported data with a trained processor version. |
+| 2022-09-29 | Custom Document Extractor checkbox entity support |  | Custom Document Extractor adds checkbox annotation, training, and extraction support. |
+| 2022-09-29 | Custom Document Extractor data labeling platform integration |  | Custom Document Extractor integrates with the data labeling platform. |
+| 2022-09-29 | Custom Document Extractor dataset export with metadata preservation |  | Custom Document Extractor can export datasets while preserving metadata. |
+| 2022-09-29 | Custom Document Extractor evaluation and troubleshooting |  | Custom Document Extractor upgrades evaluation and troubleshooting workflows. |
+| 2022-09-29 | Custom Document Extractor exportable evaluation metrics |  | Custom Document Extractor makes model evaluation metrics exportable and downloadable. |
+| 2022-09-29 | Custom Document Extractor fuzzy matching |  | Custom Document Extractor supports fuzzy matching for model evaluation. |
+| 2022-09-29 | Custom Document Extractor human-in-the-loop integration |  | Custom Document Extractor upgrades human-in-the-loop quality assurance integration. |
+| 2022-09-29 | Custom Document Extractor model deployment and version management |  | Custom Document Extractor upgrades model deployment and version management. |
+| 2022-09-29 | Custom Document Extractor model training |  | Custom Document Extractor upgrades processor model training workflows. |
+| 2022-09-29 | Custom Document Extractor progressive data import |  | Custom Document Extractor supports progressive data import for training or test datasets. |
+| 2022-09-29 | Custom Document Extractor schema creation and annotation |  | Custom Document Extractor upgrades schema creation and annotation workflows. |
+| 2022-09-29 | Custom Document Extractor tabular entity support |  | Custom Document Extractor adds end-to-end support for tabular entities. |
+| 2022-09-15 | Checkbox schema support |  | Document AI Workbench schemas can define checkboxes for labeling, annotation, and review. |
+| 2022-09-15 | Nested entity annotation support |  | The annotation console can label nested entities and represent parent-child relationships. |
+| 2022-06-30 | VPC Service Controls support |  | Document AI supports VPC Service Controls for additional resource and service security. |
+| 2022-06-13 | France Passport Parser |  | The France Passport Parser is available in limited preview. |
+| 2022-04-08 | W2 Processor box 12 support |  | The W2 Processor adds support for box 12 fields and their codes and values. |
+| 2022-04-08 | W2 Processor entity prediction refinements |  | The W2 Processor refines employee and employer entity predictions by changing their output structure. |
+| 2022-04-08 | W2 Processor SSN and EIN quality improvements |  | The W2 Processor improves predictions for SSN and EIN fields. |
+| 2022-03-25 | Biweekly Payment Rider Processor |  | Extracts structured data from biweekly payment rider documents. |
+| 2022-03-25 | Form 1005 Processor |  | Extracts structured data from Form 1005 documents. |
+| 2022-03-25 | Form 1017 Processor |  | Extracts structured data from Form 1017 documents. |
+| 2022-03-25 | Form 1040-NR Processor |  | Extracts structured data from Form 1040-NR documents. |
+| 2022-03-25 | Form 4506-C Processor |  | Extracts structured data from Form 4506-C documents. |
+| 2022-03-25 | Form 4506-T Processor |  | Extracts structured data from Form 4506-T documents. |
+| 2022-03-25 | Form HUD54114 Processor |  | Extracts structured data from Form HUD54114 documents. |
+| 2022-03-25 | Form HUD92800 Processor |  | Extracts structured data from Form HUD92800 documents. |
+| 2022-03-25 | Form HUD92900A Processor |  | Extracts structured data from Form HUD92900A documents. |
+| 2022-03-25 | Form HUD92900LT Processor |  | Extracts structured data from Form HUD92900LT documents. |
+| 2022-03-25 | Form HUD92900WS Processor |  | Extracts structured data from Form HUD92900WS documents. |
+| 2022-03-25 | Form MERS Rider Processor |  | Extracts structured data from MERS rider documents. |
+| 2022-03-25 | Form VBA26 1805 Processor |  | Extracts structured data from Form VBA26 1805 documents. |
+| 2022-03-25 | Form VBA26 6393 Processor |  | Extracts structured data from Form VBA26 6393 documents. |
+| 2022-03-25 | Form VBA26 8923 Processor |  | Extracts structured data from Form VBA26 8923 documents. |
+| 2022-03-25 | USDA Conditional Statement Processor |  | Extracts structured data from USDA conditional statements. |
+| 2022-03-25 | VA Loan Discharge Statement Processor |  | Extracts structured data from VA loan discharge statements. |
+| 2022-01-26 | Enterprise Knowledge Graph field enrichment |  | Enriches extracted fields using the Knowledge Graph; Enriches extracted fields using the Knowledge Graph. |
+| 2021-12-15 | 1040 Schedule D Parser |  | Extracts structured data from 1040 Schedule D documents; Extracts structured data from 1040 Schedule D documents. |
+| 2021-12-15 | Bank Statement Parser |  | Extracts structured data from bank statements; Extracts structured data from bank statements. |
+| 2021-12-15 | HOA Statement Parser |  | Extracts structured data from HOA statements; Extracts structured data from HOA statements. |
+| 2021-12-15 | HUD-92900B Parser |  | Extracts structured data from HUD-92900B documents; Extracts structured data from HUD-92900B documents. |
+| 2021-12-15 | Investment and retirement statement parser |  | Extracts structured data from investment and retirement statements; Extracts structured data from investment and retirement statements. |
+| 2021-12-15 | Pay Slip Parser |  | Extracts structured data from pay slips; Extracts structured data from pay slips. |
+| 2021-12-15 | SSA-89 Parser |  | Extracts structured data from SSA-89 forms; Extracts structured data from SSA-89 forms. |
+| 2021-12-15 | VBA26-0551 Parser |  | Extracts structured data from VBA26-0551 documents; Extracts structured data from VBA26-0551 documents. |
+| 2021-12-15 | W2 Parser |  | Extracts structured data from W-2 forms; Extracts structured data from W-2 forms. |
+| 2021-11-05 | Document OCR Processor |  | A new Google default next version changes the confidence score distribution before rollout. |
+| 2021-11-05 | Invoice Parser |  | Extracts structured data from invoices. |
+| 2021-11-05 | Mortgage Statement Parser |  | Extracts structured data from mortgage statements. |
+| 2021-10-15 | Contract Parser |  | Extracts structured data from contracts. |
+| 2021-10-06 | Regional and multi-regional support |  | Document AI is generally available in europe-west2 and northamerica-northeast1. |
+| 2021-09-01 | Access Transparency |  | Document AI now supports Access Transparency. |
+| 2021-09-01 | Customer-Managed Encryption Keys |  | Document AI now supports customer-managed encryption keys. |
+| 2021-09-01 | Data Residency |  | Document AI now supports data residency controls. |
+| 2021-09-01 | VPC Service Controls |  | Document AI now supports VPC Service Controls; Document AI's VPC Service Controls integration reached general availability. |
+| 2021-08-20 | 1065 Parser |  | The 1065 Parser is now available in limited Preview as a Lending DocAI processor. |
+| 2021-08-20 | 1099-NEC Parser |  | The 1099-NEC Parser is now available in limited Preview as a Lending DocAI processor. |
+| 2021-08-20 | 1099-R Parser |  | The 1099-R Parser is now available in limited Preview as a Lending DocAI processor. |
+| 2021-08-20 | 1120 Parser |  | The 1120 Parser is now available in limited Preview as a Lending DocAI processor. |
+| 2021-08-20 | 1120-S Parser |  | The 1120-S Parser is now available in limited Preview as a Lending DocAI processor. |
+| 2021-08-20 | Human in the Loop |  | Lending DocAI processors support Human in the Loop review. |
+| 2021-08-20 | Knowledge Graph enrichment |  | Document AI processors now support Knowledge Graph enrichment. |
+| 2021-08-20 | Lending DocAI Document Splitter and Classifier |  | The Lending DocAI Document Splitter and Classifier now supports additional processors. |
+| 2021-08-20 | Processor version management |  | Document AI lets you switch between different versions of a processor. |
+| 2021-08-20 | SSA-1099 Parser |  | The SSA-1099 Parser is now available in limited Preview as a Lending DocAI processor. |
+| 2021-07-30 | invoice_type field |  | The Invoice Parser now extracts the invoice_type field. |
+| 2021-07-02 | Human in the Loop priority queues |  | HITL now supports per-processor priority queues based on document urgency. |
+| 2021-04-02 | 1040 Schedule C Parser |  | The 1040 Schedule C Parser is now available as a Lending DocAI processor. |
+| 2021-04-02 | 1099-DIV Parser |  | The 1099-DIV Parser is now available as a Lending DocAI processor. |
+| 2021-04-02 | 1099-G Parser |  | The 1099-G Parser is now available as a Lending DocAI processor. |
+| 2021-04-02 | 1099-INT Parser |  | The 1099-INT Parser is now available as a Lending DocAI processor. |
+| 2021-04-02 | Lending DocAI |  | Lending DocAI reached general availability. |
+| 2021-04-02 | Pay Stub Parser |  | The Pay Stub Parser is now available as a Lending DocAI processor. |
+| 2021-03-31 | Document AI |  | Document AI reached general availability. |
+| 2021-01-14 | Procurement document splitter |  | Procurement document splitter separates procurement documents into logical subdocuments. |
+| 2020-10-29 | Procurement invoice parser |  | Procurement invoice parser extracts invoice data from procurement documents. |
+| 2020-10-29 | Procurement receipt parser |  | Procurement receipt parser extracts receipt data from procurement documents. |
+| 2020-10-16 | 1099-MISC parser |  | 1099-MISC parser extracts data from 1099-MISC tax forms. |
+| 2020-10-16 | Document OCR |  | Document OCR extracts text from scanned documents. |
+| 2020-10-16 | Document splitter |  | Document splitter separates a document into logical subdocuments. |
+| 2020-10-16 | Form 1003 parser |  | Form 1003 parser extracts data from 1003 mortgage application forms. |
+| 2020-10-16 | Form 1040 parser |  | Form 1040 parser extracts data from 1040 tax forms. |
+| 2020-10-16 | Form parser |  | Form parser extracts structured fields from forms. |
+| 2020-10-16 | Lending document classifier |  | Lending document classifier categorizes lending documents by form type. |
+| 2020-10-16 | Lending document splitter |  | Lending document splitter separates lending documents into logical subdocuments. |
+| 2020-10-16 | W-2 parser |  | W-2 parser extracts data from W-2 tax forms. |
+| 2020-10-16 | W-9 parser |  | W-9 parser extracts data from W-9 tax forms. |
+| 2020-04-14 | Form and table parsing |  | Form and table parsing lets the API extract forms or tables from PDF, TIFF, or GIF documents. |
+| 2020-04-14 | Invoice processing |  | Invoice processing lets Document AI parse invoices as a restricted feature. |
+| 2020-04-14 | Multi-regional support |  | Multi-regional support lets Document AI store and process data in us or eu regions. |
+
+Source file slug: `document-ai.md`
+

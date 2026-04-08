@@ -1,0 +1,35 @@
+version: 1
+name: corpus
+created_at: '2026-04-07T22:24:24+00:00'
+updated_at: '2026-04-08T05:45:05+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/appengine/latest/apiv1
+  created_at: '2026-04-08T05:44:57+00:00'
+  updated_at: '2026-04-08T05:44:57+00:00'
+  update_command: know sync site https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/appengine/latest/apiv1
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/appengine/latest/apiv1
+    max_depth: 1
+    max_pages: 0
+    compact_output: true
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1beta/apps
+  created_at: '2026-04-08T05:45:05+00:00'
+  updated_at: '2026-04-08T05:45:05+00:00'
+  update_command: know sync site https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1beta/apps
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1beta/apps
+    max_depth: 1
+    max_pages: 0
+    compact_output: true

@@ -1,0 +1,32 @@
+# Step 04 Data
+
+This directory stores data for workflow Step 04.
+
+Step 04 currently materializes a per-product official documentation corpus from the best Step 03 URLs by using the `know` tool.
+
+Current canonical output layout:
+
+- `current/index.json` for the Step 04 corpus index
+- `current/products/<product-slug>/selection.json` for the selected seed URLs and crawl settings
+- `current/products/<product-slug>/state.json` for the rescrape skip state
+- `current/products/<product-slug>/corpus/metadata.yaml` for the product-local `know` key metadata
+- `current/products/<product-slug>/corpus/site/<source-id>/pages.json` for the captured page inventory
+- `current/products/<product-slug>/corpus/site/<source-id>/pages/*.md` for captured page text
+- `current/products/<product-slug>/corpus/site/<source-id>/source-metadata.yaml` for minimal source-level sync metadata
+
+Each product corpus currently contains:
+
+- the Step 03 ranking input path
+- the selected official Google seed URLs
+- one crawl budget per selected source family
+- synchronized multi-page captures produced by `know sync`
+- compact `site` output by default, keeping only final Markdown pages plus source metadata
+
+Operational note:
+
+- for `docs.cloud.google.com`, Step 04 can run in browser-assisted mode by setting `KNOW_SITE_CDP_URL` to a live Chrome or Brave DevTools endpoint
+- in that mode, `know` reuses the browser session cookies during site sync, which reduces CAPTCHA or `sorry` responses and preserves multi-page capture reliability
+- anti-bot responses are treated as sync failures so a blocked run does not overwrite an already healthy corpus
+
+These outputs are still intermediate workflow data.
+They are the local documentation corpus used by later extraction and validation stages, not yet validated source-of-truth artifacts.

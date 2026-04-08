@@ -1,0 +1,475 @@
+# Spanner
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 384
+Unique features: 461
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-03-30 | BigQuery non-incremental materialized views over Spanner |  | Spanner now supports creating BigQuery non-incremental materialized views over Spanner data to improve query performance by periodically caching results. |
+| 2026-03-30 | BigQuery reverse ETL to Spanner via Cloud resource connections |  | Spanner now supports using Cloud resource connections with BigQuery EXPORT DATA statements to perform reverse ETL from BigQuery into Spanner. |
+| 2026-03-30 | Conversational analytics for Spanner |  | Spanner added conversational analytics, allowing users to query operational data with natural language via the Conversational Analytics API. |
+| 2026-03-25 | Spark Spanner connector write support |  | The Spark Spanner connector added support for writing Spark DataFrames to Spanner tables using the Spark data source API. |
+| 2026-03-19 | Spanner AI.CLASSIFY function |  | Spanner AI.CLASSIFY classifies natural-language input into user-defined categories for semantic operations in SQL. |
+| 2026-03-19 | Spanner AI.IF function |  | Spanner AI.IF evaluates conditions expressed in natural language within SQL for semantic decision logic. |
+| 2026-03-19 | Spanner AI.SCORE function |  | Spanner AI.SCORE rates natural-language input and assigns a score to support ranking and prioritization in SQL. |
+| 2026-03-10 | Spanner optimistic concurrency control mode |  | Spanner optimistic concurrency control mode enables lock-free transactional reads and writes optimized for low-contention workloads. |
+| 2026-03-04 | Spanner continuous queries from BigQuery |  | Spanner supports continuous queries that stream BigQuery data into Spanner in real time. |
+| 2026-03-03 | ON CONFLICT clause for Spanner GoogleSQL INSERT |  | Spanner GoogleSQL INSERT statements support the ON CONFLICT clause to handle unique constraint violations, including DO NOTHING and DO UPDATE forms. |
+| 2026-02-27 | Pending commit timestamp default and ON UPDATE support for column definitions |  | Spanner now supports using the pending commit timestamp function as a column default value and as an ON UPDATE expression. |
+| 2026-02-26 | JSON string statistics columns for PostgreSQL SPANNER_SYS tables |  | Spanner adds JSON-string versions of selected transaction, query, and lock statistics columns for PostgreSQL-dialect databases in SPANNER_SYS tables. |
+| 2026-02-25 | Spanner backup restore edition compatibility checks |  | Spanner verifies edition compatibility during restore so databases using higher-tier features are restored only to same-or-higher tier instances. |
+| 2026-02-25 | Spanner custom edition constraints via organization policy |  | Organizations can define custom edition constraints in organization policies to restrict which Spanner instance editions users can create. |
+| 2026-02-25 | Spanner Enterprise and Enterprise Plus edition usage monitoring |  | Spanner provides monitoring for Enterprise and Enterprise Plus edition feature usage within a Spanner instance. |
+| 2026-02-25 | Spanner instance edition downgrade in Cloud Console |  | Spanner allows users to downgrade a Spanner instance's edition from the Google Cloud console. |
+| 2026-02-25 | Spanner managed autoscaling by total CPU utilization |  | Spanner managed autoscaling can automatically add or remove compute capacity when an instance's total CPU utilization exceeds or falls below a configured target. |
+| 2026-02-25 | Spanner managed autoscaling for instance partitions (preview) |  | Spanner supports managed autoscaling for instance partitions in Preview to automatically adjust capacity. |
+| 2026-02-24 | Spanner UNSPLITTABLE_REASONS in hotspot insights and split statistics |  | Spanner now exposes UNSPLITTABLE_REASONS in hotspot insights and split statistics views to identify when splits cannot be split further and help detect schema anti-patterns. |
+| 2026-02-17 | gcp.managed.allowedMCPServices organization policy control | 2026-03-17 | Control of MCP usage via organization policies using the gcp.managed.allowedMCPServices constraint is deprecated, with IAM deny policies recommended instead; deprecated on 2026-03-17. |
+| 2026-02-10 | Spanner remote MCP server |  | Spanner remote MCP server enables agentic AI applications such as Gemini CLI, Gemini Code Assist agent mode, and Claude.ai to interact with Spanner instances and databases, and is available in Preview. |
+| 2026-02-09 | Spanner Graph node context menu actions |  | Spanner Graph query visualizations now support a node context menu that lets users expand or collapse adjacent nodes, highlight or hide nodes, and view a node’s neighbors. |
+| 2026-02-02 | Cloud Run remote functions for Spanner GoogleSQL queries |  | Spanner can call user-defined remote functions hosted on Cloud Run directly from GoogleSQL queries. |
+| 2026-01-30 | Spanner UUID data type support |  | Spanner now supports a UUID data type in both GoogleSQL and PostgreSQL dialect databases for storing 128-bit universal unique identifiers. |
+| 2026-01-28 | Spanner ZSTD compression functions |  | Spanner added support for ZSTD compression functions to compress and decompress STRING and BYTES values using the Zstandard algorithm. |
+| 2026-01-26 | Spanner columnar engine |  | Spanner launched the Columnar engine in Public Preview to enable automatic columnar query execution and faster columnar scans with vectorized execution on live operational data; The Spanner columnar engine provides a preview storage and query acceleration technique for analytical workloads, improving scan performance on live operational data by up to 200x without impacting transactional workloads. |
+| 2026-01-26 | Spanner major compaction API |  | Spanner introduced a major compaction API to accelerate conversion of non-columnar data into columnar format for columnar-enabled databases or tables. |
+| 2026-01-20 | Spanner regional instance configuration in asia-southeast3 |  | Spanner now supports creating regional instance configurations in the Bangkok, Thailand location (asia-southeast3). |
+| 2026-01-13 | Diacritic-removal tokenization option for TOKENIZE_FULLTEXT |  | TOKENIZE_FULLTEXT now includes an option to remove diacritics, which SEARCH and SCORE can use when tokenization is enabled with that option. |
+| 2026-01-13 | Named schemas support for Spanner full-text search |  | Spanner full-text search now supports named schemas. |
+| 2026-01-13 | Spanner full-text search index pattern-matching acceleration |  | Spanner search indexes can accelerate pattern-matching expressions including LIKE, STARTS_WITH, ENDS_WITH, and REGEXP_CONTAINS. |
+| 2026-01-13 | TOKENIZE_SUBSTRING emoji support |  | TOKENIZE_SUBSTRING now supports emojis in full-text tokenization. |
+| 2026-01-05 | Property graph creation from SQL views |  | Spanner now supports creating a graph directly from SQL views. |
+| 2025-12-18 | ELEMENT_DEFINITION_NAME SQL function |  | Spanner added the GoogleSQL function ELEMENT_DEFINITION_NAME, which returns the underlying graph element table name for a graph element. |
+| 2025-12-17 | Spanner Data Agents |  | Spanner now supports Data Agents, allowing applications to use conversational-language tools to interact with database data. |
+| 2025-12-12 | Spanner generate_series() Function Support |  | Spanner adds support for the PostgreSQL generate_series() function, enabling creation of numeric sequences in SQL queries. |
+| 2025-12-11 | Spanner Data Boost concurrent requests milli-operations per second per region quota |  | Spanner Data Boost introduces a concurrent requests quota in milli-operations per second per region, with requests split at 1/1000 granularity for finer sharing of Data Boost resources. |
+| 2025-12-11 | Spanner Graph ANY CHEAPEST path search prefix |  | Spanner Graph supports the ANY CHEAPEST path search prefix in queries to return a path with the lowest total compute cost. |
+| 2025-12-10 | SPANNER_SYS oldest active queries table new columns |  | Spanner added support for new columns in the SPANNER_SYS oldest active queries table, including CLIENT_IP_ADDRESS, API_CLIENT_HEADER, USER_AGENT_HEADER, SERVER_REGION, PRIORITY, and TRANSACTION_TYPE, and exposes them in the Cloud Console query insights page. |
+| 2025-11-20 | Default Spanner query optimizer version |  | Spanner now uses query optimizer version 8 as the default optimizer version. |
+| 2025-11-14 | IS_FIRST function for GoogleSQL graph queries |  | GoogleSQL added the IS_FIRST function for graph queries, which identifies rows in the first k rows of a window and supports edge-limiting and node-sampling optimizations. |
+| 2025-11-11 | Spanner Studio query result export options |  | Spanner Studio added support for exporting query results to CSV or JSON files, Google Sheets, and copying results to the clipboard. |
+| 2025-11-10 | Spanner schema design best practice recommendations |  | Spanner now provides automated schema design best-practice recommendations in Spanner Studio to help improve database schema quality. |
+| 2025-10-29 | Spanner Graph named schemas |  | Spanner Graph now supports named schemas, enabling schema-based organization of graph objects. |
+| 2025-10-21 | Schema object drop protection |  | Schema object drop protection in Cloud Spanner prevents accidental deletion of schema objects such as tables, indexes, and columns. |
+| 2025-10-20 | GoogleSQL ML.PREDICT function for ANN vector search |  | The GoogleSQL ML.PREDICT function can convert natural language query text into embeddings and perform approximate nearest-neighbors vector search. |
+| 2025-10-02 | Repeatable read isolation |  | Spanner adds repeatable read isolation support to reduce latency and transaction abort rates in read-heavy workloads with fewer writes. |
+| 2025-10-01 | Spanner CLI |  | The Spanner command-line interface is now generally available and can open interactive sessions or run SQL from shell commands and input files; Provides an interactive Spanner shell integrated into the Google Cloud CLI for running interactive sessions and automating SQL execution from the shell or input files. |
+| 2025-09-29 | BigQuery non-incremental materialized views on Cloud Spanner |  | Cloud Spanner now supports creating BigQuery non-incremental materialized views over Spanner data to improve query performance through periodic result caching. |
+| 2025-09-25 | Spanner Cassandra interface |  | The Spanner Cassandra interface is now generally available, enabling access to Spanner using familiar Cassandra tools and syntax. |
+| 2025-09-23 | Spanner Gemini CLI extension |  | Spanner now includes a dedicated Gemini CLI extension that allows users to execute SQL statements and query a Spanner instance using natural language controls. |
+| 2025-09-23 | Spanner read leases |  | Read lease regions for Spanner allow strong reads to be served locally from designated non-leader regions in multi-region or dual-region instances, reducing latency by avoiding leader-region round trips. |
+| 2025-09-22 | Spanner federated queries with BigQuery external datasets |  | Spanner supports running GoogleSQL federated queries against PostgreSQL dialect databases through BigQuery external datasets, including cross-region queries. |
+| 2025-09-17 | Spanner Graph schemaless schemas |  | Spanner Graph now generally supports schemaless schemas. |
+| 2025-09-03 | Spanner data import from files |  | Spanner now supports importing data into a database from CSV files, MySQL dump files, or PostgreSQL dump files. |
+| 2025-09-03 | Spanner sample dataset database population |  | Spanner now supports populating new databases in existing instances with sample datasets to explore core capabilities such as relational, full-text, vector search, and Spanner Graph features. |
+| 2025-08-25 | Terminate multiple active Spanner queries |  | Spanner now supports terminating multiple active long-running queries in an instance to help reduce resource load and instance latency. |
+| 2025-08-14 | Cross-region federated queries for Spanner |  | Spanner now supports cross-region federated queries so Spanner tables can be queried from BigQuery regions different from the source region. |
+| 2025-08-13 | Predefined MySQL function library for Spanner |  | Spanner offers a predefined library of over 80 MySQL-compatible user-defined functions that can be installed into a database to reduce migration changes from MySQL. |
+| 2025-08-01 | Spanner free trial instances |  | Spanner free trial instances now automatically create and preload a sample ecommerce database when launched from the Google Cloud Console, enabling users to run preloaded queries and explore Spanner capabilities; Adds a simplified workflow to create Spanner free trial instances for 90-day exploration, including support for relational databases in GoogleSQL/PostgreSQL and NoSQL models. |
+| 2025-07-31 | BigQuery continuous query export to Spanner |  | Adds support for using continuous queries to export data from BigQuery into Cloud Spanner in real time. |
+| 2025-06-30 | Cloud Spanner Java and Go client-side AFE/GFE metrics |  | Cloud Spanner added new client-side AFE and GFE metrics for Java and Go applications, including connectivity error count and latency metrics for both fronts. |
+| 2025-06-30 | Cloud Spanner query execution plan JSON export |  | Cloud Spanner now allows users to download and save query execution plans as JSON files for visualization in Spanner Studio. |
+| 2025-06-11 | Column operations statistics |  | Column operations statistics is a Cloud Spanner feature that provides insights into and monitoring of column usage in databases. |
+| 2025-06-02 | BigQuery support for Spanner external datasets |  | BigQuery now supports querying Spanner external datasets with authorized views, authorized routines, and Cloud Resource Connections. |
+| 2025-05-27 | Cross-regional federated queries from BigQuery to Spanner |  | Spanner supports querying Spanner tables from BigQuery in a different region than the BigQuery region through cross-region federation. |
+| 2025-05-26 | Efficient incremental backup copy chains in Spanner |  | Spanner supports copying incremental backups by transferring only the incremental backup and any missing older backups in the chain, reusing existing chain segments at the destination to reduce redundant storage and network costs. |
+| 2025-05-15 | Pre-filtered vector index |  | Spanner now supports creating pre-filtered vector indexes that restrict ANN searches to rows matching a specified filter condition, improving search performance and recall. |
+| 2025-05-13 | INTERVAL data type |  | Spanner now supports the INTERVAL data type in GoogleSQL and PostgreSQL, enabling representation of durations and amounts of time in both SQL dialects. |
+| 2025-05-13 | Spanner GoogleSQL ADDDATE() alias |  | Spanner now supports ADDDATE() as an alias for the DATE_ADD() function in GoogleSQL. |
+| 2025-05-13 | Spanner GoogleSQL LCASE() alias |  | Spanner now supports LCASE() as an alias for the LOWER() function in GoogleSQL. |
+| 2025-05-13 | Spanner GoogleSQL SPLIT_SUBSTR() function |  | Spanner now supports the SPLIT_SUBSTR() GoogleSQL function for extracting a substring from a string based on delimiter-separated segment count and index. |
+| 2025-05-13 | Spanner GoogleSQL SUBDATE() alias |  | Spanner now supports SUBDATE() as an alias for the DATE_SUB() function in GoogleSQL. |
+| 2025-05-13 | Spanner GoogleSQL UCASE() alias |  | Spanner now supports UCASE() as an alias for the UPPER() function in GoogleSQL. |
+| 2025-05-01 | Spanner Graph schemaless data modeling |  | Spanner Graph now supports modeling schemaless data using dynamic labels and properties. |
+| 2025-04-30 | and SNIPPET functions |  | The SEARCH, SCORE, and SNIPPET functions now support an enhance_query option that enables automatic synonym matching and single-word spell correction by default. |
+| 2025-04-30 | enhance_query option for SEARCH |  | The SEARCH, SCORE, and SNIPPET functions now support an enhance_query option that enables automatic synonym matching and single-word spell correction by default. |
+| 2025-04-30 | SCORE |  | The SEARCH, SCORE, and SNIPPET functions now support an enhance_query option that enables automatic synonym matching and single-word spell correction by default. |
+| 2025-04-28 | Manual database pre-splitting |  | Spanner now generally supports manually adding split points to pre-split a database before anticipated traffic spikes to improve scaling performance. |
+| 2025-04-24 | Spanner INTERLEAVE IN clause without PARENT option |  | Spanner supports using INTERLEAVE IN without the PARENT option to colocate child rows with parent rows, allowing child-row insertion before parent insertion and preserving child rows when deleting the parent. |
+| 2025-04-14 | Spanner end-to-end tracing |  | Spanner now offers generally available end-to-end tracing, including client-side tracing support in Node.js and Python client libraries in addition to existing Java and Go tracing support; Spanner added end-to-end tracing support in preview, including client-side tracing in the Java and Go client libraries. |
+| 2025-04-09 | Gemini assistance for Spanner optimization and troubleshooting |  | Spanner now supports Gemini-powered assistance to help optimize and troubleshoot Spanner resources using system insights. |
+| 2025-04-09 | Spanner Cassandra compatibility and migration tools |  | Spanner now provides Cassandra API compatibility with migration tools to enable lift-and-shift migration of Cassandra applications. |
+| 2025-04-04 | Spanner INFORMATION_SCHEMA.PARAMETERS.PARAMETER_DEFAULT column |  | Spanner adds a PARAMETER_DEFAULT column to INFORMATION_SCHEMA.PARAMETERS that returns default values for change stream read function parameters. |
+| 2025-04-03 | Spanner Graph visualizations |  | Spanner Graph now supports visualizing query result graphs and schema graphs to help identify patterns, dependencies, and anomalies. |
+| 2025-03-31 | GoogleSQL JSON mutator functions |  | Spanner now supports GoogleSQL JSON mutator functions, including JSON_ARRAY_APPEND, JSON_ARRAY_INSERT, JSON_REMOVE, JSON_SET, and JSON_STRIP_NULLS. |
+| 2025-03-31 | GoogleSQL JSON_KEYS function |  | The GoogleSQL JSON_KEYS function is generally available in Spanner and returns the unique keys from a JSON expression. |
+| 2025-03-31 | JSON search indexes |  | Spanner makes JSON search indexes generally available to accelerate JSON document queries over JSON and JSONB data across both GoogleSQL and PostgreSQL dialects. |
+| 2025-03-31 | PostgreSQL json_object_keys function |  | The PostgreSQL json_object_keys function is generally available in Spanner and returns the unique keys from a JSON expression. |
+| 2025-03-31 | PostgreSQL JSONB mutator functions |  | Spanner now supports PostgreSQL JSONB mutator functions, including jsonb_insert, jsonb_set, jsonb_set_lax, and jsonb_strip_nulls. |
+| 2025-03-31 | PostgreSQL JSONB operators |  | Spanner adds PostgreSQL JSONB operators, including concat (jsonb \|\| jsonb) and delete (jsonb - text). |
+| 2025-03-28 | Approximate nearest neighbor (ANN) distance functions in GoogleSQL |  | Spanner GA support for ANN distance functions in GoogleSQL was introduced for similarity and nearest-neighbor workloads. |
+| 2025-03-28 | Spanner ANN indexes for LangChain |  | Spanner ANN indexes are now supported for use with LangChain. |
+| 2025-03-28 | Spanner vector indexes in GoogleSQL |  | Spanner made vector indexes in the GoogleSQL dialect generally available, enabling faster similarity search and nearest-neighbor queries on large vector tables. |
+| 2025-03-27 | Spanner Studio saved SQL queries |  | Spanner Studio now supports saving and managing SQL scripts as part of a preview capability. |
+| 2025-03-18 | Spanner database default time zone setting |  | This feature enables setting a default time zone for a Spanner database. |
+| 2025-03-17 | BigQuery external dataset for Spanner |  | Adds support for creating a BigQuery external dataset that links directly to an existing Cloud Spanner database. |
+| 2025-03-17 | Reverse ETL from BigQuery to Spanner using EXPORT DATA statements |  | This feature allows using EXPORT DATA statements to load data from BigQuery into Spanner. |
+| 2025-03-10 | Graph QA chain for Spanner |  | Spanner Graph now supports a LangChain Graph QA chain integration that uses a graph to answer questions. |
+| 2025-03-10 | Graph store for Spanner |  | Spanner Graph now supports a LangChain graph-store integration for retrieving and storing nodes and edges in a graph database. |
+| 2025-03-10 | Spanner tiered storage |  | Introduces generally available tiered storage for Spanner, allowing data to be stored on SSD for performance and HDD for lower-cost infrequent access. |
+| 2025-03-04 | Cloud Spanner regional instance configuration in europe-north2 |  | Cloud Spanner now supports creating regional instance configurations in the Stockholm (europe-north2) region. |
+| 2025-03-04 | eur7 multi-region instance configuration |  | Spanner has added a new Europe multi-region instance configuration, eur7, covering Milan, Frankfurt, and Turin. |
+| 2025-02-28 | Cloud Spanner full-text search for PostgreSQL dialect |  | Full-text search is generally available for Cloud Spanner PostgreSQL-dialect databases. |
+| 2025-02-20 | Spanner multiplexed sessions |  | Spanner Java and Go clients now support multiplexed sessions, allowing concurrent requests over a single session and eliminating the need to set fixed minimum or maximum session counts. |
+| 2025-02-11 | Spanner managed autoscaler |  | Spanner managed autoscaler is now generally available and supports independent autoscaling configuration for read-only replicas separate from read-write replicas using capacity and CPU utilization targets; Spanner managed autoscaler automatically increases or decreases instance compute capacity based on workload, storage needs, and user-defined goals. |
+| 2025-02-10 | Spanner custom organization policies |  | Spanner supports custom organization policies as a generally available feature. |
+| 2025-02-05 | Cloud Spanner enforced foreign keys |  | Cloud Spanner enforced foreign keys are available to enforce referential integrity constraints between tables. |
+| 2025-02-05 | Cloud Spanner informational foreign keys |  | Cloud Spanner informational foreign keys are now available to declare intended logical relationships without enforcing referential integrity, primarily for query optimization. |
+| 2025-01-30 | Spanner AUTO_INCREMENT DDL syntax |  | Spanner adds support for the AUTO_INCREMENT DDL syntax in GoogleSQL to streamline creating IDENTITY-like primary key columns. |
+| 2025-01-30 | Spanner index advisor |  | The Spanner index advisor analyzes queries and recommends new or adjusted indexes to improve query performance in GoogleSQL and PostgreSQL-dialect databases. |
+| 2025-01-30 | Spanner SERIAL DDL syntax |  | Spanner adds support for the SERIAL DDL syntax in PostgreSQL-dialect databases to simplify identity-style primary key generation. |
+| 2025-01-28 | Spanner instance edition downgrade |  | Spanner now supports downgrading a Spanner instance to a lower edition tier. |
+| 2025-01-27 | SELECT FOR UPDATE query support |  | Spanner now supports SELECT ... FOR UPDATE syntax in GoogleSQL and PostgreSQL dialects to enable exclusive locks during scans and reduce concurrent-write aborts. |
+| 2025-01-15 | Spanner partitioned DML query statistics |  | Provides query statistics for previously executed partitioned DML statements in Spanner. |
+| 2025-01-10 | Spanner active query monitoring |  | Adds monitoring and troubleshooting support for long-running active queries in a Spanner instance. |
+| 2024-12-12 | Identity columns |  | Spanner now supports ANSI-compliant IDENTITY columns to generate unique integer values for both key and non-key columns. |
+| 2024-12-02 | Spanner Database Reader with Data Boost IAM role |  | A predefined IAM role named Spanner Database Reader with Data Boost is introduced to allow querying Spanner databases using Data Boost. |
+| 2024-11-25 | Default backup schedules |  | Spanner now supports default backup schedules that are automatically enabled for new instances and create full backups every 24 hours with 7-day retention for each new database, with options to enable, disable, edit, or delete schedules. |
+| 2024-11-19 | GoogleSQL ALL_DIFFERENT graph predicate |  | Spanner adds support for the ALL_DIFFERENT graph predicate in GoogleSQL-dialect databases to test whether graph elements in a list are mutually distinct. |
+| 2024-11-18 | Spanner regional instance configuration in northamerica-south1 |  | Spanner added support for creating regional instance configurations in the Querétaro (northamerica-south1) region. |
+| 2024-11-05 | Spanner client-side metrics for Java and Go |  | Spanner added client-side metrics support for Java and Go applications, available in Java client library v6.81.0+ and Go client library v1.71.0+. |
+| 2024-10-28 | Cloud Spanner Query Optimizer version 8 |  | Cloud Spanner introduced Query Optimizer version 8, while version 7 remains the default optimizer version. |
+| 2024-10-18 | Cloud Spanner customer-managed encryption keys (CMEK) |  | Cloud Spanner added support for customer-managed encryption keys (CMEK) to protect databases in custom, dual-region, and multi-region instance configurations. |
+| 2024-10-18 | Spanner Graph DESTINATION_NODE_ID() function |  | Adds the Spanner Graph DESTINATION_NODE_ID() function, which returns the unique identifier of a graph edge's destination node. |
+| 2024-10-18 | Spanner Graph ELEMENT_ID() function |  | Adds the Spanner Graph ELEMENT_ID() function, which returns the unique identifier of a graph element. |
+| 2024-10-18 | Spanner Graph SOURCE_NODE_ID() function |  | Adds the Spanner Graph SOURCE_NODE_ID() function, which returns the unique identifier of a graph edge's source node. |
+| 2024-10-17 | Spanner database split usage statistics |  | Adds usage statistics for Spanner database splits, surfaced with the System Insights dashboard, to help identify hotspot rows in the database. |
+| 2024-10-17 | Spanner directed reads |  | Makes Spanner Directed Reads generally available, enabling read-only transactions and single reads to be directed to a specific replica type or region in a multi-region instance; Spanner directed reads let read-only transactions and single reads be routed to a specific replica type or region in a multi-region instance. |
+| 2024-10-14 | Spanner Query Optimizer version 7 |  | Makes Query Optimizer version 7 generally available as the default optimizer version in Spanner; Spanner introduced query optimizer version 7 as generally available. |
+| 2024-10-10 | Cassandra to Spanner proxy adapter |  | Spanner now offers an open-source Cassandra-to-Spanner proxy adapter to migrate Cassandra workloads to Spanner without modifying application logic. |
+| 2024-10-10 | Incremental backups |  | Spanner now supports scheduled incremental backups, allowing users to define backup frequency and retention while storing only changes since the previous backup. |
+| 2024-10-10 | Spanner health issue monitoring in Database Center |  | Database Center can monitor Spanner health issues such as short backup retention, stale last backup, and non-replicating resources across regions. |
+| 2024-10-10 | Spanner integration with Database Center |  | Spanner is supported in Database Center, allowing Spanner resources to be tracked in fleet inventory and the resource table. |
+| 2024-10-09 | Spanner support for pg_system_catalog |  | Spanner now supports a subset of PostgreSQL pg_system_catalog tables and views. |
+| 2024-10-07 | Full-text search |  | Spanner full-text search became generally available. |
+| 2024-10-07 | Spanner backup schedules |  | Spanner supports creating and managing backup schedules to define backup timing, frequency, retention, and encryption type. |
+| 2024-10-04 | SAFE_TO_JSON function |  | Spanner adds support for the SAFE_TO_JSON function in GoogleSQL, enabling conversion of SQL objects to JSON while returning JSON null for invalid JSON types instead of raising errors. |
+| 2024-10-03 | BigQuery external dataset integration with Spanner |  | Spanner adds the ability to create BigQuery external datasets linked to existing Spanner databases, and the feature is available in Preview. |
+| 2024-10-02 | K-nearest neighbors vector similarity search |  | Spanner now supports generally available K-nearest neighbors vector similarity search using COSINE_DISTANCE(), EUCLIDEAN_DISTANCE(), and DOT_PRODUCT() functions. |
+| 2024-10-02 | Spanner FLOAT32 and float4/real data types |  | Spanner made the FLOAT32 (GoogleSQL) and float4/real (PostgreSQL) data types generally available. |
+| 2024-09-25 | Spanner farm_fingerprint hash function |  | Spanner added support for the spanner.farm_fingerprint() hash function in PostgreSQL-dialect databases. |
+| 2024-09-24 | Cloud KMS Autokey support for Cloud Spanner |  | Cloud Spanner can use Cloud KMS Autokey-generated customer-managed keys for CMEK encryption. |
+| 2024-09-24 | Spanner editions |  | Cloud Spanner now supports a tier-based editions model with Standard, Enterprise, and Enterprise Plus options to match features and pricing to workload needs. |
+| 2024-08-13 | Spanner multi-region instance configuration nam16 |  | Added the North America Spanner multi-region instance configuration named nam16 (Iowa, Northern Virginia, Columbus). |
+| 2024-08-01 | Cloud Spanner full-text search |  | Cloud Spanner full-text search (Preview) adds table search by words, phrases, or integers with spelling correction, automatic language detection, and ranked result ordering. |
+| 2024-08-01 | Spanner Graph |  | Introduced Spanner Graph in preview, adding purpose-built graph database capabilities to Spanner with a GQL-compatible query interface and interoperability between relational and graph models. |
+| 2024-07-18 | Cloud Spanner JSON_ARRAY() function |  | Cloud Spanner now supports the JSON_ARRAY() function in GoogleSQL for constructing JSON array values. |
+| 2024-07-18 | Cloud Spanner JSON_OBJECT() function |  | Cloud Spanner now supports the JSON_OBJECT() function in GoogleSQL for constructing JSON object values. |
+| 2024-07-16 | GoogleSQL BOOL_ARRAY function |  | Spanner now supports the GoogleSQL BOOL_ARRAY function to convert a JSON boolean array into a SQL ARRAY. |
+| 2024-07-16 | GoogleSQL FLOAT32 function |  | Spanner now supports the GoogleSQL FLOAT32 function to convert a JSON number into a SQL FLOAT32 value. |
+| 2024-07-16 | GoogleSQL FLOAT32_ARRAY function |  | Spanner now supports the GoogleSQL FLOAT32_ARRAY function to convert a JSON array of numbers into a SQL ARRAY. |
+| 2024-07-16 | GoogleSQL FLOAT64_ARRAY function |  | Spanner now supports the GoogleSQL FLOAT64_ARRAY function to convert a JSON array of numbers into a SQL ARRAY. |
+| 2024-07-16 | GoogleSQL INSERT THEN RETURN support |  | GoogleSQL INSERT OR UPDATE and INSERT OR IGNORE statements now support the THEN RETURN clause, including support for the WITH ACTION option. |
+| 2024-07-16 | GoogleSQL INT64_ARRAY function |  | Spanner now supports the GoogleSQL INT64_ARRAY function to convert a JSON array of numbers into a SQL INT64_ARRAY. |
+| 2024-07-16 | GoogleSQL PDML_MAX_PARALLELISM statement-level hint |  | Cloud Spanner added support for the GoogleSQL PDML_MAX_PARALLELISM statement-level hint in query statements. |
+| 2024-07-16 | GoogleSQL STRING_ARRAY function |  | Spanner now supports the GoogleSQL STRING_ARRAY function to convert a JSON array of strings into a SQL ARRAY. |
+| 2024-07-16 | PostgreSQL INSERT ON CONFLICT RETURNING support |  | PostgreSQL INSERT ... ON CONFLICT DML statements in Spanner now support the RETURNING clause. |
+| 2024-07-16 | PostgreSQL JSONB jsonb_array_elements function |  | Spanner now supports the PostgreSQL JSONB function jsonb_array_elements(). |
+| 2024-07-16 | PostgreSQL JSONB spanner.bool_array function |  | Spanner now supports the PostgreSQL JSONB function spanner.bool_array(). |
+| 2024-07-16 | PostgreSQL JSONB spanner.float32_array function |  | Spanner now supports the PostgreSQL JSONB function spanner.float32_array(). |
+| 2024-07-16 | PostgreSQL JSONB spanner.float64_array function |  | Spanner now supports the PostgreSQL JSONB function spanner.float64_array(). |
+| 2024-07-16 | PostgreSQL JSONB spanner.int64_array function |  | Spanner now supports the PostgreSQL JSONB function spanner.int64_array(). |
+| 2024-07-16 | PostgreSQL JSONB spanner.string_array function |  | Spanner now supports the PostgreSQL JSONB function spanner.string_array(). |
+| 2024-07-16 | Spanner Geo-partitioning |  | Spanner now supports Geo-partitioning in Preview to segment and store table rows across different geographic configurations. |
+| 2024-07-12 | Dual-region instance configurations |  | Cloud Spanner added dual-region instance configurations for Australia, Germany, India, and Japan to support regional replication and data residency requirements. |
+| 2024-07-12 | Spanner ANN distance functions in GoogleSQL |  | Spanner supports ANN vector distance functions APPROX_COSINE_DISTANCE(), APPROX_EUCLIDEAN_DISTANCE(), and APPROX_DOT_PRODUCT() in GoogleSQL. |
+| 2024-07-12 | Spanner vector index creation via DDL |  | Spanner supports creating vector indexes with DDL statements to accelerate similarity and nearest-neighbor queries on large vector datasets. |
+| 2024-07-11 | BigQuery reverse ETL to Spanner via EXPORT DATA |  | Spanner adds support for using EXPORT DATA statements to perform reverse ETL from BigQuery into Spanner. |
+| 2024-07-03 | Multiplexed sessions |  | Multiplexed sessions provide a new session management model that simplifies client-side pool management. |
+| 2024-07-03 | Query cancellation |  | Spanner now allows privileged users to cancel long-running queries in GoogleSQL and PostgreSQL environments. |
+| 2024-06-20 | Named schemas |  | Named schemas is now generally available in Spanner, allowing database objects to be grouped in namespaces to avoid naming conflicts and manage fine-grained access control collectively. |
+| 2024-06-17 | Generated columns without STORED attribute |  | Generated columns in Spanner now work without the STORED attribute, so values are evaluated at query or index time without additional storage or write overhead. |
+| 2024-05-31 | Protocol Buffer Data Type Support in GoogleSQL |  | Spanner added support for the protocol buffer data type in GoogleSQL. |
+| 2024-05-29 | Spanner SPANNER_SYS query statistics column AVG_FILESYSTEM_DELAY_SECS |  | Spanner added support for the AVG_FILESYSTEM_DELAY_SECS column in the SPANNER_SYS query statistics table. |
+| 2024-05-29 | Spanner SPANNER_SYS query statistics column AVG_MEMORY_PEAK_USAGE_BYTES |  | Spanner added support for the AVG_MEMORY_PEAK_USAGE_BYTES column in the SPANNER_SYS query statistics table. |
+| 2024-05-29 | Spanner SPANNER_SYS query statistics column AVG_MEMORY_USAGE_PERCENTAGE |  | Spanner added support for the AVG_MEMORY_USAGE_PERCENTAGE column in the SPANNER_SYS query statistics table. |
+| 2024-05-29 | Spanner SPANNER_SYS query statistics column AVG_QUERY_PLAN_CREATION_TIME_SECS |  | Spanner added support for the AVG_QUERY_PLAN_CREATION_TIME_SECS column in the SPANNER_SYS query statistics table. |
+| 2024-05-29 | Spanner SPANNER_SYS query statistics column AVG_REMOTE_SERVER_CALLS |  | Spanner added support for the AVG_REMOTE_SERVER_CALLS column in the SPANNER_SYS query statistics table. |
+| 2024-05-29 | Spanner SPANNER_SYS query statistics column AVG_ROWS_SPOOLED |  | Spanner added support for the AVG_ROWS_SPOOLED column in the SPANNER_SYS query statistics table. |
+| 2024-05-13 | Spanner change_stream read latency metric in Cloud Monitoring |  | Cloud Monitoring now supports the `read_request_latencies_by_change_stream` metric so Spanner users can view and filter all read latencies by change-stream and non-change-stream reads. |
+| 2024-05-13 | Spanner vector length annotation |  | Spanner has made vector length annotation generally available for vector data definitions. |
+| 2024-04-30 | Cloud Spanner PostgreSQL array support |  | Cloud Spanner now supports PostgreSQL array features including UNNEST, array slicing, ANY/SOME/ALL comparisons, and array overlap/containment functions and operators. |
+| 2024-04-30 | Self-service Spanner instance configuration management |  | Spanner now supports zero-downtime self-service updates to base instance configurations, including adding or removing read-only replicas and moving an instance to a different instance configuration. |
+| 2024-04-09 | Cloud Spanner vector embedding generation from text via partitioned DML |  | Cloud Spanner can generate and backfill vector embeddings for STRING or JSON textual data in bulk using GoogleSQL partitioned DML with the Vertex AI textembedding-gecko model. |
+| 2024-04-09 | Gemini model integration with Spanner machine learning prediction functions |  | Spanner added support for using Gemini models with GoogleSQL and PostgreSQL machine learning prediction functions. |
+| 2024-04-09 | Gemini-Powered Prediction Functions in Spanner |  | Spanner supports using Gemini models with GoogleSQL and PostgreSQL machine learning prediction functions. |
+| 2024-04-09 | PostgreSQL CONCAT Function Arity Expansion |  | Spanner’s PostgreSQL-compatible CONCAT() function now supports more than four arguments. |
+| 2024-04-09 | PostgreSQL JSONB Functions in Spanner |  | Spanner adds support for additional PostgreSQL JSONB functions, including spanner.jsonb_query_array(), jsonb_build_array(), and jsonb_build_object(). |
+| 2024-04-09 | Spanner ARRAY VECTOR LENGTH parameter |  | Spanner added a VECTOR LENGTH parameter to the ARRAY type to allow fixed-size arrays for vector search. |
+| 2024-04-09 | Spanner dot_product() vector distance function |  | Spanner added support for the dot_product() function to enable vector similarity calculations using vector distance metrics. |
+| 2024-04-09 | Spanner emulator ML prediction support |  | Spanner emulator now supports generating machine-learning predictions when using GoogleSQL and PostgreSQL. |
+| 2024-04-09 | Spanner GoogleSQL SAFE.ML.PREDICT() function |  | Adds support for the SAFE.ML.PREDICT() function in GoogleSQL so prediction statements can return NULL instead of an error. |
+| 2024-04-09 | Spanner LangChain integration |  | Spanner now supports integration with LangChain for vector store, document loader, and chat message history objects. |
+| 2024-04-09 | Spanner PostgreSQL ML_PREDICT_ROW() function |  | Adds the ML_PREDICT_ROW() SQL function to Spanner for PostgreSQL to generate predictions directly from SQL. |
+| 2024-04-09 | Spanner Studio |  | Spanner Studio lets users access and manipulate Spanner SQL databases by running SQL queries from the Google Cloud Console. |
+| 2024-04-08 | Spanner Change Streams NEW_ROW_AND_OLD_VALUES capture type |  | Spanner Change Streams now supports the NEW_ROW_AND_OLD_VALUES capture type, which records new values for all columns and old values for modified columns. |
+| 2024-04-08 | Spanner Change Streams table modification type filters |  | Spanner Change Streams now supports filtering by table modification type to exclude INSERT, UPDATE, or DELETE changes. |
+| 2024-04-08 | Spanner Change Streams TTL-based deletes filter |  | Spanner Change Streams now support a TTL-based deletes filter via the exclude_ttl_deletes option. |
+| 2024-03-26 | Spanner Throughput optimized writes |  | Spanner write requests now support a configurable maximum delay between 0 and 500 milliseconds for throughput-optimized writes. |
+| 2024-03-20 | Leader-aware routing |  | Leader-aware routing directs read-write transactions in Spanner multi-region instances to the leader region to reduce latency and improve performance. |
+| 2024-03-19 | Active partitioned DML statistics |  | Spanner now provides statistics for active partitioned DML queries, including query progress, in statistics tables. |
+| 2024-03-11 | Table renaming |  | Allows Spanner tables to be renamed in place and to safely swap table names using synonyms. |
+| 2024-03-04 | Spanner client library interface |  | Introduces an auto-generated Spanner client library interface for admin operations, with newer admin features available only through this interface. |
+| 2024-02-29 | Spanner regional endpoint in me-central2 |  | Spanner supports a regional endpoint in the me-central2 region so workloads can run with data locality restrictions for compliance needs. |
+| 2024-02-26 | Spanner GoogleSQL BOOL function |  | The Spanner GoogleSQL BOOL JSON function is now generally available and converts a JSON boolean to a SQL BOOL. |
+| 2024-02-26 | Spanner GoogleSQL FLOAT64 function |  | The Spanner GoogleSQL FLOAT64 JSON function is now generally available and converts a JSON number to a SQL FLOAT64. |
+| 2024-02-26 | Spanner GoogleSQL INT64 function |  | The Spanner GoogleSQL INT64 JSON function is now generally available and converts a JSON number to a SQL INT64. |
+| 2024-02-26 | Spanner GoogleSQL JSON_TYPE function |  | The Spanner GoogleSQL JSON_TYPE function is now generally available and returns the JSON type of the outermost JSON value as a SQL STRING. |
+| 2024-02-26 | Spanner GoogleSQL LAX_BOOL function |  | The Spanner GoogleSQL LAX_BOOL JSON function is now generally available and converts a JSON value to a SQL BOOL. |
+| 2024-02-26 | Spanner GoogleSQL LAX_FLOAT64 function |  | The Spanner GoogleSQL LAX_FLOAT64 JSON function is now generally available and converts a JSON value to a SQL FLOAT64. |
+| 2024-02-26 | Spanner GoogleSQL LAX_INT64 function |  | The Spanner GoogleSQL LAX_INT64 JSON function is now generally available and converts a JSON value to a SQL INT64. |
+| 2024-02-26 | Spanner GoogleSQL LAX_STRING function |  | The Spanner GoogleSQL LAX_STRING JSON function is now generally available and converts a JSON value to a SQL STRING. |
+| 2024-02-26 | Spanner GoogleSQL STRING function |  | The Spanner GoogleSQL STRING JSON function is now generally available and converts a JSON string to a SQL STRING. |
+| 2024-02-21 | OpenCensus libraries for Spanner | 2024-02-21 | Spanner-related OpenCensus libraries have been archived, and users are advised to migrate to OpenTelemetry; deprecated on 2024-02-21. |
+| 2024-02-21 | Spanner OpenTelemetry observability support |  | Spanner now supports OpenTelemetry for observability and instrumentation needs. |
+| 2024-01-31 | Spanner regional instances in africa-south1 |  | Spanner now supports creating regional instances in Johannesburg, South Africa (africa-south1). |
+| 2024-01-23 | Spanner GoogleSQL INSERT OR IGNORE and INSERT OR UPDATE clauses |  | Spanner now supports the GoogleSQL INSERT OR IGNORE and INSERT OR UPDATE clauses. |
+| 2024-01-23 | Spanner PostgreSQL ON CONFLICT clauses |  | Spanner now supports PostgreSQL ON CONFLICT DO NOTHING and ON CONFLICT DO UPDATE SET clauses. |
+| 2024-01-22 | COSINE_DISTANCE() function |  | Adds support for the COSINE_DISTANCE() vector distance SQL function in Cloud Spanner (Preview) for similarity vector search. |
+| 2024-01-22 | EUCLIDEAN_DISTANCE() function |  | Adds support for the EUCLIDEAN_DISTANCE() vector distance SQL function in Cloud Spanner (Preview) for similarity vector search. |
+| 2023-12-19 | Partition queries without distributed union plans |  | Adds support for partition queries in Cloud Spanner when query plans do not include distributed unions. |
+| 2023-12-14 | Spanner Data Catalog integration |  | Spanner adds generally available support for Data Catalog resource management. |
+| 2023-12-05 | Spanner PostgreSQL array_length function |  | Spanner supports the PostgreSQL array_length function in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL array(subquery) support |  | Spanner supports the PostgreSQL array(subquery) construct in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL date_trunc function |  | Spanner supports the PostgreSQL date_trunc function in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL extract function |  | Spanner supports the PostgreSQL extract function in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL spanner.date_bin function |  | Spanner supports the PostgreSQL spanner.date_bin function in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL spanner.timestamptz_add function |  | Spanner supports the PostgreSQL spanner.timestamptz_add function in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL spanner.timestamptz_subtract function |  | Spanner supports the PostgreSQL spanner.timestamptz_subtract function in the PostgreSQL dialect. |
+| 2023-12-05 | Spanner PostgreSQL UNNEST function |  | Spanner supports the PostgreSQL UNNEST function in the PostgreSQL dialect. |
+| 2023-11-21 | Cloud Spanner emulator PostgreSQL dialect support |  | Spanner emulator support for the PostgreSQL dialect is generally available. |
+| 2023-11-16 | Automatic cleanup of long-running transactions |  | Spanner now supports automatic cleanup of long-running transactions in Java and Go clients to prevent session leaks and emit warning logs for problematic transactions. |
+| 2023-11-16 | GoogleSQL Hibernate dialect support for Hibernate ORM 6.3 |  | Spanner now supports Hibernate ORM 6.3 via the GoogleSQL Hibernate dialect. |
+| 2023-11-15 | Spanner integration with Vertex AI Vector Search |  | Spanner now supports an integration workflow with Vertex AI Vector Search to enable vector similarity search on data stored in Spanner. |
+| 2023-11-10 | Spanner batch-oriented scans |  | Batch-oriented scans enable Spanner to execute certain queries using a batch processing mode to improve scan throughput and performance. |
+| 2023-11-07 | Spanner GORM integration |  | Spanner now supports the GORM ORM for Go with GoogleSQL-dialect databases. |
+| 2023-11-02 | Table and index operations statistics |  | Table and index operations statistics is now generally available for monitoring table and index usage in Spanner databases. |
+| 2023-10-31 | Spanner ExecuteBatchDml API batch optimization |  | Spanner applies optimizations to groups of statements in ExecuteBatchDml API batches to improve update performance and latency. |
+| 2023-10-26 | FULL JOIN with USING in Spanner PostgreSQL dialect |  | Spanner adds support for FULL JOIN with the USING clause in PostgreSQL-dialect databases. |
+| 2023-10-23 | Cloud Spanner PostgreSQL SELECT DISTINCT support |  | Cloud Spanner's PostgreSQL dialect added support for the SELECT DISTINCT SQL statement. |
+| 2023-10-17 | Cloud Spanner Query Optimizer version 6 |  | Query Optimizer version 6 became generally available in Cloud Spanner and was set as the default optimizer version. |
+| 2023-10-11 | Spanner regional and multi-region throughput improvements |  | Spanner instances in select regional and multi-region configurations now support higher throughput without additional cost or configuration changes. |
+| 2023-10-09 | Spanner batch write |  | Spanner batch write (Preview) allows committing multiple mutations non-atomically in a single low-latency request. |
+| 2023-10-09 | Spanner Vertex AI text embeddings integration |  | Spanner added support for generating text embeddings using Vertex AI Generative AI through its Vertex AI integration. |
+| 2023-10-09 | Spanner Vertex AI text-bison model support |  | Spanner added support for the Vertex AI text-bison model via its Vertex AI integration. |
+| 2023-10-05 | Spanner sampled query plans |  | Spanner now offers sampled query plans in GA, enabling users to view historical query plans and compare query performance over time. |
+| 2023-09-19 | Cloud Spanner regional instances in me-central2 |  | Cloud Spanner supports creating regional instances in the me-central2 (Dammam, Saudi Arabia) region. |
+| 2023-09-13 | Cloud Spanner definer's rights views |  | Cloud Spanner adds support for creating definer's rights views, allowing users to query view contents without direct access to underlying schema objects. |
+| 2023-09-11 | Spanner query optimizer version 6 |  | Cloud Spanner made query optimizer version 6 generally available, while version 5 remains the default optimizer in production. |
+| 2023-09-06 | Spanner asia2 multi-region instance configuration |  | Cloud Spanner added a new multi-region instance configuration in the asia2 region pair (Mumbai, Delhi, Singapore). |
+| 2023-08-29 | Spanner Studio Gemini SQL assistance |  | Spanner Studio includes Gemini in Preview to help users write SQL statements more quickly with AI-powered collaboration. |
+| 2023-08-24 | Spanner PostgreSQL functions and operators support |  | Spanner added support for 13 PostgreSQL-compatible functions and operators, expanding SQL compatibility for PostgreSQL syntax. |
+| 2023-08-23 | Spanner BIT_REVERSE function |  | Adds the BIT_REVERSE function to map integer keys using bit-reversal logic, helping reduce hotspotting in key-based distributions. |
+| 2023-08-23 | Spanner SEQUENCE DDL for primary key default values |  | Adds support for integer SEQUENCE DDL objects used in PRIMARY KEY DEFAULT expressions to generate unique, uniformly distributed integer keys. |
+| 2023-08-23 | Spanner UUID primary key default generation |  | Adds support for generating UUID v4 values as a PRIMARY KEY DEFAULT expression using GENERATE_UUID in GoogleSQL or generate_uuid() in PostgreSQL dialects. |
+| 2023-08-22 | Spanner regional instances in europe-west10 |  | Spanner now supports creating regional instances in the Berlin region, europe-west10. |
+| 2023-08-21 | Spanner Studio Explorer pane |  | Spanner Studio includes an Explorer pane in Preview that enables interactive browsing, querying, and modifying databases. |
+| 2023-08-21 | Spanner Studio query editor SQL/DML/DDL support |  | Spanner Studio in the Google Cloud console now provides full support for SQL, DML, and DDL operations in the query editor. |
+| 2023-08-17 | Spanner Data Boost |  | Spanner Data Boost is now available in all Google Cloud regions; Spanner Data Boost enables running analytics queries and exporting data with near-zero impact on existing provisioned Spanner workloads. |
+| 2023-08-15 | Long-running operation progress checks |  | Spanner now supports checking progress for long-running operations, including backups, restores, and schema updates, and this capability is generally available. |
+| 2023-08-08 | Spanner database deletion protection |  | Database deletion protection in Cloud Spanner prevents accidental database deletions by requiring protection to be disabled before a database can be removed. |
+| 2023-07-18 | Spanner foreign key cascading deletes |  | Spanner supports cascading delete actions for foreign keys, automatically deleting related rows when a referenced row is removed. |
+| 2023-06-22 | Spanner Vertex AI integration |  | Spanner Vertex AI integration makes it possible to use Vertex AI with GoogleSQL to add machine learning capabilities to Spanner applications; Spanner Vertex AI integration enables Spanner applications to use machine learning capabilities through Google Standard SQL. |
+| 2023-06-09 | IF EXISTS and IF NOT EXISTS clause support in Spanner DDL |  | Spanner added support for IF NOT EXISTS in CREATE TABLE, CREATE INDEX, and ALTER TABLE ADD COLUMN, and IF EXISTS in DROP TABLE and DROP INDEX for both GoogleSQL and PostgreSQL dialects. |
+| 2023-06-07 | Fine-grained access control for PostgreSQL-dialect databases |  | Fine-grained access control is available for databases using the PostgreSQL dialect in Spanner. |
+| 2023-05-24 | Database deletion protection |  | Spanner offers database deletion protection in preview, allowing databases to be protected from accidental deletion. |
+| 2023-05-24 | Generated columns in primary key |  | Spanner now supports using generated columns as part of a table's primary key. |
+| 2023-05-22 | Automatic query parallelism in Cloud Spanner |  | Cloud Spanner can automatically increase the degree of parallelism used to execute a query when the instance size permits it. |
+| 2023-05-09 | Processing duration audit logging for Spanner read and write requests |  | Cloud Spanner now logs the processing duration of read and write requests in Cloud Audit Logs. |
+| 2023-05-02 | Parameterized LIMIT and OFFSET in Spanner PostgreSQL dialect |  | Spanner PostgreSQL dialect now supports parameterized LIMIT and OFFSET operations in queries. |
+| 2023-05-02 | Sampled query plans |  | Spanner now offers sampled query plans in Preview, enabling users to view historical query plan samples and compare query performance over time. |
+| 2023-05-02 | Spanner PostgreSQL dialect set operations |  | Spanner PostgreSQL dialect queries now support set operations such as UNION and INTERSECT, including use with ORDER BY, LIMIT, OFFSET, and in subqueries. |
+| 2023-05-02 | Spanner query optimizer statement hints |  | Spanner PostgreSQL dialect query statements now support optimizer hints such as optimizer_version and optimizer_statistics_package to configure query optimization. |
+| 2023-04-28 | Spanner indexes per table quota |  | Increased the maximum number of indexes allowed per table in Spanner from 32 to 128. |
+| 2023-04-28 | Spanner multi-region instance configurations |  | Added new North America multi-region Spanner instance configurations nam14 (Northern Virginia/Montreal/South Carolina) and nam15 (Dallas/Northern Virginia/Iowa). |
+| 2023-04-10 | Spanner integration with Data Catalog |  | Spanner integration with Data Catalog is available in Preview in the europe-central2 region; Spanner is integrated with Data Catalog (Dataplex Universal Catalog) to catalog metadata for Spanner instances, databases, tables, columns, and views. |
+| 2023-03-30 | Qatar (me-central1) |  | Spanner supports creating regional instances in the Doha, Qatar (me-central1) region. |
+| 2023-03-30 | Regional Spanner instances in Doha |  | Spanner supports creating regional instances in the Doha, Qatar (me-central1) region. |
+| 2023-03-23 | Italy (europe-west12) |  | Spanner supports creating regional instances in the Turin, Italy (europe-west12) region. |
+| 2023-03-23 | Regional Spanner instances in Turin |  | Spanner supports creating regional instances in the Turin, Italy (europe-west12) region. |
+| 2023-03-21 | ARRAY_FILTER function |  | Spanner GoogleSQL now supports the ARRAY_FILTER function. |
+| 2023-03-21 | ARRAY_TRANSFORM function |  | Spanner GoogleSQL now supports the ARRAY_TRANSFORM function. |
+| 2023-03-21 | Lambda expressions |  | Spanner GoogleSQL now supports lambda expressions. |
+| 2023-03-20 | Spanner instance tags |  | Spanner now supports using Google Cloud tags to organize instances and scope IAM policies by instance tags. |
+| 2023-03-17 | GoogleSQL ARRAY_INCLUDES_ALL function |  | GoogleSQL added the ARRAY_INCLUDES_ALL function to support checking whether all specified elements are present in an array. |
+| 2023-03-17 | GoogleSQL ARRAY_INCLUDES_ANY function |  | GoogleSQL added the ARRAY_INCLUDES_ANY function to support checking whether any specified element is present in an array. |
+| 2023-03-17 | GoogleSQL ARRAY_MAX function |  | GoogleSQL added the ARRAY_MAX function to return the maximum value from an array. |
+| 2023-03-17 | GoogleSQL ARRAY_MIN function |  | GoogleSQL added the ARRAY_MIN function to return the minimum value from an array. |
+| 2023-03-17 | GoogleSQL THEN RETURN clause |  | GoogleSQL added support for the THEN RETURN clause in query statements. |
+| 2023-03-17 | PostgreSQL RETURNING clause |  | The PostgreSQL dialect in Spanner added support for the RETURNING clause. |
+| 2023-03-09 | Fine-grained access control |  | Spanner fine-grained access control is now generally available, combining IAM with traditional SQL role-based access control; Fine-grained access control for Cloud Spanner lets you secure databases at the table and column level using RDBMS-style roles with GRANT and REVOKE SQL statements. |
+| 2023-03-03 | JSONB array data type support in PostgreSQL dialect |  | Spanner added support for the JSONB array data type in its PostgreSQL dialect. |
+| 2023-03-01 | Change streams for PostgreSQL dialect |  | Spanner supports Change Streams for databases using the PostgreSQL dialect. |
+| 2023-02-27 | System insights dashboard |  | Spanner provides a system insights dashboard that displays metrics and scorecards for instances and databases. |
+| 2023-02-09 | Cloud Spanner console copy backup operation monitoring |  | Cloud Spanner now shows the status and progress of copy backup long-running operations in the Google Cloud console for seven days after initiation. |
+| 2023-02-07 | Cloud Spanner console PostgreSQL DDL autocomplete and validation |  | Cloud Spanner provides autocomplete and syntax validation for DDL statements in the Google Cloud console when editing PostgreSQL-dialect databases. |
+| 2023-02-06 | Spanner regional endpoints |  | Spanner regional endpoints allow clients to connect through endpoints limited to a specific region to help enforce regional data residency and control requirements. |
+| 2023-01-31 | Table size statistics |  | Spanner provides generally available table size statistics to give insights into the size of individual database tables. |
+| 2022-12-22 | Spanner Kafka connector |  | The Spanner Kafka connector publishes Cloud Spanner change stream records to Apache Kafka for application integration and event triggering. |
+| 2022-12-19 | ALTER INDEX column management |  | Spanner ALTER INDEX statement now supports adding columns to an index and dropping non-key columns. |
+| 2022-12-14 | Custom instance configurations with read-only replicas |  | Spanner allows you to create custom instance configurations and add optional read-only replicas to improve read scalability and support low-latency stale reads. |
+| 2022-12-14 | Spanner change streams to Pub/Sub Dataflow template |  | Spanner adds a Dataflow template that streams change stream records from Spanner and writes them to Pub/Sub topics. |
+| 2022-12-12 | Spanner Change Streams NEW_VALUES and NEW_ROW data capture modes |  | Spanner Change Streams added NEW_VALUES and NEW_ROW change-record capture modes, with NEW_VALUES capturing only new non-key values and NEW_ROW capturing the full new row, while keys remain always included and old values are not captured. |
+| 2022-12-12 | Spanner instance move between configurations |  | Cloud Spanner supports moving an instance to any other instance configuration, including between regional and multi-region configurations. |
+| 2022-12-05 | Spanner DML RETURNING and THEN RETURN support |  | Added support in Spanner DML for returning updated rows in the same statement using PostgreSQL RETURNING and Google Standard SQL THEN RETURN. |
+| 2022-12-02 | Concurrent database restore operations per instance |  | Increased the maximum number of concurrent Spanner database restore operations per instance from five to ten. |
+| 2022-11-15 | Cloud Spanner PostgreSQL JSONB support |  | Cloud Spanner adds support for the JSONB data type in the PostgreSQL dialect. |
+| 2022-11-15 | Cloud Spanner PostgreSQL TTL |  | Cloud Spanner adds Time to Live (TTL) support for PostgreSQL-dialect databases, enabling automatic deletion of data based on user-defined retention policies. |
+| 2022-11-08 | Cross-region and cross-project Spanner backups |  | Cloud Spanner added support for copying database backups between instances in different regions and projects to improve data protection and compliance. |
+| 2022-11-03 | NHibernate ORM support for Cloud Spanner |  | Cloud Spanner added generally available support for the NHibernate ORM, enabling Spanner to be used as the backend database for NHibernate applications. |
+| 2022-10-19 | Spanner concurrent database restore operations |  | Spanner now allows up to five simultaneous database restore operations per instance instead of one. |
+| 2022-10-18 | Spanner Lock Insights dashboard |  | The Lock Insights dashboard identifies latency spikes in Spanner databases that are caused by lock contention. |
+| 2022-10-18 | Spanner Transaction Insights dashboard |  | The Transaction Insights dashboard identifies transactions in Spanner databases that cause lock contention and potential high latency. |
+| 2022-09-28 | SPANNER_SYS Query statistics table |  | The SPANNER_SYS Query statistics table was enhanced with new columns including LATENCY_DISTRIBUTION and RUN_IN_RW_TRANSACTION_EXECUTION_COUNT. |
+| 2022-09-28 | SPANNER_SYS Read statistics table |  | The SPANNER_SYS Read statistics table was enhanced with a new RUN_IN_RW_TRANSACTION_EXECUTION_COUNT column. |
+| 2022-09-28 | SPANNER_SYS Transaction statistics table |  | The SPANNER_SYS Transaction statistics table was enhanced with new columns including TOTAL_LATENCY_DISTRIBUTION, OPERATIONS_BY_TABLE, and ATTEMPT_COUNT. |
+| 2022-09-27 | ARRAY_SLICE SQL function |  | Google Standard SQL for Spanner now supports the ARRAY_SLICE function, which returns a contiguous subset of elements from an input array. |
+| 2022-09-15 | Spanner Go database/sql driver |  | The Spanner Golang database/sql driver is now generally available, enabling use of Go's standard database/sql package with Spanner. |
+| 2022-09-13 | Tel Aviv (me-west1) regional Spanner instances |  | Cloud Spanner regional instances can be created in the Tel Aviv region (me-west1). |
+| 2022-09-09 | Query optimizer version 5 |  | Query optimizer version 5 is generally available in Spanner and is the default optimizer version; Made Query Optimizer version 5 generally available for Spanner query planning, while noting version 4 remains the production default. |
+| 2022-08-17 | DISABLE_INLINE hint |  | Added support for the DISABLE_INLINE hint in Google Standard SQL function calls so a function can be computed once and reused across multiple references in a query. |
+| 2022-07-14 | Cloud Monitoring Spanner aggregated statistics |  | Adds GA support for viewing aggregated Spanner statistics in Cloud Monitoring, including transactions, reads, queries, and lock contentions. |
+| 2022-06-30 | ANALYZE DDL command |  | Introduces the ANALYZE DDL command so administrators can manually refresh the optimizer's query statistics package for faster adaptation to frequent changes in data, queries, or indexes. |
+| 2022-06-29 | Query Insights |  | Query Insights in Cloud Spanner provides visual detection of query performance issues and deeper analysis to identify their root causes. |
+| 2022-06-23 | Spanner PostgreSQL interface |  | The Spanner PostgreSQL interface adds PostgreSQL compatibility to Spanner with support for a core PostgreSQL SQL dialect, psql, native language clients, and Google tooling integration; Spanner adds a PostgreSQL-compatible interface in preview with support for a subset of PostgreSQL SQL features and connectivity through updated drivers and PGAdapter. |
+| 2022-06-10 | Commit timestamps query optimization |  | Spanner added a query optimization that uses commit timestamps to reduce I/O when retrieving data written after a specified time. |
+| 2022-06-07 | Spanner regional instances in us-south1 |  | Spanner added support for creating regional instances in the Dallas (us-south1) region. |
+| 2022-05-31 | Granular instance sizing |  | Spanner supports granular instance sizing by allowing production instances to be created with fewer than 1,000 processing units. |
+| 2022-05-27 | Change streams |  | Spanner change streams capture and stream inserts, updates, and deletes in near real time for use in analytics, archiving, and downstream workflows. |
+| 2022-05-24 | Google Cloud Spanner regional instances in us-east5 (Columbus) |  | Cloud Spanner can create regional instances in the us-east5 (Columbus) region. |
+| 2022-05-10 | Google Cloud Spanner regional instances in europe-southwest1 (Madrid) |  | Cloud Spanner can create regional instances in the europe-southwest1 (Madrid) region. |
+| 2022-05-03 | Spanner Query Optimizer version 4 |  | Google Cloud Spanner made Query Optimizer version 4 generally available and set it as the default optimizer; Spanner released Query Optimizer version 4 while retaining version 3 as the default optimizer in production. |
+| 2022-05-03 | Spanner regional instances in europe-west9 |  | Spanner added support for creating regional instances in the Paris region (europe-west9). |
+| 2022-04-20 | Spanner regional instance support in Milan (europe-west8) |  | Spanner now supports creating regional instances in the Milan (europe-west8) region. |
+| 2022-04-14 | Spanner multi-region instance configuration nam-eur-asia3 |  | Spanner now supports a new three-continent, nine-replica multi-region instance configuration named nam-eur-asia3. |
+| 2022-04-14 | Spanner table DEFAULT values for non-key columns |  | Spanner now supports DEFAULT values for non-key columns when creating or altering tables to provide a fallback for unspecified insert or mutation values. |
+| 2022-04-05 | Spanner Avro table export to Cloud Storage |  | Spanner allows exporting a subset of database tables as Avro files to Google Cloud Storage. |
+| 2022-03-25 | Cloud Spanner instance storage capacity scaling |  | Cloud Spanner instances of one node or more now receive 4 TB of storage per node, while smaller instances receive 409.6 GB of storage for each 100 processing units. |
+| 2022-03-10 | Cloud Spanner committed use discounts |  | Cloud Spanner now offers committed use discounts that provide reduced pricing for customers committing to continuous compute usage for a year or longer. |
+| 2022-03-08 | Spanner database views in Google Cloud Console |  | Allows users to view and manage Spanner database views directly from the Cloud Console via the database Overview page's Views tab. |
+| 2022-03-03 | Spanner Cloud Monitoring preview aggregated transaction and query metrics |  | Adds preview support for viewing aggregated Spanner metrics in Cloud Monitoring for transactions, reads, queries, and lock contentions, with one-minute metric retention increased to six weeks. |
+| 2022-03-01 | Spanner multi-region instance configuration nam13 |  | Spanner introduced the multi-region instance configuration named nam13 for deployment across Iowa, Oklahoma, and Salt Lake City in North America. |
+| 2022-02-11 | DML batch optimization |  | Spanner optimizes processing of groups of similar DML statements in batches to improve batched write performance under certain conditions. |
+| 2022-02-08 | Query statistics support for DML statements |  | Spanner extends query statistics to cover DML statements, including INSERT, UPDATE, and DELETE operations. |
+| 2022-02-07 | Spanner CPU utilization metrics by task priority |  | Adds Spanner CPU utilization metrics that can be grouped by all task priorities and viewed in the monitoring console by operation type. |
+| 2021-11-04 | Cloud Spanner Time to Live (TTL) |  | Introduces generally available TTL support in Spanner to automatically remove data based on user-defined retention policies. |
+| 2021-10-29 | Django Spanner plugin |  | Google Cloud Spanner now provides a Django plugin that enables Spanner to be used as a backend database for the Django web framework. |
+| 2021-10-27 | CSV export spannerSnapshotTime option |  | CSV export now supports the spannerSnapshotTime option to export data as it existed at a specific past point in time. |
+| 2021-10-13 | Request and transaction tags |  | Spanner introduces request tags and transaction tags in application code to correlate introspection statistics with queries and troubleshooting data for latency, contention, and performance. |
+| 2021-10-06 | Query optimizer statistics package selection |  | Spanner now supports specifying the statistics package used by the query optimizer to improve predictability of query plans. |
+| 2021-09-24 | Query Optimizer version 3 as production default |  | Spanner set Query Optimizer version 3 as the default optimizer version for production environments. |
+| 2021-08-31 | Cloud Spanner R2DBC Driver (Preview) |  | Cloud Spanner introduced an R2DBC driver in Preview that enables fully reactive applications to connect to Spanner. |
+| 2021-08-30 | Cloud Spanner JSON Data Type |  | Cloud Spanner added support for a JSON data type for storing and working with JSON-formatted data. |
+| 2021-08-30 | Cloud Spanner query editor multi-tab and multi-statement support |  | The Google Cloud Console Query page for Spanner now supports multiple query tabs, allows multiple SQL/DML statements in a single tab, and lets users view per-statement results and query plans via the Results and Explanation subtabs. |
+| 2021-08-30 | Spanner database leader region change |  | Adds support for changing the leader region location of an existing Spanner database. |
+| 2021-08-20 | Cloud Spanner views |  | Cloud Spanner introduced support for database views to centralize query logic, simplify maintenance, and keep query definitions stable across schema changes. |
+| 2021-08-17 | Cloud Spanner Query Optimizer v3 |  | Cloud Spanner released Query Optimizer version 3, initially available with default behavior set to off in production. |
+| 2021-08-03 | Spanner instance configuration changes |  | Spanner added support for changing instance configuration as a preview capability. |
+| 2021-07-21 | Spanner Time to Live (TTL) |  | Spanner introduced TTL in public preview to let database owners define row deletion policies for automatic data removal from tables. |
+| 2021-07-20 | Spanner Processing Units for instance sizing |  | Introduces Spanner Processing Units (PUs) for more granular instance sizing, where one node equals 1,000 PUs and capacity can be provisioned in 100-PU increments. |
+| 2021-07-19 | Spanner Key Visualizer |  | Introduces Key Visualizer, an interactive monitoring tool for Spanner that helps analyze usage patterns and identify trends and outliers in performance and resource metrics. |
+| 2021-07-08 | NUMERIC key column support |  | Spanner now supports using the NUMERIC data type in key columns, including primary keys, foreign keys, and secondary indexes. |
+| 2021-06-30 | Cloud External Key Manager (Cloud EKM) integration |  | Spanner now supports Cloud External Key Manager (Cloud EKM) for customer-managed encryption keys and enables Key Access Justification for key access visibility. |
+| 2021-06-15 | NUMERIC input support for SQL mathematical functions |  | Spanner SQL now allows EXP, LN, LOG, LOG10, and SQRT to accept NUMERIC input directly without casting to FLOAT64. |
+| 2021-04-13 | Transaction statistics commit retry reporting |  | Spanner transaction statistics now include commit retry information to help diagnose performance issues caused by transaction aborts. |
+| 2021-04-06 | Secondary index backfill progress tracking |  | Cloud Spanner now allows you to track the progress of long-running secondary index backfill operations via the gcloud CLI, REST API, and RPC API. |
+| 2021-03-31 | Customer-managed encryption keys (CMEK) for Spanner databases |  | Cloud Spanner now supports using Customer-Managed Encryption Keys (CMEK) to encrypt databases. |
+| 2021-03-31 | Spanner request priority |  | Spanner supports specifying a priority for data requests to control how request execution is scheduled. |
+| 2021-03-17 | Spanner Cloud Console query editor |  | The Spanner query editor in Cloud Console has been revamped with improved autocomplete, query prevalidation, formatting, and support for running a query selection. |
+| 2021-03-17 | Spanner query plan visualizer |  | Spanner adds a query plan visualizer in Cloud Console to inspect and tune query execution plans. |
+| 2021-03-11 | CPU Utilization by operation types |  | Introduces the Spanner CPU Utilization by operation types metric to break down CPU usage by user-initiated operation type. |
+| 2021-03-03 | Point-in-time recovery (PITR) |  | Adds Point-in-Time Recovery (PITR) support so Spanner data can be recovered from a specific past timestamp. |
+| 2021-03-01 | Spanner transaction commit statistics |  | Spanner can optionally return the mutation count for a transaction in the commit response to help optimize transactions within mutation count limits. |
+| 2021-02-08 | Spanner Studio storage utilization warnings |  | Spanner Studio now displays database storage utilization and issues warnings when usage approaches the recommended storage limit. |
+| 2021-01-15 | Spanner lock statistics |  | Spanner adds support for running SQL queries to retrieve lock statistics for investigating database lock conflicts. |
+| 2021-01-14 | Spanner query statistics failure and cancellation telemetry |  | Spanner query statistics now include information for failed, timed-out, and user-canceled queries. |
+| 2020-12-17 | Cloud Spanner multi-region instance configuration eur6 |  | Cloud Spanner added the eur6 multi-region instance configuration spanning the Netherlands, Frankfurt, and Zurich. |
+| 2020-12-17 | Cloud Spanner multi-region instance configuration nam12 |  | Cloud Spanner added the nam12 multi-region instance configuration spanning Iowa, Northern Virginia, Oregon, and Oklahoma. |
+| 2020-12-07 | LOCK_SCANNED_RANGES statement hint |  | Cloud Spanner added support for the LOCK_SCANNED_RANGES statement hint, which lets a transaction request an exclusive lock on scanned key ranges. |
+| 2020-11-09 | nam8 North America multi-region instance configuration |  | Cloud Spanner introduced a multi-region instance configuration in North America, identified as nam8 (Los Angeles, Oregon, and Salt Lake City). |
+| 2020-10-29 | Spanner SQL ARRAY_IS_DISTINCT function |  | Spanner SQL added support for the ARRAY_IS_DISTINCT function. |
+| 2020-10-29 | Spanner SQL FROM_BASE32 function |  | Spanner SQL added the FROM_BASE32 function to convert base32-encoded strings to BYTES values. |
+| 2020-10-29 | Spanner SQL TO_BASE32 function |  | Spanner SQL added the TO_BASE32 function to convert BYTES values to base32-encoded strings. |
+| 2020-10-23 | Spanner multi-region instance configuration nam7 |  | Spanner now offers the North America multi-region instance configuration named nam7 (Iowa, North Virginia, Oklahoma). |
+| 2020-10-15 | Spanner multi-region instance configuration |  | Spanner introduced the multi-region instance configuration named nam9, covering North Virginia, Iowa, South Carolina, and Oregon in North America; Spanner introduced the asia1 multi-region instance configuration for deployments in Tokyo/Osaka. |
+| 2020-10-13 | Spanner CHECK constraints |  | Spanner added generally available CHECK constraints, allowing table rows to be validated against a boolean expression. |
+| 2020-10-13 | Spanner generated columns |  | Spanner made generated columns generally available, allowing columns to be defined as values computed from other columns in a row. |
+| 2020-10-08 | Spanner standard SQL NET functions documentation |  | Spanner documentation for standard SQL NET functions was published. |
+| 2020-10-08 | Spanner standard SQL SELECT * EXCEPT syntax |  | Spanner standard SQL added support for the SELECT * EXCEPT syntax. |
+| 2020-10-08 | Spanner standard SQL SELECT * REPLACE syntax |  | Spanner standard SQL added support for the SELECT * REPLACE syntax. |
+| 2020-09-28 | NUMERIC Data Type |  | Spanner introduced general availability of the NUMERIC data type. |
+| 2020-09-09 | Spanner Query Introspection Tool |  | Spanner added an introspection tool that shows oldest active queries to help analyze running query performance impact. |
+| 2020-08-20 | Cloud Spanner multi-region instance configuration nam11 |  | Cloud Spanner added the multi-region instance configuration nam11, available in North America (Iowa/South Carolina). |
+| 2020-08-06 | Cloud Spanner multi-region instance configuration nam10 |  | Cloud Spanner added the multi-region instance configuration nam10, available in North America (Iowa/Salt Lake). |
+| 2020-07-30 | Cloud Spanner emulator |  | The Spanner emulator became generally available, allowing local development and testing of Spanner applications. |
+| 2020-07-15 | Spanner SQL read statistics queries |  | Added support for running SQL queries to retrieve database read statistics over one-minute, 10-minute, and one-hour windows. |
+| 2020-06-08 | Spanner multi-region configuration eur5 |  | A new second multi-region instance configuration, eur5 (London/Belgium), became available for Spanner. |
+| 2020-06-08 | Spanner regional instances in Jakarta |  | Spanner added support for creating regional instances in the Jakarta (asia-southeast2) region. |
+| 2020-05-18 | Spanner SQL transaction statistics retrieval |  | Spanner added SQL query support for retrieving recent transaction statistics over 1-minute, 10-minute, and 1-hour windows. |
+| 2020-04-20 | Spanner regional instances in us-west4 |  | Cloud Spanner adds support for creating regional instances in the Las Vegas (us-west4) region. |
+| 2020-04-17 | Query Optimizer Versioning |  | Query Optimizer Versioning allows users to choose which optimizer version to apply to a Spanner database, application, or individual query. |
+| 2020-04-17 | Spanner Backup and Restore |  | Cloud Spanner Backup and Restore became generally available, enabling on-demand database backups and restores. |
+| 2020-04-01 | Spanner Emulator |  | The Spanner Emulator is available in beta to let users develop and test Spanner applications locally. |
+| 2020-03-19 | Spanner C++ client library |  | Cloud Spanner now offers an open-source C++ client library for accessing and using Spanner. |
+| 2020-03-05 | Spanner foreign keys |  | Foreign key support in Cloud Spanner is now generally available. |
+| 2020-02-24 | Cloud Spanner regional instance support in us-west3 |  | Cloud Spanner added support for creating regional instances in the us-west3 (Salt Lake City) region. |
+| 2020-01-24 | Cloud Spanner regional instance support in asia-northeast3 |  | Cloud Spanner added support for creating regional instances in the asia-northeast3 (Seoul) region. |
+| 2019-12-18 | Cloud Spanner regional instances in europe-west3 |  | Cloud Spanner added support for creating regional instances in the Frankfurt (europe-west3) region. |
+| 2019-11-25 | Cloud Spanner SQL WITH clause support |  | Cloud Spanner SQL query language now supports the WITH clause, allowing subquery results to be bound to temporary tables for cleaner and faster complex queries. |
+| 2019-10-16 | Hibernate ORM support for Spanner |  | Cloud Spanner added guidance for connecting the Hibernate ORM framework to Spanner. |
+| 2019-08-07 | Spanner JDBC driver |  | Spanner introduced an open-source JDBC driver that enables Java applications to access Spanner via the JDBC API. |
+| 2019-07-31 | Cloud Spanner regional instance support in São Paulo |  | Cloud Spanner added support for creating regional instances in the South America (São Paulo) region (southamerica-east1). |
+| 2019-06-26 | Cloud Spanner CSV import and export |  | Cloud Spanner added the ability to import and export data in CSV format for use with tools such as mysqldump, PostgreSQL COPY, and bcp. |
+| 2019-06-21 | Automatic secondary index usage for Spanner SQL queries |  | Spanner can automatically choose and use secondary indexes when executing SQL queries to improve query efficiency. |
+| 2019-05-15 | Spanner latency charts in Cloud and Cloud Monitoring consoles |  | Google Cloud Console and Cloud Monitoring provide latency charts for Spanner to help troubleshoot performance issues. |
+| 2019-04-30 | Cloud Monitoring CPU utilization metrics and alerting for Spanner |  | Cloud Monitoring and the Google Cloud console now provide additional Spanner CPU utilization charts and support alerting on those CPU utilization metrics. |
+| 2019-04-18 | Spanner regional instance availability in Osaka |  | Spanner supports creating regional instances in the Osaka (asia-northeast2) region. |
+| 2019-03-14 | Batch DML in a single transaction |  | Spanner supports running multiple DML statements within one transaction by using batch DML. |
+| 2019-03-11 | Zurich (europe-west6) regional Spanner instance availability |  | Spanner regional instances can be created in the Zurich region (europe-west6). |
+| 2019-02-01 | Cloud Spanner DynamoDB migration to Spanner |  | Cloud Spanner added documentation for migrating data from DynamoDB to Spanner. |
+| 2019-02-01 | Cloud Spanner MySQL migration to Spanner |  | Cloud Spanner added documentation for migrating data from MySQL to Spanner. |
+| 2019-02-01 | Cloud Spanner Oracle OLTP migration to Spanner |  | Cloud Spanner added documentation for migrating data from an Oracle OLTP system to Spanner. |
+| 2019-02-01 | Cloud Spanner PostgreSQL migration to Spanner |  | Cloud Spanner added documentation for migrating data from PostgreSQL to Spanner. |
+| 2019-01-17 | Cloud Spanner regional instances in Australia-southeast1 |  | Cloud Spanner supports creating regional instances in the Sydney (australia-southeast1) region. |
+| 2019-01-17 | Cloud Spanner regional instances in London (europe-west2) |  | Spanner regional instances can now be created in the London (europe-west2) region. |
+| 2019-01-11 | Avro to Spanner import template |  | Cloud Spanner adds support for importing data from other databases using the Avro to Spanner template. |
+| 2018-12-06 | Cloud Spanner Java client library |  | Cloud Spanner announced general availability of the Spanner Java client library. |
+| 2018-11-26 | Cloud Spanner regional instances in Hong Kong (asia-east2) |  | Cloud Spanner added support for creating regional instances in the asia-east2 (Hong Kong) region. |
+| 2018-11-13 | Spanner query statistics in Cloud Console |  | Spanner now shows query statistics measured by CPU usage in the Google Cloud console for multiple recent time windows. |
+| 2018-10-29 | Spanner multi-region instance configuration eur3 |  | Spanner now supports creating multi-region instance configurations in the Europe region group using the eur3 configuration. |
+| 2018-10-26 | Cloud Spanner Partitioned DML support in Google Cloud CLI |  | Google Cloud CLI now includes beta support for inserting, updating, and deleting Cloud Spanner table rows using Partitioned DML. |
+| 2018-10-22 | Cloud Spanner nam6 multi-region instance configuration |  | Cloud Spanner added a second North America multi-region instance configuration, nam6, for creating multi-region instances. |
+| 2018-10-10 | Cloud Spanner Data Manipulation Language (DML) |  | Cloud Spanner supports executing Data Manipulation Language (DML) statements. |
+| 2018-10-10 | Cloud Spanner Partitioned DML |  | Cloud Spanner supports Partitioned DML statements for large-scale distributed data modifications. |
+| 2018-08-17 | Cloud Spanner database export |  | Cloud Spanner supports exporting databases through the REST API and the gcloud command-line tool. |
+| 2018-08-17 | Cloud Spanner database import |  | Cloud Spanner supports importing databases through the REST API and the gcloud command-line tool. |
+| 2018-07-12 | Cloud Spanner database export and import via Google Cloud Console |  | Cloud Spanner added support for exporting and importing databases directly through the Google Cloud console interface. |
+| 2018-07-10 | Cloud Spanner regional instance availability in us-west2 (Los Angeles) |  | Cloud Spanner introduced support for creating regional instances in the Los Angeles (us-west2) region. |
+| 2018-06-11 | Cloud Spanner regional instance creation in europe-north1 |  | Cloud Spanner regional instances can now be created in the europe-north1 (Finland) region. |
+| 2018-05-10 | Cloud Spanner regional instance creation in asia-southeast1 |  | Cloud Spanner regional instances can now be created in the asia-southeast1 (Singapore) region. |
+| 2018-04-26 | Spanner regional instance support in us-east1 |  | Spanner adds support for creating regional instances in the US East (South Carolina) region (us-east1). |
+| 2018-04-26 | Spanner regional instance support in us-west1 |  | Spanner adds support for creating regional instances in the US West (Oregon) region (us-west1). |
+| 2018-04-24 | gcloud Spanner beta table row mutation support |  | Adds beta support in the Cloud SDK for inserting, updating, and deleting rows in Cloud Spanner tables via the command-line tool. |
+| 2018-03-28 | Spanner COMMIT_TIMESTAMP column option |  | Adds support for a commit timestamp column option that automatically stores the transaction’s commit time in a specified Spanner column. |
+| 2018-03-15 | Spanner regional instances in europe-west4 |  | Spanner added support for creating regional instances in the Netherlands region (europe-west4). |
+| 2018-03-02 | Spanner parallel read/query with Node.js and Ruby clients |  | Spanner introduced parallel reading and querying with multiple workers in the Node.js and Ruby client libraries. |
+| 2018-02-27 | Parallel read and query execution in client libraries |  | Spanner added support for parallel reading and querying with multiple workers via its C#, Go, Java, and PHP client libraries. |
+| 2018-02-27 | Spanner regional instances in northamerica-northeast1 |  | Spanner added support for creating regional instances in the northamerica-northeast1 (Montreal) region. |
+| 2018-02-20 | Spanner Cloud Logging audit logs |  | Spanner added support for both Admin Activity and Data Access audit logs in Cloud Logging. |
+| 2018-01-31 | IAM custom roles for Spanner |  | General availability was announced for custom IAM roles in Cloud Spanner. |
+| 2018-01-18 | Regional instance location availability |  | Spanner added support for creating regional instances in the us-east4 (Northern Virginia) and asia-south1 (Mumbai) regions. |
+| 2017-11-14 | Multi-region instance configurations |  | Spanner introduced multi-region instance configurations, including one-continent (nam3) and three-continent (nam-eur-asia1) deployment options. |
+| 2017-06-15 | Cloud Spanner regional instances in asia-northeast1 |  | Cloud Spanner now supports creating regional instances in the Tokyo region (asia-northeast1). |
+| 2017-05-16 | Cloud Spanner API general availability |  | The Cloud Spanner API reached general availability. |
+| 2017-05-16 | Cloud Spanner IAM role assignments |  | Cloud Spanner supports applying IAM roles to databases, instances, and projects. |
+| 2017-05-16 | Cloud Spanner integration with Cloud Run functions |  | Cloud Spanner can be used in conjunction with Cloud Run functions. |
+| 2017-05-16 | Cloud Spanner integration with Google Cloud services |  | Cloud Spanner can integrate with additional Google Cloud services. |
+| 2017-05-16 | Cloud Spanner monitoring with Cloud Monitoring |  | Cloud Spanner provides monitoring capabilities through Cloud Monitoring. |
+| 2017-05-16 | Cloud Spanner SQL arrays |  | Cloud Spanner supports working with arrays in SQL queries and statements. |
+| 2017-02-14 | Cloud Spanner API |  | The Cloud Spanner API was made available in initial Beta. |
+
+Source file slug: `spanner.md`
+

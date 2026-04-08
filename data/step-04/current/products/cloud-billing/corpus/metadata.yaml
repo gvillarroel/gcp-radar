@@ -1,0 +1,87 @@
+version: 1
+name: corpus
+created_at: '2026-04-07T23:08:57+00:00'
+updated_at: '2026-04-07T23:08:59+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs
+  title: https://docs.cloud.google.com/billing/docs
+  created_at: '2026-04-07T23:08:58+00:00'
+  updated_at: '2026-04-07T23:08:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/billing/docs --key
+    corpus
+  delete_command: know del --key corpus site-docs
+  config:
+    url: https://docs.cloud.google.com/billing/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+- type: site
+  id: site-apis
+  title: https://docs.cloud.google.com/billing/docs/apis
+  created_at: '2026-04-07T23:08:58+00:00'
+  updated_at: '2026-04-07T23:08:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/billing/docs/apis --key
+    corpus
+  delete_command: know del --key corpus site-apis
+  config:
+    url: https://docs.cloud.google.com/billing/docs/apis
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+- type: site
+  id: site-rest
+  title: https://docs.cloud.google.com/billing/docs/reference/rest
+  created_at: '2026-04-07T23:08:58+00:00'
+  updated_at: '2026-04-07T23:08:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/billing/docs/reference/rest
+    --key corpus
+  delete_command: know del --key corpus site-rest
+  config:
+    url: https://docs.cloud.google.com/billing/docs/reference/rest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+- type: site
+  id: site-access-control
+  title: https://docs.cloud.google.com/billing/docs/access-control
+  created_at: '2026-04-07T23:08:59+00:00'
+  updated_at: '2026-04-07T23:08:59+00:00'
+  update_command: know sync site https://docs.cloud.google.com/billing/docs/access-control
+    --key corpus
+  delete_command: know del --key corpus site-access-control
+  config:
+    url: https://docs.cloud.google.com/billing/docs/access-control
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+- type: site
+  id: site-latest
+  title: https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest
+  created_at: '2026-04-07T23:08:59+00:00'
+  updated_at: '2026-04-07T23:08:59+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest
+    --key corpus
+  delete_command: know del --key corpus site-latest
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/cloudbilling/latest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+- type: site
+  id: site-overview
+  title: https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/overview
+  created_at: '2026-04-07T23:08:59+00:00'
+  updated_at: '2026-04-07T23:08:59+00:00'
+  update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/overview
+    --key corpus
+  delete_command: know del --key corpus site-overview
+  config:
+    url: https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/overview
+    max_depth: 1
+    max_pages: 20
+    compact_output: true

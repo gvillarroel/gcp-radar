@@ -1,0 +1,43 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-07T23:52:05.345Z"
+product_name: "BigQuery"
+product_slug: "bigquery"
+feature_name: "BigQuery Browser Tool Syntax Highlighting"
+feature_slug: "bigquery-browser-tool-syntax-highlighting"
+latest_feature_date: "2012-07-16"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "code coloring in query editor"
+  - "editor syntax colors"
+  - "query editor syntax highlighting"
+  - "syntax coloring"
+  - "syntax highlighting"
+  - "code highlighting"
+  - "SQL highlighting"
+---
+
+# BigQuery Browser Tool Syntax Highlighting
+
+Product: BigQuery
+Coverage: NONE
+
+## Step 02 Summary
+
+Added syntax highlighting support to the BigQuery Browser Tool.
+
+## Extended Definition
+
+Added syntax highlighting support to the BigQuery Browser Tool.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

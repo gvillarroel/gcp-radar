@@ -1,0 +1,45 @@
+# Colab Enterprise
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 26
+Unique features: 31
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-01-21 | Data Science Agent BigFrames support |  | The Data Science Agent can work with BigFrames in Colab Enterprise notebooks. |
+| 2026-01-21 | Data Science Agent BigQuery ML support |  | The Data Science Agent can use BigQuery ML from Colab Enterprise notebooks. |
+| 2026-01-21 | Data Science Agent Serverless for Apache Spark support |  | The Data Science Agent can use Google Cloud Serverless for Apache Spark from Colab Enterprise notebooks. |
+| 2025-12-17 | Post-startup scripts |  | Post-startup scripts let you run custom tasks after a Colab Enterprise runtime starts; Post-startup scripts let you run custom tasks after a Colab Enterprise runtime starts. |
+| 2025-11-10 | Python 3.12 support |  | Colab Enterprise supports Python 3.12 as the latest default Python version. |
+| 2025-10-20 | Visualization cells |  | Visualization cells let you create interactive and editable charts directly in a Colab Enterprise notebook. |
+| 2025-10-14 | SQL cells |  | SQL cells let you write, edit, and run SQL queries directly in Colab Enterprise notebooks. |
+| 2025-08-05 | Reservations support for runtimes |  | Colab Enterprise runtimes can consume Compute Engine zonal reservations to improve resource availability; Colab Enterprise runtimes can consume Compute Engine zonal reservations to improve resource availability. |
+| 2025-08-04 | Data Science Agent |  | The Data Science Agent helps automate exploratory data analysis, machine learning tasks, and insight generation in notebooks. |
+| 2025-05-28 | Python 3.11 support |  | Colab Enterprise supports Python 3.11 for runtimes and runtime templates. |
+| 2025-05-28 | Runtime template Python version selection |  | Runtime templates can be configured to use a specific Python version or automatically use the latest available version. |
+| 2025-04-29 | Gemini code cell explanation |  | Gemini can explain code cells in a Colab Enterprise notebook. |
+| 2025-04-29 | Gemini error explanation and fixing |  | Gemini can explain notebook errors and suggest fixes in Colab Enterprise. |
+| 2025-04-29 | Gemini notebook chat |  | Gemini can chat about the contents of a Colab Enterprise notebook. |
+| 2025-04-21 | Notebook gallery |  | The notebook gallery provides curated notebook templates and examples for getting started with Colab Enterprise. |
+| 2025-03-31 | Default runtimes with GPUs |  | Users can switch a notebook to a default runtime that includes GPUs. |
+| 2025-02-27 | Terraform support for notebook scheduling |  | Terraform resources can schedule notebook runs in Colab Enterprise. |
+| 2025-02-27 | Terraform support for runtime management |  | Terraform resources can create and manage Colab Enterprise runtimes. |
+| 2025-02-27 | Terraform support for runtime template management |  | Terraform resources can create and manage Colab Enterprise runtime templates. |
+| 2024-12-10 | Gemini error fixing |  | Gemini can suggest fixes when code in a Colab Enterprise notebook produces errors. |
+| 2024-10-03 | Gemini in Colab Enterprise |  | Gemini in Colab Enterprise provides code suggestions and code generation assistance in notebooks; Gemini in Colab Enterprise provides code suggestions and code generation assistance in notebooks. |
+| 2024-09-23 | Customer-managed encryption keys for notebooks |  | Customer-managed encryption keys can be used to protect Colab Enterprise notebooks. |
+| 2024-08-14 | Notebook scheduler |  | The notebook scheduler lets you run notebooks immediately or on a recurring schedule; The notebook scheduler lets you run notebooks immediately or on a recurring schedule. |
+| 2024-06-17 | Customer-managed encryption keys for runtimes |  | Customer-managed encryption keys can be used to protect Colab Enterprise runtimes. |
+| 2024-02-27 | VPC Service Controls support |  | Colab Enterprise supports VPC Service Controls for service perimeter protection. |
+| 2023-10-11 | End-user credential authentication |  | Colab Enterprise supports end-user credential authentication for notebook code execution; Colab Enterprise supports end-user credential authentication for notebook code execution. |
+| 2023-10-11 | Idle shutdown for runtimes |  | Colab Enterprise can automatically shut down idle runtimes. |
+| 2023-10-11 | Inline code completion assistance |  | Colab Enterprise provides inline code completion assistance with Duet AI; Colab Enterprise provides inline code completion assistance with Duet AI. |
+| 2023-10-11 | Managed runtime provisioning |  | Colab Enterprise provides Google-managed compute and runtime provisioning with configurable runtime templates; Colab Enterprise provides Google-managed compute and runtime provisioning with configurable runtime templates. |
+| 2023-10-11 | Notebook sharing and collaboration |  | Colab Enterprise supports notebook sharing and collaboration with IAM-based access control; Colab Enterprise supports notebook sharing and collaboration with IAM-based access control. |
+| 2023-10-11 | Vertex AI and BigQuery integrations |  | Colab Enterprise integrates notebooks with Vertex AI and BigQuery; Colab Enterprise integrates notebooks with Vertex AI and BigQuery. |
+
+Source file slug: `colab-enterprise.md`
+

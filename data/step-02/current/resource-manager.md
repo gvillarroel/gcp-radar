@@ -1,0 +1,132 @@
+# Resource Manager
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 117
+Unique features: 118
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-02-15 | Control MCP use with organization policies | 2026-03-17 | Organization policies using the gcp.managed.allowedMCPServices constraint are deprecated and replaced by IAM deny policies for controlling MCP use; deprecated on 2026-03-17. |
+| 2026-02-09 | Organization Policy Service custom constraints for Network Connectivity resources |  | Custom organization policy constraints are available for some Network Connectivity resources. |
+| 2026-02-02 | Organization Policy Service custom constraints for Artifact Analysis resources |  | Custom organization policy constraints are available for some Artifact Analysis resources. |
+| 2026-02-02 | Organization Policy Service custom constraints for Storage Transfer Service resources |  | Custom organization policy constraints are available for some Storage Transfer Service resources. |
+| 2026-02-02 | Resource Manager remote MCP server |  | The remote MCP server lets you search for and identify Google Cloud projects you can access before configuring resources. |
+| 2025-11-13 | Organization Policy custom constraints for Dataform resources |  | Custom organization policy constraints provide more granular control over specific fields for some Dataform resources. |
+| 2025-11-05 | Organization Policy custom constraints for BigQuery resources |  | Custom organization policy constraints provide more granular control over specific fields for some BigQuery resources. |
+| 2025-10-30 | Organization Policy custom constraints for BigQuery sharing resources |  | Custom organization policy constraints provide more granular control over specific fields for some BigQuery sharing resources. |
+| 2025-10-30 | Organization Policy custom constraints for CA Service resources |  | Custom organization policy constraints provide more granular control over specific fields for some CA Service resources. |
+| 2025-10-30 | Organization Policy custom constraints for Datastream resources |  | Custom organization policy constraints provide more granular control over specific fields for some Datastream resources; Custom organization policy constraints provide more granular control over specific fields for some Datastream resources. |
+| 2025-10-30 | Organization Policy custom constraints for managed workload identities |  | Custom organization policy constraints provide more granular control over specific fields for managed workload identities. |
+| 2025-10-10 | Organization Policy custom constraints for Application Integration resources |  | Custom organization policy constraints provide more granular control over specific fields for some Application Integration resources. |
+| 2025-10-06 | Custom organization policy constraints for Dataform resources |  | Organization Policy custom constraints can provide more granular control over specific fields for some Dataform resources. |
+| 2025-10-03 | Custom organization policy constraints for Workload Identity Federation resources |  | Workload Identity Federation resources can use custom constraints to define custom restrictions on Google Cloud services. |
+| 2025-09-18 | Custom organization policy constraints for Cloud Load Balancing resources |  | Cloud Load Balancing resources can use custom constraints to define custom restrictions on Google Cloud services. |
+| 2025-09-11 | Custom organization policy constraints for Live Stream API resources |  | Organization Policy custom constraints can provide more granular control over specific fields for some Live Stream API resources. |
+| 2025-09-10 | Project environment tags |  | Tags can visually distinguish projects by environment in the Google Cloud console. |
+| 2025-09-09 | Managed organization policy constraints for Compute Engine VM instances |  | Managed organization policy constraints provide prebuilt security governance controls for Compute Engine VM instances. |
+| 2025-09-08 | Custom organization policy constraints for Cloud Deploy resources |  | Organization Policy custom constraints can provide more granular control over specific fields for some Cloud Deploy resources. |
+| 2025-08-18 | Organization policy conditions for tag keys |  | Organization policy conditions can match a tag key to enable or disable enforcement for all resources with that tag key. |
+| 2025-07-01 | Policy Simulator for Organization Policy |  | Policy Simulator for Organization Policy is generally available. |
+| 2025-06-13 | Custom organization policy constraints for API Keys resources |  | Custom organization policies are available for some API Keys resources. |
+| 2025-05-15 | Custom organization policy constraints for Eventarc resources |  | Eventarc Advanced and Eventarc Standard support custom organization policy constraints for some resources. |
+| 2025-05-12 | Custom organization policies for Cloud Quotas resources |  | Organization Policy custom constraints can control specific fields on Cloud Quotas resources. |
+| 2025-05-06 | Custom organization policies for data lineage resources |  | Organization Policy custom constraints can control specific fields on data lineage resources. |
+| 2025-05-06 | Custom organization policies for Dataplex resources |  | Organization Policy custom constraints can control specific fields on Dataplex resources. |
+| 2025-04-17 | Custom organization policies for Filestore |  | Organization Policy custom constraints are generally available for Filestore. |
+| 2025-04-08 | Custom organization policies for Identity-Aware Proxy |  | Organization Policy custom constraints are generally available for Identity-Aware Proxy; Identity-Aware Proxy supports custom organization policies for more granular control over the service. |
+| 2025-03-26 | Custom organization policies for Cloud Resource Manager |  | Organization Policy custom constraints are available in Preview for Cloud Resource Manager. |
+| 2025-03-21 | Custom organization policies for Access Context Manager |  | Organization Policy custom constraints are generally available for Access Context Manager. |
+| 2025-03-21 | Custom organization policies for VPC Service Controls |  | Organization Policy custom constraints are generally available for VPC Service Controls. |
+| 2025-03-18 | Custom organization policies for Cloud Service Mesh |  | Organization Policy custom constraints are generally available for Cloud Service Mesh. |
+| 2025-03-17 | Mandatory tags enforcement with custom organization policies |  | Custom organization policies can enforce mandatory tags on newly created resources. |
+| 2025-03-14 | Custom organization policies for Cloud Composer |  | Organization Policy custom constraints are generally available for Cloud Composer. |
+| 2025-02-27 | Custom organization policies for Service Management |  | Organization Policy custom constraints are generally available for Service Management. |
+| 2025-02-27 | Custom organization policies for Video Stitcher API |  | Organization Policy custom constraints are generally available for the Video Stitcher API. |
+| 2025-02-20 | Custom organization policies for Cloud Healthcare API |  | Organization Policy custom constraints are generally available for Cloud Healthcare API. |
+| 2025-02-19 | Custom organization policies for Essential Contacts |  | Essential Contacts supports custom organization policies for more granular control over the service. |
+| 2025-02-14 | Custom organization policies for Cloud Logging |  | Cloud Logging supports custom organization policies for more granular control over the service. |
+| 2025-02-13 | Custom organization policies for security posture resources |  | Security posture resources support custom organization policies for more granular control over specific resources. |
+| 2025-02-11 | Custom organization policies for Cloud DNS |  | Cloud DNS supports custom organization policies for more granular control over the service. |
+| 2025-02-11 | Custom organization policies for Dataproc Serverless |  | Dataproc Serverless supports custom organization policies for more granular control over the service. |
+| 2025-02-11 | Custom organization policies for Developer Connect |  | Developer Connect supports custom organization policies for more granular control over the service. |
+| 2025-02-11 | Custom organization policies for Spanner |  | Spanner supports custom organization policies for more granular control over the service. |
+| 2025-02-05 | and snoozes |  | Cloud Monitoring alerting policies, notification channels, and snoozes support custom organization policies for more granular control over these resources. |
+| 2025-02-05 | Custom organization policies for Cloud Monitoring alerting policies |  | Cloud Monitoring alerting policies, notification channels, and snoozes support custom organization policies for more granular control over these resources. |
+| 2025-02-05 | notification channels |  | Cloud Monitoring alerting policies, notification channels, and snoozes support custom organization policies for more granular control over these resources. |
+| 2025-01-21 | Custom organization policies for Cloud Data Fusion resources |  | Some Cloud Data Fusion resources support custom organization policies for more granular control over specific fields. |
+| 2025-01-15 | Custom organization policies for reCAPTCHA resources |  | Some reCAPTCHA resources support custom organization policies for more granular control over specific fields. |
+| 2024-12-19 | Managed organization policy constraint iam.managed.allowedPolicyMembers |  | This managed organization policy constraint implements domain restricted sharing by controlling allowed policy members. |
+| 2024-12-19 | Organization Policy custom constraints for Secure Source Manager |  | Custom constraints let you apply more granular organization policy control to specific fields on Secure Source Manager resources. |
+| 2024-12-19 | Organization Policy recommender |  | This recommender generates insights and recommendations to restrict the creation and upload of service account keys. |
+| 2024-12-17 | Organization Policy Service custom constraints for Bigtable |  | Custom constraints let you manage specific operations on Bigtable resources with Organization Policy Service. |
+| 2024-12-16 | Organization Policy Service custom constraints for Cloud Load Balancing |  | Custom constraints let you define restrictions for supported Cloud Load Balancing resources. |
+| 2024-12-09 | Managed organization policy constraint iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts |  | This managed organization policy constraint prevents default service accounts from being granted the Editor or Owner role. |
+| 2024-12-06 | Organization Policy Service custom constraints for Firestore |  | Custom constraints let you manage Firestore resources with Organization Policy Service. |
+| 2024-10-29 | Organization Policy managed constraints |  | Managed constraints are built on the custom organization policy platform and can replace certain predefined constraints for dry-run testing and policy simulation. |
+| 2024-06-04 | Resource tags for Cloud Data Fusion |  | Cloud Data Fusion resources can be annotated with tags. |
+| 2024-03-13 | Tags on folder and project creation |  | Folders and projects can be created with key-value tags. |
+| 2024-02-12 | Policy Analyzer for Organization Policy |  | Policy Analyzer for Organization Policy is available in General Availability. |
+| 2024-02-06 | Policy Simulator for Organization Policy in Google Cloud console |  | The Google Cloud console can be used with Policy Simulator for Organization Policy to test organization policies. |
+| 2024-02-05 | Secure-by-default organization policy enforcement |  | A bundle of organization policies is enforced when an organization resource is created to improve its default security posture. |
+| 2023-12-20 | Organization Policy dry run |  | Dry-run mode lets you test organization policies before they are enforced. |
+| 2023-12-12 | Organization Policy custom constraints |  | Custom constraints let you define configurable organization policies to prevent misconfiguration and support security and compliance goals; Organization Policy custom constraints let administrators define conditional allow or deny rules using request parameters and other metadata. |
+| 2023-11-07 | Organization Policy analysis in Google Cloud console |  | Google Cloud console support lets you analyze organization policies. |
+| 2023-09-22 | Tag short name length limit |  | Tag key and value short names can be up to 256 characters long. |
+| 2023-07-27 | Organization Policy constraints for Private Service Connect consumers |  | New organization policy constraints define service attachment controls for Private Service Connect consumers. |
+| 2023-07-27 | Organization Policy Policy Simulator |  | Policy Simulator lets you test organization policies before they are enforced. |
+| 2023-07-26 | Assured Workloads organization policy constraints |  | Two automatically configured organization policy constraints provide advanced regulatory control for Assured Workloads. |
+| 2023-07-26 | Organization Policy constraints for Vertex AI Workbench |  | New organization policy constraints define access and creation controls for Vertex AI Workbench notebooks and instances. |
+| 2023-06-16 | Organization Policy custom constraints dry run |  | Dry-run mode lets you monitor how custom constraints would affect your organization's workflows before enforcement. |
+| 2023-04-18 | Organization Policy dry run in Google Cloud console |  | Google Cloud console support lets you create dry-run organization policies. |
+| 2023-04-17 | Project-level tags |  | Tags can be created as children of projects as well as organization resources. |
+| 2023-03-08 | Dry-run organization policies |  | Dry-run organization policies let you preview how policy changes would affect workflows before enforcement. |
+| 2023-02-16 | Organization restrictions |  | Organization restrictions limit access to resources in authorized Google Cloud organizations; Organization restrictions limit access to resources in authorized Google Cloud organizations. |
+| 2022-11-18 | Organization policy analysis |  | Organization policy analysis shows which resources are affected by an organization policy constraint. |
+| 2022-11-01 | Attached and inherited tag listing |  | Attached and inherited tag listing shows all tags attached to or inherited by a resource. |
+| 2022-11-01 | Cloud Console tag management |  | Cloud Console tag management lets you create and manage tags in the Google Cloud Console. |
+| 2022-08-02 | CMEK organization policy constraints |  | CMEK organization policy constraints help ensure customer-managed encryption key usage across an organization. |
+| 2022-06-17 | Tag holds |  | Tag holds prevent a tag value from being deleted until the hold is removed. |
+| 2022-06-14 | Disable creation of Cloud Armor security policies |  | This organization policy constraint blocks the creation of Cloud Armor security policies. |
+| 2022-06-14 | Disable creation of global self-managed SSL certificates |  | This organization policy constraint blocks the creation of global self-managed SSL certificates. |
+| 2022-06-14 | Disable enabling Identity-Aware Proxy on global resources |  | This organization policy constraint blocks enabling Identity-Aware Proxy on global resources. |
+| 2022-06-14 | Disable enabling Identity-Aware Proxy on regional resources |  | This organization policy constraint blocks enabling Identity-Aware Proxy on regional resources. |
+| 2022-06-14 | Disable global load balancing |  | This organization policy constraint blocks the creation of global load balancing resources. |
+| 2022-05-06 | Effective tag listing |  | Effective tag listing shows the tags that are effectively evaluated on a resource. |
+| 2022-05-04 | Resource usage restriction organization policy constraint |  | This organization policy constraint restricts resource usage. |
+| 2021-09-20 | Organization Policy Service v2 API |  | The API lets you enforce organization policies with conditional rules and tags; The API lets you enforce organization policies with conditional rules and tags. |
+| 2021-08-09 | Organization Policy tags management |  | Cloud Console supports managing organization policies that use tags. |
+| 2021-07-27 | Cloud Run allowed ingress settings |  | This organization policy constraint controls the ingress settings allowed for Cloud Run. |
+| 2021-07-27 | Cloud Run allowed VPC egress settings |  | This organization policy constraint controls the VPC egress settings allowed for Cloud Run. |
+| 2021-06-08 | Resource Settings API |  | The API centrally configures settings for Google Cloud projects, folders, and organizations. |
+| 2021-05-26 | Cloud Asset Inventory Analyze Move API |  | The API reports the impact of moving a project before the migration. |
+| 2021-05-26 | Project migration between organizations |  | Projects can be moved from one Google Cloud organization to another as a self-serve process; Projects can be moved from one Google Cloud organization to another as a self-serve process. |
+| 2021-04-19 | Resource Manager v3 API |  | The API provides a version 3 interface for managing Google Cloud resources; The API provides a version 3 interface for managing Google Cloud resources. |
+| 2021-03-16 | Tags |  | Tags let you conditionally allow or deny policies based on whether a resource has a specific tag; Tags let you conditionally allow or deny policies based on whether a resource has a specific tag. |
+| 2020-10-12 | Essential Contacts |  | Essential Contacts lets you customize who receives Google Cloud notifications. |
+| 2020-09-24 | Direct Path disablement organization policy constraint |  | Allows organizations to disable Direct Path through an organization policy constraint. |
+| 2020-08-26 | Cloud NAT organization policy constraint |  | Allows organizations to control Cloud NAT usage through an organization policy constraint. |
+| 2020-08-19 | Cloud Interconnect usage restriction organization policy constraint |  | Restricts Cloud Interconnect usage through an organization policy constraint. |
+| 2020-08-19 | Cloud Load Balancing creation restriction organization policy constraint |  | Restricts creation of Cloud Load Balancing resources through an organization policy constraint. |
+| 2020-08-19 | Protocol forwarding creation restriction organization policy constraint |  | Restricts creation of protocol forwarding resources through an organization policy constraint; Restricts creation of protocol forwarding resources through an organization policy constraint. |
+| 2020-08-14 | Service account access token lifetime extension organization policy constraint |  | Allows organizations to extend the maximum lifetime of OAuth 2.0 access tokens created for a service account. |
+| 2020-07-20 | Detailed Cloud Audit Logs organization policy constraint |  | Allows organizations to enable detailed Cloud Audit Logs through an organization policy constraint. |
+| 2020-07-01 | Automatic IAM permission grants to new service accounts restriction organization policy constraint |  | Restricts automatic IAM permission grants to new service accounts through an organization policy constraint. |
+| 2020-06-15 | Cloud VPN peer IP address restriction organization policy constraint |  | Restricts peer IP addresses allowed through a Cloud VPN tunnel using an organization policy constraint. |
+| 2020-04-10 | Resource locations organization policy constraint |  | Lets organizations define where resources can be created by using an organization policy constraint; Lets you define the location where resources can be created. |
+| 2020-01-30 | VPC Service Controls organization policies |  | Provides organization policies for VPC Service Controls to help create secure perimeters against data exfiltration. |
+| 2020-01-10 | IAM domain restriction organization policy |  | Restricts IAM domains through an organization policy. |
+| 2019-09-12 | Service account management organization policies |  | Provides organization policies for managing service accounts. |
+| 2018-10-11 | Organization Policy Service administrative UI |  | Provides a console-based interface for creating and managing organization policies. |
+| 2018-08-02 | Organization setup wizard |  | Helps delegate organization setup and management, assign IAM roles, and import existing projects and billing accounts. |
+| 2018-07-12 | Service account restriction organization policy constraint |  | Limits the use of Identity and Access Management service accounts. |
+| 2018-07-09 | Domain restriction organization policy constraint |  | Restricts the set of identities that can be used in Identity and Access Management policies. |
+| 2018-03-12 | ContactInfo audit logging |  | Audit logging records the UpdateContactInfo and GetContactInfo operations for ContactInfo. |
+| 2017-07-27 | Organization Policy |  | Organization Policy lets administrators centrally restrict allowed configurations across an organization's Cloud resource hierarchy. |
+| 2017-07-24 | Folders |  | Folders let you organize projects and nested folders within the Cloud resource hierarchy and apply shared IAM policies. |
+| 2017-01-01 | Organization resource automatic provisioning |  | The Organization resource is automatically provisioned for Google Workspace and Cloud Identity customers when they create a project with a domain email account. |
+
+Source file slug: `resource-manager.md`
+

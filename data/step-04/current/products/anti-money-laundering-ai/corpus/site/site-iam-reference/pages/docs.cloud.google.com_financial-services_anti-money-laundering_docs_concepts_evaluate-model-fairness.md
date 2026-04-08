@@ -1,0 +1,329 @@
+---
+title: "Evaluate model fairness \_|\_ Anti Money Laundering AI \_|\_ Google Cloud\
+  \ Documentation"
+url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/evaluate-model-fairness
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/create-and-manage-backtest-results
+source_metadata:
+  url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/evaluate-model-fairness
+  title: "Evaluate model fairness \_|\_ Anti Money Laundering AI \_|\_ Google Cloud\
+    \ Documentation"
+  fetched_via: browser_cdp
+  cdp_url: http://127.0.0.1:9222
+---
+
+Evaluate model fairness | Anti Money Laundering AI | Google Cloud Documentation
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+More
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+Anti Money Laundering AI
+Start free
+Overview
+Guides
+Reference
+Resources
+More
+Technology areas
+More
+Overview
+Guides
+Reference
+Resources
+Cross-product tools
+More
+Console
+Discover
+Product overview
+Process overview
+Architectural overview
+Security and compliance features
+Documentation policy
+Glossary
+Quickstart
+Train and test models designed to detect money laundering
+Get started
+Set up a project and permissions
+Create an instance
+Prepare Big Query datasets and tables
+Prepare data for AML AI
+Understand the AML data model and requirements
+Understand data scope and duration
+Select data for best performance and typology coverage
+Create and manage AML AI datasets
+Generate a model and evaluate performance
+Overview of model preparation
+Configure an engine
+Manage engine versions
+Create and manage engine configs
+Generate a model
+Create and manage models
+Evaluate a model
+Copy models to new instances
+Create and manage backtest results
+Generate risk scores and explainability
+Register your parties
+Party registration sharing for multiple instances
+Prepare to generate prediction outputs
+Create and manage prediction results
+Understand prediction outputs
+Best practices for your investigation process
+Prepare for model and risk governance
+Collect model and risk governance artifacts
+Evaluate model fairness
+Troubleshoot
+Troubleshoot AML AI
+Data validation errors
+Administer AML AI
+Access control
+Access control with IAM
+Authenticate to AML AI
+Data residency
+VPC service controls
+Encryption
+Understand encryption in transit
+Encrypt data at rest (CMEK)
+Monitor AML AI resources
+Use audit logs
+Use platform logs
+Manage instances
+Manage long-running operations
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+On this page
+Relevance
+How to calculate model fairness
+How to interpret results and mitigation approaches Potential root causes
+Mitigation options
+Home
+Documentation
+Industry solutions
+Anti Money Laundering AI
+Guides
+Was this helpful?
+Send feedback
+Evaluate model fairness
+Stay organized with collections
+Save and categorize content based on your preferences.
+On this page
+Relevance
+How to calculate model fairness
+How to interpret results and mitigation approaches Potential root causes
+Mitigation options
+It is crucial to evaluate model fairness to avoid perpetuating biases and
+discrimination. This page focuses on the importance of fairness assessment in
+AML risk scoring models, provides insights into the application of equality of
+odds (as one example measure), and provides potential routes for mitigations.
+Relevance
+There are several reasons why model fairness should be evaluated, including the
+following:
+Creating or amplifying negative societal biases and harms: Model fairness is
+vital to prevent discrimination against individuals based on their
+demographic attributes, such as gender, race, or age.
+Regulatory compliance: Banks must adhere to legal and ethical standards,
+including anti-discrimination laws and regulations.
+Maintaining trust: Fairness in AML risk scoring models helps maintain
+customer trust and promotes a positive reputation for the bank.
+How to calculate model fairness
+There are several ways to assess fairness in machine learning (see
+general best practices ).
+We recommend considering
+equality of odds
+to assess model fairness. In this context, equality of odds measures whether the
+model provides equal treatment to parties from different demographic groups with
+respect to their risk scores.
+To calculate equality of odds, do the following:
+Define protected groups that you want to test model fairness for:
+Your bank typically has model governance in place on protected
+categories. These may include gender, race, bucketed age, and other
+categories.
+In the Party table, the fields we recommend to use have a
+note saying "Typically also used for fairness evaluation".
+For each protected category, calculate the following metrics:
+True Positive Rate (TPR) : The proportion of individuals correctly
+classified as high risk among those who are truly high risk based on the
+risk scores assigned by the model.
+The False Negative Rate (FNR) is (1 - TPR). This is another way to
+measure how often a model incorrectly misses the target for a certain
+group.
+False Positive Rate (FPR) : The proportion of individuals incorrectly
+classified as high risk among those who are actually low risk based on
+the risk scores assigned by the model.
+You can use this
+SQL script template
+for the calculation, adjusting as needed to the particular sensitive
+dimensions for which you need to do fairness analysis.
+Compare the TPR and FPR values across different demographic groups.
+Important considerations in computing TPR and FPR include the following:
+Carefully specify the complete set of examples for which TPR and FPR will be
+calculated; for example, counting all parties in a single line of business
+once at a specific date d .
+Carefully specify what defines an actual positive example; for example, a
+party for whom any alert from any system and investigation starting after
+date d resulted in triggering of the customer exit process for AML-related
+reasons.
+Carefully specify what counts as a positive prediction; for example, all
+customers for whom AML AI risk scores for the date d are
+above a chosen risk score threshold, which you would use to trigger alerts.
+How to interpret results and mitigation approaches
+A higher false positive rate for a specific slice or demographic group means
+that the model is more likely to incorrectly classify individuals from that
+group as high risk, leading to unnecessary investigations. This indicates that
+individuals from that demographic group are being disproportionately flagged for
+investigation, potentially resulting in increased scrutiny or inconvenience for
+individuals who may not actually pose a higher risk.
+A lower true positive rate for a specific slice or demographic group means
+that the model is less effective at correctly classifying individuals from that
+group as high risk, resulting in a higher rate of false negatives. This
+indicates that individuals from that demographic group who should be flagged for
+investigation are more likely to be missed or overlooked by the model compared
+to other groups.
+Disparities in the FPRs and TPRs, and thresholds on when to investigate those
+further should be considered in your model risk governance process. Where you
+decide the risk merits further investigation, the following are possible root
+causes and mitigations to consider.
+Potential root causes
+The following list outlines potential root causes for disparities in the false
+positive rate and the true positive rate between demographic groups:
+Insufficient positive examples: You have not caught enough of this sort of
+customer (not enough positive investigations or alerts). You may not be
+investigating enough or this sort of customer is not risky very often.
+Many positive examples that are not properly justified: You detect defensive
+suspicious activity report (SAR) bias or customer exit bias toward a
+particular customer group.
+Insufficient total examples: You don't have enough of this sort of customer
+in your customer base.
+Other aspects of data quality and model generation can also impact fairness.
+Mitigation options
+The following list outlines mitigation options for the root causes in the
+previous section:
+Consider redirecting investigator capacity toward customer groups with
+higher TPR and / or lower FPR in order to rebalance these values in the
+future
+Review the investigation process and historical investigations for biased
+outcomes for slices with significant disparity in FPR or TPR
+Randomize the investigations to get more positive examples
+Review your party supplementary data (see
+Supplementary data ). Consider removing data that heavily
+correlates to sensitive categories and adding data that expresses the
+underlying (unbiased) risk factor. For example, consider a case where model
+alerts are concentrated in a few certain ZIP codes. The underlying risk
+factor could be a concentration of cash-intensive businesses there rather
+than the geographical area itself.
+The following is not recommended :
+Remove parties or risk case events for specific customer groups to
+rebalance FPR or TPR (in effect, undersampling). Due to the networked nature
+of AML AI data and features, this may have unpredictable
+impact on model behavior and performance.
+If you still find that model risk governance is blocked on fairness, then we
+suggest you continue using your current engine version or dataset and
+contact support
+for additional guidance.
+Was this helpful?
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-06 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-06 UTC."],[],[]]
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+close
+Welcome to Cloud Shell
+Cloud Shell is a development environment that you can use in the browser:
+Activate Cloud Shell to explore Google Cloud with a terminal and an editor
+Start a free trial to get $300 in free credits
+Activate Cloud Shell
+Start a free trial

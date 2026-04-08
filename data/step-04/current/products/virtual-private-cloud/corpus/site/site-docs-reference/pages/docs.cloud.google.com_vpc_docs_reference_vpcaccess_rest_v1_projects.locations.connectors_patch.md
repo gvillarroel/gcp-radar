@@ -1,0 +1,136 @@
+---
+title: "Method: projects.locations.connectors.patch \_|\_ Virtual Private Cloud \_\
+  |\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/patch
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/vpc/docs/apis
+source_metadata:
+  url: https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors/patch
+  title: "Method: projects.locations.connectors.patch \_|\_ Virtual Private Cloud\
+    \ \_|\_ Google Cloud Documentation"
+  fetched_via: browser_cdp
+  cdp_url: http://127.0.0.1:9222
+---
+
+Method: projects.locations.connectors.patch | Virtual Private Cloud | Google Cloud Documentation
+Skip to main content
+/
+Console
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
+Console
+On this page
+HTTP request
+Path parameters
+Query parameters
+Request body
+Response body
+Authorization scopes
+Try it!
+Home
+Documentation
+Networking
+Virtual Private Cloud
+Was this helpful?
+Send feedback
+Method: projects. locations. connectors. patch
+Stay organized with collections
+Save and categorize content based on your preferences.
+On this page
+HTTP request
+Path parameters
+Query parameters
+Request body
+Response body
+Authorization scopes
+Try it
+HTTP request
+Path parameters
+Query parameters
+Request body
+Response body
+Authorization scopes
+Try it!
+Updates a Serverless VPC Access connector, returns an operation.
+HTTP request
+PATCH https://vpcaccess.googleapis.com/v1/{connector.name=projects/*/locations/*/connectors/*}
+The URL uses gRPC Transcoding syntax.
+Path parameters
+Parameters
+connector. name
+string
+The resource name in the format projects/*/locations/*/connectors/* .
+Query parameters
+Parameters
+update Mask
+string ( FieldMask format)
+The fields to update on the entry group. If absent or empty, all modifiable fields are updated.
+This is a comma-separated list of fully qualified names of fields. Example: "user.displayName,photo" .
+Request body
+The request body contains an instance of Connector .
+Response body
+If successful, the response body contains an instance of Operation .
+Authorization scopes
+Requires the following OAuth scope:
+https://www.googleapis.com/auth/cloud-platform
+For more information, see the Authentication Overview .
+Was this helpful?
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-07-23 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-07-23 UTC."],[],[]]
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+close
+Welcome to Cloud Shell
+Cloud Shell is a development environment that you can use in the browser:
+Activate Cloud Shell to explore Google Cloud with a terminal and an editor
+Start a free trial to get $300 in free credits
+Activate Cloud Shell
+Start a free trial

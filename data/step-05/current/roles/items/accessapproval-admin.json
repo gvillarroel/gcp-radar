@@ -1,0 +1,56 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-07T22:25:26.881Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/accessapproval.admin --format=json"
+  },
+  "name": "roles/accessapproval.admin",
+  "role_slug": "accessapproval-admin",
+  "title": "Accessapproval Admin",
+  "description": "Admin role for accessapproval",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 11,
+  "permission_groups": [
+    "accessapproval",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "accessapproval",
+      "permissions": [
+        "accessapproval.requests.approve",
+        "accessapproval.requests.dismiss",
+        "accessapproval.requests.get",
+        "accessapproval.requests.invalidate",
+        "accessapproval.requests.list",
+        "accessapproval.serviceAccounts.get",
+        "accessapproval.settings.delete",
+        "accessapproval.settings.get",
+        "accessapproval.settings.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "accessapproval.requests.approve",
+    "accessapproval.requests.dismiss",
+    "accessapproval.requests.get",
+    "accessapproval.requests.invalidate",
+    "accessapproval.requests.list",
+    "accessapproval.serviceAccounts.get",
+    "accessapproval.settings.delete",
+    "accessapproval.settings.get",
+    "accessapproval.settings.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "step-05-gcloud-iam-inventory-v2",
+  "generated_at": "2026-04-07T22:25:26.884Z",
+  "source": {
+    "type": "gcloud",
+    "list_command": "gcloud iam roles list --format=json",
+    "describe_command": "gcloud iam roles describe roles/accessapproval.configEditor --format=json"
+  },
+  "name": "roles/accessapproval.configEditor",
+  "role_slug": "accessapproval-configeditor",
+  "title": "Access Approval Config Editor",
+  "description": "Ability to update the Access Approval configuration.",
+  "stage": "GA",
+  "etag": "AA==",
+  "permission_count": 6,
+  "permission_groups": [
+    "accessapproval",
+    "resourcemanager"
+  ],
+  "permissions_by_group": [
+    {
+      "group": "accessapproval",
+      "permissions": [
+        "accessapproval.serviceAccounts.get",
+        "accessapproval.settings.delete",
+        "accessapproval.settings.get",
+        "accessapproval.settings.update"
+      ]
+    },
+    {
+      "group": "resourcemanager",
+      "permissions": [
+        "resourcemanager.projects.get",
+        "resourcemanager.projects.list"
+      ]
+    }
+  ],
+  "included_permissions": [
+    "accessapproval.serviceAccounts.get",
+    "accessapproval.settings.delete",
+    "accessapproval.settings.get",
+    "accessapproval.settings.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ]
+}

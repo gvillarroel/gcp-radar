@@ -1,0 +1,59 @@
+# Migrate to Virtual Machines
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 46
+Unique features: 45
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2025-11-17 | Hyperdisk Storage Pools support |  | Migrating VMs can use Hyperdisk Storage Pools for large-scale storage needs. |
+| 2025-10-16 | AlmaLinux EL 8 and 9 support |  | Migrate to Virtual Machines supports all available versions of AlmaLinux EL 8 and 9. |
+| 2025-08-25 | BIOS to UEFI conversion |  | Migrate to Virtual Machines can convert a VM instance boot type from BIOS to UEFI. |
+| 2025-06-20 | Second NIC throttling |  | Starting with Migrate Connector 2.7, throttling is supported for a second network interface. |
+| 2025-05-07 | Migrating VM expiration time |  | Migrating VMs expire after 100 days and can be extended by an additional 100 days within the allowed window. |
+| 2025-04-03 | Arm disk image import |  | Migrate to Virtual Machines can import Arm disk images to Google Cloud. |
+| 2025-03-19 | Arm64 migration journey |  | Migrate to Virtual Machines can migrate Arm VM instances from AWS and Azure to Arm VM instances on Compute Engine. |
+| 2025-03-12 | Amazon Linux 2 to Rocky Linux 8 conversion |  | Migrate to Virtual Machines can convert Amazon Linux 2 workloads to Rocky Linux 8 during migration. |
+| 2024-11-14 | Detached EBS volume migration |  | Migrate to Virtual Machines can migrate AWS Elastic Block Store volumes that are not attached to a VM. |
+| 2024-09-04 | CentOS Linux 7 to Rocky Linux 8 conversion |  | Migrate to Virtual Machines can convert CentOS Linux 7 workloads to Rocky Linux 8 during migration. |
+| 2024-07-24 | Machine image import from a virtual appliance |  | Migrate to Virtual Machines can import a machine image from a virtual appliance. |
+| 2024-07-01 | Virtual disk image import to Compute Engine images |  | Imports a virtual disk image into a Compute Engine image for use in creating VM instances or persistent disks; Imports a virtual disk image into a Compute Engine image for use in creating VM instances or persistent disks. |
+| 2024-04-30 | Additional virtual disk image format import |  | Supports importing virtual disk image files in additional formats such as QCOW, QCOW2, QED, VDI, VHDX, VHD, VMDK, and compressed raw images. |
+| 2024-03-26 | ARM64 migration support |  | Migrates ARM virtual machine instances from AWS and Azure to ARM VM instances on Compute Engine. |
+| 2024-03-04 | Customer-managed encryption keys for migrations |  | Uses customer-managed encryption keys to protect migration data and migrated VM data during clone and cut-over operations; Uses customer-managed encryption keys to protect migration data and migrated VM data during clone and cut-over operations. |
+| 2024-02-26 | Virtual machine disk migration to Persistent Disk |  | Migrates VM disks to Persistent Disk volumes that can be attached during or after the migration process; Migrates VM disks to Persistent Disk volumes that can be attached to a new VM or an existing VM. |
+| 2024-01-17 | BIOS to UEFI boot type conversion |  | Converts a VM instance boot type from BIOS to UEFI to support secure boot. |
+| 2023-12-27 | Compute Engine machine series migration support |  | Migrates VM instances to Compute Engine 1st, 2nd, and 3rd generation machine series. |
+| 2023-10-11 | and M3 machine type migration support |  | Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC. |
+| 2023-10-11 | C3 |  | Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC. |
+| 2023-10-11 | H3 |  | Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC. |
+| 2023-10-10 | Azure VM migration to Compute Engine |  | Migrates VM instances running on Azure to Google Cloud Compute Engine. |
+| 2023-09-14 | Azure VM migration support |  | Lets you migrate Azure VM instances to Compute Engine from an Azure source; Lets you migrate Azure VM instances to Compute Engine from an Azure source. |
+| 2023-08-14 | Amazon Linux 2 migration support |  | Lets you migrate VM workloads running Amazon Linux 2 to Google Cloud by converting them to Rocky Linux 8. |
+| 2023-08-02 | VM disk migration to Persistent Disk |  | Lets you migrate VM disks to Persistent Disk volumes on Google Cloud. |
+| 2023-06-29 | Google Cloud VMware Engine VM migration |  | Lets you migrate VMs running on Google Cloud VMware Engine to Compute Engine. |
+| 2023-06-13 | Migrate Connector throttling |  | Lets you throttle data transfer rates on the Migrate Connector to control migration bandwidth. |
+| 2023-06-06 | Estimated cut-over time field |  | Provides an estimate of how long a VM cut-over job will take after cut-over is triggered; Provides an estimate of how long a VM cut-over job will take after cut-over is triggered. |
+| 2023-04-29 | VMware 8.0 support |  | Adds support for migrations from VMware 8.0 environments. |
+| 2023-01-16 | AWS EC2 migration support |  | Lets you migrate AWS EC2 instances to Compute Engine from an AWS source. |
+| 2022-06-27 | Active VM limit increase |  | Increases the maximum number of active VMs from 100 to 200. |
+| 2022-03-17 | VPC Service Controls perimeter support |  | Lets Migrate to Virtual Machines communicate with select services inside a VPC Service Controls perimeter. |
+| 2021-10-26 | UEFI firmware migration support |  | Lets you migrate VMs that use UEFI firmware and Secure Boot. |
+| 2021-10-03 | Multiple network interfaces for migrated VMs |  | Supports configuring multiple network interfaces on migrated virtual machines. |
+| 2021-09-20 | Sole-tenant node deployment |  | Supports deploying migrated workloads to Compute Engine sole-tenant nodes. |
+| 2021-09-05 | License type override |  | Supports explicitly setting the target VM license type to PAYG or BYOL. |
+| 2021-04-14 | Agentless vSphere migration |  | Supports agentless migration of vSphere source environments using the Migrate Connector appliance. |
+| 2021-04-14 | Compute Engine migration targets |  | Supports migrating VMs to Google Cloud target projects with configurable instance, disk, and network settings. |
+| 2021-04-14 | Cutover |  | Supports cutting over a migrating VM to Google Cloud with minimized downtime. |
+| 2021-04-14 | Google Cloud Console migration UI |  | Provides an end-to-end migration experience in the Google Cloud Console. |
+| 2021-04-14 | Replication-based migration |  | Supports initiating and scheduling replication as part of the VM migration journey. |
+| 2021-04-14 | Seamless OS adaptation |  | Prepares migrating VMs to run on Compute Engine and deploys Google Cloud agents for day-two integration. |
+| 2021-04-14 | Test clone |  | Supports creating a test clone of a migrating VM in Google Cloud without disrupting the source VM. |
+| 2021-04-14 | VM groups |  | Supports grouping migration operations to manage large migration sprints. |
+| 2021-04-14 | VM utilization reports |  | Provides source VM utilization reports to help size Compute Engine targets. |
+
+Source file slug: `migrate-to-virtual-machines.md`
+

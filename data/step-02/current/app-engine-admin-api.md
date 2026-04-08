@@ -1,0 +1,107 @@
+# App Engine Admin API
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 90
+Unique features: 93
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2020-03-06 | App Engine in us-west3 region |  | App Engine became available in the us-west3 (Salt Lake City, Utah) region. |
+| 2020-02-06 | Applying new App Engine spending limits | 2020-02-06 | The ability to apply new spending limits to App Engine projects was removed, while existing limits continue to remain in effect; deprecated on 2020-02-06. |
+| 2019-12-11 | Serverless VPC Access |  | Serverless VPC Access is now generally available for App Engine; Serverless VPC Access reached beta status, allowing App Engine apps to connect to internal VPC resources. |
+| 2019-07-30 | AppCfg tooling and legacy standalone App Engine SDK | 2020-07-30 | The AppCfg tooling and legacy standalone App Engine SDK distributions were deprecated; deprecated on 2020-07-30. |
+| 2019-04-18 | App Engine in asia-northeast2 region |  | App Engine became available in the asia-northeast2 (Osaka, Japan) region. |
+| 2019-04-15 | App Engine in europe-west6 region |  | App Engine became available in the europe-west6 (Zurich, Switzerland) region. |
+| 2018-12-21 | Python interpreter modules in App Engine |  | The App Engine Python interpreter added modules including select, mmap, grp, fcntl, and spwd. |
+| 2018-12-21 | Python os module APIs in App Engine |  | The App Engine Python runtime added new os module functions such as fork, execv, ftruncate, and setuid. |
+| 2018-12-14 | App Engine Standard Python 3.7 runtime |  | The Python 3.7 runtime for the App Engine standard environment reached General Availability. |
+| 2018-12-12 | Sockets API in App Engine |  | The Sockets API became generally available in App Engine. |
+| 2018-10-31 | Recursive requirements.txt support in Python 3 runtime |  | The App Engine Python 3 runtime added support for recursive entries in requirements.txt. |
+| 2018-10-22 | App Engine region availability in asia-east2 |  | App Engine was made available in the asia-east2 (Hong Kong) region. |
+| 2018-10-15 | Python 2.7 runtime 64-bit interpreter support |  | All Python 2.7 App Engine applications now run on a 64-bit Python interpreter. |
+| 2018-10-15 | Python 2.7 runtime migration to gVisor sandbox |  | Python 2.7 App Engine applications now run in the gVisor sandbox. |
+| 2018-09-26 | dev_appserver local grpcio import workaround |  | Developers can use a locally installed grpcio package as a workaround for import failures on dev_appserver. |
+| 2018-08-24 | Cloud Endpoints Frameworks v1 for App Engine standard deprecation | 2017-08-02 | Cloud Endpoints Frameworks v1 for App Engine standard was deprecated, with migration to v2 required before shutdown; deprecated on 2017-08-02. |
+| 2018-08-08 | Python 3.7 runtime beta availability on App Engine standard |  | The Python 3.7 runtime for App Engine standard environment entered beta. |
+| 2018-07-12 | Local development server startup process ID logging |  | The local development server now prints its process ID at startup for debugging support. |
+| 2018-07-10 | App Engine region availability in us-west2 |  | App Engine was made available in the us-west2 (Los Angeles) region. |
+| 2018-06-28 | App Engine local development server app-process PID logging |  | The local development server now prints the app process ID at startup. |
+| 2018-06-28 | dev_appserver DATASTORE_PROJECT_ID environment variable removal |  | App Engine dev_appserver removed DATASTORE_PROJECT_ID from its environment, allowing it to run alongside the Cloud Datastore Emulator. |
+| 2018-05-24 | App Engine SSL library version upgrade to 2.7.11 |  | The SSL library used by all App Engine apps was migrated from version 2.7 to 2.7.11. |
+| 2018-05-15 | Automatic scaling efficiency improvements |  | Automatic scaling efficiency was improved, reducing instance costs and lowering startup overhead for first requests to new instances. |
+| 2018-05-15 | Automatic scaling system upgrade |  | App Engine completed a gradual rollout of an upgrade to its automatic scaling system. |
+| 2018-05-15 | Minimum instances setting for automatic scaling |  | The automatic scaling configuration added support for specifying a minimum number of instances to keep running. |
+| 2018-05-15 | Target CPU utilization setting for automatic scaling |  | Automatic scaling added a target CPU utilization setting to optimize behavior between latency and cost. |
+| 2018-05-15 | Target throughput utilization setting for automatic scaling |  | Automatic scaling gained a target throughput utilization setting to tune when new instances are launched based on concurrent request load. |
+| 2018-04-11 | Bundled PyTz library version update |  | The built-in third-party libraries for App Engine were updated to include PyTz version 2017.3. |
+| 2017-12-20 | Bundled Setuptools library version update |  | App Engine added Setuptools version 36.6.0 to its built-in third-party libraries. |
+| 2017-12-14 | IAM-based deployment role documentation for App Engine |  | Access control documentation for deploying apps with IAM roles and service accounts was improved, including predefined App Engine deploy roles and required permissions. |
+| 2017-12-05 | dev_appserver.py host header validation |  | App Engine dev_appserver.py now enforces Host header validation for incoming HTTP requests, with optional disabling via --enable_host_checking=false. |
+| 2017-12-05 | dev_appserver.py origin header rejection |  | The App Engine dev_appserver.py admin console was updated to reject inbound requests that include an Origin header. |
+| 2017-12-05 | dev_appserver.py security response headers |  | The App Engine dev_appserver.py admin console began returning security response headers, including X-Frame-Options, X-XSS-Protection, and Content-Security-Policy. |
+| 2017-11-15 | Python SSL 2.7 deprecation | 2017-11-15 | Google announced deprecation of Python SSL library version 2.7 for App Engine and advised migration to SSL version 2.7.11; deprecated on 2017-11-15. |
+| 2017-10-31 | App Engine availability in asia-south1 |  | App Engine became available in the asia-south1 (Mumbai) region. |
+| 2017-10-11 | App Engine Firewall |  | App Engine Firewall was made generally available. |
+| 2017-09-21 | Built-in third-party library pytz version 2017.2 |  | App Engine updated the built-in pytz library to version 2017.2. |
+| 2017-09-13 | App Engine custom domain mapping |  | Support for mapping custom domains via App Engine Admin API methods and gcloud commands became generally available. |
+| 2017-09-13 | App Engine managed SSL certificates |  | Managed certificates became available to add SSL to App Engine custom domains with automatic provisioning, renewal, and revocation. |
+| 2017-09-05 | App Engine availability in southamerica-east1 |  | App Engine became available in the southamerica-east1 (Sao Paulo) region. |
+| 2017-08-28 | App Engine gRPC client support |  | App Engine added client-side support for connecting to gRPC servers. |
+| 2017-08-01 | App Engine availability in europe-west3 |  | App Engine became available in the europe-west3 (Frankfurt) region. |
+| 2017-07-18 | App Engine availability in australia-southeast1 |  | App Engine became available in the australia-southeast1 (Sydney) region. |
+| 2017-06-27 | Built-in third-party library Django version 1.11 |  | App Engine added Django version 1.11 to its built-in third-party library set. |
+| 2017-06-21 | Built-in third-party library Flask version 0.12 |  | App Engine added Flask version 0.12 to its built-in third-party libraries. |
+| 2017-06-21 | Built-in third-party library lxml version 3.7.3 |  | App Engine added lxml version 3.7.3 to its built-in third-party libraries. |
+| 2017-06-21 | Built-in third-party library ujson version 1.35 |  | App Engine added ujson version 1.35 to its built-in third-party libraries. |
+| 2017-06-21 | Search API facet discovery limit |  | The maximum Search API facet discovery value limit was increased to 100. |
+| 2017-06-15 | MySQLdb utf8mb4 character set support |  | MySQLdb support now includes the UTF-8MB4 character set. |
+| 2017-06-15 | PWD module support |  | The Unix PWD module is now available for use. |
+| 2017-06-06 | App Engine custom domain management |  | Beta-level App Engine Admin API and gcloud features can now create and manage custom domains. |
+| 2017-06-06 | App Engine region availability in europe-west2 |  | App Engine is now available in the europe-west2 (London) region. |
+| 2017-06-06 | App Engine SSL certificate management |  | Beta-level App Engine Admin API and gcloud features can now create and manage SSL certificates. |
+| 2017-05-15 | Python 2.7.11 SSL certificate validation control |  | App Engine Python 2.7.11 SSL module certificate validation behavior is now controllable via the PYTHONHTTPSVERIFY environment variable. |
+| 2017-05-15 | Python runtime version 2.7.12 |  | The App Engine Python runtime has been updated to Python 2.7.12. |
+| 2017-05-09 | App Engine region availability in us-east4 |  | App Engine is now available in the us-east4 (North Virginia) region. |
+| 2016-12-01 | pycrypto runtime library update |  | The App Engine runtime includes an update to pycrypto version 2.6.1. |
+| 2016-12-01 | pytz runtime library update |  | The App Engine runtime includes an update to pytz version 2016.4. |
+| 2016-10-27 | App Engine Channel service | 2017-10-31 | The App Engine Channel service has been deprecated; deprecated on 2017-10-31. |
+| 2016-10-27 | App Engine XMPP service | 2017-10-31 | The App Engine XMPP service has been deprecated; deprecated on 2017-10-31. |
+| 2016-08-01 | App Engine Admin API v1 generally available |  | Version 1 of the App Engine Admin API has reached general availability. |
+| 2016-07-18 | App Engine cron tasks limit |  | App Engine increased the maximum cron tasks limit to 250. |
+| 2016-07-18 | App Engine dashboard URL-specific server/client error reporting |  | Server Errors and Client Errors in the App Engine dashboard now more accurately reflect status errors on a per-URL basis. |
+| 2016-07-18 | App Engine guided walkthrough in GCP Console |  | A guided in-console walkthrough was introduced to launch an interactive App Engine tutorial by language preference. |
+| 2016-07-18 | Python Endpoints Google ID token issuer support |  | The Python runtime's Endpoints support now accepts all valid Google ID token issuers. |
+| 2016-07-01 | Cloud Datastore pricing update |  | The new Cloud Datastore pricing model was made effective. |
+| 2016-05-25 | Cloud Datastore cross-group transaction version consistency |  | Cloud Datastore now assigns identical version numbers to all new or updated entities within a cross-group transaction. |
+| 2016-05-04 | Python runtime ssl library version selection |  | The Python runtime added a new third-party ssl library based on Python 2.7.11 that can be selected as version 2.7.11 in app.yaml. |
+| 2016-05-02 | App Engine flexible environment Ruby runtime |  | The Ruby runtime became available for the App Engine flexible environment. |
+| 2016-04-18 | App Engine Users API IAM role and group expansion |  | App Engine Users API now treats project Owner, Editor, Viewer, and App Engine Admin IAM roles as admin access, including group-based membership inheritance. |
+| 2016-04-18 | OverQuota exception message details |  | OverQuota exception messages now include available error details when present. |
+| 2016-04-18 | Python runtime mail quota increase policy |  | The Python runtime stopped accepting quota increase requests for the mail service and directed users to SendGrid. |
+| 2016-03-04 | App Engine URL Fetch default quota increase |  | The default quota for URL Fetch for billed apps was increased. |
+| 2016-02-17 | App Engine /form path support |  | The URL path '/form' became allowed and is now forwarded to applications. |
+| 2016-02-03 | Managed VMs remote container build backend option |  | For App Engine Managed VMs, `gcloud preview app deploy` can build containers using either a default remote Compute Engine VM or Cloud Build, configurable via `app/use_cloud_build`. |
+| 2016-01-14 | Google Groups project role integration for App Engine access |  | App Engine supports granting application access through Google Group membership on a project. |
+| 2015-11-30 | Automatic Stackdriver Debugger for Python App Engine |  | Python applications on App Engine have Stackdriver Debugger enabled automatically. |
+| 2015-11-30 | Endpoints API discoverable annotation flag |  | Developers can set a discoverable boolean on the @Api annotation to disable API discovery behavior. |
+| 2015-11-30 | Task Queue empty-payload Content-Length header |  | Push requests for Task Queue tasks with no payload now include a Content-Length header value of 0. |
+| 2015-11-30 | Task Queue queue depth calculation for inactive queues |  | App Engine Task Queue stops calculating and storing queue depth for non-existent or deleting queues and during queue table outages. |
+| 2015-10-29 | Geo filtering accuracy in App Engine Search |  | Search query Geo filtering accuracy was improved. |
+| 2015-10-29 | Prospective Search API deprecation | 2015-12-01 | The Prospective Search API is restricted to existing users and scheduled for full shutdown; deprecated on 2015-12-01. |
+| 2015-09-25 | Faceted Search |  | Faceted Search reached general availability status. |
+| 2015-09-25 | Unlimited default daily budget on billing enablement |  | Newly billed App Engine applications now default to an unlimited daily budget rather than a $0 cap. |
+| 2015-08-27 | App Engine MVM log context menu for thread_id and request_id |  | Added a show-in-context menu for MVM application logs using thread_id or request_id and enabled sorting by either field. |
+| 2015-08-27 | Elastic provisioning based on VM and app metrics |  | App Engine gains elastic provisioning capabilities based on current load and both VM- and application-level metrics. |
+| 2015-08-27 | oauth2client library version 1.4.2 upgrade |  | Upgraded the oauth2client dependency/library to version 1.4.2. |
+| 2015-08-27 | Remote API OAuth2 credentials support |  | Remote API access now supports OAuth2 authentication using Application Default Credentials. |
+| 2015-08-27 | URLFetch payload size exception handling |  | URLFetch requests with overly large payloads now use RequestPayloadTooLargeException. |
+| 2015-08-14 | Admin Console menu redirection to GCP Console |  | Updated Admin Console menus to redirect to the GCP Console while keeping select services, such as Admin Logs, accessible in the Admin Console. |
+| 2015-08-14 | Datastore empty-list property support |  | Enabled Datastore properties to represent an empty list value. |
+| 2015-08-14 | PyAMF 0.7.2 Beta addition |  | Added PyAMF runtime/library version 0.7.2 in beta. |
+| 2015-08-14 | Queue retry handling for zero-retry failed tasks |  | Changed task queue behavior so failed tasks with retry_limit set to zero are no longer retried. |
+
+Source file slug: `app-engine-admin-api.md`
+

@@ -1,0 +1,39 @@
+# Identity-Aware Proxy
+
+Generated from the canonical Step 01 Google Cloud release-notes Parquet snapshot.
+
+The table below contains deduplicated product features ordered from newest to oldest by the latest feature event. Deprecation dates are included when a matching deprecation event was found.
+
+Source rows considered: 29
+Unique features: 25
+
+| Latest feature date | Feature | Deprecation date | Summary |
+| --- | --- | --- | --- |
+| 2026-03-13 | Custom OAuth clients for IAP |  | Identity-Aware Proxy can use custom OAuth clients for organization-external users, branded consent screens, and inherited default clients. |
+| 2025-10-28 | Path wildcard support in service account JWT aud claims |  | Service account JWTs can use a path wildcard in the audience claim when authenticating to an IAP-secured resource. |
+| 2025-04-07 | IAP for Cloud Run |  | Identity-Aware Proxy can be enabled directly on Cloud Run services without configuring a load balancer; Identity-Aware Proxy supports Cloud Run applications to help guard access using identity and context. |
+| 2025-02-07 | Service account JWT authentication for federated applications |  | Applications configured with Identity Platform or Workforce Identity Federation can accept service account JWT authentication. |
+| 2025-02-07 | Workforce Identity Federation with IAP |  | Identity-Aware Proxy can use Workforce Identity Federation to let external workforce identities access protected resources; Identity-Aware Proxy supports Workforce Identity Federation so extended workforce identities can access protected applications without Cloud Identity sync. |
+| 2024-09-20 | Authorization policy delegation for IAP and IAM |  | Authorization policies can delegate authorization decisions to Identity-Aware Proxy and Identity and Access Management. |
+| 2024-05-16 | Programmatic access to IAP-protected resources with service account JWTs |  | Service accounts can use JWTs to programmatically access Identity-Aware Proxy-protected applications and services. |
+| 2024-04-23 | WebSocket support for IAP session management |  | Identity-Aware Proxy supports WebSocket connections for managing Compute Engine resource sessions. |
+| 2023-08-17 | Google-managed OAuth clients for IAP |  | Identity-Aware Proxy can authenticate users with a Google-managed OAuth client. |
+| 2023-08-17 | OAuth client allowlisting for programmatic access |  | Identity-Aware Proxy can allowlist OAuth clients for programmatic access. |
+| 2020-05-29 | External identity authentication for IAP |  | Identity-Aware Proxy can authenticate users with external identities. |
+| 2020-02-12 | Cloud IAP OAuth client API |  | Cloud IAP lets you programmatically create OAuth clients through the REST API or gcloud. |
+| 2019-08-07 | Cloud IAP TCP forwarding |  | Cloud IAP TCP forwarding lets you control access to administrative services like SSH and RDP on backends; Cloud IAP TCP forwarding lets you control access to administrative services like SSH and RDP on backends. |
+| 2019-04-10 | Cloud IAP context-aware access |  | Cloud IAP access policies can be extended with access levels and the IAM Conditions Framework; Cloud IAP access policies can be extended with access levels and the IAM Conditions Framework. |
+| 2019-02-26 | Cloud IAP for on-premises apps |  | Cloud IAP can manage access to HTTP-based applications outside Google Cloud, including on-premises and other-cloud deployments. |
+| 2019-02-14 | Cloud IAP per-resource policies |  | Cloud IAP policies can be managed separately for each individual resource in a Google Cloud project; Cloud IAP policies can be managed separately for each individual resource in a Google Cloud project. |
+| 2017-08-31 | and GKE |  | Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE. |
+| 2017-08-31 | Cloud IAP AJAX authentication response handling |  | Cloud IAP returns HTTP 401 for AJAX requests with missing or expired credentials instead of serving a login page. |
+| 2017-08-31 | Cloud IAP Cloud Audit Logging support |  | Cloud IAP supports Cloud Audit Logging. |
+| 2017-08-31 | Cloud IAP support for desktop and command-line applications |  | Cloud IAP supports authenticating desktop and command-line applications. |
+| 2017-08-31 | Cloud Identity-Aware Proxy support for App Engine standard environment |  | Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE. |
+| 2017-08-31 | Compute Engine |  | Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE. |
+| 2017-07-20 | Cloud IAP special URLs |  | Cloud IAP special URLs let you enhance and personalize an application. |
+| 2017-06-19 | Cloud Audit Logging for Cloud IAP-secured resources |  | Cloud Audit Logging records activity for resources secured by Cloud IAP. |
+| 2017-06-07 | Desktop app authentication for Cloud IAP-secured resources |  | Desktop applications can authenticate to Cloud IAP-secured resources. |
+
+Source file slug: `identity-aware-proxy.md`
+
