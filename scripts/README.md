@@ -6,6 +6,10 @@ Scripts are expected to be primarily implemented with `zx`.
 
 Scripts must be separated by workflow stage using `step-XX` directories.
 
+Secrets required by local tooling must be provided through environment
+variables from the user's Windows profile. Do not hardcode API keys in scripts
+or commit populated `.env` files.
+
 The intended workflow is stage-oriented, for example:
 
 - discovery

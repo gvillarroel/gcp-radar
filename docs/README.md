@@ -188,6 +188,23 @@ Documentation should remain:
 - explicit about evidence versus assumptions
 - aligned with accepted ADRs
 
+## Local Secrets
+
+Do not store API keys, access tokens, or credential files in tracked repository
+files.
+
+For local execution, keep secrets only in your Windows user environment profile.
+Typical examples include:
+
+- `OPENAI_API_KEY`
+- `BRAVE_API_KEY`
+- `GOOGLE_API_KEY`
+- `GOOGLE_CLOUD_PROJECT`
+- `GOOGLE_APPLICATION_CREDENTIALS`
+
+The repository includes `.env.example` only as a variable-name reference.
+Real secret values must stay outside version control.
+
 ## Reading Order
 
 If you are new to the repository, read the documents in this order:
