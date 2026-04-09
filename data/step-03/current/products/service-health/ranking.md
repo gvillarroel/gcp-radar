@@ -24,4 +24,4 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | no | supporting_page | https://docs.cloud.google.com/kubernetes-engine/docs/troubleshooting/introduction-service-health | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 35 | no | supporting_page | https://docs.cloud.google.com/hub/docs/health | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 30 | no | iam_reference | https://docs.cloud.google.com/hub/docs/troubleshooting | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 9 | no | irrelevant | https://docs.cloud.google.com/support/docs/checklists/onboard-customer-care | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 25 | no | irrelevant | https://docs.cloud.google.com/support/docs/checklists/onboard-customer-care | 1 | Heuristic tail scoring was applied outside the API-ranked set. |

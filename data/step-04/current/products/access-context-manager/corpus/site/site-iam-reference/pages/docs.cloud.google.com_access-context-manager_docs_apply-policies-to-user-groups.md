@@ -10,143 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups
   title: "Apply policies to user groups using access bindings \_|\_ Access Context\
     \ Manager \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Apply policies to user groups using access bindings | Access Context Manager | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Access Context Manager
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-How-to guides
-All how-to guides
-Access control with IAM
-Create an access policy
-Create a basic access level
-Create a custom access level
-Use mobile devices with access levels
-Manage an access policy
-Create custom constraints
-Manage access levels
-Make bulk changes to access levels
-Audit logging
-Use Context-Aware Access
-Set up context-aware access
-Define access policies using access levels
-Apply policies to user groups with access bindings
-Configure session controls for re-authentication
-Configure a credential strength policy
-Configure Chrome browser attributes
-Configure enterprise certificate conditions
-Configure time and date conditions
-Manage access bindings
-Context-aware access enforcement points
-Use certificate-based access
-Certificate-based access overview
-Understand mutual TLS at Google Cloud
-Set up certificate-based access
-Create access levels for certificate-based access
-Enforce certificate-based access for a user group
-Enforce certificate-based access with VPC Service Controls
-Enable certificate-based access in client applications
-Enable certificate-based access for web applications
-Enable certificate-based access for VMs
-Setting up Endpoint Verification
-Enable certificate-based access with your enterprise certificates
-Enable certificate-based access with Endpoint Verification certificates
-Configure certificate-based access for Workload Identity Federation
-Concepts
-All concepts
-Overview
-Scoped policies
-Custom access levels
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Use a single configuration for all applications
-Define configurations for specific applications
-Use dry run access levels to simulate enforcement Create a dry run binding
-View the dry run logs
 Home
 Documentation
 Security
 Access Context Manager
 Guides
-Was this helpful?
 Send feedback
 Apply policies to user groups using access bindings
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Use a single configuration for all applications
-Define configurations for specific applications
-Use dry run access levels to simulate enforcement Create a dry run binding
-View the dry run logs
 You can use access bindings to control which applications and resources your
 user groups can access. An access binding specifies how to apply access levels
 and session controls to a user group. You can apply the same access level and
@@ -173,12 +51,8 @@ This method applies the same access level and session control to all of the
 applications accessed by a user group.
 We recommend that you test your policy with a dry run or apply it to a small
 test group before implementing it in production.
-gcloud API
-More
+gcloud
 Create the access binding.
-See more code actions.
-Light code theme
-Dark code theme
 gcloud access-context-manager cloud-bindings create \
 --group-key GROUP_ID
 --organization ORG_ID
@@ -204,6 +78,7 @@ PASSWORD : Only require a password, even if other factors are defined. If passwo
 are managed using an external IdP, users are redirected to the IdP. If the IdP session is live,
 users are implicitly re-authenticated. If the IdP is not live, users must sign in through the IdP.
 SECURITY_KEY : Require a hardware security key.
+API
 Create a JSON body:
 {
 "groupKey": " GROUP_ID ",
@@ -271,8 +146,7 @@ Firebase Console
 This method is useful when you want to do the following:
 Apply policies to only certain applications.
 Create a general policy, but exclude some applications from it.
-gcloud API
-More
+gcloud
 Create a binding file in YAML format with a list of scope entries within
 the scopedAccessSettings list. For each application that you want to
 map to a specific access level, include a clientScope entry.
@@ -374,6 +248,7 @@ controls override the default settings for those specific
 applications.
 You must use both --session-length and --session-reauth-method
 together.
+API
 Create a JSON body:
 {
 "groupKey": " GROUP_ID ",
@@ -477,8 +352,7 @@ not available in dry run mode.
 Create a dry run binding
 You can define dry run access levels alongside regular access levels in the same
 binding, or you can use separate bindings for dry runs.
-gcloud API
-More
+gcloud
 Configure the access settings.
 scopedAccessSettings:
 - scope:
@@ -528,6 +402,7 @@ DEFAULT_DRY_RUN_ACCESS_LEVEL_2 : An optional access level name
 in the form accessPolicies/POLICY_ID/accessLevels/ACCESS_LEVEL_NAME .
 Include this flag to apply the specified dry run access level to all
 applications by default if they aren't specified in the YAML.
+API
 Create a JSON body:
 {
 "group_key": " GROUP_ID ",
@@ -626,75 +501,26 @@ The following table lists the log fields that you can use to create and run the
 query to get the logs:
 Field name
 Description
-proto Payload. authentication Info. principal Email
+protoPayload.authenticationInfo.principalEmail
 Email ID of the principal that the access is denied for.
-proto Payload. metadata. denied Applications
+protoPayload.metadata.deniedApplications
 Name of the application that the access is denied for.
-proto Payload. metadata. evaluation Result
+protoPayload.metadata.evaluationResult
 The evaluation result of the active access policy. Possible values:
 GRANTED or DENIED .
-proto Payload. metadata. applied Access Levels
+protoPayload.metadata.appliedAccessLevels
 The applied access levels required by the active access policy.
-proto Payload. metadata. applied Dry Run Access Levels
+protoPayload.metadata.appliedDryRunAccessLevels
 The applied access levels required by the dry run access policy.
-proto Payload. metadata. dry Run Evaluation Result
+protoPayload.metadata.dryRunEvaluationResult
 The evaluation result of the dry run access policy, which indicates the
 intended action when the access policy is enforced.
 Possible values:
 GRANTED or DENIED .
 For instructions on how to create a query for logs, see
 Logging query language .
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

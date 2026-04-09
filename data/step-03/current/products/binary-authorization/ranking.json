@@ -1,11 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:35:39.214Z",
+  "generated_at": "2026-04-08T21:49:31.832Z",
   "product_name": "Binary Authorization",
   "product_slug": "binary-authorization",
-  "step02_source_path": "data/step-02/current/products/binary-authorization.md",
+  "step02_source_path": "data/step-02/current/binary-authorization.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "binary-authorization",
   "dominant_python_slug": "binaryauthorization",
@@ -18,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Binary Authorization\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Gating Deployments with Binary Auth | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/gating-deployments-with-binary-auth",
+          "description": "Binary Authorization is <strong>a deploy-time security control that ensures only trusted container images are deployed on Google Kubernetes Engine (GKE) or Cloud Run</strong>. With Binary Authorization, you can require images to be signed by trusted authorities during the development process and then enforce ...",
+          "rank": 1
+        },
+        {
+          "title": "Securing Your GKE Deployments with Binary Authorization | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-binauthz-intro",
+          "description": "<strong>Demonstrates how to use Binary Authorization secure your GKE cluster by requiring all containers to be verified and signed by trusted attestors as a part of the build/deploy process</strong>",
+          "rank": 2
+        },
+        {
+          "title": "Index (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/index-all.html",
+          "description": "Service definition for BinaryAuthorization (v1beta1).",
+          "rank": 3
+        },
+        {
+          "title": "Binary Authorization API Client Library for .NET | Google for Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1beta1",
+          "description": "Binary Authorization API: <strong>The management interface for Binary Authorization</strong>, a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, ...",
+          "rank": 4
+        },
+        {
+          "title": "Binary Authorization API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1?authuser=0&hl=id",
+          "description": "This page contains information about getting started with the Binary Authorization API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
+          "rank": 5
+        },
+        {
+          "title": "BinaryAuthorization.Projects.Attestors (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Attestors.html",
+          "description": "<strong>This request holds the parameters needed by the binaryauthorization server</strong>. After setting any optional parameters, call the AbstractGoogleClientRequest.execute() method to invoke the remote operation. ... resource - REQUIRED: The resource for which the policy is being requested.",
+          "rank": 6
+        },
+        {
+          "title": "BinaryAuthorization.Projects.Policy.SetIamPolicy (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Policy.SetIamPolicy.html",
+          "description": "<strong>Sets the access control policy on the specified resource</strong>. Replaces any existing policy. Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED Create a request for the method &quot;policy.setIamPolicy&quot;. This request holds the parameters needed by the the binaryauthorization server.",
+          "rank": 7
+        },
+        {
+          "title": "binaryauthorization: Google.Apis.BinaryAuthorization.v1beta1.Data.Policy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/csharp/latest/classGoogle_1_1Apis_1_1BinaryAuthorization_1_1v1beta1_1_1Data_1_1Policy.html",
+          "description": "A policy for container image binary authorization.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -96,21 +153,21 @@
           "rank": 5
         },
         {
+          "title": "Attestations overview | Binary Authorization | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/binary-authorization/docs/attestations",
+          "description": "This guide describes how to create and use Binary Authorization attestations. After a container image is built, an attestation can be created to affirm that a required activity was performed on the image such as a regression test, vulnerability scan, or other test.",
+          "rank": 6
+        },
+        {
           "title": "Set up overview for Cloud Run | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/run/overview",
           "description": "This page provides an overview of how to set up Binary Authorization for use with Cloud Run services and jobs.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Get started using the Google Cloud console (GKE) | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console",
           "description": "The steps below describe tasks that you perform from Google Cloud console, as well as some tasks you perform using gcloud commands. To perform these steps using gcloud, see Get started using the Google Cloud CLI. ... Create an attestor that the Binary Authorization enforcer uses to verify the signature on an attestation",
-          "rank": 7
-        },
-        {
-          "title": "Configure a multi-project setup | Binary Authorization | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/binary-authorization/docs/multi-project-setup-cli",
-          "description": "Install the Google Cloud CLI. If you&#x27;re using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity. To initialize the gcloud CLI, run the following command: ... Install kubectl for interacting with GKE. The deployer project manages the Google Kubernetes Engine (GKE) clusters, where you deploy images, and the Binary Authorization policy that Binary Authorization enforces at deploy time.",
           "rank": 8
         }
       ]
@@ -146,6 +203,62 @@
           "url": "https://docs.cloud.google.com/binary-authorization/docs/api",
           "description": "Reference documentation for the Binary Authorization REST API. Reference documentation for the policy YAML file format. Example policies in YAML format. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are ...",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Gating Deployments with Binary Auth | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/gating-deployments-with-binary-auth",
+          "description": "The Binary Authorization API uses the concepts of &quot;attestors&quot; and &quot;attestations&quot;, but these are implemented using corresponding Notes and Occurrences in the Container Analysis API. An Attestor Note is simply a small bit of data that acts as a label for the type of signature being applied. For example one note might indicate vulnerability scan, while another might be used for QA sign off. The note will be referred ...",
+          "rank": 1
+        },
+        {
+          "title": "Securing Your GKE Deployments with Binary Authorization | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-binauthz-intro",
+          "description": "Demonstrates how to use Binary Authorization secure your GKE cluster by requiring all containers to be verified and signed by trusted attestors as a part of the build/deploy process",
+          "rank": 2
+        },
+        {
+          "title": "binaryauthorization: Google.Apis.BinaryAuthorization.v1beta1.Data.Policy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/csharp/latest/classGoogle_1_1Apis_1_1BinaryAuthorization_1_1v1beta1_1_1Data_1_1Policy.html",
+          "description": "A policy for container image binary authorization.",
+          "rank": 3
+        },
+        {
+          "title": "Binary Authorization API Client Library for .NET | Google for Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1beta1",
+          "description": "This page contains information about getting started with the Binary Authorization API by using the Google API Client Library for .NET. For more information, see the following documentation: Browse the .NET reference documentation for the Binary Authorization API.",
+          "rank": 4
+        },
+        {
+          "title": "Index (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/index-all.html",
+          "description": "UserOwnedDrydockNote - Class in com.google.api.services.binaryauthorization.v1beta1.model · An user owned drydock note references a Drydock ATTESTATION_AUTHORITY Note created by the user. UserOwnedDrydockNote() - Constructor for class com.google.api.services.binaryauthorization.v1beta1.model.UserOwnedDrydockNote ·",
+          "rank": 5
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1",
+          "description": "Binary Authorization API v1 · Google.Apis.BinaryAuthorization.v1beta1 · Binary Authorization API v1beta1 · Google.Apis.BlockchainNodeEngine.v1 · Blockchain Node Engine API v1 · Google.Apis.Blogger.v3 · Blogger API v3 · Google.Apis.Books.v1 · Books API v1 ·",
+          "rank": 6
+        },
+        {
+          "title": "BinaryAuthorization.Projects.Attestors (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Attestors.html",
+          "description": "<strong>Gets the access control policy for a resource</strong>. Returns an empty policy if the resource exists and does not have a policy set. Create a request for the method &quot;attestors.getIamPolicy&quot;. This request holds the parameters needed by the binaryauthorization server.",
+          "rank": 7
+        },
+        {
+          "title": "Binary Authorization API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1?authuser=0&hl=id",
+          "description": "This page contains information about getting started with the Binary Authorization API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation: Browse the .NET reference documentation for the Binary Authorization API.",
+          "rank": 8
         }
       ]
     },
@@ -298,6 +411,62 @@
     },
     {
       "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Securing Your GKE Deployments with Binary Authorization | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-binauthz-intro",
+          "description": "In such environments, it can be ... environment. Binary Authorization (BinAuthz) is <strong>a service that aims to reduce some of these concerns by adding deploy-time policy enforcement to your Kubernetes Engine cluster</strong>....",
+          "rank": 1
+        },
+        {
+          "title": "Gating Deployments with Binary Auth | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/gating-deployments-with-binary-auth",
+          "description": "Binary Authorization is <strong>a deploy-time security control that ensures only trusted container images are deployed on Google Kubernetes Engine (GKE) or Cloud Run</strong>. With Binary Authorization, you can require images to be signed by trusted authorities during the development process and then enforce ...",
+          "rank": 2
+        },
+        {
+          "title": "Index (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/index-all.html",
+          "description": "Available OAuth 2.0 scopes for use with the Binary Authorization API.",
+          "rank": 3
+        },
+        {
+          "title": "Overview (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/overview-summary.html",
+          "description": "© 2020 Google - Privacy Policy - Terms and Conditions - About Google",
+          "rank": 4
+        },
+        {
+          "title": "BinaryAuthorization.Projects.Attestors (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Attestors.html",
+          "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set. Create a request for the method &quot;attestors.getIamPolicy&quot;. This request holds the parameters needed by the binaryauthorization server.",
+          "rank": 5
+        },
+        {
+          "title": "Binary Authorization API Client Library for .NET | Google for Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1beta1",
+          "description": "Binary Authorization API: The management interface for Binary Authorization, a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, and Cloud Run.",
+          "rank": 6
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1",
+          "description": "Binary Authorization API v1 · Google.Apis.BinaryAuthorization.v1beta1 · Binary Authorization API v1beta1 · Google.Apis.BlockchainNodeEngine.v1 · Blockchain Node Engine API v1 · Google.Apis.Blogger.v3 · Blogger API v3 · Google.Apis.Books.v1 · Books API v1 ·",
+          "rank": 7
+        },
+        {
+          "title": "BinaryAuthorization.Projects.Policy.SetIamPolicy (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Policy.SetIamPolicy.html",
+          "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED Create a request for the method &quot;policy.setIamPolicy&quot;. This request holds the parameters needed by the the binaryauthorization server.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions",
       "official_result_count": 8,
@@ -321,33 +490,33 @@
           "rank": 3
         },
         {
+          "title": "Create attestors using the gcloud CLI | Binary Authorization | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/binary-authorization/docs/creating-attestors-cli",
+          "description": "<strong>Add an IAM role binding for the deployer project to the attestor. This is used by Binary Authorization when it evaluates a policy to determine whether the project has permissions to access any associated attestations</strong>.",
+          "rank": 4
+        },
+        {
           "title": "Package google.iam.v1 | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.iam.v1",
           "description": "To learn which resources support conditions in their IAM policies, see the IAM documentation. ... { &quot;bindings&quot;: [ { &quot;role&quot;: &quot;roles/resourcemanager.organizationAdmin&quot;, &quot;members&quot;: [ &quot;user:mike@example.com&quot;, &quot;group:admins@example.com&quot;, &quot;domain:google.com&quot;, &quot;serviceAccount:my-project-id@appspot.gserviceaccount.com&quot; ] }, { &quot;role&quot;: &quot;roles/resourcemanager.organizationViewer&quot;, &quot;members&quot;: [ &quot;user:eve@example.com&quot; ], &quot;condition&quot;: { &quot;title&quot;: &quot;expirable access&quot;, &quot;description&quot;: &quot;Does not grant access after Sep 2020&quot;, &quot;expression&quot;: &quot;request.time &lt; timestamp(&#x27;2020-10-01T00:00:00.000Z&#x27;)&quot;, } } ], &quot;etag&quot;: &quot;BwWWja0YfJA=&quot;, &quot;version&quot;: 3 }",
-          "rank": 4
+          "rank": 5
         },
         {
           "title": "Quickstart: Configure a Binary Authorization policy with GKE | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/configure-policy-gke",
           "description": "If you created a new project, then you already have the required permissions. Verify that billing is enabled for your Google Cloud project. Enable the Artifact Registry, Binary Authorization APIs. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-          "rank": 5
+          "rank": 6
         },
         {
           "title": "Configure a multi-project setup | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/multi-project-setup-cli",
           "description": "<strong>You must add an IAM role binding for the deployer project to the attestor. This is used by Binary Authorization when it evaluates a policy to determine whether the project has permissions to access any associated attestations</strong>.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Quickstart: Configure a Binary Authorization policy with Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/run/configure-policy-cloud-run",
           "description": "Enable the Cloud Run, Artifact Registry, Binary Authorization APIs. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-          "rank": 7
-        },
-        {
-          "title": "Create attestors using the gcloud CLI | Binary Authorization | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/binary-authorization/docs/creating-attestors-cli",
-          "description": "<strong>Add an IAM role binding for the deployer project to the attestor. This is used by Binary Authorization when it evaluates a policy to determine whether the project has permissions to access any associated attestations</strong>.",
           "rank": 8
         }
       ]
@@ -372,15 +541,15 @@
           "rank": 1
         },
         {
-          "title": "Binary Authorization overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/binary-authorization/docs/overview",
-          "description": "Google Distributed Cloud software: runs the images in GKE clusters that you host on your own hardware. Binary Authorization is part of a deployment architecture that includes the following related products:",
-          "rank": 2
-        },
-        {
           "title": "APIs and Reference | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/api",
           "description": "Reference documentation for the Binary Authorization REST API.",
+          "rank": 2
+        },
+        {
+          "title": "Binary Authorization overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/binary-authorization/docs/overview",
+          "description": "Google Distributed Cloud software: runs the images in GKE clusters that you host on your own hardware. Binary Authorization is part of a deployment architecture that includes the following related products:",
           "rank": 3
         },
         {
@@ -390,27 +559,27 @@
           "rank": 4
         },
         {
-          "title": "Policy YAML reference | Binary Authorization | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/binary-authorization/docs/policy-yaml-reference",
-          "description": "<strong>This page contains reference information for Binary Authorization policies as specified in YAML format</strong>. When you configure a policy using the command-line interface, you edit a YAML-formatted file that complies with this specification.",
-          "rank": 5
-        },
-        {
           "title": "Package google.iam.v1 | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.iam.v1",
           "description": "Manages Identity and Access Management (IAM) policies · Any implementation of an API that offers access control features implements the google.iam.v1.IAMPolicy interface",
-          "rank": 6
+          "rank": 5
         },
         {
           "title": "Package google.cloud.binaryauthorization.v1beta1 | Binary Authorization | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.cloud.binaryauthorization.v1beta1",
           "description": "Google Cloud Management Service for Binary Authorization admission policies and attestation authorities.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Binary Authorization API | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rest",
           "description": "The management interface for Binary Authorization, <strong>a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, and Cloud Run</strong>.",
+          "rank": 7
+        },
+        {
+          "title": "Policy YAML reference | Binary Authorization | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/binary-authorization/docs/policy-yaml-reference",
+          "description": "<strong>This page contains reference information for Binary Authorization policies as specified in YAML format</strong>. When you configure a policy using the command-line interface, you edit a YAML-formatted file that complies with this specification.",
           "rank": 8
         }
       ]
@@ -438,9 +607,10 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs",
       "title": "Binary Authorization documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs",
       "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... This lab describes how to secure a GKE cluster using Binary Authorization.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview",
@@ -456,11 +626,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -471,43 +644,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/multi-project-setup-cli",
-      "title": "Configure a multi-project setup | Binary Authorization | Google Cloud Documentation",
-      "description": "Install the Google Cloud CLI. If you&#x27;re using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity. To initialize the gcloud CLI, run the following command: ... Install kubectl for interacting with GKE. The deployer project manages the Google Kubernetes Engine (GKE) clusters, where you deploy images, and the Binary Authorization policy that Binary Authorization enforces at deploy time.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Binary Authorization\" \"access control\"",
-        "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/overview",
       "title": "Binary Authorization overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/overview",
       "description": "This document provides an overview of Binary Authorization. Binary Authorization is <strong>a Google Cloud product that you can use to implement software supply-chain security measures when you develop and deploy container-based applications</strong>.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview",
@@ -523,11 +663,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -538,9 +681,121 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/api",
+      "title": "Binary Authorization API Client Library for .NET | Google for Developers",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1beta1",
+      "description": "Binary Authorization API: <strong>The management interface for Binary Authorization</strong>, a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, ...",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+        "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference",
+        "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "BinaryAuthorization.Projects.Attestors (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Attestors.html",
+      "description": "<strong>This request holds the parameters needed by the binaryauthorization server</strong>. After setting any optional parameters, call the AbstractGoogleClientRequest.execute() method to invoke the remote operation. ... resource - REQUIRED: The resource for which the policy is being requested.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+        "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference",
+        "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Index (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/index-all.html",
+      "description": "Service definition for BinaryAuthorization (v1beta1).",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+        "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference",
+        "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
       "title": "APIs and Reference | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/api",
       "description": "Reference documentation for the Binary Authorization REST API. Reference documentation for the policy YAML file format. Example policies in YAML format. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are ...",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"APIs and reference\"",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference"
@@ -555,24 +810,63 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console",
+      "title": "Attestations overview | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/attestations",
+      "description": "This guide describes how to create and use Binary Authorization attestations. After a container image is built, an attestation can be created to affirm that a required activity was performed on the image such as a regression test, vulnerability scan, or other test.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Get started using the Google Cloud console (GKE) | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console",
       "description": "The steps below describe tasks that you perform from Google Cloud console, as well as some tasks you perform using gcloud commands. To perform these steps using gcloud, see Get started using the Google Cloud CLI. ... Create an attestor that the Binary Authorization enforcer uses to verify the signature on an attestation",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
@@ -586,24 +880,63 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/permissions-and-roles",
+      "title": "Configure a multi-project setup | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/multi-project-setup-cli",
+      "description": "Create an attestor that the Binary Authorization enforcer uses to verify the attestation. Sign an example image, creating an attestation. ... You must configure each project&#x27;s appropriate access control through Identity and Access Management (IAM).",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Binary Authorization\" \"access control\"",
+        "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
       "title": "Permissions and roles | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/permissions-and-roles",
       "description": "Basic roles of <strong>Owner, Editor and Viewer</strong> are available for use on Binary Authorization resources, in addition to predefined type-specific roles of Admin, Editor and Viewer for Binary Authorization attestors and policies.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
@@ -617,24 +950,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.iam.v1",
       "title": "Package google.iam.v1 | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.iam.v1",
       "description": "Binary Authorization · Reference ... (message) TestIamPermissionsResponse (message) API Overview · <strong>Manages Identity and Access Management (IAM) policies</strong>....",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"access control\"",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference",
@@ -650,24 +987,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/run/configure-policy-cloud-run",
       "title": "Quickstart: Configure a Binary Authorization policy with Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/run/configure-policy-cloud-run",
       "description": "<strong>By default, the Binary Authorization policy allows all images to be deployed</strong>. Click Next to continue to the Configure how this service is triggered page: Select Allow public access to be able to open the result in your web browser · Click Create ...",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
@@ -682,24 +1023,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/run/overview",
       "title": "Set up overview for Cloud Run | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/run/overview",
       "description": "This page provides an overview of how to set up Binary Authorization for use with Cloud Run services and jobs.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
@@ -711,26 +1056,30 @@
         1,
         2
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/setting-up",
       "title": "Set up for GKE | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/setting-up",
       "description": "This page provides an overview of how to set up Binary Authorization enforcement in your environment for use with Google Kubernetes Engine (GKE). <strong>You can set up Binary Authorization by using the Google Cloud console or the Google Cloud CLI</strong>.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
@@ -744,24 +1093,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/binaryauthorization/latest",
       "title": "Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/binaryauthorization/latest",
       "description": "Binary Authorization: is <strong>a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware</strong>",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Binary Authorization\"",
         "site:docs.cloud.google.com \"Binary Authorization\" \"Python client libraries\""
@@ -775,11 +1128,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -790,9 +1146,150 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/binaryauthorization",
+      "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1",
+      "description": "Binary Authorization API v1 · Google.Apis.BinaryAuthorization.v1beta1 · Binary Authorization API v1beta1 · Google.Apis.BlockchainNodeEngine.v1 · Blockchain Node Engine API v1 · Google.Apis.Blogger.v3 · Blogger API v3 · Google.Apis.Books.v1 · Books API v1 ·",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference",
+        "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Binary Authorization API Client Library for .NET | Google Developers",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/binaryauthorization/v1?authuser=0&hl=id",
+      "description": "This page contains information about getting started with the Binary Authorization API using the Google API Client Library for .NET. In addition, you may be interested in the following documentation:",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+        "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "binaryauthorization: Google.Apis.BinaryAuthorization.v1beta1.Data.Policy Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/csharp/latest/classGoogle_1_1Apis_1_1BinaryAuthorization_1_1v1beta1_1_1Data_1_1Policy.html",
+      "description": "A policy for container image binary authorization.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+        "site:developers.google.com \"Binary Authorization\" reference OR site:developers.google.com \"binary authorization\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "BinaryAuthorization.Projects.Policy.SetIamPolicy (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/com/google/api/services/binaryauthorization/v1beta1/BinaryAuthorization.Projects.Policy.SetIamPolicy.html",
+      "description": "<strong>Sets the access control policy on the specified resource</strong>. Replaces any existing policy. Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED Create a request for the method &quot;policy.setIamPolicy&quot;. This request holds the parameters needed by the the binaryauthorization server.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Binary Authorization\" official documentation OR site:developers.google.com \"binary authorization\" official documentation",
+        "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 67,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Binary Authorization roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/binaryauthorization",
       "description": "This page lists the IAM roles and permissions for Binary Authorization.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud documentation",
@@ -808,24 +1305,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
-      "keep": true
+      "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.InstanceOrBuilder",
       "title": "Interface InstanceOrBuilder (0.83.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.InstanceOrBuilder",
       "description": ".google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Binary Authorization\"",
         "site:docs.cloud.google.com \"Binary Authorization\" \"Java client libraries\""
@@ -839,13 +1340,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 28,
+      "product_fit_score": 76,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -854,9 +1358,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview",
       "title": "Interface InstanceOrBuilder (0.83.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview",
       "description": ".google.cloud.run.v2.BinaryAuthorization binary_authorization = 17;",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Binary Authorization\"",
         "site:docs.cloud.google.com \"Binary Authorization\" \"Java client libraries\""
@@ -870,13 +1375,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 28,
+      "product_fit_score": 76,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -885,9 +1393,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/container/latest",
       "title": "Package types (2.61.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/container/latest",
       "description": "Configuration for <strong>Binary Authorization</strong>.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Binary Authorization\"",
         "site:docs.cloud.google.com \"Binary Authorization\" \"Python client libraries\""
@@ -901,13 +1410,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": -16,
+      "product_fit_score": 32,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 0,
+        "product_match": 3,
         "coverage_value": 4,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -916,38 +1428,45 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/attestations",
-      "title": "Attestations overview | Binary Authorization | Google Cloud Documentation",
-      "description": "<strong>After a container image is built, an attestation can be created to affirm that a required activity was performed on the image such as a regression test, vulnerability scan, or other test</strong>.",
+      "title": "Package types (2.61.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/container/latest/google.cloud.container_v1.types",
+      "description": "Configuration for <strong>Binary Authorization</strong>.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
+        "site:docs.cloud.google.com/python/docs/reference \"Binary Authorization\"",
+        "site:docs.cloud.google.com \"Binary Authorization\" \"Python client libraries\""
       ],
       "intent_hits": [
-        "product_docs"
+        "python_client"
       ],
       "round_hits": [
+        1,
         2
       ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 80,
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 32,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
+        "product_match": 3,
+        "coverage_value": 0,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/configure-policy-gke",
       "title": "Quickstart: Configure a Binary Authorization policy with GKE | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/configure-policy-gke",
       "description": "If you created a new project, then you already have the required permissions. Verify that billing is enabled for your Google Cloud project. Enable the Artifact Registry, Binary Authorization APIs. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
       ],
@@ -957,26 +1476,30 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/creating-attestors-cli",
       "title": "Create attestors using the gcloud CLI | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/creating-attestors-cli",
       "description": "<strong>Add an IAM role binding for the deployer project to the attestor. This is used by Binary Authorization when it evaluates a policy to determine whether the project has permissions to access any associated attestations</strong>.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
       ],
@@ -986,26 +1509,30 @@
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/cross-project-access-gke",
       "title": "Configure cross-project access in GKE | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/cross-project-access-gke",
       "description": "This page shows you how to give Binary Authorization access to policies and container images that exist in different Google Cloud projects than your current project.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
       ],
@@ -1017,24 +1544,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/overview-cv",
       "title": "Continuous validation overview | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/overview-cv",
       "description": "In a single-project setup, Binary Authorization automatically sets up its required roles in the Binary Authorization service agent. If GKE clusters, platform policies bound to the clusters, and the metadata that is required by checks all reside in the same project, no additional Identity and Access Management (IAM) roles are required.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"roles and permissions\""
       ],
@@ -1046,24 +1577,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/overview-on-prem",
       "title": "Binary Authorization for on-premises clusters overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/overview-on-prem",
       "description": "<strong>This document describes Binary Authorization for on-premises clusters that are created as part of Google Distributed Cloud</strong>. To get started installing and using the product, see Set up Binary Authorization for on-premises clusters.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
       ],
@@ -1075,82 +1610,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/policy-yaml-reference",
       "title": "Policy YAML reference | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/policy-yaml-reference",
       "description": "<strong>This page contains reference information for Binary Authorization policies as specified in YAML format</strong>. When you configure a policy using the command-line interface, you edit a YAML-formatted file that complies with this specification.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/organizational-and-iam-roles",
-      "title": "Separation of duties and Identity and Access Management roles | Binary Authorization | Google Cloud Documentation",
-      "description": "These accounts include service accounts, used by GKE and Binary Authorization, and user accounts, accessed by people. By providing different organizational roles with specific IAM roles, you can enforce the principle of least privilege, ensuring that the user and service accounts in your organization have only the roles essential to performing their intended functions. To see the underlying permissions ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rest",
-      "title": "Binary Authorization API | Google Cloud Documentation",
-      "description": "The management interface for Binary Authorization, <strong>a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, and Cloud Run</strong>.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference"
       ],
@@ -1162,11 +1643,80 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Separation of duties and Identity and Access Management roles | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/organizational-and-iam-roles",
+      "description": "These accounts include service accounts, used by GKE and Binary Authorization, and user accounts, accessed by people. By providing different organizational roles with specific IAM roles, you can enforce the principle of least privilege, ensuring that the user and service accounts in your organization have only the roles essential to performing their intended functions. To see the underlying permissions ...",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Binary Authorization\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Binary Authorization API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rest",
+      "description": "The management interface for Binary Authorization, <strong>a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, and Cloud Run</strong>.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1177,9 +1727,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rest/Shared.Types/EnforcementMode",
       "title": "EnforcementMode | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rest/Shared.Types/EnforcementMode",
       "description": "Binary Authorization · Reference · Send feedback · <strong>Defines the possible actions when a pod creation is denied by an admission rule</strong>. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons ...",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference"
       ],
@@ -1191,11 +1742,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1206,9 +1760,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.cloud.binaryauthorization.v1beta1",
       "title": "Package google.cloud.binaryauthorization.v1beta1 | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/reference/rpc/google.cloud.binaryauthorization.v1beta1",
       "description": "Google Cloud Management Service for Binary Authorization admission policies and attestation authorities.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud introduction reference"
       ],
@@ -1218,13 +1773,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1235,57 +1793,32 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/docs/product-list",
-      "title": "Google Cloud products at a glance | Google Cloud Documentation",
-      "description": "Access Context Manager Fine-grained, attribute-based access control · Access Transparency Audit cloud provider support access · Advisory Notifications Privacy &amp; security event notifications · Assured OSS Get verified open-source packages · Binary Authorization Kubernetes deploy-time security ·",
+      "title": "Overview (Binary Authorization API v1beta1 (Rev. 58) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/binaryauthorization/v1beta1/java/latest/overview-summary.html",
+      "description": "© 2020 Google - Privacy Policy - Terms and Conditions - About Google",
+      "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
+        "site:developers.google.com \"Binary Authorization\" overview OR site:developers.google.com \"binary authorization\" overview"
       ],
       "intent_hits": [
-        "iam_permissions"
+        "developers_docs"
       ],
       "round_hits": [
-        2
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/docs/security/infrastructure/design",
-      "title": "Google infrastructure security design overview | Security | Google Cloud Documentation",
-      "description": "Binary Authorization for Borg (BAB) is <strong>an internal enforcement check that happens when a service is deployed</strong>. BAB does the following: Ensures that the production software and configuration that is deployed at Google is reviewed and authorized, ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
+        3
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1293,9 +1826,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/secure",
-      "title": "Secure your fleet | Fleet management | Google Cloud Documentation",
-      "description": "Binary Authorization to ensure that only trusted images are deployed on your fleet clusters · Kubernetes network policies to control connections between Pods · Fine-grained service access control for Cloud Service Mesh",
+      "title": "Google Cloud products at a glance | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/product-list",
+      "description": "Access Context Manager Fine-grained, attribute-based access control · Access Transparency Audit cloud provider support access · Advisory Notifications Privacy &amp; security event notifications · Assured OSS Get verified open-source packages · Binary Authorization Kubernetes deploy-time security ·",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
       ],
@@ -1305,16 +1839,19 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 3,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1322,67 +1859,10 @@
       "keep": false
     },
     {
-      "url": "https://googleapis.dev/python/binaryauthorization/latest",
-      "title": "Python Client for Binary Authorization — google-cloud-binary-authorization documentation",
-      "description": "Binary Authorization: is <strong>a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware</strong>",
-      "query_hits": [
-        "site:googleapis.dev/python \"Binary Authorization\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/binaryauthorization/latest/index.html",
-      "title": "Python client library | Google Cloud",
-      "description": "Binary Authorization: is <strong>a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware</strong>",
-      "query_hits": [
-        "site:googleapis.dev/python \"Binary Authorization\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/reference/rpc/google.cloud.run.v2",
-      "title": "Package google.cloud.run.v2 | Cloud Run | Google Cloud Documentation",
-      "description": "Cloud Run WorkerPool Control Plane API. Settings for Binary Authorization feature.",
+      "title": "Google infrastructure security design overview | Security | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/security/infrastructure/design",
+      "description": "Binary Authorization for Borg (BAB) is <strong>an internal enforcement check that happens when a service is deployed</strong>. BAB does the following: Ensures that the production software and configuration that is deployed at Google is reviewed and authorized, ...",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
       ],
@@ -1392,15 +1872,18 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1409,40 +1892,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/container/latest/google.cloud.container_v1.types",
-      "title": "Package types (2.61.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Configuration for <strong>Binary Authorization</strong>.",
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Binary Authorization\"",
-        "site:docs.cloud.google.com \"Binary Authorization\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": -16,
-      "deterministic_score": 83,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 83,
-        "parent_page_likelihood": 4,
-        "product_match": 0,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 81,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/binary-authorization-policy",
       "title": "Set up Binary Authorization policy enforcement | Google Distributed Cloud (software only) for VMware | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/vmware/docs/how-to/binary-authorization-policy",
       "description": "Binary Authorization for Google Distributed Cloud is <strong>a Google Cloud feature that extends the hosted, deploy-time enforcement of Binary Authorization to your on-premises user clusters</strong>.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Binary Authorization\" Google Cloud docs overview"
       ],
@@ -1454,18 +1907,153 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 57,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 57,
-        "parent_page_likelihood": 3,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 53,
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Secure your fleet | Fleet management | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/secure",
+      "description": "Binary Authorization to ensure that only trusted images are deployed on your fleet clusters · Kubernetes network policies to control connections between Pods · Fine-grained service access control for Cloud Service Mesh",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Binary Authorization — google-cloud-binary-authorization documentation",
+      "url": "https://googleapis.dev/python/binaryauthorization/latest",
+      "description": "Binary Authorization: is <strong>a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware</strong>",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Binary Authorization\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/binaryauthorization/latest/index.html",
+      "description": "Binary Authorization: is <strong>a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware</strong>",
+      "rank": 2,
+      "query_hits": [
+        "site:googleapis.dev/python \"Binary Authorization\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Package google.cloud.run.v2 | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/reference/rpc/google.cloud.run.v2",
+      "description": "Cloud Run WorkerPool Control Plane API. Settings for Binary Authorization feature.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Binary Authorization\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
       "keep": false
     }
   ]

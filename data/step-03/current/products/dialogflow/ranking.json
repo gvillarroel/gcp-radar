@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T15:55:46.253Z",
+  "generated_at": "2026-04-08T21:52:40.907Z",
   "product_name": "Dialogflow",
   "product_slug": "dialogflow",
-  "step02_source_path": "data/step-02/current/products/dialogflow.md",
+  "step02_source_path": "data/step-02/current/dialogflow.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "dialogflow",
   "dominant_python_slug": "dialogflow",
@@ -35,9 +35,65 @@
     },
     {
       "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Conversational Actions (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/overview",
+          "description": "Building conversation fulfillment when using Dialogflow primarily consists of developing your Dialogflow fulfillment webhook. In the Actions on Google documentation, you&#x27;ll find resources to help you design, build, and test your Dialogflow fulfillment webhook.",
+          "rank": 1
+        },
+        {
+          "title": "Dialogflow CX: Build a retail virtual agent | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/dialogflow-cx-retail-agent",
+          "description": "When a condition evaluates to true, the associated page route will be called. A condition could be, A parameter equals a specific value, or A parameter can&#x27;t be missing, or A form that has been completed, and many more. You can find more information on Parameters and Conditions in the Dialogflow CX Documentation.",
+          "rank": 2
+        },
+        {
+          "title": "Build a Dialogflow CX Google Chat app that understands and responds with natural language | Google for Developers",
+          "url": "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+          "description": "This page explains how to build a Google Chat app that can both understand and respond with natural language using Dialogflow. This guide uses Dialogflow CX, which has a direct integration with Google Chat.",
+          "rank": 3
+        },
+        {
+          "title": "Dialogflow (Dialogflow API v2beta1 (Rev. 133) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/java/latest/com/google/api/services/dialogflow/v2beta1/Dialogflow.html",
+          "description": "Service definition for Dialogflow (v2beta1). Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices). For more information about this service, see the API Documentation",
+          "rank": 4
+        },
+        {
+          "title": "Overview (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/dialogflow",
+          "description": "<strong>The process involves designing the conversation flow and creating a developer project and Dialogflow agent</strong>. Define Actions using intents within the Dialogflow agent, which are triggered by user phrases.",
+          "rank": 5
+        },
+        {
+          "title": "Build a Dialogflow CX add-on that extends Google Chat that understands and responds with natural language | Google Workspace add-ons | Google for Developers",
+          "url": "https://developers.google.com/workspace/add-ons/chat/quickstart-dialogflow-cx",
+          "description": "Dialogflow CX Cloud Logging: Ensure Cloud Logging is enabled in your Dialogflow agent settings to capture detailed execution logs, including errors from the agent and webhook interactions. Learn how to enable and configure this in the Dialogflow CX Agent Settings documentation.",
+          "rank": 6
+        },
+        {
+          "title": "GoogleCloudDialogflowV2InputAudioConfig (Dialogflow API v2 (Rev. 115) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/java/latest/com/google/api/services/dialogflow/v2/model/GoogleCloudDialogflowV2InputAudioConfig.html",
+          "description": "See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics #phrase-hints) for more details. This field is deprecated. Please use [speech_contexts]() instead. If you specify both [phrase_hints]() and [speech_contexts](), Dialogflow will treat the [phrase_hints]() as a single additional [SpeechContext]().",
+          "rank": 7
+        },
+        {
+          "title": "dialogflow: Main Page",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/csharp/latest/index.html",
+          "description": "The complete API documentation for using Dialogflow API can be found at <strong>https://cloud.google.com/dialogflow/</strong>.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Dialogflow\" \"roles and permissions\"",
-      "official_result_count": 3,
+      "official_result_count": 4,
       "results": [
         {
           "title": "Dialogflow roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -46,16 +102,22 @@
           "rank": 1
         },
         {
+          "title": "OpenAPI tools | CX Agent Studio | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api",
+          "description": "Because service accounts are principals, they can access resources in your project by granting it a role, just like you would for any other principal. The service account email will be used to generate an access token which will be sent in the Authorization header of the tool request. The user who is configuring the tool to use service accounts must have the following permissions: ... In order for Dialogflow CX to generate tokens, the Customer Engagement Suite Service agent must have the following permissions:",
+          "rank": 2
+        },
+        {
           "title": "Build conversational agents with Application Integration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-integration/docs/conversational-agents",
           "description": "Service account: Choose a service ... roles and permissions for the agent&#x27;s resource access. If missing, you will be prompted to Grant them. Click View spec to review the generated specification for the selected triggers. You can optionally edit the specification before saving. Click Save. A message appears indicating that the tool is created successfully. Click View to open the agent in the Dialogflow CX ...",
-          "rank": 2
+          "rank": 3
         },
         {
           "title": "Google Dialogflow | Integration Connectors | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_dialog_flow/configure",
           "description": "Pre-GA products and features are available &quot;as is&quot; and might have limited support. For more information, see the launch stage descriptions. The Google Dialogflow connector lets you perform the supported operations on Google Dialogflow. Before using the Google Dialogflow connector, do the following tasks: ... Ensure that network connectivity is set up. For information about network patterns, see Network connectivity. Grant the roles/connectors.admin IAM role to the user configuring the connector.",
-          "rank": 3
+          "rank": 4
         }
       ]
     },
@@ -108,9 +170,9 @@
           "rank": 7
         },
         {
-          "title": "Class Playbook.Instruction (0.94.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow-cx/latest/com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction",
-          "description": "Protobuf type google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction",
+          "title": "Class GeneratorEvaluationConfig.InputDataConfig.Builder (4.87.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2.GeneratorEvaluationConfig.InputDataConfig.Builder",
+          "description": ".google.cloud.dialogflow.v2.GeneratorEvaluationConfig.AgentAssistInputDataConfig agent_assist_input_data_config = 6;",
           "rank": 8
         }
       ]
@@ -164,9 +226,9 @@
           "rank": 7
         },
         {
-          "title": "Dialogflow ES setup and cleanup | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/es/docs/quick/setup",
-          "description": "You use the Google Cloud Console to set up and manage Dialogflow CX resources. To use services provided by Google Cloud, you must create a project. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls.",
+          "title": "Dialogflow API v2 - Package cloud.google.com/go/dialogflow/apiv2 (v1.78.0) | Go client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/dialogflow/latest/apiv2",
+          "description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices). For information that is relevant for all client libraries please reference <strong>https://pkg.go.dev/cloud.google.com/go#pkg-overview</strong>.",
           "rank": 8
         }
       ]
@@ -190,9 +252,9 @@
           "rank": 2
         },
         {
-          "title": "Class StreamingDetectIntentRequest (2.43.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.types.StreamingDetectIntentRequest",
-          "description": "<strong>Dialogflow</strong> discards all Speech recognition results in favor of the input text.",
+          "title": "Class AgentsClient (2.1.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.services.agents.AgentsClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflowcx_v3beta1 def sample_create_agent(): # Create a client client = dialogflowcx_v3beta1.AgentsClient() # Initialize request argument(s) agent = dialogflowcx_v3beta1.Agent() agent.start_flow = &quot;start_flow_value&quot; agent.display_name = &quot;display_name_value&quot; agent.default_language_code = &quot;default_language_code_value&quot; agent.time_zone = &quot;time_zone_value&quot; request = dialogflowcx_v3beta1.CreateAgentRequest( parent=&quot;parent_value&quot;, agent=agent, ) # Make the request response = client.create_agent(request=request) # Handle the response print(response)",
           "rank": 3
         },
         {
@@ -202,27 +264,27 @@
           "rank": 4
         },
         {
-          "title": "Class SessionsClient (2.28.3) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/2.28.3/google.cloud.dialogflow_v2beta1.services.sessions.SessionsClient",
-          "description": "SessionsClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Optional[typing.Union[str, google.cloud.dialogflow_v2beta1.services.sessions.transports.base.SessionsTransport]] = None, client_options: typing.Optional[typing.Union[google.api_core.client_options.ClientOptions, dict]] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)",
+          "title": "Class AgentsClient (2.43.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_delete_agent(): # Create a client client = dialogflow_v2.AgentsClient() # Initialize request argument(s) request = dialogflow_v2.DeleteAgentRequest( parent=&quot;parent_value&quot;, ) # Make the request client.delete_agent(request=request)",
           "rank": 5
         },
         {
-          "title": "Class Intent (2.45.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.types.Intent",
-          "description": "For each agent, you define many intents, where your combined intents can handle a complete conversation. When an end-user writes or says something, referred to as an end-user expression or end-user input, <strong>Dialogflow</strong> matches the end-user input to the best intent in your agent.",
+          "title": "Class IntentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.intents.IntentsClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_batch_delete_intents(): # Create a client client = dialogflow_v2.IntentsClient() # Initialize request argument(s) intents = dialogflow_v2.Intent() intents.display_name = &quot;display_name_value&quot; request = dialogflow_v2.BatchDeleteIntentsRequest( parent=&quot;parent_value&quot;, intents=intents, ) # Make the request operation = client.batch_delete_intents(request=request) print(&quot;Waiting for operation to complete...&quot;) response = operation.result() # Handle the response print(response)",
           "rank": 6
         },
         {
-          "title": "Class AgentsClient (2.1.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.services.agents.AgentsClient",
-          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflowcx_v3beta1 def sample_create_agent(): # Create a client client = dialogflowcx_v3beta1.AgentsClient() # Initialize request argument(s) agent = dialogflowcx_v3beta1.Agent() agent.start_flow = &quot;start_flow_value&quot; agent.display_name = &quot;display_name_value&quot; agent.default_language_code = &quot;default_language_code_value&quot; agent.time_zone = &quot;time_zone_value&quot; request = dialogflowcx_v3beta1.CreateAgentRequest( parent=&quot;parent_value&quot;, agent=agent, ) # Make the request response = client.create_agent(request=request) # Handle the response print(response)",
+          "title": "Class StreamingDetectIntentRequest (2.43.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.types.StreamingDetectIntentRequest",
+          "description": "<strong>Dialogflow</strong> discards all Speech recognition results in favor of the input text.",
           "rank": 7
         },
         {
-          "title": "Package types (2.1.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.types",
-          "description": "Conversations always start with the built-in Start Flow (with an all-0 ID). Transition routes can direct the conversation session from the current flow (parent flow) to another flow (sub flow). When the sub flow is finished, <strong>Dialogflow</strong> will bring the session back to the parent flow, where the sub flow is started.",
+          "title": "Class SessionsClient (2.28.3) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/2.28.3/google.cloud.dialogflow_v2beta1.services.sessions.SessionsClient",
+          "description": "SessionsClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Optional[typing.Union[str, google.cloud.dialogflow_v2beta1.services.sessions.transports.base.SessionsTransport]] = None, client_options: typing.Optional[typing.Union[google.api_core.client_options.ClientOptions, dict]] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)",
           "rank": 8
         }
       ]
@@ -238,6 +300,62 @@
           "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference",
           "description": "AI and ML · Dialogflow · Dialogflow CX · Reference · Send feedback · An overview of using the API and its reference documentation. Client library reference. Reference documentation for making direct REST over HTTP calls. Reference documentation for using gRPC.",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "dialogflow: Google.Apis.Dialogflow.v2.Data Namespace Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/csharp/latest/namespaceGoogle_1_1Apis_1_1Dialogflow_1_1v2_1_1Data.html",
+          "description": "Google.Apis.Dialogflow.v2.Data Namespace Reference ·",
+          "rank": 1
+        },
+        {
+          "title": "dialogflow: Google.Apis.Dialogflow.v2.Data.GoogleCloudDialogflowV2beta1Intent Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/csharp/latest/classGoogle_1_1Apis_1_1Dialogflow_1_1v2_1_1Data_1_1GoogleCloudDialogflowV2beta1Intent.html",
+          "description": "Google.Apis.Dialogflow.v2.Data.GoogleCloudDialogflowV2beta1Intent Class Reference · <strong>Represents an intent</strong>. Intents convert a number of user expressions or patterns into an action. An action is an extraction of a user command or sentence semantics. More... Inheritance diagram for Google.Api...",
+          "rank": 2
+        },
+        {
+          "title": "Dialogflow webhook format {:#dialogflow-webhook-format} (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/reference/dialogflow-webhook-json",
+          "description": "<strong>The Dialogflow webhook format includes all information from the Actions on Google conversation webhook format plus Dialogflow-specific data like contexts and parameters</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "dialogflow: Google.Apis.Dialogflow.v2.DialogflowService Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/csharp/latest/classGoogle_1_1Apis_1_1Dialogflow_1_1v2_1_1DialogflowService.html",
+          "description": "Google.Apis.Dialogflow.v2.DialogflowService Class Reference",
+          "rank": 4
+        },
+        {
+          "title": "Intents overview (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/reference/intents",
+          "description": "Note: If you&#x27;re using Dialogflow, ... Dialogflow event. The following table describes intents that the Assistant requests for you to fulfill. The following table describes the supported helpers that you can request the Assistant to fulfill. Built-in intents model some of the common ways that users express tasks they&#x27;re trying to do or information they seek, such as ordering a meal, booking a ride, or checking an account balance. See the built-in intents reference for more ...",
+          "rank": 5
+        },
+        {
+          "title": "Google",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/python/latest/dialogflow_v2.projects.agent.html",
+          "description": "Format: `projects/&lt;Project ID&gt;`. (required) languageCode: string, Optional. The language for which you want a validation result. If not specified, the agent&#x27;s default language is used. [Many languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.",
+          "rank": 6
+        },
+        {
+          "title": "dialogflow: Google.Apis.Dialogflow.v2beta1.Data.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/csharp/latest/classGoogle_1_1Apis_1_1Dialogflow_1_1v2beta1_1_1Data_1_1GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio.html",
+          "description": "Google.Apis.Dialogflow.v2beta1.Data.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio Class Reference · Plays audio from a file in Telephony Gateway. More... Inheritance diagram for Google.Apis.Dialogflow.v2beta1.Data.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio: Plays audio from a file in Telephony Gateway.",
+          "rank": 7
+        },
+        {
+          "title": "Dialogflow CX: Build a retail virtual agent | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/dialogflow-cx-retail-agent",
+          "description": "Congratulations, by now you have built and tested a complete real world example of a retailer bot! Let&#x27;s go to the next lab page to read the conclusion and find some handy references! Dialogflow CX is a Conversational AI Platform (CAIP) for creating virtual agents like chat or voice bots.",
+          "rank": 8
         }
       ]
     },
@@ -378,21 +496,21 @@
           "rank": 3
         },
         {
-          "title": "Dialogflow CX Console overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console",
-          "description": "Dialogflow CX provides a web user ... (visit documentation, open console). You use this console to create, build, and test agents. It graphs each flow as a conversational state machine diagram, which makes complex agents easy to design and understand. The Dialogflow CX console is different from the Google Cloud Console (visit ...",
-          "rank": 4
-        },
-        {
           "title": "Agents | Dialogflow ES | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-overview",
           "description": "A Dialogflow agent is <strong>a virtual agent that handles concurrent conversations with your end-users</strong>. It is a natural language understanding module that understands the nuances of human language.",
+          "rank": 4
+        },
+        {
+          "title": "Dialogflow CX Console overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console",
+          "description": "Dialogflow CX provides a web user ... (visit documentation, open console). You use this console to create, build, and test agents. It graphs each flow as a conversational state machine diagram, which makes complex agents easy to design and understand. The Dialogflow CX console is different from the Google Cloud Console (visit ...",
           "rank": 5
         },
         {
-          "title": "Dialogflow API | Dialogflow CX | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3beta1-overview",
-          "description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices) · To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when ...",
+          "title": "Events | Dialogflow ES | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dialogflow/es/docs/events-overview",
+          "description": "Go to the Dialogflow ES console.",
           "rank": 6
         },
         {
@@ -440,27 +558,27 @@
           "rank": 4
         },
         {
-          "title": "Class AgentsClient (2.43.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsClient",
-          "description": "See the training documentation &lt;https://cloud.google.com/dialogflow/es/docs/training&gt;__. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_import_agent(): # Create a client client = dialogflow_v2.AgentsClient() # Initi",
-          "rank": 5
-        },
-        {
           "title": "Class IntentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.intents.IntentsClient",
           "description": "See the training documentation &lt;https://cloud.google.com/dialogflow/es/docs/training&gt;__. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_batch_update_intents(): # Create a client client = dialogflow_v2.IntentsClient(",
-          "rank": 6
+          "rank": 5
         },
         {
-          "title": "Class EnvironmentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.environments.EnvironmentsClient",
-          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_delete_environment(): # Create a client client = dialogflow_v2.EnvironmentsClient() # Initialize request argument(s) request = dialogflow_v2.DeleteEnvironmentRequest( name=&quot;name_value&quot;, ) # Make the request client.delete_environment(request=request) environment_path(project: str, environment: str) -&gt; str ·",
-          "rank": 7
+          "title": "Class AgentsClient (2.43.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsClient",
+          "description": "See the training documentation &lt;https://cloud.google.com/dialogflow/es/docs/training&gt;__. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_import_agent(): # Create a client client = dialogflow_v2.AgentsClient() # Initi",
+          "rank": 6
         },
         {
           "title": "Package flows (2.1.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.services.flows",
           "description": "API documentation for dialogflowcx_v3beta1.services.flows.pagers module.",
+          "rank": 7
+        },
+        {
+          "title": "Class EnvironmentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.environments.EnvironmentsClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_delete_environment(): # Create a client client = dialogflow_v2.EnvironmentsClient() # Initialize request argument(s) request = dialogflow_v2.DeleteEnvironmentRequest( name=&quot;name_value&quot;, ) # Make the request client.delete_environment(request=request) environment_path(project: str, environment: str) -&gt; str ·",
           "rank": 8
         }
       ]
@@ -490,15 +608,15 @@
           "rank": 3
         },
         {
-          "title": "Manage intents with the API | Conversational Agents | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/how/intent-manage-api",
-          "description": "The following examples show how to call the Create method for the Intent type. Go to the Intent API reference · Select a protocol and version for the Intent reference: ... POST https://REGION_ID-dialogflow.googleapis.com/v3/projects/PROJECT_ID/locations/REGION_ID/agents/AGENT_ID/intents",
-          "rank": 4
-        },
-        {
           "title": "Flows | Dialogflow CX | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/flow",
           "description": "Open the Dialogflow CX console. Choose your Google Cloud project. Select your agent. Hover your mouse over the flow in the Flows section. Click the options more_vert button. Select Flow settings. Browse or edit settings. Click Save to save any changes. See the get and patch/update methods for the Flow type. Go to the Flow API reference",
+          "rank": 4
+        },
+        {
+          "title": "Manage intents with the API | Conversational Agents | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/how/intent-manage-api",
+          "description": "The following examples show how to call the Create method for the Intent type. Go to the Intent API reference · Select a protocol and version for the Intent reference: ... POST https://REGION_ID-dialogflow.googleapis.com/v3/projects/PROJECT_ID/locations/REGION_ID/agents/AGENT_ID/intents",
           "rank": 5
         },
         {
@@ -517,6 +635,62 @@
           "title": "Agents | Dialogflow CX | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent",
           "description": "Open the Dialogflow CX console. Choose the Google Cloud project for the agent. Click the option more_vert menu for an agent in the list. Click the delete delete button. Confirm deletion in the dialog. See the delete method for the Agent type. Go to the Agent API reference",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Overview (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/dialogflow",
+          "description": "Dialogflow is a conversational platform that lets you design and build Actions by wrapping the functionality of the Actions SDK and providing additional features such as an easy-to-use IDE, natural language understanding (NLU), machine learning, and more.",
+          "rank": 1
+        },
+        {
+          "title": "Intents overview (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/reference/intents",
+          "description": "The process by which you provide the fulfillment for an intent is different for developers building with Dialogflow and for developers building with the Actions SDK. However, in both cases, you&#x27;re providing the name of the intent and the URL of your fulfillment webhook.",
+          "rank": 2
+        },
+        {
+          "title": "Overview (Dialogflow) | Actions on Google Interactive Canvas | Google for Developers",
+          "url": "https://developers.google.com/assistant/df-asdk/interactivecanvas",
+          "description": "Actions using Interactive Canvas involve a conversational action (with Dialogflow and fulfillment) and a full-screen web app that communicate using the Interactive Canvas API and HtmlResponse.",
+          "rank": 3
+        },
+        {
+          "title": "Informed decision making using Dialogflow CX generators and data stores | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/dialogflow-generator",
+          "description": "Scroll down to Agent Responses under Fulfillment. A fulfillment is the agent response to the end user. Dialogflow has pre populated Agent says with the parameter $request.knowledge.answers[0] which at run time contains the top answer to the user&#x27;s question.",
+          "rank": 4
+        },
+        {
+          "title": "Dialogflow CX: Build a retail virtual agent | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/dialogflow-cx-retail-agent",
+          "description": "Dialogflow maintains these responses in a response queue. To read more about the page life cycle, and the order these fulfillments will be added to the response queue, read the Dialogflow CX Page Docs. ... In the Catalog Flow, click on the Artist Overview page.",
+          "rank": 5
+        },
+        {
+          "title": "Overview (Dialogflow) | Dialogflow and legacy Actions SDK",
+          "url": "https://developers.google.com/assistant/df-asdk/discovery?hl=ru",
+          "description": "Dialogflow and legacy Actions SDK · In order for users to engage with your Action, they need to invoke it. In many cases users will have your specific Action in mind, so they ask the Google Assistant to interface with it. Additionally, as long as you design your Action to accomplish specific, helpful tasks, the Assistant may recommend it to users when it&#x27;s the best available Action for their query.",
+          "rank": 6
+        },
+        {
+          "title": "Conversational Actions (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+          "url": "https://developers.google.com/assistant/conversational/df-asdk/overview",
+          "description": "In your Actions project, you provide metadata for publishing the project and specify a method of conversation fulfillment. Developers using Dialogflow associate their Dialogflow agent with the project, then build fulfillment through Dialogflow.",
+          "rank": 7
+        },
+        {
+          "title": "Dialogflow (Dialogflow API v2beta1 (Rev. 133) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/java/latest/com/google/api/services/dialogflow/v2beta1/Dialogflow.html",
+          "description": "Dialogflow dialogflow = new Dialogflow(...); Dialogflow.Projects.List request = dialogflow.projects().list(parameters ...) Returns: the resource collection · Skip navigation links · Overview · Package · Class · Use · Tree · Deprecated · Index · Help ·",
           "rank": 8
         }
       ]
@@ -570,9 +744,9 @@
           "rank": 7
         },
         {
-          "title": "Webhooks | Dialogflow CX | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/webhook",
-          "description": "Both the permissions need to be granted in the project which contains the service account. If you use authentication headers, basic auth with username and password, or third-party OAuth, you can store the credentials as secrets using Secret Manager. Here are the necessary steps to authenticate your webhook using secrets: Create your secret if you don&#x27;t have one already. Grant Dialogflow Service Agent the Secret Manager Secret Accessor (roles/secretmanager.secretAccessor) role on the new secret.",
+          "title": "Google Dialogflow | Integration Connectors | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_dialog_flow/configure",
+          "description": "Before using the Google Dialogflow connector, do the following tasks: ... Ensure that network connectivity is set up. For information about network patterns, see Network connectivity. Grant the roles/connectors.admin IAM role to the user configuring the connector.",
           "rank": 8
         }
       ]
@@ -628,21 +802,21 @@
           "rank": 4
         },
         {
-          "title": "Tutorials & samples &nbsp;| Dialogflow ES | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials",
-          "description": "Dialogflow ES · Send feedback · Learn how to deploy an agent on Google Cloud. This tutorial walks through building a flow for collecting long digit and alphanumeric sequences where the user can speak a few characters at a time while the bot confirms. Browse additional samples and learning material on external sites.",
-          "rank": 5
-        },
-        {
-          "title": "Dialogflow API | Dialogflow CX | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3beta1-overview",
-          "description": "Dialogflow CX · Reference · Send feedback · <strong>Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).</strong> REST Resource: v3beta1.projects.locations · REST Resource: v3beta1.projects.locations.agents · REST ...",
-          "rank": 6
-        },
-        {
           "title": "Dialogflow CX release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dialogflow/docs/release-notes",
           "description": "Conversational Agents (Dialogflow ... large Cloud Logging log entries. ... Conversational Agents (Dialogflow CX): Regular expression validation (Regex) is now available in Agent Settings and Entity Types. ... Conversational Agents (Dialogflow CX):You can now specify custom voice in the Conversation profiles menu in the console. ... Conversational Agents (Dialogflow CX): You can now configure service account authorization for both tools and webhooks. See the reference documentation ...",
+          "rank": 5
+        },
+        {
+          "title": "Tutorials & samples &nbsp;| Dialogflow ES | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials",
+          "description": "Dialogflow ES · Send feedback · Learn how to deploy an agent on Google Cloud. This tutorial walks through building a flow for collecting long digit and alphanumeric sequences where the user can speak a few characters at a time while the bot confirms. Browse additional samples and learning material on external sites.",
+          "rank": 6
+        },
+        {
+          "title": "Package google.cloud.dialogflow.v2beta1 | Dialogflow ES | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dialogflow/es/docs/reference/rpc/google.cloud.dialogflow.v2beta1",
+          "description": "A conversation is an interaction ... and Dialogflow agents, and a support customer. Conversations can include phone calls and text-based chat sessions. Represents a piece of ingested context information. Contents ingested. Represents the format of the ingested string. Represents the mode in which context reference contents are updated. Enumeration of the different conversation stages a conversation can be in. Reference: https://cloud.google.co...",
           "rank": 7
         },
         {
@@ -661,50 +835,50 @@
       "results": [
         {
           "title": "Python Client for Dialogflow | Python client libraries | Google Cloud Documentation",
-          "url": "https://googleapis.dev/python/dialogflow/latest/index.html",
+          "url": "https://googleapis.dev/python/dialogflow/latest/dialogflow_v2/intents.html",
           "description": "Dialogflow: is <strong>an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices</strong>.",
           "rank": 1
-        },
-        {
-          "title": "Python client library | Google Cloud",
-          "url": "https://googleapis.dev/python/dialogflow-cx/latest/dialogflowcx_v3/services.html",
-          "description": "python3 -m venv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate pip install google-cloud-dialogflow-cx",
-          "rank": 2
-        },
-        {
-          "title": "Dialogflow: Python Client — dialogflow 0.6.0 documentation",
-          "url": "https://googleapis.dev/python/dialogflow/0.7.0/index.html",
-          "description": "Dialogflow is <strong>an enterprise-grade NLU platform that makes it easy for developers to design and integrate conversational user interfaces into mobile apps, web applications, devices, and bots</strong>.",
-          "rank": 3
-        },
-        {
-          "title": "Fulfillments — google-cloud-dialogflow documentation",
-          "url": "https://googleapis.dev/python/dialogflow/latest/dialogflow_v2/fulfillments.html",
-          "description": "As an alternative, you can provide a more dynamic response by using fulfillment. When you enable fulfillment for an intent, <strong>Dialogflow</strong> responds to that intent by calling a service that you define.",
-          "rank": 4
-        },
-        {
-          "title": "google.cloud.dialogflowcx_v3.types.intent — google-cloud-dialogflow-cx documentation",
-          "url": "https://googleapis.dev/python/dialogflow-cx/latest/_modules/google/cloud/dialogflowcx_v3/types/intent.html",
-          "description": "Currently allowed <strong>Dialogflow</strong> defined labels include: - sys-head - sys-contextual The above labels do not require value. &quot;sys-head&quot; means the intent is a head intent. &quot;sys.contextual&quot; means the intent is a contextual intent. description (str): Human readable description for better understanding ...",
-          "rank": 5
-        },
-        {
-          "title": "google.cloud.dialogflow_v2.types.context — google-cloud-dialogflow documentation",
-          "url": "https://googleapis.dev/python/dialogflow/2.0.0/_modules/google/cloud/dialogflow_v2/types/context.html",
-          "description": "You can configure contexts for an intent by setting input and output contexts, which are identified by string names. When an intent is matched, any configured output contexts for that intent become active. While any contexts are active, <strong>Dialogflow</strong> is more likely to match intents that are configured ...",
-          "rank": 6
         },
         {
           "title": "API Reference — google-cloud-dialogflow-cx documentation",
           "url": "https://googleapis.dev/python/dialogflow-cx/0.7.1/index.html",
           "description": "Types for Google Cloud <strong>Dialogflow</strong>cx v3beta1 API · For a list of all google-cloud-dialogflow-cx releases: Changelog · 0.7.1 (2021-06-16) Bug Fixes · 0.7.0 (2021-06-16) 0.6.0 (2021-06-07) 0.5.0 (2021-05-28) 0.4.0 (2021-03-05) 0.3.0 (2021-01-29) 0.2.0 (2020-12-07) 0.1.0 (2020-08-24) Google Cloud Client Libraries for google-cloud-dialogflow-cx ·",
-          "rank": 7
+          "rank": 2
         },
         {
           "title": "google.cloud.dialogflowcx_v3.services.intents.client — google-cloud-dialogflow-cx documentation",
           "url": "https://googleapis.dev/python/dialogflow-cx/latest/_modules/google/cloud/dialogflowcx_v3/services/intents/client.html",
           "description": "You can provide information for the <strong>Dialogflow</strong> API to use to match user input to an intent by adding training phrases (i.e., examples of user input) to your intent. &quot;&quot;&quot; # Create or coerce a protobuf request object. # Quick check: If we got a request object, we should *not* have # gotten any ...",
+          "rank": 3
+        },
+        {
+          "title": "google.cloud.dialogflow_v2.types.audio_config — google-cloud-dialogflow documentation",
+          "url": "https://googleapis.dev/python/dialogflow/latest/_modules/google/cloud/dialogflow_v2/types/audio_config.html",
+          "description": "<strong>A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood</strong>. This list can be used to: - improve accuracy for words and phrases you expect the user to say, e.g. typical commands for your Dialogflow agent - add additional words to the speech ...",
+          "rank": 4
+        },
+        {
+          "title": "google.cloud.dialogflow_v2.types.entity_type — google-cloud-dialogflow documentation",
+          "url": "https://googleapis.dev/python/dialogflow/latest/_modules/google/cloud/dialogflow_v2/types/entity_type.html",
+          "description": "[docs]class EntityType(proto.Message): r&quot;&quot;&quot;Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted. <strong>Dialogflow</strong> provides predefined system entities that can match many common types of data.",
+          "rank": 5
+        },
+        {
+          "title": "dialogflow_v2.gapic.intents_client — dialogflow 0.6.0 documentation",
+          "url": "https://googleapis.dev/python/dialogflow/0.7.0/_modules/dialogflow_v2/gapic/intents_client.html",
+          "description": "When you pass user input to the ``DetectIntent`` (or ``StreamingDetectIntent``) method, the <strong>Dialogflow</strong> API analyzes the input and searches for a matching intent. If no match is found, the <strong>Dialogflow</strong> API returns a fallback intent (``is_fallback`` = true). You can provide additional information ...",
+          "rank": 6
+        },
+        {
+          "title": "Client for Dialogflow API — dialogflow 0.6.0 documentation",
+          "url": "https://googleapis.dev/python/dialogflow/0.7.2/gapic/v2/api.html",
+          "description": "<strong>Dialogflow</strong> provides several prebuilt agents for common conversation scenarios such as determining a date and time, converting currency, and so on.",
+          "rank": 7
+        },
+        {
+          "title": "dialogflow_v2.gapic.sessions_client — dialogflow 0.6.0 documentation",
+          "url": "https://googleapis.dev/python/dialogflow/latest/_modules/dialogflow_v2/gapic/sessions_client.html",
+          "description": "You retrieve user input and pass it to the ``DetectIntent`` (or ``StreamingDetectIntent``) method to determine user intent and respond. &quot;&quot;&quot; SERVICE_ADDRESS = &quot;dialogflow.googleapis.com:443&quot; &quot;&quot;&quot;The default address of the service.&quot;&quot;&quot; # The name of the interface for this client.",
           "rank": 8
         }
       ]
@@ -714,28 +888,31 @@
     {
       "title": "Dialogflow CX documentation | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/cx/docs",
-      "description": "Dialogflow CX is <strong>a new natural language understanding platform built on generative models that can control conversations and on flows that can be used for more explicit conversation control</strong>.",
-      "rank": 1,
+      "description": "<strong>Dialogflow CX makes it easy to design and integrate a conversational user interface into your mobile app, web application, device, bot, interactive voice response system, and so on</strong>.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Dialogflow\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -748,12 +925,12 @@
     {
       "title": "APIs and reference | Dialogflow CX | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference",
-      "description": "An overview of using the API and its reference documentation.",
+      "description": "Dialogflow CX · Reference · Send feedback · An overview of using the API and its reference documentation. Client library reference. Reference documentation for making direct REST over HTTP calls. Reference documentation for using gRPC. Supported language reference.",
       "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Dialogflow\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Dialogflow\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -761,17 +938,20 @@
         "api_reference"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -782,63 +962,31 @@
       "keep": true
     },
     {
-      "title": "Dialogflow ES setup and cleanup | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dialogflow/es/docs/quick/setup",
-      "description": "You use the Google Cloud Console to set up and manage Dialogflow CX resources. To use services provided by Google Cloud, you must create a project. A project organizes all your Google Cloud resources. A project consists of a set of collaborators, enabled APIs (and other resources), monitoring tools, billing information, and authentication and access controls.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Dialogflow\" \"access control\"",
-        "site:docs.cloud.google.com \"Dialogflow\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 100,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 100,
-      "keep": true
-    },
-    {
       "title": "Dialogflow CX | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/docs",
-      "description": "Dialogflow CX is <strong>a natural language understanding platform that makes it easy to design and integrate a conversational user interface into your mobile app, web application, device, bot, interactive voice response system, and so on</strong>.",
-      "rank": 2,
+      "description": "Dialogflow CX provides two different virtual agent services, each of which has its own agent type, user interface, API, client libraries, and documentation:",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation"
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        2,
-        1
+        1,
+        2
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -868,11 +1016,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -901,11 +1052,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -933,11 +1087,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -965,11 +1122,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -997,11 +1157,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1015,7 +1178,7 @@
       "title": "Class SessionsClient (2.28.3) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/2.28.3/google.cloud.dialogflow_v2beta1.services.sessions.SessionsClient",
       "description": "SessionsClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Optional[typing.Union[str, google.cloud.dialogflow_v2beta1.services.sessions.transports.base.SessionsTransport]] = None, client_options: typing.Optional[typing.Union[google.api_core.client_options.ClientOptions, dict]] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)",
-      "rank": 5,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\"",
         "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
@@ -1029,11 +1192,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1061,11 +1227,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1074,6 +1243,181 @@
       },
       "final_score": 95,
       "keep": true
+    },
+    {
+      "title": "Class AgentsClient (2.43.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsClient",
+      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_delete_agent(): # Create a client client = dialogflow_v2.AgentsClient() # Initialize request argument(s) request = dialogflow_v2.DeleteAgentRequest( parent=&quot;parent_value&quot;, ) # Make the request client.delete_agent(request=request)",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\"",
+        "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class IntentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.intents.IntentsClient",
+      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_batch_delete_intents(): # Create a client client = dialogflow_v2.IntentsClient() # Initialize request argument(s) intents = dialogflow_v2.Intent() intents.display_name = &quot;display_name_value&quot; request = dialogflow_v2.BatchDeleteIntentsRequest( parent=&quot;parent_value&quot;, intents=intents, ) # Make the request operation = client.batch_delete_intents(request=request) print(&quot;Waiting for operation to complete...&quot;) response = operation.result() # Handle the response print(response)",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\"",
+        "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Overview (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+      "url": "https://developers.google.com/assistant/df-asdk/dialogflow",
+      "description": "<strong>The process involves designing the conversation flow and creating a developer project and Dialogflow agent</strong>. Define Actions using intents within the Dialogflow agent, which are triggered by user phrases.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation",
+        "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Intents overview (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+      "url": "https://developers.google.com/assistant/df-asdk/reference/intents",
+      "description": "Note: If you&#x27;re using Dialogflow, ... Dialogflow event. The following table describes intents that the Assistant requests for you to fulfill. The following table describes the supported helpers that you can request the Assistant to fulfill. Built-in intents model some of the common ways that users express tasks they&#x27;re trying to do or information they seek, such as ordering a meal, booking a ride, or checking an account balance. See the built-in intents reference for more ...",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference",
+        "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Dialogflow (Dialogflow API v2beta1 (Rev. 133) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/java/latest/com/google/api/services/dialogflow/v2beta1/Dialogflow.html",
+      "description": "Service definition for Dialogflow (v2beta1). Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices). For more information about this service, see the API Documentation",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation",
+        "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Access control | Dialogflow CX | Google Cloud Documentation",
@@ -1093,11 +1437,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1106,38 +1453,6 @@
       },
       "final_score": 95,
       "keep": true
-    },
-    {
-      "title": "Dialogflow API | Dialogflow CX | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3beta1-overview",
-      "description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices) · To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when ...",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 67,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
     },
     {
       "title": "Access control | Dialogflow ES | Google Cloud Documentation",
@@ -1157,11 +1472,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1169,7 +1487,7 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Dialogflow ES basics | Google Cloud Documentation",
@@ -1189,11 +1507,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1204,31 +1525,69 @@
       "keep": false
     },
     {
-      "title": "Class Playbook.Instruction (0.94.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow-cx/latest/com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction",
-      "description": "Protobuf type google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction",
-      "rank": 8,
+      "title": "Dialogflow ES setup and cleanup | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/es/docs/quick/setup",
+      "description": "If you plan to use the Dialogflow API, you need to set up authentication. Any client application that uses the API must be authenticated and granted access to the requested resources. This section describes important authentication concepts and provides steps for setting it up.",
+      "rank": 5,
       "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Dialogflow\"",
-        "site:docs.cloud.google.com \"Dialogflow\" \"Java client libraries\""
+        "site:docs.cloud.google.com \"Dialogflow\" \"access control\"",
+        "site:docs.cloud.google.com \"Dialogflow\" IAM roles permissions"
       ],
       "intent_hits": [
-        "java_client"
+        "iam_permissions"
       ],
       "round_hits": [
-        1,
-        2
+        2,
+        3
       ],
-      "best_rank": 3,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Tutorials & samples &nbsp;| Dialogflow ES | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials",
+      "description": "Documentation · AI and ML · Dialogflow · Dialogflow ES · Send feedback · Learn how to deploy an agent on Google Cloud. This tutorial walks through building a flow for collecting long digit and alphanumeric sequences where the user can speak a few characters at a time while the bot confirms.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1253,13 +1612,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1285,13 +1647,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1303,7 +1668,7 @@
       "title": "Class AgentsClient (2.1.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.services.agents.AgentsClient",
       "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflowcx_v3beta1 def sample_create_agent(): # Create a client client = dialogflowcx_v3beta1.AgentsClient() # Initialize request argument(s) agent = dialogflowcx_v3beta1.Agent() agent.start_flow = &quot;start_flow_value&quot; agent.display_name = &quot;display_name_value&quot; agent.default_language_code = &quot;default_language_code_value&quot; agent.time_zone = &quot;time_zone_value&quot; request = dialogflowcx_v3beta1.CreateAgentRequest( parent=&quot;parent_value&quot;, agent=agent, ) # Make the request response = client.create_agent(request=request) # Handle the response print(response)",
-      "rank": 7,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\"",
         "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
@@ -1317,13 +1682,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1349,13 +1717,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1364,35 +1735,71 @@
       "keep": false
     },
     {
-      "title": "Tutorials & samples &nbsp;| Dialogflow ES | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials",
-      "description": "Documentation · AI and ML · Dialogflow · Dialogflow ES · Send feedback · Learn how to deploy an agent on Google Cloud. This tutorial walks through building a flow for collecting long digit and alphanumeric sequences where the user can speak a few characters at a time while the bot confirms.",
-      "rank": 5,
+      "title": "Google Dialogflow | Integration Connectors | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_dialog_flow/configure",
+      "description": "Pre-GA products and features are available &quot;as is&quot; and might have limited support. For more information, see the launch stage descriptions. The Google Dialogflow connector lets you perform the supported operations on Google Dialogflow. Before using the Google Dialogflow connector, do the following tasks: ... Ensure that network connectivity is set up. For information about network patterns, see Network connectivity. Grant the roles/connectors.admin IAM role to the user configuring the connector.",
+      "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Dialogflow\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Dialogflow\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs"
+        "iam_permissions"
       ],
       "round_hits": [
         1,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 52,
-      "deterministic_score": 98,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 98,
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
+        "coverage_value": 2,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class GeneratorEvaluationConfig.InputDataConfig.Builder (4.87.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2.GeneratorEvaluationConfig.InputDataConfig.Builder",
+      "description": ".google.cloud.dialogflow.v2.GeneratorEvaluationConfig.AgentAssistInputDataConfig agent_assist_input_data_config = 6;",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
       "keep": false
     },
     {
@@ -1411,11 +1818,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1441,41 +1851,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class AgentsClient (2.43.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsClient",
-      "description": "See the training documentation &lt;https://cloud.google.com/dialogflow/es/docs/training&gt;__. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_import_agent(): # Create a client client = dialogflow_v2.AgentsClient() # Initi",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1489,7 +1872,7 @@
       "title": "Class EnvironmentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.environments.EnvironmentsClient",
       "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_delete_environment(): # Create a client client = dialogflow_v2.EnvironmentsClient() # Initialize request argument(s) request = dialogflow_v2.DeleteEnvironmentRequest( name=&quot;name_value&quot;, ) # Make the request client.delete_environment(request=request) environment_path(project: str, environment: str) -&gt; str ·",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
       ],
@@ -1499,73 +1882,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class IntentsClient (2.45.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.intents.IntentsClient",
-      "description": "See the training documentation &lt;https://cloud.google.com/dialogflow/es/docs/training&gt;__. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import dialogflow_v2 def sample_batch_update_intents(): # Create a client client = dialogflow_v2.IntentsClient(",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class Intent (2.45.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.types.Intent",
-      "description": "For each agent, you define many intents, where your combined intents can handle a complete conversation. When an end-user writes or says something, referred to as an end-user expression or end-user input, <strong>Dialogflow</strong> matches the end-user input to the best intent in your agent.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1579,7 +1905,7 @@
       "title": "Class StreamingDetectIntentRequest (2.43.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.types.StreamingDetectIntentRequest",
       "description": "<strong>Dialogflow</strong> discards all Speech recognition results in favor of the input text.",
-      "rank": 3,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\""
       ],
@@ -1589,13 +1915,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 3,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1621,16 +1950,85 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Conversational Actions (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+      "url": "https://developers.google.com/assistant/conversational/df-asdk/overview",
+      "description": "In your Actions project, you provide metadata for publishing the project and specify a method of conversation fulfillment. Developers using Dialogflow associate their Dialogflow agent with the project, then build fulfillment through Dialogflow.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Overview (Dialogflow) | Dialogflow and legacy Actions SDK",
+      "url": "https://developers.google.com/assistant/df-asdk/discovery?hl=ru",
+      "description": "Dialogflow and legacy Actions SDK · In order for users to engage with your Action, they need to invoke it. In many cases users will have your specific Action in mind, so they ask the Google Assistant to interface with it. Additionally, as long as you design your Action to accomplish specific, helpful tasks, the Assistant may recommend it to users when it&#x27;s the best available Action for their query.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1651,11 +2049,80 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Overview (Dialogflow) | Actions on Google Interactive Canvas | Google for Developers",
+      "url": "https://developers.google.com/assistant/df-asdk/interactivecanvas",
+      "description": "Actions using Interactive Canvas involve a conversational action (with Dialogflow and fulfillment) and a full-screen web app that communicate using the Interactive Canvas API and HtmlResponse.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" overview OR site:developers.google.com \"dialogflow\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Conversational Actions (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+      "url": "https://developers.google.com/assistant/df-asdk/overview",
+      "description": "Building conversation fulfillment when using Dialogflow primarily consists of developing your Dialogflow fulfillment webhook. In the Actions on Google documentation, you&#x27;ll find resources to help you design, build, and test your Dialogflow fulfillment webhook.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1681,11 +2148,377 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Dialogflow webhook format {:#dialogflow-webhook-format} (Dialogflow) | Dialogflow and legacy Actions SDK | Google for Developers",
+      "url": "https://developers.google.com/assistant/df-asdk/reference/dialogflow-webhook-json",
+      "description": "<strong>The Dialogflow webhook format includes all information from the Actions on Google conversation webhook format plus Dialogflow-specific data like contexts and parameters</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow: Google.Apis.Dialogflow.v2.Data.GoogleCloudDialogflowV2beta1Intent Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/csharp/latest/classGoogle_1_1Apis_1_1Dialogflow_1_1v2_1_1Data_1_1GoogleCloudDialogflowV2beta1Intent.html",
+      "description": "Google.Apis.Dialogflow.v2.Data.GoogleCloudDialogflowV2beta1Intent Class Reference · <strong>Represents an intent</strong>. Intents convert a number of user expressions or patterns into an action. An action is an extraction of a user command or sentence semantics. More... Inheritance diagram for Google.Api...",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow: Google.Apis.Dialogflow.v2.DialogflowService Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/csharp/latest/classGoogle_1_1Apis_1_1Dialogflow_1_1v2_1_1DialogflowService.html",
+      "description": "Google.Apis.Dialogflow.v2.DialogflowService Class Reference",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow: Google.Apis.Dialogflow.v2.Data Namespace Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/csharp/latest/namespaceGoogle_1_1Apis_1_1Dialogflow_1_1v2_1_1Data.html",
+      "description": "Google.Apis.Dialogflow.v2.Data Namespace Reference ·",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "GoogleCloudDialogflowV2InputAudioConfig (Dialogflow API v2 (Rev. 115) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/java/latest/com/google/api/services/dialogflow/v2/model/GoogleCloudDialogflowV2InputAudioConfig.html",
+      "description": "See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics #phrase-hints) for more details. This field is deprecated. Please use [speech_contexts]() instead. If you specify both [phrase_hints]() and [speech_contexts](), Dialogflow will treat the [phrase_hints]() as a single additional [SpeechContext]().",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2/python/latest/dialogflow_v2.projects.agent.html",
+      "description": "Format: `projects/&lt;Project ID&gt;`. (required) languageCode: string, Optional. The language for which you want a validation result. If not specified, the agent&#x27;s default language is used. [Many languages](https://cloud.google.com/dialogflow/docs/reference/language) are supported.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow: Google.Apis.Dialogflow.v2beta1.Data.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/csharp/latest/classGoogle_1_1Apis_1_1Dialogflow_1_1v2beta1_1_1Data_1_1GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio.html",
+      "description": "Google.Apis.Dialogflow.v2beta1.Data.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio Class Reference · Plays audio from a file in Telephony Gateway. More... Inheritance diagram for Google.Apis.Dialogflow.v2beta1.Data.GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio: Plays audio from a file in Telephony Gateway.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" reference OR site:developers.google.com \"dialogflow\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow: Main Page",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/dialogflow/v2beta1/csharp/latest/index.html",
+      "description": "The complete API documentation for using Dialogflow API can be found at <strong>https://cloud.google.com/dialogflow/</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Build a Dialogflow CX add-on that extends Google Chat that understands and responds with natural language | Google Workspace add-ons | Google for Developers",
+      "url": "https://developers.google.com/workspace/add-ons/chat/quickstart-dialogflow-cx",
+      "description": "Dialogflow CX Cloud Logging: Ensure Cloud Logging is enabled in your Dialogflow agent settings to capture detailed execution logs, including errors from the agent and webhook interactions. Learn how to enable and configure this in the Dialogflow CX Agent Settings documentation.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Build a Dialogflow CX Google Chat app that understands and responds with natural language | Google for Developers",
+      "url": "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+      "description": "This page explains how to build a Google Chat app that can both understand and respond with natural language using Dialogflow. This guide uses Dialogflow CX, which has a direct integration with Google Chat.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Dialogflow\" official documentation OR site:developers.google.com \"dialogflow\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "OpenAPI tools | CX Agent Studio | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool/open-api",
+      "description": "Because service accounts are principals, they can access resources in your project by granting it a role, just like you would for any other principal. The service account email will be used to generate an access token which will be sent in the Authorization header of the tool request. The user who is configuring the tool to use service accounts must have the following permissions: ... In order for Dialogflow CX to generate tokens, the Customer Engagement Suite Service agent must have the following permissions:",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dialogflow\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1711,11 +2544,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1741,11 +2577,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1771,11 +2610,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1789,7 +2631,7 @@
       "title": "Dialogflow CX Console overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console",
       "description": "Dialogflow CX provides a web user ... (visit documentation, open console). You use this console to create, build, and test agents. It graphs each flow as a conversational state machine diagram, which makes complex agents easy to design and understand. The Dialogflow CX console is different from the Google Cloud Console (visit ...",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview"
       ],
@@ -1799,13 +2641,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1831,11 +2676,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1861,11 +2709,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1891,11 +2742,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1921,11 +2775,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1939,7 +2796,7 @@
       "title": "Flows | Dialogflow CX | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/flow",
       "description": "Open the Dialogflow CX console. Choose your Google Cloud project. Select your agent. Hover your mouse over the flow in the Flows section. Click the options more_vert button. Select Flow settings. Browse or edit settings. Click Save to save any changes. See the get and patch/update methods for the Flow type. Go to the Flow API reference",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" \"API reference\""
       ],
@@ -1949,13 +2806,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1981,11 +2841,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2011,45 +2874,18 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Webhooks | Dialogflow CX | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/webhook",
-      "description": "Both the permissions need to be granted in the project which contains the service account. If you use authentication headers, basic auth with username and password, or third-party OAuth, you can store the credentials as secrets using Secret Manager. Here are the necessary steps to authenticate your webhook using secrets: Create your secret if you don&#x27;t have one already. Grant Dialogflow Service Agent the Secret Manager Secret Accessor (roles/secretmanager.secretAccessor) role on the new secret.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -2071,11 +2907,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2089,7 +2928,7 @@
       "title": "Manage intents with the API | Conversational Agents | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/cx/docs/how/intent-manage-api",
       "description": "The following examples show how to call the Create method for the Intent type. Go to the Intent API reference · Select a protocol and version for the Intent reference: ... POST https://REGION_ID-dialogflow.googleapis.com/v3/projects/PROJECT_ID/locations/REGION_ID/agents/AGENT_ID/intents",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" \"API reference\""
       ],
@@ -2099,13 +2938,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2131,11 +2973,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2161,11 +3006,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2191,14 +3039,50 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "QueryParameters | Dialogflow CX | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/QueryParameters",
+      "description": "Dialogflow CX · Reference · Send feedback · JSON representation · LatLng · JSON representation · SearchConfig · JSON representation · BoostSpecs · JSON representation · BoostSpec · JSON representation · ConditionBoostSpec · JSON representation ·",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dialogflow\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2221,11 +3105,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2251,11 +3138,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -2269,7 +3159,7 @@
       "title": "Agents | Dialogflow ES | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-overview",
       "description": "A Dialogflow agent is <strong>a virtual agent that handles concurrent conversations with your end-users</strong>. It is a natural language understanding module that understands the nuances of human language.",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview"
       ],
@@ -2279,13 +3169,49 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Events | Dialogflow ES | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/es/docs/events-overview",
+      "description": "Go to the Dialogflow ES console.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2311,11 +3237,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2341,14 +3270,50 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Package google.cloud.dialogflow.v2beta1 | Dialogflow ES | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/es/docs/reference/rpc/google.cloud.dialogflow.v2beta1",
+      "description": "A conversation is an interaction ... and Dialogflow agents, and a support customer. Conversations can include phone calls and text-based chat sessions. Represents a piece of ingested context information. Contents ingested. Represents the format of the ingested string. Represents the mode in which context reference contents are updated. Enumeration of the different conversation stages a conversation can be in. Reference: https://cloud.google.co...",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2359,36 +3324,6 @@
       "title": "API Reference — google-cloud-dialogflow-cx documentation",
       "url": "https://googleapis.dev/python/dialogflow-cx/0.7.1/index.html",
       "description": "Types for Google Cloud <strong>Dialogflow</strong>cx v3beta1 API · For a list of all google-cloud-dialogflow-cx releases: Changelog · 0.7.1 (2021-06-16) Bug Fixes · 0.7.0 (2021-06-16) 0.6.0 (2021-06-07) 0.5.0 (2021-05-28) 0.4.0 (2021-03-05) 0.3.0 (2021-01-29) 0.2.0 (2020-12-07) 0.1.0 (2020-08-24) Google Cloud Client Libraries for google-cloud-dialogflow-cx ·",
-      "rank": 7,
-      "query_hits": [
-        "site:googleapis.dev/python \"Dialogflow\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Python client library | Google Cloud",
-      "url": "https://googleapis.dev/python/dialogflow-cx/latest/dialogflowcx_v3/services.html",
-      "description": "python3 -m venv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate pip install google-cloud-dialogflow-cx",
       "rank": 2,
       "query_hits": [
         "site:googleapis.dev/python \"Dialogflow\""
@@ -2401,13 +3336,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2416,9 +3354,9 @@
       "keep": false
     },
     {
-      "title": "Dialogflow: Python Client — dialogflow 0.6.0 documentation",
-      "url": "https://googleapis.dev/python/dialogflow/0.7.0/index.html",
-      "description": "Dialogflow is <strong>an enterprise-grade NLU platform that makes it easy for developers to design and integrate conversational user interfaces into mobile apps, web applications, devices, and bots</strong>.",
+      "title": "google.cloud.dialogflowcx_v3.services.intents.client — google-cloud-dialogflow-cx documentation",
+      "url": "https://googleapis.dev/python/dialogflow-cx/latest",
+      "description": "You can provide information for the <strong>Dialogflow</strong> API to use to match user input to an intent by adding training phrases (i.e., examples of user input) to your intent. &quot;&quot;&quot; # Create or coerce a protobuf request object. # Quick check: If we got a request object, we should *not* have # gotten any ...",
       "rank": 3,
       "query_hits": [
         "site:googleapis.dev/python \"Dialogflow\""
@@ -2431,25 +3369,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "title": "Fulfillments — google-cloud-dialogflow documentation",
-      "url": "https://googleapis.dev/python/dialogflow/latest/dialogflow_v2/fulfillments.html",
-      "description": "As an alternative, you can provide a more dynamic response by using fulfillment. When you enable fulfillment for an intent, <strong>Dialogflow</strong> responds to that intent by calling a service that you define.",
-      "rank": 4,
+      "title": "google.cloud.dialogflowcx_v3.services.intents.client — google-cloud-dialogflow-cx documentation",
+      "url": "https://googleapis.dev/python/dialogflow-cx/latest/_modules/google/cloud/dialogflowcx_v3/services/intents/client.html",
+      "description": "You can provide information for the <strong>Dialogflow</strong> API to use to match user input to an intent by adding training phrases (i.e., examples of user input) to your intent. &quot;&quot;&quot; # Create or coerce a protobuf request object. # Quick check: If we got a request object, we should *not* have # gotten any ...",
+      "rank": 3,
       "query_hits": [
         "site:googleapis.dev/python \"Dialogflow\""
       ],
@@ -2459,16 +3400,85 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow_v2.gapic.intents_client — dialogflow 0.6.0 documentation",
+      "url": "https://googleapis.dev/python/dialogflow/0.7.0/_modules/dialogflow_v2/gapic/intents_client.html",
+      "description": "When you pass user input to the ``DetectIntent`` (or ``StreamingDetectIntent``) method, the <strong>Dialogflow</strong> API analyzes the input and searches for a matching intent. If no match is found, the <strong>Dialogflow</strong> API returns a fallback intent (``is_fallback`` = true). You can provide additional information ...",
+      "rank": 6,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Client for Dialogflow API — dialogflow 0.6.0 documentation",
+      "url": "https://googleapis.dev/python/dialogflow/0.7.2/gapic/v2/api.html",
+      "description": "<strong>Dialogflow</strong> provides several prebuilt agents for common conversation scenarios such as determining a date and time, converting currency, and so on.",
+      "rank": 7,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2477,7 +3487,7 @@
     },
     {
       "title": "Python Client for Dialogflow | Python client libraries | Google Cloud Documentation",
-      "url": "https://googleapis.dev/python/dialogflow/latest/index.html",
+      "url": "https://googleapis.dev/python/dialogflow/latest",
       "description": "Dialogflow: is <strong>an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices</strong>.",
       "rank": 1,
       "query_hits": [
@@ -2491,14 +3501,182 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "dialogflow_v2.gapic.sessions_client — dialogflow 0.6.0 documentation",
+      "url": "https://googleapis.dev/python/dialogflow/latest/_modules/dialogflow_v2/gapic/sessions_client.html",
+      "description": "You retrieve user input and pass it to the ``DetectIntent`` (or ``StreamingDetectIntent``) method to determine user intent and respond. &quot;&quot;&quot; SERVICE_ADDRESS = &quot;dialogflow.googleapis.com:443&quot; &quot;&quot;&quot;The default address of the service.&quot;&quot;&quot; # The name of the interface for this client.",
+      "rank": 8,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "google.cloud.dialogflow_v2.types.audio_config — google-cloud-dialogflow documentation",
+      "url": "https://googleapis.dev/python/dialogflow/latest/_modules/google/cloud/dialogflow_v2/types/audio_config.html",
+      "description": "<strong>A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood</strong>. This list can be used to: - improve accuracy for words and phrases you expect the user to say, e.g. typical commands for your Dialogflow agent - add additional words to the speech ...",
+      "rank": 4,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "google.cloud.dialogflow_v2.types.entity_type — google-cloud-dialogflow documentation",
+      "url": "https://googleapis.dev/python/dialogflow/latest/_modules/google/cloud/dialogflow_v2/types/entity_type.html",
+      "description": "[docs]class EntityType(proto.Message): r&quot;&quot;&quot;Each intent parameter has a type, called the entity type, which dictates exactly how data from an end-user expression is extracted. <strong>Dialogflow</strong> provides predefined system entities that can match many common types of data.",
+      "rank": 5,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Dialogflow | Python client libraries | Google Cloud Documentation",
+      "url": "https://googleapis.dev/python/dialogflow/latest/dialogflow_v2/intents.html",
+      "description": "Dialogflow: is <strong>an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Playbook.Instruction (0.94.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow-cx/latest/com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction",
+      "description": "Protobuf type google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction · Object &gt; AbstractMessageLite&lt;MessageType,BuilderType&gt; &gt; AbstractMessage &gt; GeneratedMessage &gt; Playbook.Instruction ... com.google.protobuf.GeneratedMessage.&lt;ContainingT,T&gt;newFileScopedGeneratedExtension(java.lang.Class&lt;?&gt;,com.google.protobuf.Message)",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dialogflow\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2521,13 +3699,49 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Tool.Authentication.ServiceAccountAuthConfig.Builder (0.92.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow-cx/latest/com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig.Builder",
+      "description": "Required. The email address of the service account used to authenticate the tool call. <strong>Dialogflow</strong> uses this service account to exchange an access token and the access token is then sent in the Authorization header of the tool request.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Dialogflow\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2539,7 +3753,7 @@
       "title": "Package flows (2.1.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.services.flows",
       "description": "API documentation for dialogflowcx_v3beta1.services.flows.pagers module.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" \"Python client libraries\""
       ],
@@ -2549,15 +3763,18 @@
       "round_hits": [
         2
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2581,13 +3798,16 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2599,66 +3819,6 @@
       "title": "Build conversational agents with Application Integration | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/application-integration/docs/conversational-agents",
       "description": "Service account: Choose a service ... roles and permissions for the agent&#x27;s resource access. If missing, you will be prompted to Grant them. Click View spec to review the generated specification for the selected triggers. You can optionally edit the specification before saving. Click Save. A message appears indicating that the tool is created successfully. Click View to open the agent in the Dialogflow CX ...",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "QueryParameters | Dialogflow CX | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/QueryParameters",
-      "description": "Dialogflow CX · Reference · Send feedback · JSON representation · LatLng · JSON representation · SearchConfig · JSON representation · BoostSpecs · JSON representation · BoostSpec · JSON representation · ConditionBoostSpec · JSON representation ·",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dialogflow\" \"reference/rest\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 89,
-      "keep": false
-    },
-    {
-      "title": "Google Dialogflow | Integration Connectors | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/gsc_google_dialog_flow/configure",
-      "description": "Pre-GA products and features are available &quot;as is&quot; and might have limited support. For more information, see the launch stage descriptions. The Google Dialogflow connector lets you perform the supported operations on Google Dialogflow. Before using the Google Dialogflow connector, do the following tasks: ... Ensure that network connectivity is set up. For information about network patterns, see Network connectivity. Grant the roles/connectors.admin IAM role to the user configuring the connector.",
       "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Dialogflow\" \"roles and permissions\""
@@ -2671,168 +3831,54 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 98,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
-        "score": 98,
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 88,
+      "final_score": 90,
       "keep": false
     },
     {
-      "title": "google.cloud.dialogflowcx_v3.services.intents.client — google-cloud-dialogflow-cx documentation",
-      "url": "https://googleapis.dev/python/dialogflow-cx/latest/_modules/google/cloud/dialogflowcx_v3/services/intents/client.html",
-      "description": "You can provide information for the <strong>Dialogflow</strong> API to use to match user input to an intent by adding training phrases (i.e., examples of user input) to your intent. &quot;&quot;&quot; # Create or coerce a protobuf request object. # Quick check: If we got a request object, we should *not* have # gotten any ...",
+      "title": "Dialogflow API v2 - Package cloud.google.com/go/dialogflow/apiv2 (v1.78.0) | Go client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/dialogflow/latest/apiv2",
+      "description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices). For information that is relevant for all client libraries please reference <strong>https://pkg.go.dev/cloud.google.com/go#pkg-overview</strong>.",
       "rank": 8,
       "query_hits": [
-        "site:googleapis.dev/python \"Dialogflow\""
+        "site:docs.cloud.google.com \"Dialogflow\" Google Cloud documentation"
       ],
       "intent_hits": [
-        "python_client"
+        "product_docs"
       ],
       "round_hits": [
-        3
+        1
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 97,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 97,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 87,
-      "keep": false
-    },
-    {
-      "title": "Package types (2.1.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow-cx/latest/google.cloud.dialogflowcx_v3beta1.types",
-      "description": "Conversations always start with the built-in Start Flow (with an all-0 ID). Transition routes can direct the conversation session from the current flow (parent flow) to another flow (sub flow). When the sub flow is finished, <strong>Dialogflow</strong> will bring the session back to the parent flow, where the sub flow is started.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dialogflow\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 93,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 93,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 84,
-      "keep": false
-    },
-    {
-      "title": "Class Tool.Authentication.ServiceAccountAuthConfig.Builder (0.92.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow-cx/latest/com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig.Builder",
-      "description": "Required. The email address of the service account used to authenticate the tool call. <strong>Dialogflow</strong> uses this service account to exchange an access token and the access token is then sent in the Authorization header of the tool request.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Dialogflow\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 92,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 92,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 83,
-      "keep": false
-    },
-    {
-      "title": "google.cloud.dialogflowcx_v3.types.intent — google-cloud-dialogflow-cx documentation",
-      "url": "https://googleapis.dev/python/dialogflow-cx/latest/_modules/google/cloud/dialogflowcx_v3/types/intent.html",
-      "description": "Currently allowed <strong>Dialogflow</strong> defined labels include: - sys-head - sys-contextual The above labels do not require value. &quot;sys-head&quot; means the intent is a head intent. &quot;sys.contextual&quot; means the intent is a contextual intent. description (str): Human readable description for better understanding ...",
-      "rank": 5,
-      "query_hits": [
-        "site:googleapis.dev/python \"Dialogflow\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 80,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 80,
-        "parent_page_likelihood": 4,
-        "product_match": 4,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 73,
-      "keep": false
-    },
-    {
-      "title": "google.cloud.dialogflow_v2.types.context — google-cloud-dialogflow documentation",
-      "url": "https://googleapis.dev/python/dialogflow/2.0.0/_modules/google/cloud/dialogflow_v2/types/context.html",
-      "description": "You can configure contexts for an intent by setting input and output contexts, which are identified by string names. When an intent is matched, any configured output contexts for that intent become active. While any contexts are active, <strong>Dialogflow</strong> is more likely to match intents that are configured ...",
-      "rank": 6,
-      "query_hits": [
-        "site:googleapis.dev/python \"Dialogflow\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 77,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 77,
-        "parent_page_likelihood": 4,
-        "product_match": 4,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 70,
+      "final_score": 90,
       "keep": false
     },
     {
@@ -2856,6 +3902,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 54,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 1,
         "coverage_value": 2,

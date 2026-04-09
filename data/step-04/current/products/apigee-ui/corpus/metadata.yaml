@@ -1,22 +1,51 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:22:35+00:00'
-updated_at: '2026-04-08T05:44:47+00:00'
+updated_at: '2026-04-09T17:08:28+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
   export: know export --key corpus
 sources:
 - type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview
+  created_at: '2026-04-09T17:04:07+00:00'
+  updated_at: '2026-04-09T17:05:51+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-09T17:05:51+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users
+  created_at: '2026-04-09T17:04:07+00:00'
+  updated_at: '2026-04-09T17:07:11+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T17:07:11+00:00'
+- type: site
   id: site-iam-reference
-  title: https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/spaces/spaces-roles-permissions
-  created_at: '2026-04-08T05:44:47+00:00'
-  updated_at: '2026-04-08T05:44:47+00:00'
-  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/spaces/spaces-roles-permissions
+  title: https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles
+  created_at: '2026-04-09T17:04:08+00:00'
+  updated_at: '2026-04-09T17:08:28+00:00'
+  update_command: know sync site https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
-    url: https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/spaces/spaces-roles-permissions
+    url: https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-09T17:08:28+00:00'

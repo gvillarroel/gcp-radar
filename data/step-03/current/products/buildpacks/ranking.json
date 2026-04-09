@@ -1,16 +1,17 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:35:44.661Z",
+  "generated_at": "2026-04-09T00:38:30.642Z",
   "product_name": "Buildpacks",
   "product_slug": "buildpacks",
-  "step02_source_path": "data/step-02/current/products/buildpacks.md",
+  "step02_source_path": "data/step-02/current/buildpacks.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "run",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 16,
+  "candidates_scored_by_api": 18,
   "search_runs": [
     {
       "round": 1,
@@ -18,6 +19,57 @@
       "query": "site:docs.cloud.google.com \"Buildpacks\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "buildpacks_docs",
+      "query": "site:docs.cloud.google.com/docs/buildpacks \"Google Cloud Buildpacks\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Buildpacks\" official documentation OR site:developers.google.com \"buildpacks\" official documentation",
+      "official_result_count": 6,
+      "results": [
+        {
+          "title": "Hello Cloud Run with Python (FastAPI) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-fastapi",
+          "description": "Building using Buildpacks and deploying container ... * Building and deploying new service... Building Container. OK Creating Container Repository... OK Uploading sources... * Building Container...",
+          "rank": 1
+        },
+        {
+          "title": "Module 5: Migrate from Google App Engine to Cloud Run with Cloud Buildpacks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-gae-python-migrate-5-runbldpks",
+          "description": "Learn how to containerize and migrate a simple App Engine app to Cloud Run using Cloud Buildpacks.",
+          "rank": 2
+        },
+        {
+          "title": "Migrating from Google App Engine Java app to Cloud Run with Buildpacks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/cloud-gae-java-migrate-buildpacks",
+          "description": "This tutorial teaches you how to containerize an App Engine app for deploying to the Cloud Run fully-managed service by using Buildpacks.",
+          "rank": 3
+        },
+        {
+          "title": "Troubleshooting | Tools for Web Developers | Google Developers",
+          "url": "https://developers.google.com/web/tools/puppeteer/troubleshooting?hl=zh-CN",
+          "description": "Running Puppeteer on Heroku requires some additional dependencies that aren&#x27;t included on the Linux box that Heroku spins up for you. To add the dependencies on deploy, add the Puppeteer Heroku buildpack to the list of buildpacks for your app under Settings &gt; Buildpacks.",
+          "rank": 4
+        },
+        {
+          "title": "Hello Cloud Run with Python (Streamlit) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-streamlit",
+          "description": "<strong>Cloud Build uses Buildpacks which automatically detects the language of your source code and creates a container image based on the latest stable version of the Python interpreter</strong> (Python 3.13 at the time of writing). If needed, you can pin the build to a specific version by including a ...",
+          "rank": 5
+        },
+        {
+          "title": "Hello Cloud Run with Python (Gradio) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-gradio",
+          "description": "Building using Buildpacks and deploying container ... * Building and deploying new service... Building Container. OK Creating Container Repository... OK Uploading sources... * Building Container...",
+          "rank": 6
+        }
+      ]
     },
     {
       "round": 1,
@@ -67,7 +119,7 @@
         {
           "title": "Google Cloud's buildpacks | Buildpacks | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/docs/buildpacks/overview",
-          "description": "<strong>Buildpacks are grouped together into collections called builders that can analyze project source code, create a build plan, and generate a container image that is ready for deployment</strong>.",
+          "description": "Buildpacks are <strong>grouped together into collections called builders that can analyze project source code, create a build plan, and generate a container image that is ready for deployment</strong>.",
           "rank": 1
         },
         {
@@ -103,13 +155,13 @@
         {
           "title": "Use a specific builder | Buildpacks | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/docs/buildpacks/use-a-specific-builder",
-          "description": "To learn more about the pack command, see the CLI documentation · You can use a buildpacks project descriptor (project.toml) to set the builder when building with pack · In your application root directory, create a file named project.toml with the following configuration: ... SERVICE_IMAGE_NAME: the name that you choose for your application image. You can use a specific builder with Cloud ...",
+          "description": "To learn more about the pack command, see the CLI documentation · You can use a buildpacks project descriptor (project.toml) to set the builder when building with pack · In your application root directory, create a file named project.toml with the following configuration: ... SERVICE_IMAGE_NAME: the name that you choose for your application image. You can use a specific builder with Cloud Build by appending the --pack flag when you submit your project.",
           "rank": 7
         },
         {
-          "title": "Buildpacks release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/docs/buildpacks/release-notes",
-          "description": "This page documents production updates to Buildpacks. Check this page for announcements about new or updated features, bug fixes, known issues, and deprecated functionality. You can see the latest product updates for all of Google Cloud on the Google Cloud page, browse and filter all release notes in the Google Cloud console, or programmatically access release notes in BigQuery.",
+          "title": "Configure your build and run images | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/build-run-image",
+          "description": "Buildpacks uses a default builder, which consists of all the components necessary to execute a build of your service including both a build and run image:",
           "rank": 8
         }
       ]
@@ -127,6 +179,118 @@
       "query": "site:docs.cloud.google.com \"Buildpacks\" \"APIs and reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 2,
+      "intent": "buildpacks_docs",
+      "query": "site:docs.cloud.google.com/docs/buildpacks overview builders",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Google Cloud's buildpacks | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/overview",
+          "description": "<strong>A buildpack is typically responsible for a language component, toolchain, or app component; such as Python, pip, or a web server. Buildpacks are grouped together into collections called builders that can analyze project source code, create a build plan, and generate a container image that is</strong> ...",
+          "rank": 1
+        },
+        {
+          "title": "Use a specific builder | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/use-a-specific-builder",
+          "description": "Builders are <strong>versioned images that contain all the components necessary to create a runnable container</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Builders | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/builders",
+          "description": "Buildpacks has a default generic builder that creates container images designed to run on Google Cloud services, including but not limited to: Google Kubernetes Engine, GKE Enterprise, Cloud Run, App Engine, and Cloud Run functions.",
+          "rank": 3
+        },
+        {
+          "title": "Google Cloud's buildpacks support policy | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/support-policy",
+          "description": "The Google Cloud&#x27;s buildpacks use open source components that are maintained by their respective communities. Google Cloud&#x27;s buildpacks publishes builders that contain necessary components to build and run an application or function.",
+          "rank": 4
+        },
+        {
+          "title": "Buildpacks release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/release-notes",
+          "description": "Starting June 5, 2023, the default generic builder will begin using the Ubuntu 22 LTS base image. This means that builds using gcr.io/buildpacks/builder:latest will get the google-22 builder which addresses multiple security issues.",
+          "rank": 5
+        },
+        {
+          "title": "Configure your build and run images | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/build-run-image?hl=de",
+          "description": "Buildpacks use a builder image to construct your service into a container image. When the build process is complete, your application or function is inserted into a run image.",
+          "rank": 6
+        },
+        {
+          "title": "Build an application with buildpacks | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/build-application",
+          "description": "You use the pack build command and specify the default builder --builder=gcr.io/buildpacks/builder to build your container images locally.",
+          "rank": 7
+        },
+        {
+          "title": "Set environment variables to configure builds | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+          "description": "pack build my-app \\ --builder gcr.io/buildpacks/builder:v1 \\ --env GOOGLE_ENTRYPOINT=&quot;gunicorn -p :8080 main:app&quot; --env MY-LOCAL-ENV-VARIABLE",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Buildpacks\" reference OR site:developers.google.com \"buildpacks\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Hello Cloud Run with Python (FastAPI) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-fastapi",
+          "description": "To use Buildpacks with an ASGI web server like uvicorn which FastAPI requires, the presence of uvicorn must be in the requirements.txt file.",
+          "rank": 1
+        },
+        {
+          "title": "Module 5: Migrate from Google App Engine to Cloud Run with Cloud Buildpacks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-gae-python-migrate-5-runbldpks",
+          "description": "The migration steps include replacing the App Engine configuration files and specifying how your app should start. Below is a table summarizing the configuration files to expect for each platform type. Compare the App Engine column with the Buildpacks column (and optionally Docker):",
+          "rank": 2
+        },
+        {
+          "title": "Migrating from Google App Engine Java app to Cloud Run with Buildpacks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/cloud-gae-java-migrate-buildpacks",
+          "description": "Learn how to convert a simple Java App Engine app, containerize it with Buildpacks, and move it to Cloud Run",
+          "rank": 3
+        },
+        {
+          "title": "Deploy a basic \"Google Translate\" app on Python 3 Cloud Run (Cloud Buildpacks) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-nebulous-serverless-python-gcrbp?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F",
+          "description": "Cloud Buildpacks handles this problem by inspecting your code to learn what language you&#x27;re using and what packages are required, and then it builds the most efficient container it can.",
+          "rank": 4
+        },
+        {
+          "title": "Hello Cloud Run with Python | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-hello-python3?hl=en&amp=&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F%3Fcat%3Dcloud",
+          "description": "Cloud Build uses Buildpacks which <strong>automatically detects the language of your source code and creates a container image based on the latest stable version of the Python interpreter</strong> (Python 3.11 at the time of writing). If needed, you can pin the build to a specific version by including a ...",
+          "rank": 5
+        },
+        {
+          "title": "Troubleshooting | Tools for Web Developers | Google Developers",
+          "url": "https://developers.google.com/web/tools/puppeteer/troubleshooting?hl=hi",
+          "description": "Running Puppeteer on Heroku requires some additional dependencies that aren&#x27;t included on the Linux box that Heroku spins up for you. To add the dependencies on deploy, add the Puppeteer Heroku buildpack to the list of buildpacks for your app under Settings &gt; Buildpacks.",
+          "rank": 6
+        },
+        {
+          "title": "Hello Cloud Run with Python (Gradio) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-gradio",
+          "description": "Cloud Build uses Buildpacks which <strong>automatically detects the language of your source code and creates a container image based on the latest stable version of the Python interpreter</strong> (Python 3.13 at the time of writing).",
+          "rank": 7
+        },
+        {
+          "title": "Module 4: Migrate from Google App Engine to Cloud Run with Docker | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-gae-python-migrate-4-rundocker?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F",
+          "description": "One challenge in using it, as mentioned earlier, is that it requires effort to curate an efficient Dockerfile, the configuration file that determines how your container images are built. Buildpacks, on the other hand, require little effort since it uses introspection to determine your app&#x27;s dependencies, making the Buildpacks container as efficient as possible for your app.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 2,
@@ -191,9 +355,9 @@
           "rank": 7
         },
         {
-          "title": "Buildpacks release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/docs/buildpacks/release-notes",
-          "description": "This page documents production updates to Buildpacks. Check this page for announcements about new or updated features, bug fixes, known issues, and deprecated functionality. You can see the latest product updates for all of Google Cloud on the Google Cloud page, browse and filter all release ...",
+          "title": "Configure your build and run images | Buildpacks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/buildpacks/build-run-image",
+          "description": "Docker is used by pack as an OCI image builder. Install Pack CLI. Install the Git source control tool to fetch the sample application from GitHub. Buildpacks <strong>use a builder image to construct your service into a container image</strong>.",
           "rank": 8
         }
       ]
@@ -211,6 +375,69 @@
       "query": "site:docs.cloud.google.com \"Buildpacks\" \"API reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 3,
+      "intent": "buildpacks_docs",
+      "query": "site:docs.cloud.google.com/docs/buildpacks \"build-application\" OR \"use-a-specific-builder\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Buildpacks\" overview OR site:developers.google.com \"buildpacks\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Hello Cloud Run with Python (FastAPI) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-fastapi",
+          "description": "Cloud Build uses Buildpacks which automatically detects the language of your source code and creates a container image based on the latest stable version of the Python interpreter (Python 3.13 at the time of writing).",
+          "rank": 1
+        },
+        {
+          "title": "Skaffold Deep Dive | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/skaffold-deep-dive?hl=pt_br",
+          "description": "Buildpacks are <strong>an easy way to have a streamlined image build without having a Dockerfile straight from source code</strong>. It will detect the type of app you have and how to process the dependencies for the language or framework being used.",
+          "rank": 2
+        },
+        {
+          "title": "Module 5: Migrate from Google App Engine to Cloud Run with Cloud Buildpacks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-gae-python-migrate-5-runbldpks",
+          "description": "One challenge in using it, as mentioned earlier, is that it requires effort to curate an efficient Dockerfile, the configuration file that determines how your container images are built. Buildpacks, on the other hand, require little effort since it uses introspection to determine your app&#x27;s dependencies, making the Buildpacks container as efficient as possible for your app.",
+          "rank": 3
+        },
+        {
+          "title": "Migrating from Google App Engine Java app to Cloud Run with Buildpacks | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/cloud-gae-java-migrate-buildpacks",
+          "description": "Buildpacks are <strong>a CNCF project that allow you to take your app directly from source code to highly portable images that can run on any cloud</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Deploy a basic \"Google Translate\" app on Python 3 Cloud Run (Cloud Buildpacks) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-nebulous-serverless-python-gcrbp?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F",
+          "description": "Cloud Buildpacks handles this problem by inspecting your code to learn what language you&#x27;re using and what packages are required, and then it builds the most efficient container it can.",
+          "rank": 5
+        },
+        {
+          "title": "Hello Cloud Run with Python | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-hello-python3?hl=en&amp=&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F%3Fcat%3Dcloud",
+          "description": "Cloud Build uses Buildpacks which automatically detects the language of your source code and creates a container image based on the latest stable version of the Python interpreter (Python 3.11 at the time of writing). If needed, you can pin the build to a specific version by including a .python-version file in your source directory.",
+          "rank": 6
+        },
+        {
+          "title": "สวัสดี Cloud Run ด้วย Python (Gradio)",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-gradio",
+          "description": "Cloud Build uses Buildpacks which automatically detects the language of your source code and creates a container image based on the latest stable version of the Python interpreter (Python 3.13 at the time of writing).",
+          "rank": 7
+        },
+        {
+          "title": "Module 4: Migrate from Google App Engine to Cloud Run with Docker | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-gae-python-migrate-4-rundocker?hl=en&continue=https%3A%2F%2Fcodelabs.developers.google.com%2F",
+          "description": "One challenge in using it, as mentioned earlier, is that it requires effort to curate an efficient Dockerfile, the configuration file that determines how your container images are built. Buildpacks, on the other hand, require little effort since it uses introspection to determine your app&#x27;s dependencies, making the Buildpacks container as efficient as possible for your app.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 3,
@@ -323,359 +550,315 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/docs/buildpacks",
       "title": "Buildpacks documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks",
       "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Find samples to build your functions and applications with buildpacks.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/build-application",
       "title": "Build an application with buildpacks | Buildpacks | Google Cloud Documentation",
-      "description": "There are two methods for building container images with buildpacks: Build locally with the pack CLI to locally test your application and rapidly prototype changes before deployment. Build remotely with Cloud Build. Building with Cloud Build is useful for large applications that have a resource-intensive build processes and can also help protect your software supply chain. You use the pack CLI to locally build your application into a container image. Install Docker ...",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/build-application",
+      "description": "This guide shows you how to use buildpacks with your application source code to create a container image. For example, use buildpacks to build the source code of your Cloud Run service into a container image.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/docs/buildpacks overview builders",
+        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs",
+        "buildpacks_docs",
         "iam_permissions"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/builders",
-      "title": "Builders | Buildpacks | Google Cloud Documentation",
-      "description": "<strong>Buildpacks has a default generic builder that creates container images designed to run on Google Cloud services</strong>, including but not limited to: Google Kubernetes Engine, GKE Enterprise, Cloud Run, App Engine, and Cloud Run functions.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        1,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 100,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
-      "title": "Building a Node.js application | Buildpacks | Google Cloud Documentation",
-      "description": "An Artifact Registry Node.js package repository can host private modules for your function. When you deploy a Buildpacks function, the build process automatically generates Artifact Registry credentials for the Cloud Build service account. You only need to list the Artifact Registry repository in your .npmrc file when using NPM or Yarn version 1.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        1,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 100,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/overview",
-      "title": "Google Cloud's buildpacks | Buildpacks | Google Cloud Documentation",
-      "description": "<strong>Buildpacks are grouped together into collections called builders that can analyze project source code, create a build plan, and generate a container image that is ready for deployment</strong>.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        1,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/python?hl=en",
-      "title": "Build a Python application | Buildpacks | Google Cloud Documentation",
-      "description": "Python buildpacks support projects you configure with the pyproject.toml file. <strong>This feature lets you deploy applications you manage with Poetry, uv, or pip, directly to Cloud Run and Cloud Run</strong> ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        1,
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 100,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/use-a-specific-builder",
-      "title": "Use a specific builder | Buildpacks | Google Cloud Documentation",
-      "description": "To learn more about the pack command, see the CLI documentation · You can use a buildpacks project descriptor (project.toml) to set the builder when building with pack · In your application root directory, create a file named project.toml with the following configuration: ... SERVICE_IMAGE_NAME: the name that you choose for your application image. You can use a specific builder with Cloud ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2,
-        1,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 100,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/configuring/services/automatic-base-image-updates",
-      "title": "Configure automatic base image updates | Cloud Run | Google Cloud Documentation",
-      "description": "A base image is the starting point for most container-based development workflows. Developers start with a base image and layer on top of it the necessary libraries, binaries, and configuration files used to run their application. Google Cloud&#x27;s buildpacks publishes and maintains base images for building Serverless applications.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/deploying-source-code",
-      "title": "Deploy services from source code | Cloud Run | Google Cloud Documentation",
-      "description": "If your Cloud Run service interfaces ... information about granting roles, see deployment permissions and manage access. In addition to sources with a Dockerfile, deploying from source supports the following languages using Google Cloud&#x27;s buildpacks:...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/deploying-source-code?hl=en",
-      "title": "Deploy services from source code | Cloud Run | Google Cloud Documentation",
-      "description": "For a list of IAM roles and permissions ... Run IAM permissions. If your Cloud Run service interfaces with Google Cloud APIs, such as Cloud Client Libraries, see the service identity configuration guide. For more information about granting roles, see deployment permissions and manage access. In addition to sources with a Dockerfile, deploying from source supports the following languages using Google Cloud&#x27;s buildpacks...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code?authuser=6",
-      "title": "Deploy worker pools from source code | Cloud Run | Google Cloud Documentation",
-      "description": "If no Dockerfile is present in the source code directory, Google Cloud&#x27;s buildpacks automatically detects the language you are using and fetches the dependencies of the code to make a production-ready container image, using a secure base image managed by Google. Make sure you have set up a new project for Cloud Run as described in the setup page. Enable the Cloud Run Admin API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 100,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/base-images",
+      "title": "Builders | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/builders",
+      "description": "<strong>Buildpacks has a default generic builder that creates container images designed to run on Google Cloud services</strong>, including but not limited to: Google Kubernetes Engine, GKE Enterprise, Cloud Run, App Engine, and Cloud Run functions.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/docs/buildpacks overview builders",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "buildpacks_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Building a Node.js application | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+      "description": "The specific library we use for the Node.js buildpacks is Masterminds/semver · Avoid using greater than (&gt;) specifiers in the engines.node field. When deploying the application into App Engine standard environment, the engines.node property should be compatible with the runtime specified in app.yaml. For more information about the engines.node configuration option in package.json file, see the official NPM documentation for the engines topic. When deploying a function onto Cloud Run functions, the engines.node property should be compatible with the runtime used to deploy your function",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Cloud's buildpacks | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/overview",
+      "description": "Buildpacks are <strong>grouped together into collections called builders that can analyze project source code, create a build plan, and generate a container image that is ready for deployment</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/docs/buildpacks overview builders",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "buildpacks_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Build a Python application | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/python?hl=en",
+      "description": "See pip documentation. Example: PIP_DEFAULT_TIMEOUT=60 sets --default-timeout=60 for pip commands. Python buildpacks support projects you configure with the pyproject.toml file. This feature lets you deploy applications you manage with Poetry, uv, or pip, directly to Cloud Run and Cloud Run ...",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 100,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Use a specific builder | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/use-a-specific-builder",
+      "description": "To learn more about the pack command, see the CLI documentation · You can use a buildpacks project descriptor (project.toml) to set the builder when building with pack · In your application root directory, create a file named project.toml with the following configuration: ... SERVICE_IMAGE_NAME: the name that you choose for your application image. You can use a specific builder with Cloud Build by appending the --pack flag when you submit your project.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/docs/buildpacks overview builders",
+        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "buildpacks_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Configure your build and run images | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/build-run-image",
+      "description": "Buildpacks uses a default builder, which consists of all the components necessary to execute a build of your service including both a build and run image:",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Base images | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/base-images",
       "description": "Developers start with a base image ... their application. Google Cloud&#x27;s buildpacks <strong>publishes base images with multiple configurations of the available system packages and languages</strong>....",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
       ],
@@ -687,24 +870,28 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/build-function",
       "title": "Build a function with buildpacks | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/build-function",
       "description": "This guide shows you how to use buildpacks with your function source code to create a container image. For example, use buildpacks to build a Cloud Run function that you want to deploy on Cloud Run.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Buildpacks\" Google Cloud introduction reference"
       ],
@@ -716,24 +903,292 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code",
+      "title": "Configure your build and run images | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/build-run-image?hl=de",
+      "description": "Buildpacks use a builder image to construct your service into a container image. When the build process is complete, your application or function is inserted into a run image.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/docs/buildpacks overview builders"
+      ],
+      "intent_hits": [
+        "buildpacks_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Buildpacks release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/release-notes",
+      "description": "Starting June 5, 2023, the default generic builder will begin using the Ubuntu 22 LTS base image. This means that builds using gcr.io/buildpacks/builder:latest will get the google-22 builder which addresses multiple security issues.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/docs/buildpacks overview builders"
+      ],
+      "intent_hits": [
+        "buildpacks_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Set environment variables to configure builds | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+      "description": "pack build my-app \\ --builder gcr.io/buildpacks/builder:v1 \\ --env GOOGLE_ENTRYPOINT=&quot;gunicorn -p :8080 main:app&quot; --env MY-LOCAL-ENV-VARIABLE",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/docs/buildpacks overview builders"
+      ],
+      "intent_hits": [
+        "buildpacks_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google Cloud's buildpacks support policy | Buildpacks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/buildpacks/support-policy",
+      "description": "The Google Cloud&#x27;s buildpacks use open source components that are maintained by their respective communities. Google Cloud&#x27;s buildpacks publishes builders that contain necessary components to build and run an application or function.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/docs/buildpacks overview builders"
+      ],
+      "intent_hits": [
+        "buildpacks_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Troubleshooting | Tools for Web Developers | Google Developers",
+      "url": "https://developers.google.com/web/tools/puppeteer/troubleshooting?hl=hi",
+      "description": "Running Puppeteer on Heroku requires some additional dependencies that aren&#x27;t included on the Linux box that Heroku spins up for you. To add the dependencies on deploy, add the Puppeteer Heroku buildpack to the list of buildpacks for your app under Settings &gt; Buildpacks.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Buildpacks\" reference OR site:developers.google.com \"buildpacks\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Troubleshooting | Tools for Web Developers | Google Developers",
+      "url": "https://developers.google.com/web/tools/puppeteer/troubleshooting?hl=zh-CN",
+      "description": "Running Puppeteer on Heroku requires some additional dependencies that aren&#x27;t included on the Linux box that Heroku spins up for you. To add the dependencies on deploy, add the Puppeteer Heroku buildpack to the list of buildpacks for your app under Settings &gt; Buildpacks.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Buildpacks\" official documentation OR site:developers.google.com \"buildpacks\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Deploy services from source code | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/deploying-source-code?hl=en",
+      "description": "For a list of IAM roles and permissions ... Run IAM permissions. If your Cloud Run service interfaces with Google Cloud APIs, such as Cloud Client Libraries, see the service identity configuration guide. For more information about granting roles, see deployment permissions and manage access. In addition to sources with a Dockerfile, deploying from source supports the following languages using Google Cloud&#x27;s buildpacks...",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 2,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 1,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Deploy worker pools from source code | Cloud Run | Google Cloud Documentation",
-      "description": "You or your administrator must grant the deployer account and the Cloud Build service account the following IAM roles. To get the permissions that you need to build and deploy from source, ask your administrator to grant you the following IAM roles:",
+      "url": "https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code?authuser=6",
+      "description": "If no Dockerfile is present in the source code directory, Google Cloud&#x27;s buildpacks automatically detects the language you are using and fetches the dependencies of the code to make a production-ready container image, using a secure base image managed by Google. Make sure you have set up a new project for Cloud Run as described in the setup page. Enable the Cloud Run Admin API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 2,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 1,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Deploy services from source code | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/deploying-source-code",
+      "description": "If your Cloud Run service interfaces ... information about granting roles, see deployment permissions and manage access. In addition to sources with a Dockerfile, deploying from source supports the following languages using Google Cloud&#x27;s buildpacks:...",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Buildpacks\" \"roles and permissions\""
       ],
@@ -743,26 +1198,63 @@
       "round_hits": [
         1
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 22,
-      "deterministic_score": 91,
+      "product_fit_score": 2,
+      "deterministic_score": 90,
       "api_score": {
-        "classification": "iam_reference",
-        "score": 91,
+        "classification": "irrelevant",
+        "score": 90,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 1,
         "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 85,
-      "keep": true
+      "final_score": 81,
+      "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/run/docs/configuring/services/build-environment-variables",
+      "title": "Configure automatic base image updates | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/services/automatic-base-image-updates",
+      "description": "A base image is the starting point for most container-based development workflows. Developers start with a base image and layer on top of it the necessary libraries, binaries, and configuration files used to run their application. Google Cloud&#x27;s buildpacks publishes and maintains base images for building Serverless applications.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Buildpacks\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 2,
+      "deterministic_score": 81,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 81,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 1,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 74,
+      "keep": false
+    },
+    {
       "title": "Set build environment variables (source deploy) | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/services/build-environment-variables",
       "description": "If you disable the automatic role grant, you must decide which roles to grant to the default service accounts, and then grant these roles yourself. If the default service account already has the Editor role, we recommend that you replace the Editor role with less permissive roles.To safely modify the service account&#x27;s roles, use Policy Simulator to see the impact of the change, and then grant and revoke the appropriate roles.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Buildpacks\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Buildpacks\" IAM roles permissions"
@@ -776,49 +1268,54 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 22,
-      "deterministic_score": 84,
+      "product_fit_score": -98,
+      "deterministic_score": 0,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 84,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 82,
+      "final_score": 10,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/docs/buildpacks/release-notes",
-      "title": "Buildpacks release notes | Google Cloud Documentation",
-      "description": "This page documents production updates to Buildpacks. Check this page for announcements about new or updated features, bug fixes, known issues, and deprecated functionality. You can see the latest product updates for all of Google Cloud on the Google Cloud page, browse and filter all release ...",
+      "title": "Deploy worker pools from source code | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code",
+      "description": "You or your administrator must grant the deployer account and the Cloud Build service account the following IAM roles. To get the permissions that you need to build and deploy from source, ask your administrator to grant you the following IAM roles:",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Buildpacks\" Google Cloud documentation"
+        "site:docs.cloud.google.com \"Buildpacks\" \"roles and permissions\""
       ],
       "intent_hits": [
-        "product_docs"
+        "iam_permissions"
       ],
       "round_hits": [
-        2,
         1
       ],
-      "best_rank": 8,
-      "consistency_score": 67,
-      "product_fit_score": 52,
-      "deterministic_score": 55,
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": -98,
+      "deterministic_score": 0,
       "api_score": {
         "classification": "irrelevant",
-        "score": 55,
-        "parent_page_likelihood": 3,
-        "product_match": 5,
-        "coverage_value": 0,
+        "score": 0,
+        "family_score": -120,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 56,
+      "final_score": 5,
       "keep": false
     }
   ]

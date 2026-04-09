@@ -8,7 +8,7 @@ This file lists the official Google documentation URLs selected and scored for t
 | 100 | no | supporting_page | https://docs.cloud.google.com/network-security-integration/docs/nsi-overview | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/network-security-integration/docs/understand-geneve | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | irrelevant | https://docs.cloud.google.com/network-security-integration/docs/getting-support | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/network-security-integration/docs/getting-support | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | yes | iam_reference | https://docs.cloud.google.com/network-security-integration/docs/in-band/configure-intercept-endpoint-groups | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/network-security-integration/docs/in-band/security-profiles-overview | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |

@@ -1,11 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:35:18.634Z",
+  "generated_at": "2026-04-08T21:49:07.835Z",
   "product_name": "Artifact Registry",
   "product_slug": "artifact-registry",
-  "step02_source_path": "data/step-02/current/products/artifact-registry.md",
+  "step02_source_path": "data/step-02/current/artifact-registry.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "artifact-registry",
   "dominant_python_slug": "artifactregistry",
@@ -18,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Artifact Registry\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Artifact Registry\" official documentation OR site:developers.google.com \"artifact registry\" official documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Artifact Registry Deep Dive | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/artifact-registry-deepdive",
+          "description": "When you click on it you see the SLSA attestation as well as the familiar vulnerability reports that we saw before in the Artifact Registry UI when we pushed our local build. The SLSA provenance for our image can also be retrieved by running the following command in Cloud Shell: gcloud artifacts docker images describe \\ &quot;us-central1-docker.pkg.dev/$PROJECT_ID/container-example/java-hello-world:cloud-build&quot; \\ --show-provenance",
+          "rank": 1
+        },
+        {
+          "title": "Artifact Registry API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta1",
+          "description": "Browse the .NET reference documentation for the Artifact Registry API.",
+          "rank": 2
+        },
+        {
+          "title": "Artifact Registry API Client Library for .NET | Google for Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta2",
+          "description": "Browse the .NET reference documentation for the Artifact Registry API.",
+          "rank": 3
+        },
+        {
+          "title": "Dependency management with Artifact Registry | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/dependency-management-artifact-registry",
+          "description": "With Artifact Registry configured in Maven, you can now use Artifact Registry to store Java Jars for use by other projects in your organization. Run the following command to upload your Java package to Artifact Registry:",
+          "rank": 4
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1",
+          "description": "Artifact Registry API v1 · Google.Apis.ArtifactRegistry.v1beta1 · Artifact Registry API v1beta1 · Google.Apis.ArtifactRegistry.v1beta2 · Artifact Registry API v1beta2 · Google.Apis.Assuredworkloads.v1 · Assured Workloads API v1 · Google.Apis.Assuredworkloads.v1beta1 ·",
+          "rank": 5
+        },
+        {
+          "title": "Securing Software Supply | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/securing-software-supply",
+          "description": "Artifact Registry <strong>enables you to store different artifact types, create multiple repositories in a single project, and associate a specific region or multi-region with each repository</strong>. There are several repository modes. Each mode serves a different purpose. The following diagram shows one ...",
+          "rank": 6
+        },
+        {
+          "title": "Gating Deployments with Binary Auth | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/gating-deployments-with-binary-auth",
+          "description": "Configure docker to utilize your gcloud credentials when accessing Artifact Registry.",
+          "rank": 7
+        },
+        {
+          "title": "Secure Build & Deploy with Cloud Build, Artifact Registry and GKE | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/secure-build-deploy-cloud-build-ar-gke",
+          "description": "When On-Demand Scanning is enabled, you must run a command to scan a local image or an image in Artifact Registry or Container Registry. On-Demand Scanning gives you flexibility around when you scan containers. For example, you can scan a locally-built image and remediate vulnerabilities before storing it in a registry.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -38,39 +95,39 @@
           "rank": 2
         },
         {
-          "title": "Tutorial: Debug routing events to Cloud Run | Eventarc Standard | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/debugging-events-cloud-run",
-          "description": "gcloud services enable artifactregistry.googleapis.com ... <strong>If you are the project creator, you are granted the basic Owner role (roles/owner).</strong> By default, this Identity and Access Management (IAM) role includes the permissions necessary for ...",
-          "rank": 3
-        },
-        {
           "title": "Deploying container images to Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/deploying",
           "description": "Artifact Registry Reader ... on the Artifact Registry repository of the deployed container image · If you are using a cross-project service account to deploy a service: Service Account Token Creator (roles/iam.serviceAccountTokenCreator) on the service identity · For a list of IAM roles and permissions that are ...",
-          "rank": 4
+          "rank": 3
         },
         {
           "title": "Receive a Cloud Audit Logs event | Eventarc Standard | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/cal",
           "description": "Create a project: To create a project, you need the Project Creator role (roles/resourcemanager.projectCreator), which contains the resourcemanager.projects.create permission. Learn how to grant roles. Note: If you don&#x27;t plan to keep the resources that you create in this procedure, create a project instead of selecting an existing project. After you finish these steps, you can delete the project, removing all resources associated with the project. ... Verify that billing is enabled for your Google Cloud project. Enable the Artifact Registry, Cloud Build, Logging, Pub/Sub, Cloud Run, Cloud Storage, and Eventarc APIs.",
-          "rank": 5
+          "rank": 4
         },
         {
           "title": "Create jobs | Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/create-jobs",
           "description": "To get the permissions that you need to create Cloud Run jobs, ask your administrator to grant you the following IAM roles: Cloud Run Developer (roles/run.developer) on the Cloud Run job · Service Account User (roles/iam.serviceAccountUser) on the service identity · Artifact Registry Reader (roles/artifactregistry.reader) on the Artifact Registry repository of the container images of the job · For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
-          "rank": 6
+          "rank": 5
         },
         {
           "title": "Three Tier App | DeployStack | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/deploystack/three-tier-app",
           "description": "Enable Cloud Build Service Account to store containers in Artifact Registry · variable &quot;build_roles_list&quot; { description = &quot;The list of roles that build needs for&quot; type = list(string) default = [ &quot;roles/run.developer&quot;, &quot;roles/vpaccess.user&quot;, &quot;roles/iam.serviceAccountUser&quot;, &quot;roles/run.admin&quot;, &quot;roles/secretmanager.secretAccessor&quot;, &quot;roles/artifactregistry.admin&quot;, ] } resource &quot;google_project_iam_member&quot; &quot;allbuild&quot; { for_each = toset(var.build_roles_list) project = var.project_number role = each.key member = &quot;serviceAccount:${local.sabuild}&quot; depends_on = [google_project_service.all] }",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Terraform Tutorial | Cloud Run functions | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/functions/docs/tutorials/terraform",
           "description": "Create a project: To create a project, you need the Project Creator role (roles/resourcemanager.projectCreator), which contains the resourcemanager.projects.create permission. Learn how to grant roles. Note: If you don&#x27;t plan to keep the resources that you create in this procedure, create a project instead of selecting an existing project. After you finish these steps, you can delete the project, removing all resources associated with the project. ... Verify that billing is enabled for your Google Cloud project. Enable the Cloud Functions, Cloud Run, Cloud Build, Artifact Registry, and Cloud Storage APIs.",
+          "rank": 7
+        },
+        {
+          "title": "Manage revisions | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/managing/revisions",
+          "description": "To get the permissions that you need to manage Cloud Run services and revisions, ask your administrator to grant you the Cloud Run Developer (roles/run.developer) IAM role on your Cloud Run service.",
           "rank": 8
         }
       ]
@@ -114,39 +171,39 @@
           "rank": 2
         },
         {
+          "title": "Overview | Artifact Registry | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/artifact-registry/docs/reference",
+          "description": "With Artifact Registry you can <strong>store and manage your build artifacts (e.g. Docker images, Maven packages, npm packages), in a scalable and integrated repository service built on Google infrastructure</strong>.",
+          "rank": 3
+        },
+        {
           "title": "Transition from Container Registry | Artifact Registry | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
           "description": "Artifact Registry extends the capabilities of Container Registry with the following features: Repository-level access control. Hosting artifacts in regions to reduce latency and data transfer costs, and to comply with data residency requirements. Streaming images to Google Kubernetes Engine and Google Cloud Serverless for Apache Spark to reduce workload startup times.",
-          "rank": 3
+          "rank": 4
+        },
+        {
+          "title": "Work with container images | Artifact Registry | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/artifact-registry/docs/docker",
+          "description": "If you are using a Docker client to push and pull images, configure authentication to Artifact Registry. Learn about pushing and pulling images. Learn about managing images. Learn how to manage container metadata with attachments. Attachments are OCI artifacts that hold metadata about another container image. Metadata can be any relevant information you want to store that is related to a container image, including files you can scan or generate with Artifact Analysis:",
+          "rank": 5
         },
         {
           "title": "gcr.io repositories | Artifact Registry | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
           "description": "<strong>This document provides an overview of Artifact Registry gcr.io repositories</strong>. gcr.io repositories let Container Registry users maintain their existing Google Cloud infrastructure by storing container images in Artifact Registry and supporting ...",
-          "rank": 4
+          "rank": 6
         },
         {
           "title": "Create remote repositories | Artifact Registry | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories/remote-repo",
           "description": "If you require customer-manage... a key in Cloud KMS for the repository. If you want to authenticate to an upstream repository, then enable the Secret Manager API. gcloud services enable secretmanager.googleapis.com \\ --project=PROJECT_ID · If Artifact Registry is in a VPC ...",
-          "rank": 5
+          "rank": 7
         },
         {
           "title": "Deploy to Google Cloud | Artifact Registry | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/artifact-registry/docs/deploy",
           "description": "This page summarizes general requirements for deploying artifacts to Google Cloud runtime environments. There are two forms of access control to consider: ... Identity and Access Management permissions determine the users, service accounts and other identities that can access resources. You grant Artifact Registry permissions to identities that can access repositories.",
-          "rank": 6
-        },
-        {
-          "title": "Overview | Artifact Registry | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/artifact-registry/docs/reference",
-          "description": "With Artifact Registry you can <strong>store and manage your build artifacts (e.g. Docker images, Maven packages, npm packages), in a scalable and integrated repository service built on Google infrastructure</strong>.",
-          "rank": 7
-        },
-        {
-          "title": "Enable and disable the service | Artifact Registry | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/artifact-registry/docs/enable-service",
-          "description": "Enable the API from Google Cloud console or with the following gcloud command: gcloud services enable artifactregistry.googleapis.com · Before you disable the Artifact Registry API, ensure that any artifacts that you want to keep are available in another location.",
           "rank": 8
         }
       ]
@@ -170,26 +227,26 @@
           "rank": 2
         },
         {
-          "title": "Package artifact_registry (1.18.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry",
+          "title": "Class ArtifactRegistryClient (1.19.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1beta2.services.artifact_registry.ArtifactRegistryClient",
           "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
           "rank": 3
         },
         {
-          "title": "Class ArtifactRegistryClient (1.19.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1beta2.services.artifact_registry.ArtifactRegistryClient",
+          "title": "Package artifact_registry (1.18.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry",
           "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
           "rank": 4
         },
         {
-          "title": "Class ArtifactRegistryAsyncClient (1.18.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+          "title": "Class ArtifactRegistryClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
           "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
           "rank": 5
         },
         {
-          "title": "Class ArtifactRegistryClient (1.18.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+          "title": "Class ArtifactRegistryAsyncClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
           "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
           "rank": 6
         }
@@ -206,6 +263,62 @@
           "url": "https://docs.cloud.google.com/artifact-registry/docs/apis",
           "description": "Get started with Artifact Registry in your language of choice. Information about support for the Docker API. Programming reference for the REST Artifact Registry API.",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Artifact Registry\" reference OR site:developers.google.com \"artifact registry\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Artifact Registry Deep Dive | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/artifact-registry-deepdive",
+          "description": "When you click on it you see the SLSA attestation as well as the familiar vulnerability reports that we saw before in the Artifact Registry UI when we pushed our local build. The SLSA provenance for our image can also be retrieved by running the following command in Cloud Shell: gcloud artifacts docker images describe \\ &quot;us-central1-docker.pkg.dev/$PROJECT_ID/container-example/java-hello-world:cloud-build&quot; \\ --show-provenance",
+          "rank": 1
+        },
+        {
+          "title": "Dependency management with Artifact Registry | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/dependency-management-artifact-registry",
+          "description": "As the evolution of Container Registry, Artifact Registry is a single place for your organization to manage container images and language packages (such as Maven and npm). It is fully integrated with Google Cloud&#x27;s tooling and runtimes and comes with support for language based dependency management for use with tools like npm and Maven.",
+          "rank": 2
+        },
+        {
+          "title": "Artifact Registry API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta1",
+          "description": "This page contains information about getting started with the Artifact Registry API by using the Google API Client Library for .NET. For more information, see the following documentation: Browse the .NET reference documentation for the Artifact Registry API.",
+          "rank": 3
+        },
+        {
+          "title": "Artifact Registry API Client Library for .NET | Google for Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta2",
+          "description": "This page contains information about getting started with the Artifact Registry API by using the Google API Client Library for .NET. For more information, see the following documentation: Browse the .NET reference documentation for the Artifact Registry API.",
+          "rank": 4
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1",
+          "description": "Artifact Registry API v1 · Google.Apis.ArtifactRegistry.v1beta1 · Artifact Registry API v1beta1 · Google.Apis.ArtifactRegistry.v1beta2 · Artifact Registry API v1beta2 · Google.Apis.Assuredworkloads.v1 · Assured Workloads API v1 · Google.Apis.Assuredworkloads.v1beta1 ·",
+          "rank": 5
+        },
+        {
+          "title": "Securing Software Supply | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/securing-software-supply",
+          "description": "Go to Google Cloud Console - Artifact Registry - Repositories and notice your newly created Maven repository named container-dev-java-repo, if you click on it you can see that it&#x27;s empty at the moment.",
+          "rank": 6
+        },
+        {
+          "title": "Secure Build & Deploy with Cloud Build, Artifact Registry and GKE | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/secure-build-deploy-cloud-build-ar-gke",
+          "description": "Configure docker to utilize your gcloud credentials when accessing Artifact Registry.",
+          "rank": 7
+        },
+        {
+          "title": "Hello Cloud Run with Python (Gradio) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-gradio",
+          "description": "Cloud Build automatically builds a container image from your source code and pushes it to Artifact Registry.",
+          "rank": 8
         }
       ]
     },
@@ -228,15 +341,15 @@
           "rank": 2
         },
         {
-          "title": "Artifact Registry overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/artifact-registry/docs/overview",
-          "description": "Integrate Artifact Registry with Google Cloud CI/CD services or your existing CI/CD tools. Store artifacts from Cloud Build. Deploy artifacts to Google Cloud runtimes, including Google Kubernetes Engine, Cloud Run, Compute Engine, and App Engine flexible environment. Identity and Access Management provides consistent credentials and access control...",
-          "rank": 3
-        },
-        {
           "title": "Policy | Artifact Registry | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/Policy",
           "description": "<strong>An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Artifact Registry overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/artifact-registry/docs/overview",
+          "description": "Integrate Artifact Registry with Google Cloud CI/CD services or your existing CI/CD tools. Store artifacts from Cloud Build. Deploy artifacts to Google Cloud runtimes, including Google Kubernetes Engine, Cloud Run, Compute Engine, and App Engine flexible environment. Identity and Access Management provides consistent credentials and access control...",
           "rank": 4
         },
         {
@@ -366,15 +479,15 @@
           "rank": 3
         },
         {
-          "title": "Class ArtifactRegistryClient (1.18.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
-          "description": "Instantiates the artifact registry client.",
-          "rank": 4
-        },
-        {
           "title": "Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/summary_overview",
           "description": "Classes, methods and properties &amp; attributes for Artifact Registry API.",
+          "rank": 4
+        },
+        {
+          "title": "Class ArtifactRegistryClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+          "description": "Instantiates the artifact registry client.",
           "rank": 5
         },
         {
@@ -396,6 +509,62 @@
           "url": "https://docs.cloud.google.com/vertex-ai/docs/predictions/use-custom-container",
           "description": "<strong>The Artifact Registry URI of your container image</strong>. If you are using the gcloud ai models upload command, you can use the --container-image-uri flag to specify this field. ... An array of an executable and arguments to override the container&#x27;s ...",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Artifact Registry\" overview OR site:developers.google.com \"artifact registry\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Artifact Registry Deep Dive | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/artifact-registry-deepdive",
+          "description": "It is common for teams or business units to have their own image repository with their own permissions and configuration. To simplify the use of the images in these repositories and to shield the consumer from the underlying organizational structure, Artifact Registry provides virtual repositories that can aggregate resources from multiple underlying repositories.",
+          "rank": 1
+        },
+        {
+          "title": "Dependency management with Artifact Registry | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/dependency-management-artifact-registry",
+          "description": "As the evolution of Container Registry, Artifact Registry is a single place for your organization to manage container images and language packages (such as Maven and npm). It is fully integrated with Google Cloud&#x27;s tooling and runtimes and comes with support for language based dependency management for use with tools like npm and Maven.",
+          "rank": 2
+        },
+        {
+          "title": "Artifact Registry API Client Library for .NET | Google Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta1",
+          "description": "Artifact Registry API: Store and manage build artifacts in a scalable and integrated service built on Google infrastructure.",
+          "rank": 3
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1",
+          "description": "Artifact Registry API v1 · Google.Apis.ArtifactRegistry.v1beta1 · Artifact Registry API v1beta1 · Google.Apis.ArtifactRegistry.v1beta2 · Artifact Registry API v1beta2 · Google.Apis.Assuredworkloads.v1 · Assured Workloads API v1 · Google.Apis.Assuredworkloads.v1beta1 ·",
+          "rank": 4
+        },
+        {
+          "title": "Artifact Registry API Client Library for .NET | Google for Developers",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta2",
+          "description": "Artifact Registry API: Store and manage build artifacts in a scalable and integrated service built on Google infrastructure.",
+          "rank": 5
+        },
+        {
+          "title": "Securing Software Supply | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/securing-software-supply",
+          "description": "Artifact Registry <strong>enables you to store different artifact types, create multiple repositories in a single project, and associate a specific region or multi-region with each repository</strong>. There are several repository modes. Each mode serves a different purpose. The following diagram shows one ...",
+          "rank": 6
+        },
+        {
+          "title": "Secure Build & Deploy with Cloud Build, Artifact Registry and GKE | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/secure-build-deploy-cloud-build-ar-gke",
+          "description": "When On-Demand Scanning is enabled, you must run a command to scan a local image or an image in Artifact Registry or Container Registry. On-Demand Scanning gives you flexibility around when you scan containers. For example, you can scan a locally-built image and remediate vulnerabilities before storing it in a registry.",
+          "rank": 7
+        },
+        {
+          "title": "Cloud Run で Node.js を使用して Slack ボットをビルドする",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-slack-bot",
+          "description": "Artifact Registry <strong>manages your container image</strong>.",
+          "rank": 8
         }
       ]
     },
@@ -442,15 +611,15 @@
           "rank": 6
         },
         {
-          "title": "Scan for secrets | Artifact Analysis | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/artifact-analysis/docs/secret-scanning",
-          "description": "If you created a new project, then you already have the required permissions. Verify that billing is enabled for your Google Cloud project. Enable the Artifact Registry and Container Scanning APIs. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-          "rank": 7
-        },
-        {
           "title": "Transition to standard repositories | Artifact Registry | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/setup-repo",
           "description": "... Click the Permissions tab. <strong>On the Permissions tab, click the View by role subtab</strong>. Expand a role to view the principals who have that role. The list includes IAM roles granted directly on the bucket and roles inherited from the parent project.",
+          "rank": 7
+        },
+        {
+          "title": "Configure remote repository authentication to the npm registry | Artifact Registry | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/artifact-registry/docs/nodejs/configure-remote-auth-npm-registry",
+          "description": "Artifact Registry Admin (roles/artifactregistry.admin) ... For more information about granting roles, see Manage access to projects, folders, and organizations. You might also be able to get the required permissions through custom roles or other predefined roles.",
           "rank": 8
         }
       ]
@@ -488,8 +657,8 @@
         },
         {
           "title": "Artifact Registry API | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
-          "description": "Artifact Registry · Reference · Send feedback · <strong>Store and manage build artifacts in a scalable and integrated service built on Google infrastructure</strong>. REST Resource: v1.projects · REST Resource: v1.projects.locations · REST Resource: ...",
+          "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rpc",
+          "description": "Artifact Registry · Reference · Send feedback · <strong>Store and manage build artifacts in a scalable and integrated service built on Google infrastructure</strong>. The Service name artifactregistry.googleapis.com is needed to create RPC client stubs.",
           "rank": 4
         },
         {
@@ -525,14 +694,14 @@
       "official_result_count": 2,
       "results": [
         {
-          "title": "Python client library | Google Cloud",
-          "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/artifact_registry.html",
+          "title": "Python Client for Artifact Registry | Python client libraries | Google Cloud Documentation",
+          "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/types.html",
           "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
           "rank": 1
         },
         {
-          "title": "Python Client for Artifact Registry | Python client libraries | Google Cloud Documentation",
-          "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/types.html",
+          "title": "Python client library | Google Cloud",
+          "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/artifact_registry.html",
           "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
           "rank": 2
         }
@@ -541,9 +710,10 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs",
       "title": "Artifact Registry documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs",
       "description": "Artifact Registry · Start free · Home · Documentation · Application development · Artifact Registry · Read product documentation · <strong>A universal package manager for all your build artifacts and dependencies</strong>.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview",
@@ -561,11 +731,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -576,9 +749,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/overview",
       "title": "Artifact Registry overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/overview",
       "description": "<strong>Create multiple regional repositories within a single Google Cloud project</strong>. Group images by team or development stage and control access at the repository level. Artifact Registry integrates with Cloud Build and other continuous delivery and ...",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview",
@@ -596,11 +770,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -611,9 +788,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference",
       "title": "Overview | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference",
       "description": "With Artifact Registry you can <strong>store and manage your build artifacts (e.g. Docker images, Maven packages, npm packages), in a scalable and integrated repository service built on Google infrastructure</strong>.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview",
@@ -629,11 +807,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -644,9 +825,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/overview",
       "title": "google-cloud-artifact-registry overview (1.87.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/overview",
       "description": "Artifact Registry Description: <strong>Provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud&#x27;s tooling and runtimes and comes with support for ...",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview",
@@ -664,14 +846,54 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1",
+      "description": "Artifact Registry API v1 · Google.Apis.ArtifactRegistry.v1beta1 · Artifact Registry API v1beta1 · Google.Apis.ArtifactRegistry.v1beta2 · Artifact Registry API v1beta2 · Google.Apis.Assuredworkloads.v1 · Assured Workloads API v1 · Google.Apis.Assuredworkloads.v1beta1 ·",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Artifact Registry\" official documentation OR site:developers.google.com \"artifact registry\" official documentation",
+        "site:developers.google.com \"Artifact Registry\" reference OR site:developers.google.com \"artifact registry\" reference",
+        "site:developers.google.com \"Artifact Registry\" overview OR site:developers.google.com \"artifact registry\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -679,9 +901,84 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "title": "Artifact Registry API Client Library for .NET | Google Developers",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta1",
+      "description": "Browse the .NET reference documentation for the Artifact Registry API.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Artifact Registry\" official documentation OR site:developers.google.com \"artifact registry\" official documentation",
+        "site:developers.google.com \"Artifact Registry\" reference OR site:developers.google.com \"artifact registry\" reference",
+        "site:developers.google.com \"Artifact Registry\" overview OR site:developers.google.com \"artifact registry\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Artifact Registry API Client Library for .NET | Google for Developers",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/artifactregistry/v1beta2",
+      "description": "Browse the .NET reference documentation for the Artifact Registry API.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Artifact Registry\" official documentation OR site:developers.google.com \"artifact registry\" official documentation",
+        "site:developers.google.com \"Artifact Registry\" reference OR site:developers.google.com \"artifact registry\" reference",
+        "site:developers.google.com \"Artifact Registry\" overview OR site:developers.google.com \"artifact registry\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
       "title": "Access control with IAM | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
       "description": "This page describes access control with Identity and Access Management (IAM) in Artifact Registry.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"access control\"",
         "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
@@ -695,24 +992,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/apis",
       "title": "APIs and reference | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/apis",
       "description": "Get started with Artifact Registry in your language of choice. Information about support for the Docker API. Programming reference for the REST Artifact Registry API.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"APIs and reference\"",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud introduction reference"
@@ -727,24 +1028,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/Policy",
       "title": "Policy | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
       "description": "<strong>An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources</strong>.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"access control\"",
         "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
@@ -756,26 +1061,65 @@
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Policy | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/Policy",
+      "description": "<strong>An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" \"access control\"",
+        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
       "title": "Repository overview | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
       "description": "Standard Artifact Registry repositories. External sources such as Docker Hub, Maven Central, the Python Package Index (PyPI), Debian or CentOS. The first time you request an artifact version, the repository downloads it from the upstream source and caches a copy of it. The remote repository serves the cached copy when the same version is requested again. Remote repositories reduce latency and improve availability for builds and deployments on Google Cloud.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud introduction reference"
@@ -789,24 +1133,28 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
       "title": "gcr.io repositories | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/gcr-repositories",
       "description": "<strong>This document provides an overview of Artifact Registry gcr.io repositories</strong>. gcr.io repositories let Container Registry users maintain their existing Google Cloud infrastructure by storing container images in Artifact Registry and supporting ...",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview"
@@ -818,26 +1166,30 @@
         1,
         2
       ],
-      "best_rank": 4,
+      "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/map-roles",
       "title": "Transition from Container Registry | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/map-roles",
       "description": "Artifact Registry extends the capabilities of Container Registry with the following features: <strong>Repository-level access control</strong>.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"access control\"",
         "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
@@ -851,24 +1203,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest",
       "title": "Python Client for Artifact Registry | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest",
       "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
@@ -882,24 +1238,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
-      "keep": false
+      "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry",
       "title": "Package artifact_registry (1.18.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry",
       "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
@@ -913,11 +1273,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -928,9 +1291,45 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
       "title": "Class ArtifactRegistryAsyncClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
       "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
+        "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 124,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class ArtifactRegistryClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+      "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
@@ -944,11 +1343,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -959,40 +1361,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
-      "title": "Class ArtifactRegistryClient (1.18.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
-        "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 76,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1beta2.services.artifact_registry.ArtifactRegistryClient",
       "title": "Class ArtifactRegistryClient (1.19.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1beta2.services.artifact_registry.ArtifactRegistryClient",
       "description": "Artifact Registry is <strong>an artifact management system for storing artifacts from different package management systems</strong>.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
@@ -1006,11 +1378,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1021,9 +1396,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/summary_overview",
       "title": "Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/summary_overview",
       "description": "Classes, methods and properties &amp; attributes for <strong>Artifact Registry</strong> API.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" \"Python client libraries\""
@@ -1037,11 +1413,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1052,9 +1431,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/artifactregistry",
       "title": "Artifact Registry roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/artifactregistry",
       "description": "This page lists the IAM roles and permissions for Artifact Registry.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
@@ -1068,13 +1448,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1083,9 +1466,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-functions/latest/overview",
       "title": "Class BuildConfig (2.85.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-functions/latest/com.google.cloud.functions.v2alpha.BuildConfig",
       "description": "If docker_repository field is specified, this field should either be left unspecified or set to ARTIFACT_REGISTRY.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Artifact Registry\"",
         "site:docs.cloud.google.com \"Artifact Registry\" \"Java client libraries\""
@@ -1099,13 +1483,51 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": -16,
+      "product_fit_score": 32,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 0,
+        "product_match": 3,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class BuildConfig (2.85.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-functions/latest/overview",
+      "description": "If docker_repository field is specified, this field should either be left unspecified or set to ARTIFACT_REGISTRY.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Artifact Registry\"",
+        "site:docs.cloud.google.com \"Artifact Registry\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 32,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1114,9 +1536,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
       "title": "Configuring Pub/Sub notifications | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/configure-notifications",
       "description": "You can use the Pub/Sub Subscriber role to grant this permission. To learn about setting up a subscriber to receive messages from a subscription with pull delivery, see Receiving messages using Pull. You can use Pub/Sub permissions to control access to your topics and subscriptions.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
       ],
@@ -1128,53 +1551,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/deploy",
       "title": "Deploy to Google Cloud | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/deploy",
       "description": "This page summarizes general requirements for deploying artifacts to Google Cloud runtime environments. There are two forms of access control to consider: ... Identity and Access Management permissions determine the users, service accounts and other identities that can access resources. You grant Artifact Registry permissions to identities that can access repositories.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/enable-service",
-      "title": "Enable and disable the service | Artifact Registry | Google Cloud Documentation",
-      "description": "Enable the API from Google Cloud console or with the following gcloud command: gcloud services enable artifactregistry.googleapis.com · Before you disable the Artifact Registry API, ensure that any artifacts that you want to keep are available in another location.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation"
       ],
@@ -1186,82 +1584,28 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
-      "title": "Artifact Registry API | Google Cloud Documentation",
-      "description": "Artifact Registry · Reference · Send feedback · <strong>Store and manage build artifacts in a scalable and integrated service built on Google infrastructure</strong>. REST Resource: v1.projects · REST Resource: v1.projects.locations · REST Resource: ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": true
-    },
-    {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rpc/google.iam.v1",
-      "title": "Package google.iam.v1 | Artifact Registry | Google Cloud Documentation",
-      "description": "bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time &lt; timestamp(&#x27;2020-10-01T00:00:00.000Z&#x27;) etag: BwWWja0YfJA= version: 3 · For a description of IAM and its features, see the IAM documentation.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories/remote-repo",
-      "title": "Create remote repositories | Artifact Registry | Google Cloud Documentation",
-      "description": "If you require customer-manage... a key in Cloud KMS for the repository. If you want to authenticate to an upstream repository, then enable the Secret Manager API. gcloud services enable secretmanager.googleapis.com \\ --project=PROJECT_ID · If Artifact Registry is in a VPC ...",
+      "title": "Work with container images | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/docker",
+      "description": "If you are using a Docker client to push and pull images, configure authentication to Artifact Registry. Learn about pushing and pulling images. Learn about managing images. Learn how to manage container metadata with attachments. Attachments are OCI artifacts that hold metadata about another container image. Metadata can be any relevant information you want to store that is related to a container image, including files you can scan or generate with Artifact Analysis:",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation"
       ],
@@ -1273,53 +1617,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/changes-gcp",
-      "title": "Changes for building and deploying in Google Cloud | Artifact Registry | Google Cloud Documentation",
-      "description": "Artifact Registry <strong>supports access control at the repository level</strong>.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/setup-repo",
-      "title": "Transition to standard repositories | Artifact Registry | Google Cloud Documentation",
-      "description": "... Click the Permissions tab. <strong>On the Permissions tab, click the View by role subtab</strong>. Expand a role to view the principals who have that role. The list includes IAM roles granted directly on the bucket and roles inherited from the parent project.",
+      "title": "Configure remote repository authentication to the npm registry | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/nodejs/configure-remote-auth-npm-registry",
+      "description": "Artifact Registry Admin (roles/artifactregistry.admin) ... For more information about granting roles, see Manage access to projects, folders, and organizations. You might also be able to get the required permissions through custom roles or other predefined roles.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
       ],
@@ -1331,24 +1650,127 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Artifact Registry API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rpc",
+      "description": "Artifact Registry · Reference · Send feedback · <strong>Store and manage build artifacts in a scalable and integrated service built on Google infrastructure</strong>. The Service name artifactregistry.googleapis.com is needed to create RPC client stubs.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Package google.iam.v1 | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rpc/google.iam.v1",
+      "description": "bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time &lt; timestamp(&#x27;2020-10-01T00:00:00.000Z&#x27;) etag: BwWWja0YfJA= version: 3 · For a description of IAM and its features, see the IAM documentation.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
-      "title": "Transition from Container Registry | Artifact Registry | Google Cloud Documentation",
-      "description": "Artifact Registry extends the capabilities of Container Registry with the following features: Repository-level access control. Hosting artifacts in regions to reduce latency and data transfer costs, and to comply with data residency requirements. Streaming images to Google Kubernetes Engine and Google Cloud Serverless for Apache Spark to reduce workload startup times.",
+      "title": "Artifact Registry release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/release-notes",
+      "description": "Artifact Registry now <strong>calculates fingerprints for each version of a package pushed to the Artifact Registry repository</strong>. You can use the fingerprint to validate that the package wasn&#x27;t modified when moving between Google Cloud systems, such as ...",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create remote repositories | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories/remote-repo",
+      "description": "If you require customer-manage... a key in Cloud KMS for the repository. If you want to authenticate to an upstream repository, then enable the Secret Manager API. gcloud services enable secretmanager.googleapis.com \\ --project=PROJECT_ID · If Artifact Registry is in a VPC ...",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation"
       ],
@@ -1358,26 +1780,129 @@
       "round_hits": [
         1
       ],
-      "best_rank": 3,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Changes for building and deploying in Google Cloud | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/changes-gcp",
+      "description": "Artifact Registry <strong>supports access control at the repository level</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/distributed-cloud/hosted/docs/latest/appliance/infrastructure/io-operations-30/sar-overview",
+      "title": "Transition to standard repositories | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/setup-repo",
+      "description": "... Click the Permissions tab. <strong>On the Permissions tab, click the View by role subtab</strong>. Expand a role to view the principals who have that role. The list includes IAM roles granted directly on the bucket and roles inherited from the parent project.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Transition from Container Registry | Artifact Registry | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+      "description": "Artifact Registry extends the capabilities of Container Registry with the following features: Repository-level access control. Hosting artifacts in regions to reduce latency and data transfer costs, and to comply with data residency requirements. Streaming images to Google Kubernetes Engine and Google Cloud Serverless for Apache Spark to reduce workload startup times.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Artifact Registry overview | Google Distributed Cloud Hosted Appliance | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/distributed-cloud/hosted/docs/latest/appliance/infrastructure/io-operations-30/sar-overview",
       "description": "Artifact Registry <strong>participates in various GDC system operations such as installation, upgrades, and the lifecycle of resources, in a secure and scalable way</strong>. Artifact distribution is the process of distributing artifacts between registries.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview"
       ],
@@ -1389,11 +1914,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1404,9 +1932,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/docs/security/security-best-practices-genai/artifact-registry-controls",
       "title": "Artifact Registry controls for generative AI use cases | Security | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/security/security-best-practices-genai/artifact-registry-controls",
       "description": "These artifacts are encrypted at rest and in transit. <strong>Configure access control to restrict who can access the artifacts to help protect your valuable data and intellectual property</strong>.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"access control\""
       ],
@@ -1418,11 +1947,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1433,241 +1965,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/cal",
       "title": "Receive a Cloud Audit Logs event | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/cal",
       "description": "Create a project: To create a project, you need the Project Creator role (roles/resourcemanager.projectCreator), which contains the resourcemanager.projects.create permission. Learn how to grant roles. Note: If you don&#x27;t plan to keep the resources that you create in this procedure, create a project instead of selecting an existing project. After you finish these steps, you can delete the project, removing all resources associated with the project. ... Verify that billing is enabled for your Google Cloud project. Enable the Artifact Registry, Cloud Build, Logging, Pub/Sub, Cloud Run, Cloud Storage, and Eventarc APIs.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/artifact_registry.html",
-      "title": "Python client library | Google Cloud",
-      "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
-      "query_hits": [
-        "site:googleapis.dev/python \"Artifact Registry\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/types.html",
-      "title": "Python Client for Artifact Registry | Python client libraries | Google Cloud Documentation",
-      "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
-      "query_hits": [
-        "site:googleapis.dev/python \"Artifact Registry\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/eventarc/standard/docs/run/debugging-events-cloud-run",
-      "title": "Tutorial: Debug routing events to Cloud Run | Eventarc Standard | Google Cloud Documentation",
-      "description": "gcloud services enable artifactregistry.googleapis.com ... <strong>If you are the project creator, you are granted the basic Owner role (roles/owner).</strong> By default, this Identity and Access Management (IAM) role includes the permissions necessary for ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 34,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/artifact-analysis/docs/secret-scanning",
-      "title": "Scan for secrets | Artifact Analysis | Google Cloud Documentation",
-      "description": "If you created a new project, then you already have the required permissions. Verify that billing is enabled for your Google Cloud project. Enable the Artifact Registry and Container Scanning APIs. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/binary-authorization/docs/cross-project-access-gke",
-      "title": "Configure cross-project access in GKE | Binary Authorization | Google Cloud Documentation",
-      "description": "This page shows you how to give Binary Authorization access to policies and container images that exist in different Google Cloud projects than your current project. For example, if you deploy images in your Google Kubernetes Engine (GKE) cluster from an Artifact Registry or Container Registry (Deprecated) repository that&#x27;s owned by a different project, you&#x27;ll need to give the Binary Authorization service in your project access to the image metadata in the source repository.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.ArtifactRegistry.V1/latest/Google.Cloud.ArtifactRegistry.V1.ArtifactRegistry",
-      "title": "Artifact Registry v1 API - Class ArtifactRegistry (2.13.0) | .NET client libraries | Google Cloud Documentation",
-      "description": "Reference documentation and code samples for the Artifact Registry v1 API class ArtifactRegistry.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/create-jobs",
-      "title": "Create jobs | Cloud Run | Google Cloud Documentation",
-      "description": "To get the permissions that you need to create Cloud Run jobs, ask your administrator to grant you the following IAM roles: Cloud Run Developer (roles/run.developer) on the Cloud Run job · Service Account User (roles/iam.serviceAccountUser) on the service identity · Artifact Registry Reader (roles/artifactregistry.reader) on the Artifact Registry repository of the container images of the job · For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/run/docs/deploying",
-      "title": "Deploying container images to Cloud Run | Google Cloud Documentation",
-      "description": "Artifact Registry Reader ... on the Artifact Registry repository of the deployed container image · If you are using a cross-project service account to deploy a service: Service Account Token Creator (roles/iam.serviceAccountTokenCreator) on the service identity · For a list of IAM roles and permissions that are ...",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
       ],
@@ -1679,14 +1980,50 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Artifact Registry | Python client libraries | Google Cloud Documentation",
+      "url": "https://googleapis.dev/python/artifactregistry/latest",
+      "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Artifact Registry\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1694,38 +2031,142 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/run/docs/reference/iam/roles",
-      "title": "Cloud Run IAM roles | Google Cloud Documentation",
-      "description": "To get the permissions that you need to deploy services or revisions, you or your administrator must grant IAM roles to the deployer account on the following resources: Cloud Run Developer (roles/run.developer) on the Cloud Run service · Artifact Registry Reader (roles/artifactregistry.reader) on the Artifact Registry repository of the container images of the service",
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/artifact_registry.html",
+      "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
+        "site:googleapis.dev/python \"Artifact Registry\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Artifact Registry | Python client libraries | Google Cloud Documentation",
+      "url": "https://googleapis.dev/python/artifactregistry/latest/artifactregistry_v1beta2/types.html",
+      "description": "Artifact Registry: <strong>provides a single place for your organization to manage container images and language packages</strong> (such as Maven and npm). It is fully integrated with Google Cloud’s tooling and runtimes and comes with support for native artifact ...",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Artifact Registry\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure cross-project access in GKE | Binary Authorization | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/binary-authorization/docs/cross-project-access-gke",
+      "description": "This page shows you how to give Binary Authorization access to policies and container images that exist in different Google Cloud projects than your current project. For example, if you deploy images in your Google Kubernetes Engine (GKE) cluster from an Artifact Registry or Container Registry (Deprecated) repository that&#x27;s owned by a different project, you&#x27;ll need to give the Binary Authorization service in your project access to the image metadata in the source repository.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" \"access control\""
       ],
       "intent_hits": [
         "iam_permissions"
       ],
       "round_hits": [
-        3
+        2
       ],
-      "best_rank": 3,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
-        "keep": true,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/deploystack/three-tier-app",
-      "title": "Three Tier App | DeployStack | Google Cloud Documentation",
-      "description": "Enable Cloud Build Service Account to store containers in Artifact Registry · variable &quot;build_roles_list&quot; { description = &quot;The list of roles that build needs for&quot; type = list(string) default = [ &quot;roles/run.developer&quot;, &quot;roles/vpaccess.user&quot;, &quot;roles/iam.serviceAccountUser&quot;, &quot;roles/run.admin&quot;, &quot;roles/secretmanager.secretAccessor&quot;, &quot;roles/artifactregistry.admin&quot;, ] } resource &quot;google_project_iam_member&quot; &quot;allbuild&quot; { for_each = toset(var.build_roles_list) project = var.project_number role = each.key member = &quot;serviceAccount:${local.sabuild}&quot; depends_on = [google_project_service.all] }",
+      "title": "Artifact Registry v1 API - Class ArtifactRegistry (2.13.0) | .NET client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.ArtifactRegistry.V1/latest/Google.Cloud.ArtifactRegistry.V1.ArtifactRegistry",
+      "description": "Reference documentation and code samples for the Artifact Registry v1 API class ArtifactRegistry.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Terraform Tutorial | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/tutorials/terraform",
+      "description": "Create a project: To create a project, you need the Project Creator role (roles/resourcemanager.projectCreator), which contains the resourcemanager.projects.create permission. Learn how to grant roles. Note: If you don&#x27;t plan to keep the resources that you create in this procedure, create a project instead of selecting an existing project. After you finish these steps, you can delete the project, removing all resources associated with the project. ... Verify that billing is enabled for your Google Cloud project. Enable the Cloud Functions, Cloud Run, Cloud Build, Artifact Registry, and Cloud Storage APIs.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
       ],
@@ -1737,13 +2178,49 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create jobs | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/create-jobs",
+      "description": "To get the permissions that you need to create Cloud Run jobs, ask your administrator to grant you the following IAM roles: Cloud Run Developer (roles/run.developer) on the Cloud Run job · Service Account User (roles/iam.serviceAccountUser) on the service identity · Artifact Registry Reader (roles/artifactregistry.reader) on the Artifact Registry repository of the container images of the job · For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1752,9 +2229,109 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/vertex-ai/docs/predictions/use-custom-container",
+      "title": "Deploying container images to Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/deploying",
+      "description": "Artifact Registry Reader ... on the Artifact Registry repository of the deployed container image · If you are using a cross-project service account to deploy a service: Service Account Token Creator (roles/iam.serviceAccountTokenCreator) on the service identity · For a list of IAM roles and permissions that are ...",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Cloud Run IAM roles | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+      "description": "To get the permissions that you need to deploy services or revisions, you or your administrator must grant IAM roles to the deployer account on the following resources: Cloud Run Developer (roles/run.developer) on the Cloud Run service · Artifact Registry Reader (roles/artifactregistry.reader) on the Artifact Registry repository of the container images of the service",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Three Tier App | DeployStack | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/deploystack/three-tier-app",
+      "description": "Enable Cloud Build Service Account to store containers in Artifact Registry · variable &quot;build_roles_list&quot; { description = &quot;The list of roles that build needs for&quot; type = list(string) default = [ &quot;roles/run.developer&quot;, &quot;roles/vpaccess.user&quot;, &quot;roles/iam.serviceAccountUser&quot;, &quot;roles/run.admin&quot;, &quot;roles/secretmanager.secretAccessor&quot;, &quot;roles/artifactregistry.admin&quot;, ] } resource &quot;google_project_iam_member&quot; &quot;allbuild&quot; { for_each = toset(var.build_roles_list) project = var.project_number role = each.key member = &quot;serviceAccount:${local.sabuild}&quot; depends_on = [google_project_service.all] }",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Use a custom container for inference | Vertex AI | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vertex-ai/docs/predictions/use-custom-container",
       "description": "<strong>The Artifact Registry URI of your container image</strong>. If you are using the gcloud ai models upload command, you can use the --container-image-uri flag to specify this field. ... An array of an executable and arguments to override the container&#x27;s ...",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"API reference\""
       ],
@@ -1766,13 +2343,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1781,69 +2361,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/release-notes",
-      "title": "Artifact Registry release notes | Google Cloud Documentation",
-      "description": "Artifact Registry now <strong>calculates fingerprints for each version of a package pushed to the Artifact Registry repository</strong>. You can use the fingerprint to validate that the package wasn&#x27;t modified when moving between Google Cloud systems, such as ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Artifact Registry\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 85,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 85,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 77,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-functions/latest/com.google.cloud.functions.v2alpha.BuildConfig",
-      "title": "Class BuildConfig (2.85.0) | Java client libraries | Google Cloud Documentation",
-      "description": "If docker_repository field is specified, this field should either be left unspecified or set to ARTIFACT_REGISTRY.",
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Artifact Registry\"",
-        "site:docs.cloud.google.com \"Artifact Registry\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": -16,
-      "deterministic_score": 79,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 79,
-        "parent_page_likelihood": 4,
-        "product_match": 0,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 77,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/functions/docs/tutorials/terraform",
-      "title": "Terraform Tutorial | Cloud Run functions | Google Cloud Documentation",
-      "description": "Create a project: To create a project, you need the Project Creator role (roles/resourcemanager.projectCreator), which contains the resourcemanager.projects.create permission. Learn how to grant roles. Note: If you don&#x27;t plan to keep the resources that you create in this procedure, create a project instead of selecting an existing project. After you finish these steps, you can delete the project, removing all resources associated with the project. ... Verify that billing is enabled for your Google Cloud project. Enable the Cloud Functions, Cloud Run, Cloud Build, Artifact Registry, and Cloud Storage APIs.",
+      "title": "Manage revisions | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/managing/revisions",
+      "description": "To get the permissions that you need to manage Cloud Run services and revisions, ask your administrator to grant you the Cloud Run Developer (roles/run.developer) IAM role on your Cloud Run service.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Artifact Registry\" \"roles and permissions\""
       ],
@@ -1855,18 +2376,21 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 79,
+      "product_fit_score": -28,
+      "deterministic_score": 23,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 79,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 1,
+        "classification": "iam_reference",
+        "score": 23,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 72,
+      "final_score": 25,
       "keep": false
     }
   ]

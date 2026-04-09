@@ -18,14 +18,14 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | no | iam_reference | https://docs.cloud.google.com/migration-center/docs/discover-aws-assets | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/migration-center/docs/discover-azure-vms | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/discovery-client-cli-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/discovery-client-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/estimate/overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/plan-migration-waves | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | yes | api_reference | https://docs.cloud.google.com/migration-center/docs/reference/rest | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/reference/rest/v1 | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | irrelevant | https://docs.cloud.google.com/migration-center/docs/release-notes | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/migration-center/docs/view-and-understand-insights | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/analytics/devguides/migration | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://developers.google.com/analytics/devguides/migration/measurement?technology=gtagjs | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/appengine/migration-center/migrate-to-artifact-registry | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/appengine/migration-center/run/migrate-app-engine-flexible-to-run | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/appengine/migration-center/run/migrate-app-engine-standard-gcloud | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/appengine/migration-center/standard/migrate-to-second-gen/java-differences | 1 | Heuristic tail scoring was applied outside the API-ranked set. |

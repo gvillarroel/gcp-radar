@@ -10,147 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/organizations.locations.notifications
   title: "REST Resource: organizations.locations.notifications \_|\_ Advisory Notifications\
     \ \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-REST Resource: organizations.locations.notifications | Advisory Notifications | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Advisory Notifications
-Start free
-Overview
-Guides
-Reference
-Support
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Support
-Resources
-Cross-product tools
-More
-Console
-Advisory Notifications
-All APIs and references
-Client libraries
-Advisory Notifications API
-REST Reference
-Overview
-v1
-REST Resources
-organizations. locations
-Overview
-getSettings
-updateSettings
-organizations. locations. notifications
-Overview
-get
-list
-projects. locations
-Overview
-getSettings
-updateSettings
-projects. locations. notifications
-Overview
-get
-list
-Types
-List Notifications Response
-Notification View
-Settings
-RPC Reference
-Overview
-v1
-Overview
-google.cloud.advisorynotifications.v1
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Resource: Notification Subject
-Text
-LocalizationState
-Message
-Body
-Attachment
-Csv
-CsvRow
-NotificationType
-Methods get
-list
 Home
 Documentation
 Security
 Advisory Notifications
 Reference
-Was this helpful?
 Send feedback
-REST Resource: organizations. locations. notifications
+REST Resource: organizations.locations.notifications
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Resource: Notification Subject
-Text
-LocalizationState
-Message
-Body
-Attachment
-Csv
-CsvRow
-NotificationType
-Methods get
-list
 Resource: Notification
 JSON representation
 Subject
@@ -173,9 +47,6 @@ Methods
 Resource: Notification
 A notification object for notifying customers about security and privacy issues.
 JSON representation
-See more code actions.
-Light code theme
-Dark code theme
 {
 "name" : string ,
 "subject" : {
@@ -199,11 +70,11 @@ The subject line of the notification.
 messages[]
 object ( Message )
 A list of messages in the notification.
-create Time
+createTime
 string ( Timestamp format)
 Output only. Time the notification was created.
 A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z" .
-notification Type
+notificationType
 enum ( NotificationType )
 Type of notification
 Subject
@@ -227,23 +98,23 @@ JSON representation
 "localizationState" : enum ( LocalizationState )
 }
 Fields
-en Text
+enText
 string
 The English copy.
-localized Text
+localizedText
 string
 The requested localized copy (if applicable).
-localization State
+localizationState
 enum ( LocalizationState )
 Status of the localization.
-Localization State
+LocalizationState
 Status of localized text.
 Enums
-LOCALIZATION_ STATE_ UNSPECIFIED
+LOCALIZATION_STATE_UNSPECIFIED
 Not used.
-LOCALIZATION_ STATE_ NOT_ APPLICABLE
+LOCALIZATION_STATE_NOT_APPLICABLE
 Localization is not applicable for requested language. This can happen when: - The requested language was not supported by Advisory Notifications at the time of localization (including notifications created before the localization feature was launched). - The requested language is English, so only the English text is returned.
-LOCALIZATION_ STATE_ PENDING
+LOCALIZATION_STATE_PENDING
 Localization for requested language is in progress, and not ready yet.
 LOCALIZATION_STATE_COMPLETED
 Localization for requested language is completed.
@@ -358,54 +229,8 @@ get
 Gets a notification.
 list
 Lists notifications under a given parent.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
 Last updated 2025-04-23 UTC.
 Need to tell us more?
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-04-23 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial

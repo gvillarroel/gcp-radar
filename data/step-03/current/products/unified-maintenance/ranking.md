@@ -14,10 +14,10 @@ This file lists the official Google documentation URLs selected and scored for t
 | 95 | no | supporting_page | https://docs.cloud.google.com/python/docs/reference/google-cloud-maintenance-api/latest | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/python/docs/reference/google-cloud-maintenance-api/latest/google.cloud.maintenance_api_v1.services.maintenance | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/unified-maintenance/docs/log-schema | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | irrelevant | https://docs.cloud.google.com/unified-maintenance/docs/reference/rest | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | yes | api_reference | https://docs.cloud.google.com/unified-maintenance/docs/reference/rest | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.location | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | irrelevant | https://docs.cloud.google.com/unified-maintenance/docs/supported-services | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/unified-maintenance/docs/supported-services | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/unified-maintenance/docs/turn-off-logs-storage | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/com.google.cloud.maintenance.api.v1beta.MaintenanceClient | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |

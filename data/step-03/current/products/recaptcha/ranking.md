@@ -9,7 +9,7 @@ This file lists the official Google documentation URLs selected and scored for t
 | 100 | no | supporting_page | https://developers.google.com/recaptcha/docs/v3 | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://developers.google.com/recaptcha/docs/versions | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | yes | product_root | https://docs.cloud.google.com/recaptcha/docs | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/recaptcha/docs/authentication | 5 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/recaptcha/docs/authentication | 6 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/recaptcha/docs/create-key-website | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | yes | product_root | https://docs.cloud.google.com/recaptcha/docs/overview | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/recaptcha/docs/prepare-environment | 5 | Fallback heuristic scoring was used because API scoring was unavailable. |

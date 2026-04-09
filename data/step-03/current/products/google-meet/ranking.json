@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:37:13.655Z",
+  "generated_at": "2026-04-09T08:32:35.114Z",
   "product_name": "Google Meet",
   "product_slug": "google-meet",
   "step02_source_path": "data/step-02/current/google-meet.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "go",
   "dominant_python_slug": "",
@@ -22,6 +22,56 @@
     },
     {
       "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/meet/api \"Google Meet API\"",
+      "official_result_count": 7,
+      "results": [
+        {
+          "title": "Google Meet API | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2",
+          "description": "Create and manage meetings in Google Meet. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
+          "rank": 1
+        },
+        {
+          "title": "Node.js quickstart | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs",
+          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Install the client library. Set up the sample. Run the sample. To run this quickstart, you need the following prerequisites: Node.js &amp; npm installed. A Google Cloud project. A Google Workspace account with Google Meet ...",
+          "rank": 2
+        },
+        {
+          "title": "Usage limits | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/limits",
+          "description": "Because the Google Meet REST API is a shared service, we apply quotas and limitations to make sure it&#x27;s used fairly by all users and to protect the overall performance of the Google Workspace system.",
+          "rank": 3
+        },
+        {
+          "title": "Java quickstart | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/quickstart/java",
+          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Java 11 or greater. Gradle 7.0 or greater. A Google Cloud project. A Google Workspace account with Google Meet ...",
+          "rank": 4
+        },
+        {
+          "title": "Method: conferenceRecords.transcripts.entries.get | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/get",
+          "description": "Note: The transcript entries returned by the <strong>Google Meet API</strong> might not match the transcription found in the Google Docs transcript file.",
+          "rank": 5
+        },
+        {
+          "title": "Python quickstart | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/quickstart/python",
+          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Install the client library. Set up the sample. Run the sample. To run this quickstart, you need the following prerequisites: ... A Google Cloud project. A Google Workspace account with Google Meet enabled.",
+          "rank": 6
+        },
+        {
+          "title": "Method: conferenceRecords.transcripts.entries.list | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/list",
+          "description": "Note: The transcript entries returned by the <strong>Google Meet API</strong> might not match the transcription found in the Google Docs transcript file.",
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "round": 1,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
       "official_result_count": 8,
@@ -33,15 +83,15 @@
           "rank": 1
         },
         {
-          "title": "Google Meet SDK and API overview | Google for Developers",
-          "url": "https://developers.google.com/workspace/meet/overview",
-          "description": "Technical references and documentation: The reference specifications and guide documentation that explains how to use the API.",
-          "rank": 2
-        },
-        {
           "title": "Google Meet REST API overview | Google for Developers",
           "url": "https://developers.google.com/workspace/meet/api/guides/overview",
           "description": "The Google Meet REST API lets you create and manage meetings for Google Meet and offers entry points to your users directly from your app.",
+          "rank": 2
+        },
+        {
+          "title": "Google Meet SDK and API overview | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/overview",
+          "description": "Technical references and documentation: The reference specifications and guide documentation that explains how to use the API.",
           "rank": 3
         },
         {
@@ -59,7 +109,7 @@
         {
           "title": "Meet add-ons quickstart | Google Meet | Google for Developers",
           "url": "https://developers.google.com/workspace/meet/add-ons/guides/quickstart",
-          "description": "Only you can see this.&lt;/div&gt; &lt;button id=&quot;start-activity&quot;&gt;Launch Activity in Main Stage.&lt;/button&gt; &lt;script&gt; document.body.onload = () =&gt; { // Library name (`helloWorld`) is defined in the webpack config. // The function (`setUpAddon`) is defined in main.js. helloWorld.setUpAddon(); }; &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; You&#x27;ll also need to bundle the Meet add-ons SDK with your main.js and expose them in a library.",
+          "description": "To learn more about building your first page in Next.js, see the official Next.js docs on routing. Add a new Page to display the side panel. This page creates an add-on session and side panel client on load, and starts the activity when a button is clicked: &#x27;use client&#x27;; import { useEffect, useState } from &#x27;react&#x27;; import { meet, MeetSidePanelClient, } from &#x27;@googleworkspace/meet-addons/meet.addons&#x27;; export default function Page() { const [sidePanelClient, setSidePanelClient] = useState&lt;MeetSidePanelClient&gt;(); // Launches the main stage when the main button is clicked.",
           "rank": 6
         },
         {
@@ -110,7 +160,7 @@
       "official_result_count": 5,
       "results": [
         {
-          "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.8.0) | Go client libraries | Google Cloud Documentation",
+          "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.9.0) | Go client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2",
           "description": "Create and manage meetings in Google Meet. NOTE: This package is in beta. It is not stable, and may be subject to changes. For information that is relevant for all client libraries please reference https://pkg.go.dev/cloud.google.com/go#pkg-overview. Some information on this page includes: Authentication and Authorization ·",
           "rank": 1
@@ -157,6 +207,62 @@
     },
     {
       "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/meet/api reference overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Google Meet API | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2",
+          "description": "Reference · Send feedback · Create and manage meetings in Google Meet. REST Resource: v2.conferenceRecords · REST Resource: v2.conferenceRecords.participants · REST Resource: v2.conferenceRecords.participants.participantSessions · REST Resource: v2.conferenceRecords.recordings ·",
+          "rank": 1
+        },
+        {
+          "title": "Google Meet REST API overview | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/overview",
+          "description": "To learn about developing with Google Workspace APIs, including handling authentication and authorization, refer to Develop on Google Workspace.",
+          "rank": 2
+        },
+        {
+          "title": "REST Resource: spaces | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/spaces",
+          "description": "Reference · Send feedback · Resource: Space · JSON representation · SpaceConfig · JSON representation · AccessType · EntryPointAccess · Moderation · ModerationRestrictions · JSON representation · RestrictionType · DefaultJoinAsViewerType · AttendanceReportGenerationType ·",
+          "rank": 3
+        },
+        {
+          "title": "Respond to events from Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/events-overview",
+          "description": "Google Workspace Events API overview · Create a Google Workspace subscription · Subscribe to Google Meet events · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache ...",
+          "rank": 4
+        },
+        {
+          "title": "REST Resource: conferenceRecords.participants | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants",
+          "description": "Reference · Send feedback · Resource: Participant · JSON representation · SignedinUser · JSON representation · AnonymousUser · JSON representation · PhoneUser · JSON representation · Methods · User who attended or is attending a conference. A signed-in user can be: a) An individual ...",
+          "rank": 5
+        },
+        {
+          "title": "REST Resource: conferenceRecords.recordings | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings",
+          "description": "Reference · Send feedback · Resource: Recording · JSON representation · DriveDestination · JSON representation · State · Methods · Metadata about a recording created during a conference. Export location where a recording file is saved in Google Drive.",
+          "rank": 6
+        },
+        {
+          "title": "Method: conferenceRecords.list | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords/list",
+          "description": "Reference · Send feedback · HTTP request · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Try it! Lists the conference records. By default, ordered by start time and in descending order. GET https://meet.googleapis.com/v2/conferenceRecords ·",
+          "rank": 7
+        },
+        {
+          "title": "Method: conferenceRecords.recordings.list | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Try it! <strong>Lists the recording resources from the conference record</strong>. By default, ...",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference",
       "official_result_count": 8,
@@ -174,21 +280,21 @@
           "rank": 2
         },
         {
-          "title": "Interface MeetingInfo | Google Meet | Google for Developers",
-          "url": "https://developers.google.com/workspace/meet/add-ons/reference/websdk/addon_sdk.meetinginfo",
-          "description": "Google Meet · Reference · Send feedback · Information about the meeting in which the add-on is running. interface MeetingInfo · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-          "rank": 3
-        },
-        {
           "title": "Method: conferenceRecords.transcripts.entries.get | Google Meet | Google for Developers",
           "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/get",
           "description": "GET <strong>https://meet.googleapis.com/v2/{name=conferenceRecords/*/transcripts/*/entries/*}</strong>",
-          "rank": 4
+          "rank": 3
         },
         {
           "title": "meet::VideoFrame Struct Reference | Google Meet | Google for Developers",
           "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/video-frame",
           "description": "<strong>This ID is used to identify which participant in the conference generated the frame</strong>. Integrators can cross reference this value with values pushed from Meet servers to the client via MediaEntriesToClient resource updates.",
+          "rank": 4
+        },
+        {
+          "title": "Interface MeetingInfo | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/add-ons/reference/websdk/addon_sdk.meetinginfo",
+          "description": "Google Meet · Reference · Send feedback · Information about the meeting in which the add-on is running. interface MeetingInfo · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
           "rank": 5
         },
         {
@@ -198,15 +304,15 @@
           "rank": 6
         },
         {
-          "title": "meet::MediaApiClientConfiguration Struct Reference | Google Meet | Google for Developers",
-          "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/media-api-client-configuration",
-          "description": "Developer Preview: Available as part of the Google Workspace Developer Preview Program, which grants early access to certain features. To use the Meet Media API to access real-time media from a conference, the Google Cloud project, OAuth principal, and all participants in the conference must ...",
-          "rank": 7
-        },
-        {
           "title": "REST Resource: conferenceRecords.participants.participantSessions | Google Meet | Google for Developers",
           "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
           "description": "Google Meet · Reference · Send feedback · Resource: ParticipantSession · JSON representation · Methods · <strong>Refers to each unique join or leave session when a user joins a conference from a device</strong>.",
+          "rank": 7
+        },
+        {
+          "title": "meet::MediaApiClientConfiguration Struct Reference | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/media-api-client-configuration",
+          "description": "Developer Preview: Available as part of the Google Workspace Developer Preview Program, which grants early access to certain features. To use the Meet Media API to access real-time media from a conference, the Google Cloud project, OAuth principal, and all participants in the conference must ...",
           "rank": 8
         }
       ]
@@ -236,7 +342,7 @@
       "round": 2,
       "intent": "product_docs",
       "query": "site:docs.cloud.google.com \"Google Meet\" Google Cloud docs overview",
-      "official_result_count": 4,
+      "official_result_count": 5,
       "results": [
         {
           "title": "google-cloud-meet overview (0.52.0) | Java client libraries | Google Cloud Documentation",
@@ -245,22 +351,28 @@
           "rank": 1
         },
         {
-          "title": "Google Meet API v2beta - Package cloud.google.com/go/apps/meet/apiv2beta (v0.9.0) | Go client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2beta",
+          "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.9.0) | Go client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2",
           "description": "Create and manage meetings in Google Meet. NOTE: This package is in beta. It is not stable, and may be subject to changes. For information that is relevant for all client libraries please reference https://pkg.go.dev/cloud.google.com/go#pkg-overview.",
           "rank": 2
         },
         {
-          "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.8.0) | Go client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2",
+          "title": "Google Meet API v2beta - Package cloud.google.com/go/apps/meet/apiv2beta (v0.9.0) | Go client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2beta",
           "description": "Create and manage meetings in Google Meet. NOTE: This package is in beta. It is not stable, and may be subject to changes. For information that is relevant for all client libraries please reference https://pkg.go.dev/cloud.google.com/go#pkg-overview.",
           "rank": 3
+        },
+        {
+          "title": "Google Meet API - Module Google (v1.1.2) | Ruby client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet/latest/Google",
+          "description": "Reference documentation and code samples for the Google Meet API module Google.",
+          "rank": 4
         },
         {
           "title": "Google Meet V2BETA API - Class Google::Api::BatchingSettingsProto (v0.10.0) | Ruby client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet-v2beta/latest/Google-Api-BatchingSettingsProto",
           "description": "Reference documentation and code samples for the Google Meet V2BETA API class Google::Api::BatchingSettingsProto.",
-          "rank": 4
+          "rank": 5
         }
       ]
     },
@@ -277,6 +389,62 @@
       "query": "site:docs.cloud.google.com \"Google Meet\" \"API reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/meet/api auth scopes",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Authenticate and authorize Meet REST API requests | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+          "description": "Authorization scopes are <strong>the permissions that you request users to authorize for your app to access the meeting content</strong>. When someone installs your app, the user is asked to validate these scopes.",
+          "rank": 1
+        },
+        {
+          "title": "Method: conferenceRecords.list | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords/list",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 2
+        },
+        {
+          "title": "Method: conferenceRecords.participants.participantSessions.list | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 3
+        },
+        {
+          "title": "Method: spaces.patch | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/spaces/patch",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.settings · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 4
+        },
+        {
+          "title": "Method: conferenceRecords.participants.get | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants/get",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 5
+        },
+        {
+          "title": "Method: conferenceRecords.participants.list | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants/list",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 6
+        },
+        {
+          "title": "Method: conferenceRecords.participants.participantSessions.get | Google Meet | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 7
+        },
+        {
+          "title": "Observe meeting events with Python and the Google Meet REST API | Google for Developers",
+          "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+          "description": "Enter your email address and any other authorized test users, then click Save. Click Data Access &gt; Add or Remove Scopes.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 3,
@@ -361,7 +529,7 @@
           "rank": 1
         },
         {
-          "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.8.0) | Go client libraries | Google Cloud Documentation",
+          "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.9.0) | Go client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2",
           "description": "Create and manage meetings in Google Meet. NOTE: This package is in beta. It is not stable, and may be subject to changes. For information that is relevant for all client libraries please reference <strong>https://pkg.go.dev/cloud.google.com/go#pkg-overview</strong>.",
           "rank": 2
@@ -397,9 +565,9 @@
           "rank": 7
         },
         {
-          "title": "Google Meet V2BETA API - Class Google::Apps::Meet::V2beta::ConferenceRecordsService::Rest::Client (v0.8.1) | Ruby client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet-v2beta/latest/Google-Apps-Meet-V2beta-ConferenceRecordsService-Rest-Client",
-          "description": "Reference documentation and code samples for the Google Meet V2BETA API class Google::Apps::Meet::V2beta::ConferenceRecordsService::Rest::Client.",
+          "title": "Google Meet V2 API - Class Google::Apps::Meet::V2::SpacesService::Client (v0.6.1) | Ruby client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet-v2/latest/Google-Apps-Meet-V2-SpacesService-Client",
+          "description": "Reference documentation and code samples for the Google Meet V2 API class Google::Apps::Meet::V2::SpacesService::Client.",
           "rank": 8
         }
       ]
@@ -439,7 +607,45 @@
   ],
   "scored_urls": [
     {
-      "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.8.0) | Go client libraries | Google Cloud Documentation",
+      "title": "Google Meet REST API overview | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/overview",
+      "description": "To learn about developing with Google Workspace APIs, including handling authentication and authorization, refer to Develop on Google Workspace.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview",
+        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
+        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        1,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Google Meet API v2 - Package cloud.google.com/go/apps/meet/apiv2 (v0.9.0) | Go client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/apps/latest/meet/apiv2",
       "description": "Create and manage meetings in Google Meet. NOTE: This package is in beta. It is not stable, and may be subject to changes. For information that is relevant for all client libraries please reference https://pkg.go.dev/cloud.google.com/go#pkg-overview. Some information on this page includes: Authentication and Authorization ·",
       "rank": 1,
@@ -458,11 +664,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 94,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -492,16 +701,19 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 94,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
@@ -514,8 +726,8 @@
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Google Meet\"",
         "site:docs.cloud.google.com \"Google Meet\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Google Meet\" \"Java client libraries\"",
         "site:docs.cloud.google.com \"Google Meet\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Google Meet\" \"Java client libraries\"",
         "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -529,13 +741,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 34,
+      "product_fit_score": 54,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -563,18 +778,241 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 24,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 4,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Meet API - Module Google (v1.1.2) | Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet/latest/Google",
+      "description": "Reference documentation and code samples for the Google Meet API module Google.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google Meet\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Google Meet\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 44,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Meet API | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference",
+      "description": "Create and manage meetings in Google Meet. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\"",
+        "site:developers.google.com/workspace/meet/api reference overview",
+        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Google Meet API | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2",
+      "description": "Create and manage meetings in Google Meet. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\"",
+        "site:developers.google.com/workspace/meet/api reference overview",
+        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.participants.get | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants/get",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api auth scopes",
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        3,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.transcripts.entries.get | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/get",
+      "description": "Note: The transcript entries returned by the <strong>Google Meet API</strong> might not match the transcription found in the Google Docs transcript file.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\"",
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.list | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords/list",
+      "description": "Reference · Send feedback · HTTP request · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Try it! Lists the conference records. By default, ordered by start time and in descending order. GET https://meet.googleapis.com/v2/conferenceRecords ·",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview",
+        "site:developers.google.com/workspace/meet/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
       "keep": false
     },
     {
@@ -595,24 +1033,101 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
     },
     {
-      "title": "Google Meet REST API overview | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/guides/overview",
-      "description": "The Google Meet REST API lets you create and manage meetings for Google Meet and offers entry points to your users directly from your app.",
+      "title": "Google Meet API | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api",
+      "description": "Create and manage meetings in Google Meet. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\"",
+        "site:developers.google.com/workspace/meet/api reference overview",
+        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Respond to events from Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/events-overview",
+      "description": "Google Workspace Events API overview · Create a Google Workspace subscription · Subscribe to Google Meet events · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache ...",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview",
+        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Google Meet SDK and API overview | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/overview",
+      "description": "Technical references and documentation: The reference specifications and guide documentation that explains how to use the API.",
       "rank": 3,
       "query_hits": [
         "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
@@ -625,114 +1140,21 @@
         1,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "Google Meet API | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/reference",
-      "description": "Create and manage meetings in Google Meet. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document is a ...",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "Google Meet API | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2",
-      "description": "Create and manage meetings in Google Meet. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests. A Discovery Document is a ...",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 5,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Google Meet SDK and API overview | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/overview",
-      "description": "Technical references and documentation: The reference specifications and guide documentation that explains how to use the API.",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation",
-        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -755,46 +1177,17 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Google Meet API - Module Google (v1.1.2) | Ruby client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet/latest/Google",
-      "description": "Reference documentation and code samples for the Google Meet API module Google.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google Meet\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -802,86 +1195,29 @@
       "keep": false
     },
     {
-      "title": "Meet add-ons SDK for Web overview | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/add-ons/guides/overview",
-      "description": "It&#x27;s the central place for managing published Google Workspace add-ons. ... An add-on that users can install through the side panel or through the Marketplace. ... Add-ons that are installed and ready for use. These are listed in a user&#x27;s add-ons side panel. User&#x27;s cannot uninstall admin-installed apps. ... The central focus area where the meeting is held.",
-      "rank": 5,
+      "title": "Authenticate and authorize Meet REST API requests | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+      "description": "Authorization scopes are <strong>the permissions that you request users to authorize for your app to access the meeting content</strong>. When someone installs your app, the user is asked to validate these scopes.",
+      "rank": 1,
       "query_hits": [
-        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+        "site:developers.google.com/workspace/meet/api auth scopes"
       ],
       "intent_hits": [
-        "developers_docs"
+        "canonical_docs"
       ],
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "iam_reference",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Use a Meet add-on | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/add-ons/guides/use-add-on",
-      "description": "This guide provides an overview of how people start and work with a Google Meet add-on.",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Respond to events from Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/guides/events-overview",
-      "description": "A Meet event represents an activity or change to a Meet resource, such as creating a new meeting.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -890,6 +1226,402 @@
       },
       "final_score": 90,
       "keep": true
+    },
+    {
+      "title": "REST Resource: conferenceRecords.participants | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants",
+      "description": "Reference · Send feedback · Resource: Participant · JSON representation · SignedinUser · JSON representation · AnonymousUser · JSON representation · PhoneUser · JSON representation · Methods · User who attended or is attending a conference. A signed-in user can be: a) An individual ...",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: conferenceRecords.participants.participantSessions | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
+      "description": "Google Meet · Reference · Send feedback · Resource: ParticipantSession · JSON representation · Methods · <strong>Refers to each unique join or leave session when a user joins a conference from a device</strong>.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.participants.participantSessions.get | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.participants.participantSessions.list | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.participants.list | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants/list",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: conferenceRecords.recordings | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings",
+      "description": "Reference · Send feedback · Resource: Recording · JSON representation · DriveDestination · JSON representation · State · Methods · Metadata about a recording created during a conference. Export location where a recording file is saved in Google Drive.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.recordings.list | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.recordings/list",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · JSON representation · Authorization scopes · Try it! <strong>Lists the recording resources from the conference record</strong>. By default, ...",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: conferenceRecords.transcripts.entries.list | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/list",
+      "description": "Note: The transcript entries returned by the <strong>Google Meet API</strong> might not match the transcription found in the Google Docs transcript file.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: spaces | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/spaces",
+      "description": "Reference · Send feedback · Resource: Space · JSON representation · SpaceConfig · JSON representation · AccessType · EntryPointAccess · Moderation · ModerationRestrictions · JSON representation · RestrictionType · DefaultJoinAsViewerType · AttendanceReportGenerationType ·",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api reference overview"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: spaces.patch | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/spaces/patch",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/meetings.space.created · https://www.googleapis.com/auth/meetings.space.settings · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 142,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google Meet Parameters | Admin console | Google for Developers",
+      "url": "https://developers.google.com/admin-sdk/reports/v1/appendix/usage/customer/meet",
+      "description": "<strong>This document lists the parameters for various types of Google Meet activity events</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Usage limits | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/limits",
+      "description": "Because the Google Meet REST API is a shared service, we apply quotas and limitations to make sure it&#x27;s used fairly by all users and to protect the overall performance of the Google Workspace system.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
     },
     {
       "title": "Google Meet meeting spaces overview | Google for Developers",
@@ -907,196 +1639,151 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_root",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "REST Resource: conferenceRecords.participants.participantSessions | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
-      "description": "Google Meet · Reference · Send feedback · Resource: ParticipantSession · JSON representation · Methods · <strong>Refers to each unique join or leave session when a user joins a conference from a device</strong>.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "title": "Method: conferenceRecords.participants.get | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants/get",
-      "description": "Google Meet · Reference · Send ... scopes · Try it! Gets a participant by participant ID. <strong>GET https://meet.googleapis.com/v2/{name=conferenceRecords/*/participants/*}</strong> The URL uses gRPC Transcoding syntax....",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Method: conferenceRecords.transcripts.entries.get | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/get",
-      "description": "GET <strong>https://meet.googleapis.com/v2/{name=conferenceRecords/*/transcripts/*/entries/*}</strong>",
+      "title": "Java quickstart | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/quickstart/java",
+      "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Java 11 or greater. Gradle 7.0 or greater. A Google Cloud project. A Google Workspace account with Google Meet ...",
       "rank": 4,
       "query_hits": [
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\""
       ],
       "intent_hits": [
-        "developers_docs"
+        "canonical_docs"
       ],
       "round_hits": [
-        2
+        1
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 0,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "title": "Meet Media API overview | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/media-api/guides/overview",
-      "description": "This enables a variety of use cases, such as apps that document action items, offer real-time insights about the current meeting, or stream audio and video to a new surface. Apps registered in the Google Cloud console can use the Meet Media API to connect to Meet conferences, enabling them to:",
-      "rank": 4,
+      "title": "Node.js quickstart | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/quickstart/nodejs",
+      "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Install the client library. Set up the sample. Run the sample. To run this quickstart, you need the following prerequisites: Node.js &amp; npm installed. A Google Cloud project. A Google Workspace account with Google Meet ...",
+      "rank": 2,
       "query_hits": [
-        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\""
       ],
       "intent_hits": [
-        "developers_docs"
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python quickstart | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/quickstart/python",
+      "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Install the client library. Set up the sample. Run the sample. To run this quickstart, you need the following prerequisites: ... A Google Cloud project. A Google Workspace account with Google Meet enabled.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api \"Google Meet API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Observe meeting events with Python and the Google Meet REST API | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+      "description": "Enter your email address and any other authorized test users, then click Save. Click Data Access &gt; Add or Remove Scopes.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/meet/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
       ],
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "meet::MediaApiClientConfiguration Struct Reference | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/media-api-client-configuration",
-      "description": "Developer Preview: Available as part of the Google Workspace Developer Preview Program, which grants early access to certain features. To use the Meet Media API to access real-time media from a conference, the Google Cloud project, OAuth principal, and all participants in the conference must ...",
-      "rank": 7,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "meet::VideoFrame Struct Reference | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/video-frame",
-      "description": "<strong>This ID is used to identify which participant in the conference generated the frame</strong>. Integrators can cross reference this value with values pushed from Meet servers to the client via MediaEntriesToClient resource updates.",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1117,14 +1804,50 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
+      "product_fit_score": 64,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google Meet V2 API - Class Google::Apps::Meet::V2::SpacesService::Client (v0.6.1) | Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet-v2/latest/Google-Apps-Meet-V2-SpacesService-Client",
+      "description": "Reference documentation and code samples for the Google Meet V2 API class Google::Apps::Meet::V2::SpacesService::Client.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
       "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
-        "coverage_value": 4,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1147,168 +1870,21 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 4,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Google Meet V2BETA API - Class Google::Apps::Meet::V2beta::ConferenceRecordsService::Rest::Client (v0.8.1) | Ruby client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet-v2beta/latest/Google-Apps-Meet-V2beta-ConferenceRecordsService-Rest-Client",
-      "description": "Reference documentation and code samples for the Google Meet V2BETA API class Google::Apps::Meet::V2beta::ConferenceRecordsService::Rest::Client.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 89,
-      "keep": false
-    },
-    {
-      "title": "Interface MeetingInfo | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/add-ons/reference/websdk/addon_sdk.meetinginfo",
-      "description": "Google Meet · Reference · Send feedback · Information about the meeting in which the add-on is running. interface MeetingInfo · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 88,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 88,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 80,
-      "keep": false
-    },
-    {
-      "title": "Ruby client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet/latest",
-      "description": "<strong>Actual client classes for the various versions of this API are defined in versioned client gems, with names of the form google-apps-meet-v*</strong>. The gem google-apps-meet is the main client library that brings the versioned gems in as dependencies, ...",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 80,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 80,
-        "parent_page_likelihood": 4,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 73,
-      "keep": false
-    },
-    {
-      "title": "Google Meet Parameters | Admin console | Google for Developers",
-      "url": "https://developers.google.com/admin-sdk/reports/v1/appendix/usage/customer/meet",
-      "description": "<strong>This document lists the parameters for various types of Google Meet activity events</strong>.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 79,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 79,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 72,
-      "keep": false
-    },
-    {
-      "title": "Meet add-ons quickstart | Google Meet | Google for Developers",
-      "url": "https://developers.google.com/workspace/meet/add-ons/guides/quickstart",
-      "description": "Only you can see this.&lt;/div&gt; &lt;button id=&quot;start-activity&quot;&gt;Launch Activity in Main Stage.&lt;/button&gt; &lt;script&gt; document.body.onload = () =&gt; { // Library name (`helloWorld`) is defined in the webpack config. // The function (`setUpAddon`) is defined in main.js. helloWorld.setUpAddon(); }; &lt;/script&gt; &lt;/body&gt; &lt;/html&gt; You&#x27;ll also need to bundle the Meet add-ons SDK with your main.js and expose them in a library.",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 79,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 79,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 72,
       "keep": false
     },
     {
@@ -1327,18 +1903,54 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 72,
+      "product_fit_score": 72,
+      "deterministic_score": 92,
       "api_score": {
         "classification": "irrelevant",
-        "score": 72,
-        "parent_page_likelihood": 4,
+        "score": 92,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 66,
+      "final_score": 83,
+      "keep": false
+    },
+    {
+      "title": "Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-apps-meet/latest",
+      "description": "<strong>Actual client classes for the various versions of this API are defined in versioned client gems, with names of the form google-apps-meet-v*</strong>. The gem google-apps-meet is the main client library that brings the versioned gems in as dependencies, ...",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google Meet\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -50,
+      "deterministic_score": 52,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 52,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 49,
       "keep": false
     },
     {
@@ -1357,18 +1969,21 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": -2,
-      "deterministic_score": 66,
+      "product_fit_score": -30,
+      "deterministic_score": 38,
       "api_score": {
         "classification": "supporting_page",
-        "score": 66,
-        "parent_page_likelihood": 3,
-        "product_match": 1,
+        "score": 38,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 61,
+      "final_score": 37,
       "keep": false
     },
     {
@@ -1387,18 +2002,21 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": -12,
-      "deterministic_score": 59,
+      "product_fit_score": -40,
+      "deterministic_score": 31,
       "api_score": {
         "classification": "supporting_page",
-        "score": 59,
-        "parent_page_likelihood": 3,
-        "product_match": 1,
+        "score": 31,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 55,
+      "final_score": 31,
       "keep": false
     },
     {
@@ -1417,18 +2035,54 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": -2,
-      "deterministic_score": 53,
+      "product_fit_score": -30,
+      "deterministic_score": 25,
       "api_score": {
         "classification": "supporting_page",
-        "score": 53,
-        "parent_page_likelihood": 3,
-        "product_match": 1,
+        "score": 25,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 50,
+      "final_score": 26,
+      "keep": false
+    },
+    {
+      "title": "Meet Media API overview | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/media-api/guides/overview",
+      "description": "This enables a variety of use cases, such as apps that document action items, offer real-time insights about the current meeting, or stream audio and video to a new surface. Apps registered in the Google Cloud console can use the Meet Media API to connect to Meet conferences, enabling them to:",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 25,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 25,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 26,
       "keep": false
     },
     {
@@ -1447,18 +2101,219 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": -2,
-      "deterministic_score": 47,
+      "product_fit_score": -30,
+      "deterministic_score": 19,
       "api_score": {
         "classification": "supporting_page",
-        "score": 47,
-        "parent_page_likelihood": 2,
-        "product_match": 1,
+        "score": 19,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 45,
+      "final_score": 21,
+      "keep": false
+    },
+    {
+      "title": "Meet add-ons SDK for Web overview | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/add-ons/guides/overview",
+      "description": "It&#x27;s the central place for managing published Google Workspace add-ons. ... An add-on that users can install through the side panel or through the Marketplace. ... Add-ons that are installed and ready for use. These are listed in a user&#x27;s add-ons side panel. User&#x27;s cannot uninstall admin-installed apps. ... The central focus area where the meeting is held.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 14,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 14,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 17,
+      "keep": false
+    },
+    {
+      "title": "Use a Meet add-on | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/add-ons/guides/use-add-on",
+      "description": "This guide provides an overview of how people start and work with a Google Meet add-on.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" overview OR site:developers.google.com \"google meet\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 11,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 11,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 14,
+      "keep": false
+    },
+    {
+      "title": "meet::VideoFrame Struct Reference | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/video-frame",
+      "description": "<strong>This ID is used to identify which participant in the conference generated the frame</strong>. Integrators can cross reference this value with values pushed from Meet servers to the client via MediaEntriesToClient resource updates.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 11,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 11,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 14,
+      "keep": false
+    },
+    {
+      "title": "Meet add-ons quickstart | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/add-ons/guides/quickstart",
+      "description": "To learn more about building your first page in Next.js, see the official Next.js docs on routing. Add a new Page to display the side panel. This page creates an add-on session and side panel client on load, and starts the activity when a button is clicked: &#x27;use client&#x27;; import { useEffect, useState } from &#x27;react&#x27;; import { meet, MeetSidePanelClient, } from &#x27;@googleworkspace/meet-addons/meet.addons&#x27;; export default function Page() { const [sidePanelClient, setSidePanelClient] = useState&lt;MeetSidePanelClient&gt;(); // Launches the main stage when the main button is clicked.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" official documentation OR site:developers.google.com \"google meet\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Interface MeetingInfo | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/add-ons/reference/websdk/addon_sdk.meetinginfo",
+      "description": "Google Meet · Reference · Send feedback · Information about the meeting in which the add-on is running. interface MeetingInfo · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "meet::MediaApiClientConfiguration Struct Reference | Google Meet | Google for Developers",
+      "url": "https://developers.google.com/workspace/meet/media-api/reference/cpp/struct/meet/media-api-client-configuration",
+      "description": "Developer Preview: Available as part of the Google Workspace Developer Preview Program, which grants early access to certain features. To use the Meet Media API to access real-time media from a conference, the Google Cloud project, OAuth principal, and all participants in the conference must ...",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Google Meet\" reference OR site:developers.google.com \"google meet\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
       "keep": false
     }
   ]

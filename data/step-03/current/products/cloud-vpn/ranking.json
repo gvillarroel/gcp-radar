@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:19:52.118Z",
+  "generated_at": "2026-04-09T00:00:32.818Z",
   "product_name": "Cloud VPN",
   "product_slug": "cloud-vpn",
   "step02_source_path": "data/step-02/current/cloud-vpn.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "network-connectivity",
   "dominant_python_slug": "",
@@ -57,21 +57,21 @@
           "rank": 5
         },
         {
-          "title": "Connect to on-prem services over Hybrid Networking using Private Service Connect and Hybrid NEG with Internal HTTP(s) load balancer | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/psc-L7-ilb-onprem",
-          "description": "<strong>The Google Cloud VPC network that you use to configure either Cloud Interconnect or Cloud VPN is the same network you use to configure the hybrid load balancing deployment</strong>. Ensure that your VPC network&#x27;s subnet CIDR ranges do not conflict with your remote CIDR ranges.",
-          "rank": 6
-        },
-        {
           "title": "Securing Cloud Run Ingress Traffic | Google Codelabs",
           "url": "https://codelabs.developers.google.com/cloud-run-ingress-deployment",
           "description": "The Compute Engine virtual machine you&#x27;ll use as a jump server has the same network origin as the Cloud VPN Gateway, which is why you are able to use this to simulate sending requests from an on-premises workload.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "ExternalVpnGateway (Compute Engine API v1 (Rev. 235) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/java/latest/com/google/api/services/compute/model/ExternalVpnGateway.html",
           "description": "To create a highly available VPN from Google Cloud to your on-premises side or another Cloud provider&#x27;s VPN gateway, you must <strong>create a external VPN gateway resource in GCP, which provides the information to GCP about your external VPN gateway</strong>.",
+          "rank": 7
+        },
+        {
+          "title": "Connect to on-prem services over Hybrid Networking using Private Service Connect and Hybrid NEG with Internal HTTP(s) load balancer | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/psc-L7-ilb-onprem",
+          "description": "<strong>The Google Cloud VPC network that you use to configure either Cloud Interconnect or Cloud VPN is the same network you use to configure the hybrid load balancing deployment</strong>. Ensure that your VPC network&#x27;s subnet CIDR ranges do not conflict with your remote CIDR ranges.",
           "rank": 8
         }
       ]
@@ -158,9 +158,9 @@
           "rank": 7
         },
         {
-          "title": "VPN gateways | Google Cloud VMware Engine | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
-          "description": "VPN gateways provide secure connectivity between multiple sites, such as on-premises data centers, Google Cloud Virtual Private Cloud (VPC) networks, and Google Cloud VMware Engine private clouds. Traffic is encrypted because the VPN connections traverse the internet.",
+          "title": "Networks and tunnel routing | Cloud VPN | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/choosing-networks-routing",
+          "description": "You can use Classic VPN tunnels that use dynamic routing only if the Classic VPN gateway connects to VPN gateway software running inside a Compute Engine VM. Dynamic routing uses the Border Gateway Protocol (BGP). Dynamic routing uses a Cloud Router to automatically manage the exchange of routes by using BGP.",
           "rank": 8
         }
       ]
@@ -247,9 +247,9 @@
           "rank": 7
         },
         {
-          "title": "globalAddresses()",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/python/latest/compute_v1.globalAddresses.html",
-          "description": "# # Use regional external addresses for the following resources: # # - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA) # # Use regional internal IP addresses for subnet IP ranges (primary and secondary).",
+          "title": "compute: Google.Apis.Compute.v1.Data.Address Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1v1_1_1Data_1_1Address.html",
+          "description": "GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)",
           "rank": 8
         }
       ]
@@ -336,15 +336,15 @@
           "rank": 5
         },
         {
-          "title": "Create a Classic VPN connection to a remote site | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/configure-vpn-between-onprem-cloud",
-          "description": "You cannot change the priority ... the VPN tunnel. For details about how routes work in your VPC network, see Routes overview and Order of routes. To complete your setup and test whether you can send and receive traffic from the VM, follow these steps: In the Google Cloud console, go ...",
-          "rank": 6
-        },
-        {
           "title": "HA VPN topologies | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
           "description": "This document describes recommended topologies and the corresponding availability Service Level Agreement (SLA) for each HA VPN topology. For Classic VPN topologies, see Classic VPN topologies. For more information about Cloud VPN, including both VPN types, see the Cloud VPN overview.",
+          "rank": 6
+        },
+        {
+          "title": "Create a Classic VPN connection to a remote site | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/configure-vpn-between-onprem-cloud",
+          "description": "You cannot change the priority ... the VPN tunnel. For details about how routes work in your VPC network, see Routes overview and Order of routes. To complete your setup and test whether you can send and receive traffic from the VM, follow these steps: In the Google Cloud console, go ...",
           "rank": 7
         },
         {
@@ -532,9 +532,9 @@
           "rank": 7
         },
         {
-          "title": "Create a Classic VPN connection to a remote site | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/configure-vpn-between-onprem-cloud",
-          "description": "Network: Specify an existing VPC network in which to create the VPN gateway and tunnel. Region: Cloud VPN gateways and tunnels are regional objects. Choose a Google Cloud region where the gateway will be located. Instances and other resources in different regions can use the tunnel for egress traffic subject to the order of routes.",
+          "title": "Key terms | Cloud VPN | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/key-terms",
+          "description": "<strong>A virtual VPN gateway running in Google Cloud managed by Google, using a configuration that you specify in your project, and used only by you</strong>. Each Cloud VPN gateway is a regional resource that uses one or more regional external IP addresses.",
           "rank": 8
         }
       ]
@@ -568,19 +568,22 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "APIs and reference | Cloud VPN | Google Cloud Documentation",
@@ -604,19 +607,59 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": true
+    },
+    {
+      "title": "Key terms | Cloud VPN | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/key-terms",
+      "description": "<strong>A virtual VPN gateway running in Google Cloud managed by Google, using a configuration that you specify in your project, and used only by you</strong>. Each Cloud VPN gateway is a regional resource that uses one or more regional external IP addresses.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
     },
     {
       "title": "Cloud VPN overview | Google Cloud Documentation",
@@ -638,19 +681,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "compute: Google.Apis.Compute.beta.Data.VpnTunnel Class Reference",
@@ -672,11 +718,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -706,11 +755,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -738,11 +790,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -753,10 +808,10 @@
       "keep": false
     },
     {
-      "title": "Key terms | Cloud VPN | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/key-terms",
-      "description": "<strong>A virtual VPN gateway running in Google Cloud managed by Google, using a configuration that you specify in your project, and used only by you</strong>. Each Cloud VPN gateway is a regional resource that uses one or more regional external IP addresses.",
-      "rank": 4,
+      "title": "Networks and tunnel routing | Cloud VPN | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/choosing-networks-routing",
+      "description": "You can use Classic VPN tunnels that use dynamic routing only if the Classic VPN gateway connects to VPN gateway software running inside a Compute Engine VM. Dynamic routing uses the Border Gateway Protocol (BGP). Dynamic routing uses a Cloud Router to automatically manage the exchange of routes by using BGP.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud docs overview"
@@ -768,13 +823,16 @@
         1,
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -802,11 +860,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -834,11 +895,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -866,11 +930,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -896,11 +963,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -909,36 +979,6 @@
       },
       "final_score": 90,
       "keep": true
-    },
-    {
-      "title": "Networks and tunnel routing | Cloud VPN | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/choosing-networks-routing",
-      "description": "<strong>You can use Classic VPN tunnels that use dynamic routing only if the Classic VPN gateway connects to VPN gateway software running inside a Compute Engine VM</strong>. Dynamic routing uses the Border Gateway Protocol (BGP).",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
     },
     {
       "title": "Create and manage tags | Cloud VPN | Google Cloud Documentation",
@@ -956,11 +996,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -986,11 +1029,47 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "compute: Google.Apis.Compute.v1.Data.Address Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1v1_1_1Data_1_1Address.html",
+      "description": "GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud VPN\" reference OR site:developers.google.com \"cloud vpn\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1016,11 +1095,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1046,11 +1128,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1076,11 +1161,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1106,16 +1194,19 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1136,13 +1227,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1166,13 +1260,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1196,13 +1293,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1226,13 +1326,16 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1261,6 +1364,9 @@
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -1268,66 +1374,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "globalAddresses()",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/python/latest/compute_v1.globalAddresses.html",
-      "description": "# # Use regional external addresses for the following resources: # # - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA) # # Use regional internal IP addresses for subnet IP ranges (primary and secondary).",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Cloud VPN\" reference OR site:developers.google.com \"cloud vpn\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 89,
-      "keep": false
-    },
-    {
-      "title": "Add a VPN tunnel | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/adding-a-tunnel",
-      "description": "Configure a tunnel on each HA VPN interface on each side of an HA VPN-to-HA VPN gateway configuration. To configure a second tunnel, complete the following steps. To perform this task, you must have been granted the following permissions or the following IAM roles. ... In the Google Cloud console, go to the VPN page.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud VPN\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 28,
-      "deterministic_score": 89,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 89,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 81,
       "keep": false
     },
     {
@@ -1351,79 +1397,53 @@
       "best_rank": 4,
       "consistency_score": 100,
       "product_fit_score": 28,
-      "deterministic_score": 67,
+      "deterministic_score": 85,
       "api_score": {
-        "classification": "irrelevant",
-        "score": 67,
-        "parent_page_likelihood": 3,
+        "classification": "supporting_page",
+        "score": 85,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
         "product_match": 3,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 72,
+      "final_score": 87,
       "keep": false
     },
     {
-      "title": "Create a Classic VPN connection to a remote site | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/configure-vpn-between-onprem-cloud",
-      "description": "You cannot change the priority ... the VPN tunnel. For details about how routes work in your VPC network, see Routes overview and Order of routes. To complete your setup and test whether you can send and receive traffic from the VM, follow these steps: In the Google Cloud console, go ...",
-      "rank": 6,
+      "title": "Add a VPN tunnel | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/adding-a-tunnel",
+      "description": "Configure a tunnel on each HA VPN interface on each side of an HA VPN-to-HA VPN gateway configuration. To configure a second tunnel, complete the following steps. To perform this task, you must have been granted the following permissions or the following IAM roles. ... In the Google Cloud console, go to the VPN page.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Cloud VPN\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 67,
-      "product_fit_score": 28,
-      "deterministic_score": 69,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 69,
-        "parent_page_likelihood": 3,
-        "product_match": 3,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 69,
-      "keep": false
-    },
-    {
-      "title": "Create HA VPN connections between Google Cloud and AWS | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
-      "description": "Cloud Router: A fully distributed and managed Google Cloud service to provide dynamic routing using BGP for your VPC networks. HA VPN gateway: A Google-managed VPN gateway running on Google Cloud.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
+        "iam_permissions"
       ],
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 28,
-      "deterministic_score": 61,
+      "deterministic_score": 89,
       "api_score": {
         "classification": "supporting_page",
-        "score": 61,
-        "parent_page_likelihood": 3,
+        "score": 89,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
         "product_match": 3,
-        "coverage_value": 1,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 57,
+      "final_score": 81,
       "keep": false
     },
     {
@@ -1447,17 +1467,86 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 6,
-      "deterministic_score": 42,
+      "deterministic_score": 60,
       "api_score": {
-        "classification": "irrelevant",
-        "score": 42,
-        "parent_page_likelihood": 2,
+        "classification": "supporting_page",
+        "score": 60,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
         "product_match": 2,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 51,
+      "final_score": 66,
+      "keep": false
+    },
+    {
+      "title": "Create HA VPN connections between Google Cloud and AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/create-ha-vpn-connections-google-cloud-aws",
+      "description": "Cloud Router: A fully distributed and managed Google Cloud service to provide dynamic routing using BGP for your VPC networks. HA VPN gateway: A Google-managed VPN gateway running on Google Cloud.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 28,
+      "deterministic_score": 61,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 61,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 3,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 57,
+      "keep": false
+    },
+    {
+      "title": "Create a Classic VPN connection to a remote site | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/tutorials/configure-vpn-between-onprem-cloud",
+      "description": "You cannot change the priority ... the VPN tunnel. For details about how routes work in your VPC network, see Routes overview and Order of routes. To complete your setup and test whether you can send and receive traffic from the VM, follow these steps: In the Google Cloud console, go ...",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 28,
+      "deterministic_score": 60,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 60,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 3,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 56,
       "keep": false
     },
     {
@@ -1481,6 +1570,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 52,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
@@ -1488,38 +1580,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 49,
-      "keep": false
-    },
-    {
-      "title": "VPN gateways | Google Cloud VMware Engine | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
-      "description": "VPN gateways provide secure connectivity between multiple sites, such as on-premises data centers, Google Cloud Virtual Private Cloud (VPC) networks, and Google Cloud VMware Engine private clouds. Traffic is encrypted because the VPN connections traverse the internet.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 67,
-      "product_fit_score": -22,
-      "deterministic_score": 44,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 44,
-        "parent_page_likelihood": 2,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 47,
       "keep": false
     },
     {
@@ -1545,6 +1605,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 42,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,
@@ -1575,6 +1638,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 47,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 2,
         "coverage_value": 1,
@@ -1605,6 +1671,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 43,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,
@@ -1635,6 +1704,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 40,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,
@@ -1648,7 +1720,7 @@
       "title": "ExternalVpnGateway (Compute Engine API v1 (Rev. 235) 1.25.0)",
       "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/java/latest/com/google/api/services/compute/model/ExternalVpnGateway.html",
       "description": "To create a highly available VPN from Google Cloud to your on-premises side or another Cloud provider&#x27;s VPN gateway, you must <strong>create a external VPN gateway resource in GCP, which provides the information to GCP about your external VPN gateway</strong>.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Cloud VPN\" official documentation OR site:developers.google.com \"cloud vpn\" official documentation"
       ],
@@ -1658,20 +1730,56 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 6,
-      "deterministic_score": 35,
+      "deterministic_score": 38,
       "api_score": {
         "classification": "supporting_page",
-        "score": 35,
+        "score": 38,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 2,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 35,
+      "final_score": 37,
+      "keep": false
+    },
+    {
+      "title": "VPN gateways | Google Cloud VMware Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+      "description": "<strong>VPN gateways provide secure connectivity between multiple sites, such as on-premises data centers, Google Cloud Virtual Private Cloud (VPC) networks, and Google Cloud VMware Engine private clouds</strong>.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud VPN\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": -22,
+      "deterministic_score": 38,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 38,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 37,
       "keep": false
     },
     {
@@ -1695,6 +1803,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 33,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 2,
         "coverage_value": 2,

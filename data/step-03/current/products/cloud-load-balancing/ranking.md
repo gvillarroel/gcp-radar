@@ -5,7 +5,7 @@ This file lists the official Google documentation URLs selected and scored for t
 | Final score | Keep | Classification | URL | Query coverage | Rationale |
 | ---: | --- | --- | --- | ---: | --- |
 | 100 | yes | product_root | https://docs.cloud.google.com/load-balancing/docs | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | irrelevant | https://docs.cloud.google.com/load-balancing/docs/application-load-balancer | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/load-balancing/docs/application-load-balancer | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/load-balancing/docs/features | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/load-balancing/docs/https | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/load-balancing/docs/l7-internal | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
@@ -27,5 +27,5 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | no | supporting_page | https://docs.cloud.google.com/load-balancing/docs/load-balancer-resource-model | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/load-balancing/docs/org-policy-constraints | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | irrelevant | https://docs.cloud.google.com/load-balancing/docs/release-notes | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | irrelevant | https://docs.cloud.google.com/load-balancing/docs/service-lb-policy | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | irrelevant | https://docs.cloud.google.com/vpc/docs/apis | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/load-balancing/docs/service-lb-policy | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | yes | product_reference | https://docs.cloud.google.com/vpc/docs/apis | 1 | Heuristic tail scoring was applied outside the API-ranked set. |

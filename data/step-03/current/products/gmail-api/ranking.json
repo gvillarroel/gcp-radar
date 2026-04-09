@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:36:47.046Z",
+  "generated_at": "2026-04-09T08:33:38.997Z",
   "product_name": "Gmail API",
   "product_slug": "gmail-api",
   "step02_source_path": "data/step-02/current/gmail-api.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "",
   "dominant_python_slug": "",
@@ -19,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Gmail API\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Gmail API overview | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/guides",
+          "description": "The Gmail API is <strong>a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Gmail API | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/reference/rest",
+          "description": "The Gmail API <strong>lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Choose Gmail API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/auth/scopes",
+          "description": "This document contains <strong>Gmail API</strong>-specific authorization and authentication information.",
+          "rank": 3
+        },
+        {
+          "title": "Python quickstart | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
+          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Install the client library. Set up the sample. Run the sample. To run this quickstart, you need the following prerequisites: ... A Google Cloud project. A Google account with Gmail ...",
+          "rank": 4
+        },
+        {
+          "title": "Gmail API Client Libraries | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/downloads",
+          "description": "The Gmail API is <strong>built on HTTP and JSON</strong>, so any standard HTTP client can send requests to it and parse the responses.",
+          "rank": 5
+        },
+        {
+          "title": "Implement server-side authorization | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/auth/web-server",
+          "description": "Requests to the <strong>Gmail API</strong> must be authorized using OAuth 2.0 credentials. You should use server-side flow when your application needs to access Google APIs on behalf of the user, for example when the user is offline.",
+          "rank": 6
+        },
+        {
+          "title": "Create and send email messages | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/guides/sending",
+          "description": "This document explains how to create and send email messages using the <strong>Gmail API</strong>.",
+          "rank": 7
+        },
+        {
+          "title": "Manage aliases and signatures with the Gmail API | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+          "description": "*/ GoogleCredentials credentials = GoogleCredentials.getApplicationDefault() .createScoped(GmailScopes.GMAIL_SETTINGS_BASIC); HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials); // Create the gmail API client Gmail service = new Gmail.Builder(new NetHttpTransport(), GsonFactory.getDefaultInstance(), requestInitializer) .setApplicationName(&quot;Gmail samples&quot;) .build(); try { SendAs primaryAlias = null; ListSendAsResponse aliases = service.users().settings().sendAs().list(&quot;me&quot;).execute(); for (SendAs alias : aliases.getSendAs()) { if (alias.getIsPrimary()) { primary",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -45,33 +101,33 @@
           "rank": 3
         },
         {
-          "title": "Python quickstart | Gmail | Google for Developers",
-          "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
-          "description": "<strong>This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow</strong>. Set up your environment. Install the client library.",
-          "rank": 4
-        },
-        {
           "title": "Gmail API release notes | Google for Developers",
           "url": "https://developers.google.com/workspace/gmail/release-notes",
           "description": "This page contains release notes for features and updates to the Gmail API.",
+          "rank": 4
+        },
+        {
+          "title": "Python quickstart | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
+          "description": "<strong>This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow</strong>. Set up your environment. Install the client library.",
           "rank": 5
+        },
+        {
+          "title": "Create and send email messages | Gmail | Google for Developers",
+          "url": "https://developers.google.com/gmail/api/guides/sending",
+          "description": "<strong>This document explains how to create and send email messages using the Gmail API</strong>.",
+          "rank": 6
         },
         {
           "title": "Class Google_Service_Gmail | Gmail API",
           "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/php/latest/class-Google_Service_Gmail.html",
           "description": "<strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. For more information about this service, see the API Documentation",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "gmail: Main Page",
           "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/csharp/latest",
           "description": "The complete API documentation for using Gmail API can be found at <strong>https://developers.google.com/gmail/api/</strong>.",
-          "rank": 7
-        },
-        {
-          "title": "Choose Gmail API scopes | Google for Developers",
-          "url": "https://developers.google.com/workspace/gmail/api/auth/scopes",
-          "description": "This document <strong>contains Gmail API-specific authorization and authentication information</strong>.",
           "rank": 8
         }
       ]
@@ -98,7 +154,7 @@
       "results": [
         {
           "title": "Configure OAuth for Gmail | Gemini Enterprise | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/gemini/enterprise/docs/gmail/config",
+          "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/gmail/config",
           "description": "Note: This documentation applies to the Standard, Plus, and Frontline editions of Gemini Enterprise. For information about the Business edition, see the Gemini Enterprise - Business edition Help Center. ... This page describes how to configure OAuth to connect Gmail to Gemini Enterprise as a data store. To enable Gmail actions, a Google Cloud administrator must perform the following steps to enable the Gmail API and set up authentication.",
           "rank": 1
         },
@@ -126,6 +182,13 @@
     },
     {
       "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/gmail/api \"reference/rest\" \"overview\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
       "official_result_count": 8,
@@ -138,26 +201,26 @@
         },
         {
           "title": "API Reference | Gmail API | Google Developers",
-          "url": "https://developers.google.com/gmail/api/v1/reference/?hl=vi-VN",
+          "url": "https://developers.google.com/gmail/api/v1/reference",
           "description": "Gmail · API · Tất cả sản phẩm Đăng nhập · <strong>This API reference is organized by resource type</strong>. Each resource type has one or more data representations and one or more methods.",
           "rank": 2
         },
         {
           "title": "Gmail API | Google Developers",
-          "url": "https://developers.google.com/gmail/api/reference/rest?hl=he_IL",
+          "url": "https://developers.google.com/gmail/api/reference/rest",
           "description": "Gmail API · Reference · Send feedback · <strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. REST Resource: v1.users · REST Resource: v1.users.drafts · REST Resource: v1.users.history · REST Resource: ...",
           "rank": 3
-        },
-        {
-          "title": "Gmail API Client Libraries | Google for Developers",
-          "url": "https://developers.google.com/workspace/gmail/api/downloads",
-          "description": "This page contains information about getting started with the Gmail API by using the Google API Client Library for Python (v1/v2). For more information, see the following documentation: Browse the PyDoc reference for the Gmail API.",
-          "rank": 4
         },
         {
           "title": "Gmail API overview | Google for Developers",
           "url": "https://developers.google.com/workspace/gmail/api/guides",
           "description": "<strong>The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Gmail API Client Libraries | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/downloads",
+          "description": "This page contains information about getting started with the Gmail API by using the Google API Client Library for Python (v1/v2). For more information, see the following documentation: Browse the PyDoc reference for the Gmail API.",
           "rank": 5
         },
         {
@@ -230,6 +293,62 @@
     },
     {
       "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/gmail/api auth scopes",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Choose Gmail API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/auth/scopes",
+          "description": "To define the level of access granted ... An authorization scope is <strong>an OAuth 2.0 URI string that contains the Google Workspace app name, what kind of data it accesses, and the level of access</strong>....",
+          "rank": 1
+        },
+        {
+          "title": "Implement server-side authorization | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/auth/web-server",
+          "description": "Returns: Authorization URL to redirect the user to. &quot;&quot;&quot; flow = flow_from_clientsecrets(CLIENTSECRETS_LOCATION, &#x27; &#x27;.join(SCOPES)) flow.params[&#x27;access_type&#x27;] = &#x27;offline&#x27; flow.params[&#x27;approval_prompt&#x27;] = &#x27;force&#x27; flow.params[&#x27;user_id&#x27;] = email_address flow.params[&#x27;state&#x27;] = state # The step1_get_authorize_url method uses the flow.redirect_uri attribute.",
+          "rank": 2
+        },
+        {
+          "title": "Troubleshoot authentication and authorization issues | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/troubleshoot-authentication-authorization",
+          "description": "This page describes some common issues that you might encounter involving authentication and authorization. If the OAuth consent screen displays the warning &quot;This app isn&#x27;t verified,&quot; your app is requesting scopes that provide access to sensitive user data. If your application uses sensitive ...",
+          "rank": 3
+        },
+        {
+          "title": "Method: users.messages.get | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+          "description": "Requires one of the following OAuth scopes: https://mail.google.com/ https://www.googleapis.com/auth/gmail.modify · https://www.googleapis.com/auth/gmail.readonly · https://www.googleapis.com/auth/gmail.metadata · https://www.googleapis.com/auth/gmail.addons.current.message.metadata ·",
+          "rank": 4
+        },
+        {
+          "title": "Python quickstart | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
+          "description": "SCOPES = [&quot;https://www.googleapis.com/auth/gmail.readonly&quot;] def main(): &quot;&quot;&quot;Shows basic usage of the Gmail API. Lists the user&#x27;s Gmail labels. &quot;&quot;&quot; creds = None # The file token.json stores the user&#x27;s access and refresh tokens, and is # created automatically when the authorization flow completes for the first # time.",
+          "rank": 5
+        },
+        {
+          "title": "Method: users.drafts.create | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/create",
+          "description": "Requires one of the following OAuth scopes: <strong>https://mail.google.com/</strong> https://www.googleapis.com/auth/gmail.modify · https://www.googleapis.com/auth/gmail.compose · https://www.googleapis.com/auth/gmail.addons.current.action.compose · For ...",
+          "rank": 6
+        },
+        {
+          "title": "Method: users.settings.cse.keypairs.list | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.settings.cse.keypairs/list",
+          "description": "Authorization scopes · Try it! <strong>Lists client-side encryption key pairs for an authenticated user</strong>.",
+          "rank": 7
+        },
+        {
+          "title": "Method: users.messages.modify | Gmail | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/modify",
+          "description": "Requires one of the following OAuth scopes: https://mail.google.com/ https://www.googleapis.com/auth/gmail.modify · For more information, see the OAuth 2.0 Overview. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview",
       "official_result_count": 8,
@@ -248,13 +367,13 @@
         },
         {
           "title": "Gmail API Overview | Google Developers",
-          "url": "https://developers.google.com/gmail/api/guides?hl=nb",
+          "url": "https://developers.google.com/gmail/api/guides",
           "description": "The Gmail API is <strong>a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
           "rank": 3
         },
         {
           "title": "Gmail API | Google Developers",
-          "url": "https://developers.google.com/gmail/api/?hl=tr",
+          "url": "https://developers.google.com/gmail/api",
           "description": "<strong>Read and send messages, manage drafts and attachments, search threads and messages, work with labels, setup push notifications, and manage Gmail settings</strong>. API guides explain how you can implement some of the most common use cases.",
           "rank": 4
         },
@@ -265,21 +384,21 @@
           "rank": 5
         },
         {
+          "title": "Gmail API release notes | Google for Developers",
+          "url": "https://developers.google.com/workspace/gmail/release-notes",
+          "description": "The API <strong>provides access to the full Postmaster Tools dataset—including compliance status data—and includes enhancements like flexible querying with queryDomainStats and support for batch operations</strong>.",
+          "rank": 6
+        },
+        {
           "title": "Choose Gmail API scopes | Google for Developers",
           "url": "https://developers.google.com/workspace/gmail/api/auth/scopes",
           "description": "This document contains Gmail API-specific authorization and authentication information.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Create and send email messages | Gmail | Google for Developers",
           "url": "https://developers.google.com/gmail/api/guides/sending",
           "description": "This document explains how to create and send email messages using the Gmail API.",
-          "rank": 7
-        },
-        {
-          "title": "Gmail (Gmail API v1 (Rev. 110) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/java/latest/com/google/api/services/gmail/Gmail.html",
-          "description": "initialize in class com.google.api.client.googleapis.services.AbstractGoogleClient · Throws: java.io.IOException · public Gmail.Users users() An accessor for creating requests from the Users collection. The typical use is: Gmail gmail = new Gmail(...); Gmail.Users.List request = gmail.users().list(parameters ...) Returns: the resource collection · Skip navigation links · Overview ·",
           "rank": 8
         }
       ]
@@ -328,16 +447,57 @@
   ],
   "scored_urls": [
     {
-      "title": "Gmail API Client Libraries | Google for Developers",
-      "url": "https://developers.google.com/workspace/gmail/api/downloads",
-      "description": "This page contains information about getting started with the Gmail API by using the Google API Client Library for Python (v1/v2). For more information, see the following documentation:",
+      "title": "Gmail API | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api",
+      "description": "The Gmail API <strong>lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>.",
       "rank": 2,
       "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
         "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
         "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
         "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
       ],
       "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Gmail API Client Libraries | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/downloads",
+      "description": "The Gmail API is <strong>built on HTTP and JSON</strong>, so any standard HTTP client can send requests to it and parse the responses.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
+        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
+        "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
+        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -347,11 +507,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -364,14 +527,16 @@
     {
       "title": "Gmail API overview | Google for Developers",
       "url": "https://developers.google.com/workspace/gmail/api/guides",
-      "description": "<strong>The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
-      "rank": 3,
+      "description": "The Gmail API is <strong>a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
+      "rank": 1,
       "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
         "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
         "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
         "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -381,11 +546,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -397,15 +565,17 @@
     },
     {
       "title": "Gmail API | Google for Developers",
-      "url": "https://developers.google.com/workspace/gmail/api/reference",
-      "description": "<strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. ... To call this service, we recommend that you use the Google-provided client libraries.",
-      "rank": 1,
+      "url": "https://developers.google.com/workspace/gmail/api/guides/overview",
+      "description": "The Gmail API <strong>lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>.",
+      "rank": 2,
       "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
         "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
         "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
         "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -415,11 +585,53 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Gmail API | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/reference",
+      "description": "The Gmail API <strong>lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
+        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
+        "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
+        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -432,14 +644,16 @@
     {
       "title": "Gmail API | Google for Developers",
       "url": "https://developers.google.com/workspace/gmail/api/reference/rest",
-      "description": "<strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. ... To call this service, we recommend that you use the Google-provided client libraries.",
-      "rank": 1,
+      "description": "The Gmail API <strong>lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>.",
+      "rank": 2,
       "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
         "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
         "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference",
         "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -449,49 +663,18 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "api_reference",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Set up a Gmail data store | Gemini Enterprise | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/gmail/set-up-data-store",
-      "description": "Gemini Enterprise sends your search query directly to the Gmail API.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Gmail API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Gmail API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Gmail API\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 100,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -500,8 +683,117 @@
     {
       "title": "Choose Gmail API scopes | Google for Developers",
       "url": "https://developers.google.com/workspace/gmail/api/auth/scopes",
-      "description": "This document <strong>contains Gmail API-specific authorization and authentication information</strong>.",
-      "rank": 8,
+      "description": "This document contains <strong>Gmail API</strong>-specific authorization and authentication information.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
+        "site:developers.google.com/workspace/gmail/api auth scopes",
+        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Implement server-side authorization | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/auth/web-server",
+      "description": "Requests to the <strong>Gmail API</strong> must be authorized using OAuth 2.0 credentials. You should use server-side flow when your application needs to access Google APIs on behalf of the user, for example when the user is offline.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Python quickstart | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
+      "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Install the client library. Set up the sample. Run the sample. To run this quickstart, you need the following prerequisites: ... A Google Cloud project. A Google account with Gmail ...",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\"",
+        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Create and send email messages | Gmail | Google for Developers",
+      "url": "https://developers.google.com/gmail/api/guides/sending",
+      "description": "<strong>This document explains how to create and send email messages using the Gmail API</strong>.",
+      "rank": 6,
       "query_hits": [
         "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
         "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
@@ -515,163 +807,82 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
     },
     {
-      "title": "Configure OAuth for Gmail | Gemini Enterprise | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/gmail/config",
-      "description": "Note: This documentation applies to the Standard, Plus, and Frontline editions of Gemini Enterprise. For information about the Business edition, see the Gemini Enterprise - Business edition Help Center. ... This page describes how to configure OAuth to connect Gmail to Gemini Enterprise as a data store. To enable Gmail actions, a Google Cloud administrator must perform the following steps to enable the Gmail API ...",
-      "rank": 1,
+      "title": "Gmail API release notes | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/release-notes",
+      "description": "This page contains release notes for features and updates to the Gmail API.",
+      "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com \"Gmail API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Gmail API\" Google Cloud introduction reference"
+        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation",
+        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
       ],
       "intent_hits": [
-        "product_docs"
+        "developers_docs"
       ],
       "round_hits": [
-        2,
+        1,
         3
       ],
-      "best_rank": 1,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "irrelevant",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
     },
     {
-      "title": "Gmail API | Google Developers",
-      "url": "https://developers.google.com/gmail/api/?hl=tr",
-      "description": "<strong>Read and send messages, manage drafts and attachments, search threads and messages, work with labels, setup push notifications, and manage Gmail settings</strong>. API guides explain how you can implement some of the most common use cases.",
-      "rank": 4,
+      "title": "Manage aliases and signatures with the Gmail API | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+      "description": "*/ GoogleCredentials credentials = GoogleCredentials.getApplicationDefault() .createScoped(GmailScopes.GMAIL_SETTINGS_BASIC); HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials); // Create the gmail API client Gmail service = new Gmail.Builder(new NetHttpTransport(), GsonFactory.getDefaultInstance(), requestInitializer) .setApplicationName(&quot;Gmail samples&quot;) .build(); try { SendAs primaryAlias = null; ListSendAsResponse aliases = service.users().settings().sendAs().list(&quot;me&quot;).execute(); for (SendAs alias : aliases.getSendAs()) { if (alias.getIsPrimary()) { primary",
+      "rank": 8,
       "query_hits": [
-        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\""
       ],
       "intent_hits": [
-        "developers_docs"
+        "canonical_docs"
       ],
       "round_hits": [
-        3
+        1
       ],
-      "best_rank": 4,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Gmail API Overview | Google Developers",
-      "url": "https://developers.google.com/gmail/api/guides?hl=nb",
-      "description": "The Gmail API is <strong>a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Create and send email messages | Gmail | Google for Developers",
-      "url": "https://developers.google.com/gmail/api/guides/sending",
-      "description": "This document explains how to create and send email messages using the Gmail API.",
-      "rank": 7,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Gmail API | Google Developers",
-      "url": "https://developers.google.com/gmail/api/reference/rest?hl=he_IL",
-      "description": "Gmail API · Reference · Send feedback · <strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. REST Resource: v1.users · REST Resource: v1.users.drafts · REST Resource: v1.users.history · REST Resource: ...",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -679,123 +890,36 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": true
-    },
-    {
-      "title": "API Reference | Gmail API | Google Developers",
-      "url": "https://developers.google.com/gmail/api/v1/reference/?hl=vi-VN",
-      "description": "Gmail · API · Tất cả sản phẩm Đăng nhập · <strong>This API reference is organized by resource type</strong>. Each resource type has one or more data representations and one or more methods.",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
       "keep": false
     },
     {
-      "title": "gmail: Main Page",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/csharp/latest",
-      "description": "The complete API documentation for using Gmail API can be found at <strong>https://developers.google.com/gmail/api/</strong>.",
+      "title": "Create and send email messages | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/guides/sending",
+      "description": "This document explains how to create and send email messages using the <strong>Gmail API</strong>.",
       "rank": 7,
       "query_hits": [
-        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation"
+        "site:developers.google.com/workspace/gmail/api \"Gmail API\""
       ],
       "intent_hits": [
-        "developers_docs"
+        "canonical_docs"
       ],
       "round_hits": [
         1
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Gmail (Gmail API v1 (Rev. 110) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/java/latest/com/google/api/services/gmail/Gmail.html",
-      "description": "initialize in class com.google.api.client.googleapis.services.AbstractGoogleClient · Throws: java.io.IOException · public Gmail.Users users() An accessor for creating requests from the Users collection. The typical use is: Gmail gmail = new Gmail(...); Gmail.Users.List request = gmail.users().list(parameters ...) Returns: the resource collection · Skip navigation links · Overview ·",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Python quickstart | Gmail | Google for Developers",
-      "url": "https://developers.google.com/workspace/gmail/api/quickstart/python",
-      "description": "<strong>This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow</strong>. Set up your environment. Install the client library.",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -817,15 +941,18 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -847,11 +974,179 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: users.drafts.create | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.drafts/create",
+      "description": "Requires one of the following OAuth scopes: <strong>https://mail.google.com/</strong> https://www.googleapis.com/auth/gmail.modify · https://www.googleapis.com/auth/gmail.compose · https://www.googleapis.com/auth/gmail.addons.current.action.compose · For ...",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: users.messages.get | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+      "description": "Requires one of the following OAuth scopes: https://mail.google.com/ https://www.googleapis.com/auth/gmail.modify · https://www.googleapis.com/auth/gmail.readonly · https://www.googleapis.com/auth/gmail.metadata · https://www.googleapis.com/auth/gmail.addons.current.message.metadata ·",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: users.messages.modify | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/modify",
+      "description": "Requires one of the following OAuth scopes: https://mail.google.com/ https://www.googleapis.com/auth/gmail.modify · For more information, see the OAuth 2.0 Overview. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: users.settings.cse.keypairs.list | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.settings.cse.keypairs/list",
+      "description": "Authorization scopes · Try it! <strong>Lists client-side encryption key pairs for an authenticated user</strong>.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Troubleshoot authentication and authorization issues | Gmail | Google for Developers",
+      "url": "https://developers.google.com/workspace/gmail/api/troubleshoot-authentication-authorization",
+      "description": "This page describes some common issues that you might encounter involving authentication and authorization. If the OAuth consent screen displays the warning &quot;This app isn&#x27;t verified,&quot; your app is requesting scopes that provide access to sensitive user data. If your application uses sensitive ...",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/gmail/api auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 172,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -862,31 +1157,67 @@
       "keep": false
     },
     {
-      "title": "Configure OAuth for Gmail | Gemini Enterprise | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/gmail/config",
-      "description": "Note: This documentation applies to the Standard, Plus, and Frontline editions of Gemini Enterprise. For information about the Business edition, see the Gemini Enterprise - Business edition Help Center. ... This page describes how to configure OAuth to connect Gmail to Gemini Enterprise as a data store. To enable Gmail actions, a Google Cloud administrator must perform the following steps to enable the Gmail API and set up authentication.",
-      "rank": 1,
+      "title": "Gmail API | Google Developers",
+      "url": "https://developers.google.com/gmail/api",
+      "description": "<strong>Read and send messages, manage drafts and attachments, search threads and messages, work with labels, setup push notifications, and manage Gmail settings</strong>. API guides explain how you can implement some of the most common use cases.",
+      "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com \"Gmail API\" Google Cloud documentation"
+        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
       ],
       "intent_hits": [
-        "product_docs"
+        "developers_docs"
       ],
       "round_hits": [
-        1
+        3
       ],
-      "best_rank": 1,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Gmail API Overview | Google Developers",
+      "url": "https://developers.google.com/gmail/api/guides",
+      "description": "The Gmail API is <strong>a RESTful API that can be used to access Gmail mailboxes and send mail</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Gmail API\" overview OR site:developers.google.com \"gmail api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -907,25 +1238,201 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 99,
+      "product_fit_score": 102,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 99,
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 89,
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Gmail API | Google Developers",
+      "url": "https://developers.google.com/gmail/api/reference/rest",
+      "description": "Gmail API · Reference · Send feedback · <strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. REST Resource: v1.users · REST Resource: v1.users.drafts · REST Resource: v1.users.history · REST Resource: ...",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "API Reference | Gmail API | Google Developers",
+      "url": "https://developers.google.com/gmail/api/v1/reference",
+      "description": "Gmail · API · Tất cả sản phẩm Đăng nhập · <strong>This API reference is organized by resource type</strong>. Each resource type has one or more data representations and one or more methods.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Gmail API\" reference OR site:developers.google.com \"gmail api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure OAuth for Gmail | Gemini Enterprise | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/gmail/config",
+      "description": "Note: This documentation applies to the Standard, Plus, and Frontline editions of Gemini Enterprise. For information about the Business edition, see the Gemini Enterprise - Business edition Help Center. ... This page describes how to configure OAuth to connect Gmail to Gemini Enterprise as a data store. To enable Gmail actions, a Google Cloud administrator must perform the following steps to enable the Gmail API and set up authentication.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Gmail API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Gmail API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Gmail API\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": -18,
+      "deterministic_score": 80,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 80,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 83,
+      "keep": false
+    },
+    {
+      "title": "Set up a Gmail data store | Gemini Enterprise | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/gmail/set-up-data-store",
+      "description": "Gemini Enterprise sends your search query directly to the Gmail API.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Gmail API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Gmail API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Gmail API\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": -18,
+      "deterministic_score": 77,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 77,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 80,
+      "keep": false
+    },
+    {
+      "title": "gmail: Main Page",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/csharp/latest",
+      "description": "The complete API documentation for using Gmail API can be found at <strong>https://developers.google.com/gmail/api/</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": -18,
+      "deterministic_score": 27,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 27,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 28,
       "keep": false
     },
     {
       "title": "Class Google_Service_Gmail | Gmail API",
       "url": "https://developers.google.com/resources/api-libraries/documentation/gmail/v1/php/latest/class-Google_Service_Gmail.html",
       "description": "<strong>The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels</strong>. For more information about this service, see the API Documentation",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation"
       ],
@@ -935,50 +1442,23 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 83,
+      "product_fit_score": -18,
+      "deterministic_score": 4,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 83,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
+        "classification": "irrelevant",
+        "score": 4,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 76,
-      "keep": false
-    },
-    {
-      "title": "Gmail API release notes | Google for Developers",
-      "url": "https://developers.google.com/workspace/gmail/release-notes",
-      "description": "This page contains release notes for features and updates to the Gmail API.",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Gmail API\" official documentation OR site:developers.google.com \"gmail api\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 84,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 84,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 76,
+      "final_score": 8,
       "keep": false
     }
   ]

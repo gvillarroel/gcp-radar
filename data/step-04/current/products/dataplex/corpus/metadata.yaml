@@ -1,0 +1,92 @@
+version: 1
+name: corpus
+created_at: '2026-04-09T13:03:29+00:00'
+updated_at: '2026-04-09T15:50:38+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/dataplex/docs
+  created_at: '2026-04-09T15:26:42+00:00'
+  updated_at: '2026-04-09T15:30:54+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataplex/docs --key
+    corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/dataplex/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-09T15:30:54+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/dataplex/docs/reference
+  created_at: '2026-04-09T15:26:43+00:00'
+  updated_at: '2026-04-09T15:32:02+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataplex/docs/reference
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/dataplex/docs/reference
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:32:02+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/dataplex/docs/reference/rest
+  created_at: '2026-04-09T15:26:43+00:00'
+  updated_at: '2026-04-09T15:33:12+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataplex/docs/reference/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/dataplex/docs/reference/rest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:33:12+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
+  created_at: '2026-04-09T15:26:44+00:00'
+  updated_at: '2026-04-09T15:34:26+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:34:26+00:00'
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/python/docs/reference/dataplex/latest
+  created_at: '2026-04-09T15:26:44+00:00'
+  updated_at: '2026-04-09T15:35:44+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/dataplex/latest
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/dataplex/latest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:35:44+00:00'
+- type: site
+  id: site-java-reference
+  title: https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1.UpdateDataProductRequestOrBuilder
+  created_at: '2026-04-09T15:50:38+00:00'
+  updated_at: '2026-04-09T15:50:38+00:00'
+  update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1.UpdateDataProductRequestOrBuilder
+    --key corpus --compact
+  delete_command: know del --key corpus site-java-reference
+  config:
+    url: https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1.UpdateDataProductRequestOrBuilder
+    max_depth: 1
+    max_pages: 0
+    compact_output: true

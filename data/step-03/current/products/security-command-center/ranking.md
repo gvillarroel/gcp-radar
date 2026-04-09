@@ -15,7 +15,8 @@ This file lists the official Google documentation URLs selected and scored for t
 | 95 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/access-control-project | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/activate-scc-for-an-organization | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/security-command-center/docs/compliance-management | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | irrelevant | https://docs.cloud.google.com/security-command-center/docs/service-tiers | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 95 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/security-command-center/docs/service-tiers | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/java/docs/reference/google-cloud-securitycenter/latest/overview | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/python/docs/reference/securitycenter/latest | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/securitycenter | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
@@ -23,9 +24,8 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/activate-scc-for-a-project | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/activate-scc-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/activate-standard-tier | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/automate-recommendations-playbook | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/security-command-center/docs/concepts-data-security-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/concepts-security-sources | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/configure-ai-protection | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/how-to-remediate-scc-errors | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | iam_reference | https://docs.cloud.google.com/security-command-center/docs/how-to-security-marks | 1 | Heuristic tail scoring was applied outside the API-ranked set. |

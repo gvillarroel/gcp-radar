@@ -1,11 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:34:00.911Z",
+  "generated_at": "2026-04-08T21:47:23.014Z",
   "product_name": "Advisory Notifications",
   "product_slug": "advisory-notifications",
-  "step02_source_path": "data/step-02/current/products/advisory-notifications.md",
+  "step02_source_path": "data/step-02/current/advisory-notifications.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "advisory-notifications",
   "dominant_python_slug": "",
@@ -16,6 +17,13 @@
       "round": 1,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Advisory Notifications\" \"reference/rest\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Advisory Notifications\" official documentation OR site:developers.google.com \"advisory notifications\" official documentation",
       "official_result_count": 0,
       "results": []
     },
@@ -71,9 +79,9 @@
           "rank": 4
         },
         {
-          "title": "Overview of Security MSAs | Advisory Notifications | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/advisory-notifications/docs/security-msas-overview",
-          "description": "Security Mandatory Service Announcements (MSA) <strong>inform customers about important security updates or changes that are required for continued use of Google Cloud services</strong>. Advisory Notifications contacts different users depending on whether the ...",
+          "title": "Overview of Sensitive Actions notifications | Advisory Notifications | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/advisory-notifications/docs/sensitive-actions-overview",
+          "description": "When a sensitive action is detected, Google Cloud writes the action in the Sensitive Actions Service platform log in the same resource where the activity occurred. Google Cloud also includes the event in a notification delivered through Advisory Notifications.",
           "rank": 5
         },
         {
@@ -83,9 +91,9 @@
           "rank": 6
         },
         {
-          "title": "Overview of Sensitive Actions notifications | Advisory Notifications | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/advisory-notifications/docs/sensitive-actions-overview",
-          "description": "When a sensitive action is detected, Google Cloud writes the action in the Sensitive Actions Service platform log in the same resource where the activity occurred. Google Cloud also includes the event in a notification delivered through Advisory Notifications.",
+          "title": "Overview of Security MSAs | Advisory Notifications | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/advisory-notifications/docs/security-msas-overview",
+          "description": "Security Mandatory Service Announcements (MSA) <strong>inform customers about important security updates or changes that are required for continued use of Google Cloud services</strong>. Advisory Notifications contacts different users depending on whether the ...",
           "rank": 7
         },
         {
@@ -107,6 +115,13 @@
       "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Advisory Notifications\" \"APIs and reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Advisory Notifications\" reference OR site:developers.google.com \"advisory notifications\" reference",
       "official_result_count": 0,
       "results": []
     },
@@ -204,6 +219,13 @@
       "round": 3,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Advisory Notifications\" \"API reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Advisory Notifications\" overview OR site:developers.google.com \"advisory notifications\" overview",
       "official_result_count": 0,
       "results": []
     },
@@ -318,9 +340,10 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs",
       "title": "Advisory Notifications documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs",
       "description": "Advisory Notifications <strong>provides well-targeted, timely, and compliant communications about security and privacy events in the Google Cloud console</strong> so you can securely investigate the event, take action, and get support.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -336,24 +359,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/overview",
       "title": "Overview of Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/overview",
       "description": "Advisory Notifications <strong>provides well-targeted, timely, and compliant communications about critical security and privacy events in the Google Cloud console</strong> and allows you to securely investigate the event, take action, and get support.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -369,24 +396,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
       "title": "Quickstart: Viewing notifications | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/quickstart",
       "description": "<strong>This document shows how to configure users for Advisory Notifications and view notifications by using the Google Cloud console</strong>.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -404,14 +435,17 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -419,9 +453,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/recommendations-overview",
       "title": "Apply Advisory Notifications recommendations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/recommendations-overview",
       "description": "Advisory Notifications <strong>provides IAM policy recommendations to ensure that the right parties within your organization have access to view critical security and privacy notifications in the Google Cloud console</strong>.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -439,11 +474,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -454,9 +492,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/security-msas-overview",
       "title": "Overview of Security MSAs | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/security-msas-overview",
       "description": "Security Mandatory Service Announcements (MSA) <strong>inform customers about important security updates or changes that are required for continued use of Google Cloud services</strong>. Advisory Notifications contacts different users depending on whether the ...",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -470,13 +509,16 @@
         2,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -487,9 +529,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/security-privacy-advisory-overview",
       "title": "Overview of Security and Privacy Advisory notifications | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/security-privacy-advisory-overview",
       "description": "Advisory Notifications <strong>integrates with Essential Contacts to identify which users should receive notifications</strong>. Essential Contacts lets you control who receives notifications by providing a list of contacts.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -505,11 +548,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -520,9 +566,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/sensitive-actions-overview",
       "title": "Overview of Sensitive Actions notifications | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/sensitive-actions-overview",
       "description": "When a sensitive action is detected, Google Cloud writes the action in the Sensitive Actions Service platform log in the same resource where the activity occurred. Google Cloud also includes the event in a notification delivered through Advisory Notifications.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview",
@@ -539,11 +586,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -554,9 +604,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/advisorynotifications",
       "title": "Advisory Notifications roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/advisorynotifications",
       "description": "This page lists the IAM roles and permissions for Advisory Notifications.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud documentation",
@@ -572,24 +623,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/opt-in-out-notifications",
       "title": "Opt in to or out of notifications | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/opt-in-out-notifications",
       "description": "To get the permissions that you need to view or update Advisory Notifications settings, <strong>ask your administrator to grant you the Advisory Notifications Admin (roles/advisorynotifications.admin) IAM role on your project or organization</strong>.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" IAM roles permissions"
       ],
@@ -601,24 +656,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest",
       "title": "NotificationView | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest",
       "description": "Advisory Notifications · Reference · Send feedback · Notification view. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud introduction reference"
       ],
@@ -630,24 +689,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/NotificationView",
       "title": "NotificationView | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/reference/rest/v1/NotificationView",
       "description": "Advisory Notifications · Reference · Send feedback · Notification view. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud introduction reference"
       ],
@@ -659,24 +722,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/advisory-notifications/docs/threat-horizons-overview",
       "title": "Overview of Threat Horizons previews | Advisory Notifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/advisory-notifications/docs/threat-horizons-overview",
       "description": "The Google Cloud Threat Horizons ... and security teams. Advisory Notifications <strong>integrates with Essential Contacts to identify which users should receive notifications</strong>....",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud docs overview"
       ],
@@ -688,24 +755,28 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/docs/product-list",
       "title": "Google Cloud products at a glance | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/product-list",
       "description": "Access Context Manager Fine-grained, attribute-based access control · Access Transparency Audit cloud provider support access · Advisory Notifications Privacy &amp; security event notifications · Assured OSS Get verified open-source packages · Binary Authorization Kubernetes deploy-time security ·",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" \"access control\""
       ],
@@ -717,24 +788,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
       "title": "Essential Contacts overview | Resource Manager | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
       "description": "For example, Advisory Notifications retrieves details from Essential Contacts to display sensitive data from critical notifications within the Google Cloud console, including security and privacy information. However, you require additional roles to access Advisory Notifications.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" \"access control\""
       ],
@@ -746,24 +821,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-advisory_notifications-v1/latest/Google-Cloud-AdvisoryNotifications-V1-Notification",
       "title": "Advisory Notifications V1 API - Class Google::Cloud::AdvisoryNotifications::V1::Notification (v0.14.1) | Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-advisory_notifications-v1/latest/Google-Cloud-AdvisoryNotifications-V1-Notification",
       "description": "Reference documentation and code samples for the Advisory Notifications V1 API class Google::Cloud::AdvisoryNotifications::V1::Notification.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Advisory Notifications\" Google Cloud introduction reference"
       ],
@@ -775,18 +854,21 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     }
   ]

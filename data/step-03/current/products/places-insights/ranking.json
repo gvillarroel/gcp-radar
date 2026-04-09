@@ -1,17 +1,17 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:38:54.673Z",
+  "generated_at": "2026-04-09T01:32:31.893Z",
   "product_name": "Places Insights",
   "product_slug": "places-insights",
   "step02_source_path": "data/step-02/current/places-insights.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 15,
+  "candidates_scored_by_api": 18,
   "search_runs": [
     {
       "round": 1,
@@ -19,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Places Insights\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Places Insights overview | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/overview",
+          "description": "Places Insights makes this <strong>comprehensive places data available in BigQuery</strong> so that you can derive aggregated insights about Google Maps&#x27; places data based on a variety of attributes such as place types, ratings, store hours, wheelchair ...",
+          "rank": 1
+        },
+        {
+          "title": "Place types | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-types",
+          "description": "Places Insights · Get Started Contact sales · Home · Products · Google Maps Platform · Documentation · Web Services · Places Insights · Reference · Send feedback · <strong>Place types are categories that identify the characteristics of a place</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "About Places Insights data and queries | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/about-data",
+          "description": "This means that as long as your search query is larger than the minimum search area, you will always get a result, including if there are 0 places matching your query. Query the data directly if you don&#x27;t need low result counts, if you want to get insights beyond counts, such as AVG, SUM, or COUNTIF, or if you need to perform more complex queries such as joining datasets.",
+          "rank": 3
+        },
+        {
+          "title": "Places Insights release notes | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/release-notes",
+          "description": "The <strong>Places Insights</strong> datasets have moved from data clean rooms to BigQuery data exchange listings.",
+          "rank": 4
+        },
+        {
+          "title": "Query the dataset using Places Count functions | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+          "description": "Places Count functions only provide counts, so if you need to perform more complex queries such as data joins, or get additional insights such as the average rating of a group of places, then query the dataset directly.",
+          "rank": 5
+        },
+        {
+          "title": "Set up Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/cloud-setup",
+          "description": "Places Insights <strong>lets you enhance your own data with statistical insights about points of interest data to make more informed business decisions</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "PLACES_COUNT_PER_GEO function | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-per-geo",
+          "description": "The PLACES_COUNT_PER_GEO function takes an array of geographic areas to search and returns a table of places counts per area.",
+          "rank": 7
+        },
+        {
+          "title": "PLACES_COUNT function | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count",
+          "description": "SELECT `PROJECT_NAME.<strong>places_insights___us.PLACES_COUNT`( JSON_OBJECT( &#x27;geography&#x27;, ST_GEOGPOINT(-73.9857, 40.7484), -- Empire State Building</strong> &#x27;geography_radius&#x27;, 1000, -- Radius in meters &#x27;types&#x27;, [&quot;restaurant&quot;], &#x27;min_rating&#x27;, 3, &#x27;price_level&#x27;, ...",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -113,6 +169,62 @@
     },
     {
       "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/maps/documentation/placesinsights overview OR reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Places Insights overview | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/overview",
+          "description": "See the Schema reference.",
+          "rank": 1
+        },
+        {
+          "title": "Historical data overview | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+          "description": "The schema for historical Places Insights data is the same as for the latest data (see Places Insights reference), with the following exceptions.",
+          "rank": 2
+        },
+        {
+          "title": "Place count functions overview | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/functions-overview",
+          "description": "In this example the SELECT statement references the PLACES_COUNT function for the United States using the syntax:",
+          "rank": 3
+        },
+        {
+          "title": "Places Insights reference | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/reference",
+          "description": "Reference · Send feedback · The dataset schema for each country is comprised of two parts: The core schema that is common to the datasets for all countries. A country-specific schema that defines schema components specific to that country. Place types are categories that identify the ...",
+          "rank": 4
+        },
+        {
+          "title": "Query the dataset using Places Count functions | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+          "description": "The Places Count functions support many filters to refine your search. These parameters (for example, price_level or types) are case-sensitive and must match the parameter names exactly. See the filter parameters reference for a full list of options.",
+          "rank": 5
+        },
+        {
+          "title": "Place types | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-types",
+          "description": "Reference · Send feedback · Place types are categories that identify the characteristics of a place. A place can have one or more place types assigned to it. A place can have a single primary type from the list below associated with it. For example, the primary type might be mexican_restaurant ...",
+          "rank": 6
+        },
+        {
+          "title": "About Places Insights data and queries | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/about-data",
+          "description": "For example, if you are working with the dataset for Spain (ES), reference both the core schema and the ES-specific schema.",
+          "rank": 7
+        },
+        {
+          "title": "Filter parameters | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/reference/filter-params",
+          "description": "Reference · Send feedback · You can apply filters to Places Count functions using the parameters described in the table below. Note that the required parameters differ for each function: PLACES_COUNT: requires geography · PLACES_COUNT_PER_TYPE: requires geography and type ·",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference",
       "official_result_count": 8,
@@ -142,15 +254,15 @@
           "rank": 4
         },
         {
-          "title": "Place types | Places Insights | Google for Developers",
-          "url": "https://developers.google.com/maps/documentation/placesinsights/place-types",
-          "description": "Places Insights · Reference · Send feedback · <strong>Place types are categories that identify the characteristics of a place</strong>. A place can have one or more place types assigned to it. A place can have a single primary type from the list below associated ...",
-          "rank": 5
-        },
-        {
           "title": "Package google.maps.areainsights.v1 | Places Aggregate API | Google for Developers",
           "url": "https://developers.google.com/maps/documentation/places-aggregate/reference/rpc/google.maps.areainsights.v1",
           "description": "Service definition for the Places Aggregate RPC. Request for the ComputeInsights RPC. Response for the ComputeInsights RPC. Filters for the ComputeInsights RPC. Supported insights.",
+          "rank": 5
+        },
+        {
+          "title": "Place types | Places Insights | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/placesinsights/place-types",
+          "description": "Places Insights · Reference · Send feedback · <strong>Place types are categories that identify the characteristics of a place</strong>. A place can have one or more place types assigned to it. A place can have a single primary type from the list below associated ...",
           "rank": 6
         },
         {
@@ -201,6 +313,20 @@
       "query": "site:docs.cloud.google.com \"Places Insights\" \"API reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/maps/documentation/places-aggregate/reference/rpc \"Places Insights\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Package google.maps.areainsights.v1 | Places Aggregate API | Google for Developers",
+          "url": "https://developers.google.com/maps/documentation/places-aggregate/reference/rpc/google.maps.areainsights.v1",
+          "description": "The Places Aggregate API, previously known as <strong>Places Insights</strong> API, is now generally available (GA).",
+          "rank": 1
+        }
+      ]
     },
     {
       "round": 3,
@@ -315,14 +441,56 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 154,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "About Places Insights data and queries | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/about-data",
+      "description": "This means that as long as your search query is larger than the minimum search area, you will always get a result, including if there are 0 places matching your query. Query the data directly if you don&#x27;t need low result counts, if you want to get insights beyond counts, such as AVG, SUM, or COUNTIF, or if you need to perform more complex queries such as joining datasets.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\"",
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference",
+        "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation",
+        "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 154,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -335,11 +503,14 @@
       "description": "Places Insights makes this <strong>comprehensive places data available in BigQuery</strong> so that you can derive aggregated insights about Google Maps&#x27; places data based on a variety of attributes such as place types, ratings, store hours, wheelchair ...",
       "rank": 1,
       "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\"",
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference",
         "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation",
         "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference",
         "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -349,11 +520,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 154,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -366,14 +540,17 @@
     {
       "title": "Place types | Places Insights | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/placesinsights/place-types",
-      "description": "<strong>Place types are categories that identify the characteristics of a place</strong>. A place can have one or more place types assigned to it · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, ...",
-      "rank": 3,
+      "description": "Places Insights · Get Started Contact sales · Home · Products · Google Maps Platform · Documentation · Web Services · Places Insights · Reference · Send feedback · <strong>Place types are categories that identify the characteristics of a place</strong>.",
+      "rank": 2,
       "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\"",
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference",
         "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation",
         "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference",
         "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -381,20 +558,167 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Historical data overview | Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+      "description": "The schema for historical Places Insights data is the same as for the latest data (see Places Insights reference), with the following exceptions.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference",
+        "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 100,
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Query the dataset using Places Count functions | Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+      "description": "Places Count functions only provide counts, so if you need to perform more complex queries such as data joins, or get additional insights such as the average rating of a group of places, then query the dataset directly.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\"",
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 148,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Places Insights release notes | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/release-notes",
+      "description": "The <strong>Places Insights</strong> datasets have moved from data clean rooms to BigQuery data exchange listings.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\"",
+        "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation",
+        "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 148,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Package google.maps.areainsights.v1 | Places Aggregate API | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/places-aggregate/reference/rpc/google.maps.areainsights.v1",
+      "description": "The Places Aggregate API, previously known as <strong>Places Insights</strong> API, is now generally available (GA).",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/places-aggregate/reference/rpc \"Places Insights\"",
+        "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        3,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
       "keep": false
     },
     {
@@ -415,80 +739,19 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 90,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_root",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "About Places Insights data and queries | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/placesinsights/about-data",
-      "description": "Places Insights offers two ways to query the datasets: Query the dataset directly using SQL: Execute standard BigQuery SQL queries against the dataset tables. This provides the most flexibility for complex filtering, joining with your own data, custom analysis, and support for additional aggregation functions beyond COUNT, such as AVG, SUM and GROUP BY. See the documentation...",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation",
-        "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Places Insights release notes | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/placesinsights/release-notes",
-      "description": "The Places Insights datasets have moved from data clean rooms to BigQuery data exchange listings. See the migration guide. ... Address fields in the dataset schema separate the id and name fields into discrete string or string array fields. See the migration guide. ... The PLACES_COUNT_PER_TYPE, PLACES_COUNT_PER_GEO, and PLACES_COUNT_PER_H3 functions now support the sample_place_ids column in the response.",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation",
-        "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -511,14 +774,50 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 58,
-      "deterministic_score": 94,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
-        "score": 94,
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "PLACES_COUNT_PER_GEO function | Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-per-geo",
+      "description": "The PLACES_COUNT_PER_GEO function takes an array of geographic areas to search and returns a table of places counts per area.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 154,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -526,86 +825,95 @@
       "keep": false
     },
     {
-      "title": "Examples | Places Insights API",
-      "url": "https://developers.google.com/maps/documentation/places-aggregate/example-requests",
-      "description": "You can obtain a Geographical Area place ID in any of the following ways: ... curl --location &#x27;https://areainsights.googleapis.com/v1:computeInsights&#x27; \\ --header &#x27;X-Goog-Api-Key: API_KEY&#x27; \\ --header &#x27;Content-Type: application/json&#x27; \\ --data &#x27;{ &quot;insights&quot;: [ &quot;INSIGHT_COUNT&quot; ], &quot;filter&quot;: { &quot;locationFilter&quot;: { &quot;region&quot;: { &quot;place&quot;: &quot;places/ChIJiQHsW0m3j4ARm69rRkrUF3w&quot; } }, &quot;typeFilter&quot;: { &quot;includedTypes&quot;: [ &quot;restaurant&quot; ] } } }&#x27;",
-      "rank": 8,
+      "title": "Set up Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/cloud-setup",
+      "description": "Places Insights <strong>lets you enhance your own data with statistical insights about points of interest data to make more informed business decisions</strong>.",
+      "rank": 6,
       "query_hits": [
-        "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation"
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\""
       ],
       "intent_hits": [
-        "developers_docs"
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 148,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Place count functions overview | Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/functions-overview",
+      "description": "In this example the SELECT statement references the PLACES_COUNT function for the United States using the syntax:",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 148,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "PLACES_COUNT function | Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count",
+      "description": "SELECT `PROJECT_NAME.<strong>places_insights___us.PLACES_COUNT`( JSON_OBJECT( &#x27;geography&#x27;, ST_GEOGPOINT(-73.9857, 40.7484), -- Empire State Building</strong> &#x27;geography_radius&#x27;, 1000, -- Radius in meters &#x27;types&#x27;, [&quot;restaurant&quot;], &#x27;min_rating&#x27;, 3, &#x27;price_level&#x27;, ...",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights \"Places Insights\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
       ],
       "round_hits": [
         1
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Places Insights API",
-      "url": "https://developers.google.com/maps/documentation/places-aggregate/reference/rpc",
-      "description": "Places Aggregate API · Reference · Send feedback · Places Aggregate API. The Service name areainsights.googleapis.com is needed to create RPC client stubs. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Historical data overview | Places Insights | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
-      "description": "Historical Places Insights data is available for the cities listed in the table below.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Places Insights\" overview OR site:developers.google.com \"places insights\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -631,15 +939,18 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -648,12 +959,14 @@
     {
       "title": "Places Insights reference | Google for Developers",
       "url": "https://developers.google.com/maps/documentation/placesinsights/reference",
-      "description": "Places Insights · Reference · Send feedback · The dataset schema for each country is comprised of two parts: The core schema that is common to the datasets for all countries. A country-specific schema that defines schema components specific to that country.",
-      "rank": 1,
+      "description": "Reference · Send feedback · The dataset schema for each country is comprised of two parts: The core schema that is common to the datasets for all countries. A country-specific schema that defines schema components specific to that country. Place types are categories that identify the ...",
+      "rank": 4,
       "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference",
         "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
@@ -661,19 +974,55 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "api_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
+    },
+    {
+      "title": "Filter parameters | Places Insights | Google for Developers",
+      "url": "https://developers.google.com/maps/documentation/placesinsights/reference/filter-params",
+      "description": "Reference · Send feedback · You can apply filters to Places Count functions using the parameters described in the table below. Note that the required parameters differ for each function: PLACES_COUNT: requires geography · PLACES_COUNT_PER_TYPE: requires geography and type ·",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/maps/documentation/placesinsights overview OR reference"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 148,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
     },
     {
       "title": "Supported locations and table names | Places Insights | Google for Developers",
@@ -691,11 +1040,80 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "api_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Places Insights API",
+      "url": "https://developers.google.com/maps/documentation/places-aggregate/reference/rpc",
+      "description": "Places Aggregate API · Reference · Send feedback · Places Aggregate API. The Service name areainsights.googleapis.com is needed to create RPC client stubs. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Examples | Places Insights API",
+      "url": "https://developers.google.com/maps/documentation/places-aggregate/example-requests",
+      "description": "You can obtain a Geographical Area place ID in any of the following ways: ... curl --location &#x27;https://areainsights.googleapis.com/v1:computeInsights&#x27; \\ --header &#x27;X-Goog-Api-Key: API_KEY&#x27; \\ --header &#x27;Content-Type: application/json&#x27; \\ --data &#x27;{ &quot;insights&quot;: [ &quot;INSIGHT_COUNT&quot; ], &quot;filter&quot;: { &quot;locationFilter&quot;: { &quot;region&quot;: { &quot;place&quot;: &quot;places/ChIJiQHsW0m3j4ARm69rRkrUF3w&quot; } }, &quot;typeFilter&quot;: { &quot;includedTypes&quot;: [ &quot;restaurant&quot; ] } } }&#x27;",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Places Insights\" official documentation OR site:developers.google.com \"places insights\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 104,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -721,48 +1139,21 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 50,
+      "product_fit_score": 90,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Package google.maps.areainsights.v1 | Places Aggregate API | Google for Developers",
-      "url": "https://developers.google.com/maps/documentation/places-aggregate/reference/rpc/google.maps.areainsights.v1",
-      "description": "Service definition for the Places Aggregate RPC. Request for the ComputeInsights RPC. Response for the ComputeInsights RPC. Filters for the ComputeInsights RPC. Supported insights.",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Places Insights\" reference OR site:developers.google.com \"places insights\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 12,
-      "deterministic_score": 57,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 57,
-        "parent_page_likelihood": 3,
-        "product_match": 2,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 53,
       "keep": false
     }
   ]

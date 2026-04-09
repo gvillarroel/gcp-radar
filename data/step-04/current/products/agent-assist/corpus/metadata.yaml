@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T20:17:59+00:00'
-updated_at: '2026-04-08T05:38:36+00:00'
+updated_at: '2026-04-09T15:55:31+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -9,27 +9,43 @@ commands:
 sources:
 - type: site
   id: site-docs-root
-  title: https://docs.cloud.google.com/agent-assist/docs/salesforce
-  created_at: '2026-04-08T05:38:18+00:00'
-  updated_at: '2026-04-08T05:38:18+00:00'
-  update_command: know sync site https://docs.cloud.google.com/agent-assist/docs/salesforce
-    --key corpus --compact
+  title: https://docs.cloud.google.com/agent-assist/docs
+  created_at: '2026-04-09T15:51:24+00:00'
+  updated_at: '2026-04-09T15:53:03+00:00'
+  update_command: know sync site https://docs.cloud.google.com/agent-assist/docs --key
+    corpus --compact
   delete_command: know del --key corpus site-docs-root
   config:
-    url: https://docs.cloud.google.com/agent-assist/docs/salesforce
+    url: https://docs.cloud.google.com/agent-assist/docs
     max_depth: 1
-    max_pages: 0
+    max_pages: 30
     compact_output: true
+  last_synced_at: '2026-04-09T15:53:03+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/agent-assist/docs/basics
+  created_at: '2026-04-09T15:51:25+00:00'
+  updated_at: '2026-04-09T15:54:16+00:00'
+  update_command: know sync site https://docs.cloud.google.com/agent-assist/docs/basics
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/agent-assist/docs/basics
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:54:16+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/dialogflow/es/docs/access-control
-  created_at: '2026-04-08T05:38:36+00:00'
-  updated_at: '2026-04-08T05:38:36+00:00'
+  created_at: '2026-04-09T15:51:26+00:00'
+  updated_at: '2026-04-09T15:55:31+00:00'
   update_command: know sync site https://docs.cloud.google.com/dialogflow/es/docs/access-control
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
     url: https://docs.cloud.google.com/dialogflow/es/docs/access-control
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-09T15:55:31+00:00'

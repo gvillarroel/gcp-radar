@@ -1,0 +1,863 @@
+---
+title: "Using target pools \_|\_ Cloud Load Balancing \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/load-balancing/docs/target-pools
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/load-balancing/docs
+source_metadata:
+  url: https://docs.cloud.google.com/load-balancing/docs/target-pools
+  title: "Using target pools \_|\_ Cloud Load Balancing \_|\_ Google Cloud Documentation"
+  fetched_via: browser_cdp
+  cdp_url: http://127.0.0.1:9222
+---
+
+Using target pools | Cloud Load Balancing | Google Cloud Documentation
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+More
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Load Balancing
+Start free
+Overview
+Guides
+Reference
+Resources
+More
+Technology areas
+More
+Overview
+Guides
+Reference
+Resources
+Cross-product tools
+More
+Console
+Discover
+Cloud Load Balancing overview
+Choose a load balancer
+Cloud Load Balancing resource model
+Load balancer feature comparison
+Get started
+Roles and permissions
+IAM Conditions for forwarding rules
+Organization policy constraints
+Overview
+Use custom constraints
+Application Load Balancer (HTTP/HTTPS)
+Overview
+External load balancer
+Architecture overview
+Request distribution overview
+Set up global load balancer
+Managed VM instance group backend
+Cloud Storage (backend buckets)
+External backend (internet NEG)
+Cloud Run, App Engine, or Cloud Run functions backends (serverless NEG)
+On-premises or other cloud backends (zonal and hybrid NEG)
+Add capabilities
+Traffic management overview
+Set up traffic management
+Set up HTTP-to-HTTPS redirect
+Set up a load balancer with Shared VPC
+Set up load balancer with cross-project backend service and backend bucket
+Create custom headers in backend services
+Custom error response
+Overview
+Configure custom error responses
+Set up global load balancer (classic)
+Terraform examples
+Managed VM instance group backend
+Cloud Storage (backend buckets)
+External backend (internet NEG)
+Cloud Run, App Engine, or Cloud Functions backends (serverless NEG)
+On-premises or other cloud backends (zonal and hybrid NEG)
+Migrate resources
+Overview
+Migrate to global external Application Load Balancer
+Roll back to classic Application Load Balancer
+Add capabilities
+Traffic management overview
+Create custom headers in backend services
+Set up custom header and query parameter-based routing
+Set up URL redirect
+Set up HTTP-to-HTTPS redirect
+Set up URL rewrite
+Set up regional load balancer
+Managed VM instance group backend
+Cloud Storage (backend buckets)
+Cloud Run backends (serverless NEG)
+On-premises or other cloud backends (zonal and hybrid NEG)
+External backend (internet NEG)
+Add capabilities
+Traffic management overview
+Set up traffic management
+Set up high availability
+Set up HTTP-to-HTTPS redirect
+Set up a load balancer with backend service using Shared VPC
+Set up a load balancer with backend buckets using Shared VPC
+Create custom headers in URL maps
+Fail over to regional load balancers
+Monitor and troubleshoot
+Overview
+Global load balancers
+Regional load balancers
+Troubleshooting
+Best practices
+Explore tutorials
+Request routing to a multi-region external HTTPS load balancer
+Faster web performance and improved web protection for load balancing
+Deliver HTTP and HTTPS content over the same published domain
+Optimize application latency with load balancing
+Application capacity optimizations with global load balancing
+Capacity management with load balancing
+Internal load balancer
+Architecture overview
+Set up cross-region load balancer
+Managed VM instance group backend
+Cloud Storage (backend buckets)
+On-premises or other cloud backends (zonal and hybrid NEG)
+Cloud Run backends (serverless NEG)
+Set up regional load balancer
+Terraform examples
+VM instance group backends
+Cloud Run backends (serverless NEG)
+Cloud Storage (backend buckets)
+On-premises or other cloud backends (zonal and hybrid NEG)
+External backend (internet NEG)
+Add capabilities
+Traffic management
+Overview
+Set up traffic management
+Set up HTTP-to-HTTPS redirect
+Create custom headers in URL maps
+Set up regional internal load balancer with backend service using Shared VPC
+Set up cross-region load balancer with backend buckets using Shared VPC
+Set up a regional internal Application Load Balancer with backend buckets using Shared VPC
+Service Directory registration
+Load balancing and connected networks
+Monitor and troubleshoot
+View logs and metrics
+Troubleshooting
+Convert load balancer to IPv6
+Use custom metrics
+Load testing backends
+Proxy Network Load Balancer (TCP/SSL proxy)
+Overview
+External load balancer
+Architecture overview
+Set up global load balancer
+Global SSL proxy with VM instance group backends
+Global TCP proxy with VM instance group backends
+Set up global load balancer (classic)
+Terraform examples
+Global SSL proxy with VM instance group backends
+Global TCP proxy with VM instance group backends
+Set up regional load balancer
+VM instance group backends
+Zonal NEG backends
+Hybrid connectivity (hybrid NEGs)
+External backend (internet NEG)
+Internal load balancer
+Architecture overview
+Set up cross-region load balancer
+Managed VM instance group backends
+On-premises or other cloud backends (zonal and hybrid NEG)
+Set up regional load balancer
+Managed VM instance group backends
+Zonal NEG backends
+Hybrid connectivity (hybrid NEGs)
+External backend (internet NEG)
+Add capabilities
+Load balancing and connected networks
+Monitor and troubleshoot
+View logs and metrics
+Convert load balancer to IPv6
+Passthrough Network Load Balancer (TCP/UDP)
+Overview
+External load balancer
+Backend service-based architecture
+Traffic distribution concepts
+Target pool-based architecture
+Set up load balancer
+VM instance group backends (TCP/UDP only)
+VM instance group backends (multiple protocols)
+Zonal NEG backends
+Target pool-based load balancer
+Add capabilities
+Configure failover
+Configure weighted load balancing
+Migrate from target pools to backend services
+Service Directory registration
+Explore tutorials
+Use UDP with network load balancers
+Monitor and troubleshoot
+View logs and metrics
+Troubleshooting
+Internal load balancer
+Architecture overview
+Traffic distribution concepts
+Set up load balancer
+Terraform examples
+VM instance group backends
+VM instance group backend for multiple protocols
+Zonal NEG backends
+Add capabilities
+Configure failover
+Zonal affinity
+Load balancers as next hops
+Overview
+Set up load balancing for third-party appliances
+Forwarding rules that use a common IP address
+Service Directory registration
+Load balancing and connected networks
+Explore tutorials
+Set up load balancer as next hop (with tags)
+Deploy a hub-and-spoke network
+Set up a load balancer with internal IPv6-only backends
+Monitor and troubleshoot
+View logs and metrics
+Troubleshooting
+Protocol forwarding
+Overview
+Set up protocol forwarding
+Switch between a target instance and a backend service
+Secure
+SSL certificates
+Overview
+Use self-managed SSL certificates
+Use Google-managed SSL certificates
+Encryption to the backends
+Troubleshooting
+SSL policies
+Overview
+Use SSL policies
+Mutual TLS
+Frontend mTLS
+Overview
+Set up frontend mTLS with user-provided certificates
+Set up frontend mTLS with a private CA
+Backend mTLS
+Overview
+Set up backend authenticated TLS
+Set up backend mTLS
+Backend mTLS with managed workload identity
+Overview
+Set up backend mTLS using managed workload identity
+Authorization policies
+Overview
+Set up policies for Application Load Balancers
+Customize load balancer
+Advanced load balancing optimizations
+Backend buckets
+Backend services
+Connection draining
+Firewall rules
+Forwarding rules
+Health checks
+Overview
+Use health checks
+Internal DNS names
+IPv6
+Network endpoint groups
+Overview
+Hybrid connectivity NEGs
+Internet NEGs
+Serverless NEGs
+Zonal NEGs
+Overview
+Set up zonal NEGs
+Proxy-only subnets
+Tags
+Target pools
+Target proxies
+URL maps
+Overview
+Use URL maps
+Operate and maintain
+Audit logging information
+Health check logging information
+Clean up a load balancer setup
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+On this page
+Target pool properties
+Failover conditions
+Create a target pool
+Add or remove an instance from a target pool
+List target pools
+Describe a target pool
+Get the health status of instances
+Delete a target pool
+Add or remove a health check from a target pool
+Add or remove a backup target pool
+What's next
+Home
+Documentation
+Networking
+Load Balancing
+Guides
+Send feedback
+Using target pools
+Stay organized with collections
+Save and categorize content based on your preferences.
+On this page
+Target pool properties
+Failover conditions
+Create a target pool
+Add or remove an instance from a target pool
+List target pools
+Describe a target pool
+Get the health status of instances
+Delete a target pool
+Add or remove a health check from a target pool
+Add or remove a backup target pool
+What's next
+A target pool is a group of backend instances that receive incoming traffic from
+regional external passthrough Network Load Balancers. All backend instances of a target pool must reside in the same
+Google Cloud region. Regional external passthrough Network Load Balancers can
+use either a backend service or a target pool to define the group of backend
+instances. If you're creating new regional external passthrough Network Load Balancers, we recommend using backend
+services .
+This page describes configuration options for target pool backends. When a
+regional external passthrough Network Load Balancer's forwarding rule directs traffic to a target pool, the load
+balancer chooses an instance from the target pool based on a
+hash of the
+source IP address, the source port, the destination IP address, and the
+destination port.
+If you intend your target pool to contain a single virtual machine (VM),
+consider using the protocol
+forwarding feature instead of load
+balancing.
+Note: This page describes how to configure a specific load balancer component or
+feature before or after you've already created a load balancer. Working with
+specific components is useful for advanced configurations and necessary for some
+configuration options. Before using the information on this page, know the type
+of Google Cloud load balancer
+that you need.
+Target pool properties
+Target pools work with forwarding rules that handle TCP and UDP
+traffic. You must create a target pool before you can use it with a forwarding
+rule.
+Target pools use legacy HTTP health
+checks .
+A target pool is made up of the following properties:
+name
+The name of this target pool. The name must be unique in this
+project, from 1-63 characters long and match the regular expression:
+[a-z]([-a-z0-9]*[a-z0-9])? , which means the first character must be a
+lowercase letter, and all following characters must be a dash, lowercase
+letter, or digit, except the last character, which cannot be a dash.
+description
+Optional. A user-defined description of this target pool.
+region
+The fully qualified URL of the target pool's region. The region
+should be the same region where your backend instances reside. For example:
+"region" : "https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION "
+healthChecks[ ]
+Optional. An optional list of health checks for this target pool. Only one
+health check can be attached to a particular target pool. See Health
+checking for more information.
+instances[ ]
+A list of instance URLs that should handle traffic for this target
+pool. All instances must reside in the same region as the target pool, but
+instances can belong to different zones within a single region. For example:
+"instances" : [
+"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE ",
+"https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE-2 "
+]
+sessionAffinity
+Optional. Controls the method used to select a backend virtual machine
+instance. You can only set this value during the creation of the target pool.
+Once set, you cannot modify this value. The hash method selects a backend based
+on a subset of the following 5 values:
+Source / Destination IP
+Source / Destination Port
+Layer 4 Protocol (TCP, UDP)
+Possible hashes are:
+NONE (i.e., no hash specified) (default)
+5-tuple hashing, which uses the source and destination IPs, source
+and destination ports, and protocol. Each new connection can end up on
+any instance, but all traffic for a given connection will stay on the
+same instance, if the instance stays healthy.
+CLIENT_IP_PROTO
+3-tuple hashing, which uses the source and destination IPs
+and the protocol. All connections from a client will end up on
+the same instance as long as they use the same protocol
+and the instance stays healthy.
+CLIENT_IP
+2-tuple hashing, which uses the source and destination IPs. All
+connections from a client will end up on the same instance
+regardless of protocol as long as the instance stays healthy.
+5-tuple hashing provides a good distribution of traffic across many
+virtual machines. However, a second session from the same client may
+arrive on a different instance because the source port may change. If you
+want all sessions from the same client to reach the same backend, as long
+as the backend stays healthy, you can specify CLIENT_IP_PROTO or
+CLIENT_IP options.
+In general, if you select a 3-tuple or 2-tuple method, it will provide for
+better session affinity than the default 5-tuple method, but the overall
+traffic may not be as evenly distributed.
+Fragmented UDP packets : If you are load balancing UDP traffic that is
+likely to be fragmented, set session affinity to CLIENT_IP_PROTO
+or CLIENT_IP . Don't use NONE (5-tuple hashing). This is because
+UDP fragments other than the first one don't carry the port number,
+and the load balancer may drop the fragments without the port. See
+Load balancing and fragmented UDP
+packets
+for more information.
+Caution: If a large percentage of
+your clients are behind a proxy server, don't
+use CLIENT_IP_PROTO or CLIENT_IP .
+Using them sends all traffic from those clients to the same instance.
+backupPool
+Optional. A fully qualified URL to another target pool resource. A backup
+pool is a target pool that another target pool references. You
+must also define failoverRatio to use this feature. If
+the ratio of healthy virtual machines in your target pool falls
+below the failoverRatio , the regional external passthrough Network Load Balancer sends traffic to your backup
+pool. You can only provide one backup pool per target pool. The
+backup pool must be in the same region as the target pool. If the
+ratio of healthy instances in your target pool falls below your
+configured failover ratio, the regional external passthrough Network Load Balancer uses the following rules to
+route your traffic:
+If the ratio of healthy instances to total instances in the target pool
+is less than the failover ratio, traffic is sent to healthy instances
+in the backup pool.
+If the ratio of healthy instances to total instances in the target pool
+is less than the failover ratio but there are no
+remaining healthy instances in the backup pool, traffic is sent to the
+remaining healthy instances in the target pool.
+If the target pool is not empty and if all instances in both the target
+pool and the backup pool fail their health checks, traffic is sent to
+all instances in the target pool, as a last resort.
+If the target pool is empty and if all instances in the backup pool
+fail their health checks, traffic is sent to all instances in the
+backup pool, as a last resort.
+Only one level of failover is supported. For example, if target
+pool A has backup pool B, and backup pool B has backup pool C, then traffic
+intended for target pool A can only be directed to backup pool B and not
+to backup pool C.
+failoverRatio
+Optional. A float between 0.0 and 1.0 , which determines when this
+target pool is declared unhealthy. For example, if this value is set to 0.1 ,
+then this target pool is declared unhealthy if the number of healthy instances
+are less than 0.1 (10%). If the failover ratio is 0.0 , then at least one
+backend must be healthy for the pool to be considered healthy. If the
+failover ratio is set to 1.0 , then all instances must be healthy for the
+pool to be considered healthy. You must define this if you define the
+backupPool field.
+Failover conditions
+Conditions
+New connections go to
+Failover ratio !=0, healthy VMs in target pool >= FR
+target pool
+Failover ratio =0, healthy VMs in target pool > 0
+target pool
+Failover ratio !=0, healthy VMs in target pool < FR, and
+at least one VM in the backup pool is healthy
+backup pool
+Failover ratio =0, healthy VMs in target pool = 0, and
+at least one VM in the backup pool is healthy
+backup pool
+At least one VM is in the target pool, and all VMs in the target pool are
+unhealthy, and all VMs in the backup pool are unhealthy
+target pool (last resort)
+No VMs are in the target pool, and all VMs in the backup pool are
+unhealthy
+backup pool (last resort)
+No VMs are in the target pool, and no VMs are in the backup pool
+Traffic is dropped
+Create a target pool
+Console gcloud API
+More
+Target pools can't be created in the Google Cloud console.
+You can create a target pool by using the Google Cloud CLI or the API.
+To learn how to create a target pool-based regional external passthrough Network Load Balancer by using the
+Google Cloud CLI, see Set up a regional external passthrough Network Load Balancer with a target
+pool .
+To use gcloud compute to create a target pool, use the target-pools
+create command :
+gcloud compute target-pools create TARGET_POOL \
+[--backup-pool= BACKUP_POOL ] \
+[--description= DESCRIPTION ] \
+[--failover-ratio= FAILOVER_RATIO ] \
+[--http-health-check= HEALTH_CHECK ] \
+[--region= REGION ]
+[--session-affinity= SESSION_AFFINITY ; default="NONE"]
+Replace the following:
+TARGET_POOL : a name for the target pool
+BACKUP_POOL : a name for the backup target pool
+DESCRIPTION : a description of the target pool
+FAILOVER_RATIO : a value between 0.0 and 1.0,
+which determines when the target pool is declared unhealthy
+HEALTH_CHECK : a health check for this target pool
+REGION : a region of the target pool
+SESSION_AFFINITY : the method
+used to select a backend virtual machine instance
+To create a target pool in the API, make a HTTP POST request to
+the following URI:
+https://www.googleapis.com/v1/compute/projects/ PROJECT_ID /regions/ REGION /targetPools
+{
+"name": name,
+"instances": [
+"https://www.googleapis.com/v1/compute/project/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE ",
+"https://www.googleapis.com/v1/compute/project/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE-2 ",
+]
+}
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+ZONE : the zone that the target pool's instances
+are in
+INSTANCE , INSTANCE-2 : the
+instances to be added to the target pool
+Add or remove an instance from a target pool
+Console gcloud API
+More
+Target pools can't be edited in the Google Cloud console.
+You can edit a target pool by using the Google Cloud CLI or the API.
+To use gcloud compute to add instances to a target pool, use the
+target-pools add-instances command :
+gcloud compute target-pools add-instances TARGET_POOL \
+--instances= INSTANCE ,[ INSTANCE-2 ,...]
+Replace the following:
+TARGET_POOL : the name of the target pool
+INSTANCE , INSTANCE-2 :
+the name of the instance (or instances) to be added to the target pool
+To remove instances, use the
+target-pools remove-instances command :
+gcloud compute target-pools remove-instances TARGET_POOL \
+--instances= INSTANCE ,[ INSTANCE-2 ,...]
+Replace the following:
+TARGET_POOL : the name of the target pool
+INSTANCE , INSTANCE-2 :
+the name of the instance (or instances) to be removed from the target pool
+Note: Removing an instance from a target pool without draining it first breaks
+all TCP sessions to that instance. To remove an instance safely, first
+drain the instance by making it fail its
+health check . After TCP sessions
+close, remove the instance from the pool.
+In the API, send a POST request to the following URIs:
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL /removeInstance
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL /addInstance
+The body of your request should include the fully qualified URIs to the
+instances that you want to add or remove:
+{
+"instances": [
+{"instance": "https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE "},
+{"instance": "https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE-2 "}
+]
+}
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+TARGET_POOL : the name of the target pool to be
+updated
+REGION : the region that the target pool is in
+ZONE : the zone that the updated instances are in
+INSTANCE , INSTANCE-2 : the
+instances to be added to the target pool
+For more information, see the API reference documentation for the
+targetPools.addInstance and
+targetPools.removeInstance
+methods.
+List target pools
+Console gcloud API
+More
+To see a list of target pools, use the load balancing advanced menu.
+On the Advanced load balancing page, go to the Target pools tab.
+Go to Target pools
+The page displays a list of target pools.
+To use gcloud compute to list existing target pools, use the
+target-pools list command :
+gcloud compute target-pools list
+For more verbose output, use the describe command and specify
+a pool name.
+In the API, send a GET request to the following URI:
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+REGION : the region that the target pool is in
+Describe a target pool
+Console gcloud API
+More
+To get information about a target pool, use the load balancing advanced menu.
+On the Advanced load balancing page, go to the Target pools tab.
+Go to Target pools
+To see detailed information, click the name of the target pool.
+To use gcloud compute to get information about a single target pool, use the
+target-pools describe command :
+gcloud compute target-pools describe TARGET_POOL
+Replace TARGET_POOL with the name of the target
+pool.
+In the API, send an empty GET request to the following URI:
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+TARGET_POOL : the name of the target pool to be
+updated
+REGION : the region that the target pool is in
+Get the health status of instances
+Console gcloud API
+More
+To get the health status of instances in a target pool, use the load balancing
+advanced menu.
+On the Advanced load balancing page, go to the Target pools tab.
+Go to Target pools
+Click the name of the target pool.
+The Target pool details page lists all the instances and their health
+status.
+To use gcloud compute to check the current health status of an instance
+in your target pool or of all instances in the target pool, you can use the
+gcloud compute target-pools get-health command :
+gcloud compute target-pools get-health TARGET_POOL
+Replace TARGET_POOL with the name of the target
+pool.
+The command returns the health status as determined by the configured
+health check, either healthy or unhealthy.
+In the API, make a HTTP POST request to the following URI with the instance
+specified in the request body:
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL /getHealth
+{
+"instance": "https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /zones/ ZONE /instances/ INSTANCE "
+}
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+TARGET_POOL : the name of the target pool to be
+updated
+REGION : the region that the target pool is in
+ZONE : the zone that the instance are in
+INSTANCE : the instance whose health check status
+you are checking
+Delete a target pool
+To delete a target pool, you must first make sure that the target pool is not
+being referenced by any forwarding rules. If a forwarding rule is
+referencing a target pool, you must delete the forwarding rule to remove the
+reference.
+Console gcloud API
+More
+To use the Google Cloud console to delete a target pool, use the Load
+balancing advanced menu.
+On the Advanced load balancing page, go to the Target pools tab.
+Go to Target pools
+Click the name of the target pool.
+Click Delete .
+In the Delete a target pool window, click Delete .
+To use gcloud compute to delete a target pool, use the
+target-pools delete command :
+gcloud compute target-pools delete TARGET_POOL
+Replace TARGET_POOL with the name of the target pool
+to be deleted.
+In the API, send an empty DELETE request to the following URI:
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+TARGET_POOL : the name of the target pool to be
+updated
+REGION : the region that the target pool is in
+Add or remove a health check from a target pool
+Health check objects are standalone, global resources that can be associated or disassociated
+from any target pool.
+If a target pool has no associated health check, the regional external passthrough Network Load Balancer
+will treat all instances as healthy and send traffic to all instances in the
+target pool. However, if you query for the health status of a target pool
+without a health check, the status will return as unhealthy to indicate that
+the target pool does not have a health check. We recommend that your target
+pools should have associated health checks to help you manage your instances.
+Regional external passthrough Network Load Balancers use legacy HTTP health
+checks to
+determine the health of instances in the target pool. A regional external passthrough Network Load Balancer can
+only use a legacy HTTP health check, not a legacy HTTPS health check.
+Console gcloud API
+More
+When using the Google Cloud console, you can create a legacy HTTP
+health check while creating a regional external passthrough Network Load Balancer with a target pool
+backend .
+You cannot use the Google Cloud console Health checks page to create
+a standalone legacy health check.
+To use gcloud compute to add a health check to a target pool, use the
+target-pools add-health-checks command :
+gcloud compute target-pools add-health-checks TARGET_POOL \
+--http-health-check= HEALTH_CHECK
+Replace the following:
+TARGET_POOL : the name of the target pool
+HEALTH_CHECK : the legacy HTTP health
+check to be used with this target pool
+To remove a health check, use the
+target-pools remove-health-checks command :
+gcloud compute target-pools remove-health-checks TARGET_POOL \
+--http-health-check= HEALTH_CHECK
+Replace the following:
+TARGET_POOL : the name of the target pool
+HEALTH_CHECK : the legacy HTTP health check to be
+removed from this target pool
+To associate or disassociate a health check using the API, make a HTTP POST
+request to the appropriate URIs:
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL /removeHealthCheck
+https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL /addHealthCheck
+The body of your request should contain the health check to associate or
+disassociate:
+{
+"healthCheck": "https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /global/httpHealthChecks/ HEALTH_CHECK "
+}
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+TARGET_POOL : the name of the target pool to be
+updated
+REGION : the region that the target pool is in
+HEALTH_CHECK : the legacy HTTP health check to be
+associated or disassociated with the target pool
+For more information, see the API reference documentation for
+targetPools.addHealthCheck
+and
+targetPools.removeHealthCheck .
+Add or remove a backup target pool
+When you first create a target pool, you can choose to apply a backup target
+pool that receives traffic if your target pool becomes unhealthy.
+If you have never set up a backup target pool before, you should also set up
+health checks for the feature to work
+correctly.
+Note: If your target pool has the
+sessionAffinity field set, resizing the target pool could
+cause requests that come from the same IP to go to a different instance
+initially. Eventually, all connections from the IP will go to the same virtual
+machine, as the old connections close.
+Console gcloud API
+More
+Target pools can't be edited in the Google Cloud console.
+You can edit a target proxy by using the Google Cloud CLI or the API.
+To use gcloud compute to update the backup pool resource, use the
+target-pools set-backup command :
+gcloud compute target-pools set-backup TARGET_POOL \
+--backup-pool= BACKUP_POOL \
+--failover-ratio= FAILOVER_RATIO
+Replace the following:
+TARGET_POOL : the name of the target pool
+BACKUP_POOL : a name for the backup target pool
+FAILOVER_RATIO : a value between 0.0 and 1.0,
+which determines when the target pool is declared unhealthy
+To make a request to update or remove a backup pool through the API, send a
+POST request to the following URI:
+POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ TARGET_POOL /setBackup?failoverRatio= FAILOVER_RATIO
+{
+"target": "https://www.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /targetPools/ BACKUP_POOL "
+}
+Replace the following:
+PROJECT_ID : the Google Cloud project ID
+TARGET_POOL : the name of the target pool to be
+updated
+REGION : the region that the target pool is in
+BACKUP_POOL : the name of the backup pool to be
+associated with the target pool
+FAILOVER_RATIO : the failover ratio
+If you define an empty target or don't define a failover ratio, the backup
+pool behavior is disabled for this target pool.
+What's next
+For more information about target pools, see the API reference documentation for
+targetPools.setBackup .
+For more information about forwarding rules, see Forwarding rules overview .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-02 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+close
+Welcome to Cloud Shell
+Cloud Shell is a development environment that you can use in the browser:
+Activate Cloud Shell to explore Google Cloud with a terminal and an editor
+Start a free trial to get $300 in free credits
+Activate Cloud Shell
+Start a free trial

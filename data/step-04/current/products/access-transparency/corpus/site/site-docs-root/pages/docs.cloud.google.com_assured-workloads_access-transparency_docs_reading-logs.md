@@ -8,128 +8,22 @@ entrypoint: https://docs.cloud.google.com/assured-workloads/access-transparency/
 source_metadata:
   url: https://docs.cloud.google.com/assured-workloads/access-transparency/docs/reading-logs
   title: "Understanding and using Access Transparency logs \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Understanding and using Access Transparency logs | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud provider access management
-Access Transparency
-Start free
-Overview
-Guides
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Resources
-Cross-product tools
-More
-Console
-Access Transparency
-Product overview
-Privileged access
-Supported services
-Access Transparency exclusions
-Get started
-Enable Access Transparency
-Read and understand logs
-Understand and use Access Transparency logs
-View Access Transparency logs for Google Workspace
-Enroll in other administrative access controls
-Introduction to Access Approval
-Introduction to Key Access Justifications
-Simplify workload compliance
-Introduction to Assured Workloads
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Access Transparency logs in detail
-Enabling Access Transparency
-Viewing Access Transparency logs
-Sample Access Transparency log entry
-Log field descriptions Values for permissionDetails fields
-Values for accesses:methodNames field
-Justification reason codes
-Monitoring Access Transparency logs
-What's next
 Home
 Documentation
 Security
 Cloud provider access management
 Access Transparency
 Guides
-Was this helpful?
 Send feedback
-On this page
-Access Transparency logs in detail
-Enabling Access Transparency
-Viewing Access Transparency logs
-Sample Access Transparency log entry
-Log field descriptions Values for permissionDetails fields
-Values for accesses:methodNames field
-Justification reason codes
-Monitoring Access Transparency logs
-What's next
-Understanding and using Access Transparency logs
 Stay organized with collections
 Save and categorize content based on your preferences.
+Understanding and using Access Transparency logs
 This page describes the contents of Access Transparency log entries and how
 to view and use them.
 Access Transparency logs in detail
@@ -155,9 +49,6 @@ See the
 Cloud Logging access control guide for
 details.
 To view Access Transparency logs, use the following Google Cloud Observability logging filter.
-See more code actions.
-Light code theme
-Dark code theme
 logName="projects/ PROJECT_ID /logs/cloudaudit.googleapis.com%2Faccess_transparency"
 To learn how to see your Access Transparency logs in the Logs Explorer, see
 Using the Logs Explorer .
@@ -435,59 +326,8 @@ given period exceeds a specified threshold.
 What's next
 Learn how to view and understand Access Transparency logs for
 Google Workspace services .
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

@@ -1,11 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:35:12.763Z",
+  "generated_at": "2026-04-08T21:49:00.426Z",
   "product_name": "Application Design Center",
   "product_slug": "application-design-center",
-  "step02_source_path": "data/step-02/current/products/application-design-center.md",
+  "step02_source_path": "data/step-02/current/application-design-center.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "application-design-center",
   "dominant_python_slug": "",
@@ -16,6 +17,13 @@
       "round": 1,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Application Design Center\" \"reference/rest\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Application Design Center\" official documentation OR site:developers.google.com \"application design center\" official documentation",
       "official_result_count": 0,
       "results": []
     },
@@ -107,21 +115,21 @@
           "rank": 5
         },
         {
-          "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
-          "description": "Use telemetry data to analyze resource performance. Identify and apply template revisions to your application. This document <strong>helps you deploy, manage, and apply a template revision to your application</strong>.",
-          "rank": 6
-        },
-        {
           "title": "APIs and reference | Application Design Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-design-center/docs/apis",
           "description": "Get started with App Design Center with the RPC APIs.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Design application templates | Application Design Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-design-center/docs/design-application-templates",
           "description": "In the Template Name field, enter a human-readable identifier to display in the Google Cloud console. If you don&#x27;t provide a name, the Template ID is copied to this field. In the Description field, enter a brief explanation of the application&#x27;s purpose. Click Create template. The design canvas is displayed. Create a new application template. gcloud design-center spaces application-templates create APPLICATION_TEMPLATE \\ --project=PROJECT \\ --location=LOCATION \\ --space=SPACE \\ --display-name=DISPLAY_NAME \\ --description=DESCRIPTION",
+          "rank": 7
+        },
+        {
+          "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
+          "description": "Use telemetry data to analyze resource performance. Identify and apply template revisions to your application. This document <strong>helps you deploy, manage, and apply a template revision to your application</strong>.",
           "rank": 8
         }
       ]
@@ -146,6 +154,13 @@
           "rank": 1
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Application Design Center\" reference OR site:developers.google.com \"application design center\" reference",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -253,15 +268,15 @@
           "rank": 6
         },
         {
-          "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
-          "description": "Tip: To view a list of applications with deployment issues in Cloud Hub, see View deployments. To manage your deployed application, see View application details. Preview the application to view the Terraform code before you deploy. This operation might require several minutes to complete. Do one of the following: To automatically create a service account, use the following command: gcloud design-center spaces applications preview APPLICATION \\ --project=PROJECT \\ --location=LOCATION \\ --space=SPACE \\ --create-sa \\ --service-account=SERVICE_ACCOUNT",
-          "rank": 7
-        },
-        {
           "title": "Key concepts | Application Design Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-design-center/docs/key-concepts",
           "description": "In Application Design Center, <strong>a collection of templates that you can share between different spaces</strong>. A Google Cloud resource that you use to compose an application.",
+          "rank": 7
+        },
+        {
+          "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
+          "description": "When you deploy an application using App Design Center, your application is automatically registered in App Hub. The deployment process lets you do the following: Preview changes that Terraform plans to make to your infrastructure. Enable Google Cloud resource APIs that are required for your application. Investigate deployment issues. Use telemetry data to analyze resource performance. Identify and apply template revisions to your application. This document ...",
           "rank": 8
         }
       ]
@@ -282,9 +297,16 @@
     },
     {
       "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Application Design Center\" overview OR site:developers.google.com \"application design center\" overview",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions",
-      "official_result_count": 8,
+      "official_result_count": 7,
       "results": [
         {
           "title": "Application Design Center roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -317,22 +339,16 @@
           "rank": 5
         },
         {
-          "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
-          "description": "To configure the service account, see Grant roles to your service account. Create a new service account: You must have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, which is used to assign the required deployment roles to the service account.",
-          "rank": 6
-        },
-        {
           "title": "Set up a single project | App Hub | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
           "description": "Click Grant roles and then click Complete. You can now register existing resources to an application or create an application template with Application Design Center. Later, you can grant additional IAM roles to your principals from the IAM page.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Configure a service account in Application Design Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-design-center/docs/configure-service-account",
           "description": "This document describes the connections and parameters you can configure when using App Design Center to create a service account.",
-          "rank": 8
+          "rank": 7
         }
       ]
     },
@@ -409,9 +425,10 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs",
       "title": "Application Design Center documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs",
       "description": "Application Design Center · Start free · Home · Documentation · Application development · Application Design Center · Read product documentation · Design and share deployable application architectures. Get started for free · Develop with our latest Generative AI models and tools.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
@@ -427,11 +444,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -442,9 +462,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/apis",
       "title": "APIs and reference | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/apis",
       "description": "Get started with App Design Center with the RPC APIs.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Application Design Center\" \"APIs and reference\"",
@@ -461,11 +482,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -476,9 +500,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud",
       "title": "Application-centric Google Cloud | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/application-centric-google-cloud",
       "description": "Application Design Center: <strong>Design and deploy new applications using prebuilt or custom templates that you can update</strong>. Deploying an application creates new Google Cloud resources and registers those resources and your application to App Hub.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
@@ -494,11 +519,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -509,43 +537,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
-      "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
-      "description": "Use telemetry data to analyze resource performance. Identify and apply template revisions to your application. This document <strong>helps you deploy, manage, and apply a template revision to your application</strong>.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 100,
-      "product_fit_score": 86,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/overview",
       "title": "Application Design Center overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/overview",
       "description": "Use Application Design Center to streamline infrastructure design and create deployable application architecture templates. Learn how platform engineering teams can manage a catalog of approved patterns.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
@@ -561,11 +556,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -576,13 +574,14 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/setup",
       "title": "Set up Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/setup",
       "description": "Learn how to perform the one-time setup for Application Design Center. This guide shows administrators how to choose a setup model, enable application management, and optionally use an existing storage bucket.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\"",
+        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud introduction reference",
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
       ],
@@ -597,11 +596,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -612,9 +614,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/three-tier-web-app",
       "title": "Three-tier web app template | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/three-tier-web-app",
       "description": "Documentation · Application development · Application Design Center · Guides · Send feedback · Accelerate your organization&#x27;s digital transformation by providing a high-availability, production-ready foundation for modern web applications. This guide helps you understand the Three-tier web app application template, which helps you quickly deploy a three-tier web application to Google Cloud.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
@@ -630,11 +633,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -645,9 +651,45 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/grant-roles-service-account",
+      "title": "Deploy applications | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/deploy-applications",
+      "description": "Use telemetry data to analyze resource performance. Identify and apply template revisions to your application. This document <strong>helps you deploy, manage, and apply a template revision to your application</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 134,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Grant roles to your service account | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/grant-roles-service-account",
       "description": "<strong>Add IAM policy bindings to the service account and user account</strong>. Grant the service account the roles required to deploy each resource. Add permissions to the service account to deploy outside of the project where the service account was created.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
@@ -661,32 +703,36 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/key-concepts",
       "title": "Key concepts | Application Design Center | Google Cloud Documentation",
-      "description": "In Application Design Center, <strong>a collection of templates that you can share between different spaces</strong>. A Google Cloud resource that you use to compose an application.",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/key-concepts",
+      "description": "In Application Design Center, <strong>a component that provides supporting resources for an application, such as for managing access controls or configurations</strong>.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\"",
+        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "iam_permissions",
+        "product_docs"
       ],
       "round_hits": [
         2,
@@ -694,24 +740,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
-      "keep": false
+      "final_score": 95,
+      "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
       "title": "Set up a single project | App Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
       "description": "Click Grant roles and then click Complete. You can now register existing resources to an application or create an application template with Application Design Center.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
@@ -725,24 +775,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter",
       "title": "Application Design Center roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter",
       "description": "This page lists the IAM roles and permissions for Application Design Center.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
@@ -756,24 +810,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
-      "keep": true
+      "final_score": 95,
+      "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/build-on-google-templates",
       "title": "Build on Google templates | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/build-on-google-templates",
       "description": "This document shows you how to find a suitable template, duplicate it to your own project, customize its components, and deploy it as a new application. To perform the tasks in this document, ask your administrator to grant you the necessary roles on the app-enabled folder or management project: For more information about roles, see Access control with IAM.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\""
       ],
@@ -785,24 +843,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/configure-service-account",
       "title": "Configure a service account in Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/configure-service-account",
       "description": "This document describes the connections and parameters you can configure when using App Design Center to create a service account.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
       ],
@@ -812,26 +874,30 @@
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/design-application-templates",
       "title": "Design application templates | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/design-application-templates",
       "description": "In the Template Name field, enter a human-readable identifier to display in the Google Cloud console. If you don&#x27;t provide a name, the Template ID is copied to this field. In the Description field, enter a brief explanation of the application&#x27;s purpose. Click Create template. The design canvas is displayed. Create a new application template. gcloud design-center spaces application-templates create APPLICATION_TEMPLATE \\ --project=PROJECT \\ --location=LOCATION \\ --space=SPACE \\ --display-name=DISPLAY_NAME \\ --description=DESCRIPTION",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud documentation"
       ],
@@ -841,57 +907,65 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/manage-spaces",
       "title": "Manage and assign spaces | Application Design Center | Google Cloud Documentation",
-      "description": "For example, you might assign the ... assign spaces, manage catalogs, and design templates. ... <strong>In the Google Cloud console, go to the App Design Center Overview page</strong>....",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/manage-spaces",
+      "description": "In the Google Cloud console, go to the App Design Center Overview page. ... From the navigation menu, select a space from the Space list. In the Let your team use ADC area, click Manage permissions. ... In the New principals field, enter the principals that you want to add to the space. From the Select a role list, click Other. From the Roles area, select the role that you want to assign to the selected principals. For role descriptions, see Access control with IAM.",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Application Design Center\" \"access control\""
+        "site:docs.cloud.google.com \"Application Design Center\" \"access control\"",
+        "site:docs.cloud.google.com \"Application Design Center\" Google Cloud docs overview"
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "iam_permissions",
+        "product_docs"
       ],
       "round_hits": [
         2
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
       "title": "Create and verify a template | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/quickstart-create-template",
       "description": "gcloud iam service-accounts ...t-service-account@MANAGEMENT_PROJECT_ID.iam.gserviceaccount.com · <strong>Give your user actAs permission on your service account</strong>....",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
       ],
@@ -903,24 +977,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/reference/rest",
       "title": "Design Center API | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/reference/rest",
       "description": "Application Design Center · Reference · Send feedback · REST Resource: v1alpha.projects.locations · REST Resource: v1alpha.projects.locations.operations · REST Resource: v1alpha.projects.locations.spaces · REST Resource: v1alpha.projects.locations.spaces.applicationTemplates ·",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" Google Cloud introduction reference"
       ],
@@ -932,24 +1010,28 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/application-design-center/docs/reference/rpc/google.iam.v1",
       "title": "Package google.iam.v1 | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/reference/rpc/google.iam.v1",
       "description": "Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). <strong>A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role</strong>.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" IAM roles permissions"
       ],
@@ -961,24 +1043,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 86,
+      "product_fit_score": 134,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/app-hub/docs/best-practices",
       "title": "Best practices for application management | App Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/app-hub/docs/best-practices",
       "description": "Simplified governance: You can apply policies and access controls at the my-web-app level, supporting consistent governance across all tiers. Adopt the following strategies to make sure your App Hub and Application Design Center setup is scalable, governable, and aligned with your operational ...",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\""
       ],
@@ -990,24 +1076,28 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/app-hub/docs/manage-applications",
       "title": "Manage App Hub applications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/app-hub/docs/manage-applications",
       "description": "For applications deployed from a template, see Application Design Center documentation. Before you can list, view, update, and delete applications in App Hub, complete the following steps: Set up App Hub using one of the supported setup models. Create an application and register supported resources to the application you want to manage. To get the permissions that you need to manage applications in App Hub, ask your administrator to grant you the following IAM roles on the application administrative boundary from your setup model (the management project or the host and service projects) :",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"roles and permissions\""
       ],
@@ -1019,24 +1109,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
       "title": "Manage services and workloads | App Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
       "description": "For applications deployed from an Application Design Center template: Use Application Design Center to manage and update the application.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"roles and permissions\""
       ],
@@ -1048,13 +1142,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1063,9 +1160,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
       "title": "Set up a host project (Legacy) | App Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
       "description": "This document describes how to set up a host project in App Hub and create a multiple-project boundary. The host project is a legacy application setup model supported for existing App Hub users. We recommend defining folder-level boundaries by setting up an app-enabled folder for new implementations. Folder-level boundaries provide access to the complete set of Application-centric Google Cloud features, such as Application Design Center and Gemini Cloud Assist.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"roles and permissions\""
       ],
@@ -1077,13 +1175,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1092,9 +1193,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/hub/docs/app-project-views",
       "title": "Application views and project views | Cloud Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/hub/docs/app-project-views",
       "description": "To create your applications, you can use App Hub to group together your existing Google Cloud resources or Application Design Center to design and deploy new applications. To learn about required permissions for viewing application data, see Access control with IAM.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\""
       ],
@@ -1106,13 +1208,16 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1121,9 +1226,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/resource-manager/docs/manage-applications?hl=en",
       "title": "Managing applications in a folder | Resource Manager | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/resource-manager/docs/manage-applications?hl=en",
       "description": "The management project provides the infrastructure for application libraries and APIs, including billing, quotas, and access control. For more information about these APIs, see Enable APIs on a management project. The management project holds the complete application model, which includes the following: App Hub data: The logical model of your applications, including their relationships to services and workloads, as well as metadata like owners and criticality. Application Design Center data: Resources like templates, catalogs, and spaces used to design and deploy new applications.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\""
       ],
@@ -1135,13 +1241,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 36,
+      "product_fit_score": 84,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1150,9 +1259,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/hub/docs/deployments",
       "title": "View deployments | Cloud Hub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/hub/docs/deployments",
       "description": "To make updates to application instances or templates in App Design Center, you must have additional permissions. See the App Design Center access control documentation for information about roles and permissions.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Application Design Center\" \"access control\""
       ],
@@ -1169,6 +1279,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 93,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 1,
         "coverage_value": 2,

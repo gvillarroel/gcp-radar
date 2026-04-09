@@ -4,12 +4,28 @@ This file lists the official Google documentation URLs selected and scored for t
 
 | Final score | Keep | Classification | URL | Query coverage | Rationale |
 | ---: | --- | --- | --- | ---: | --- |
-| 100 | no | supporting_page | https://docs.cloud.google.com/error-reporting/docs/setup/apps-script | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/looker/docs/studio/about-community-connectors | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | supporting_page | https://docs.cloud.google.com/resource-manager/docs/listing-all-resources | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 97 | yes | product_root | https://docs.cloud.google.com/error-reporting/docs | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 97 | no | supporting_page | https://docs.cloud.google.com/sap/docs/architectures/abap-sdk/interactive-google-chat-apps-for-sap | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 84 | no | supporting_page | https://docs.cloud.google.com/workflows/docs/tutorials/trigger-workflow-from-sheets | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 51 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-chat | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-
+| 100 | yes | product_root | https://developers.google.com/apps-script/overview | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | yes | product_reference | https://developers.google.com/apps-script/reference | 7 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | yes | product_root | https://developers.google.com/apps-script | 4 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/application-integration/docs/configure-apps-script-task | 4 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/resource-manager/docs/listing-all-resources | 3 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations | 3 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://developers.google.com/apps-script/samples | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 95 | no | product_root | https://developers.google.com/apps-script/guides/libraries | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | product_root | https://developers.google.com/apps-script/guides/projects | 3 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/looker/docs/studio/about-community-connectors | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/sap/docs/architectures/abap-sdk/interactive-google-chat-apps-for-sap | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | yes | api_reference | https://developers.google.com/apps-script/api/reference/rest | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/script/script-app | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference?skip_cache=false | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://developers.google.com/apps-script/api/how-tos/execute | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/document | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/document/document-app | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/forms | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/mail | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/properties | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/script | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/script/service | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/spreadsheet | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | product_reference | https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://developers.google.com/apps-script/samples/fundamentals-codelabs | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |

@@ -10,182 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/rest/v1/projects.locations.instances
   title: "REST Resource: projects.locations.instances \_|\_ Anti Money Laundering\
     \ AI \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-REST Resource: projects.locations.instances | Anti Money Laundering AI | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Anti Money Laundering AI
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-Anti Money Laundering AI
-REST Reference
-Overview
-v1
-REST Resources
-projects. locations
-Overview
-get
-list
-projects. locations. instances
-Overview
-create
-delete
-export Registered Parties
-get
-import Registered Parties
-list
-patch
-projects. locations. instances. backtest Results
-Overview
-create
-delete
-exportMetadata
-get
-list
-patch
-projects. locations. instances. datasets
-Overview
-create
-delete
-get
-list
-patch
-projects. locations. instances. engine Configs
-Overview
-create
-delete
-exportMetadata
-get
-list
-patch
-projects. locations. instances. engine Versions
-Overview
-get
-list
-projects. locations. instances. models
-Overview
-copy
-create
-delete
-exportMetadata
-get
-list
-patch
-projects. locations. instances. prediction Results
-Overview
-create
-delete
-exportMetadata
-get
-list
-patch
-projects. locations. operations
-Overview
-cancel
-delete
-get
-list
-Types
-Line Of Business
-AML input data model
-AML output data model
-Lifecycle of a risk case
-Engine versions
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Resource: Instance
-State
-Methods create
-delete
-exportRegisteredParties
-get
-importRegisteredParties
-list
-patch
 Home
 Documentation
 Industry solutions
 Anti Money Laundering AI
 Reference
-Was this helpful?
 Send feedback
-REST Resource: projects. locations. instances
+REST Resource: projects.locations.instances
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Resource: Instance
-State
-Methods create
-delete
-exportRegisteredParties
-get
-importRegisteredParties
-list
-patch
 Resource: Instance
 JSON representation
 State
@@ -193,9 +32,6 @@ Methods
 Resource: Instance
 Instance is a container for the rest of API resources. Only resources in the same instance can interact with each other. Child resources inherit the location (data residency) and encryption (CMEK). The location of the provided input and output in requests must match the location of the instance.
 JSON representation
-See more code actions.
-Light code theme
-Dark code theme
 {
 "name" : string ,
 "createTime" : string ,
@@ -217,11 +53,11 @@ Fields
 name
 string
 Output only. The full path to the Instance resource in this API. format: projects/{project}/locations/{location}/instances/{instance}
-create Time
+createTime
 string ( Timestamp format)
 Output only. Timestamp when the Instance was created. Assigned by the server.
 Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
-update Time
+updateTime
 string ( Timestamp format)
 Output only. Timestamp when the Instance was last updated. Assigned by the server.
 Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
@@ -232,25 +68,25 @@ labels
 map (key: string, value: string)
 Labels
 An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" } .
-kms Key
+kmsKey
 string
 Required. The KMS key name used for CMEK (encryption-at-rest). format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} VPC-SC restrictions apply.
-valid Party Registration Sharing Consumer Instances[]
+validPartyRegistrationSharingConsumerInstances[]
 string
 Optional. The resource names of AML instances which are valid Party Registration Sharing Consumers. format: projects/{project_num}/locations/{location}/instances/{instance} The listed instances will be able to generate Prediction Results for parties registered in this instance if they also specify this instance as the partyRegistrationSharingHostInstance . Parties can only be shared within the same Cloud region. Only one of validPartyRegistrationSharingConsumerInstances or partyRegistrationSharingHostInstance may be specified.
-party Registration Sharing Host Instance
+partyRegistrationSharingHostInstance
 string
 Optional. The resource name of this instance's Party Registration Sharing Host instance. format: projects/{project_num}/locations/{location}/instances/{instance} If the host instance has listed this instance in its validPartyRegistrationSharingConsumerInstances field, then registration sharing will be enabled. That means this instance can generate predictions for parties registered in the host instance. Any parties registered in this instance should be deregistered at the earliest opportunity to avoid unnecessary charges. Parties can only be shared within the same Cloud region. Only one of validPartyRegistrationSharingConsumerInstances or partyRegistrationSharingHostInstance may be specified.
-satisfies Pzi
+satisfiesPzi
 boolean
 Output only. [Output Only] Reserved for future use.
-satisfies Pzs
+satisfiesPzs
 boolean
 Output only. [Output Only] Reserved for future use.
 State
 The Resource State
 Enums
-STATE_ UNSPECIFIED
+STATE_UNSPECIFIED
 State is unspecified, should not occur.
 CREATING
 The resource has not finished being created.
@@ -275,54 +111,8 @@ list
 Lists instances.
 patch
 Updates the parameters of a single Instance.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
 Last updated 2025-12-12 UTC.
 Need to tell us more?
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-12-12 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial

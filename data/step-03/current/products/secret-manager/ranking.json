@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:39:24.453Z",
+  "generated_at": "2026-04-08T21:56:17.812Z",
   "product_name": "Secret Manager",
   "product_slug": "secret-manager",
   "step02_source_path": "data/step-02/current/secret-manager.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "secret-manager",
   "dominant_python_slug": "secretmanager",
@@ -183,9 +183,9 @@
           "rank": 5
         },
         {
-          "title": "How-to guides | Secret Manager | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/secret-manager/docs/how-to",
-          "description": "Learn best practices when using Secret Manager. Understand how Google Cloud encrypts Secret Manager data.",
+          "title": "List secrets and view secret details | Secret Manager | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/secret-manager/docs/view-secret-details",
+          "description": "To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK. On Compute Engine or GKE, you must authenticate with the cloud-platform scope. // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\GetSecretRequest; /** * @param string $projectId Your Google Cloud Project ID (e.g.",
           "rank": 6
         },
         {
@@ -487,7 +487,7 @@
         {
           "title": "Class SecretManagerServiceAsyncClient (2.26.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1beta1.services.secret_manager_service.SecretManagerServiceAsyncClient",
-          "description": "Deletes a xref_Secret. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import secretmanager_v1beta1 async def sample_delete_secret(): # Create a client client = secretmanager_v1beta1.SecretManagerServiceAsyncClient() # Initialize request argument(s) request = secretmanager_v1beta1.DeleteSecretRequest( name=&quot;name_value&quot;, ) # Make the request await client.delete_secret(request=request)",
+          "description": "<strong>Creates a new xref_SecretVersion containing secret data and attaches it to an existing xref_Secret</strong>. # This snippet has been automatically generated and should be regarded as a # code template only.",
           "rank": 5
         },
         {
@@ -759,11 +759,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -793,11 +796,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -827,11 +833,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -861,11 +870,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -878,18 +890,18 @@
     {
       "title": "Secret Manager overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/secret-manager/docs/overview",
-      "description": "Manage access to secrets using fine-grained Identity and Access Management (IAM) roles and conditions: With IAM roles and permissions, you can provide granular access to specific Secret Manager resources.",
-      "rank": 5,
+      "description": "You can segregate responsibilities for accessing, managing, auditing, and rotating secrets. Ensure high availability and disaster recovery with secret replication: You can replicate your secrets across multiple regions to ensure high availability and disaster recovery for your applications regardless of their geographic location. You can choose between the following replication policies: Automatic replication: Google Cloud decides the regions considering availability and latency.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Secret Manager\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Secret Manager\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Secret Manager\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Secret Manager\" \"access control\"",
+        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Secret Manager\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "iam_permissions",
-        "product_docs"
+        "product_docs",
+        "iam_permissions"
       ],
       "round_hits": [
         1,
@@ -898,11 +910,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -934,11 +949,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -968,11 +986,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1002,11 +1023,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1036,11 +1060,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1048,7 +1075,7 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "APIs and reference | Secret Manager | Google Cloud Documentation",
@@ -1070,11 +1097,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1087,16 +1117,16 @@
     {
       "title": "Secret Manager best practices | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/secret-manager/docs/best-practices",
-      "description": "Segment applications and environments (staging or production) into separate projects as described in Decide a resource hierarchy for your Google Cloud landing zone. This can help isolate environments with project level IAM binding and ensures that quotas are enforced independently. Choose a curated-role with the minimal necessary permissions, or create a custom role if necessary. When secrets for many services are in a single project, use secret level IAM bindings, or IAM Conditions to limit access to the necessary subset of secrets.",
-      "rank": 4,
+      "description": "When secrets for many services are in a single project, use secret level IAM bindings, or IAM Conditions to limit access to the necessary subset of secrets. IAM Recommender can further assist in identifying over privileged IAM bindings. Credentials are required to authenticate to the Secret Manager API.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Secret Manager\" \"access control\"",
+        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Secret Manager\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "iam_permissions",
+        "product_docs"
       ],
       "round_hits": [
         2,
@@ -1104,11 +1134,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1137,11 +1170,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1169,11 +1205,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1201,11 +1240,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1233,11 +1275,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1265,11 +1310,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1297,11 +1345,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1329,11 +1380,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1361,11 +1415,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1394,11 +1451,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1426,13 +1486,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1458,13 +1521,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1479,8 +1545,8 @@
       "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Secret Manager\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Secret Manager\" \"access control\""
+        "site:docs.cloud.google.com \"Secret Manager\" \"access control\"",
+        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud docs overview"
       ],
       "intent_hits": [
         "product_docs",
@@ -1492,14 +1558,52 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class SecretKeySelector.Builder (0.78.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.SecretKeySelector.Builder",
+      "description": "Required. The name of the secret in Cloud <strong>Secret Manager</strong>. Format: {secret_name} if the secret is in the same project.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Secret Manager\"",
+        "site:docs.cloud.google.com \"Secret Manager\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 32,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
-        "coverage_value": 2,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1524,13 +1628,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": -16,
+      "product_fit_score": 32,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 0,
+        "product_match": 3,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1554,11 +1661,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1584,44 +1694,17 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "How-to guides | Secret Manager | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/secret-manager/docs/how-to",
-      "description": "Learn best practices when using Secret Manager. Understand how Google Cloud encrypts Secret Manager data.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1644,11 +1727,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1674,14 +1760,50 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "List secrets and view secret details | Secret Manager | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/secret-manager/docs/view-secret-details",
+      "description": "To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK. On Compute Engine or GKE, you must authenticate with the cloud-platform scope. // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\GetSecretRequest; /** * @param string $projectId Your Google Cloud Project ID (e.g.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Secret Manager\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1704,11 +1826,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1734,11 +1859,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1764,11 +1892,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1794,11 +1925,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1824,11 +1958,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1854,15 +1991,315 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/secretmanager/0.2.0/gapic/v1/types.html",
+      "description": "Secret Manager: <strong>Stores, manages, and secures access to application secrets</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:googleapis.dev/python \"Secret Manager\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Types for Secret Manager API Client — google-cloud-secret-manager documentation",
+      "url": "https://googleapis.dev/python/secretmanager/1.0.0/gapic/v1beta1/types.html",
+      "description": "A token to retrieve the next page of results. Pass this value in [ListSecretsRequest.page_token][google.cloud.secrets.v1beta 1.ListSecretsRequest.page_token] to retrieve the next page. ... Defines an Identity and Access Management (IAM) policy.",
+      "rank": 3,
+      "query_hits": [
+        "site:googleapis.dev/python \"Secret Manager\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "google.cloud.secretmanager_v1.services.secret_manager_service.client — google-cloud-secret-manager documentation",
+      "url": "https://googleapis.dev/python/secretmanager/2.0.0/_modules/google/cloud/secretmanager_v1/services/secret_manager_service/client.html",
+      "description": "The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format ``projects/*/secrets/*/versions/*``. ``projects/*/secrets/*/versions/latest`` is an alias to the ``latest`` [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This corresponds to the ``name`` field on the ``request`` instance; if ``request`` is provided, this should not be set. retry (google.api_core.retry.Retry): Designation of what errors, if any, should be retried. timeout (float): The timeout for this request. metadata (Sequence[Tuple[str, str]]): Strings which should be sent along with the request as metadata. Returns: ~.resources.SecretVersion: A secret version resource in the <strong>Secret Manager</strong> API.",
+      "rank": 4,
+      "query_hits": [
+        "site:googleapis.dev/python \"Secret Manager\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Secret Manager | Python client libraries | Google Cloud Documentation",
+      "url": "https://googleapis.dev/python/secretmanager/latest",
+      "description": "Secret Manager: <strong>Stores, manages, and secures access to application secrets</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Secret Manager\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Secret Manager | Python client libraries | Google Cloud Documentation",
+      "url": "https://googleapis.dev/python/secretmanager/latest/index.html",
+      "description": "Secret Manager: <strong>Stores, manages, and secures access to application secrets</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Secret Manager\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Feed management overview | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/administration",
+      "description": "When you create a feed, you specify the source type, log type, required permissions, authentication details, and other information that is based on the log type. As part of its security design, Google SecOps stores user credentials (for example, credentials that you provide so that a Google SecOps feed can ingest log data from a third-party API) in Secret Manager.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Secret Manager\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Feed management overview | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
+      "description": "When you create a feed, you specify the source type, log type, required permissions, authentication details, and other information that is based on the log type. As part of its security design, Google SecOps stores user credentials (for example, credentials that you provide so that a Google SecOps feed can ingest log data from a third-party API) in Secret Manager.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Secret Manager\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure secrets for jobs | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/secrets",
+      "description": "Learn how to grant roles. ... Use an existing secret or, create a secret in Secret Manager, as described in Create a secret. To get the permissions that you need to configure secrets, ask your administrator to grant you the following IAM roles:",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Secret Manager\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure secrets for worker pools | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/workerpools/secrets",
+      "description": "For instructions on how to add the service identity principal to the Secret Manager Secret Accessor role, see Manage access to secrets. For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Secret Manager\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1884,11 +2321,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 68,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1914,11 +2354,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 68,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1927,278 +2370,6 @@
       },
       "final_score": 90,
       "keep": true
-    },
-    {
-      "title": "Python client library | Google Cloud",
-      "url": "https://googleapis.dev/python/secretmanager/0.2.0/gapic/v1/types.html",
-      "description": "Secret Manager: <strong>Stores, manages, and secures access to application secrets</strong>.",
-      "rank": 2,
-      "query_hits": [
-        "site:googleapis.dev/python \"Secret Manager\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Types for Secret Manager API Client — google-cloud-secret-manager documentation",
-      "url": "https://googleapis.dev/python/secretmanager/1.0.0/gapic/v1beta1/types.html",
-      "description": "A token to retrieve the next page of results. Pass this value in [ListSecretsRequest.page_token][google.cloud.secrets.v1beta 1.ListSecretsRequest.page_token] to retrieve the next page. ... Defines an Identity and Access Management (IAM) policy.",
-      "rank": 3,
-      "query_hits": [
-        "site:googleapis.dev/python \"Secret Manager\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 1,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "google.cloud.secretmanager_v1.services.secret_manager_service.client — google-cloud-secret-manager documentation",
-      "url": "https://googleapis.dev/python/secretmanager/2.0.0/_modules/google/cloud/secretmanager_v1/services/secret_manager_service/client.html",
-      "description": "The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format ``projects/*/secrets/*/versions/*``. ``projects/*/secrets/*/versions/latest`` is an alias to the ``latest`` [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. This corresponds to the ``name`` field on the ``request`` instance; if ``request`` is provided, this should not be set. retry (google.api_core.retry.Retry): Designation of what errors, if any, should be retried. timeout (float): The timeout for this request. metadata (Sequence[Tuple[str, str]]): Strings which should be sent along with the request as metadata. Returns: ~.resources.SecretVersion: A secret version resource in the <strong>Secret Manager</strong> API.",
-      "rank": 4,
-      "query_hits": [
-        "site:googleapis.dev/python \"Secret Manager\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Python Client for Secret Manager | Python client libraries | Google Cloud Documentation",
-      "url": "https://googleapis.dev/python/secretmanager/latest",
-      "description": "Secret Manager: <strong>Stores, manages, and secures access to application secrets</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:googleapis.dev/python \"Secret Manager\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "python_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Python Client for Secret Manager | Python client libraries | Google Cloud Documentation",
-      "url": "https://googleapis.dev/python/secretmanager/latest/index.html",
-      "description": "Secret Manager: <strong>Stores, manages, and secures access to application secrets</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:googleapis.dev/python \"Secret Manager\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 50,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "python_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Feed management overview | Google Security Operations | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview",
-      "description": "When you create a feed, you specify the source type, log type, required permissions, authentication details, and other information that is based on the log type. As part of its security design, Google SecOps stores user credentials (for example, credentials that you provide so that a Google SecOps feed can ingest log data from a third-party API) in Secret Manager.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Secret Manager\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Configure secrets for jobs | Cloud Run | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/secrets",
-      "description": "Learn how to grant roles. ... Use an existing secret or, create a secret in Secret Manager, as described in Create a secret. To get the permissions that you need to configure secrets, ask your administrator to grant you the following IAM roles:",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Secret Manager\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Configure secrets for worker pools | Cloud Run | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/configuring/workerpools/secrets",
-      "description": "For instructions on how to add the service identity principal to the Secret Manager Secret Accessor role, see Manage access to secrets. For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Secret Manager\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class SecretKeySelector.Builder (0.78.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2.SecretKeySelector.Builder",
-      "description": "Required. The name of the secret in Cloud <strong>Secret Manager</strong>. Format: {secret_name} if the secret is in the same project.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Secret Manager\"",
-        "site:docs.cloud.google.com \"Secret Manager\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": -16,
-      "deterministic_score": 82,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 82,
-        "parent_page_likelihood": 4,
-        "product_match": 0,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 80,
-      "keep": false
     }
   ]
 }

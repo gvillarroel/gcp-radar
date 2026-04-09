@@ -1,11 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:33:53.473Z",
+  "generated_at": "2026-04-08T21:47:13.727Z",
   "product_name": "Access Approval",
   "product_slug": "access-approval",
-  "step02_source_path": "data/step-02/current/products/access-approval.md",
+  "step02_source_path": "data/step-02/current/access-approval.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "python",
   "dominant_python_slug": "accessapproval",
@@ -18,6 +19,26 @@
       "query": "site:docs.cloud.google.com \"Access Approval\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Access Approval\" official documentation OR site:developers.google.com \"access approval\" official documentation",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "AccessApproval | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/alertcenter/reference/rest/v1beta1/AccessApproval",
+          "description": "Support ticket related to Access Approvals request",
+          "rank": 1
+        },
+        {
+          "title": "Frequently Asked Questions | Google Business Profile APIs | Google for Developers",
+          "url": "https://developers.google.com/my-business/content/faq",
+          "description": "The Google Business Profile (GBP) APIs allow developers to build applications that manage business data across Google, requiring access approval based on legitimate business needs.",
+          "rank": 2
+        }
+      ]
     },
     {
       "round": 1,
@@ -77,15 +98,15 @@
           "rank": 4
         },
         {
-          "title": "Introduction to Access Approval | Assured Workloads | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
-          "description": "Google Cloud aims to ensure that limits on administrative access are an integral part of how the products are designed to work. Access Approval <strong>lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>.",
-          "rank": 5
-        },
-        {
           "title": "Approving Access Approval requests | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/approve-requests",
           "description": "This document explains how to approve an Access Approval request.",
+          "rank": 5
+        },
+        {
+          "title": "Introduction to Access Approval | Assured Workloads | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
+          "description": "Google Cloud aims to ensure that limits on administrative access are an integral part of how the products are designed to work. Access Approval <strong>lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>.",
           "rank": 6
         },
         {
@@ -131,6 +152,26 @@
     },
     {
       "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Access Approval\" reference OR site:developers.google.com \"access approval\" reference",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "AccessApproval | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/alertcenter/reference/rest/v1beta1/AccessApproval",
+          "description": "Reference · Send feedback · JSON representation · SupportTicket · JSON representation · <strong>Alert that is triggered when Google support requests to access customer data</strong>. Support ticket related to Access Approvals request · Send feedback · ...",
+          "rank": 1
+        },
+        {
+          "title": "Trigger Cloud Run with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-events?hl=en",
+          "description": "gcloud beta eventarc attributes service-names list --type=google.cloud.audit.log.v1.written SERVICE_NAME DISPLAY_NAME <strong>accessapproval.googleapis.com</strong> Access Approval accesscontextmanager.googleapis.com Access Context Manager admin.googleapis.com Google Workspace Admin aiplatform.googleapis.com ...",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Access Approval\" \"access control\"",
       "official_result_count": 8,
@@ -172,15 +213,15 @@
           "rank": 6
         },
         {
-          "title": "Overview of Key Access Justifications | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
-          "description": "Access Approval <strong>lets you authorize requests from Google personnel to access Customer Data</strong>, Access Transparency helps you discover information about when Customer Data is accessed, and Key Access Justifications provides key access control for all ...",
+          "title": "Privileged access in Google Cloud | Security | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/docs/security/privileged-access-management",
+          "description": "In addition, Access Transparency ensures that all privileged access has a business justification that is logged. Access Approval <strong>lets you approve or deny access requests by Google personnel to certain datasets</strong>.",
           "rank": 7
         },
         {
-          "title": "Cloud provider access management documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/assured-workloads/cloud-provider-access-management/docs",
-          "description": "Cloud provider access management products, namely Access Transparency, Access Approval, and Key Access Justifications, aim to provide you progressively greater transparency and control over access to your content stored in Google Cloud.",
+          "title": "Overview of Key Access Justifications | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+          "description": "Access Approval <strong>lets you authorize requests from Google personnel to access Customer Data</strong>, Access Transparency helps you discover information about when Customer Data is accessed, and Key Access Justifications provides key access control for all ...",
           "rank": 8
         }
       ]
@@ -235,15 +276,15 @@
           "rank": 6
         },
         {
-          "title": "Introduction to Access Approval | Assured Workloads | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
-          "description": "Access Approval <strong>lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>. When Google personnel require access to customer data to fulfill a contractual obligation, they must submit a detailed approval ...",
-          "rank": 7
-        },
-        {
           "title": "Introduction to Access Approval | Access Transparency | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/access-approval",
           "description": "Access Approval <strong>lets you decide if and when Google personnel can access your Customer Data stored on Google Cloud</strong>. When Google personnel require access to Customer Data to fulfill a contractual obligation, they must submit a detailed approval ...",
+          "rank": 7
+        },
+        {
+          "title": "Introduction to Access Approval | Assured Workloads | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
+          "description": "Access Approval <strong>lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>. When Google personnel require access to customer data to fulfill a contractual obligation, they must submit a detailed approval ...",
           "rank": 8
         }
       ]
@@ -274,6 +315,26 @@
       "query": "site:docs.cloud.google.com \"Access Approval\" \"API reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Access Approval\" overview OR site:developers.google.com \"access approval\" overview",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "AccessApproval | Admin console | Google for Developers",
+          "url": "https://developers.google.com/workspace/admin/alertcenter/reference/rest/v1beta1/AccessApproval",
+          "description": "<strong>Alert that is triggered when Google support requests to access customer data</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Trigger Cloud Run with Eventarc events | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-events",
+          "description": "gcloud beta eventarc attributes service-names list --type=google.cloud.audit.log.v1.written SERVICE_NAME DISPLAY_NAME accessapproval.googleapis.com Access Approval accesscontextmanager.googleapis.com Access Context Manager admin.googleapis.com Google Workspace Admin aiplatform.googleapis.com AI Platform (under Vertex AI) apigee.googleapis.com Apigee apigeeconnect.googleapis.com Apigee Connect ...",
+          "rank": 2
+        }
+      ]
     },
     {
       "round": 3,
@@ -327,15 +388,15 @@
           "rank": 1
         },
         {
-          "title": "Access Approval documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs",
-          "description": "Google Cloud offers several ... on Google Cloud without your explicit consent. <strong>Access Approval lets you control access to your organization&#x27;s data by Google personnel</strong>....",
-          "rank": 2
-        },
-        {
           "title": "Introduction to Access Approval | Assured Workloads | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
           "description": "Google Cloud aims to ensure that limits on administrative access are an integral part of how the products are designed to work. <strong>Access Approval lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Access Approval documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs",
+          "description": "Google Cloud offers several ... on Google Cloud without your explicit consent. <strong>Access Approval lets you control access to your organization&#x27;s data by Google personnel</strong>....",
           "rank": 3
         },
         {
@@ -378,7 +439,7 @@
       "results": [
         {
           "title": "Python client library | Google Cloud",
-          "url": "https://googleapis.dev/python/accessapproval/latest/index.html",
+          "url": "https://googleapis.dev/python/accessapproval/latest/_modules/google/cloud/accessapproval_v1/services/access_approval/client.html",
           "description": "<strong>Access Approval</strong>: enables controlling access to your organization’s data by Google personnel.",
           "rank": 1
         }
@@ -387,12 +448,50 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs",
-      "title": "Access Approval documentation | Google Cloud Documentation",
-      "description": "<strong>Enables you to control and approve access to your organization&#x27;s data by Google personnel</strong>.",
+      "title": "AccessApproval | Admin console | Google for Developers",
+      "url": "https://developers.google.com/workspace/admin/alertcenter/reference/rest/v1beta1/AccessApproval",
+      "description": "Support ticket related to Access Approvals request",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
+        "site:developers.google.com \"Access Approval\" official documentation OR site:developers.google.com \"access approval\" official documentation",
+        "site:developers.google.com \"Access Approval\" reference OR site:developers.google.com \"access approval\" reference",
+        "site:developers.google.com \"Access Approval\" overview OR site:developers.google.com \"access approval\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Access Approval documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs",
+      "description": "Access Approval <strong>lets you control access to your organization&#x27;s data by Google personnel</strong>. Go to the Access Approval product page for more. Access Transparency records the actions that Google personnel take when accessing Customer Data stored ...",
+      "rank": 2,
+      "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" \"access control\"",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
@@ -401,17 +500,20 @@
         "iam_permissions"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -422,13 +524,14 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-control",
       "title": "Access control with IAM | Access Approval | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-control",
       "description": "Click the Select a role field, and select the Access Approval Approver role from the menu. Click Save. ... gcloud organizations add-iam-policy-binding ORGANIZATION_ID \\ --member=&#x27;user:EMAIL_ID&#x27; \\ --role=&#x27;roles/accessapproval.approver&#x27; ... ORGANIZATION_ID: The organization ID. EMAIL_ID: The email ID of the user. The following table lists the IAM permissions required to update Access Approval configuration:",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" \"access control\"",
         "site:docs.cloud.google.com \"Access Approval\" IAM roles permissions"
       ],
@@ -443,11 +546,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -458,12 +564,13 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/approve-requests",
       "title": "Approving Access Approval requests | Google Cloud Documentation",
-      "description": "This document explains how to approve an Access Approval request. Make sure that you understand the concepts in the Overview page.",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/approve-requests",
+      "description": "This document explains how to approve an Access Approval request.",
+      "rank": 5,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" IAM roles permissions"
       ],
       "intent_hits": [
@@ -471,17 +578,20 @@
         "iam_permissions"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -492,29 +602,33 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
       "title": "Overview of Access Approval | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
       "description": "Access Approval <strong>ensures that Cloud Customer Care and engineering teams require your explicit approval whenever they need to access your Customer Data</strong>. Each approval request is cryptographically signed and verified to ensure its integrity.",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -525,12 +639,13 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/access-approval",
       "title": "Introduction to Access Approval | Access Transparency | Google Cloud Documentation",
-      "description": "Access Approval <strong>lets you decide if and when Google personnel can access your Customer Data stored on Google Cloud</strong>. When Google personnel require access to Customer Data to fulfill a contractual obligation, they must submit a detailed approval ...",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-transparency/docs/access-approval",
+      "description": "Google Cloud aims to ensure that limits on administrative access are an integral part of how the products are designed to work. Access Approval <strong>lets you decide if and when Google personnel can access your Customer Data stored on Google Cloud</strong>.",
+      "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" \"access control\"",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
@@ -539,17 +654,20 @@
         "iam_permissions"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -560,12 +678,13 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/access-approval",
       "title": "Introduction to Access Approval | Key Access Justifications | Google Cloud Documentation",
-      "description": "Access Approval <strong>lets you decide if and when Google personnel can access your Customer Data stored on Google Cloud</strong>. When Google personnel require access to Customer Data to fulfill a contractual obligation, they must submit a detailed approval ...",
+      "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/access-approval",
+      "description": "Google Cloud aims to ensure that limits on administrative access are an integral part of how the products are designed to work. Access Approval <strong>lets you decide if and when Google personnel can access your Customer Data stored on Google Cloud</strong>.",
+      "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" \"access control\"",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
@@ -574,17 +693,20 @@
         "iam_permissions"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -595,42 +717,47 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
       "title": "Introduction to Access Approval | Assured Workloads | Google Cloud Documentation",
-      "description": "Access Approval <strong>lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>. When Google personnel require access to customer data to fulfill a contractual obligation, they must submit a detailed approval ...",
+      "url": "https://docs.cloud.google.com/assured-workloads/docs/access-approval",
+      "description": "Google Cloud aims to ensure that limits on administrative access are an integral part of how the products are designed to work. Access Approval <strong>lets you decide if and when Google personnel can access your customer content stored on Google Cloud</strong>.",
+      "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest",
       "title": "Class AccessApprovalClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest",
       "description": "ApprovalRequests can be approved or dismissed. <strong>Google personnel can only access the indicated resource or resources if the request is approved</strong> (subject to some exclusions: https://cloud.google.com/access-approval/docs/overview#exclusions).",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Access Approval\"",
         "site:docs.cloud.google.com \"Access Approval\" \"Python client libraries\""
@@ -644,24 +771,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 126,
+      "product_fit_score": 174,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
       "title": "Class AccessApprovalClient (1.18.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
       "description": "ApprovalRequests can be approved or dismissed. <strong>Google personnel can only access the indicated resource or resources if the request is approved</strong> (subject to some exclusions: https://cloud.google.com/access-approval/docs/overview#exclusions).",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Access Approval\"",
         "site:docs.cloud.google.com \"Access Approval\" \"Python client libraries\""
@@ -675,24 +806,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 126,
+      "product_fit_score": 174,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.EnrollmentLevel",
       "title": "Class EnrollmentLevel (1.18.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.types.EnrollmentLevel",
       "description": "Represents the type of enrollment for a given service to <strong>Access Approval</strong>.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Access Approval\"",
         "site:docs.cloud.google.com \"Access Approval\" \"Python client libraries\""
@@ -706,24 +841,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 126,
+      "product_fit_score": 174,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications",
       "title": "Introduction to Key Access Justifications | Access Approval | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/key-access-justifications",
       "description": "<strong>It lets you approve or deny the access request based on the provided justification</strong>. Using Key Access Justifications with Cloud External Key Manager provides visibility into requests for encryption keys that allows data to change state from at-rest ...",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" \"access control\"",
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
@@ -738,55 +877,63 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
       "title": "Review and approve access requests using the Google-managed signing key | Access Approval | Google Cloud Documentation",
-      "description": "Access Approval <strong>ensures that a cryptographically-signed approval is present for Google personnel to access your content stored on Google Cloud</strong>. Enable Access Transparency for your organization.",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+      "description": "Learn how to set up Access Approval using the default signing key and access your content stored on Google Cloud.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation"
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Access Approval\" Google Cloud docs overview"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        2,
-        1
+        1,
+        2
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
       "title": "Access Approval roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
       "description": "This page lists the IAM roles and permissions for Access Approval.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Access Approval\" IAM roles permissions"
@@ -800,13 +947,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -815,9 +965,43 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/assured-workloads",
+      "title": "Frequently Asked Questions | Google Business Profile APIs | Google for Developers",
+      "url": "https://developers.google.com/my-business/content/faq",
+      "description": "The Google Business Profile (GBP) APIs allow developers to build applications that manage business data across Google, requiring access approval based on legitimate business needs.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Access Approval\" official documentation OR site:developers.google.com \"access approval\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 106,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Introduction to Assured Workloads | Access Approval | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/assured-workloads",
       "description": "<strong>Assured Workloads lets you confidently secure and configure your workloads to support various compliance requirements</strong>. Assured Workloads regulates the Google personnel that can be granted access.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
@@ -829,24 +1013,28 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest",
       "title": "Access Approval API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/reference/rest",
       "description": "Cloud provider access management · Access Approval · Reference · Send feedback · <strong>An API for controlling access to data by Google personnel</strong>. REST Resource: v1.folders · REST Resource: v1.folders.approvalRequests · REST Resource: ...",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" Google Cloud introduction reference"
       ],
@@ -858,24 +1046,28 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys",
       "title": "Review and approve access requests using a custom signing key | Access Approval | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-custom-keys",
       "description": "To use a custom signing key, you ... doesn&#x27;t have the permissions to sign with the key you provided, <strong>you can grant the required permissions by clicking Grant</strong>....",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" IAM roles permissions"
       ],
@@ -887,24 +1079,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/cloud-provider-access-management/docs",
-      "title": "Cloud provider access management documentation | Google Cloud Documentation",
-      "description": "Cloud provider access management products, namely Access Transparency, Access Approval, and Key Access Justifications, aim to provide you progressively greater transparency and control over access to your content stored in Google Cloud.",
+      "title": "Overview of Key Access Justifications | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+      "description": "Access Approval <strong>lets you authorize requests from Google personnel to access Customer Data</strong>, Access Transparency helps you discover information about when Customer Data is accessed, and Key Access Justifications provides key access control for all ...",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" \"access control\""
       ],
@@ -916,24 +1112,28 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_root",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
-      "title": "Overview of Key Access Justifications | Google Cloud Documentation",
-      "description": "Access Approval <strong>lets you authorize requests from Google personnel to access Customer Data</strong>, Access Transparency helps you discover information about when Customer Data is accessed, and Key Access Justifications provides key access control for all ...",
+      "title": "Privileged access in Google Cloud | Security | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/docs/security/privileged-access-management",
+      "description": "In addition, Access Transparency ensures that all privileged access has a business justification that is logged. Access Approval <strong>lets you approve or deny access requests by Google personnel to certain datasets</strong>.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" \"access control\""
       ],
@@ -945,24 +1145,28 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
+        "coverage_value": 2,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://googleapis.dev/python/accessapproval/latest/index.html",
       "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/accessapproval/latest",
       "description": "<strong>Access Approval</strong>: enables controlling access to your organization’s data by Google personnel.",
+      "rank": 1,
       "query_hits": [
         "site:googleapis.dev/python \"Access Approval\""
       ],
@@ -974,24 +1178,61 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 50,
+      "product_fit_score": 98,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/accessapproval/latest/_modules/google/cloud/accessapproval_v1/services/access_approval/client.html",
+      "description": "<strong>Access Approval</strong>: enables controlling access to your organization’s data by Google personnel.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Access Approval\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 98,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
+        "product_match": 5,
+        "coverage_value": 0,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/assured-workloads/cloud-provider-access-management/docs/administrative-access",
       "title": "Overview of administrative access controls | Cloud provider access management | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/assured-workloads/cloud-provider-access-management/docs/administrative-access",
       "description": "The objective of the administrative access controls is <strong>to ensure that Customer Data on Google Cloud isn&#x27;t accessible to Google employees without an auditable justification, and optionally, an explicit approval</strong>.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Access Approval\" \"access control\""
       ],
@@ -1008,6 +1249,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 2,
         "coverage_value": 2,

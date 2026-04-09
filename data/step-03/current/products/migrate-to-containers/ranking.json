@@ -1,17 +1,17 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:38:28.641Z",
+  "generated_at": "2026-04-09T01:22:51.470Z",
   "product_name": "Migrate to Containers",
   "product_slug": "migrate-to-containers",
   "step02_source_path": "data/step-02/current/migrate-to-containers.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "code",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 14,
+  "candidates_scored_by_api": 16,
   "search_runs": [
     {
       "round": 1,
@@ -19,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Migrate to Containers\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Migrate to Containers overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/getting-started",
+          "description": "Use Migrate to Containers <strong>to modernize traditional applications away from virtual machine (VM) instances and into native containers that run on Google Kubernetes Engine (GKE) or Cloud Run platform</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Migrate to Containers documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs",
+          "description": "Use <strong>Migrate to Containers</strong> to convert VM-based workloads into containers in Google Kubernetes Engine (GKE).",
+          "rank": 2
+        },
+        {
+          "title": "Migrate a Linux VM using Migrate to Containers CLI | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+          "description": "Use <strong>Migrate to Containers</strong> CLI to migrate a VM to Google Kubernetes Engine.",
+          "rank": 3
+        },
+        {
+          "title": "Benefits of migrating to containers | Migrate to Containers | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/anthos-migrate-benefits",
+          "description": "Migrate to Containers is <strong>a tool to containerize existing VM-based applications to run on Google Kubernetes Engine (GKE), GKE Autopilot clusters, GKE Enterprise, or Cloud Run</strong>. By taking advantage of the GKE and GKE Enterprise ecosystems, Migrate ...",
+          "rank": 4
+        },
+        {
+          "title": "Migrate data | Migrate to Containers | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/migrate-data",
+          "description": "If you&#x27;ve already allocated the ... a PVC to store your data, you can migrate your data using an existing PVC. Define an existing PVC in your data configuration file dataConfig.yaml by passing your existing volume in the existingPvc field. In this case, your data configuration file would look like this: volumes: - deploymentPvcName: my-pvc existingPvc: name: my-pvc subpath: /subpath folders: - /bin - /opt · In the previous sample, the existingPvc entry can contain an optional ...",
+          "rank": 5
+        },
+        {
+          "title": "Migrate to Containers CLI architecture | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/architecture",
+          "description": "This page provides a high-level description of how <strong>Migrate to Containers</strong> CLI transforms your applications residing on virtual machine (VM) instances into artifacts that you can use to deploy your application components from the source environment to a target cluster on Google Kubernetes Engine (GKE) or GKE Enterprise.",
+          "rank": 6
+        },
+        {
+          "title": "About Linux system containers | Migrate to Containers | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/about-linux-system-containers",
+          "description": "The Migrate to Containers CLI <strong>lets you migrate Linux-based applications to containerized environments</strong>. It uses a prebuilt Linux system container that functions as a bootloader for the services required by the modernized application.",
+          "rank": 7
+        },
+        {
+          "title": "Set up for migration | Migrate to Containers | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
+          "description": "Replace HOSTNAME with the container registry hostname. Your local machine is set up for offline migration. To upgrade the offline <strong>Migrate to Containers</strong> CLI plugins bundle, upgrade <strong>Migrate to Containers</strong> CLI to the latest version, and then repeat the steps to download and unpack the plugins bundle.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -50,7 +106,7 @@
         {
           "title": "Migrate to Containers overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/migrate/containers/docs/getting-started",
-          "description": "<strong>Use Migrate to Containers to modernize traditional applications away from virtual machine (VM) instances and into native containers that run on Google Kubernetes Engine (GKE) or Cloud Run platform</strong>.",
+          "description": "Use Migrate to Containers to modernize traditional applications away from virtual machine (VM) instances and into native containers that run on Google Kubernetes Engine (GKE) or Cloud Run platform. You can migrate workloads from VMs that run on VMware or Compute Engine, giving you the flexibility to containerize your existing workloads with ease.",
           "rank": 1
         },
         {
@@ -108,6 +164,13 @@
       "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Migrate to Containers\" \"APIs and reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/migrate/containers/docs \"getting-started\" OR \"m2c-cli/architecture\"",
       "official_result_count": 0,
       "results": []
     },
@@ -199,6 +262,13 @@
       "round": 3,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Migrate to Containers\" \"API reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/migrate/containers/docs \"migrate-vm\" OR \"m2c-cli-reference-linux\"",
       "official_result_count": 0,
       "results": []
     },
@@ -314,17 +384,97 @@
   ],
   "scored_urls": [
     {
+      "title": "Migrate a Linux VM using Migrate to Containers CLI | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+      "description": "Use <strong>Migrate to Containers</strong> CLI to migrate a VM to Google Kubernetes Engine.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 178,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Set up for migration | Migrate to Containers | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
+      "description": "Replace HOSTNAME with the container registry hostname. Your local machine is set up for offline migration. To upgrade the offline <strong>Migrate to Containers</strong> CLI plugins bundle, upgrade <strong>Migrate to Containers</strong> CLI to the latest version, and then repeat the steps to download and unpack the plugins bundle.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 154,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
       "title": "Migrate to Containers documentation | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/migrate/containers/docs",
-      "description": "Use Migrate to Containers to convert VM-based workloads into containers in Google Kubernetes Engine (GKE).",
+      "description": "Use <strong>Migrate to Containers</strong> to convert VM-based workloads into containers in Google Kubernetes Engine (GKE).",
       "rank": 2,
       "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Migrate to Containers\" IAM roles permissions",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
       ],
       "intent_hits": [
+        "canonical_docs",
         "product_docs",
         "iam_permissions"
       ],
@@ -335,11 +485,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -352,15 +505,17 @@
     {
       "title": "Migrate to Containers overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/migrate/containers/docs/getting-started",
-      "description": "<strong>Use Migrate to Containers to modernize traditional applications away from virtual machine (VM) instances and into native containers that run on Google Kubernetes Engine (GKE) or Cloud Run platform</strong>.",
+      "description": "Use Migrate to Containers <strong>to modernize traditional applications away from virtual machine (VM) instances and into native containers that run on Google Kubernetes Engine (GKE) or Cloud Run platform</strong>.",
       "rank": 1,
       "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Migrate to Containers\" IAM roles permissions",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
       ],
       "intent_hits": [
+        "canonical_docs",
         "product_docs",
         "iam_permissions"
       ],
@@ -371,86 +526,94 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
-      "title": "Set up for migration | Migrate to Containers | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
-      "description": "This downloads the latest version of the Migrate to Containers CLI and Migrate to Containers plugins.",
-      "rank": 4,
+      "title": "Migrate to Containers CLI architecture | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/architecture",
+      "description": "This page provides a high-level description of how <strong>Migrate to Containers</strong> CLI transforms your applications residing on virtual machine (VM) instances into artifacts that you can use to deploy your application components from the source environment to a target cluster on Google Kubernetes Engine (GKE) or GKE Enterprise.",
+      "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
+        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview"
       ],
       "intent_hits": [
+        "canonical_docs",
         "product_docs"
       ],
       "round_hits": [
         1,
-        2,
-        3
+        2
       ],
-      "best_rank": 4,
-      "consistency_score": 100,
-      "product_fit_score": 58,
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 178,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 100,
+      "final_score": 95,
       "keep": false
     },
     {
-      "title": "Migrate a Linux VM using Migrate to Containers CLI | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
-      "description": "In this quickstart, you <strong>create a Compute Engine virtual machine (VM) instance, then use the Migrate to Containers CLI to migrate the VM to Google Kubernetes Engine (GKE).</strong> In the Google Cloud console, on the project selector page, select or create ...",
-      "rank": 3,
+      "title": "Migrate data | Migrate to Containers | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/migrate-data",
+      "description": "If you&#x27;ve already allocated the ... a PVC to store your data, you can migrate your data using an existing PVC. Define an existing PVC in your data configuration file dataConfig.yaml by passing your existing volume in the existingPvc field. In this case, your data configuration file would look like this: volumes: - deploymentPvcName: my-pvc existingPvc: name: my-pvc subpath: /subpath folders: - /bin - /opt · In the previous sample, the existingPvc entry can contain an optional ...",
+      "rank": 5,
       "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\"",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
       ],
       "intent_hits": [
+        "canonical_docs",
         "product_docs"
       ],
       "round_hits": [
         1,
-        2,
         3
       ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 58,
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 154,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 100,
+      "final_score": 95,
       "keep": false
     },
     {
@@ -471,43 +634,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Migrate data | Migrate to Containers | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/migrate-data",
-      "description": "If you&#x27;ve already allocated the ... a PVC to store your data, you can migrate your data using an existing PVC. Define an existing PVC in your data configuration file dataConfig.yaml by passing your existing volume in the existingPvc field. In this case, your data configuration file would look like this: volumes: - deploymentPvcName: my-pvc existingPvc: name: my-pvc subpath: /subpath folders: - /bin - /opt · In the previous sample, the existingPvc entry can contain an optional ...",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 67,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -535,11 +669,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -567,11 +704,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -579,6 +719,39 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "About Linux system containers | Migrate to Containers | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/about-linux-system-containers",
+      "description": "The Migrate to Containers CLI <strong>lets you migrate Linux-based applications to containerized environments</strong>. It uses a prebuilt Linux system container that functions as a bootloader for the services required by the modernized application.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 178,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
       "keep": false
     },
     {
@@ -597,25 +770,28 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 178,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "title": "Migrate to Containers CLI architecture | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/architecture",
-      "description": "Transformation -- Migrate to Containers CLI is <strong>used to transform a VM-based application component into a container-based application component ready to be deployed</strong>. This spans across five phases: Copy -- Copy the file system of the target machine ...",
-      "rank": 8,
+      "title": "Migrate to Containers release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/release-notes",
+      "description": "The Migrate to Containers UI in the Google Cloud console, migctl, and CRDs that use processing clusters to migrate workloads to Google Cloud are now deprecated. They are supported for existing users until May 2024, after which they will no longer be available. If you&#x27;re new to Migrate to Containers, then use the Migrate to Containers CLI to perform migrations on your local machine. For more information, see Migrate to Containers CLI architecture. ... Specify the Docker community image or provide your own Docker image to use as the base image for the migration using the baseImage.name property of type string.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview"
       ],
@@ -625,13 +801,49 @@
       "round_hits": [
         2
       ],
-      "best_rank": 8,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 178,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Benefits of migrating to containers | Migrate to Containers | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/migrate/containers/docs/anthos-migrate-benefits",
+      "description": "Migrate to Containers is <strong>a tool to containerize existing VM-based applications to run on Google Kubernetes Engine (GKE), GKE Autopilot clusters, GKE Enterprise, or Cloud Run</strong>. By taking advantage of the GKE and GKE Enterprise ecosystems, Migrate ...",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/migrate/containers/docs \"Migrate to Containers\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -657,11 +869,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -687,44 +902,17 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 148,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Migrate to Containers release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/migrate/containers/docs/release-notes",
-      "description": "The Migrate to Containers UI in the Google Cloud console, migctl, and CRDs that use processing clusters to migrate workloads to Google Cloud are now deprecated. They are supported for existing users until May 2024, after which they will no longer be available. If you&#x27;re new to Migrate to Containers, then use the Migrate to Containers CLI to perform migrations on your local machine. For more information, see Migrate to Containers CLI architecture. ... Specify the Docker community image or provide your own Docker image to use as the base image for the migration using the baseImage.name property of type string.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Migrate to Containers\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -747,19 +935,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 28,
-      "deterministic_score": 100,
+      "product_fit_score": -120,
+      "deterministic_score": 0,
       "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
         "coverage_value": 2,
-        "keep": true,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 90,
-      "keep": true
+      "final_score": 5,
+      "keep": false
     }
   ]
 }

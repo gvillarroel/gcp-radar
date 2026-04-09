@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:20:26.342Z",
+  "generated_at": "2026-04-09T15:05:57.514Z",
   "product_name": "Dataform",
   "product_slug": "dataform",
   "step02_source_path": "data/step-02/current/dataform.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "dataform",
   "dominant_python_slug": "dataform",
@@ -23,6 +23,20 @@
           "title": "REST Resource: projects.locations.repositories | Dataform | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories",
           "description": "Represents a Dataform Git repository. Controls Git remote configuration for a repository. Configures fields for performing SSH authentication. The status of the authentication token. Configures workspace compilation overrides for a repository. Primarily used by the UI (console.cloud.google.com). schemaSuffix and tablePrefix can have a special expression - ${workspaceName}, which refers to the workspace name from which the compilation results will be created.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/dataform/docs \"Dataform documentation\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Dataform documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataform/docs",
+          "description": "Dataform offers an end-to-end experience that helps data teams build, version control, and orchestrate workflows in BigQuery.",
           "rank": 1
         }
       ]
@@ -185,15 +199,15 @@
           "rank": 6
         },
         {
-          "title": "Class CompilationResultAction (0.6.2) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1beta1.types.CompilationResultAction",
-          "description": "Represents a single <strong>Dataform</strong> action in a compilation result.",
-          "rank": 7
-        },
-        {
           "title": "Class QueryFolderContentsAsyncPager (0.10.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsAsyncPager",
           "description": "QueryFolderContentsAsyncPager( method: typing.Callable[ [...], typing.Awaitable[ google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFol...",
+          "rank": 7
+        },
+        {
+          "title": "Class CompilationResultAction (0.6.2) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1beta1.types.CompilationResultAction",
+          "description": "Represents a single <strong>Dataform</strong> action in a compilation result.",
           "rank": 8
         }
       ]
@@ -202,6 +216,13 @@
       "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Dataform\" \"APIs and reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/dataform/reference/rest \"Dataform API reference\"",
       "official_result_count": 0,
       "results": []
     },
@@ -249,21 +270,21 @@
           "rank": 5
         },
         {
-          "title": "Monitor runs | Dataform | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dataform/docs/monitor-runs",
-          "description": "To get the permissions that you need to view execution logs, ask your administrator to grant you the Dataform Editor (roles/dataform.editor) IAM role on the workflowInvocations repository. For more information about granting roles, see Manage access to projects, folders, and organizations.",
-          "rank": 6
-        },
-        {
           "title": "Class Folder (0.10.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.types.Folder",
           "description": "Represents a Dataform Folder. This is <strong>a resource that is used to organize Files and other Folders and provide hierarchical access controls</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Monitor runs | Dataform | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataform/docs/monitor-runs",
+          "description": "To get the permissions that you need to view execution logs, ask your administrator to grant you the Dataform Editor (roles/dataform.editor) IAM role on the workflowInvocations repository. For more information about granting roles, see Manage access to projects, folders, and organizations.",
           "rank": 7
         },
         {
-          "title": "Dataform v1 API - Class Folder (1.0.0-beta03) | .NET client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Dataform.V1/latest/Google.Cloud.Dataform.V1.Folder",
-          "description": "Represents a Dataform Folder. This is <strong>a resource that is used to organize Files and other Folders and provide hierarchical access controls</strong>.",
+          "title": "Create notebooks | BigQuery | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigquery/docs/create-notebooks",
+          "description": "All users with the Dataform Admin role (roles/dataform.admin) have owner access to all notebooks created in the project. For more information about BigQuery Identity and Access Management (IAM), see Access control with IAM.",
           "rank": 8
         }
       ]
@@ -283,7 +304,7 @@
         {
           "title": "Java client library | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/overview",
-          "description": "Add a platform dependency on com.google.cloud:libraries-bom and remove the version from the dependency declarations in the artifact&#x27;s build.gradle file. The example below demonstrates how you would import the BOM and include the google-cloud-dataform artifact.",
+          "description": "Version ID: The version of the Cloud service itself (e.g. Cloud Dataform). New Version IDs are introduced infrequently, and often involve changes to the core functionality and structure of the Cloud service itself. The packages in the lefthand navigation represent packages tied to a specific Version ID of the Cloud service. We recommend using the com.google.cloud:libraries-bom installation method detailed above to streamline dependency management across multiple Cloud Java client libraries.",
           "rank": 2
         },
         {
@@ -325,15 +346,15 @@
           "rank": 4
         },
         {
-          "title": "Java client library | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/overview",
-          "description": "Cloud Dataform Description: Help analytics teams manage data inside BigQuery using SQL.",
-          "rank": 5
-        },
-        {
           "title": "Quickstart: Create and run a workflow | Dataform | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
           "description": "<strong>This quickstart is intended for data engineers and data analysts who want to manage data transformations in BigQuery</strong>. In this quickstart, you&#x27;ll learn how to create and run a Dataform workflow using Dataform core, a SQL-based framework to transform ...",
+          "rank": 5
+        },
+        {
+          "title": "Java client library | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/overview",
+          "description": "Cloud Dataform Description: Help analytics teams manage data inside BigQuery using SQL.",
           "rank": 6
         },
         {
@@ -369,15 +390,15 @@
           "rank": 2
         },
         {
-          "title": "Class QueryUserRootContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryUserRootContentsPager",
-          "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryUserRootContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_user_root_contents requests.",
-          "rank": 3
-        },
-        {
           "title": "Class Folder (0.10.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.types.Folder",
           "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · Folder(mapping=None, *, ignore_unknown_fields=False, **kwargs) Represents a Dataform Folder. This is a resource that is used to organize Files and other Folders and provide hierarchical access controls.",
+          "rank": 3
+        },
+        {
+          "title": "Class QueryUserRootContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryUserRootContentsPager",
+          "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryUserRootContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_user_root_contents requests.",
           "rank": 4
         },
         {
@@ -393,15 +414,15 @@
           "rank": 6
         },
         {
-          "title": "Class QueryFolderContentsAsyncPager (0.10.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsAsyncPager",
-          "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryFolderContentsAsyncPager( method: typing.Callable[ [...], typing.Awaitable[ google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary_async.AsyncRetry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_folder_contents requests.",
-          "rank": 7
-        },
-        {
           "title": "Class QueryFolderContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsPager",
           "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryFolderContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_folder_contents requests.",
+          "rank": 7
+        },
+        {
+          "title": "Class QueryFolderContentsAsyncPager (0.10.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsAsyncPager",
+          "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryFolderContentsAsyncPager( method: typing.Callable[ [...], typing.Awaitable[ google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary_async.AsyncRetry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_folder_contents requests.",
           "rank": 8
         }
       ]
@@ -419,6 +440,13 @@
           "rank": 1
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/dataform/docs/access-control \"Dataform access control\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -452,15 +480,15 @@
           "rank": 3
         },
         {
-          "title": "Quickstart: Create development environments | Dataform | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dataform/docs/quickstart-dev-environments",
-          "description": "In the Google Cloud console, go to the IAM page. ... Click Grant access. In the New principals field, enter your custom service account ID. In the Select a role menu, select the following roles one by one, using Add another role for each additional role: ... Click Save. In the Google Cloud console, go to the Service accounts page. ... Select your custom service account. Go to Principals with access, and then click Grant access. In the New principals field, enter your default Dataform service agent ID.",
-          "rank": 4
-        },
-        {
           "title": "Organize code assets with folders and repositories | Dataform | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dataform/docs/organize-code-assets",
           "description": "Each repository contains a single ... that you need to complete the tasks in this document, <strong>ask your administrator to grant you the appropriate IAM roles on the project</strong>, ......",
+          "rank": 4
+        },
+        {
+          "title": "Quickstart: Create development environments | Dataform | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataform/docs/quickstart-dev-environments",
+          "description": "In the Google Cloud console, go to the IAM page. ... Click Grant access. In the New principals field, enter your custom service account ID. In the Select a role menu, select the following roles one by one, using Add another role for each additional role: ... Click Save. In the Google Cloud console, go to the Service accounts page. ... Select your custom service account. Go to Principals with access, and then click Grant access. In the New principals field, enter your default Dataform service agent ID.",
           "rank": 5
         },
         {
@@ -470,9 +498,9 @@
           "rank": 6
         },
         {
-          "title": "Manage data preparations | BigQuery | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigquery/docs/manage-data-preparations",
-          "description": "Important: You must grant these roles to the Dataform service account, not to your user account. Failure to grant the roles to the correct principal might result in permission errors. Access the source tables: BigQuery Data Viewer (roles/bigquery.dataViewer) on the table, dataset, or project",
+          "title": "Use JavaScript packages | Dataform | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataform/docs/use-packages",
+          "description": "service-PROJECT_NUMBER@gcp-sa-dataform.iam.gserviceaccount.com · When granting access, make sure to grant the roles/secretmanager.secretAccessor role to your Dataform service agent or custom service account.",
           "rank": 7
         },
         {
@@ -497,15 +525,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Dataform documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dataform/docs",
-          "description": "Go to the Dataform product page for more. ... Develop with our latest Generative AI models and tools. Get free usage of 20+ popular products, including Compute Engine and AI APIs. No automatic charges, no commitment. ... Access 20+ free products for common use cases, including AI APIs, VMs, data warehouses, and more. Find quickstarts and guides, review key references, and get help with common issues.",
-          "rank": 1
-        },
-        {
           "title": "Dataform overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dataform/docs/overview",
           "description": "<strong>Dataform uses the ref function to build a dependency tree of all the tables to be created or updated</strong>. After compiling, Dataform adds boilerplate statements like CREATE, REPLACE, or INSERT.",
+          "rank": 1
+        },
+        {
+          "title": "Dataform documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataform/docs",
+          "description": "Go to the Dataform product page for more. ... Develop with our latest Generative AI models and tools. Get free usage of 20+ popular products, including Compute Engine and AI APIs. No automatic charges, no commitment. ... Access 20+ free products for common use cases, including AI APIs, VMs, data warehouses, and more. Find quickstarts and guides, review key references, and get help with common issues.",
           "rank": 2
         },
         {
@@ -527,21 +555,21 @@
           "rank": 5
         },
         {
+          "title": "Quickstart: Create and run a workflow | Dataform | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+          "description": "Quickstart: create a workflow and run it in BigQuery using Dataform and Dataform core.",
+          "rank": 6
+        },
+        {
           "title": "Dataform v1beta1 API - Class Dataform (1.0.0-beta10) | .NET client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Dataform.V1Beta1/latest/Google.Cloud.Dataform.V1Beta1.Dataform",
           "description": "Reference documentation and code samples for the Dataform v1beta1 API class Dataform.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Dataform v1 API - Class Folder (1.0.0-beta03) | .NET client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Dataform.V1/latest/Google.Cloud.Dataform.V1.Folder",
           "description": "Reference documentation and code samples for the Dataform v1 API class Folder.",
-          "rank": 7
-        },
-        {
-          "title": "Quickstart: Create and run a workflow | Dataform | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
-          "description": "Quickstart: create a workflow and run it in BigQuery using Dataform and Dataform core.",
           "rank": 8
         }
       ]
@@ -559,90 +587,21 @@
           "rank": 1
         },
         {
-          "title": "Changelog — google-cloud-dataform documentation",
-          "url": "https://googleapis.dev/python/dataform/latest/changelog.html",
-          "description": "Add support for google.cloud.dataform.__version__ (fef5a2c)",
-          "rank": 2
-        },
-        {
           "title": "Python Client for Cloud Dataform API — google-cloud-dataform documentation",
           "url": "https://googleapis.dev/python/dataform/0.2.0",
           "description": "pip install virtualenv virtualenv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate &lt;your-env&gt;/bin/pip install google-cloud-dataform",
+          "rank": 2
+        },
+        {
+          "title": "Changelog — google-cloud-dataform documentation",
+          "url": "https://googleapis.dev/python/dataform/latest/changelog.html",
+          "description": "Add support for google.cloud.dataform.__version__ (fef5a2c)",
           "rank": 3
         }
       ]
     }
   ],
   "scored_urls": [
-    {
-      "title": "Dataform documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dataform/docs",
-      "description": "<strong>Dataform offers an end-to-end experience that helps data teams build, version control, and orchestrate workflows in BigQuery</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 5,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Organize code assets with folders and repositories | Dataform | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dataform/docs/organize-code-assets",
-      "description": "Avoid granting broad roles where you can use more specific folder-level roles and permissions. Note: Roles granted to folders and repositories are preserved when moving resources. Additionally, roles configured on the source and destination folders and repositories remain unaffected by a move. The following roles are granted automatically upon resource creation: Users who create folders that are not in a team folder subtree automatically receive the Dataform Admin role (roles/dataform.admin) on those folders.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dataform\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Dataform\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions",
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 100,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
-    },
     {
       "title": "Dataform overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dataform/docs/overview",
@@ -663,14 +622,56 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 174,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 52,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Dataform documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dataform/docs",
+      "description": "Dataform offers an end-to-end experience that helps data teams build, version control, and orchestrate workflows in BigQuery.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/dataform/docs \"Dataform documentation\"",
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -697,11 +698,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -731,11 +735,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -746,34 +753,37 @@
       "keep": false
     },
     {
-      "title": "Dataform v1 API - Class Folder (1.0.0-beta03) | .NET client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Dataform.V1/latest/Google.Cloud.Dataform.V1.Folder",
-      "description": "Reference documentation and code samples for the Dataform v1 API class Folder.",
-      "rank": 6,
+      "title": "Organize code assets with folders and repositories | Dataform | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dataform/docs/organize-code-assets",
+      "description": "Avoid granting broad roles where you can use more specific folder-level roles and permissions. Note: Roles granted to folders and repositories are preserved when moving resources. Additionally, roles configured on the source and destination folders and repositories remain unaffected by a move. The following roles are granted automatically upon resource creation: Users who create folders that are not in a team folder subtree automatically receive the Dataform Admin role (roles/dataform.admin) on those folders.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Dataform\" \"access control\"",
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Dataform\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Dataform\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "iam_permissions",
+        "product_docs"
       ],
       "round_hits": [
         1,
         2,
         3
       ],
-      "best_rank": 6,
+      "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 24,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "irrelevant",
         "score": 100,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
         "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 1,
+        "product_match": 4,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -798,11 +808,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -830,11 +843,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -862,48 +878,19 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class InstallNpmPackagesRequest (0.79.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest?authuser=8",
-      "description": "Protobuf type google.cloud.dataform.v1beta1.InstallNpmPackagesRequest",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -928,14 +915,52 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 160,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Python Client for Cloud Dataform | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest",
+      "description": "python3 -m venv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate pip install google-cloud-dataform",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 160,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -960,11 +985,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 90,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -975,193 +1003,34 @@
       "keep": false
     },
     {
-      "title": "Python Client for Cloud Dataform | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest",
-      "description": "python3 -m venv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate pip install google-cloud-dataform",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "python_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "Class QueryFolderContentsAsyncPager (0.10.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsAsyncPager",
-      "description": "QueryFolderContentsAsyncPager( method: typing.Callable[ [...], typing.Awaitable[ google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFol...",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 7,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class QueryUserRootContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryUserRootContentsPager",
-      "description": "QueryUserRootContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse, ...",
+      "title": "Dataform v1 API - Class Folder (1.0.0-beta03) | .NET client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Dataform.V1/latest/Google.Cloud.Dataform.V1.Folder",
+      "description": "Reference documentation and code samples for the Dataform v1 API class Folder.",
       "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "python_client"
+        "product_docs"
       ],
       "round_hits": [
         1,
-        2
+        3
       ],
-      "best_rank": 3,
+      "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class CompilationResult (0.9.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.types.CompilationResult",
-      "description": "Represents the result of compiling a <strong>Dataform</strong> project.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class Folder (0.10.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.types.Folder",
-      "description": "Represents a <strong>Dataform</strong> Folder.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"access control\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class DataformClient (0.8.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1beta1.services.dataform.DataformClient",
-      "description": "Dataform is <strong>a service to develop, create, document, test, and update curated tables in BigQuery</strong>.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
+        "product_match": 4,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1186,15 +1055,18 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 4,
         "coverage_value": 4,
-        "keep": true,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
@@ -1216,11 +1088,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1246,11 +1121,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1258,7 +1136,7 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Create tables | Dataform | Google Cloud Documentation",
@@ -1276,11 +1154,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1294,7 +1175,7 @@
       "title": "Monitor runs | Dataform | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dataform/docs/monitor-runs",
       "description": "To get the permissions that you need to view execution logs, ask your administrator to grant you the Dataform Editor (roles/dataform.editor) IAM role on the workflowInvocations repository. For more information about granting roles, see Manage access to projects, folders, and organizations.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Dataform\" \"access control\""
       ],
@@ -1304,13 +1185,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1336,11 +1220,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1354,7 +1241,7 @@
       "title": "Quickstart: Create development environments | Dataform | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dataform/docs/quickstart-dev-environments",
       "description": "In the Google Cloud console, go to the IAM page. ... Click Grant access. In the New principals field, enter your custom service account ID. In the Select a role menu, select the following roles one by one, using Add another role for each additional role: ... Click Save. In the Google Cloud console, go to the Service accounts page. ... Select your custom service account. Go to Principals with access, and then click Grant access. In the New principals field, enter your default Dataform service agent ID.",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Dataform\" IAM roles permissions"
       ],
@@ -1364,13 +1251,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1396,11 +1286,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1426,44 +1319,17 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Dataform release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dataform/docs/release-notes",
-      "description": "This page lists the latest release notes for features and updates to Dataform.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dataform\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1486,11 +1352,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1516,16 +1385,19 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
       "keep": false
@@ -1546,105 +1418,51 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "title": "Class DataformClient (0.77.0) | Java client library | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.DataformClient",
-      "description": "Service Description: Dataform is <strong>a service to develop, create, document, test, and update curated tables in BigQuery</strong>.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Dataform\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class QueryFolderContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsPager",
-      "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryFolderContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_folder_contents requests.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class CompilationResultAction (0.6.2) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1beta1.types.CompilationResultAction",
-      "description": "Represents a single <strong>Dataform</strong> action in a compilation result.",
+      "title": "Use JavaScript packages | Dataform | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dataform/docs/use-packages",
+      "description": "service-PROJECT_NUMBER@gcp-sa-dataform.iam.gserviceaccount.com · When granting access, make sure to grant the roles/secretmanager.secretAccessor role to your Dataform service agent or custom service account.",
       "rank": 7,
       "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Dataform\""
+        "site:docs.cloud.google.com \"Dataform\" IAM roles permissions"
       ],
       "intent_hits": [
-        "python_client"
+        "iam_permissions"
       ],
       "round_hits": [
-        1
+        3
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
+        "coverage_value": 2,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1666,11 +1484,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1696,11 +1517,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1726,11 +1550,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1744,7 +1571,7 @@
       "title": "Python Client for Cloud Dataform API — google-cloud-dataform documentation",
       "url": "https://googleapis.dev/python/dataform/0.2.0",
       "description": "pip install virtualenv virtualenv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate &lt;your-env&gt;/bin/pip install google-cloud-dataform",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:googleapis.dev/python \"Dataform\""
       ],
@@ -1754,15 +1581,18 @@
       "round_hits": [
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1786,15 +1616,51 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "python_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
-        "keep": true,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Changelog — google-cloud-dataform documentation",
+      "url": "https://googleapis.dev/python/dataform/latest/changelog.html",
+      "description": "Add support for google.cloud.dataform.__version__ (fef5a2c)",
+      "rank": 3,
+      "query_hits": [
+        "site:googleapis.dev/python \"Dataform\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 64,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1816,15 +1682,51 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
+      "product_fit_score": 64,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create notebooks | BigQuery | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/create-notebooks",
+      "description": "All users with the Dataform Admin role (roles/dataform.admin) have owner access to all notebooks created in the project. For more information about BigQuery Identity and Access Management (IAM), see Access control with IAM.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dataform\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
       "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "python_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 4,
         "coverage_value": 2,
-        "keep": true,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1846,13 +1748,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 4,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1864,7 +1769,7 @@
       "title": "Dataform v1beta1 API - Class Dataform (1.0.0-beta10) | .NET client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Dataform.V1Beta1/latest/Google.Cloud.Dataform.V1Beta1.Dataform",
       "description": "Reference documentation and code samples for the Dataform v1beta1 API class Dataform.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Dataform\" Google Cloud introduction reference"
       ],
@@ -1874,46 +1779,91 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 97,
+      "product_fit_score": 44,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 97,
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 4,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 87,
+      "final_score": 90,
       "keep": false
     },
     {
-      "title": "Manage data preparations | BigQuery | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/bigquery/docs/manage-data-preparations",
-      "description": "Important: You must grant these roles to the Dataform service account, not to your user account. Failure to grant the roles to the correct principal might result in permission errors. Access the source tables: BigQuery Data Viewer (roles/bigquery.dataViewer) on the table, dataset, or project",
-      "rank": 7,
+      "title": "Class DataformClient (0.8.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1beta1.services.dataform.DataformClient",
+      "description": "Dataform is <strong>a service to develop, create, document, test, and update curated tables in BigQuery</strong>.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Dataform\" IAM roles permissions"
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
       ],
       "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 40,
+      "deterministic_score": 89,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 89,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 4,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 86,
+      "keep": false
+    },
+    {
+      "title": "Class Folder (0.10.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.types.Folder",
+      "description": "Represents a <strong>Dataform</strong> Folder.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"access control\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client",
         "iam_permissions"
       ],
       "round_hits": [
-        3
+        1,
+        2
       ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 94,
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 40,
+      "deterministic_score": 88,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 94,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
+        "classification": "irrelevant",
+        "score": 88,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 4,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1921,33 +1871,275 @@
       "keep": false
     },
     {
-      "title": "Changelog — google-cloud-dataform documentation",
-      "url": "https://googleapis.dev/python/dataform/latest/changelog.html",
-      "description": "Add support for google.cloud.dataform.__version__ (fef5a2c)",
-      "rank": 2,
+      "title": "Class CompilationResult (0.9.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.types.CompilationResult",
+      "description": "Represents the result of compiling a <strong>Dataform</strong> project.",
+      "rank": 3,
       "query_hits": [
-        "site:googleapis.dev/python \"Dataform\""
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
       ],
       "intent_hits": [
         "python_client"
       ],
       "round_hits": [
-        3
+        1,
+        2
       ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 91,
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 40,
+      "deterministic_score": 86,
       "api_score": {
         "classification": "irrelevant",
-        "score": 91,
-        "parent_page_likelihood": 5,
+        "score": 86,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
         "product_match": 4,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 82,
+      "final_score": 83,
+      "keep": false
+    },
+    {
+      "title": "Class QueryUserRootContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryUserRootContentsPager",
+      "description": "QueryUserRootContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryUserRootContentsResponse, ...",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 40,
+      "deterministic_score": 83,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 83,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 4,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 81,
+      "keep": false
+    },
+    {
+      "title": "Class QueryFolderContentsAsyncPager (0.10.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsAsyncPager",
+      "description": "QueryFolderContentsAsyncPager( method: typing.Callable[ [...], typing.Awaitable[ google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFol...",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 67,
+      "product_fit_score": 40,
+      "deterministic_score": 74,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 74,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 4,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 73,
+      "keep": false
+    },
+    {
+      "title": "Class QueryFolderContentsPager (0.10.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.pagers.QueryFolderContentsPager",
+      "description": "Python · Client libraries · Send feedback · 0.10.0 (latest) 0.9.0 · 0.8.0 · 0.7.0 · 0.6.2 · 0.5.16 · 0.4.1 · 0.3.0 · 0.2.3 · 0.1.0 · QueryFolderContentsPager( method: typing.Callable[ [...], google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse ], request: google.cloud.dataform_v1.types.dataform.QueryFolderContentsRequest, response: google.cloud.dataform_v1.types.dataform.QueryFolderContentsResponse, *, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) A pager for iterating through query_folder_contents requests.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dataform\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 40,
+      "deterministic_score": 76,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 76,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 4,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 70,
+      "keep": false
+    },
+    {
+      "title": "Class CompilationResultAction (0.6.2) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1beta1.types.CompilationResultAction",
+      "description": "Represents a single <strong>Dataform</strong> action in a compilation result.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Dataform\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 40,
+      "deterministic_score": 65,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 65,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 3,
+        "product_match": 4,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 60,
+      "keep": false
+    },
+    {
+      "title": "Dataform release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dataform/docs/release-notes",
+      "description": "This page lists the latest release notes for features and updates to Dataform.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Dataform\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 44,
+      "deterministic_score": 31,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 31,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 2,
+        "product_match": 4,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 31,
+      "keep": false
+    },
+    {
+      "title": "Class InstallNpmPackagesRequest (0.79.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest?authuser=8",
+      "description": "Protobuf type google.cloud.dataform.v1beta1.InstallNpmPackagesRequest",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Dataform\"",
+        "site:docs.cloud.google.com \"Dataform\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": -30,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 10,
+      "keep": false
+    },
+    {
+      "title": "Class DataformClient (0.77.0) | Java client library | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1.DataformClient",
+      "description": "Service Description: Dataform is <strong>a service to develop, create, document, test, and update curated tables in BigQuery</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Dataform\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": -30,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
       "keep": false
     }
   ]

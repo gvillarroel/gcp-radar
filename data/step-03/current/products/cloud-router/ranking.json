@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:19:12.539Z",
+  "generated_at": "2026-04-09T00:00:30.237Z",
   "product_name": "Cloud Router",
   "product_slug": "cloud-router",
   "step02_source_path": "data/step-02/current/cloud-router.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "network-connectivity",
   "dominant_python_slug": "compute",
@@ -41,7 +41,7 @@
         {
           "title": "routers()",
           "url": "https://developers.google.com/resources/api-libraries/documentation/compute/alpha/python/latest/compute_alpha.routers.html",
-          "description": "If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE. &quot;minReceiveInterval&quot;: 42, # The minimum interval, in milliseconds, between BFD control packets received from the peer router.",
+          "description": "If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE. &quot;minTransmitInterval&quot;: 42, # The minimum interval, in milliseconds, between BFD control packets transmitted to the peer router.",
           "rank": 3
         },
         {
@@ -57,15 +57,15 @@
           "rank": 5
         },
         {
-          "title": "Policy Based Routes (PBR) Codelab | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloudnet-pbr",
-          "description": "In this codelab, you will learn how to configure and leverage Policy Based Routes (PBR) and validate functionality.",
-          "rank": 6
-        },
-        {
           "title": "Multi-region failover using Cloud DNS Routing Policies and Health Checks for Internal TCP/UDP Load Balancer | Google Codelabs",
           "url": "https://codelabs.developers.google.com/clouddns-failover-policy-codelab",
           "description": "Run the following commands in Cloud Shell. ... gcloud compute routers create &quot;${REGION_1}-cloudrouter&quot; \\ --region $REGION_1 --network=my-vpc --asn=65501",
+          "rank": 6
+        },
+        {
+          "title": "Policy Based Routes (PBR) Codelab | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloudnet-pbr",
+          "description": "In this codelab, you will learn how to configure and leverage Policy Based Routes (PBR) and validate functionality.",
           "rank": 7
         },
         {
@@ -305,15 +305,15 @@
       "official_result_count": 4,
       "results": [
         {
-          "title": "Create router appliance instances | Network Connectivity Center | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
-          "description": "<strong>Ensure that the router appliance instance is accessible to BGP traffic through TCP port 179</strong>. To ensure this accessibility, you might need to create a firewall rule. Create a spoke that uses your router appliance instance. Set up a Cloud Router.",
-          "rank": 1
-        },
-        {
           "title": "Establish connectivity by using a third-party appliance | Network Connectivity Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/connect-site-to-cloud",
           "description": "To make it accessible, you might need to <strong>create firewall rules</strong>. Create two spokes, one in each VPC network. Each spoke uses the same router appliance instance as its backing resource. Set up two Cloud Routers, one in each VPC network.",
+          "rank": 1
+        },
+        {
+          "title": "Create router appliance instances | Network Connectivity Center | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/creating-router-appliances",
+          "description": "<strong>Ensure that the router appliance instance is accessible to BGP traffic through TCP port 179</strong>. To ensure this accessibility, you might need to create a firewall rule. Create a spoke that uses your router appliance instance. Set up a Cloud Router.",
           "rank": 2
         },
         {
@@ -589,19 +589,22 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "How Cloud Router works | Google Cloud Documentation",
@@ -623,11 +626,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -657,19 +663,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Create a Cloud Router to connect a VPC network to a peer network | Google Cloud Documentation",
@@ -691,11 +700,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -726,14 +738,17 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -760,11 +775,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -794,11 +812,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -826,11 +847,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -858,13 +882,16 @@
         1,
         2
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -890,13 +917,16 @@
         1,
         2
       ],
-      "best_rank": 1,
+      "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -924,11 +954,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -941,7 +974,7 @@
     {
       "title": "routers()",
       "url": "https://developers.google.com/resources/api-libraries/documentation/compute/alpha/python/latest/compute_alpha.routers.html",
-      "description": "If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE. &quot;minReceiveInterval&quot;: 42, # The minimum interval, in milliseconds, between BFD control packets received from the peer router.",
+      "description": "If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE. &quot;minTransmitInterval&quot;: 42, # The minimum interval, in milliseconds, between BFD control packets transmitted to the peer router.",
       "rank": 3,
       "query_hits": [
         "site:developers.google.com \"Cloud Router\" official documentation OR site:developers.google.com \"cloud router\" official documentation",
@@ -956,16 +989,124 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Use Public NAT with GKE | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/gke-example",
+      "description": "The roles/compute.networkAdmin role gives you permissions to create a NAT gateway on Cloud Router, reserve and assign NAT IP addresses, and specify subnetworks (subnets) whose traffic should use network address translation by the NAT gateway.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Router\" \"access control\"",
+        "site:docs.cloud.google.com \"Cloud Router\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class Router (1.41.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest",
+      "description": "Represents a <strong>Cloud Router</strong> resource.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Router\"",
+        "site:docs.cloud.google.com \"Cloud Router\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Class Router (1.41.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.types.Router",
+      "description": "Represents a <strong>Cloud Router</strong> resource.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Router\"",
+        "site:docs.cloud.google.com \"Cloud Router\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -994,109 +1135,51 @@
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
     },
     {
-      "title": "Use Public NAT with GKE | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/gke-example",
-      "description": "The roles/compute.networkAdmin role gives you permissions to create a NAT gateway on Cloud Router, reserve and assign NAT IP addresses, and specify subnetworks (subnets) whose traffic should use network address translation by the NAT gateway.",
+      "title": "Router appliance overview | Network Connectivity Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview",
+      "description": "Cloud Router uses interfaces configured with RFC 1918 internal IP addresses to establish BGP peering with router appliance instances. <strong>There are no separate APIs or Google Cloud resources or permissions for Router appliance</strong>.",
       "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" \"access control\"",
-        "site:docs.cloud.google.com \"Cloud Router\" IAM roles permissions"
+        "site:docs.cloud.google.com \"Cloud Router\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Cloud Router\" Google Cloud docs overview"
       ],
       "intent_hits": [
-        "iam_permissions"
+        "api_reference",
+        "product_docs"
       ],
       "round_hits": [
-        2,
-        3
+        2
       ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 24,
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class Router (1.41.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest",
-      "description": "Represents a <strong>Cloud Router</strong> resource.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Router\"",
-        "site:docs.cloud.google.com \"Cloud Router\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 22,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 4,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Class Router (1.41.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.types.Router",
-      "description": "Represents a <strong>Cloud Router</strong> resource.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Router\"",
-        "site:docs.cloud.google.com \"Cloud Router\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 22,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
+      "final_score": 90,
       "keep": false
     },
     {
@@ -1115,11 +1198,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1145,11 +1231,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1175,11 +1264,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1205,16 +1297,283 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: routers | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/reference/rest",
+      "description": "Represents a Cloud Router resource.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Router\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "REST Resource: routers | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/reference/rest/v1/routers",
+      "description": "Represents a Cloud Router resource.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Router\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "APIs and reference | Cloud NAT | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/apis",
+      "description": "The Cloud NAT APIs and gcloud commands are part of Compute Engine. Cloud NAT is configured using new Cloud Router commands and parameters.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Router\" \"APIs and reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Use Public NAT with Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/gce-example",
+      "description": "The roles/compute.networkAdmin role gives you permissions to <strong>create a NAT gateway on Cloud Router, reserve and assign NAT IP addresses, and specify subnetworks (subnets) whose traffic should use network address translation by the NAT gateway</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Router\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Creating your first subnet | Google Cloud VMware Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/vmware-engine/docs/quickstart-network-segment",
+      "description": "In a given region, you can advertise ... services access. For example, those unique routes include private cloud management IP address ranges, NSX workload network segments, and HCX internal IP address ranges. This route limit includes all private clouds in the region and corresponds to the Cloud Router learned route ...",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Router\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Gateway (1.87.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-networkconnectivity/latest/com.google.cloud.networkconnectivity.v1beta.Gateway",
+      "description": "Should be in the form: https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/routers/{router} repeated string cloud_routers = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Router\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Gateway (1.87.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-networkconnectivity/latest/overview",
+      "description": "Should be in the form: https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/routers/{router} repeated string cloud_routers = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Router\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Route (1.39.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.types.Route",
+      "description": "[Output Only] The type of this route, which can be one of the following values: - &#x27;TRANSIT&#x27; for a transit route that this router learned from another <strong>Cloud Router</strong> and will readvertise to one of its BGP peers - &#x27;SUBNET&#x27; for a route from a subnet of the VPC - &#x27;BGP&#x27; for a route learned from a BGP peer of this router - &#x27;STATIC&#x27; for a static route",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Router\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 70,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1240,286 +1599,17 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": true
-    },
-    {
-      "title": "Router appliance overview | Network Connectivity Center | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview",
-      "description": "<strong>Connect multiple VPC networks to on-premise or other cloud provider networks</strong>. These external networks can be reachable through any type of hybrid spoke. This approach is known as site-to-cloud connectivity.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Router\" \"APIs and reference\""
-      ],
-      "intent_hits": [
-        "product_docs",
-        "api_reference"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 28,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "REST Resource: routers | Compute Engine | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/compute/docs/reference/rest",
-      "description": "Represents a Cloud Router resource.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": true
-    },
-    {
-      "title": "APIs and reference | Cloud NAT | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/apis",
-      "description": "The Cloud NAT APIs and gcloud commands are part of Compute Engine. Cloud NAT is configured using new Cloud Router commands and parameters.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" \"APIs and reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Use Public NAT with Compute Engine | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/gce-example",
-      "description": "The roles/compute.networkAdmin role gives you permissions to <strong>create a NAT gateway on Cloud Router, reserve and assign NAT IP addresses, and specify subnetworks (subnets) whose traffic should use network address translation by the NAT gateway</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class Gateway (1.87.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-networkconnectivity/latest/com.google.cloud.networkconnectivity.v1beta.Gateway",
-      "description": "Should be in the form: https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/routers/{router} repeated string cloud_routers = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Router\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 22,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class Gateway (1.87.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-networkconnectivity/latest/overview",
-      "description": "Should be in the form: https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/routers/{router} repeated string cloud_routers = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Router\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 22,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 3,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class Route (1.39.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.types.Route",
-      "description": "[Output Only] The type of this route, which can be one of the following values: - &#x27;TRANSIT&#x27; for a transit route that this router learned from another <strong>Cloud Router</strong> and will readvertise to one of its BGP peers - &#x27;SUBNET&#x27; for a route from a subnet of the VPC - &#x27;BGP&#x27; for a route learned from a BGP peer of this router - &#x27;STATIC&#x27; for a static route",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Router\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 22,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Creating your first subnet | Google Cloud VMware Engine | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/vmware-engine/docs/quickstart-network-segment",
-      "description": "In a given region, you can advertise ... services access. For example, those unique routes include private cloud management IP address ranges, NSX workload network segments, and HCX internal IP address ranges. This route limit includes all private clouds in the region and corresponds to the Cloud Router learned route ...",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 90,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 90,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 81,
-      "keep": false
-    },
-    {
-      "title": "REST Resource: routers | Compute Engine | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/compute/docs/reference/rest/v1/routers",
-      "description": "Represents a Cloud Router resource.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Router\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 70,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 70,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 64,
-      "keep": false
     }
   ]
 }

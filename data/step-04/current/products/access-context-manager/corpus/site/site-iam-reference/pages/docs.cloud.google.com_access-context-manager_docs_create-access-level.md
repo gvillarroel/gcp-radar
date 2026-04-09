@@ -10,147 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/access-context-manager/docs/create-access-level
   title: "Creating a basic access level \_|\_ Access Context Manager \_|\_ Google\
     \ Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Creating a basic access level | Access Context Manager | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Access Context Manager
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-How-to guides
-All how-to guides
-Access control with IAM
-Create an access policy
-Create a basic access level
-Create a custom access level
-Use mobile devices with access levels
-Manage an access policy
-Create custom constraints
-Manage access levels
-Make bulk changes to access levels
-Audit logging
-Use Context-Aware Access
-Set up context-aware access
-Define access policies using access levels
-Apply policies to user groups with access bindings
-Configure session controls for re-authentication
-Configure a credential strength policy
-Configure Chrome browser attributes
-Configure enterprise certificate conditions
-Configure time and date conditions
-Manage access bindings
-Context-aware access enforcement points
-Use certificate-based access
-Certificate-based access overview
-Understand mutual TLS at Google Cloud
-Set up certificate-based access
-Create access levels for certificate-based access
-Enforce certificate-based access for a user group
-Enforce certificate-based access with VPC Service Controls
-Enable certificate-based access in client applications
-Enable certificate-based access for web applications
-Enable certificate-based access for VMs
-Setting up Endpoint Verification
-Enable certificate-based access with your enterprise certificates
-Enable certificate-based access with Endpoint Verification certificates
-Configure certificate-based access for Workload Identity Federation
-Concepts
-All concepts
-Overview
-Scoped policies
-Custom access levels
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Before you begin
-Create a basic access level
-Example implementations Limit access on a corporate network
-Limit access by device attributes
-Grant access by user or service account
 Home
 Documentation
 Security
 Access Context Manager
 Guides
-Was this helpful?
 Send feedback
 Creating a basic access level
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Before you begin
-Create a basic access level
-Example implementations Limit access on a corporate network
-Limit access by device attributes
-Grant access by user or service account
 This page describes generally how to create basic access levels. To create
 custom access levels and use Advanced Mode in the Google Cloud console, see
 Creating a custom access level .
@@ -163,8 +37,7 @@ Before you begin
 Learn about access levels .
 Note: In Access Context Manager, you cannot use the Google Cloud console to select a scoped policy under which you want to create an access level. To specify the scoped policy under which to create the access level, you can use the Google Cloud CLI or the API.
 Create a basic access level
-Console gcloud API
-More
+Console
 To create a basic access level:
 Open the Access Context Manager page in the Google Cloud console.
 Open the Access Context Manager page
@@ -215,6 +88,7 @@ Combine condition with to specify whether you want the
 access level to require a request to meet at least one of the
 conditions ( OR ), or all of the conditions ( AND ).
 Click Save .
+gcloud
 Before you begin
 If it doesn't exist yet, create an access policy for
 your organization.
@@ -262,6 +136,7 @@ gcloud access-context-manager levels create Device_Trust \
 --description = 'Access level that conforms to corporate spec.' \
 --title = 'Device_Trust Extended' \
 --policy = 1521580097614100
+API
 Before you begin
 If it doesn't exist yet, create an access policy for
 your organization.
@@ -303,8 +178,7 @@ If you want to use a private IP address range (for example, 192.168.0.0/16
 or 172.16.0.0/12 ), see Allow access to protected resources from an internal
 IP address for additional
 information and an example implementation using VPC Service Controls.
-Console gcloud API
-More
+Console
 Open the Access Context Manager page in the Google Cloud console.
 Open the Access Context Manager page
 If you are prompted, select your organization.
@@ -351,6 +225,7 @@ For information about the VPC network name and private
 IP address format, see Use internal IP address in access
 levels .
 Click Save .
+gcloud
 Create a YAML file for an access level that includes one or more
 IPv4 or IPv6 ranges formatted as CIDR blocks.
 In this example, to limit access to only the auditors, you would enter
@@ -386,6 +261,7 @@ You should see output similar to:
 Create request issued for: NAME
 Waiting for operation [accessPolicies/ POLICY /accessLevels/ NAME /create/1521594488380943] to complete...done.
 Created level NAME .
+API
 Craft a request body to create an AccessLevel
 resource that includes one or more IPv4 or IPv6 ranges formatted
 as CIDR blocks.
@@ -458,8 +334,7 @@ Chrome OS or Windows installed. To add a layer of security, you want to create
 an access level that will prevent access by anyone using other operating
 systems. Additionally, to manage risk, you want to make sure that only certain
 versions of the OSes can gain access.
-Console gcloud API
-More
+Console
 Open the Access Context Manager page in the Google Cloud console.
 Open the Access Context Manager page
 If you are prompted, select your organization.
@@ -472,6 +347,7 @@ In the Minimum version box, enter the minimum version of Chrome
 OS you want to allow.
 Repeat steps 1 and 2 for Windows OS Policy .
 Click Save .
+gcloud
 Create a YAML file for an access level that includes a device policy with
 OS constraints.
 In this example, to allow only devices with a minimum acceptable version
@@ -502,6 +378,7 @@ You should see output similar to:
 Create request issued for: NAME
 Waiting for operation [accessPolicies/ POLICY /accessLevels/ NAME /create/1521594488380943] to complete...done.
 Created level NAME .
+API
 Craft a request body to create an AccessLevel
 resource that includes a device policy with OS constraints.
 In this example, to allow only devices with a minimum acceptable version
@@ -551,11 +428,11 @@ nested access levels. In this case, the specified users are included in this
 access level regardless of whether they meet the conditions specified in the
 existing access levels. This new access level could be considered as a
 less-restrictive tier than the existing access levels.
-Console gcloud API
-More
+Console
 The Google Cloud console does not currently support adding principals to
 access levels. If you want to add principals to access levels, you must
 use the gcloud command-line tool or the API.
+gcloud
 Create a YAML file that contains a condition that lists the principals
 that you want to provide access to.
 Add a system administrator
@@ -598,6 +475,7 @@ You should see output similar to:
 Create request issued for: NAME
 Waiting for operation [accessPolicies/ POLICY /accessLevels/ NAME /create/1521594488380943] to complete...done.
 Created level NAME .
+API
 Craft a request body to create an AccessLevel
 resource that includes a condition that lists the principals
 that you want to provide access to.
@@ -680,59 +558,8 @@ POST https://accesscontextmanager.googleapis.com/v1/accessPolicies/ POLICY /acce
 Where:
 POLICY is the ID of your organization's
 access policy.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

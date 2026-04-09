@@ -10,7 +10,7 @@ This file lists the official Google documentation URLs selected and scored for t
 | 100 | yes | product_root | https://docs.cloud.google.com/livestream/docs/overview | 5 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/video/latest/livestream/apiv1/livestreampb | 3 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | yes | iam_reference | https://docs.cloud.google.com/livestream/docs/access-control | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 95 | no | irrelevant | https://docs.cloud.google.com/livestream/docs/authentication | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/authentication | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | yes | api_reference | https://docs.cloud.google.com/livestream/docs/reference/rest | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | yes | iam_reference | https://docs.cloud.google.com/livestream/docs/reference/rpc/google.cloud.video.livestream.v1 | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/samples/livestream-list-channels | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
@@ -28,4 +28,4 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/samples/livestream-create-channel | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/samples/livestream-create-channel-event | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/samples/livestream-get-channel | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/samples/livestream-start-channel | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://docs.cloud.google.com/livestream/docs/samples/livestream-get-channel-event | 1 | Heuristic tail scoring was applied outside the API-ranked set. |

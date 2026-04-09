@@ -4,12 +4,12 @@ This file lists the official Google documentation URLs selected and scored for t
 
 | Final score | Keep | Classification | URL | Query coverage | Rationale |
 | ---: | --- | --- | --- | ---: | --- |
-| 100 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | yes | product_root | https://docs.cloud.google.com/marketplace/docs/partners | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | yes | iam_reference | https://docs.cloud.google.com/marketplace/docs/partners/access-control | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | irrelevant | https://docs.cloud.google.com/marketplace/docs/partners/get-started | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | irrelevant | https://docs.cloud.google.com/marketplace/docs/partners/offer-products | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/get-started | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/offer-products | 4 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 100 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/professional-services | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 100 | no | irrelevant | https://docs.cloud.google.com/marketplace/docs/partners/standalone | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 100 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/standalone | 3 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/data | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/gtm | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://docs.cloud.google.com/marketplace/docs/partners/integrated-saas/technical-integration-setup | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |

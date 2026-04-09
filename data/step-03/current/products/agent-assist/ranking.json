@@ -1,17 +1,74 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:34:04.526Z",
+  "generated_at": "2026-04-09T00:46:08.301Z",
   "product_name": "Agent Assist",
   "product_slug": "agent-assist",
-  "step02_source_path": "data/step-02/current/products/agent-assist.md",
+  "step02_source_path": "data/step-02/current/agent-assist.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "agent-assist",
   "dominant_python_slug": "dialogflow",
   "dominant_java_slug": "",
   "candidates_scored_by_api": 18,
   "search_runs": [
+    {
+      "round": 1,
+      "intent": "agent_assist_docs",
+      "query": "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Agent Assist basics | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/basics",
+          "description": "A Conversation is a resource that represents an exchange between two or more participants. Every time a conversation participant&#x27;s utterance is passed to Agent Assist as part of a Conversation resource, a message is created and stored for the conversation.",
+          "rank": 1
+        },
+        {
+          "title": "Agent Assist documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs",
+          "description": "Agent Assist <strong>uses machine learning technology to provide suggestions to your human agents when they are in a conversation with a customer</strong>. Suggestions are based on your own uploaded data and therefore can be tailored to your specific business needs.",
+          "rank": 2
+        },
+        {
+          "title": "Agent Assist backend modules basics | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/backend-basics",
+          "description": "Agent Assist will then publish suggestions, new messages, new recognition-result notifications, and conversation lifecycle-related events to the topic. Suggestions are in the form of HumanAgentAssistantEvent, and both new messages and conversation lifecycle events in the form of ConversationEvent.",
+          "rank": 3
+        },
+        {
+          "title": "Tutorials | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/tutorials",
+          "description": "Learn how to use the Agent Assist simulator to test your conversation profiles.",
+          "rank": 4
+        },
+        {
+          "title": "AI coach overview | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
+          "description": "Use a large language model (LLM) to make suggestions for how a contact center agent should respond during customer service conversations. AI coach provides useful suggestions to your agents for the following customer service situations: · AI coach can also improve other business products.",
+          "rank": 5
+        },
+        {
+          "title": "Twilio integration basics | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/twilio",
+          "description": "Agent Assist · Start free · Home · Documentation · AI and ML · Agent Assist · Guides · Send feedback · Surface real-time suggestions for your customer service agents by integrating UI modules with Twilio. To integrate UI modules with Twilio Flex, you need access to the following resources: Agent Assist integrations repository ·",
+          "rank": 6
+        },
+        {
+          "title": "Create a knowledge base | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/knowledge-base",
+          "description": "The Agent Assist Article Suggestion and FAQ Assist features follow a conversation between a human agent and an end-user and provide the human agent with relevant document suggestions. Both features make suggestions based on knowledge bases, collections of documents that you upload to Agent Assist.",
+          "rank": 7
+        },
+        {
+          "title": "Use the Agent Assist simulator | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/simulator",
+          "description": "This tutorial walks you through the steps required to run the Agent Assist simulator.",
+          "rank": 8
+        }
+      ]
+    },
     {
       "round": 1,
       "intent": "api_reference",
@@ -22,6 +79,20 @@
           "title": "UI module events | Agent Assist | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/agent-assist/docs/ui-modules-events-documentation",
           "description": "Agent Assist · Send feedback · This page contains the API documentation for all custom UI module events. See all custom event payloads. interface ActiveConversationSelectedPayload { conversationName: string; } interface AnalyzeContentRequestDetails { type?: string; conversationId: string; participantRole: | &quot;ROLE_UNSPECIFIED&quot; | &quot;HUMAN_AGENT&quot; | &quot;AUTOMATED_AGENT&quot; | &quot;END_USER&quot;; /** * @link * https://cloud.google.com/dialogflow/es/docs/reference/rest/v2beta1/projects.locations.conversations.participants/analyzeContent#request-body */ request: AnalyzeContentRequest; } interface AnalyzeContentResp",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Agent Assist\" official documentation OR site:developers.google.com \"agent assist\" official documentation",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Build Powerful, Stateful, E2E AI Agent Apps in Java with ADK, AlloyDB & Gemini!! | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/patent-search-java-adk",
+          "description": "// App.java (Simplified Snippets) package agents; import com.google.adk.agents.LlmAgent; import com.google.adk.agents.BaseAgent; import com.google.adk.agents.InvocationContext; import com.google.adk.tools.Annotations.Schema; import com.google.adk.tools.FunctionTool; // ... other imports public class App { static FunctionTool searchTool = FunctionTool.create(App.class, &quot;getPatents&quot;); static FunctionTool explainTool = FunctionTool.create(App.class, &quot;explainPatent&quot;); public static BaseAgent ROOT_AGENT = initAgent(); public static BaseAgent initAgent() { return LlmAgent.builder() .name(&quot;patent-search-agent&quot;) .description(&quot;Patent Search agent&quot;) .model(&quot;gemini-2.0-flash-001&quot;) // Specify your desired Gemini model .instruction( &quot;&quot;&quot; You are a helpful patent search assistant capable of 2 things: // ...",
           "rank": 1
         }
       ]
@@ -77,21 +148,21 @@
           "rank": 5
         },
         {
+          "title": "Upload data | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/data",
+          "description": "In order to make suggestions, Agent Assist <strong>relies on data in the form of either documents or conversation transcripts</strong>. You must upload your data before you can use Agent Assist. The linked tutorials at the bottom of this page walk you through ...",
+          "rank": 6
+        },
+        {
           "title": "Test chat integration | Agent Assist | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-testing",
           "description": "To complete the test, enable the developer tool to participate as a customer, and in a Genesys Cloud instance you participate as an agent. The first step explains how to enable and login to the developer tool. The second steps explains how to answer the chat from a Genesys Cloud instance and enabling the Google Agent Assist interaction widget.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "How-to guides | Agent Assist | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/agent-assist/docs/how-to",
           "description": "Get started with public Agent Assist conversation data or upload your own conversation transcripts to train a Smart Reply model. Automatically extract data that matches any Dialogflow system entity in end-user expressions. Export conversation messages to a Cloud Storage bucket.",
-          "rank": 7
-        },
-        {
-          "title": "Agent Assist release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-assist/docs/release-notes",
-          "description": "<strong>Agent Assist offers a native UI Connector with Genesys Cloud to integrate with chat conversations</strong>. ... Agent Assist offers a native UI Connector with Twilio Flex to integrate with chat conversations.",
           "rank": 8
         }
       ]
@@ -118,10 +189,31 @@
     },
     {
       "round": 2,
+      "intent": "agent_assist_docs",
+      "query": "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" quotas \"generative-knowledge-assist\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Agent Assist\" \"APIs and reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Agent Assist\" reference OR site:developers.google.com \"agent assist\" reference",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Build Powerful, Stateful, E2E AI Agent Apps in Java with ADK, AlloyDB & Gemini!! | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/patent-search-java-adk",
+          "description": "The evaluate_query_recall function takes in the query as a parameter and returns its recall. I&#x27;m using the same query that I used to check performance as the function input query. I have added SCaNN as the index method. For more parameter options refer the documentation.",
+          "rank": 1
+        }
+      ]
     },
     {
       "round": 2,
@@ -181,33 +273,33 @@
           "rank": 3
         },
         {
+          "title": "AI coach overview | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
+          "description": "AI coach provides useful suggestions to your agents for the following customer service situations: Up sell and cross sell. Retain customers. Automate operations. AI coach can also improve other business products. For example, recommendation engines predict user preferences and suggest products using data analysis and machine learning algorithms. AI coach can help recommendation engines provide relevant recommendations, but it doesn&#x27;t replace them. AI coach is available in all Google Cloud ...",
+          "rank": 4
+        },
+        {
           "title": "Agent Assist UI modules overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/agent-assist/docs/modules-overview",
           "description": "<strong>Agent Assist now offers UI modules, an out-of-the-box option for integrating Agent Assist features into your agent UI system</strong>. You have the ability to integrate all features in a single panel or customize your integration by implementing selected ...",
-          "rank": 4
+          "rank": 5
         },
         {
           "title": "Agent Assist | Google Cloud Contact Center as a Service | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
           "description": "This feature <strong>follows a conversation between a human agent and an end-user and provides the human agent with relevant document suggestions</strong>. How it works: The Knowledge Assist button is located in the top right hand corner of the Agent Adapter.",
-          "rank": 5
+          "rank": 6
         },
         {
-          "title": "AI coach overview | Agent Assist | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
-          "description": "AI coach provides useful suggestions to your agents for the following customer service situations: Up sell and cross sell. Retain customers. Automate operations. AI coach can also improve other business products. For example, recommendation engines predict user preferences and suggest products using data analysis and machine learning algorithms. AI coach can help recommendation engines provide relevant recommendations, but it doesn&#x27;t replace them. AI coach is available in all Google Cloud ...",
-          "rank": 6
+          "title": "Upload data | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/data",
+          "description": "Smart Reply suggests text responses to agents as they converse with an end-user, and Summarization suggests conversation summaries after an exchange with an end-user has completed. Each model is custom by definition because each conversation dataset is made up of your own conversation transcript data. The FAQ Assist and Article Suggestion features draw on knowledge bases to make recommendations instead of conversation datsets. Article Suggestion suggests knowledge documents (such as articles) to agents during a conversation.",
+          "rank": 7
         },
         {
           "title": "Generative knowledge assist | Agent Assist | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
           "description": "In the preceding example, the flow-based data store agent answers the user query What is the refund processing time? with the following information: Generative AI generated answer: When the package with your return arrives at the seller&#x27;s return center, it may take up to 7 additional business days to process. Check the status of your refund with the return tracking number found on your orders page. Title of the relevant knowledge document: Returns &amp; refunds. Proactive generative knowledge assist follows an ongoing conversation and proactively provides search query suggestions and answers.",
-          "rank": 7
-        },
-        {
-          "title": "How-to guides | Agent Assist | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-assist/docs/how-to",
-          "description": "<strong>Get started with public Agent Assist conversation data or upload your own conversation transcripts to train a Smart Reply model</strong>. Automatically extract data that matches any Dialogflow system entity in end-user expressions.",
           "rank": 8
         }
       ]
@@ -228,6 +320,13 @@
     },
     {
       "round": 3,
+      "intent": "agent_assist_docs",
+      "query": "site:docs.cloud.google.com/agent-assist/docs \"AI coach\" \"backend-basics\" \"integrate backend modules\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Agent Assist\" \"API reference\"",
       "official_result_count": 2,
@@ -243,6 +342,20 @@
           "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/speech-models",
           "description": "phone_call (good for Agent Assist and telephony Dialogflow CX) latest_short (best for non-telephony Dialogflow CX) command_and_search (best for languages where other models are not available) You can supply the model for an agent, flow, or page with the model selection setting. You can also supply the model when calling the Sessions.detectIntent or Sessions.streamingDetectIntent methods; Go to the Session API reference",
           "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Agent Assist\" overview OR site:developers.google.com \"agent assist\" overview",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Build Powerful, Stateful, E2E AI Agent Apps in Java with ADK, AlloyDB & Gemini!! | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/patent-search-java-adk",
+          "description": "// App.java (Simplified Snippets) package agents; import com.google.adk.agents.LlmAgent; import com.google.adk.agents.BaseAgent; import com.google.adk.agents.InvocationContext; import com.google.adk.tools.Annotations.Schema; import com.google.adk.tools.FunctionTool; // ... other imports public class App { static FunctionTool searchTool = FunctionTool.create(App.class, &quot;getPatents&quot;); static FunctionTool explainTool = FunctionTool.create(App.class, &quot;explainPatent&quot;); public static BaseAgent ROOT_AGENT = initAgent(); public static BaseAgent initAgent() { return LlmAgent.builder() .name(&quot;patent-search-agent&quot;) .description(&quot;Patent Search agent&quot;) .model(&quot;gemini-2.0-flash-001&quot;) // Specify your desired Gemini model .instruction( &quot;&quot;&quot; You are a helpful patent search assistant capable of 2 things: // ...",
+          "rank": 1
         }
       ]
     },
@@ -280,15 +393,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Agent Assist documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-assist/docs",
-          "description": "See the Agent Assist REST, RPC, or client libraries reference documentation.",
-          "rank": 1
-        },
-        {
           "title": "Agent Assist basics | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/agent-assist/docs/basics",
           "description": "This document is a basic guide to Agent Assist resources. More details about the resources described here can be found in the reference documentation.",
+          "rank": 1
+        },
+        {
+          "title": "Agent Assist documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs",
+          "description": "See the Agent Assist REST, RPC, or client libraries reference documentation.",
           "rank": 2
         },
         {
@@ -316,15 +429,15 @@
           "rank": 6
         },
         {
-          "title": "How-to guides | Agent Assist | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-assist/docs/how-to",
-          "description": "<strong>Get started with public Agent Assist conversation data or upload your own conversation transcripts to train a Smart Reply model</strong>. Automatically extract data that matches any Dialogflow system entity in end-user expressions.",
+          "title": "Upload data | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/data",
+          "description": "Agent Assist uses two types of data to make suggestions to human agents: <strong>Conversation datasets, which are collections of conversation transcripts, and knowledge bases, which are collections of knowledge documents (articles or FAQ documents).</strong>",
           "rank": 7
         },
         {
-          "title": "Build your own GenAI assist | Agent Assist | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
-          "description": "You can also instruct the generator to suggest agent responses for customer retention, such as providing product discounts, upselling or cross-selling products, and solving issues, as in the following example. The generator accesses information that you provide about discounts and offers as context references with the IngestContextReferences API.",
+          "title": "How-to guides | Agent Assist | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/how-to",
+          "description": "<strong>Get started with public Agent Assist conversation data or upload your own conversation transcripts to train a Smart Reply model</strong>. Automatically extract data that matches any Dialogflow system entity in end-user expressions.",
           "rank": 8
         }
       ]
@@ -339,16 +452,19 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs",
       "title": "Agent Assist documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs",
       "description": "Agent Assist <strong>uses machine learning technology to provide suggestions to your human agents when they are in a conversation with a customer</strong>. Suggestions are based on your own uploaded data and therefore can be tailored to your specific business needs.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics",
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "agent_assist_docs"
       ],
       "round_hits": [
         1,
@@ -357,11 +473,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -372,9 +491,49 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/basics",
       "title": "Agent Assist basics | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/basics",
       "description": "Agent Assist stage: The end-user is connected to one or more human agents. Agent Assist <strong>supplies real-time document and response suggestions to the human agent that are relevant to the conversation</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics",
+        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "agent_assist_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Upload data | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/data",
+      "description": "In order to make suggestions, Agent Assist <strong>relies on data in the form of either documents or conversation transcripts</strong>. You must upload your data before you can use Agent Assist. The linked tutorials at the bottom of this page walk you through ...",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
@@ -388,13 +547,16 @@
         2,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 6,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -405,9 +567,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/features",
       "title": "Features | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/features",
       "description": "Integrate Agent Assist into your agents&#x27; console. Automatically answer your agent&#x27;s questions based on documents you provide.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
@@ -423,11 +586,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -438,9 +604,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
       "title": "Generative knowledge assist | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
       "description": "Generative knowledge assist <strong>provides answers to your agent&#x27;s questions based on information in documents you provide</strong>. You can specify your domain name or upload documents for a flow-based data store agent or a playbook-based data store agent.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
@@ -458,57 +625,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/how-to",
-      "title": "How-to guides | Agent Assist | Google Cloud Documentation",
-      "description": "Get started with public Agent Assist conversation data or upload your own conversation transcripts to train a Smart Reply model. Automatically extract data that matches any Dialogflow system entity in end-user expressions. Export conversation messages to a Cloud Storage bucket.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 100,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
       "title": "Agent Assist | Google Cloud Contact Center as a Service | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
       "description": "This feature <strong>follows a conversation between a human agent and an end-user and provides the human agent with relevant document suggestions</strong>. How it works: The Knowledge Assist button is located in the top right hand corner of the Agent Adapter.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview",
@@ -524,11 +662,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -539,9 +680,81 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/2.28.3/google.cloud.dialogflow_v2beta1.services.sessions.SessionsClient",
+      "title": "AI coach overview | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
+      "description": "Use a large language model (LLM) to make suggestions for how a contact center agent should respond during customer service conversations. AI coach provides useful suggestions to your agents for the following customer service situations: · AI coach can also improve other business products.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics",
+        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "agent_assist_docs",
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "How-to guides | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/how-to",
+      "description": "Get started with public Agent Assist conversation data or upload your own conversation transcripts to train a Smart Reply model. Automatically extract data that matches any Dialogflow system entity in end-user expressions. Export conversation messages to a Cloud Storage bucket.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Class SessionsClient (2.28.3) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/2.28.3/google.cloud.dialogflow_v2beta1.services.sessions.SessionsClient",
       "description": "If you might use <strong>Agent Assist</strong> &lt;https://cloud.google.com/dialogflow/docs/#aa&gt;__ or other CCAI products now or in the future, consider using xref_StreamingAnalyzeContent instead of StreamingDetectIntent.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Agent Assist\"",
         "site:docs.cloud.google.com \"Agent Assist\" \"Python client libraries\""
@@ -555,24 +768,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 28,
+      "product_fit_score": 76,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/access-control",
       "title": "Access control | Dialogflow CX | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/access-control",
       "description": "The Google Cloud console is used to grant IAM roles to principals, while the Conversational Agents console is used to grant Dialogflow CX agent roles to principals. Dialogflow CX agent roles are convenient predefined roles defined by Dialogflow CX that restrict access to one agent or the child resources of a specific agent.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" \"access control\"",
         "site:docs.cloud.google.com \"Agent Assist\" IAM roles permissions"
@@ -591,19 +808,23 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 2,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
       "title": "Access control | Dialogflow ES | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
       "description": "You can control access <strong>using either Identity and Access Management (IAM) or the Dialogflow Console</strong>. The Dialogflow Console provides the Agent Admin role to the user that created the agent.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" \"access control\"",
         "site:docs.cloud.google.com \"Agent Assist\" IAM roles permissions"
@@ -622,6 +843,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 2,
         "coverage_value": 4,
@@ -632,67 +856,43 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
-      "title": "AI coach overview | Agent Assist | Google Cloud Documentation",
-      "description": "AI coach provides useful suggestions to your agents for the following customer service situations: Up sell and cross sell. Retain customers. Automate operations. AI coach can also improve other business products. For example, recommendation engines predict user preferences and suggest products using data analysis and machine learning algorithms. AI coach can help recommendation engines provide relevant recommendations, but it doesn&#x27;t replace them. AI coach is available in all Google Cloud ...",
+      "title": "Agent Assist backend modules basics | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/backend-basics",
+      "description": "Agent Assist will then publish suggestions, new messages, new recognition-result notifications, and conversation lifecycle-related events to the topic. Suggestions are in the form of HumanAgentAssistantEvent, and both new messages and conversation lifecycle events in the form of ConversationEvent.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview"
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics"
       ],
       "intent_hits": [
-        "product_docs"
+        "agent_assist_docs"
       ],
       "round_hits": [
-        2
+        1
       ],
-      "best_rank": 6,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/build-your-own-genai-assist",
-      "title": "Build your own GenAI assist | Agent Assist | Google Cloud Documentation",
-      "description": "You can also instruct the generator to suggest agent responses for customer retention, such as providing product discounts, upselling or cross-selling products, and solving issues, as in the following example. The generator accesses information that you provide about discounts and offers as context references with the IngestContextReferences API.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/export-conversations",
       "title": "Export conversation data | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/export-conversations",
       "description": "Your user account must be granted at least a read role for the Dialogflow API and an edit role (with the ability to overwrite objects) for the Cloud Storage bucket you want to export data to. For more details on user account roles see the Cloud Storage access control and Dialogflow access control ...",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" \"access control\""
       ],
@@ -704,24 +904,28 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-testing",
       "title": "Test chat integration | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-testing",
       "description": "To complete the test, enable the developer tool to participate as a customer, and in a Genesys Cloud instance you participate as an agent. The first step explains how to enable and login to the developer tool. The second steps explains how to answer the chat from a Genesys Cloud instance and enabling the Google Agent Assist interaction widget.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation"
       ],
@@ -731,26 +935,63 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/modules-overview",
+      "title": "Create a knowledge base | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/knowledge-base",
+      "description": "The Agent Assist Article Suggestion and FAQ Assist features follow a conversation between a human agent and an end-user and provide the human agent with relevant document suggestions. Both features make suggestions based on knowledge bases, collections of documents that you upload to Agent Assist.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics"
+      ],
+      "intent_hits": [
+        "agent_assist_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Agent Assist UI modules overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/modules-overview",
       "description": "<strong>Agent Assist now offers UI modules, an out-of-the-box option for integrating Agent Assist features into your agent UI system</strong>. You have the ability to integrate all features in a single panel or customize your integration by implementing selected ...",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud docs overview"
       ],
@@ -760,26 +1001,30 @@
       "round_hits": [
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/reference-index",
       "title": "Agent Assist reference documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/reference-index",
       "description": "This link takes you to the Dialogflow ES RPC reference documentation. Agent Assist is <strong>an extension of the Dialogflow API and shares its client libraries and reference documentation with Dialogflow ES</strong>.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" Google Cloud introduction reference"
       ],
@@ -791,24 +1036,127 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/ui-modules-events-documentation",
+      "title": "Use the Agent Assist simulator | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/simulator",
+      "description": "This tutorial walks you through the steps required to run the Agent Assist simulator.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics"
+      ],
+      "intent_hits": [
+        "agent_assist_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Tutorials | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/tutorials",
+      "description": "Learn how to use the Agent Assist simulator to test your conversation profiles.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics"
+      ],
+      "intent_hits": [
+        "agent_assist_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Twilio integration basics | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/twilio",
+      "description": "Agent Assist · Start free · Home · Documentation · AI and ML · Agent Assist · Guides · Send feedback · Surface real-time suggestions for your customer service agents by integrating UI modules with Twilio. To integrate UI modules with Twilio Flex, you need access to the following resources: Agent Assist integrations repository ·",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/agent-assist/docs \"Agent Assist\" basics"
+      ],
+      "intent_hits": [
+        "agent_assist_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "UI module events | Agent Assist | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/agent-assist/docs/ui-modules-events-documentation",
       "description": "Agent Assist · Send feedback · This page contains the API documentation for all custom UI module events. See all custom event payloads. interface ActiveConversationSelectedPayload { conversationName: string; } interface AnalyzeContentRequestDetails { type?: string; conversationId: string; participantRole: | &quot;ROLE_UNSPECIFIED&quot; | &quot;HUMAN_AGENT&quot; | &quot;AUTOMATED_AGENT&quot; | &quot;END_USER&quot;; /** * @link * https://cloud.google.com/dialogflow/es/docs/reference/rest/v2beta1/projects.locations.conversations.participants/analyzeContent#request-body */ request: AnalyzeContentRequest; } interface AnalyzeContentResp",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" \"reference/rest\""
       ],
@@ -820,24 +1168,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/speech-models",
       "title": "Speech models | Dialogflow CX | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/speech-models",
       "description": "phone_call (good for Agent Assist and telephony Dialogflow CX) latest_short (best for non-telephony Dialogflow CX) command_and_search (best for languages where other models are not available) You can supply the model for an agent, flow, or page with the model selection setting. You can also supply the model when calling the Sessions.detectIntent or Sessions.streamingDetectIntent methods; Go to the Session API reference",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Agent Assist\" \"API reference\""
       ],
@@ -849,24 +1201,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest",
       "title": "Package tools (2.43.0) | Python client library | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest",
       "description": "Tool Service for LLM powered <strong>Agent Assist</strong>. Tools can be used to interact with remote APIs (e.g.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Agent Assist\""
       ],
@@ -878,24 +1234,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 28,
+      "product_fit_score": 76,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.services.tools",
       "title": "Package tools (2.43.0) | Python client library | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2beta1.services.tools",
       "description": "Tool Service for LLM powered <strong>Agent Assist</strong>. Tools can be used to interact with remote APIs (e.g.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Agent Assist\""
       ],
@@ -907,47 +1267,21 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 28,
+      "product_fit_score": 76,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/agent-assist/docs/release-notes",
-      "title": "Agent Assist release notes | Google Cloud Documentation",
-      "description": "<strong>Agent Assist offers a native UI Connector with Genesys Cloud to integrate with chat conversations</strong>. ... Agent Assist offers a native UI Connector with Twilio Flex to integrate with chat conversations.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Agent Assist\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 85,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 85,
-        "parent_page_likelihood": 4,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 77,
+      "final_score": 90,
       "keep": false
     }
   ]

@@ -1,21 +1,191 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:34:17.157Z",
+  "generated_at": "2026-04-08T23:50:26.101Z",
   "product_name": "Anthos Config Management",
   "product_slug": "anthos-config-management",
-  "step02_source_path": "data/step-02/current/products/anthos-config-management.md",
+  "step02_source_path": "data/step-02/current/anthos-config-management.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
-  "dominant_doc_family": "iam",
+  "dominant_doc_family": "anthos",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 7,
+  "candidates_scored_by_api": 18,
   "search_runs": [
+    {
+      "round": 1,
+      "intent": "anthos_docs",
+      "query": "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+      "official_result_count": 7,
+      "results": [
+        {
+          "title": "Config Management roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
+          "description": "This page lists the IAM roles and permissions for Config Management. To search through all roles and permissions, see the role and permission index · Gives the Anthos Config Management service agent access to Google Cloud resources",
+          "rank": 1
+        },
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "Config Sync removed resource limits from reconciler-manager, reconciler, and git-importer to make them burstable. ... Policy Controller has been updated to include a more recent build of OPA Gatekeeper (hash: 206bbe9). ... The constraint template library includes a new template: K8sRequiredResources. For reference see Constraint template library. ... Anthos Config Management is now compatible with GKE Autopilot with some cluster requirements.",
+          "rank": 2
+        },
+        {
+          "title": "Config Controller release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-controller/docs/release-notes",
+          "description": "<strong>Config Controller is a managed service to provision and orchestrate Anthos and Google Cloud resources</strong>. Config Controller allows you to define and operate with simple, declarative configuration in Kubernetes style.",
+          "rank": 3
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment February 2023",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-archived-feb-2023.pdf",
+          "description": "Anthos Config Management and Policy Controller.",
+          "rank": 4
+        },
+        {
+          "title": "GKE Enterprise release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/release-notes",
+          "description": "Anthos Config Management: October 27, 2022: 1.13.1 minor release · Anthos Service Mesh: October 25, 2022: 1.15.2-asm.6, 1.14.5-asm.3, 1.13.9-asm.1 patch releases · October 19, 2022: Managed Anthos Service Mesh · October 05, 2022: 1.14.4-asm.2, 1.13.8-asm.3, 1.13.8-asm.4, 1.12.9-asm.3 patch releases ·",
+          "rank": 5
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment (part 2) -",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-2-archived-dec-2023.pdf",
+          "description": "Config Management <strong>to manage the state of your own resources</strong>. Different categories of resources each have a set of tooling: ● Google Cloud resources are managed with the Google Cloud console, gcloud CLI, or ... This reference architecture uses a specific subset of Anthos Config Management ...",
+          "rank": 6
+        },
+        {
+          "title": "Package google.cloud.gkehub.configmanagement.v1beta | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rpc/google.cloud.gkehub.configmanagement.v1beta",
+          "description": "Anthos Config Management: Configuration for a single cluster.",
+          "rank": 7
+        }
+      ]
+    },
     {
       "round": 1,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Anthos Config Management\" \"reference/rest\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Config Sync overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/overview",
+          "description": "Config Sync <strong>helps you implement GitOps by automating the synchronization of your configuration and policies across any number of clusters</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Customize your Config Sync installation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+          "description": "When you install <strong>Config Sync</strong> using the Google Cloud console or the Google Cloud CLI, <strong>Config Sync</strong> automatically creates a RootSync object named root-sync. You can use kubectl commands to modify root-sync and add additional <strong>Config Sync</strong> configurations. For more information, see Configure <strong>Config Sync</strong> with kubectl commands. To install <strong>Config Sync</strong>, all clusters must be registered to a fleet.",
+          "rank": 2
+        },
+        {
+          "title": "Config Sync documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs",
+          "description": "<strong>Continuously sync your clusters to a centralized set of configurations stored in Git</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Config Sync architecture | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+          "description": "<strong>Config Sync</strong> uses this design instead of sharing a single monolithic reconciler because it improves reliability by reducing single points of failure and allows for individual reconcilers to be scaled independently. Root and namespace reconcilers automatically fetch configs from your source of truth and apply them to enforce the state that you want within your cluster.",
+          "rank": 4
+        },
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "<strong>Config Sync</strong>&#x27;s internal observability library has been updated from OpenCensus to OpenTelemetry, improving performance and aligning with industry standards with no breaking changes to metrics or functionality.",
+          "rank": 5
+        },
+        {
+          "title": "Use the Config Sync dashboard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/use-config-sync-dashboard",
+          "description": "Key Term: <strong>A package is a set of Kubernetes resource manifests that are managed together in a source of truth and synced to a cluster by Config Sync</strong>. Each package is defined by a RootSync or RepoSync object on the cluster.",
+          "rank": 6
+        },
+        {
+          "title": "Troubleshoot connecting to the source of truth | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/troubleshooting/connection-source-of-truth",
+          "description": "The following sections explain how to identify and resolve common configuration problems. When syncing from a Helm repository, make sure you set the correct value for spec.helm.chart. The chart name doesn&#x27;t contain the repository name, chart version, or .tgz.",
+          "rank": 7
+        },
+        {
+          "title": "Quickstart: Sync configs from a Git repository | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+          "description": "In this tutorial, you create a GKE cluster and configure <strong>Config Sync</strong> to sync configuration files from a sample repository.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "config_management_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Config Sync overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/overview",
+          "description": "Config Sync <strong>helps you implement GitOps by automating the synchronization of your configuration and policies across any number of clusters</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Customize your Config Sync installation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+          "description": "When you install <strong>Config Sync</strong> using the Google Cloud console or the Google Cloud CLI, <strong>Config Sync</strong> automatically creates a RootSync object named root-sync. You can use kubectl commands to modify root-sync and add additional <strong>Config Sync</strong> configurations. For more information, see Configure <strong>Config Sync</strong> with kubectl commands. To install <strong>Config Sync</strong>, all clusters must be registered to a fleet.",
+          "rank": 2
+        },
+        {
+          "title": "Config Sync documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs",
+          "description": "<strong>Continuously sync your clusters to a centralized set of configurations stored in Git</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Config Sync architecture | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+          "description": "<strong>Config Sync</strong> uses this design instead of sharing a single monolithic reconciler because it improves reliability by reducing single points of failure and allows for individual reconcilers to be scaled independently. Root and namespace reconcilers automatically fetch configs from your source of truth and apply them to enforce the state that you want within your cluster.",
+          "rank": 4
+        },
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "<strong>Config Sync</strong>&#x27;s internal observability library has been updated from OpenCensus to OpenTelemetry, improving performance and aligning with industry standards with no breaking changes to metrics or functionality.",
+          "rank": 5
+        },
+        {
+          "title": "Use the Config Sync dashboard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/use-config-sync-dashboard",
+          "description": "Key Term: <strong>A package is a set of Kubernetes resource manifests that are managed together in a source of truth and synced to a cluster by Config Sync</strong>. Each package is defined by a RootSync or RepoSync object on the cluster.",
+          "rank": 6
+        },
+        {
+          "title": "Troubleshoot connecting to the source of truth | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/troubleshooting/connection-source-of-truth",
+          "description": "The following sections explain how to identify and resolve common configuration problems. When syncing from a Helm repository, make sure you set the correct value for spec.helm.chart. The chart name doesn&#x27;t contain the repository name, chart version, or .tgz.",
+          "rank": 7
+        },
+        {
+          "title": "Quickstart: Sync configs from a Git repository | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+          "description": "In this tutorial, you create a GKE cluster and configure <strong>Config Sync</strong> to sync configuration files from a sample repository.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Anthos Config Management\" official documentation OR site:developers.google.com \"anthos config management\" official documentation",
       "official_result_count": 0,
       "results": []
     },
@@ -40,15 +210,15 @@
       "official_result_count": 6,
       "results": [
         {
-          "title": "Config Sync release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
-          "description": "Fixed a repeating error in the otel-collector deployment log that has been occuring since Anthos Config Management version 1.15.0. ... Fixed an issue related to metric labels commit and type that could cause an increase in Google Cloud Monitoring metric write throughput.",
-          "rank": 1
-        },
-        {
           "title": "Config Management roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
           "description": "This page lists the IAM roles and permissions for Config Management. To search through all roles and permissions, see the role and permission index · <strong>Gives the Anthos Config Management service agent access to Google Cloud resources</strong>",
+          "rank": 1
+        },
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "Fixed a repeating error in the otel-collector deployment log that has been occuring since Anthos Config Management version 1.15.0. ... Fixed an issue related to metric labels commit and type that could cause an increase in Google Cloud Monitoring metric write throughput.",
           "rank": 2
         },
         {
@@ -86,8 +256,141 @@
     },
     {
       "round": 2,
+      "intent": "anthos_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "Non-Anthos customers will see a new SKU appear on their monthly bill, but there is no change in pricing. The SKU &quot;Anthos Configuration Management&quot; (81D5-A275-98BF) will be replaced with the SKU &quot;Anthos Policy Controller&quot; (6707-0251-B8E2).",
+          "rank": 1
+        },
+        {
+          "title": "Config Controller release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-controller/docs/release-notes",
+          "description": "December 2021, Config Controller became Generally Available (GA). Config Controller is <strong>a managed service to provision and orchestrate Anthos and Google Cloud resources</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment February 2023",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-archived-feb-2023.pdf",
+          "description": "<strong>Anthos Config Management</strong> and Policy Controller.",
+          "rank": 3
+        },
+        {
+          "title": "GKE Enterprise release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/release-notes",
+          "description": "<strong>Anthos Config Management</strong>: October 27, 2022: 1.13.1 minor release · Anthos Service Mesh: October 25, 2022: 1.15.2-asm.6, 1.14.5-asm.3, 1.13.9-asm.1 patch releases · October 19, 2022: Managed Anthos Service Mesh · October 05, 2022: 1.14.4-asm.2, 1.13.8-asm.3, 1.13.8-asm.4, 1.12.9-asm.3 patch releases ·",
+          "rank": 4
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment (part 1) -",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-1-archived-dec-2023.pdf",
+          "description": "<strong>Anthos Config Management</strong> and Policy Controller.",
+          "rank": 5
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment (part 2) -",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-2-archived-dec-2023.pdf",
+          "description": "Management version. Anthos Config Management <strong>manages in-cluster resources that you define and deploy</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Package google.cloud.gkehub.configmanagement.v1beta | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rpc/google.cloud.gkehub.configmanagement.v1beta",
+          "description": "<strong>Anthos Config Management</strong>: Configuration for a single cluster.",
+          "rank": 7
+        },
+        {
+          "title": "Validate apps against company policies in a CI pipeline | Policy Controller | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/policy-controller/docs/tutorials/app-policy-validation-ci-pipeline",
+          "description": "The pipeline runs in Cloud Build, and the commands are run in a directory containing a copy of the sample app repository. The pipeline starts by generating the final Kubernetes configurations with Kustomize. Next, it fetches the constraints that we want to validate against from the anthos-config-management-samples repository using kpt.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Anthos Config Management\" \"APIs and reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Config Management roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
+          "description": "This page lists the IAM roles and permissions for Config Management. To search through all roles and permissions, see the role and permission index · <strong>Gives the Anthos Config Management service agent access to Google Cloud resources</strong>",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "config_management_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Config Sync overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/overview",
+          "description": "The following diagram shows an overview of how a platform administrator can manage central policies while three application operators manage their own namespace configurations. The namespaces all have the same admin configuration, but each namespace has a different application configuration. Config Sync lets you create a common set of configuration and policies, such as Policy Controller ...",
+          "rank": 1
+        },
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "Policy Controller bundles have been updated to the following versions: asm-policy-v0.0.1: 202311.0, cis-k8s-v1.5.1: 202311.0, cost-reliability-v2023: 202311.0, nist-sp-800-190: 202311.0, nist-sp-800-53-r5: 202311.0, nsa-cisa-k8s-v1.2: 202311.0, pci-dss-v3.2.1: 202311.0, policy-essentials-v2022: 202311.0, psp-v2022: 202311.0, pss-baseline-v2022: 202311.0, pss-restricted-v2022: 202311.0. For reference, see Policy Controller bundles overview.",
+          "rank": 2
+        },
+        {
+          "title": "Troubleshoot controller fights | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/troubleshooting/controller-fights",
+          "description": "This page shows you how to resolve issues with controller fights. Such fights consume a high amount of resources and can degrade your performance.",
+          "rank": 3
+        },
+        {
+          "title": "Disable Hierarchy Controller | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+          "description": "This page explains how to disable Hierarchy Controller so that you can upgrade Config Sync.",
+          "rank": 4
+        },
+        {
+          "title": "Use the Config Sync dashboard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/use-config-sync-dashboard",
+          "description": "Follow the instructions for configuring role-based access control on Google Kubernetes Engine clusters to set up the ClusterRoleBinding. In the Google Cloud console, go to the Config page under the Features section. ... Select the project that you want to view. The dashboard tab provides you an overview ...",
+          "rank": 5
+        },
+        {
+          "title": "Error reference | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+          "description": "Errors that are reported by Config Sync reconcilers have the KNV error code, but errors reported from other components don&#x27;t have KNV code. For example, the permission denied error comes from the fleet controller, which is a layer on top of Config Sync.",
+          "rank": 6
+        },
+        {
+          "title": "Manage existing cluster objects | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+          "description": "Name: myrole Labels: &lt;none&gt; Annotations: &lt;none&gt; PolicyRule: Resources Non-Resource URLs Resource Names Verbs --------- ----------------- -------------- ----- pods [] [] [get]",
+          "rank": 7
+        },
+        {
+          "title": "Config Sync architecture | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+          "description": "The ResourceGroup Controller then watches all the objects in the ResourceGroup object and updates the status of the ResourceGroup object with the current reconciliation status of the synced objects. This lets you check the status of the ResourceGroup object for an overview of the sync status, ...",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Anthos Config Management\" reference OR site:developers.google.com \"anthos config management\" reference",
       "official_result_count": 0,
       "results": []
     },
@@ -158,8 +461,183 @@
     },
     {
       "round": 3,
+      "intent": "anthos_docs",
+      "query": "site:cloud.google.com/anthos/docs \"Anthos Config Management\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Anthos documentation | Google Cloud",
+          "url": "https://cloud.google.com/anthos/docs?hl=ar",
+          "description": "Build and manage modern applications across on-premises and cloud environments. ... Explore use cases, reference architectures, whitepapers, best practices, and industry solutions. ... Shows how to safely roll out changes across multiple environments by using <strong>Anthos Config Management</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Anthos technical overview | Google Cloud",
+          "url": "https://cloud.google.com/anthos/docs/concepts/overview?hl=zh-tw",
+          "description": "The repo provides a versioned, secured, and controlled single source of truth for all of your Kubernetes configurations. Any YAML or JSON that can be applied with kubectl commands can be managed with <strong>Anthos Config Management</strong> and applied to any Kubernetes cluster.",
+          "rank": 2
+        },
+        {
+          "title": "GKE Enterprise release notes | Anthos",
+          "url": "https://cloud.google.com/anthos/docs/release-notes",
+          "description": "<strong>Anthos Config Management</strong>: October 27, 2022: 1.13.1 minor release · Anthos Service Mesh: October 25, 2022: 1.15.2-asm.6, 1.14.5-asm.3, 1.13.9-asm.1 patch releases · October 19, 2022: Managed Anthos Service Mesh · October 05, 2022: 1.14.4-asm.2, 1.13.8-asm.3, 1.13.8-asm.4, 1.12.9-asm.3 patch releases ·",
+          "rank": 3
+        },
+        {
+          "title": "Getting support | Anthos | Google Cloud",
+          "url": "https://cloud.google.com/anthos/docs/support/getting-support?hl=pl",
+          "description": "Google Cloud offers a variety of support packages to accommodate your support needs. All Google Cloud Support packages include support for Anthos. If you have an existing Google Cloud Support package, you already have support for Anthos, including GKE, GKE On-Prem, and <strong>Anthos Config Management</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Anthos-Komponenten | Google Cloud",
+          "url": "https://cloud.google.com/anthos/docs/components?hl=de",
+          "description": "Machen Sie sich mit den Grundlagen der Verwaltung von Clustern im großen Maßstab mit <strong>Anthos Config Management</strong> vertraut.",
+          "rank": 5
+        },
+        {
+          "title": "Anthos in Google Cloud einrichten",
+          "url": "https://cloud.google.com/anthos/docs/setup/cloud?hl=de",
+          "description": "Sie können einige Funktionen (<strong>Anthos Config Management</strong>, Multi-Cluster-Ingress) für Cluster in Ihrer Umgebung aktivieren. Verwenden Sie dazu die Seite &quot;Anthos Features&quot;.",
+          "rank": 6
+        },
+        {
+          "title": "Anthos コンポーネント | Google Cloud",
+          "url": "https://cloud.google.com/anthos/docs/components?hl=JA&skip_cache=true",
+          "description": "<strong>Anthos Config Management</strong> を使用して大規模なクラスタを管理する方法の基礎を短時間で学習します。",
+          "rank": 7
+        },
+        {
+          "title": "Anleitung: Secure Anthos | Google Cloud",
+          "url": "https://cloud.google.com/anthos/docs/tutorials/security?hl=de",
+          "description": "Anstatt Änderungen auf Quellcodeebene vorzunehmen, Ihre Anwendung in dieser Situation neu zu erstellen und noch einmal bereitzustellen, können Sie die neue Verschlüsselungsrichtlinie mithilfe von <strong>Anthos Config Management</strong> deklarativ durch ...",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Anthos Config Management\" \"API reference\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Config Sync release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+          "description": "Non-Anthos customers will see a new SKU appear on their monthly bill, but there is no change in pricing. The SKU &quot;Anthos Configuration Management&quot; (81D5-A275-98BF) will be replaced with the SKU &quot;Anthos Policy Controller&quot; (6707-0251-B8E2).",
+          "rank": 1
+        },
+        {
+          "title": "Config Controller release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-controller/docs/release-notes",
+          "description": "December 2021, Config Controller became Generally Available (GA). Config Controller is <strong>a managed service to provision and orchestrate Anthos and Google Cloud resources</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment February 2023",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-archived-feb-2023.pdf",
+          "description": "<strong>Anthos Config Management</strong> and Policy Controller.",
+          "rank": 3
+        },
+        {
+          "title": "GKE Enterprise release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/release-notes",
+          "description": "<strong>Anthos Config Management</strong>: October 27, 2022: 1.13.1 minor release · Anthos Service Mesh: October 25, 2022: 1.15.2-asm.6, 1.14.5-asm.3, 1.13.9-asm.1 patch releases · October 19, 2022: Managed Anthos Service Mesh · October 05, 2022: 1.14.4-asm.2, 1.13.8-asm.3, 1.13.8-asm.4, 1.12.9-asm.3 patch releases ·",
+          "rank": 4
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment (part 1) -",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-1-archived-dec-2023.pdf",
+          "description": "<strong>Anthos Config Management</strong> and Policy Controller.",
+          "rank": 5
+        },
+        {
+          "title": "Reference architecture: Anthos hybrid environment (part 2) -",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-2-archived-dec-2023.pdf",
+          "description": "Management version. Anthos Config Management <strong>manages in-cluster resources that you define and deploy</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Package google.cloud.gkehub.configmanagement.v1beta | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rpc/google.cloud.gkehub.configmanagement.v1beta",
+          "description": "<strong>Anthos Config Management</strong>: Configuration for a single cluster.",
+          "rank": 7
+        },
+        {
+          "title": "Validate apps against company policies in a CI pipeline | Policy Controller | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/policy-controller/docs/tutorials/app-policy-validation-ci-pipeline",
+          "description": "The pipeline runs in Cloud Build, and the commands are run in a directory containing a copy of the sample app repository. The pipeline starts by generating the final Kubernetes configurations with Kustomize. Next, it fetches the constraints that we want to validate against from the anthos-config-management-samples repository using kpt.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "config_management_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "RootSync and RepoSync fields | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields",
+          "description": "You can override the git-sync, oci-sync, helm-sync, hydration-controller, and reconciler containers. Partial overriding is allowed: when an override value for a resource request or limit isn&#x27;t provided, the default resource value for the request or limit is used. For Autopilot clusters, <strong>Config Sync</strong> ...",
+          "rank": 1
+        },
+        {
+          "title": "Error reference | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+          "description": "<strong>Config Sync</strong> error messages consist of an error ID in the format KNV1234 where 1234 is a unique number, followed by a description of the problem and a suggestion for how to fix it. K is inherited from Kubernetes conventions, rules with prefix N are specific to nomos, V is specific to errors detectable in the initial state of the repository and the cluster.",
+          "rank": 2
+        },
+        {
+          "title": "Method: projects.locations.operations.get | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1/projects.locations.operations/get",
+          "description": "Config Sync · Start free · Home ... · Request body · Response body · Authorization scopes · <strong>Gets the latest state of a long-running operation</strong>....",
+          "rank": 3
+        },
+        {
+          "title": "Reference | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference",
+          "description": "Config Sync <strong>adds and manages several labels and annotations on objects in the cluster</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "DeletionPropagationPolicy | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/DeletionPropagationPolicy",
+          "description": "<strong>Config Sync</strong> · Start free · Home · Documentation · Application hosting · Google Kubernetes Engine (GKE) <strong>Config Sync</strong> · Reference · Send feedback · Deletion Propagation Policy determines what happens to the underlying Kubernetes resources on a cluster when the FleetPackage managing those ...",
+          "rank": 5
+        },
+        {
+          "title": "REST Resource: projects.locations.fleetPackages | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1/projects.locations.fleetPackages",
+          "description": "Information specifying the source of Kubernetes configuration to deploy.",
+          "rank": 6
+        },
+        {
+          "title": "Method: projects.locations.resourceBundles.releases.variants.create | Config Sync | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1beta/projects.locations.resourceBundles.releases.variants/create",
+          "description": "<strong>Creates a new Variant in a given project, location, resource bundle, and release</strong> · POST https://configdelivery.googleapis.com/v1beta/{parent=projects/*/locations/*/resourceBundles/*/releases/*}/variants",
+          "rank": 7
+        },
+        {
+          "title": "Config Sync-managed labels and annotations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/labels-and-annotations",
+          "description": "Config Sync <strong>adds and manages several labels and annotations on objects in the cluster</strong>.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Anthos Config Management\" overview OR site:developers.google.com \"anthos config management\" overview",
       "official_result_count": 0,
       "results": []
     },
@@ -194,7 +672,7 @@
       "round": 3,
       "intent": "product_docs",
       "query": "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference",
-      "official_result_count": 6,
+      "official_result_count": 2,
       "results": [
         {
           "title": "Reference architecture: Anthos hybrid environment February 2023",
@@ -203,34 +681,10 @@
           "rank": 1
         },
         {
-          "title": "Reference architecture: Anthos hybrid environment (part 1) -",
-          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-1-archived-dec-2023.pdf",
-          "description": "Anthos Config Management and Policy Controller. The following diagram gives a global view of logical cloud and on-premises resources that exist in this · reference architecture.",
-          "rank": 2
-        },
-        {
-          "title": "Reference architecture: Anthos hybrid environment (part 2) -",
-          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-2-archived-dec-2023.pdf",
-          "description": "You still use Anthos · Config Management to manage the state of your own resources. Different categories of resources each have a set of tooling: ● Google Cloud resources are managed with the Google Cloud console, gcloud CLI, or ... This reference architecture uses a specific subset of Anthos ...",
-          "rank": 3
-        },
-        {
-          "title": "Config Sync release notes | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
-          "description": "For reference, see the Constraint template library. ... Fixed a repeating error in the otel-collector deployment log that has been occuring since Anthos Config Management version 1.15.0. ... Fixed an issue related to metric labels commit and type that could cause an increase in Google Cloud Monitoring metric write throughput.",
-          "rank": 4
-        },
-        {
           "title": "Package google.cloud.gkehub.configmanagement.v1beta | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rpc/google.cloud.gkehub.configmanagement.v1beta",
           "description": "Anthos Config Management: State for a single cluster. ... State for the migration of PolicyController from ACM -&gt; PoCo Hub. Stage marks what stage of the migration ACM hub is in. PolicyControllerMonitoring specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: [&quot;cloudmonitoring&quot;, &quot;prometheus&quot;]",
-          "rank": 5
-        },
-        {
-          "title": "Config Management roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
-          "description": "This page lists the IAM roles and permissions for Config Management. To search through all roles and permissions, see the role and permission index · <strong>Gives the Anthos Config Management service agent access to Google Cloud resources</strong>",
-          "rank": 6
+          "rank": 2
         }
       ]
     },
@@ -244,232 +698,1233 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
-      "title": "Config Management roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
-      "description": "This page lists the IAM roles and permissions for Config Management. To search through all roles and permissions, see the role and permission index · <strong>Gives the Anthos Config Management service agent access to Google Cloud resources</strong>",
+      "title": "Config Sync release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
+      "description": "Fixed a repeating error in the otel-collector deployment log that has been occuring since Anthos Config Management version 1.15.0. ... Fixed an issue related to metric labels commit and type that could cause an increase in Google Cloud Monitoring metric write throughput.",
+      "rank": 2,
       "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\"",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\"",
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller",
+        "site:docs.cloud.google.com \"Anthos Config Management\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "canonical_docs",
+        "config_management_docs",
+        "anthos_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 208,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Package google.cloud.gkehub.configmanagement.v1beta | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rpc/google.cloud.gkehub.configmanagement.v1beta",
+      "description": "Anthos Config Management: State for a single cluster. ... State for the migration of PolicyController from ACM -&gt; PoCo Hub. Stage marks what stage of the migration ACM hub is in. PolicyControllerMonitoring specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: [&quot;cloudmonitoring&quot;, &quot;prometheus&quot;]",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\"",
         "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "anthos_docs",
+        "canonical_docs"
       ],
       "round_hits": [
-        2,
         1,
+        2,
         3
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 86,
+      "product_fit_score": 144,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "GKE Enterprise release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/release-notes",
+      "description": "Anthos Config Management: October 27, 2022: 1.13.1 minor release · Anthos Service Mesh: October 25, 2022: 1.15.2-asm.6, 1.14.5-asm.3, 1.13.9-asm.1 patch releases · October 19, 2022: Managed Anthos Service Mesh · October 05, 2022: 1.14.4-asm.2, 1.13.8-asm.3, 1.13.8-asm.4, 1.12.9-asm.3 patch releases · Connect: N/A · Cloud Run for Anthos: N/A ·",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "anthos_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 108,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Reference architecture: Anthos hybrid environment February 2023",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-archived-feb-2023.pdf",
+      "description": "Provide Git access at each site. Some configuration is stored in Git. Anthos Config Management · needs read-only access to your Git repository to read cluster configuration. Google Cloud doesn&#x27;t",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\"",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Anthos Config Management\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "anthos_docs",
+        "canonical_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": -12,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 1,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Reference architecture: Anthos hybrid environment (part 1) -",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-1-archived-dec-2023.pdf",
+      "description": "Provide Git access at each site. Some configuration is stored in Git. Anthos Config Management · needs read-only access to your Git repository to read cluster configuration. Google Cloud doesn&#x27;t",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "anthos_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": -12,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 1,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Config Management roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
+      "description": "This page lists the IAM roles and permissions for Config Management. To search through all roles and permissions, see the role and permission index · <strong>Gives the Anthos Config Management service agent access to Google Cloud resources</strong>",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
+        "site:docs.cloud.google.com/iam/docs/roles-permissions/anthosconfigmanagement",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "canonical_docs",
+        "anthos_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 150,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 100,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-archived-feb-2023.pdf",
-      "title": "Reference architecture: Anthos hybrid environment February 2023",
-      "description": "Anthos clusters that run in two different on-premises sites. Two proximate Google Cloud regions ... In-cluster resources are managed with Anthos Config Management.",
+      "title": "Validate apps against company policies in a CI pipeline | Policy Controller | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/policy-controller/docs/tutorials/app-policy-validation-ci-pipeline",
+      "description": "The pipeline runs in Cloud Build, and the commands are run in a directory containing a copy of the sample app repository. The pipeline starts by generating the final Kubernetes configurations with Kustomize. Next, it fetches the constraints that we want to validate against from the anthos-config-management-samples repository using kpt.",
+      "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"Anthos Config Management\" IAM roles permissions"
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\""
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "anthos_docs",
+        "canonical_docs"
       ],
       "round_hits": [
         2,
-        1,
         3
       ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 64,
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 144,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 100,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-1-archived-dec-2023.pdf",
-      "title": "Reference architecture: Anthos hybrid environment (part 1) -",
-      "description": "Provide Git access at each site. Some configuration is stored in Git. Anthos Config Management · needs read-only access to your Git repository to read cluster configuration. Google Cloud doesn&#x27;t",
+      "title": "Config Sync overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/overview",
+      "description": "Config Sync <strong>helps you implement GitOps by automating the synchronization of your configuration and policies across any number of clusters</strong>.",
+      "rank": 1,
       "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\"",
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller"
       ],
       "intent_hits": [
-        "product_docs"
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 88,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 52,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Error reference | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+      "description": "Errors that are reported by Config Sync reconcilers have the KNV error code, but errors reported from other components don&#x27;t have KNV code. For example, the permission denied error comes from the fleet controller, which is a layer on top of Config Sync.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller",
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
       ],
       "round_hits": [
         2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 84,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Config Sync architecture | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/architecture",
+      "description": "<strong>Config Sync</strong> uses this design instead of sharing a single monolithic reconciler because it improves reliability by reducing single points of failure and allows for individual reconcilers to be scaled independently. Root and namespace reconcilers automatically fetch configs from your source of truth and apply them to enforce the state that you want within your cluster.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\"",
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
         1,
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Use the Config Sync dashboard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/use-config-sync-dashboard",
+      "description": "Key Term: <strong>A package is a set of Kubernetes resource manifests that are managed together in a source of truth and synced to a cluster by Config Sync</strong>. Each package is defined by a RootSync or RepoSync object on the cluster.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\"",
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Reference architecture: Anthos hybrid environment (part 2) -",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-2-archived-dec-2023.pdf",
+      "description": "Config Management <strong>to manage the state of your own resources</strong>. Different categories of resources each have a set of tooling: ● Google Cloud resources are managed with the Google Cloud console, gcloud CLI, or ... This reference architecture uses a specific subset of Anthos Config Management ...",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs",
+        "product_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 100,
+      "product_fit_score": -12,
+      "deterministic_score": 94,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 94,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 1,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Anthos documentation | Google Cloud",
+      "url": "https://cloud.google.com/anthos/docs?hl=ar",
+      "description": "Build and manage modern applications across on-premises and cloud environments. ... Explore use cases, reference architectures, whitepapers, best practices, and industry solutions. ... Shows how to safely roll out changes across multiple environments by using <strong>Anthos Config Management</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Anthos-Komponenten | Google Cloud",
+      "url": "https://cloud.google.com/anthos/docs/components?hl=de",
+      "description": "Machen Sie sich mit den Grundlagen der Verwaltung von Clustern im großen Maßstab mit <strong>Anthos Config Management</strong> vertraut.",
+      "rank": 5,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Anthos コンポーネント | Google Cloud",
+      "url": "https://cloud.google.com/anthos/docs/components?hl=JA&skip_cache=true",
+      "description": "<strong>Anthos Config Management</strong> を使用して大規模なクラスタを管理する方法の基礎を短時間で学習します。",
+      "rank": 7,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Anthos technical overview | Google Cloud",
+      "url": "https://cloud.google.com/anthos/docs/concepts/overview?hl=zh-tw",
+      "description": "The repo provides a versioned, secured, and controlled single source of truth for all of your Kubernetes configurations. Any YAML or JSON that can be applied with kubectl commands can be managed with <strong>Anthos Config Management</strong> and applied to any Kubernetes cluster.",
+      "rank": 2,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "GKE Enterprise release notes | Anthos",
+      "url": "https://cloud.google.com/anthos/docs/release-notes",
+      "description": "<strong>Anthos Config Management</strong>: October 27, 2022: 1.13.1 minor release · Anthos Service Mesh: October 25, 2022: 1.15.2-asm.6, 1.14.5-asm.3, 1.13.9-asm.1 patch releases · October 19, 2022: Managed Anthos Service Mesh · October 05, 2022: 1.14.4-asm.2, 1.13.8-asm.3, 1.13.8-asm.4, 1.12.9-asm.3 patch releases ·",
+      "rank": 3,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Anthos in Google Cloud einrichten",
+      "url": "https://cloud.google.com/anthos/docs/setup/cloud?hl=de",
+      "description": "Sie können einige Funktionen (<strong>Anthos Config Management</strong>, Multi-Cluster-Ingress) für Cluster in Ihrer Umgebung aktivieren. Verwenden Sie dazu die Seite &quot;Anthos Features&quot;.",
+      "rank": 6,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Getting support | Anthos | Google Cloud",
+      "url": "https://cloud.google.com/anthos/docs/support/getting-support?hl=pl",
+      "description": "Google Cloud offers a variety of support packages to accommodate your support needs. All Google Cloud Support packages include support for Anthos. If you have an existing Google Cloud Support package, you already have support for Anthos, including GKE, GKE On-Prem, and <strong>Anthos Config Management</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Anleitung: Secure Anthos | Google Cloud",
+      "url": "https://cloud.google.com/anthos/docs/tutorials/security?hl=de",
+      "description": "Anstatt Änderungen auf Quellcodeebene vorzunehmen, Ihre Anwendung in dieser Situation neu zu erstellen und noch einmal bereitzustellen, können Sie die neue Verschlüsselungsrichtlinie mithilfe von <strong>Anthos Config Management</strong> deklarativ durch ...",
+      "rank": 8,
+      "query_hits": [
+        "site:cloud.google.com/anthos/docs \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Reference | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference",
+      "description": "Config Sync <strong>adds and manages several labels and annotations on objects in the cluster</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 88,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 52,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Manage existing cluster objects | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+      "description": "Name: myrole Labels: &lt;none&gt; Annotations: &lt;none&gt; PolicyRule: Resources Non-Resource URLs Resource Names Verbs --------- ----------------- -------------- ----- pods [] [] [get]",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller"
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 84,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Disable Hierarchy Controller | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+      "description": "This page explains how to disable Hierarchy Controller so that you can upgrade Config Sync.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller"
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 84,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "DeletionPropagationPolicy | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1alpha/DeletionPropagationPolicy",
+      "description": "<strong>Config Sync</strong> · Start free · Home · Documentation · Application hosting · Google Kubernetes Engine (GKE) <strong>Config Sync</strong> · Reference · Send feedback · Deletion Propagation Policy determines what happens to the underlying Kubernetes resources on a cluster when the FleetPackage managing those ...",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 84,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "RootSync and RepoSync fields | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rootsync-reposync-fields",
+      "description": "You can override the git-sync, oci-sync, helm-sync, hydration-controller, and reconciler containers. Partial overriding is allowed: when an override value for a resource request or limit isn&#x27;t provided, the default resource value for the request or limit is used. For Autopilot clusters, <strong>Config Sync</strong> ...",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 84,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Troubleshoot controller fights | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/troubleshooting/controller-fights",
+      "description": "This page shows you how to resolve issues with controller fights. Such fights consume a high amount of resources and can degrade your performance.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs overview policy-controller"
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 84,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Config Sync documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs",
+      "description": "<strong>Continuously sync your clusters to a centralized set of configurations stored in Git</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\""
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Customize your Config Sync installation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "description": "When you install <strong>Config Sync</strong> using the Google Cloud console or the Google Cloud CLI, <strong>Config Sync</strong> automatically creates a RootSync object named root-sync. You can use kubectl commands to modify root-sync and add additional <strong>Config Sync</strong> configurations. For more information, see Configure <strong>Config Sync</strong> with kubectl commands. To install <strong>Config Sync</strong>, all clusters must be registered to a fleet.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\""
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Config Sync-managed labels and annotations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/labels-and-annotations",
+      "description": "Config Sync <strong>adds and manages several labels and annotations on objects in the cluster</strong>.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: projects.locations.fleetPackages | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1/projects.locations.fleetPackages",
+      "description": "Information specifying the source of Kubernetes configuration to deploy.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: projects.locations.operations.get | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1/projects.locations.operations/get",
+      "description": "Config Sync · Start free · Home ... · Request body · Response body · Authorization scopes · <strong>Gets the latest state of a long-running operation</strong>....",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: projects.locations.resourceBundles.releases.variants.create | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/rest/v1beta/projects.locations.resourceBundles.releases.variants/create",
+      "description": "<strong>Creates a new Variant in a given project, location, resource bundle, and release</strong> · POST https://configdelivery.googleapis.com/v1beta/{parent=projects/*/locations/*/resourceBundles/*/releases/*}/variants",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference \"Config Sync\""
+      ],
+      "intent_hits": [
+        "config_management_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Troubleshoot connecting to the source of truth | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/troubleshooting/connection-source-of-truth",
+      "description": "The following sections explain how to identify and resolve common configuration problems. When syncing from a Helm repository, make sure you set the correct value for spec.helm.chart. The chart name doesn&#x27;t contain the repository name, chart version, or .tgz.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\""
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Quickstart: Sync configs from a Git repository | Config Sync | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+      "description": "In this tutorial, you create a GKE cluster and configure <strong>Config Sync</strong> to sync configuration files from a sample repository.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/config-sync/docs \"Config Sync\""
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "config_management_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 91,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 91,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 82,
+      "keep": false
+    },
+    {
+      "title": "Config Controller release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/config-controller/docs/release-notes",
+      "description": "<strong>Config Controller is a managed service to provision and orchestrate Anthos and Google Cloud resources</strong>. Config Controller allows you to define and operate with simple, declarative configuration in Kubernetes style.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Anthos Config Management\" Anthos documentation",
+        "site:docs.cloud.google.com/kubernetes-engine \"Anthos Config Management\""
+      ],
+      "intent_hits": [
+        "anthos_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
         3
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 64,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/anthos-hybrid-environment-reference-architecture-part-2-archived-dec-2023.pdf",
-      "title": "Reference architecture: Anthos hybrid environment (part 2) -",
-      "description": "An Anthos Config Management component per cluster pulls configuration directly from a source control · repository or an image registry. A cloud management plane configures data sources and Anthos Config",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 64,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 97,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rpc/google.cloud.gkehub.configmanagement.v1beta",
-      "title": "Package google.cloud.gkehub.configmanagement.v1beta | Google Cloud Documentation",
-      "description": "Anthos Config Management: State for a single cluster. ... State for the migration of PolicyController from ACM -&gt; PoCo Hub. Stage marks what stage of the migration ACM hub is in. PolicyControllerMonitoring specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: [&quot;cloudmonitoring&quot;, &quot;prometheus&quot;]",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 67,
-      "product_fit_score": 64,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 97,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/release-notes",
-      "title": "Config Sync release notes | Google Cloud Documentation",
-      "description": "Fixed a repeating error in the otel-collector deployment log that has been occuring since Anthos Config Management version 1.15.0. ... Fixed an issue related to metric labels commit and type that could cause an increase in Google Cloud Monitoring metric write throughput.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"Anthos Config Management\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2,
-        1,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 64,
-      "deterministic_score": 72,
+      "product_fit_score": -130,
+      "deterministic_score": 0,
       "api_score": {
         "classification": "irrelevant",
-        "score": 72,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 0,
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 75,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/release-notes",
-      "title": "GKE Enterprise release notes | Google Cloud Documentation",
-      "description": "See the technical overview to learn about the components of Anthos. Feature announcements and known issues are detailed in the release notes of each component. Components: Google Kubernetes Engine release notes · GKE On-Prem release notes · Anthos Config Management release notes · Migrate for Anthos release notes · Istio on Google Kubernetes Engine release notes · Stackdriver release notes · Google Cloud Marketplace release notes ·",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Anthos Config Management\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 67,
-      "product_fit_score": 64,
-      "deterministic_score": 57,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 57,
-        "parent_page_likelihood": 3,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 58,
+      "final_score": 15,
       "keep": false
     }
   ]

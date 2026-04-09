@@ -21,6 +21,7 @@ This file lists the official Google documentation URLs selected and scored for t
 | 95 | yes | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/recommender | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | iam_reference | https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/roles-permissions | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | iam_reference | https://docs.cloud.google.com/policy-intelligence/docs/review-apply-role-recommendations-datasets | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | supporting_page | https://developers.google.com/recommender/docs/reference/rest/v1/organizations.locations.recommenders.recommendations/list | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/recommender/docs/active-assist/dashboard-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/recommender/docs/active-assist/find-active-assist | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/recommender/docs/active-assist/find-recommendations | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
@@ -28,4 +29,3 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | no | supporting_page | https://docs.cloud.google.com/recommender/docs/product-suggestion-recommender | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | yes | api_reference | https://docs.cloud.google.com/recommender/docs/reference/rest | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/recommender/docs/reference/rest/v1/projects.locations.recommenders.recommendations/list | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/recommender/docs/transparency-and-control-center/access-control | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |

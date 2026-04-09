@@ -60,6 +60,9 @@ The current intended flow is:
 
 This workflow is intentionally explicit so that scripts, data outputs, and validation steps remain easy to audit.
 
+For the strategy that has emerged from the implemented stages so far, see
+[Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md).
+
 ## Repository Layout
 
 The repository uses a canonical structure defined by accepted ADRs.
@@ -153,19 +156,22 @@ Use `evaluations/` for Skill Arena benchmarks, comparison outputs, evolution res
 
 ## Current Project State
 
-The repository currently defines the operating model, structure, and workflow direction.
+The repository is no longer only a structural scaffold.
 
-At this stage, the project should be understood as a scaffold for the first implementation wave, not as a completed extractor.
+As of April 9, 2026, the implemented workflow reaches:
 
-The next practical milestones are:
+- Step 01 incremental release-note acquisition into a canonical local Parquet snapshot
+- Step 02 per-product feature segregation from release notes
+- Step 03 official URL discovery and ranking
+- Step 04 per-product documentation corpus capture with `know`
+- Step 05 a first `gcloud`-backed IAM inventory extraction
+- Step 06 a first corpus-backed feature-definition prototype
 
-1. define the canonical schema for products, features, and evidence
-2. implement the first Step 1 discovery scripts
-3. define the stage-specific data layout in more detail
-4. define the promotion rules from workflow data into `artifacts/`
-5. define the report structure under `radar/`
-6. add validation checks for source coverage and lifecycle evidence
-7. establish the first evaluation loop for repository-specific skills
+The current limiting factor is not the absence of pipeline stages, but uneven
+catalog completion across the middle stages, especially Step 03 seed quality
+and Step 04 corpus capture reliability. See
+[Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md) for
+the detailed state and current priorities.
 
 ## Documentation Rules
 

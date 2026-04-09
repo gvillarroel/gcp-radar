@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:37:15.719Z",
+  "generated_at": "2026-04-08T21:54:08.746Z",
   "product_name": "Google SecOps",
   "product_slug": "google-secops",
   "step02_source_path": "data/step-02/current/google-secops.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "chronicle",
   "dominant_python_slug": "",
@@ -40,15 +40,15 @@
           "rank": 1
         },
         {
-          "title": "Onboard a Google SecOps instance | Google Security Operations | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/chronicle/docs/onboard",
-          "description": "Grant permissions to perform onboarding. Set up an Assured Workloads folder (optional). Configure a Google Cloud project. Configure an identity provider. For each new Google SecOps instance, grant the required onboarding roles and permissions to the onboarding SME, as described in Required roles and permissions.",
-          "rank": 2
-        },
-        {
           "title": "Data RBAC overview | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
           "description": "Caution: The platform limits scopes, custom labels, and ingestion labels to 200 unique values each. If an ingestion label exceeds this cardinality, the platform bans it. <strong>Google SecOps lets you control data access to users by using scopes</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Onboard a Google SecOps instance | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/onboard",
+          "description": "Grant permissions to perform onboarding. Set up an Assured Workloads folder (optional). Configure a Google Cloud project. Configure an identity provider. For each new Google SecOps instance, grant the required onboarding roles and permissions to the onboarding SME, as described in Required roles and permissions.",
           "rank": 3
         },
         {
@@ -139,9 +139,9 @@
           "rank": 7
         },
         {
-          "title": "Google SecOps features in Security Command Center Enterprise | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/security-command-center/docs/secops-limits",
-          "description": "For information about using these features, see Google Security Operations documentation. The following sections describe the type of log data that customers with Security Command Center Enterprise can ingest directly to the Google Security Operations tenant. This data collection mechanism is different than the AWS connector in Security Command Center that collects resource and configuration data. The information is grouped by cloud provider. ... For each type of log listed, the Google SecOps ingestion label is provided, for example GCP_CLOUDAUDIT.",
+          "title": "Sign in to Google SecOps | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/log-in-to-ui",
+          "description": "Note: Google SecOps converts all recorded event timestamps to UTC to maintain consistency across all security data.",
           "rank": 8
         }
       ]
@@ -198,15 +198,15 @@
           "rank": 4
         },
         {
-          "title": "Configure feature access control using IAM | Google Security Operations | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-feature-access",
-          "description": "If the user sent an API request, ... is returned. Google SecOps <strong>provides a set of predefined roles with a defined set of permissions that control whether a user can access the feature</strong>....",
-          "rank": 5
-        },
-        {
           "title": "Map users in the Google SecOps platform | Google Security Operations | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
           "description": "When users attempt to sign in to the Google SecOps platform, but their IdP group hasn&#x27;t been mapped, for users not to be rejected, we recommend enabling the Default Access Settings and setting administrator permissions on this page. After the initial administrator setup is complete, we suggest adjusting the administrator permissions to a more minimal level. This section describes how to map different IdP groups to one or more access control parameters within the IdP Group Mapping page.",
+          "rank": 5
+        },
+        {
+          "title": "Configure feature access control using IAM | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/onboard/configure-feature-access",
+          "description": "If the user sent an API request, ... is returned. Google SecOps <strong>provides a set of predefined roles with a defined set of permissions that control whether a user can access the feature</strong>....",
           "rank": 6
         },
         {
@@ -273,15 +273,15 @@
           "rank": 6
         },
         {
-          "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
-          "description": "For a more general overview of client libraries within Google Cloud, see Client libraries explained. To use the APIs, you must authenticate your client&#x27;s identity. You can learn more about per API authentication in the respective API documentation. The Chronicle API is the new-generation, unified API for Google SecOps...",
-          "rank": 7
-        },
-        {
           "title": "Google Security Operations SIEM overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/chronicle/docs/overview",
           "description": "<strong>Collector: A software component</strong>, ... Google SecOps. Ingestion APIs: APIs that enable logs to be sent directly to the Google Security Operations platform, eliminating the need for additional hardware or software in customer environments.",
+          "rank": 7
+        },
+        {
+          "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
+          "description": "For a more general overview of client libraries within Google Cloud, see Client libraries explained. To use the APIs, you must authenticate your client&#x27;s identity. You can learn more about per API authentication in the respective API documentation. The Chronicle API is the new-generation, unified API for Google SecOps...",
           "rank": 8
         }
       ]
@@ -444,42 +444,8 @@
   "scored_urls": [
     {
       "title": "Data RBAC overview | Google Security Operations | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+      "url": "https://docs.cloud.google.com/chronicle/docs/administration",
       "description": "Caution: The platform limits scopes, custom labels, and ingestion labels to 200 unique values each. If an ingestion label exceeds this cardinality, the platform bans it. <strong>Google SecOps lets you control data access to users by using scopes</strong>.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google SecOps\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Google SecOps\" \"access control\"",
-        "site:docs.cloud.google.com \"Google SecOps\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Onboard a Google SecOps instance | Google Security Operations | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/chronicle/docs/onboard",
-      "description": "Grant permissions to perform onboarding. Set up an Assured Workloads folder (optional). Configure a Google Cloud project. Configure an identity provider. For each new Google SecOps instance, grant the required onboarding roles and permissions to the onboarding SME, as described in Required roles and permissions.",
       "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" \"roles and permissions\"",
@@ -496,14 +462,91 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Data RBAC overview | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+      "description": "Caution: The platform limits scopes, custom labels, and ingestion labels to 200 unique values each. If an ingestion label exceeds this cardinality, the platform bans it. <strong>Google SecOps lets you control data access to users by using scopes</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Google SecOps\" \"access control\"",
+        "site:docs.cloud.google.com \"Google SecOps\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Onboard a Google SecOps instance | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/onboard",
+      "description": "Grant permissions to perform onboarding. Set up an Assured Workloads folder (optional). Configure a Google Cloud project. Configure an identity provider. For each new Google SecOps instance, grant the required onboarding roles and permissions to the onboarding SME, as described in Required roles and permissions.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Google SecOps\" \"access control\"",
+        "site:docs.cloud.google.com \"Google SecOps\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -530,14 +573,56 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Google SecOps overview | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/secops",
+      "description": "Google Security Operations is a ... they generate. Google SecOps <strong>normalizes, indexes, correlates, and analyzes the data to provide instant analysis and context on risky activity</strong>....",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Google SecOps\" \"access control\"",
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -564,15 +649,18 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -600,15 +688,18 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -634,15 +725,18 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -668,15 +762,18 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -707,6 +804,9 @@
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 5,
@@ -714,70 +814,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Google Security Operations SIEM overview | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/chronicle/docs/overview",
-      "description": "<strong>Collector: A software component</strong>, ... Google SecOps. Ingestion APIs: APIs that enable logs to be sent directly to the Google Security Operations platform, eliminating the need for additional hardware or software in customer environments.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 67,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "Google SecOps features in Security Command Center Enterprise | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/security-command-center/docs/secops-limits",
-      "description": "For information about using these features, see Google Security Operations documentation. The following sections describe the type of log data that customers with Security Command Center Enterprise can ingest directly to the Google Security Operations tenant. This data collection mechanism is different than the AWS connector in Security Command Center that collects resource and configuration data. The information is grouped by cloud provider. ... For each type of log listed, the Google SecOps ingestion label is provided, for example GCP_CLOUDAUDIT.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 67,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
       "keep": false
     },
     {
@@ -801,17 +837,55 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 22,
-      "deterministic_score": 90,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
-        "score": 90,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
-        "coverage_value": 1,
+        "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 92,
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Security Operations SIEM overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/overview",
+      "description": "<strong>Collector: A software component</strong>, ... Google SecOps. Ingestion APIs: APIs that enable logs to be sent directly to the Google Security Operations platform, eliminating the need for additional hardware or software in customer environments.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
       "keep": false
     },
     {
@@ -830,11 +904,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -860,11 +937,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -890,11 +970,47 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Sign in to Google SecOps | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/log-in-to-ui",
+      "description": "Note: Google SecOps converts all recorded event timestamps to UTC to maintain consistency across all security data.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -920,11 +1036,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -950,15 +1069,18 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -982,11 +1104,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1000,7 +1125,7 @@
       "title": "Google SecOps APIs and libraries overview | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-secops-api-libraries-overview",
       "description": "For a more general overview of client libraries within Google Cloud, see Client libraries explained. To use the APIs, you must authenticate your client&#x27;s identity. You can learn more about per API authentication in the respective API documentation. The Chronicle API is the new-generation, unified API for Google SecOps...",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview"
       ],
@@ -1010,18 +1135,54 @@
       "round_hits": [
         2
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Export to a self-managed BigQuery project | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/reports",
+      "description": "Storage Object Viewer (roles/storage.objectViewer) You can also assign roles at the dataset level. For more information, see BigQuery IAM roles and permissions. Create a Google Cloud project where you want your data to be exported. For more information, see Configure a Google Cloud project for Google SecOps.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1042,16 +1203,19 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1072,16 +1236,19 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1102,16 +1269,19 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1120,7 +1290,7 @@
       "title": "Map users in the Google SecOps platform | Google Security Operations | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
       "description": "When users attempt to sign in to the Google SecOps platform, but their IdP group hasn&#x27;t been mapped, for users not to be rejected, we recommend enabling the Default Access Settings and setting administrator permissions on this page. After the initial administrator setup is complete, we suggest adjusting the administrator permissions to a more minimal level. This section describes how to map different IdP groups to one or more access control parameters within the IdP Group Mapping page.",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Google SecOps\" \"access control\""
       ],
@@ -1130,16 +1300,19 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1162,11 +1335,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1192,11 +1368,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1222,15 +1401,51 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google SecOps features in Security Command Center Enterprise | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/security-command-center/docs/secops-limits",
+      "description": "For information about investigating alerts, see the following in Google Security Operations documentation: Investigating a GCTI alert generated by curated detections. Investigating an alert. In the Security Operations console, you use cases to obtain details about findings, attach playbooks to finding alerts, apply automatic threat responses, and track the remediation of security issues. For information, see Cases overview. This Security Operations console page lets you manage playbooks included in the SCC Enterprise - Cloud Orchestration and Remediation use case.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Google SecOps\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1255,8 +1470,11 @@
       "product_fit_score": 22,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -1264,7 +1482,7 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "SOAR migration overview | Google Security Operations | Google Cloud Documentation",
@@ -1283,17 +1501,20 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 22,
-      "deterministic_score": 64,
+      "deterministic_score": 82,
       "api_score": {
         "classification": "supporting_page",
-        "score": 64,
-        "parent_page_likelihood": 3,
+        "score": 82,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
         "product_match": 3,
-        "coverage_value": 1,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 59,
+      "final_score": 75,
       "keep": false
     }
   ]

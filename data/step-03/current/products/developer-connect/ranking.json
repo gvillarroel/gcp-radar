@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T15:55:44.127Z",
+  "generated_at": "2026-04-08T21:52:38.396Z",
   "product_name": "Developer Connect",
   "product_slug": "developer-connect",
-  "step02_source_path": "data/step-02/current/products/developer-connect.md",
+  "step02_source_path": "data/step-02/current/developer-connect.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "developer-connect",
   "dominant_python_slug": "google-cloud-developerconnect",
@@ -19,6 +19,32 @@
       "query": "site:docs.cloud.google.com \"Developer Connect\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Developer Connect\" official documentation OR site:developers.google.com \"developer connect\" official documentation",
+      "official_result_count": 3,
+      "results": [
+        {
+          "title": "Review GitHub code using Gemini Code Assist | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/review-repo-code",
+          "description": "<strong>The enterprise version uses a Developer Connect connection to connect your GitHub repositories to Google Cloud</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Set up Gemini Code Assist on GitHub | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/set-up-code-assist-github",
+          "description": "Note: Gemini Code Assist on GitHub creates the Developer Connect connection in us-east1 and doesn&#x27;t support using existing connections you might have for other features, such as code customization.",
+          "rank": 2
+        },
+        {
+          "title": "Code customization overview | Gemini Code Assist | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/code-customization-overview",
+          "description": "Code customization supports only Developer Connect connections in the following locations (regions): ... Code customization doesn&#x27;t index media. Code customization supports only documentation (in Markdown) and the following languages:",
+          "rank": 3
+        }
+      ]
     },
     {
       "round": 1,
@@ -97,27 +123,27 @@
           "rank": 4
         },
         {
-          "title": "Quickstart: Connect a source code repository | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-repo",
-          "description": "If the repository is in a GitHub organization, request admin-level permissions from the organization owner. To learn more about GitHub organizations, see GitHub account types. <strong>Open the Developer Connect page in the Google Cloud</strong> ...",
+          "title": "Connect to GitLab Enterprise repositories in a private network | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+          "description": "You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitLab Enterprise source code repositories with Google. Specifically, you can use GitLab Enterprise repositories with Gemini Code Assist. Note: Developer Connect also supports GitLab Community Edition. The steps in this document are for both GitLab Enterprise repositories and GitLab Community Edition repositories.",
           "rank": 5
-        },
-        {
-          "title": "Connect to GitHub Enterprise | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
-          "description": "This page describes how to create connections to GitHub Enterprise and create links to GitHub Enterprise repositories. You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitHub Enterprise source code repositories with Google.",
-          "rank": 6
         },
         {
           "title": "APIs and reference | Developer Connect | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/developer-connect/docs/apis",
           "description": "Get details about client libraries and APIs",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Connect to Bitbucket Data Center repositories hosted in a private network | Developer Connect | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
           "description": "This page describes how to connect to Bitbucket Data Center repositories hosted in a private network by using Developer Connect and Service Directory. You can complete these tasks using the Google Cloud console, or the Google Cloud CLI.",
+          "rank": 7
+        },
+        {
+          "title": "Connect to GitHub Enterprise | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+          "description": "This page describes how to create connections to GitHub Enterprise and create links to GitHub Enterprise repositories. You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitHub Enterprise source code repositories with Google.",
           "rank": 8
         }
       ]
@@ -147,6 +173,26 @@
           "url": "https://docs.cloud.google.com/developer-connect/docs/apis",
           "description": "Get details about client libraries and APIs",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Developer Connect\" reference OR site:developers.google.com \"developer connect\" reference",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Review GitHub code using Gemini Code Assist | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/review-repo-code",
+          "description": "The enterprise version uses a Developer Connect connection to connect your GitHub repositories to Google Cloud.",
+          "rank": 1
+        },
+        {
+          "title": "Set up Gemini Code Assist on GitHub | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/set-up-code-assist-github",
+          "description": "Note: If you create a new GitHub repository in the future and want to add it to the linked repositories in your connection, you must use Developer Connect to do so.",
+          "rank": 2
         }
       ]
     },
@@ -208,9 +254,9 @@
           "rank": 4
         },
         {
-          "title": "Connect to GitLab | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab",
-          "description": "You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitLab source code repositories with Google. Specifically, you can use GitLab repositories with Gemini Code Assist. To learn more about Developer Connect, see Developer Connect overview.",
+          "title": "Connect to GitLab Enterprise repositories in a private network | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+          "description": "The steps in this document are for both GitLab Enterprise repositories and GitLab Community Edition repositories. To learn more about Developer Connect, see Developer Connect overview. Sign in to your Google Account. If you don&#x27;t already have one, sign up for a new account. In the Google Cloud ...",
           "rank": 5
         },
         {
@@ -226,9 +272,9 @@
           "rank": 7
         },
         {
-          "title": "Connect to GitLab Enterprise repositories in a private network | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
-          "description": "The steps in this document are for both GitLab Enterprise repositories and GitLab Community Edition repositories. To learn more about Developer Connect, see Developer Connect overview. Sign in to your Google Account. If you don&#x27;t already have one, sign up for a new account. In the Google Cloud ...",
+          "title": "HTTP connections | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/http-connections",
+          "description": "For example, with an HTTP connection ... to access that documented when needed. By maintaining a link to an arbitrary resource accessible using an HTTP-based API, Developer Connect handles authentication to that resource every time a Google Cloud service (such as Gemini Code ...",
           "rank": 8
         }
       ]
@@ -256,6 +302,26 @@
     },
     {
       "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Developer Connect\" overview OR site:developers.google.com \"developer connect\" overview",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Code customization overview | Gemini Code Assist | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/code-customization-overview",
+          "description": "Code customization supports only Developer Connect connections in the following locations (regions):",
+          "rank": 1
+        },
+        {
+          "title": "Set up Gemini Code Assist on GitHub | Google for Developers",
+          "url": "https://developers.google.com/gemini-code-assist/docs/set-up-code-assist-github",
+          "description": "In the drop-down, click Create new connection. The Link Git repositories via Developer Connect pane opens.",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Developer Connect\" IAM roles permissions",
       "official_result_count": 8,
@@ -273,14 +339,14 @@
           "rank": 2
         },
         {
-          "title": "Connect to GitHub | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-repo",
+          "title": "Connect to Bitbucket Cloud | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-cloud",
           "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
           "rank": 3
         },
         {
-          "title": "Connect to Bitbucket Cloud | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-cloud",
+          "title": "Connect to GitHub | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-repo",
           "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
           "rank": 4
         },
@@ -297,15 +363,15 @@
           "rank": 6
         },
         {
-          "title": "Connect to GitHub Enterprise Cloud | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-cloud",
+          "title": "Connect to GitLab | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab",
           "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
           "rank": 7
         },
         {
-          "title": "Configure account connectors in Gemini Code Assist tools | Developer Connect | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/developer-connect/docs/configure-connectors-for-gemini-tools",
-          "description": "Developer Connect OAuth User (roles/developerconnect.oauthUser) Gemini for Google Cloud Settings User (roles/cloudaicompanion.settingsUser) For more information about granting roles, see Manage access to projects, folders, and organizations. You might also be able to get the required permissions through custom roles or other predefined roles.",
+          "title": "Connect to GitHub Enterprise Cloud | Developer Connect | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-cloud",
+          "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
           "rank": 8
         }
       ]
@@ -402,11 +468,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -436,11 +505,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -454,11 +526,11 @@
       "title": "APIs and reference | Developer Connect | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/developer-connect/docs/apis",
       "description": "Get details about client libraries and APIs",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Developer Connect\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Developer Connect\" \"APIs and reference\"",
+        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -472,11 +544,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -506,11 +581,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -540,16 +618,56 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Set up Gemini Code Assist on GitHub | Google for Developers",
+      "url": "https://developers.google.com/gemini-code-assist/docs/set-up-code-assist-github",
+      "description": "Note: Gemini Code Assist on GitHub creates the Developer Connect connection in us-east1 and doesn&#x27;t support using existing connections you might have for other features, such as code customization.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Developer Connect\" official documentation OR site:developers.google.com \"developer connect\" official documentation",
+        "site:developers.google.com \"Developer Connect\" reference OR site:developers.google.com \"developer connect\" reference",
+        "site:developers.google.com \"Developer Connect\" overview OR site:developers.google.com \"developer connect\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
@@ -573,11 +691,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -604,13 +725,16 @@
         1,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -621,9 +745,9 @@
       "keep": false
     },
     {
-      "title": "Quickstart: Connect a source code repository | Developer Connect | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/developer-connect/docs/connect-repo",
-      "description": "If the repository is in a GitHub organization, request admin-level permissions from the organization owner. To learn more about GitHub organizations, see GitHub account types. <strong>Open the Developer Connect page in the Google Cloud</strong> ...",
+      "title": "Connect to GitLab Enterprise repositories in a private network | Developer Connect | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+      "description": "You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitLab Enterprise source code repositories with Google. Specifically, you can use GitLab Enterprise repositories with Gemini Code Assist. Note: Developer Connect also supports GitLab Community Edition. The steps in this document are for both GitLab Enterprise repositories and GitLab Community Edition repositories.",
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Developer Connect\" Google Cloud documentation",
@@ -636,13 +760,51 @@
         1,
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "HTTP connections | Developer Connect | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/developer-connect/docs/http-connections",
+      "description": "For example, with an HTTP connection ... to access that documented when needed. By maintaining a link to an arbitrary resource accessible using an HTTP-based API, Developer Connect handles authentication to that resource every time a Google Cloud service (such as Gemini Code ...",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -670,11 +832,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -683,6 +848,76 @@
       },
       "final_score": 95,
       "keep": true
+    },
+    {
+      "title": "Code customization overview | Gemini Code Assist | Google for Developers",
+      "url": "https://developers.google.com/gemini-code-assist/docs/code-customization-overview",
+      "description": "Code customization supports only Developer Connect connections in the following locations (regions): ... Code customization doesn&#x27;t index media. Code customization supports only documentation (in Markdown) and the following languages:",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Developer Connect\" official documentation OR site:developers.google.com \"developer connect\" official documentation",
+        "site:developers.google.com \"Developer Connect\" overview OR site:developers.google.com \"developer connect\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Review GitHub code using Gemini Code Assist | Google for Developers",
+      "url": "https://developers.google.com/gemini-code-assist/docs/review-repo-code",
+      "description": "<strong>The enterprise version uses a Developer Connect connection to connect your GitHub repositories to Google Cloud</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com \"Developer Connect\" official documentation OR site:developers.google.com \"developer connect\" official documentation",
+        "site:developers.google.com \"Developer Connect\" reference OR site:developers.google.com \"developer connect\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Developer Connect roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
@@ -702,13 +937,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -732,11 +970,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -762,11 +1003,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -792,11 +1036,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -807,40 +1054,10 @@
       "keep": false
     },
     {
-      "title": "Configure account connectors in Gemini Code Assist tools | Developer Connect | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/developer-connect/docs/configure-connectors-for-gemini-tools",
-      "description": "Developer Connect OAuth User (roles/developerconnect.oauthUser) Gemini for Google Cloud Settings User (roles/cloudaicompanion.settingsUser) For more information about granting roles, see Manage access to projects, folders, and organizations. You might also be able to get the required permissions through custom roles or other predefined roles.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
       "title": "Connect to Bitbucket Cloud | Developer Connect | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-cloud",
       "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Developer Connect\" IAM roles permissions"
       ],
@@ -850,13 +1067,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -870,7 +1090,7 @@
       "title": "Connect to Bitbucket Data Center repositories hosted in a private network | Developer Connect | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
       "description": "This page describes how to connect to Bitbucket Data Center repositories hosted in a private network by using Developer Connect and Service Directory. You can complete these tasks using the Google Cloud console, or the Google Cloud CLI.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Developer Connect\" Google Cloud documentation"
       ],
@@ -880,13 +1100,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -900,7 +1123,7 @@
       "title": "Connect to GitHub Enterprise | Developer Connect | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
       "description": "This page describes how to create connections to GitHub Enterprise and create links to GitHub Enterprise repositories. You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitHub Enterprise source code repositories with Google.",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Developer Connect\" Google Cloud documentation"
       ],
@@ -910,13 +1133,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -930,7 +1156,7 @@
       "title": "Connect to GitHub Enterprise Cloud | Developer Connect | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-cloud",
       "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Developer Connect\" IAM roles permissions"
       ],
@@ -940,13 +1166,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -959,89 +1188,65 @@
     {
       "title": "Connect to GitLab | Developer Connect | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab",
-      "description": "You can complete these tasks using the Google Cloud console, or the Google Cloud CLI. These instructions are for application developers, platform administrators, and security managers who want to use GitLab source code repositories with Google. Specifically, you can use GitLab repositories with Gemini Code Assist. To learn more about Developer Connect, see Developer Connect overview.",
-      "rank": 5,
+      "description": "Note: When you have the Project IAM Admin (roles/resourcemanager.projectIamAdmin) role, the Google Cloud console can automatically grant necessary permissions on your behalf. If your administrator won&#x27;t allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin (roles/secretmanager.admin) on the Developer Connect Service Account (service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com).",
+      "rank": 7,
       "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud docs overview"
+        "site:docs.cloud.google.com \"Developer Connect\" IAM roles permissions"
       ],
       "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Connect to GitLab Enterprise repositories in a private network | Developer Connect | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
-      "description": "The steps in this document are for both GitLab Enterprise repositories and GitLab Community Edition repositories. To learn more about Developer Connect, see Developer Connect overview. Sign in to your Google Account. If you don&#x27;t already have one, sign up for a new account. In the Google Cloud ...",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "HTTP connections | Developer Connect | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/developer-connect/docs/http-connections",
-      "description": "By maintaining a link to an arbitrary resource accessible using an HTTP-based API, Developer Connect handles authentication to that resource every time a Google Cloud service (such as Gemini Code Assist) accesses it.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
+        "iam_permissions"
       ],
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Quickstart: Connect a source code repository | Developer Connect | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/developer-connect/docs/connect-repo",
+      "description": "Or, follow the GitHub documentation to create new ones: ... If you&#x27;re using an existing repository and you aren&#x27;t the owner, ask the owner to grant admin-level permissions to the repository. If the repository is in a GitHub organization, request admin-level permissions from the organization owner. To learn more about GitHub organizations, see GitHub account types. Open the Developer Connect page in the Google Cloud ...",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
       "keep": false
@@ -1062,14 +1267,116 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Grant roles to your service account | Application Design Center | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-design-center/docs/grant-roles-service-account",
+      "description": "If the application you&#x27;re deploying contains private components that you imported through a Developer Connect connection, do the following: Grant your service account the roles/iam.serviceAccountTokenCreator role on the project where you created the service account.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Developer Connect\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Cloud Build repositories | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/build/docs/repositories",
+      "description": "<strong>Developer Connect lets you connect non-Google products or non-Google developer tools to Google Cloud using standardized steps and apps</strong>. You can configure Cloud Build to use a repository linked to a Developer Connect connection and then create ...",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Developer Connect V1 API - Class Google::Cloud::Developerconnect::V1::GoogleCloudRun (v1.5.0) | Ruby client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-developer_connect-v1/latest/Google-Cloud-Developerconnect-V1-GoogleCloudRun",
+      "description": "Reference documentation and code samples for the Developer Connect V1 API class Google::Cloud::Developerconnect::V1::GoogleCloudRun.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1092,11 +1399,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 68,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1122,11 +1432,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 68,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1135,96 +1448,6 @@
       },
       "final_score": 90,
       "keep": true
-    },
-    {
-      "title": "Grant roles to your service account | Application Design Center | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/application-design-center/docs/grant-roles-service-account",
-      "description": "If the application you&#x27;re deploying contains private components that you imported through a Developer Connect connection, do the following: Grant your service account the roles/iam.serviceAccountTokenCreator role on the project where you created the service account.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Build repositories | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/build/docs/repositories",
-      "description": "<strong>Developer Connect lets you connect non-Google products or non-Google developer tools to Google Cloud using standardized steps and apps</strong>. You can configure Cloud Build to use a repository linked to a Developer Connect connection and then create ...",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Developer Connect V1 API - Class Google::Cloud::Developerconnect::V1::GoogleCloudRun (v1.5.0) | Ruby client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-developer_connect-v1/latest/Google-Cloud-Developerconnect-V1-GoogleCloudRun",
-      "description": "Reference documentation and code samples for the Developer Connect V1 API class Google::Cloud::Developerconnect::V1::GoogleCloudRun.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Developer Connect\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
     }
   ]
 }

@@ -28,4 +28,4 @@ This file lists the official Google documentation URLs selected and scored for t
 | 90 | yes | api_reference | https://docs.cloud.google.com/identity-platform/docs/reference/rest | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/identity-platform/docs/web/saml | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/identity/account-linking | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 90 | no | irrelevant | https://developers.google.com/identity/toolkit/web/reference | 1 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 90 | no | irrelevant | https://developers.google.com/identity/toolkit/ios/reference/interface_g_i_t_account | 1 | Heuristic tail scoring was applied outside the API-ranked set. |

@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:17:18.314Z",
+  "generated_at": "2026-04-08T23:40:40.949Z",
   "product_name": "Anthos clusters on AWS (previous generation)",
   "product_slug": "anthos-clusters-on-aws-previous-generation",
   "step02_source_path": "data/step-02/current/anthos-clusters-on-aws-previous-generation.md",
@@ -11,7 +11,7 @@
   "dominant_doc_family": "",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 1,
+  "candidates_scored_by_api": 18,
   "search_runs": [
     {
       "round": 1,
@@ -24,6 +24,62 @@
           "url": "https://docs.cloud.google.com/service-mesh/v1.22/docs/release-notes",
           "description": "Anthos clusters on AWS (previous generation) is <strong>deprecated as of April 1, 2023</strong>. Therefore, Anthos Service Mesh no longer supports Anthos clusters on AWS (previous generation).",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "anthos_multicloud_reference_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "API roles and permissions | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/api-permissions",
+          "description": "The GKE on AWS API includes the predefined gkemulticloud.viewer, and gkemulticloud.admin roles. These roles are described in the following table: Additional IAM roles, such as owner and editor, include GKE on AWS permissions. For more information, see the complete IAM Permissions reference list.",
+          "rank": 1
+        },
+        {
+          "title": "AWS IAM role list | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/aws-iam-role-list",
+          "description": "Reference · Send feedback · The tables on this page list all of the permissions used in creating the default AWS IAM roles. To create these policies with default permissions, see Create AWS IAM roles. GKE Multi-Cloud API service agent role · The GKE Multi-Cloud API uses this AWS IAM role to manage resources using AWS APIs.",
+          "rank": 2
+        },
+        {
+          "title": "Create AWS IAM roles | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-aws-iam-roles",
+          "description": "If you choose to create permissions that operate on resources with certain tags, you must choose a tag and a value. You then use these values to tag the resources within your cluster to restrict access to them. To create the GKE Multi-Cloud API service agent role, use the following command to retrieve your Google Cloud project number and use it to create the role.",
+          "rank": 3
+        },
+        {
+          "title": "About AWS IAM roles | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/aws-iam-roles",
+          "description": "You must provide Google Cloud with AWS IAM permissions to create these resources. GKE on AWS uses identity federation in AWS to manage fine-grained access to your AWS account. When GKE on AWS needs to take an action for your cluster, it requests a short-lived token from AWS. The GKE Multi-Cloud API role uses this token to authenticate to AWS.",
+          "rank": 4
+        },
+        {
+          "title": "Authentication overview | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+          "description": "The GKE Multi-Cloud API lets cluster administrators create, update, and delete clusters and node pools. You manage permissions for the API with Identity and Access Management (IAM). To use the API, users must have the appropriate permissions. For the permissions necessary for each operation, ...",
+          "rank": 5
+        },
+        {
+          "title": "Use workload identity with AWS | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/use-workload-identity-aws",
+          "description": "apiVersion: v1 kind: Namespace metadata: name: NAMESPACE --- apiVersion: v1 kind: ServiceAccount metadata: name: KSA_NAME namespace: NAMESPACE automountServiceAccountToken: false --- apiVersion: v1 kind: Pod metadata: name: aws-cli-example namespace: NAMESPACE spec: serviceAccount: KSA_NAME containers: - name: aws-cli image: amazon/aws-cli:latest command: - /bin/bash - -c - &quot;set -eu -o pipefail; while true; do aws ec2 describe-availability-zones; sleep 5; done&quot; env: - name: AWS_ROLE_ARN value: AWS_ROLE_ARN - name: AWS_WEB_IDENTITY_TOKEN_FILE value: /var/run/secrets/aws-iam-token/serviceaccount",
+          "rank": 6
+        },
+        {
+          "title": "Create a cluster | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster",
+          "description": "The AWS IAM instance profile for each control plane replica. This requires a specific set of IAM permissions.",
+          "rank": 7
+        },
+        {
+          "title": "Use workload identity with Google Cloud | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/use-workload-identity-google",
+          "description": "In this section, you deploy a sample application that accesses the Compute Engine API. To Use this sample, your service account must have the roles/compute.viewer IAM role granted to it.",
+          "rank": 8
         }
       ]
     },
@@ -85,6 +141,62 @@
     },
     {
       "round": 2,
+      "intent": "anthos_multicloud_reference_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "GKE on AWS architecture | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/architecture",
+          "description": "GKE on AWS uses AWS APIs to provision the resources needed by your cluster, including virtual machines, managed disks, Auto Scaling group, security groups, and load balancers.",
+          "rank": 1
+        },
+        {
+          "title": "GKE on AWS documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws",
+          "description": "GKE on AWS lets you manage GKE clusters running on AWS infrastructure through the GKE Multi-Cloud API. Combined with Connect, GKE on AWS lets you manage GKE clusters on both Google Cloud and AWS from the Google Cloud console.",
+          "rank": 2
+        },
+        {
+          "title": "About AWS IAM roles | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/aws-iam-roles",
+          "description": "GKE on AWS uses the AWS API to create resources such as EC2 instances, auto-scaling groups, and load balancers for both GKE on AWS components and your workloads.",
+          "rank": 3
+        },
+        {
+          "title": "GKE on AWS deprecation announcement | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/deprecations/deprecation-announcement",
+          "description": "APIs will be disabled.",
+          "rank": 4
+        },
+        {
+          "title": "AWS IAM role list | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/aws-iam-role-list",
+          "description": "The GKE Multi-Cloud API uses this AWS IAM role to manage resources using AWS APIs.",
+          "rank": 5
+        },
+        {
+          "title": "Cloud monitoring | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/cloud-monitoring",
+          "description": "Configure the Google Cloud CLI and enable the required APIs in your Google Cloud project.",
+          "rank": 6
+        },
+        {
+          "title": "Versioning | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/versioning",
+          "description": "Kubernetes releases a new minor version three times a year. Each release cycle is approximately 15 weeks long. Deprecated APIs might be removed with a new minor version. A minor version increments the Kubernetes version from 1.y to 1.y+1; for example, Kubernetes 1.",
+          "rank": 7
+        },
+        {
+          "title": "Create AWS IAM roles | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-aws-iam-roles",
+          "description": "The GKE Multi-Cloud API uses this AWS IAM role to manage resources using AWS APIs.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Anthos clusters on AWS (previous generation)\" \"APIs and reference\"",
       "official_result_count": 0,
@@ -135,9 +247,72 @@
     {
       "round": 3,
       "intent": "anthos_docs",
-      "query": "site:cloud.google.com/anthos/docs \"Anthos clusters on AWS (previous generation)\"",
-      "official_result_count": 0,
-      "results": []
+      "query": "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "GKE on AWS documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws",
+          "description": "GKE on AWS <strong>lets you manage GKE clusters running on AWS infrastructure through the GKE Multi-Cloud API</strong>. Combined with Connect, GKE on AWS lets you manage GKE clusters on both Google Cloud and AWS from the Google Cloud console.",
+          "rank": 1
+        },
+        {
+          "title": "GKE on AWS architecture | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/architecture",
+          "description": "GKE on AWS is <strong>a managed service that helps you provision, operate, and scale Kubernetes clusters in your AWS account</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "GKE on AWS deprecation announcement | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/deprecations/deprecation-announcement",
+          "description": "Google will cease maintenance and contracted support for GKE on AWS from <strong>March 17, 2027</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "How-to guides | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to",
+          "description": "Create an AWS KMS key to encrypt your application data. Create an EC2 key pair to secure communications within your cluster. Manage identity with Anthos Identity Service. Configure a network policy. Configure network load balancing for your cluster. Configure an HTTP/S load balancer for your cluster. ... Route <strong>GKE on AWS</strong> traffic through an HTTP proxy.",
+          "rank": 4
+        },
+        {
+          "title": "GKE on AWS release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "description": "You can now enable and update CloudWatch metrics collection on AWS node pool&#x27;s auto scaling group. To use this feature your API role must have the autoscaling:EnableMetricsCollection and autoscaling:DisableMetricsCollection permissions. ... You can now dynamically update AWS node pool security groups. To do so your API role must have the ec2:ModifyInstanceAttribute and ec2:DescribeInstances permissions. ... Added a new token manager (gke-token-manager) to generate tokens for control plane components.",
+          "rank": 5
+        },
+        {
+          "title": "Metrics available in 1.28.10-gke.800 | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/versions/v1.28.10-gke.800/metrics",
+          "description": "The product described by this documentation, GKE on AWS, is <strong>now in maintenance mode and will be shut down on March 17, 2027</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "GKE deployment options | Google Kubernetes Engine (GKE) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options",
+          "description": "<strong>GKE on AWS</strong> · GKE on Azure · GKE attached clusters, which are third-party Kubernetes clusters registered to your fleet. This page is for Operators who define IT solutions and system architecture in accordance with company strategy in coordination with key stakeholders.",
+          "rank": 7
+        },
+        {
+          "title": "Versioning | GKE on AWS | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/versioning",
+          "description": "The product described by this documentation, GKE on AWS, is <strong>now in maintenance mode and will be shut down on March 17, 2027</strong>.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "anthos_multicloud_reference_docs",
+      "query": "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest \"GKE Multi-Cloud API\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "GKE Multi-Cloud API | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+          "description": "GKE Multi-Cloud <strong>provides a way to manage Kubernetes clusters that run on AWS and Azure infrastructure</strong> using the GKE Multi-Cloud API.",
+          "rank": 1
+        }
+      ]
     },
     {
       "round": 3,
@@ -212,11 +387,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 76,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -224,6 +402,651 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "GKE on AWS documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws",
+      "description": "GKE on AWS lets you manage GKE clusters running on AWS infrastructure through the GKE Multi-Cloud API. Combined with Connect, GKE on AWS lets you manage GKE clusters on both Google Cloud and AWS from the Google Cloud console.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis",
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs",
+        "anthos_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 96,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "GKE on AWS architecture | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/architecture",
+      "description": "GKE on AWS uses AWS APIs to provision the resources needed by your cluster, including virtual machines, managed disks, Auto Scaling group, security groups, and load balancers.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis",
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs",
+        "anthos_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "About AWS IAM roles | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/aws-iam-roles",
+      "description": "You must provide Google Cloud with AWS IAM permissions to create these resources. GKE on AWS uses identity federation in AWS to manage fine-grained access to your AWS account. When GKE on AWS needs to take an action for your cluster, it requests a short-lived token from AWS. The GKE Multi-Cloud API role uses this token to authenticate to AWS.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions",
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "GKE on AWS deprecation announcement | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/deprecations/deprecation-announcement",
+      "description": "APIs will be disabled.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis",
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs",
+        "anthos_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Create AWS IAM roles | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-aws-iam-roles",
+      "description": "If you choose to create permissions that operate on resources with certain tags, you must choose a tag and a value. You then use these values to tag the resources within your cluster to restrict access to them. To create the GKE Multi-Cloud API service agent role, use the following command to retrieve your Google Cloud project number and use it to create the role.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions",
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "AWS IAM role list | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/aws-iam-role-list",
+      "description": "Reference · Send feedback · The tables on this page list all of the permissions used in creating the default AWS IAM roles. To create these policies with default permissions, see Create AWS IAM roles. GKE Multi-Cloud API service agent role · The GKE Multi-Cloud API uses this AWS IAM role to manage resources using AWS APIs.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions",
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Versioning | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/versioning",
+      "description": "Kubernetes releases a new minor version three times a year. Each release cycle is approximately 15 weeks long. Deprecated APIs might be removed with a new minor version. A minor version increments the Kubernetes version from 1.y to 1.y+1; for example, Kubernetes 1.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis",
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs",
+        "anthos_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 67,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Authentication overview | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/authentication",
+      "description": "The GKE Multi-Cloud API lets cluster administrators create, update, and delete clusters and node pools. You manage permissions for the API with Identity and Access Management (IAM). To use the API, users must have the appropriate permissions. For the permissions necessary for each operation, ...",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 96,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "How-to guides | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to",
+      "description": "Create an AWS KMS key to encrypt your application data. Create an EC2 key pair to secure communications within your cluster. Manage identity with Anthos Identity Service. Configure a network policy. Configure network load balancing for your cluster. Configure an HTTP/S load balancer for your cluster. ... Route <strong>GKE on AWS</strong> traffic through an HTTP proxy.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 96,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "API roles and permissions | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/apis",
+      "description": "The GKE on AWS API includes the predefined gkemulticloud.viewer, and gkemulticloud.admin roles. These roles are described in the following table: Additional IAM roles, such as owner and editor, include GKE on AWS permissions. For more information, see the complete IAM Permissions reference list.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Cloud monitoring | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/cloud-monitoring",
+      "description": "Configure the Google Cloud CLI and enable the required APIs in your Google Cloud project.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws apis"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create a cluster | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster",
+      "description": "The AWS IAM instance profile for each control plane replica. This requires a specific set of IAM permissions.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Use workload identity with AWS | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/use-workload-identity-aws",
+      "description": "apiVersion: v1 kind: Namespace metadata: name: NAMESPACE --- apiVersion: v1 kind: ServiceAccount metadata: name: KSA_NAME namespace: NAMESPACE automountServiceAccountToken: false --- apiVersion: v1 kind: Pod metadata: name: aws-cli-example namespace: NAMESPACE spec: serviceAccount: KSA_NAME containers: - name: aws-cli image: amazon/aws-cli:latest command: - /bin/bash - -c - &quot;set -eu -o pipefail; while true; do aws ec2 describe-availability-zones; sleep 5; done&quot; env: - name: AWS_ROLE_ARN value: AWS_ROLE_ARN - name: AWS_WEB_IDENTITY_TOKEN_FILE value: /var/run/secrets/aws-iam-token/serviceaccount",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Use workload identity with Google Cloud | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/use-workload-identity-google",
+      "description": "In this section, you deploy a sample application that accesses the Compute Engine API. To Use this sample, your service account must have the roles/compute.viewer IAM role granted to it.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "API roles and permissions | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/api-permissions",
+      "description": "The GKE on AWS API includes the predefined gkemulticloud.viewer, and gkemulticloud.admin roles. These roles are described in the following table: Additional IAM roles, such as owner and editor, include GKE on AWS permissions. For more information, see the complete IAM Permissions reference list.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws reference api permissions"
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Metrics available in 1.28.10-gke.800 | GKE on AWS | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/reference/versions/v1.28.10-gke.800/metrics",
+      "description": "The product described by this documentation, GKE on AWS, is <strong>now in maintenance mode and will be shut down on March 17, 2027</strong>.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "GKE on AWS release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+      "description": "You can now enable and update CloudWatch metrics collection on AWS node pool&#x27;s auto scaling group. To use this feature your API role must have the autoscaling:EnableMetricsCollection and autoscaling:DisableMetricsCollection permissions. ... You can now dynamically update AWS node pool security groups. To do so your API role must have the ec2:ModifyInstanceAttribute and ec2:DescribeInstances permissions. ... Added a new token manager (gke-token-manager) to generate tokens for control plane components.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 90,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "GKE Multi-Cloud API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest",
+      "description": "GKE Multi-Cloud <strong>provides a way to manage Kubernetes clusters that run on AWS and Azure infrastructure</strong> using the GKE Multi-Cloud API.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest \"GKE Multi-Cloud API\""
+      ],
+      "intent_hits": [
+        "anthos_multicloud_reference_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "GKE deployment options | Google Kubernetes Engine (GKE) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/deployment-options",
+      "description": "<strong>GKE on AWS</strong> · GKE on Azure · GKE attached clusters, which are third-party Kubernetes clusters registered to your fleet. This page is for Operators who define IT solutions and system architecture in accordance with company strategy in coordination with key stakeholders.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/kubernetes-engine \"GKE on AWS\""
+      ],
+      "intent_hits": [
+        "anthos_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 54,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
       "keep": false
     }
   ]

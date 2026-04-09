@@ -1,0 +1,89 @@
+version: 1
+name: corpus
+created_at: '2026-04-09T12:33:29+00:00'
+updated_at: '2026-04-09T17:27:22+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-java-reference
+  title: https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview
+  created_at: '2026-04-09T15:13:38+00:00'
+  updated_at: '2026-04-09T15:34:49+00:00'
+  update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-java-reference
+  config:
+    url: https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:34:49+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/dataflow/docs/reference/rest
+  created_at: '2026-04-09T15:26:43+00:00'
+  updated_at: '2026-04-09T15:31:04+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataflow/docs/reference/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/dataflow/docs/reference/rest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T15:31:04+00:00'
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/dataflow/docs/guides/pipeline-best-practices
+  created_at: '2026-04-09T16:08:46+00:00'
+  updated_at: '2026-04-09T16:08:46+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataflow/docs/guides/pipeline-best-practices
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/dataflow/docs/guides/pipeline-best-practices
+    max_depth: 1
+    max_pages: 0
+    compact_output: true
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/dataflow/docs/reference/data-pipelines/rest
+  created_at: '2026-04-09T16:39:02+00:00'
+  updated_at: '2026-04-09T16:39:02+00:00'
+  update_command: know sync site https://docs.cloud.google.com/dataflow/docs/reference/data-pipelines/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/dataflow/docs/reference/data-pipelines/rest
+    max_depth: 1
+    max_pages: 0
+    compact_output: true
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/iam/docs/roles-permissions/dataflow
+  created_at: '2026-04-09T16:57:11+00:00'
+  updated_at: '2026-04-09T16:57:11+00:00'
+  update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/dataflow
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/iam/docs/roles-permissions/dataflow
+    max_depth: 1
+    max_pages: 0
+    compact_output: true
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.types.StreamLocation
+  created_at: '2026-04-09T17:27:22+00:00'
+  updated_at: '2026-04-09T17:27:22+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.types.StreamLocation
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.types.StreamLocation
+    max_depth: 1
+    max_pages: 0
+    compact_output: true

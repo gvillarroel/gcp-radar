@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:19:43.203Z",
+  "generated_at": "2026-04-08T21:51:36.148Z",
   "product_name": "Cloud Trace",
   "product_slug": "cloud-trace",
   "step02_source_path": "data/step-02/current/cloud-trace.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "trace",
   "dominant_python_slug": "cloudtrace",
@@ -123,7 +123,7 @@
         {
           "title": "Class LogEntry (3.24.0) | Java client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.logging.v2.LogEntry",
-          "description": "For example, if your trace data is stored in the Cloud project &quot;my-trace-project&quot; and if the service that is creating the log entry receives a trace header that includes the trace ID &quot;12345&quot;, then the service should use &quot;projects/my-tracing-project/traces/12345&quot;.",
+          "description": "The span ID is expected to be a 16-character, hexadecimal encoding of an 8-byte array and should not be zero. It should be unique within the trace and should, ideally, be generated in a manner that is uniformly random. ... Optional. The ID of the <strong>Cloud Trace</strong> span associated with the current operation in which the log is being written.",
           "rank": 3
         }
       ]
@@ -368,15 +368,15 @@
           "rank": 6
         },
         {
-          "title": "Cloud Trace API | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/trace/docs/reference",
-          "description": "<strong>The Cloud Trace API lets you send latency data to, and retrieve latency data from, Cloud Trace</strong>. To send data to Cloud Trace, we recommend that you use OpenTelemetry. OpenTelemetry is a Google-supported open source project with Google engineers ...",
-          "rank": 7
-        },
-        {
           "title": "Trace storage overview | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/trace/docs/storage-overview",
           "description": "This document <strong>describes the storage model for Cloud Trace data</strong>. It introduces observability buckets, observability views, and links.",
+          "rank": 7
+        },
+        {
+          "title": "Cloud Trace API | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/trace/docs/reference",
+          "description": "<strong>The Cloud Trace API lets you send latency data to, and retrieve latency data from, Cloud Trace</strong>. To send data to Cloud Trace, we recommend that you use OpenTelemetry. OpenTelemetry is a Google-supported open source project with Google engineers ...",
           "rank": 8
         }
       ]
@@ -438,19 +438,19 @@
           "rank": 1
         },
         {
-          "title": "Vertex AI Agent Engine overview | Vertex AI Agent Builder | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/agent-builder/agent-engine/overview",
-          "description": "Observability: Understand agent behavior with Google Cloud Trace (supporting OpenTelemetry), Cloud Monitoring, and Cloud Logging.",
-          "rank": 2
-        },
-        {
           "title": "Trace labels | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/trace/docs/trace-labels",
           "description": "If you are using the Cloud Trace API V2, you can add information by with an Attributes object. When you explore a span, labels for that span are displayed in the Attributes tab. For example, the following screenshot illustrates this tab: For information about how to access this information, see Find and explore traces. The labels field is a map of key-value pairs. They keys and values are stored as strings. For string length restrictions, see the API reference for labels.",
+          "rank": 2
+        },
+        {
+          "title": "Vertex AI Agent Engine overview | Vertex AI Agent Builder | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/agent-builder/agent-engine/overview",
+          "description": "Observability: Understand agent behavior with Google Cloud Trace (supporting OpenTelemetry), Cloud Monitoring, and Cloud Logging.",
           "rank": 3
         },
         {
-          "title": "Query a linked BigQuery dataset | Cloud Trace | Google Cloud Documentation",
+          "title": "Analyze trace data with BigQuery | Cloud Trace | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
           "description": "For a complete list of Observability API endpoints, see the Observability API reference documentation. This section describes how query to your trace data from the BigQuery Studio page.",
           "rank": 4
@@ -556,15 +556,15 @@
           "rank": 4
         },
         {
-          "title": "Share traces and spans | Cloud Trace | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/trace/docs/share-trace-or-span",
-          "description": "To get the permissions that you need to view trace data by using the Google Cloud console, <strong>ask your administrator to grant you the Cloud Trace User (roles/cloudtrace.user) IAM role on the projects that store your trace data</strong>.",
-          "rank": 5
-        },
-        {
           "title": "Migrate to Log Analytics | Cloud Trace | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/trace/docs/analytics-migrate",
           "description": "Verify that billing is enabled for your Google Cloud project. Enable the Observability API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
+          "rank": 5
+        },
+        {
+          "title": "Share traces and spans | Cloud Trace | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/trace/docs/share-trace-or-span",
+          "description": "To get the permissions that you need to view trace data by using the Google Cloud console, <strong>ask your administrator to grant you the Cloud Trace User (roles/cloudtrace.user) IAM role on the projects that store your trace data</strong>.",
           "rank": 6
         },
         {
@@ -664,7 +664,7 @@
         },
         {
           "title": "Python Client for Google Cloud Storage | Python client libraries | Google Cloud Documentation",
-          "url": "https://googleapis.dev/python/storage/latest/index.html",
+          "url": "https://googleapis.dev/python/storage/latest",
           "description": "To enable OpenTelemetry tracing in the Cloud Storage client, first install OpenTelemetry: ... Set the ENABLE_GCS_PYTHON_CLIENT_OTEL_TRACES environment variable to selectively opt-in tracing for the Cloud Storage client:",
           "rank": 3
         },
@@ -698,11 +698,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -733,11 +736,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -767,11 +773,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -803,19 +812,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Instrument for Cloud Trace | Google Cloud Documentation",
@@ -837,11 +849,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -871,11 +886,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -905,11 +923,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -939,11 +960,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -973,11 +997,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1005,11 +1032,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1037,11 +1067,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1069,11 +1102,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1101,11 +1137,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1133,11 +1172,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1165,11 +1207,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1197,11 +1242,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1229,13 +1277,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1261,13 +1312,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1279,7 +1333,7 @@
       "title": "Migrate to Log Analytics | Cloud Trace | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/trace/docs/analytics-migrate",
       "description": "Verify that billing is enabled for your Google Cloud project. Enable the Observability API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the serviceusage.services.enable permission.",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Trace\" IAM roles permissions"
       ],
@@ -1289,13 +1343,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1306,7 +1363,7 @@
       "keep": false
     },
     {
-      "title": "Query a linked BigQuery dataset | Cloud Trace | Google Cloud Documentation",
+      "title": "Analyze trace data with BigQuery | Cloud Trace | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
       "description": "For a complete list of Observability API endpoints, see the Observability API reference documentation. This section describes how query to your trace data from the BigQuery Studio page.",
       "rank": 4,
@@ -1321,11 +1378,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1351,11 +1411,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1381,11 +1444,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1399,7 +1465,7 @@
       "title": "Share traces and spans | Cloud Trace | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/trace/docs/share-trace-or-span",
       "description": "To get the permissions that you need to view trace data by using the Google Cloud console, <strong>ask your administrator to grant you the Cloud Trace User (roles/cloudtrace.user) IAM role on the projects that store your trace data</strong>.",
-      "rank": 5,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Trace\" IAM roles permissions"
       ],
@@ -1409,13 +1475,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1441,11 +1510,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1459,7 +1531,7 @@
       "title": "Trace storage overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/trace/docs/storage-overview",
       "description": "This document <strong>describes the storage model for Cloud Trace data</strong>. It introduces observability buckets, observability views, and links.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Trace\" Google Cloud docs overview"
       ],
@@ -1469,13 +1541,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1501,11 +1576,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1519,7 +1597,7 @@
       "title": "Trace labels | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/trace/docs/trace-labels",
       "description": "If you are using the Cloud Trace API V2, you can add information by with an Attributes object. When you explore a span, labels for that span are displayed in the Attributes tab. For example, the following screenshot illustrates this tab: For information about how to access this information, see Find and explore traces. The labels field is a map of key-value pairs. They keys and values are stored as strings. For string length restrictions, see the API reference for labels.",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Trace\" \"API reference\""
       ],
@@ -1529,13 +1607,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1561,11 +1642,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1591,11 +1675,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1621,11 +1708,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1651,11 +1741,47 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "CloudTrace.Projects.Traces (Cloud Trace API v1 (Rev. 173) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtrace/v1/java/latest/com/google/api/services/cloudtrace/v1/CloudTrace.Projects.Traces.html",
+      "description": "The &quot;traces&quot; collection of methods. clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait ... public CloudTrace.Projects.Traces.Get get(java.lang.String projectId, java.lang.String traceId) throws java.io.IOException",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Trace\" overview OR site:developers.google.com \"cloud trace\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1681,11 +1807,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1711,11 +1840,47 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "CloudTrace.Projects (Cloud Trace API v2 (Rev. 105) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtrace/v2/java/latest/com/google/api/services/cloudtrace/v2/CloudTrace.Projects.html",
+      "description": "<strong>An accessor for creating requests from the Traces collection</strong>. ... CloudTrace cloudtrace = new CloudTrace(...); CloudTrace.Traces.List request = cloudtrace.traces().list(parameters ...)",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Trace\" official documentation OR site:developers.google.com \"cloud trace\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1729,7 +1894,7 @@
       "title": "Vertex AI Agent Engine overview | Vertex AI Agent Builder | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/agent-builder/agent-engine/overview",
       "description": "Observability: Understand agent behavior with Google Cloud Trace (supporting OpenTelemetry), Cloud Monitoring, and Cloud Logging.",
-      "rank": 2,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Trace\" \"API reference\""
       ],
@@ -1739,13 +1904,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 2,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1771,13 +1939,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1801,13 +1972,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1831,13 +2005,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1861,13 +2038,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1891,15 +2071,51 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class LogEntry (3.24.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.logging.v2.LogEntry",
+      "description": "The span ID is expected to be a 16-character, hexadecimal encoding of an 8-byte array and should not be zero. It should be unique within the trace and should, ideally, be generated in a manner that is uniformly random. ... Optional. The ID of the <strong>Cloud Trace</strong> span associated with the current operation in which the log is being written.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Trace\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 26,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 0,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1926,6 +2142,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 1,
         "coverage_value": 4,
@@ -1933,66 +2152,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "CloudTrace.Projects.Traces (Cloud Trace API v1 (Rev. 173) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtrace/v1/java/latest/com/google/api/services/cloudtrace/v1/CloudTrace.Projects.Traces.html",
-      "description": "The &quot;traces&quot; collection of methods. clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait ... public CloudTrace.Projects.Traces.Get get(java.lang.String projectId, java.lang.String traceId) throws java.io.IOException",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Trace\" overview OR site:developers.google.com \"cloud trace\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 89,
-      "keep": false
-    },
-    {
-      "title": "CloudTrace.Projects (Cloud Trace API v2 (Rev. 105) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/cloudtrace/v2/java/latest/com/google/api/services/cloudtrace/v2/CloudTrace.Projects.html",
-      "description": "<strong>An accessor for creating requests from the Traces collection</strong>. ... CloudTrace cloudtrace = new CloudTrace(...); CloudTrace.Traces.List request = cloudtrace.traces().list(parameters ...)",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Trace\" official documentation OR site:developers.google.com \"cloud trace\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 89,
       "keep": false
     },
     {
@@ -2016,6 +2175,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 94,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -2048,6 +2210,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 87,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 4,
@@ -2080,6 +2245,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 87,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 4,
@@ -2087,36 +2255,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 84,
-      "keep": false
-    },
-    {
-      "title": "Python Client for Google Cloud Storage | Python client libraries | Google Cloud Documentation",
-      "url": "https://googleapis.dev/python/storage/latest/index.html",
-      "description": "To enable OpenTelemetry tracing in the Cloud Storage client, first install OpenTelemetry: ... Set the ENABLE_GCS_PYTHON_CLIENT_OTEL_TRACES environment variable to selectively opt-in tracing for the Cloud Storage client:",
-      "rank": 3,
-      "query_hits": [
-        "site:googleapis.dev/python \"Cloud Trace\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": -2,
-      "deterministic_score": 92,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 92,
-        "parent_page_likelihood": 5,
-        "product_match": 1,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 83,
       "keep": false
     },
     {
@@ -2142,6 +2280,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 81,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 4,
@@ -2149,6 +2290,39 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 79,
+      "keep": false
+    },
+    {
+      "title": "Class Context.Builder (3.26.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/overview",
+      "description": "Sets the trace id, span id and trace sampled flag values by parsing the string which represents the standard W3C trace context propagation header. The context propagation header is passed as traceparent header. The method currently supports ONLY version &quot;00&quot;.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Trace\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": -68,
+      "deterministic_score": 71,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 71,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 0,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 65,
       "keep": false
     },
     {
@@ -2172,39 +2346,12 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 53,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 50,
-      "keep": false
-    },
-    {
-      "title": "Class Context.Builder (3.26.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/overview",
-      "description": "Sets the trace id, span id and trace sampled flag values by parsing the string which represents the standard W3C trace context propagation header. The context propagation header is passed as traceparent header. The method currently supports ONLY version &quot;00&quot;.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Trace\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -68,
-      "deterministic_score": 53,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 53,
-        "parent_page_likelihood": 3,
-        "product_match": 0,
-        "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2232,6 +2379,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 42,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 0,
@@ -2264,6 +2414,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 35,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 1,
@@ -2296,6 +2449,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 13,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 1,
         "product_match": 0,
         "coverage_value": 0,
@@ -2322,47 +2478,20 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": -68,
-      "deterministic_score": 0,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 0,
-        "parent_page_likelihood": 0,
-        "product_match": 0,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 5,
-      "keep": false
-    },
-    {
-      "title": "Class LogEntry (3.24.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.logging.v2.LogEntry",
-      "description": "For example, if your trace data is stored in the Cloud project &quot;my-trace-project&quot; and if the service that is creating the log entry receives a trace header that includes the trace ID &quot;12345&quot;, then the service should use &quot;projects/my-tracing-project/traces/12345&quot;.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Trace\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": -68,
-      "deterministic_score": 0,
+      "deterministic_score": 3,
       "api_score": {
         "classification": "supporting_page",
-        "score": 0,
+        "score": 3,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 0,
         "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 5,
+      "final_score": 8,
       "keep": false
     }
   ]

@@ -9,177 +9,21 @@ source_metadata:
   url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/rest
   title: "Financial Services API \_|\_ Anti Money Laundering AI \_|\_ Google Cloud\
     \ Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Financial Services API | Anti Money Laundering AI | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Anti Money Laundering AI
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-Anti Money Laundering AI
-REST Reference
-Overview
-v1
-REST Resources
-projects.locations
-Overview
-get
-list
-projects.locations.instances
-Overview
-create
-delete
-exportRegisteredParties
-get
-importRegisteredParties
-list
-patch
-projects.locations.instances.backtestResults
-Overview
-create
-delete
-exportMetadata
-get
-list
-patch
-projects.locations.instances.datasets
-Overview
-create
-delete
-get
-list
-patch
-projects.locations.instances.engineConfigs
-Overview
-create
-delete
-exportMetadata
-get
-list
-patch
-projects.locations.instances.engineVersions
-Overview
-get
-list
-projects.locations.instances.models
-Overview
-copy
-create
-delete
-exportMetadata
-get
-list
-patch
-projects.locations.instances.predictionResults
-Overview
-create
-delete
-exportMetadata
-get
-list
-patch
-projects.locations.operations
-Overview
-cancel
-delete
-get
-list
-Types
-LineOfBusiness
-AML input data model
-AML output data model
-Lifecycle of a risk case
-Engine versions
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Service: financialservices.googleapis.com Discovery document
-Service endpoint
-REST Resource: v1.projects.locations
-REST Resource: v1.projects.locations.instances
-REST Resource: v1.projects.locations.instances.backtestResults
-REST Resource: v1.projects.locations.instances.datasets
-REST Resource: v1.projects.locations.instances.engineConfigs
-REST Resource: v1.projects.locations.instances.engineVersions
-REST Resource: v1.projects.locations.instances.models
-REST Resource: v1.projects.locations.instances.predictionResults
-REST Resource: v1.projects.locations.operations
 Home
 Documentation
 Industry solutions
 Anti Money Laundering AI
 Reference
-Was this helpful?
 Send feedback
 Financial Services API
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Service: financialservices.googleapis.com Discovery document
-Service endpoint
 REST Resource: v1.projects.locations
 REST Resource: v1.projects.locations.instances
 REST Resource: v1.projects.locations.instances.backtestResults
@@ -189,16 +33,7 @@ REST Resource: v1.projects.locations.instances.engineVersions
 REST Resource: v1.projects.locations.instances.models
 REST Resource: v1.projects.locations.instances.predictionResults
 REST Resource: v1.projects.locations.operations
-REST Resource: v1.projects.locations
-REST Resource: v1.projects.locations.instances
-REST Resource: v1.projects.locations.instances.backtestResults
-REST Resource: v1.projects.locations.instances.datasets
-REST Resource: v1.projects.locations.instances.engineConfigs
-REST Resource: v1.projects.locations.instances.engineVersions
-REST Resource: v1.projects.locations.instances.models
-REST Resource: v1.projects.locations.instances.predictionResults
-REST Resource: v1.projects.locations.operations
-Service: financialservices. googleapis. com
+Service: financialservices.googleapis.com
 To call this service, we recommend that you use the Google-provided client libraries . If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
 Discovery document
 A Discovery Document is a machine-readable specification for describing and consuming REST APIs. It is used to build client libraries, IDE plugins, and other tools that interact with Google APIs. One service may provide multiple discovery documents. This service provides the following discovery document:
@@ -206,73 +41,73 @@ https://financialservices.googleapis.com/$discovery/rest?version=v1
 Service endpoint
 A service endpoint is a base URL that specifies the network address of an API service. One service might have multiple service endpoints. This service has the following service endpoint and all URIs below are relative to this service endpoint:
 https://financialservices.googleapis.com
-REST Resource: v1. projects. locations
+REST Resource: v1.projects.locations
 Methods
 get
-GET / v1/ {name=projects/ */ locations/ *}
+GET /v1/{name=projects/*/locations/*}
 Gets information about a location.
 list
-GET / v1/ {name=projects/ *}/ locations
+GET /v1/{name=projects/*}/locations
 Lists information about the supported locations for this service.
-REST Resource: v1. projects. locations. instances
+REST Resource: v1.projects.locations.instances
 Methods
 create
-POST / v1/ {parent=projects/ */ locations/ *}/ instances
+POST /v1/{parent=projects/*/locations/*}/instances
 Creates an instance.
 delete
-DELETE / v1/ {name=projects/ */ locations/ */ instances/ *}
+DELETE /v1/{name=projects/*/locations/*/instances/*}
 Deletes an instance.
-export Registered Parties
-POST / v1/ {name=projects/ */ locations/ */ instances/ *}:export Registered Parties
+exportRegisteredParties
+POST /v1/{name=projects/*/locations/*/instances/*}:exportRegisteredParties
 Exports the list of registered parties.
 get
-GET / v1/ {name=projects/ */ locations/ */ instances/ *}
+GET /v1/{name=projects/*/locations/*/instances/*}
 Gets an instance.
-import Registered Parties
-POST / v1/ {name=projects/ */ locations/ */ instances/ *}:import Registered Parties
+importRegisteredParties
+POST /v1/{name=projects/*/locations/*/instances/*}:importRegisteredParties
 Imports the list of registered parties.
 list
-GET / v1/ {parent=projects/ */ locations/ *}/ instances
+GET /v1/{parent=projects/*/locations/*}/instances
 Lists instances.
 patch
-PATCH / v1/ {instance. name=projects/ */ locations/ */ instances/ *}
+PATCH /v1/{instance.name=projects/*/locations/*/instances/*}
 Updates the parameters of a single Instance.
-REST Resource: v1. projects. locations. instances. backtest Results
+REST Resource: v1.projects.locations.instances.backtestResults
 Methods
 create
-POST / v1/ {parent=projects/ */ locations/ */ instances/ *}/ backtest Results
+POST /v1/{parent=projects/*/locations/*/instances/*}/backtestResults
 Create a BacktestResult.
 delete
-DELETE / v1/ {name=projects/ */ locations/ */ instances/ */ backtest Results/ *}
+DELETE /v1/{name=projects/*/locations/*/instances/*/backtestResults/*}
 Deletes a BacktestResult.
-export Metadata
-POST / v1/ {backtest Result=projects/ */ locations/ */ instances/ */ backtest Results/ *}:export Metadata
+exportMetadata
+POST /v1/{backtestResult=projects/*/locations/*/instances/*/backtestResults/*}:exportMetadata
 Export governance information for a BacktestResult resource.
 get
-GET / v1/ {name=projects/ */ locations/ */ instances/ */ backtest Results/ *}
+GET /v1/{name=projects/*/locations/*/instances/*/backtestResults/*}
 Gets a BacktestResult.
 list
-GET / v1/ {parent=projects/ */ locations/ */ instances/ *}/ backtest Results
+GET /v1/{parent=projects/*/locations/*/instances/*}/backtestResults
 List BacktestResults.
 patch
-PATCH / v1/ {backtest Result. name=projects/ */ locations/ */ instances/ */ backtest Results/ *}
+PATCH /v1/{backtestResult.name=projects/*/locations/*/instances/*/backtestResults/*}
 Updates the parameters of a single BacktestResult.
-REST Resource: v1. projects. locations. instances. datasets
+REST Resource: v1.projects.locations.instances.datasets
 Methods
 create
-POST / v1/ {parent=projects/ */ locations/ */ instances/ *}/ datasets
+POST /v1/{parent=projects/*/locations/*/instances/*}/datasets
 Creates a dataset.
 delete
-DELETE / v1/ {name=projects/ */ locations/ */ instances/ */ datasets/ *}
+DELETE /v1/{name=projects/*/locations/*/instances/*/datasets/*}
 Deletes a dataset.
 get
-GET / v1/ {name=projects/ */ locations/ */ instances/ */ datasets/ *}
+GET /v1/{name=projects/*/locations/*/instances/*/datasets/*}
 Gets a dataset.
 list
-GET / v1/ {parent=projects/ */ locations/ */ instances/ *}/ datasets
+GET /v1/{parent=projects/*/locations/*/instances/*}/datasets
 Lists datasets.
 patch
-PATCH / v1/ {dataset. name=projects/ */ locations/ */ instances/ */ datasets/ *}
+PATCH /v1/{dataset.name=projects/*/locations/*/instances/*/datasets/*}
 Updates the parameters of a single Dataset.
 REST Resource: v1.projects.locations.instances.engineConfigs
 Methods
@@ -359,54 +194,8 @@ Gets the latest state of a long-running operation.
 list
 GET /v1/{name=projects/*/locations/*}/operations
 Lists operations that match the specified filter in the request.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
 Last updated 2026-02-04 UTC.
 Need to tell us more?
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-02-04 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial

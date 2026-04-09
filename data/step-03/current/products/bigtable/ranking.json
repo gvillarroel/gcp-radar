@@ -1,11 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T12:35:37.297Z",
+  "generated_at": "2026-04-08T21:49:29.449Z",
   "product_name": "Bigtable",
   "product_slug": "bigtable",
-  "step02_source_path": "data/step-02/current/products/bigtable.md",
+  "step02_source_path": "data/step-02/current/bigtable.md",
   "rounds": 3,
   "search_count": 8,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "bigtable",
   "dominant_python_slug": "bigtable",
@@ -18,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Bigtable\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Bigtable\" official documentation OR site:developers.google.com \"bigtable\" official documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Introduction to Cloud Bigtable | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-bigtable-intro-java",
+          "description": "Common mistake: You might think that making time the first value in the row key would be ideal, because you probably care about more recent data, and would want to run queries mainly around certain times. Doing this causes hotspots in the data, however, so you compromise by putting time third. This makes some of your queries more difficult, but you need to do this in order to get the full performance Cloud Bigtable has to offer.",
+          "rank": 1
+        },
+        {
+          "title": "Bigtable and Dataflow: Database Monitoring Art (HBase Java Client) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/bigtable-keyviz-art-hbase-java",
+          "description": "<strong>This schema is just for demonstration purposes</strong>, however, the transformation on each sequence number is useful to notice because if you bulk load data sequentially, Bigtable can&#x27;t distribute the load proportionally and will have performance issues.",
+          "rank": 2
+        },
+        {
+          "title": "bigquery: Google.Apis.Bigquery.v2.Data.ExternalDataConfiguration Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/csharp/latest/classGoogle_1_1Apis_1_1Bigquery_1_1v2_1_1Data_1_1ExternalDataConfiguration.html",
+          "description": "For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups, exactly one URI can be specified. Also, the &#x27;*&#x27; wildcard character is not allowed. The documentation for this class was generated from the following file:",
+          "rank": 3
+        },
+        {
+          "title": "tables()",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/python/latest/bigquery_v2.tables.html",
+          "description": "For Google Cloud Storage URIs: Each URI can contain one &#x27;*&#x27; wildcard character and it must come after the &#x27;bucket&#x27; name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table.",
+          "rank": 4
+        },
+        {
+          "title": "Analyze and visualize credit card transaction data in Bigtable using BigQuery and Looker | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/bigtable-cdc-looker-tutorial",
+          "description": "gsutil cp gs://cloud-bigtable-public-datasets/change-streams-tutorial/cc-transactions-2024-jan.csv . cbt -instance=$BIGTABLE_INSTANCE_ID -project=$PROJECT_ID import \\ retail-database cc-transactions-2024-jan.csv column-family=transactions · Return to your Looker dashboard and refresh the data with the command Ctrl+Shift+E or click Refresh data in the view menu. Now you should see the data for Jan 2024 in the charts. There are many variations of graphs and metrics you can create beyond this. Read more in the Looker documentation.",
+          "rank": 5
+        },
+        {
+          "title": "ExternalDataConfiguration (BigQuery API v2 (Rev. 459) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/ExternalDataConfiguration.html",
+          "description": "For Google Cloud Storage URIs: Each URI can contain one &#x27;*&#x27; wildcard character and it must come after the &#x27;bucket&#x27; name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table.",
+          "rank": 6
+        },
+        {
+          "title": "Introduction to Cloud Bigtable",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-bigtable-intro-java/index.html?index=..%2F..index",
+          "description": "Common mistake: You might think that making time the first value in the row key would be ideal, because you probably care about more recent data, and would want to run queries mainly around certain times. Doing this causes hotspots in the data, however, so you compromise by putting time third. This makes some of your queries more difficult, but you need to do this in order to get the full performance Cloud Bigtable has to offer.",
+          "rank": 7
+        },
+        {
+          "title": "BigtableOptions (BigQuery API v2 (Rev. 459) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/BigtableOptions.html",
+          "description": "public BigtableOptions setIgnoreUnspecifiedColumnFamilies(java.lang.Boolean ignoreUnspecifiedColumnFamilies)",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -76,9 +133,9 @@
           "rank": 2
         },
         {
-          "title": "Class BigtableInstanceAdminClient (2.70.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
-          "description": "Client for creating, configuring and deleting Cloud <strong>Bigtable</strong> instances, app profiles, and clusters.",
+          "title": "Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.emulator.v2",
+          "description": "For this library, we recommend using com.google.cloud.bigtable for new applications.",
           "rank": 3
         },
         {
@@ -88,9 +145,9 @@
           "rank": 4
         },
         {
-          "title": "Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.emulator.v2",
-          "description": "For this library, we recommend using com.google.cloud.bigtable for new applications.",
+          "title": "Class BigtableInstanceAdminClient (2.70.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+          "description": "Client for creating, configuring and deleting Cloud <strong>Bigtable</strong> instances, app profiles, and clusters.",
           "rank": 5
         },
         {
@@ -162,9 +219,9 @@
           "rank": 7
         },
         {
-          "title": "Read all (HBase) | Bigtable | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/samples/bigtable-hw-scan-all-hbase",
-          "description": "For detailed documentation that includes this code sample, see the following: ... To learn how to install and use the client library for Bigtable, see Bigtable client libraries.",
+          "title": "Bigtable client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigtable/docs/reference/libraries",
+          "description": "This page shows how to get started with the Cloud Client Libraries for the Cloud Bigtable API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
           "rank": 8
         }
       ]
@@ -182,27 +239,27 @@
           "rank": 1
         },
         {
-          "title": "Class BigtableDataClientAsync (2.35.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.data.BigtableDataClientAsync",
-          "description": "Create a client instance for the <strong>Bigtable</strong> Data API",
-          "rank": 2
-        },
-        {
           "title": "class google.cloud.bigtable.data.mutations.AddToCell(family",
           "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/common_data_mutations",
           "description": "This class represents a set of mutations to apply to a specific row in a <strong>Bigtable</strong> table.",
-          "rank": 3
+          "rank": 2
         },
         {
-          "title": "Class Table (2.35.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.table.Table",
-          "description": "Representation of a Google Cloud <strong>Bigtable</strong> Table.",
-          "rank": 4
+          "title": "Class BigtableDataClientAsync (2.35.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.data.BigtableDataClientAsync",
+          "description": "Create a client instance for the <strong>Bigtable</strong> Data API",
+          "rank": 3
         },
         {
           "title": "Bigtable Data Client Async - Python",
           "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/async_data_client",
           "description": "query – Query to be run on <strong>Bigtable</strong> instance. The query can use @param placeholders to use parameter interpolation on the server. Values for all parameters should be provided in parameters. Types of parameters are inferred but should be provided in parameter_types if the inference is not ...",
+          "rank": 4
+        },
+        {
+          "title": "Class Table (2.35.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.table.Table",
+          "description": "Representation of a Google Cloud <strong>Bigtable</strong> Table.",
           "rank": 5
         },
         {
@@ -236,6 +293,62 @@
           "url": "https://docs.cloud.google.com/bigtable/docs/apis",
           "description": "Details about the <strong>REST/HTTP Cloud Bigtable Admin API</strong> for managing Bigtable. Run query statements on your Bigtable with SQL (Preview). High-level overview of the cbt CLI , the Go command-line interface for Bigtable.",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Bigtable\" reference OR site:developers.google.com \"bigtable\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Introduction to Cloud Bigtable | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-bigtable-intro-java",
+          "description": "In this codelab, you’ll get introduced to Cloud Bigtable with the Java HBase client. You’ll load in data, then run some queries and plot the data on a map..",
+          "rank": 1
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/bigtableadmin/v2",
+          "description": "Google.Apis.BigtableAdmin.v2 · Cloud Bigtable Admin API v2 · Google.Apis.BinaryAuthorization.v1 · Binary Authorization API v1 · Google.Apis.BinaryAuthorization.v1beta1 · Binary Authorization API v1beta1 · Google.Apis.BlockchainNodeEngine.v1 · Blockchain Node Engine API v1 ·",
+          "rank": 2
+        },
+        {
+          "title": "bigquery: Google.Apis.Bigquery.v2.Data.ExternalDataConfiguration Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/csharp/latest/classGoogle_1_1Apis_1_1Bigquery_1_1v2_1_1Data_1_1ExternalDataConfiguration.html",
+          "description": "For CSV files, specify &quot;CSV&quot;. For Google sheets, specify &quot;GOOGLE_SHEETS&quot;. For newline-delimited JSON, specify &quot;NEWLINE_DELIMITED_JSON&quot;. For Avro files, specify &quot;AVRO&quot;. For Google Cloud Datastore backups, specify &quot;DATASTORE_BACKUP&quot;. [Beta] <strong>For Google Cloud Bigtable, specify &quot;BIGTABLE&quot;.</strong>",
+          "rank": 3
+        },
+        {
+          "title": "Migration from Cassandra to Bigtable with a Dual-Write Proxy | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cbt-for-cassandra",
+          "description": "Cassandra-Bigtable Proxy: Allows Cassandra clients and tools (like cqlsh or drivers) to interact with Bigtable using the Cassandra Query Language (CQL) protocol by translating queries.",
+          "rank": 4
+        },
+        {
+          "title": "tables()",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/python/latest/bigquery_v2.tables.html",
+          "description": "You can use this list to do type conversions - see the &#x27;type&#x27; field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable.",
+          "rank": 5
+        },
+        {
+          "title": "Bigtable and Dataflow: Database Monitoring Art (HBase Java Client) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/bigtable-keyviz-art-hbase-java",
+          "description": "In this codelab, you&#x27;ll use Cloud Bigtable&#x27;s monitoring tools to create various works of art through writing and reading data with Cloud Dataflow and the Java HBase client.",
+          "rank": 6
+        },
+        {
+          "title": "bigquery: google_bigquery_api::ExternalDataConfiguration Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/cpp/latest/classgoogle__bigquery__api_1_1ExternalDataConfiguration.html",
+          "description": "<strong>Get a reference to the value of the &#x27;sourceUris&#x27; attribute</strong>. Returns a string denoting the type of this data object. ... Determine if the &#x27;autodetect&#x27; attribute was set. ... Determine if the &#x27;bigtableOptions&#x27; attribute was set.",
+          "rank": 7
+        },
+        {
+          "title": "ExternalDataConfiguration (BigQuery API v2 (Rev. 459) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/ExternalDataConfiguration.html",
+          "description": "For CSV files, specify &quot;CSV&quot;. For Google sheets, specify &quot;GOOGLE_SHEETS&quot;. For newline-delimited JSON, specify &quot;NEWLINE_DELIMITED_JSON&quot;. For Avro files, specify &quot;AVRO&quot;. For Google Cloud Datastore backups, specify &quot;DATASTORE_BACKUP&quot;. [Beta] <strong>For Google Cloud Bigtable, specify &quot;BIGTABLE&quot;.</strong>",
+          "rank": 8
         }
       ]
     },
@@ -276,15 +389,15 @@
           "rank": 5
         },
         {
-          "title": "Create and manage protobuf schemas | Bigtable | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-protobuf-schemas?hl=en",
-          "description": "To get the permissions that you need to create and manage schema bundles, ask your administrator to grant you the Bigtable Admin (roles/bigtable.admin) Identity and Access Management (IAM) role on the table.",
-          "rank": 6
-        },
-        {
           "title": "Bigtable release notes | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/bigtable/docs/release-notes",
           "description": "Bigtable Data Boost, a serverless compute service designed for high-throughput read jobs and queries, is available in Preview. ... <strong>You can control access to data in your Bigtable tables with authorized views</strong>.",
+          "rank": 6
+        },
+        {
+          "title": "Create and manage protobuf schemas | Bigtable | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-protobuf-schemas?hl=en",
+          "description": "To get the permissions that you need to create and manage schema bundles, ask your administrator to grant you the Bigtable Admin (roles/bigtable.admin) Identity and Access Management (IAM) role on the table.",
           "rank": 7
         },
         {
@@ -314,27 +427,27 @@
           "rank": 2
         },
         {
-          "title": "Class BigtableDataSettings (2.71.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings",
-          "description": "This will register Bigtable client relevant io.opencensus.stats.Views. When coupled with an exporter, it allows users to monitor client behavior. Please note that in addition to calling this method, the application must: Include openensus-impl dependency on the classpath · Configure an exporter like opencensus-exporter-stats-stackdriver ... Java: {@code StackdriverStatsExporter.createAndRegister(); BigtableDataSettings.enableOpenCensusStats(); }",
-          "rank": 3
-        },
-        {
           "title": "Class BigtableInstanceAdminClient (2.70.0) | Java client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
           "description": "Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and clusters.",
-          "rank": 4
+          "rank": 3
         },
         {
-          "title": "Class BigtableDataClient (2.70.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataClient",
-          "description": "try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(&quot;[PROJECT]&quot;, &quot;[INSTANCE]&quot;)) { RowMutation mutation = RowMutation.create(&quot;[TABLE]&quot;, &quot;[ROW KEY]&quot;) .setCell(&quot;[FAMILY NAME]&quot;, &quot;[QUALIFIER]&quot;, &quot;[VALUE]&quot;); // Sync style try { bigtableDataClient.mutateRowCallable().call(mutation); } catch (NotFoundException e) { System.out.println(&quot;Tried to mutate a non-existent table&quot;); } catch (RuntimeException e) { e.printStackTrace(); } } public Batcher&lt;RowMutationEntry,Void&gt; newBulkMutationBatcher(TargetId targetId) ... This surface is likely to change as the batching surface evolves. This feature is covered by the Pre-GA Offerings Terms of the Terms of Service. Pre-GA libraries might have limited support, and changes to pre-GA libraries might not be compatible with other pre-GA versions.",
-          "rank": 5
+          "title": "Class BigtableDataSettings (2.71.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings",
+          "description": "This will register Bigtable client relevant io.opencensus.stats.Views. When coupled with an exporter, it allows users to monitor client behavior. Please note that in addition to calling this method, the application must: Include openensus-impl dependency on the classpath · Configure an exporter like opencensus-exporter-stats-stackdriver ... Java: {@code StackdriverStatsExporter.createAndRegister(); BigtableDataSettings.enableOpenCensusStats(); }",
+          "rank": 4
         },
         {
           "title": "Class BigtableDataSettings.Builder (2.70.0) | Java client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder",
           "description": "Java · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 2.70.0 (latest) 2.68.0 · 2.67.1 · 2.66.0 · 2.65.1 · 2.63.0 · 2.62.0 · 2.61.0 · 2.60.0 · 2.59.0 · 2.58.2 · 2.56.0 · 2.54.0 · 2.52.0 · 2.51.2 · 2.49.0 · 2.46.0 · 2.45.1 · 2.44.1 · 2.43.0 · 2.42.0 · 2.40.0 · 2.39.5 · 2.37.0 · 2.35.1 · 2.34.0 · 2.33.0 · 2.32.0 · 2.31.0 · 2.30.0 · 2.29.1 · 2.28.0 · public static class BigtableDataSettings.Builder ·",
+          "rank": 5
+        },
+        {
+          "title": "Class BigtableDataClient (2.70.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataClient",
+          "description": "try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(&quot;[PROJECT]&quot;, &quot;[INSTANCE]&quot;)) { RowMutation mutation = RowMutation.create(&quot;[TABLE]&quot;, &quot;[ROW KEY]&quot;) .setCell(&quot;[FAMILY NAME]&quot;, &quot;[QUALIFIER]&quot;, &quot;[VALUE]&quot;); // Sync style try { bigtableDataClient.mutateRowCallable().call(mutation); } catch (NotFoundException e) { System.out.println(&quot;Tried to mutate a non-existent table&quot;); } catch (RuntimeException e) { e.printStackTrace(); } } public Batcher&lt;RowMutationEntry,Void&gt; newBulkMutationBatcher(TargetId targetId) ... This surface is likely to change as the batching surface evolves. This feature is covered by the Pre-GA Offerings Terms of the Terms of Service. Pre-GA libraries might have limited support, and changes to pre-GA libraries might not be compatible with other pre-GA versions.",
           "rank": 6
         },
         {
@@ -383,26 +496,26 @@
         },
         {
           "title": "GoogleSQL for Bigtable overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/googlesql-overview",
+          "url": "https://docs.cloud.google.com/bigtable/docs/googlesql-overview?db=bigtable-docs",
           "description": "You can use GoogleSQL statements to query your Bigtable data. GoogleSQL is an ANSI-compliant structured query language (SQL) that is also implemented for other Google Cloud services such as BigQuery and Spanner. This document provides an overview of GoogleSQL for Bigtable.",
           "rank": 5
-        },
-        {
-          "title": "google-cloud-bigtable overview (2.74.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
-          "description": "Cloud Bigtable Description: <strong>API for reading and writing the contents of Bigtables associated with a cloud project</strong>.",
-          "rank": 6
         },
         {
           "title": "Create an instance | Bigtable | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/bigtable/docs/creating-instance",
           "description": "DISPLAY_NAME: A human-readable name that identifies the instance in the Google Cloud console. CLUSTER_ID: The permanent identifier for the cluster. CLUSTER_ZONE: The zone where the cluster runs. You must configure at least one cluster for the instance, using the --cluster-config flag. To create an instance that has multiple clusters, repeat the --cluster-config flag for each cluster. For manual node allocation, setting nodes in the --cluster-config flag is optional. If no value is set, Bigtable allocates nodes to the cluster automatically based on your data footprint and optimizes for 50% storage utilization.",
+          "rank": 6
+        },
+        {
+          "title": "Bigtable backups overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+          "description": "This page provides an overview of Bigtable backups.",
           "rank": 7
         },
         {
-          "title": "Instances, clusters, and nodes | Bigtable | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/instances-clusters-nodes",
-          "description": "This page provides more information about Bigtable instances, clusters, and nodes. To learn how to create an instance, see Create an instance. To learn how to add or delete clusters, see Modify an instance. To learn how to monitor an instance and its clusters, see Monitoring an instance. To learn how to update the number of nodes in a cluster, see Add or remove nodes. Before you read this page, you should be familiar with the overview ...",
+          "title": "google-cloud-bigtable overview (2.74.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
+          "description": "Cloud Bigtable Description: <strong>API for reading and writing the contents of Bigtables associated with a cloud project</strong>.",
           "rank": 8
         }
       ]
@@ -476,15 +589,15 @@
           "rank": 1
         },
         {
-          "title": "Query Bigtable using a permanent table | BigQuery | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-external-bigtable-perm",
-          "description": "String projectId = &quot;MY_PROJECT_ID&quot;; String bigtableInstanceId = &quot;MY_INSTANCE_ID&quot;; String bigtableTableName = &quot;MY_BIGTABLE_NAME&quot;; String bigqueryDatasetName = &quot;MY_DATASET_NAME&quot;; String bigqueryTableName = &quot;MY_TABLE_NAME&quot;; String sourceUri = String.format( &quot;https://googleapis.com/bigtable/projects/%s/instances/%s/tables/%s&quot;, projectId, bigtableInstanceId, bigtableTableName); String query = String.format(&quot;SELECT * FROM %s &quot;, bigqueryTableName); queryExternalBigtablePerm(bigqueryDatasetName, bigqueryTableName, sourceUri, query); } public static void queryExternalBigtablePerm( String datasetName, String tableName, String sourceUri, String query) { try { // Initialize client that will be used to send requests.",
-          "rank": 2
-        },
-        {
           "title": "Create a Bigtable external table | BigQuery | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/bigquery/docs/create-bigtable-external-table",
           "description": "BIGTABLE_OPTIONS: the schema for the Bigtable table in JSON format. For a list of Bigtable table definition options, see BigtableOptions in the REST API reference.",
+          "rank": 2
+        },
+        {
+          "title": "Query Bigtable using a permanent table | BigQuery | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-external-bigtable-perm",
+          "description": "String projectId = &quot;MY_PROJECT_ID&quot;; String bigtableInstanceId = &quot;MY_INSTANCE_ID&quot;; String bigtableTableName = &quot;MY_BIGTABLE_NAME&quot;; String bigqueryDatasetName = &quot;MY_DATASET_NAME&quot;; String bigqueryTableName = &quot;MY_TABLE_NAME&quot;; String sourceUri = String.format( &quot;https://googleapis.com/bigtable/projects/%s/instances/%s/tables/%s&quot;, projectId, bigtableInstanceId, bigtableTableName); String query = String.format(&quot;SELECT * FROM %s &quot;, bigqueryTableName); queryExternalBigtablePerm(bigqueryDatasetName, bigqueryTableName, sourceUri, query); } public static void queryExternalBigtablePerm( String datasetName, String tableName, String sourceUri, String query) { try { // Initialize client that will be used to send requests.",
           "rank": 3
         },
         {
@@ -504,6 +617,62 @@
           "url": "https://docs.cloud.google.com/bigquery/docs/external-table-definition",
           "description": "There are no configuration settings that are specific to Datastore and Firestore export files. For more information, see ExternalDataConfiguration in the API reference. When you create a table definition file for Bigtable, you manually generate the file in JSON format.",
           "rank": 6
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Bigtable\" overview OR site:developers.google.com \"bigtable\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Introduction to Cloud Bigtable | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-bigtable-intro-java",
+          "description": "In this codelab, you’ll get introduced to Cloud Bigtable with the Java HBase client. You’ll load in data, then run some queries and plot the data on a map..",
+          "rank": 1
+        },
+        {
+          "title": "Bigtable and Dataflow: Database Monitoring Art (HBase Java Client) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/bigtable-keyviz-art-hbase-java",
+          "description": "Cloud Bigtable is <strong>Google&#x27;s NoSQL Big Data database service</strong>. It&#x27;s the same database that powers many core Google services, including Search, Analytics, Maps, and Gmail. It&#x27;s ideal for running large analytical workloads and building low-latency applications.",
+          "rank": 2
+        },
+        {
+          "title": "Introduction to Cloud Bigtable",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-bigtable-intro-java/index.html?index=..%2F..index",
+          "description": "To get the best performance from Cloud Bigtable, you have to be thoughtful when you design your schema. Data in Cloud Bigtable is automatically sorted lexicographically, so if you design your schema well, querying for related data is very efficient. Cloud Bigtable allows for queries using point lookups by row key or row-range scans that return a contiguous set of rows.",
+          "rank": 3
+        },
+        {
+          "title": "Cloud Bigtable for Cassandra users | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cbt-for-cassandra/index.html",
+          "description": "In both Cassandra and Cloud Bigtable tables, each row has a key associated with it. Cassandra keys have a partition key and clustering column which can be separate or overlap. The entirety of Cloud Bigtable keys are used for splits (partitions) and ordering. These two systems are incredibly similar when it comes to primary/row key construction.",
+          "rank": 4
+        },
+        {
+          "title": "tables()",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/python/latest/bigquery_v2.tables.html",
+          "description": "By defining these properties, the data source can then be queried as if it were a standard BigQuery table. &quot;compression&quot;: &quot;A String&quot;, # [Optional] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats.",
+          "rank": 5
+        },
+        {
+          "title": "BigtableOptions (BigQuery API v2 (Rev. 459) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/BigtableOptions.html",
+          "description": "You can use this list to do type conversions - see the &#x27;type&#x27; field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable.",
+          "rank": 6
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/bigtableadmin/v2",
+          "description": "Google.Apis.BigtableAdmin.v2 · Cloud Bigtable Admin API v2 · Google.Apis.BinaryAuthorization.v1 · Binary Authorization API v1 · Google.Apis.BinaryAuthorization.v1beta1 · Binary Authorization API v1beta1 · Google.Apis.BlockchainNodeEngine.v1 · Blockchain Node Engine API v1 ·",
+          "rank": 7
+        },
+        {
+          "title": "ExternalDataConfiguration (BigQuery API v2 (Rev. 459) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/ExternalDataConfiguration.html",
+          "description": "If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don&#x27;t match any column names Google Cloud Bigtable: This setting is ignored.",
+          "rank": 8
         }
       ]
     },
@@ -532,21 +701,21 @@
           "rank": 3
         },
         {
-          "title": "Use custom organization policies | Bigtable | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/custom-constraints",
-          "description": "To get the permissions that you need to manage custom organization policies, ask your administrator to grant you the Organization Policy Administrator (roles/orgpolicy.policyAdmin) IAM role on the organization resource.",
-          "rank": 4
-        },
-        {
           "title": "Create a Bigtable external table | BigQuery | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/bigquery/docs/create-bigtable-external-table",
           "description": "Before you create an external table, ... you have permission to create the table. To create an external table to use to query your Bigtable data, you must be a principal in the Bigtable Admin (roles/bigtable.admin) role for the instance that contains the source table. You also need the bigquery.tables.create BigQuery Identity and Access Management (IAM) ...",
+          "rank": 4
+        },
+        {
+          "title": "Use custom organization policies | Bigtable | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigtable/docs/custom-constraints",
+          "description": "To get the permissions that you need to manage custom organization policies, ask your administrator to grant you the Organization Policy Administrator (roles/orgpolicy.policyAdmin) IAM role on the organization resource.",
           "rank": 5
         },
         {
-          "title": "Create and manage tags | Bigtable | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/tags",
-          "description": "You can <strong>use tags and IAM conditions to conditionally grant role bindings to users in your hierarchy</strong>. Changing or deleting the tag attached to a resource can remove user access to that resource if an IAM policy with conditional role bindings ...",
+          "title": "Connect with the JDBC driver | Bigtable | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigtable/docs/reference/jdbc",
+          "description": "To get the permissions that you need to run queries using the Bigtable JDBC driver, ask your administrator to grant you the Bigtable Reader (roles/bigtable.reader) Identity and Access Management (IAM) role on your project.",
           "rank": 6
         },
         {
@@ -556,9 +725,9 @@
           "rank": 7
         },
         {
-          "title": "Create and manage logical views | Bigtable | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
-          "description": "To work with logical views, you need the following permissions: ... To create, update, or delete logical views, you need the Bigtable Admin (roles/bigtable.admin) role on the instance.",
+          "title": "Create and manage tags | Bigtable | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/bigtable/docs/tags",
+          "description": "You can <strong>use tags and IAM conditions to conditionally grant role bindings to users in your hierarchy</strong>. Changing or deleting the tag attached to a resource can remove user access to that resource if an IAM policy with conditional role bindings ...",
           "rank": 8
         }
       ]
@@ -685,9 +854,10 @@
   ],
   "scored_urls": [
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs",
       "title": "Bigtable documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs",
       "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Work through a codelab that teaches you how to avoid common schema design mistakes, import data, read your data, and then use it to generate a heatmap that shows New York City bus data. ... Learn how to how to create an instance, design a schema, and perform administrative tasks in Bigtable.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview",
@@ -703,11 +873,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -718,9 +891,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/managing-tables",
       "title": "Create and manage tables | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/managing-tables",
       "description": "Pre-splitting your table is not ... The pre-split prevents Bigtable from having to split the tables and rebalance the load all at once as the data arrives. You are not able to pre-split the rows when you create a table using the Google Cloud console....",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview",
@@ -736,11 +910,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -751,9 +928,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/overview",
       "title": "Bigtable overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/overview",
       "description": "When you use Bigtable, <strong>your data is stored on Colossus, a Google-developed, highly durable file system, using storage devices in Google Cloud&#x27;s data centers</strong>. You don&#x27;t need to run an HDFS cluster or any other file system to use Bigtable.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview",
@@ -769,11 +947,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -784,9 +965,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/reading-data",
       "title": "Read examples | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/reading-data",
       "description": "To authenticate to Bigtable, set up Application Default Credentials. For more information, see Set up authentication for client libraries. use Google\\Cloud\\Bigtable\\BigtableClient; use Google\\Cloud\\Bigtable\\Filter; /** * Read partial row data * * @param string $projectId The Google Cloud project ID * @param string $instanceId The ID of the Bigtable instance * @param string $tableId The ID of the table to read from */ function read_row_partial( string $projectId, string $instanceId, string $tableId ): void { // Connect to an existing table with an existing instance.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview",
@@ -802,11 +984,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -817,13 +1002,88 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigquery/docs/create-bigtable-external-table",
+      "title": "ExternalDataConfiguration (BigQuery API v2 (Rev. 459) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/ExternalDataConfiguration.html",
+      "description": "For Google Cloud Storage URIs: Each URI can contain one &#x27;*&#x27; wildcard character and it must come after the &#x27;bucket&#x27; name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Bigtable\" official documentation OR site:developers.google.com \"bigtable\" official documentation",
+        "site:developers.google.com \"Bigtable\" reference OR site:developers.google.com \"bigtable\" reference",
+        "site:developers.google.com \"Bigtable\" overview OR site:developers.google.com \"bigtable\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "tables()",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/python/latest/bigquery_v2.tables.html",
+      "description": "For Google Cloud Storage URIs: Each URI can contain one &#x27;*&#x27; wildcard character and it must come after the &#x27;bucket&#x27; name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Bigtable\" official documentation OR site:developers.google.com \"bigtable\" official documentation",
+        "site:developers.google.com \"Bigtable\" reference OR site:developers.google.com \"bigtable\" reference",
+        "site:developers.google.com \"Bigtable\" overview OR site:developers.google.com \"bigtable\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
       "title": "Create a Bigtable external table | BigQuery | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/create-bigtable-external-table",
       "description": "To create an external table to use to query your Bigtable data, you must be a principal in the <strong>Bigtable Admin (roles/bigtable.</strong>admin) role for the instance that contains the source ...",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Bigtable\" \"API reference\"",
         "site:docs.cloud.google.com \"Bigtable\" \"access control\"",
+        "site:docs.cloud.google.com \"Bigtable\" \"API reference\"",
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
       ],
       "intent_hits": [
@@ -832,18 +1092,21 @@
       ],
       "round_hits": [
         1,
-        3,
-        2
+        2,
+        3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -852,9 +1115,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/access-control",
       "title": "Bigtable access control with IAM | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/access-control",
       "description": "Bigtable uses <strong>Identity and Access Management (IAM)</strong> for access control.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"access control\"",
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
@@ -868,24 +1132,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
       "title": "Create and manage authorized views | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/authorized-views-create-manage",
       "description": "<strong>In the navigation pane, click Bigtable Studio.</strong> In the explorer, expand the table and Authorized views. Next to the authorized view that you want to modify, click the more_vert action menu, and then click Open.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"access control\"",
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
@@ -899,86 +1167,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
-      "title": "Create and manage logical views | Bigtable | Google Cloud Documentation",
-      "description": "To work with logical views, you need the following permissions: ... <strong>To create, update, or delete logical views, you need the Bigtable Admin (roles/bigtable.admin) role on the instance</strong>.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 97,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/instances-clusters-nodes",
-      "title": "Instances, clusters, and nodes | Bigtable | Google Cloud Documentation",
-      "description": "After you create an instance, Bigtable uses the instance to store application profiles, or app profiles. For instances that use replication, app profiles control how your applications connect to the instance&#x27;s clusters. If your instance doesn&#x27;t use replication, you can still use app profiles to provide separate identifiers for each of your applications, or each function within an application. You can then view separate charts for each app profile in the Google Cloud ...",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 67,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 97,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/introduction-sql",
       "title": "Introduction to SQL | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/introduction-sql",
       "description": "For low-latency application development, GoogleSQL for Bigtable ... GoogleSQL is a query language used by multiple Google Cloud services, including Spanner and BigQuery. You can create and run GoogleSQL queries in Bigtable Studio in the Google Cloud console, or you can run them programmatically using one of the client libraries for Bigtable that support SQL queries.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud introduction reference"
@@ -992,24 +1202,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/manage-data-assets-using-data-catalog",
       "title": "Manage data assets using Data Catalog | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/manage-data-assets-using-data-catalog",
       "description": "Choose a meaningful name for the role, such as Bigtable Data Catalog Editor, and then assign only the principals who need access to the role. For setup instructions, see Creating a custom role. Grant the following permissions to the custom role:",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
@@ -1023,24 +1237,99 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 97,
+      "final_score": 95,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+      "title": "Bigtable client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/reference/libraries",
+      "description": "This page shows how to get started with the Cloud Client Libraries for the Cloud Bigtable API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Bigtable\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Bigtable release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/release-notes",
+      "description": "Create new environment variable to toggle directpath scoped to cloud bigtable. (#2261) (9062944) Implement ExecuteQuery API for SQL support (#2280) (25218e8) Update dependency com.google.truth.extensions:truth-proto-extension to v1.4.4 (#2282) (d00a9e0) ... The Preview of automated backup has been expanded to let you enable and disable automated backup in the Google Cloud console. For more information, see the automated backup documentation.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Bigtable\" \"access control\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Class BigtableInstanceAdminClient (2.70.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
       "description": "Client for creating, configuring and deleting Cloud <strong>Bigtable</strong> instances, app profiles, and clusters.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
@@ -1054,11 +1343,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1069,9 +1361,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataClient",
       "title": "Class BigtableDataClient (2.70.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataClient",
       "description": "Client for reading from and writing to existing <strong>Bigtable</strong> tables.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
@@ -1085,11 +1378,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1100,9 +1396,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings",
       "title": "Class BigtableDataSettings (2.71.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings",
       "description": "Settings class to configure an instance of <strong>Bigtable</strong>DataClient.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
@@ -1116,11 +1413,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1131,9 +1431,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder",
       "title": "Class BigtableDataSettings.Builder (2.70.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder",
       "description": "Gets if flow control is enabled for <strong>Bigtable</strong>DataClient#newBulkMutationBatcher(String) based on the load of the <strong>Bigtable</strong> server.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
@@ -1145,13 +1446,16 @@
         1,
         2
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1162,9 +1466,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.emulator.v2.BigtableEmulatorRule",
       "title": "Class BigtableEmulatorRule (2.70.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.emulator.v2.BigtableEmulatorRule",
       "description": "Initializes the <strong>Bigtable</strong> emulator before a test runs.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
@@ -1178,11 +1483,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1193,9 +1501,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
       "title": "google-cloud-bigtable overview (2.74.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/overview",
       "description": "Cloud <strong>Bigtable</strong> Description: API for reading and writing the contents of <strong>Bigtable</strong>s associated with a cloud project.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview",
@@ -1211,11 +1520,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1226,9 +1538,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest",
       "title": "Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest",
       "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
@@ -1242,11 +1555,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1257,9 +1573,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.data._async.client.TableAsync",
       "title": "Class TableAsync (2.34.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.data._async.client.TableAsync",
       "description": "check_and_mutate_row( row_key: str | bytes, predicate: google.cloud.bigtable.data.row_filters.RowFilter | None, *, true_case_mutations: typing.Optional[ typing.Union[ google.cloud.bigtable.data.mutations.Mutation, list[google.cloud.bigtable.data.mutations.Mutation], ] ] = None, false_case_mutations: typing.Optional[ typing.Union[ google.cloud.bigtable.data.mutations.Mutation, list[google.cloud.bigtable.data.mutations.Mutation], ] ] = None, operation_timeout: ( float | google.cloud.bigtable.data._helpers.TABLE_DEFAULT ) = TABLE_DEFAULT.DEFAULT ) -&gt; bool",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
@@ -1273,11 +1590,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1288,9 +1608,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.data.BigtableDataClientAsync",
       "title": "Class BigtableDataClientAsync (2.35.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.data.BigtableDataClientAsync",
       "description": "Create a client instance for the <strong>Bigtable</strong> Data API",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
@@ -1304,11 +1625,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1319,9 +1643,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.table.Table",
       "title": "Class Table (2.35.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.table.Table",
       "description": "Representation of a Google Cloud <strong>Bigtable</strong> Table.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Bigtable\"",
         "site:docs.cloud.google.com \"Bigtable\" \"access control\""
@@ -1334,13 +1659,16 @@
         1,
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1351,9 +1679,115 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable",
+      "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/bigtableadmin/v2",
+      "description": "Google.Apis.BigtableAdmin.v2 · Cloud Bigtable Admin API v2 · Google.Apis.BinaryAuthorization.v1 · Binary Authorization API v1 · Google.Apis.BinaryAuthorization.v1beta1 · Binary Authorization API v1beta1 · Google.Apis.BlockchainNodeEngine.v1 · Blockchain Node Engine API v1 ·",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Bigtable\" reference OR site:developers.google.com \"bigtable\" reference",
+        "site:developers.google.com \"Bigtable\" overview OR site:developers.google.com \"bigtable\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "bigquery: Google.Apis.Bigquery.v2.Data.ExternalDataConfiguration Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/csharp/latest/classGoogle_1_1Apis_1_1Bigquery_1_1v2_1_1Data_1_1ExternalDataConfiguration.html",
+      "description": "For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups, exactly one URI can be specified. Also, the &#x27;*&#x27; wildcard character is not allowed. The documentation for this class was generated from the following file:",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Bigtable\" official documentation OR site:developers.google.com \"bigtable\" official documentation",
+        "site:developers.google.com \"Bigtable\" reference OR site:developers.google.com \"bigtable\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "BigtableOptions (BigQuery API v2 (Rev. 459) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/BigtableOptions.html",
+      "description": "public BigtableOptions setIgnoreUnspecifiedColumnFamilies(java.lang.Boolean ignoreUnspecifiedColumnFamilies)",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Bigtable\" official documentation OR site:developers.google.com \"bigtable\" official documentation",
+        "site:developers.google.com \"Bigtable\" overview OR site:developers.google.com \"bigtable\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
       "title": "Bigtable roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable",
       "description": "This page lists the IAM roles and permissions for Bigtable.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
@@ -1367,13 +1801,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1382,9 +1819,10 @@
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/apis",
       "title": "APIs and reference | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/apis",
       "description": "Details about the <strong>REST/HTTP Cloud Bigtable Admin API</strong> for managing Bigtable. Run query statements on your Bigtable with SQL (Preview). High-level overview of the cbt CLI , the Go command-line interface for Bigtable.",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"APIs and reference\""
       ],
@@ -1396,24 +1834,28 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": true
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/authorized-views",
       "title": "Overview of authorized views | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/authorized-views",
       "description": "<strong>Authorized views of Bigtable tables give you fine-grained access control of your Bigtable data</strong>. An authorized view is a subset of a table that you configure to include specific table data.",
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"access control\""
       ],
@@ -1425,82 +1867,28 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/cmek",
-      "title": "Customer-managed encryption keys (CMEK) | Bigtable | Google Cloud Documentation",
-      "description": "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Bigtable. Using Cloud KMS keys gives you control over their protection level, location, rotation schedule, usage and access permissions, and cryptographic boundaries.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-protobuf-schemas?hl=en",
-      "title": "Create and manage protobuf schemas | Bigtable | Google Cloud Documentation",
-      "description": "To get the permissions that you need to create and manage schema bundles, ask your administrator to grant you the Bigtable Admin (roles/bigtable.admin) Identity and Access Management (IAM) role on the table.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 93,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/creating-instance",
-      "title": "Create an instance | Bigtable | Google Cloud Documentation",
-      "description": "DISPLAY_NAME: A human-readable name that identifies the instance in the Google Cloud console. CLUSTER_ID: The permanent identifier for the cluster. CLUSTER_ZONE: The zone where the cluster runs. You must configure at least one cluster for the instance, using the --cluster-config flag. To create an instance that has multiple clusters, repeat the --cluster-config flag for each cluster. For manual node allocation, setting nodes in the --cluster-config flag is optional. If no value is set, Bigtable allocates nodes to the cluster automatically based on your data footprint and optimizes for 50% storage utilization.",
+      "title": "Bigtable backups overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+      "description": "This page provides an overview of Bigtable backups.",
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview"
       ],
@@ -1512,24 +1900,160 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/custom-constraints",
+      "title": "Customer-managed encryption keys (CMEK) | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/cmek",
+      "description": "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Bigtable. Using Cloud KMS keys gives you control over their protection level, location, rotation schedule, usage and access permissions, and cryptographic boundaries.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create and manage logical views | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+      "description": "To work with logical views, you need the following permissions: ... <strong>To create, update, or delete logical views, you need the Bigtable Admin (roles/bigtable.admin) role on the instance</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create and manage protobuf schemas | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-protobuf-schemas?hl=en",
+      "description": "To get the permissions that you need to create and manage schema bundles, ask your administrator to grant you the Bigtable Admin (roles/bigtable.admin) Identity and Access Management (IAM) role on the table.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create an instance | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/creating-instance",
+      "description": "DISPLAY_NAME: A human-readable name that identifies the instance in the Google Cloud console. CLUSTER_ID: The permanent identifier for the cluster. CLUSTER_ZONE: The zone where the cluster runs. You must configure at least one cluster for the instance, using the --cluster-config flag. To create an instance that has multiple clusters, repeat the --cluster-config flag for each cluster. For manual node allocation, setting nodes in the --cluster-config flag is optional. If no value is set, Bigtable allocates nodes to the cluster automatically based on your data footprint and optimizes for 50% storage utilization.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Use custom organization policies | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/custom-constraints",
       "description": "To get the permissions that you need to manage custom organization policies, ask your administrator to grant you the Organization Policy Administrator (roles/orgpolicy.policyAdmin) IAM role on the organization resource.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
       ],
@@ -1539,26 +2063,30 @@
       "round_hits": [
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/data-types",
       "title": "Data type enforcement in Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/data-types",
       "description": "<strong>This document describes when Bigtable enforces type, requiring you to encode or decode it in your application code</strong>. For a list of Bigtable data types, see Type in the Data API reference documentation.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"API reference\""
       ],
@@ -1570,24 +2098,28 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/googlesql-overview",
       "title": "GoogleSQL for Bigtable overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/googlesql-overview?db=bigtable-docs",
       "description": "You can use GoogleSQL statements to query your Bigtable data. GoogleSQL is an ANSI-compliant structured query language (SQL) that is also implemented for other Google Cloud services such as BigQuery and Spanner. This document provides an overview of GoogleSQL for Bigtable.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud docs overview"
       ],
@@ -1599,24 +2131,61 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 93,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/manage-continuous-materialized-views",
+      "title": "Instances, clusters, and nodes | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/instances-clusters-nodes",
+      "description": "After you create an instance, Bigtable uses the instance to store application profiles, or app profiles. For instances that use replication, app profiles control how your applications connect to the instance&#x27;s clusters. If your instance doesn&#x27;t use replication, you can still use app profiles to provide separate identifiers for each of your applications, or each function within an application. You can then view separate charts for each app profile in the Google Cloud ...",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Create and manage continuous materialized views | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/manage-continuous-materialized-views",
       "description": "To get the permissions that you need to create and manage continuous materialized views, ask your administrator to grant you the Bigtable Admin (roles/bigtable.admin) role on the instance.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"roles and permissions\""
       ],
@@ -1628,11 +2197,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1643,96 +2215,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/reference/libraries",
-      "title": "Bigtable client libraries | Google Cloud Documentation",
-      "description": "This page shows how to get started with the Cloud Client Libraries for the Cloud Bigtable API. Client libraries make it easier to access Google Cloud APIs from a supported language.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/reference/service-apis-overview",
-      "title": "Service APIs overview | Bigtable | Google Cloud Documentation",
-      "description": "You can use the .proto service definition for Bigtable to generate your own gRPC client library in any language that gRPC supports. Use these resources to generate a client library: ... RPC Data API reference: Language-independent overview of the RPC surface of Cloud Bigtable API (the Data API)",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/samples/bigtable-hw-scan-all-hbase",
-      "title": "Read all (HBase) | Bigtable | Google Cloud Documentation",
-      "description": "For detailed documentation that includes this code sample, see the following: ... To learn how to install and use the client library for Bigtable, see Bigtable client libraries.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigtable/docs/tags",
-      "title": "Create and manage tags | Bigtable | Google Cloud Documentation",
-      "description": "You can <strong>use tags and IAM conditions to conditionally grant role bindings to users in your hierarchy</strong>. Changing or deleting the tag attached to a resource can remove user access to that resource if an IAM policy with conditional role bindings ...",
+      "title": "Connect with the JDBC driver | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/reference/jdbc",
+      "description": "To get the permissions that you need to run queries using the Bigtable JDBC driver, ask your administrator to grant you the Bigtable Reader (roles/bigtable.reader) Identity and Access Management (IAM) role on your project.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
       ],
@@ -1744,11 +2230,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1759,589 +2248,10 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2",
-      "title": "Java client libraries | Google Cloud Documentation",
-      "description": "For this library, we recommend using com.google.cloud.bigtable for new applications. Client classes are the main entry point to using a package. They contain several variations of Java methods for each of the API&#x27;s methods.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.models.RowCell",
-      "title": "Class RowCell (2.74.0) | Java client libraries | Google Cloud Documentation",
-      "description": "java.lang.Object &gt; RowCell · Serializable · Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) public static Comparator&lt;RowCell&gt; compareByNative() A comparator that compares the cells by Bigtable native ordering: Family lexicographically ascending ·",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.emulator.v2",
-      "title": "Java client libraries | Google Cloud Documentation",
-      "description": "For this library, we recommend using com.google.cloud.bigtable for new applications.",
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Bigtable\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/2.23.1/google.cloud.bigtable.data._async.client.TableAsync",
-      "title": "Class TableAsync (2.23.1) | Python client libraries | Google Cloud Documentation",
-      "description": "TableAsync(client: google.cloud.bigtable.data._async.client.BigtableDataClientAsync, instance_id: str, table_id: str, app_profile_id: typing.Optional[str] = None, *, default_read_rows_operation_timeout: float = 600, default_read_rows_attempt_timeout: float | None = 20, default_mutate_rows_operation_timeout: float = 600, default_mutate_rows_attempt_timeout: float | None = 60, default_operation_timeout: float = 60, default_attempt_timeout: float | None = 20, default_read_rows_retryable_errors: typing.Sequence[type[Exception]] = (&lt;class &#x27;google.api_core.exceptions.DeadlineExceeded&#x27;&gt;, &lt;class &#x27;goog",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/async_data_client",
-      "title": "Bigtable Data Client Async - Python",
-      "description": "query – Query to be run on <strong>Bigtable</strong> instance. The query can use @param placeholders to use parameter interpolation on the server. Values for all parameters should be provided in parameters. Types of parameters are inferred but should be provided in parameter_types if the inference is not ...",
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/common_data_mutations",
-      "title": "class google.cloud.bigtable.data.mutations.AddToCell(family",
-      "description": "This class represents a set of mutations to apply to a specific row in a <strong>Bigtable</strong> table.",
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.column_family.ColumnFamily",
-      "title": "Class ColumnFamily (2.35.0) | Python client libraries | Google Cloud Documentation",
-      "description": ".. literalinclude:: snippets_table.py :start-after: [START bigtable_api_create_column_family] :end-before: [END bigtable_api_create_column_family] :dedent: 4",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.instance.Instance",
-      "title": "Class Instance (2.35.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Representation of a Google Cloud <strong>Bigtable</strong> Instance.",
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.row.DirectRow",
-      "title": "Class DirectRow (2.35.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Google Cloud <strong>Bigtable</strong> Row for sending &quot;direct&quot; mutations.",
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/row",
-      "title": "Bigtable Row - Python client libraries",
-      "description": "from google.cloud.bigtable import Client client = Client(admin=True) instance = client.instance(INSTANCE_ID) table = instance.table(TABLE_ID) row_key = b&quot;row_key_1&quot; row_obj = table.row(row_key) row_obj.set_cell(COLUMN_FAMILY_ID, COL_NAME1, b&quot;cell-val&quot;) row_obj.clear()",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/1.2.1/_modules/google/cloud/bigtable/table.html",
-      "title": "google.cloud.bigtable.table — google-cloud-bigtable 0.1.0 documentation",
-      "description": "&quot;&quot;&quot;User-friendly container for Google Cloud <strong>Bigtable</strong> Table.&quot;&quot;&quot; from grpc import StatusCode from google.api_core import timeout from google.api_core.exceptions import RetryError from google.api_core.exceptions import NotFound from google.api_core.retry import if_exception_type from google.api_core.retry import Retry from google.api_core.gapic_v1.method import wrap_method from google.cloud._helpers import _to_bytes from google.cloud.bigtable.column_family import _gc_rule_from_pb from google.cloud.bigtable.column_family import ColumnFamily from google.cloud.bigtable.batcher import MutationsBatche",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/latest",
-      "title": "Python Client for Google Cloud Bigtable",
-      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/latest/_modules/google/cloud/bigtable/instance.html",
-      "title": "Python client libraries | Google Cloud Documentation",
-      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/latest/classic_client/column-family.html",
-      "title": "Column Families — google-cloud-bigtable documentation",
-      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/latest/instance-api.html",
-      "title": "Instance Admin API — google-cloud-bigtable documentation",
-      "description": "When modifying an instance (via a CreateInstance request), the <strong>Bigtable</strong> API will return a long-running operation and a corresponding Operation object will be returned by create().",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/latest/instance.html",
-      "title": "Python client library | Google Cloud",
-      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://googleapis.dev/python/bigtable/latest/table-api.html",
-      "title": "Table Admin API — google-cloud-bigtable documentation",
-      "description": "&gt;&gt;&gt; instance.list_tables() [&lt;google.cloud.bigtable.table.Table at 0x7ff6a1de8f50&gt;, &lt;google.cloud.bigtable.table.Table at 0x7ff6a1de8350&gt;]",
-      "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-bigtable/latest",
-      "title": "Module loader (0.8.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.8.0 (latest) 0.7.0 · 0.6.0 · 0.5.0 · 0.4.4 · 0.3.1 · 0.2.3 · API documentation for loader module. BigtableLoader( instance_id: str, table_id: str, row_set: typing.Optional[google.cloud.bigtable.row_set.RowSet] = None, filter: typing.Optional[google.cloud.bigtable.row_filters.RowFilter] = None, client: typing.Optional[google.cloud.bigtable.client.Client] = None, content_encoding: langchain_google_bigtable.loader.Encoding = Encoding.UTF8, content_column_family: str = &quot;langchain&quot;, content_column_name: str",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "python_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-bigtable/latest/langchain_google_bigtable.loader",
-      "title": "Module loader (0.8.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.8.0 (latest) 0.7.0 · 0.6.0 · 0.5.0 · 0.4.4 · 0.3.1 · 0.2.3 · API documentation for loader module. BigtableLoader( instance_id: str, table_id: str, row_set: typing.Optional[google.cloud.bigtable.row_set.RowSet] = None, filter: typing.Optional[google.cloud.bigtable.row_filters.RowFilter] = None, client: typing.Optional[google.cloud.bigtable.client.Client] = None, content_encoding: langchain_google_bigtable.loader.Encoding = Encoding.UTF8, content_column_family: str = &quot;langchain&quot;, content_column_name: str",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-bigtable/latest/langchain_google_bigtable.vector_store.BigtableVectorStore",
-      "title": "Class BigtableVectorStore (0.8.0) | Python client libraries | Google Cloud Documentation",
-      "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.8.0 (latest) 0.7.0 · 0.6.0 · 0.5.0 · 0.4.4 · 0.3.1 · 0.2.3 · BigtableVectorStore(instance_id: str, table_id: str, embedding_service: langchain_core.embeddings.embeddings.Embeddings, collection: str, content_column: langchain_google_bigtable.async_vector_store.ColumnConfig = ColumnConfig(column_qualifier=&#x27;content&#x27;, column_family=&#x27;langchain&#x27;, encoding=&lt;Encoding.UTF8: &#x27;utf-8&#x27;&gt;), embedding_column: langchain_google_bigtable.async_vector_store.ColumnConfig = ColumnConfig(column_qualifier=&#x27;embedding&#x27;, column_f",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigquery/docs/external-table-definition",
-      "title": "Create a table definition file for an external data source | BigQuery | Google Cloud Documentation",
-      "description": "There are no configuration settings that are specific to Datastore and Firestore export files. For more information, see ExternalDataConfiguration in the API reference. When you create a table definition file for Bigtable, you manually generate the file in JSON format.",
+      "title": "Service APIs overview | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/reference/service-apis-overview",
+      "description": "You can use the .proto service definition for Bigtable to generate your own gRPC client library in any language that gRPC supports. Use these resources to generate a client library: ... RPC Data API reference: Language-independent overview of the RPC surface of Cloud Bigtable API (the Data API)",
+      "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"API reference\""
       ],
@@ -2351,15 +2261,18 @@
       "round_hits": [
         3
       ],
-      "best_rank": 6,
+      "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2368,9 +2281,109 @@
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/overview",
-      "title": "Class FormatOptions (2.58.0) | Java client libraries | Google Cloud Documentation",
-      "description": "Default options for BIGTABLE format.",
+      "title": "Create and manage tags | Bigtable | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigtable/docs/tags",
+      "description": "You can <strong>use tags and IAM conditions to conditionally grant role bindings to users in your hierarchy</strong>. Changing or deleting the tag attached to a resource can remove user access to that resource if an IAM policy with conditional role bindings ...",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2",
+      "description": "For this library, we recommend using com.google.cloud.bigtable for new applications. Client classes are the main entry point to using a package. They contain several variations of Java methods for each of the API&#x27;s methods.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class RowCell (2.74.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.data.v2.models.RowCell",
+      "description": "java.lang.Object &gt; RowCell · Serializable · Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) public static Comparator&lt;RowCell&gt; compareByNative() A comparator that compares the cells by Bigtable native ordering: Family lexicographically ascending ·",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.emulator.v2",
+      "description": "For this library, we recommend using com.google.cloud.bigtable for new applications.",
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\""
       ],
@@ -2380,16 +2393,19 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": -22,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 0,
-        "coverage_value": 3,
+        "product_match": 5,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2397,38 +2413,274 @@
       "keep": false
     },
     {
-      "url": "https://googleapis.dev/python/bigtable/1.4.0/_modules/google/cloud/bigtable/client.html",
-      "title": "google.cloud.bigtable.client — google-cloud-bigtable documentation",
-      "description": "[docs]class Client(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud <strong>Bigtable</strong> API. .. note:: Since the Cloud <strong>Bigtable</strong> API requires the gRPC transport, no ``_http`` argument is accepted by this class. :type project: :class:`str` or :func:`unicode &lt;unicode&gt;` :param project: (Optional) The ID of the project which owns the instances, tables and data.",
+      "title": "Class TableAsync (2.23.1) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/2.23.1/google.cloud.bigtable.data._async.client.TableAsync",
+      "description": "TableAsync(client: google.cloud.bigtable.data._async.client.BigtableDataClientAsync, instance_id: str, table_id: str, app_profile_id: typing.Optional[str] = None, *, default_read_rows_operation_timeout: float = 600, default_read_rows_attempt_timeout: float | None = 20, default_mutate_rows_operation_timeout: float = 600, default_mutate_rows_attempt_timeout: float | None = 60, default_operation_timeout: float = 60, default_attempt_timeout: float | None = 20, default_read_rows_retryable_errors: typing.Sequence[type[Exception]] = (&lt;class &#x27;google.api_core.exceptions.DeadlineExceeded&#x27;&gt;, &lt;class &#x27;goog",
+      "rank": 7,
       "query_hits": [
-        "site:googleapis.dev/python \"Bigtable\""
+        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
       ],
       "intent_hits": [
         "python_client"
       ],
       "round_hits": [
-        3
+        2
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 97,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 97,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 87,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/sdk/gcloud/reference/bigtable/tables",
+      "title": "Bigtable Data Client Async - Python",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/async_data_client",
+      "description": "query – Query to be run on <strong>Bigtable</strong> instance. The query can use @param placeholders to use parameter interpolation on the server. Values for all parameters should be provided in parameters. Types of parameters are inferred but should be provided in parameter_types if the inference is not ...",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "class google.cloud.bigtable.data.mutations.AddToCell(family",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/common_data_mutations",
+      "description": "This class represents a set of mutations to apply to a specific row in a <strong>Bigtable</strong> table.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class ColumnFamily (2.35.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.column_family.ColumnFamily",
+      "description": ".. literalinclude:: snippets_table.py :start-after: [START bigtable_api_create_column_family] :end-before: [END bigtable_api_create_column_family] :dedent: 4",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Instance (2.35.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.instance.Instance",
+      "description": "Representation of a Google Cloud <strong>Bigtable</strong> Instance.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class DirectRow (2.35.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable.row.DirectRow",
+      "description": "Google Cloud <strong>Bigtable</strong> Row for sending &quot;direct&quot; mutations.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Bigtable Row - Python client libraries",
+      "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/row",
+      "description": "from google.cloud.bigtable import Client client = Client(admin=True) instance = client.instance(INSTANCE_ID) table = instance.table(TABLE_ID) row_key = b&quot;row_key_1&quot; row_obj = table.row(row_key) row_obj.set_cell(COLUMN_FAMILY_ID, COL_NAME1, b&quot;cell-val&quot;) row_obj.clear()",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "bigquery: google_bigquery_api::ExternalDataConfiguration Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/cpp/latest/classgoogle__bigquery__api_1_1ExternalDataConfiguration.html",
+      "description": "<strong>Get a reference to the value of the &#x27;sourceUris&#x27; attribute</strong>. Returns a string denoting the type of this data object. ... Determine if the &#x27;autodetect&#x27; attribute was set. ... Determine if the &#x27;bigtableOptions&#x27; attribute was set.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Bigtable\" reference OR site:developers.google.com \"bigtable\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "gcloud bigtable tables | Google Cloud SDK | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/sdk/gcloud/reference/bigtable/tables",
       "description": "Skip to main content · Console · English · Deutsch · Español – América Latina · Français · Português – Brasil · 中文 – 简体 · 日本語 · 한국어",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud introduction reference"
       ],
@@ -2440,24 +2692,391 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 91,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 91,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 82,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-external-bigtable-perm",
-      "title": "Query Bigtable using a permanent table | BigQuery | Google Cloud Documentation",
-      "description": "String projectId = &quot;MY_PROJECT_ID&quot;; String bigtableInstanceId = &quot;MY_INSTANCE_ID&quot;; String bigtableTableName = &quot;MY_BIGTABLE_NAME&quot;; String bigqueryDatasetName = &quot;MY_DATASET_NAME&quot;; String bigqueryTableName = &quot;MY_TABLE_NAME&quot;; String sourceUri = String.format( &quot;https://googleapis.com/bigtable/projects/%s/instances/%s/tables/%s&quot;, projectId, bigtableInstanceId, bigtableTableName); String query = String.format(&quot;SELECT * FROM %s &quot;, bigqueryTableName); queryExternalBigtablePerm(bigqueryDatasetName, bigqueryTableName, sourceUri, query); } public static void queryExternalBigtablePerm( String datasetName, String tableName, String sourceUri, String query) { try { // Initialize client that will be used to send requests.",
+      "title": "google.cloud.bigtable.table — google-cloud-bigtable 0.1.0 documentation",
+      "url": "https://googleapis.dev/python/bigtable/1.2.1/_modules/google/cloud/bigtable/table.html",
+      "description": "&quot;&quot;&quot;User-friendly container for Google Cloud <strong>Bigtable</strong> Table.&quot;&quot;&quot; from grpc import StatusCode from google.api_core import timeout from google.api_core.exceptions import RetryError from google.api_core.exceptions import NotFound from google.api_core.retry import if_exception_type from google.api_core.retry import Retry from google.api_core.gapic_v1.method import wrap_method from google.cloud._helpers import _to_bytes from google.cloud.bigtable.column_family import _gc_rule_from_pb from google.cloud.bigtable.column_family import ColumnFamily from google.cloud.bigtable.batcher import MutationsBatche",
+      "rank": 6,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "google.cloud.bigtable.client — google-cloud-bigtable documentation",
+      "url": "https://googleapis.dev/python/bigtable/1.4.0/_modules/google/cloud/bigtable/client.html",
+      "description": "[docs]class Client(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud <strong>Bigtable</strong> API. .. note:: Since the Cloud <strong>Bigtable</strong> API requires the gRPC transport, no ``_http`` argument is accepted by this class. :type project: :class:`str` or :func:`unicode &lt;unicode&gt;` :param project: (Optional) The ID of the project which owns the instances, tables and data.",
+      "rank": 8,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python Client for Google Cloud Bigtable",
+      "url": "https://googleapis.dev/python/bigtable/latest",
+      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
+      "rank": 3,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client libraries | Google Cloud Documentation",
+      "url": "https://googleapis.dev/python/bigtable/latest/_modules/google/cloud/bigtable/instance.html",
+      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
+      "rank": 4,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Column Families — google-cloud-bigtable documentation",
+      "url": "https://googleapis.dev/python/bigtable/latest/classic_client/column-family.html",
+      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Instance Admin API — google-cloud-bigtable documentation",
+      "url": "https://googleapis.dev/python/bigtable/latest/instance-api.html",
+      "description": "When modifying an instance (via a CreateInstance request), the <strong>Bigtable</strong> API will return a long-running operation and a corresponding Operation object will be returned by create().",
+      "rank": 5,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/bigtable/latest/instance.html",
+      "description": "Google Cloud <strong>Bigtable</strong> is Google’s NoSQL Big Data database service.",
+      "rank": 2,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Table Admin API — google-cloud-bigtable documentation",
+      "url": "https://googleapis.dev/python/bigtable/latest/table-api.html",
+      "description": "&gt;&gt;&gt; instance.list_tables() [&lt;google.cloud.bigtable.table.Table at 0x7ff6a1de8f50&gt;, &lt;google.cloud.bigtable.table.Table at 0x7ff6a1de8350&gt;]",
+      "rank": 7,
+      "query_hits": [
+        "site:googleapis.dev/python \"Bigtable\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Module loader (0.8.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-bigtable/latest",
+      "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.8.0 (latest) 0.7.0 · 0.6.0 · 0.5.0 · 0.4.4 · 0.3.1 · 0.2.3 · API documentation for loader module. BigtableLoader( instance_id: str, table_id: str, row_set: typing.Optional[google.cloud.bigtable.row_set.RowSet] = None, filter: typing.Optional[google.cloud.bigtable.row_filters.RowFilter] = None, client: typing.Optional[google.cloud.bigtable.client.Client] = None, content_encoding: langchain_google_bigtable.loader.Encoding = Encoding.UTF8, content_column_family: str = &quot;langchain&quot;, content_column_name: str",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Module loader (0.8.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-bigtable/latest/langchain_google_bigtable.loader",
+      "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.8.0 (latest) 0.7.0 · 0.6.0 · 0.5.0 · 0.4.4 · 0.3.1 · 0.2.3 · API documentation for loader module. BigtableLoader( instance_id: str, table_id: str, row_set: typing.Optional[google.cloud.bigtable.row_set.RowSet] = None, filter: typing.Optional[google.cloud.bigtable.row_filters.RowFilter] = None, client: typing.Optional[google.cloud.bigtable.client.Client] = None, content_encoding: langchain_google_bigtable.loader.Encoding = Encoding.UTF8, content_column_family: str = &quot;langchain&quot;, content_column_name: str",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class BigtableVectorStore (0.8.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-bigtable/latest/langchain_google_bigtable.vector_store.BigtableVectorStore",
+      "description": "Python · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 0.8.0 (latest) 0.7.0 · 0.6.0 · 0.5.0 · 0.4.4 · 0.3.1 · 0.2.3 · BigtableVectorStore(instance_id: str, table_id: str, embedding_service: langchain_core.embeddings.embeddings.Embeddings, collection: str, content_column: langchain_google_bigtable.async_vector_store.ColumnConfig = ColumnConfig(column_qualifier=&#x27;content&#x27;, column_family=&#x27;langchain&#x27;, encoding=&lt;Encoding.UTF8: &#x27;utf-8&#x27;&gt;), embedding_column: langchain_google_bigtable.async_vector_store.ColumnConfig = ColumnConfig(column_qualifier=&#x27;embedding&#x27;, column_f",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create a table definition file for an external data source | BigQuery | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/external-table-definition",
+      "description": "There are no configuration settings that are specific to Datastore and Firestore export files. For more information, see ExternalDataConfiguration in the API reference. When you create a table definition file for Bigtable, you manually generate the file in JSON format.",
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"API reference\""
       ],
@@ -2467,58 +3086,63 @@
       "round_hits": [
         3
       ],
-      "best_rank": 2,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 87,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 87,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Query Bigtable using a permanent table | BigQuery | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-external-bigtable-perm",
+      "description": "String projectId = &quot;MY_PROJECT_ID&quot;; String bigtableInstanceId = &quot;MY_INSTANCE_ID&quot;; String bigtableTableName = &quot;MY_BIGTABLE_NAME&quot;; String bigqueryDatasetName = &quot;MY_DATASET_NAME&quot;; String bigqueryTableName = &quot;MY_TABLE_NAME&quot;; String sourceUri = String.format( &quot;https://googleapis.com/bigtable/projects/%s/instances/%s/tables/%s&quot;, projectId, bigtableInstanceId, bigtableTableName); String query = String.format(&quot;SELECT * FROM %s &quot;, bigqueryTableName); queryExternalBigtablePerm(bigqueryDatasetName, bigqueryTableName, sourceUri, query); } public static void queryExternalBigtablePerm( String datasetName, String tableName, String sourceUri, String query) { try { // Initialize client that will be used to send requests.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Bigtable\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 79,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigtable/docs/release-notes",
-      "title": "Bigtable release notes | Google Cloud Documentation",
-      "description": "Create new environment variable to toggle directpath scoped to cloud bigtable. (#2261) (9062944) Implement ExecuteQuery API for SQL support (#2280) (25218e8) Update dependency com.google.truth.extensions:truth-proto-extension to v1.4.4 (#2282) (d00a9e0) ... The Preview of automated backup has been expanded to let you enable and disable automated backup in the Google Cloud console. For more information, see the automated backup documentation.",
-      "query_hits": [
-        "site:docs.cloud.google.com \"Bigtable\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Bigtable\" \"access control\""
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 74,
-      "deterministic_score": 80,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 80,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 78,
-      "keep": false
-    },
-    {
-      "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-external-bigtable-temp",
       "title": "Query Bigtable using a temporary table | BigQuery | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-external-bigtable-temp",
       "description": "String projectId = &quot;MY_PROJECT_ID&quot;; String bigtableInstanceId = &quot;MY_INSTANCE_ID&quot;; String bigtableTableName = &quot;MY_BIGTABLE_NAME&quot;; String bigqueryTableName = &quot;MY_TABLE_NAME&quot;; String sourceUri = String.format( &quot;https://googleapis.com/bigtable/projects/%s/instances/%s/tables/%s&quot;, projectId, bigtableInstanceId, bigtableTableName); String query = String.format(&quot;SELECT * FROM %s &quot;, bigqueryTableName); queryExternalBigtableTemp(bigqueryTableName, sourceUri, query); } public static void queryExternalBigtableTemp(String tableName, String sourceUri, String query) { try { // Initialize client that will be used to send requests.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" \"API reference\""
       ],
@@ -2530,24 +3154,28 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 81,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 81,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 74,
+      "final_score": 90,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.FormatOptions",
       "title": "Class FormatOptions (2.58.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/overview",
       "description": "Default options for BIGTABLE format.",
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Bigtable\""
       ],
@@ -2559,24 +3187,61 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 41,
+      "product_fit_score": 26,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 41,
-        "parent_page_likelihood": 2,
-        "product_match": 0,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class FormatOptions (2.58.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/com.google.cloud.bigquery.FormatOptions",
+      "description": "Default options for BIGTABLE format.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Bigtable\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 26,
+      "deterministic_score": 89,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 89,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 3,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 40,
+      "final_score": 81,
       "keep": false
     },
     {
-      "url": "https://docs.cloud.google.com/bigquery/docs/tables-intro",
       "title": "Introduction to tables | BigQuery | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/tables-intro",
       "description": "Describes tables in BigQuery, their types (BigQuery tables, external tables, and views), limitations, quotas, and pricing.",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Bigtable\" Google Cloud introduction reference"
       ],
@@ -2589,17 +3254,20 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": -28,
-      "deterministic_score": 0,
+      "deterministic_score": 4,
       "api_score": {
         "classification": "supporting_page",
-        "score": 0,
+        "score": 4,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 0,
         "product_match": 0,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 5,
+      "final_score": 8,
       "keep": false
     }
   ]

@@ -1,17 +1,17 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:37:35.020Z",
+  "generated_at": "2026-04-09T01:32:13.858Z",
   "product_name": "Guest Environment",
   "product_slug": "guest-environment",
   "step02_source_path": "data/step-02/current/guest-environment.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "compute",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
-  "candidates_scored_by_api": 9,
+  "candidates_scored_by_api": 14,
   "search_runs": [
     {
       "round": 1,
@@ -19,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Guest Environment\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Install the guest environment | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/install-guest-environment",
+          "description": "This page explains how to manually install the guest environment on virtual machine (VM) instances. The guest environment is <strong>a collection of scripts, daemons, and binaries that instances require to run on Compute Engine</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Guest environment | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+          "description": "This document provides an overview of the guest environment, which contains scripts, daemons, and binaries that instances need to run on Compute Engine.",
+          "rank": 2
+        },
+        {
+          "title": "Guest environment release notes | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment/release-notes",
+          "description": "This page documents updates to the guest environment, which is <strong>a set of scripts, daemons, and binaries that read metadata server content to ensure instances function correctly on Compute Engine</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "About the guest agent | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+          "description": "This document provides an overview of the guest agent architecture. The guest agent is a critical component of the guest environment. The guest environment <strong>contains scripts, daemons, and binaries that instances need to run on Compute Engine</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Guest agent functionality | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent-functions",
+          "description": "This document provides an overview of the core functionality of the guest agent, a critical component of the guest environment. The guest environment <strong>contains scripts, daemons, and binaries that instances need to run on Compute Engine</strong>.",
+          "rank": 5
+        },
+        {
+          "title": "Operating system details | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/os-details",
+          "description": "The guest environment for Compute Engine packages are installed from the packages that are supplied by SUSE.",
+          "rank": 6
+        },
+        {
+          "title": "Support policy for operating systems | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/support-maintenance-policy",
+          "description": "Google Cloud Support troubleshoots the guest environment and offers guidance on how to resolve any issues identified.",
+          "rank": 7
+        },
+        {
+          "title": "Configure the guest agent | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/manage-guest-agent",
+          "description": "The guest agent is a critical component of the guest environment. The guest environment <strong>contains scripts, daemons, and binaries that instances need to run on Compute Engine</strong>. For more information about the guest environment, see Guest environment.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -120,6 +176,44 @@
     },
     {
       "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/compute/docs/images \"guest agent\" OR \"install guest environment\"",
+      "official_result_count": 5,
+      "results": [
+        {
+          "title": "Guest environment | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+          "description": "Learn how to Install the guest environment. Learn about the guest agent.",
+          "rank": 1
+        },
+        {
+          "title": "About the guest agent | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+          "description": "For more information, see Install and manage Agent for SAP on a fleet of VMs. For more information about installing and managing these extensions, see VM Extension Manager. VM Extension Manager: this managed Google Cloud service runs on Google&#x27;s backend infrastructure. VM Extension Manager manages the lifecycle of extensions, including their installation, updates, and configuration, by communicating with the guest agent manager on the instance.",
+          "rank": 2
+        },
+        {
+          "title": "Configure the guest agent | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/manage-guest-agent",
+          "description": "Configure the guest agent service and its features by editing the `instance_configs.cfg` file.",
+          "rank": 3
+        },
+        {
+          "title": "Guest agent functionality | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent-functions",
+          "description": "VM Extension Manager: this is a ... their installation and updates. For more information about the guest agent architecture, see About guest agent. The guest agent manager follows a specific startup sequence to ensure that the instance is correctly set up to run on Compute Engine. Immediately after the process starts, the agent manager launches the core plugin, a specialized component that handles foundational guest environment ...",
+          "rank": 4
+        },
+        {
+          "title": "Guest environment release notes | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment/release-notes",
+          "description": "This page documents updates to the guest environment, which is a set of scripts, daemons, and binaries that read metadata server content to ensure instances function correctly on Compute Engine. The central component of the guest environment is the guest agent, which handles tasks like account management, OS Login integration, and network interface management.",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Guest Environment\" reference OR site:developers.google.com \"guest environment\" reference",
       "official_result_count": 0,
@@ -165,15 +259,15 @@
           "rank": 2
         },
         {
-          "title": "Guest environment release notes | Compute Engine | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment/release-notes",
-          "description": "This page documents updates to the guest environment, which is <strong>a set of scripts, daemons, and binaries that read metadata server content to ensure instances function correctly on Compute Engine</strong>.",
-          "rank": 3
-        },
-        {
           "title": "About the guest agent | Compute Engine | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent",
           "description": "This document provides an overview of the guest agent architecture. The guest agent is a critical component of the guest environment. The guest environment <strong>contains scripts, daemons, and binaries that instances need to run on Compute Engine</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "Guest environment release notes | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment/release-notes",
+          "description": "This page documents updates to the guest environment, which is <strong>a set of scripts, daemons, and binaries that read metadata server content to ensure instances function correctly on Compute Engine</strong>.",
           "rank": 4
         },
         {
@@ -215,6 +309,38 @@
       "query": "site:docs.cloud.google.com \"Guest Environment\" \"API reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/compute/docs/metadata \"guest attributes\"",
+      "official_result_count": 4,
+      "results": [
+        {
+          "title": "Setting and querying guest attributes | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+          "description": "Guest attributes aren&#x27;t designed for use cases that require application or user authentication and authorization. Use <strong>guest attributes</strong> only for use cases that require small amounts of data that don&#x27;t change frequently.",
+          "rank": 1
+        },
+        {
+          "title": "About VM metadata | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/metadata/overview",
+          "description": "Guest attributes are <strong>a specific type of custom metadata that your applications can write to while running on your VMs</strong>. Use guest attributes only for use cases that require small amounts of data that don&#x27;t change frequently.",
+          "rank": 2
+        },
+        {
+          "title": "Predefined metadata keys | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/metadata/predefined-metadata-keys",
+          "description": "Learn how to set and query <strong>guest attributes</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "View and query VM metadata | Compute Engine | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/compute/docs/metadata/querying-metadata",
+          "description": "Learn how to set and query <strong>guest attributes</strong>.",
+          "rank": 4
+        }
+      ]
     },
     {
       "round": 3,
@@ -316,32 +442,38 @@
       "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
+        "site:docs.cloud.google.com/compute/docs/images \"guest agent\" OR \"install guest environment\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "canonical_docs"
       ],
       "round_hits": [
         1,
         2,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 212,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Guest agent functionality | Compute Engine | Google Cloud Documentation",
@@ -350,28 +482,34 @@
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
+        "site:docs.cloud.google.com/compute/docs/images \"guest agent\" OR \"install guest environment\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "canonical_docs"
       ],
       "round_hits": [
         1,
         2,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 212,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -384,12 +522,15 @@
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
+        "site:docs.cloud.google.com/compute/docs/images \"guest agent\" OR \"install guest environment\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Guest Environment\" IAM roles permissions",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs",
+        "canonical_docs",
         "iam_permissions"
       ],
       "round_hits": [
@@ -399,53 +540,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 182,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Guest environment release notes | Compute Engine | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment/release-notes",
-      "description": "This page documents updates to the guest environment, which is <strong>a set of scripts, daemons, and binaries that read metadata server content to ensure instances function correctly on Compute Engine</strong>.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Install the guest environment | Compute Engine | Google Cloud Documentation",
@@ -454,28 +564,33 @@
       "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "canonical_docs"
       ],
       "round_hits": [
         1,
         2,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 182,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
@@ -488,24 +603,30 @@
       "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
+        "site:docs.cloud.google.com/compute/docs/images \"guest agent\" OR \"install guest environment\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs"
+        "product_docs",
+        "canonical_docs"
       ],
       "round_hits": [
         1,
         2,
         3
       ],
-      "best_rank": 6,
+      "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -535,11 +656,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 142,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -558,11 +682,13 @@
         "site:docs.cloud.google.com \"Guest Environment\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
+        "site:docs.cloud.google.com/compute/docs/metadata \"guest attributes\"",
         "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "iam_permissions",
-        "product_docs"
+        "product_docs",
+        "canonical_docs"
       ],
       "round_hits": [
         1,
@@ -571,19 +697,194 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 28,
+      "product_fit_score": 82,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
       "keep": true
+    },
+    {
+      "title": "Guest environment release notes | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment/release-notes",
+      "description": "This page documents updates to the guest environment, which is <strong>a set of scripts, daemons, and binaries that read metadata server content to ensure instances function correctly on Compute Engine</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Guest Environment\" Google Cloud documentation",
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\"",
+        "site:docs.cloud.google.com/compute/docs/images \"guest agent\" OR \"install guest environment\"",
+        "site:docs.cloud.google.com \"Guest Environment\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Guest Environment\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 62,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Operating system details | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/images/os-details",
+      "description": "The guest environment for Compute Engine packages are installed from the packages that are supplied by SUSE.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 112,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Support policy for operating systems | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/images/support-maintenance-policy",
+      "description": "Google Cloud Support troubleshoots the guest environment and offers guidance on how to resolve any issues identified.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/compute/docs/images \"Guest Environment\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 112,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "About VM metadata | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/metadata/overview",
+      "description": "Guest attributes are <strong>a specific type of custom metadata that your applications can write to while running on your VMs</strong>. Use guest attributes only for use cases that require small amounts of data that don&#x27;t change frequently.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/compute/docs/metadata \"guest attributes\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 12,
+      "deterministic_score": 87,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 87,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 2,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 79,
+      "keep": false
+    },
+    {
+      "title": "Predefined metadata keys | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/metadata/predefined-metadata-keys",
+      "description": "Learn how to set and query <strong>guest attributes</strong>.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/compute/docs/metadata \"guest attributes\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 12,
+      "deterministic_score": 76,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 76,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 2,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 70,
+      "keep": false
     },
     {
       "title": "Manage OS Login in an organization | Compute Engine | Google Cloud Documentation",
@@ -601,18 +902,54 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 22,
-      "deterministic_score": 92,
+      "product_fit_score": 6,
+      "deterministic_score": 76,
       "api_score": {
         "classification": "supporting_page",
-        "score": 92,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
+        "score": 76,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 2,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 83,
+      "final_score": 70,
+      "keep": false
+    },
+    {
+      "title": "View and query VM metadata | Compute Engine | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/compute/docs/metadata/querying-metadata",
+      "description": "Learn how to set and query <strong>guest attributes</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/compute/docs/metadata \"guest attributes\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 12,
+      "deterministic_score": 73,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 73,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 2,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 67,
       "keep": false
     }
   ]

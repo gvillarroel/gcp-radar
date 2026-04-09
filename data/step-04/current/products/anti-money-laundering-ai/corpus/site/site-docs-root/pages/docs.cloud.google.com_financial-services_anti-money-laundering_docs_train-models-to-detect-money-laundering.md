@@ -10,204 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering
   title: "Train and test models designed to detect money laundering \_|\_ Anti Money\
     \ Laundering AI \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Train and test models designed to detect money laundering | Anti Money Laundering AI | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Anti Money Laundering AI
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-Discover
-Product overview
-Process overview
-Architectural overview
-Security and compliance features
-Documentation policy
-Glossary
-Quickstart
-Train and test models designed to detect money laundering
-Get started
-Set up a project and permissions
-Create an instance
-Prepare Big Query datasets and tables
-Prepare data for AML AI
-Understand the AML data model and requirements
-Understand data scope and duration
-Select data for best performance and typology coverage
-Create and manage AML AI datasets
-Generate a model and evaluate performance
-Overview of model preparation
-Configure an engine
-Manage engine versions
-Create and manage engine configs
-Generate a model
-Create and manage models
-Evaluate a model
-Copy models to new instances
-Create and manage backtest results
-Generate risk scores and explainability
-Register your parties
-Party registration sharing for multiple instances
-Prepare to generate prediction outputs
-Create and manage prediction results
-Understand prediction outputs
-Best practices for your investigation process
-Prepare for model and risk governance
-Collect model and risk governance artifacts
-Evaluate model fairness
-Troubleshoot
-Troubleshoot AML AI
-Data validation errors
-Administer AML AI
-Access control
-Access control with IAM
-Authenticate to AML AI
-Data residency
-VPC service controls
-Encryption
-Understand encryption in transit
-Encrypt data at rest (CMEK)
-Monitor AML AI resources
-Use audit logs
-Use platform logs
-Manage instances
-Manage long-running operations
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Before you begin
-Create an instance Create a key ring
-Create a key
-Create the instance using the API
-Check for the result
-Grant access to the CMEK key
-Create BigQuery datasets Create an output dataset
-Create an input dataset
-Copy the sample dataset
-Grant access to the BigQuery datasets
-Create an AML AI dataset
-Create an engine config
-Create a model
-Create a backtest result
-Export backtest results metadata
-Import registered parties
-Create a prediction result
-Analyze a single structuring case in the Google Cloud console
-Clean up Delete the prediction result
-Delete the backtest result
-Delete the model
-Delete the engine config
-Delete the dataset
-Delete the instance
-Delete the BigQuery datasets
-Delete the transfer job configuration
-What's next
 Home
 Documentation
 Industry solutions
 Anti Money Laundering AI
 Guides
-Was this helpful?
 Send feedback
-On this page
-Before you begin
-Create an instance Create a key ring
-Create a key
-Create the instance using the API
-Check for the result
-Grant access to the CMEK key
-Create BigQuery datasets Create an output dataset
-Create an input dataset
-Copy the sample dataset
-Grant access to the BigQuery datasets
-Create an AML AI dataset
-Create an engine config
-Create a model
-Create a backtest result
-Export backtest results metadata
-Import registered parties
-Create a prediction result
-Analyze a single structuring case in the Google Cloud console
-Clean up Delete the prediction result
-Delete the backtest result
-Delete the model
-Delete the engine config
-Delete the dataset
-Delete the instance
-Delete the BigQuery datasets
-Delete the transfer job configuration
-What's next
-Train and test models designed to detect money laundering
 Stay organized with collections
 Save and categorize content based on your preferences.
+Train and test models designed to detect money laundering
 Important: Completing this quickstart will result in charges to your
 Google Cloud account. For information on pricing, see the Pricing page .
 Note that the sample dataset used in this quickstart contains 100,000 parties.
@@ -233,24 +50,16 @@ If you are going to use an existing project that you don't own, you may
 need your administrator to grant you certain permissions to access the existing
 project. For more information, see
 Creating and managing projects .
-Start by creating a Google Cloud account. With this account, you get $300 in free credits,
-plus free usage of over 20 products, up to monthly limits.
-Create an account
-To run the commands on this page, set up the gcloud CLI in one of the following
-development environments:
-Cloud Shell Local shell
-More
-To use an online terminal with the gcloud CLI already set up, activate
-Cloud Shell:
-Activate Cloud Shell on this page
-At the bottom of this page, a Cloud Shell session starts and displays a
-command-line prompt. It can take a few seconds for the session to initialize.
-To use a local development environment, follow these steps:
-Install the gcloud CLI.
-If you're using an external identity provider (IdP), sign in to the
-gcloud CLI with your federated identity. For more information, see
-Sign in to the gcloud CLI with your federated identity .
-Initialize the gcloud CLI .
+Sign in to your Google Cloud account. If you're new to
+Google Cloud,
+create an account to evaluate how our products perform in
+real-world scenarios. New customers also get $300 in free credits to
+run, test, and deploy workloads.
+Install the Google Cloud CLI.
+If you're using an external identity provider (IdP), you must first
+sign in to the gcloud CLI with your federated identity .
+To initialize the gcloud CLI, run the following command:
+gcloud init
 Create or select a Google Cloud project .
 Roles required to select or create a project
 Select a project : Selecting a project doesn't require a specific
@@ -294,21 +103,11 @@ PROJECT_ID : Your project ID.
 USER_IDENTIFIER : The identifier for your user
 account. For example, myemail@example.com .
 ROLE : The IAM role that you grant to your user account.
-To run the commands on this page, set up the gcloud CLI in one of the following
-development environments:
-Cloud Shell Local shell
-More
-To use an online terminal with the gcloud CLI already set up, activate
-Cloud Shell:
-Activate Cloud Shell on this page
-At the bottom of this page, a Cloud Shell session starts and displays a
-command-line prompt. It can take a few seconds for the session to initialize.
-To use a local development environment, follow these steps:
-Install the gcloud CLI.
-If you're using an external identity provider (IdP), sign in to the
-gcloud CLI with your federated identity. For more information, see
-Sign in to the gcloud CLI with your federated identity .
-Initialize the gcloud CLI .
+Install the Google Cloud CLI.
+If you're using an external identity provider (IdP), you must first
+sign in to the gcloud CLI with your federated identity .
+To initialize the gcloud CLI, run the following command:
+gcloud init
 Create or select a Google Cloud project .
 Roles required to select or create a project
 Select a project : Selecting a project doesn't require a specific
@@ -357,7 +156,38 @@ Required permissions
 The following permissions are required to complete this quickstart:
 Permission
 Description
-bigquery.datasets.create Create a BigQuery dataset bigquery.datasets.delete Delete a BigQuery dataset bigquery.datasets.get Get a BigQuery dataset bigquery.datasets.setIamPolicy Set the IAM policy on a BigQuery dataset bigquery.datasets.update Update a BigQuery dataset bigquery.jobs.create Create a BigQuery job bigquery.tables.getData Get data from a BigQuery table bigquery.transfers.get Get a BigQuery Data Transfer Service transfer bigquery.transfers.update Create or delete a BigQuery Data Transfer Service transfer cloudkms.cryptoKeys.create Create a Cloud KMS key cloudkms.cryptoKeys.getIamPolicy Get the IAM policy on a Cloud KMS key cloudkms.cryptoKeys.setIamPolicy Set the IAM policy on a Cloud KMS key cloudkms.keyRings.create Create a Cloud KMS key ring financialservices.operations.get Get an AML AI operation financialservices.v1backtests.create Create an AML AI backtest result financialservices.v1backtests.delete Delete an AML AI backtest result financialservices.v1backtests.exportMetadata Export metadata from an AML AI backtest result financialservices.v1datasets.create Create an AML AI dataset financialservices.v1datasets.delete Delete an AML AI dataset financialservices.v1engineconfigs.create Create an AML AI engine config financialservices.v1engineconfigs.delete Delete an AML AI engine config financialservices.v1instances.create Create an AML AI instance financialservices.v1instances.delete Delete an AML AI instance financialservices.v1instances.importRegisteredParties Import registered parties into an AML AI instance financialservices.v1models.copyFrom Copy from an AML AI model financialservices.v1models.copyTo Copy to an AML AI instance financialservices.v1models.create Create an AML AI model financialservices.v1models.delete Delete an AML AI model financialservices.v1predictions.create Create an AML AI prediction result financialservices.v1predictions.delete Delete an AML AI prediction result resourcemanager.projects.get Get a Google Cloud project resourcemanager.projects.list List Google Cloud projects
+resourcemanager.projects.get Get a Google Cloud project
+resourcemanager.projects.list List Google Cloud projects
+cloudkms.keyRings.create Create a Cloud KMS key ring
+cloudkms.cryptoKeys.create Create a Cloud KMS key
+financialservices.v1instances.create Create an AML AI instance
+financialservices.operations.get Get an AML AI operation
+cloudkms.cryptoKeys.getIamPolicy Get the IAM policy on a Cloud KMS key
+cloudkms.cryptoKeys.setIamPolicy Set the IAM policy on a Cloud KMS key
+bigquery.datasets.create Create a BigQuery dataset
+bigquery.datasets.get Get a BigQuery dataset
+bigquery.transfers.get Get a BigQuery Data Transfer Service transfer
+bigquery.transfers.update Create or delete a BigQuery Data Transfer Service transfer
+bigquery.datasets.setIamPolicy Set the IAM policy on a BigQuery dataset
+bigquery.datasets.update Update a BigQuery dataset
+financialservices.v1datasets.create Create an AML AI dataset
+financialservices.v1engineconfigs.create Create an AML AI engine config
+financialservices.v1models.copyFrom Copy from an AML AI model
+financialservices.v1models.copyTo Copy to an AML AI instance
+financialservices.v1models.create Create an AML AI model
+financialservices.v1backtests.create Create an AML AI backtest result
+financialservices.v1backtests.exportMetadata Export metadata from an AML AI backtest result
+financialservices.v1instances.importRegisteredParties Import registered parties into an AML AI instance
+financialservices.v1predictions.create Create an AML AI prediction result
+bigquery.jobs.create Create a BigQuery job
+bigquery.tables.getData Get data from a BigQuery table
+financialservices.v1predictions.delete Delete an AML AI prediction result
+financialservices.v1backtests.delete Delete an AML AI backtest result
+financialservices.v1models.delete Delete an AML AI model
+financialservices.v1engineconfigs.delete Delete an AML AI engine config
+financialservices.v1datasets.delete Delete an AML AI dataset
+financialservices.v1instances.delete Delete an AML AI instance
+bigquery.datasets.delete Delete a BigQuery dataset
 The API requests in this guide use the same Google Cloud project and location
 and hard-coded resource IDs to make the guide easier to complete. The resource
 IDs follow the pattern my- resource-type (for example, my-key-ring and
@@ -398,11 +228,9 @@ Create a key ring
 To create a key ring, use the
 projects.locations.keyRings.create
 method.
-REST gcloud
-More
+REST
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -416,6 +244,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d "" \ "https://cloudkms.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /keyRings?key_ring_id=my-key-ring"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -432,6 +261,7 @@ You should receive a JSON response similar to the following:
 "name": "projects/ PROJECT_ID /locations/ LOCATION /keyRings/my-key-ring",
 "createTime": CREATE_TIME
 }
+gcloud
 Execute the
 following
 command:
@@ -474,15 +304,13 @@ Create a key
 To create a key, use the
 projects.locations.keyRings.cryptoKeys
 method.
-REST gcloud
-More
+REST
 Request JSON body:
 {
 "purpose": "ENCRYPT_DECRYPT"
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -497,13 +325,10 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"purpose": "ENCRYPT_DECRYPT"
-}
-EOF
+cat > request.json
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://cloudkms.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /keyRings/my-key-ring/cryptoKeys?crypto_key_id=my-key"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -542,6 +367,7 @@ You should receive a JSON response similar to the following:
 },
 "destroyScheduledDuration": "86400s"
 }
+gcloud
 Before using any of the command data below,
 make the following replacements:
 LOCATION : the location of the key ring;
@@ -610,8 +436,7 @@ Request JSON body:
 "kmsKey": "projects/ PROJECT_ID /locations/ LOCATION /keyRings/my-key-ring/cryptoKeys/my-key"
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -626,13 +451,12 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"kmsKey": "projects/ PROJECT_ID /locations/ LOCATION /keyRings/my-key-ring/cryptoKeys/my-key"
+cat > request.json PROJECT_ID /locations/ LOCATION /keyRings/my-key-ring/cryptoKeys/my-key"
 }
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances?instance_id=my-instance"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -688,8 +512,7 @@ Before using any of the request data,
 make the following replacements:
 OPERATION_ID : the identifier for the operation
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -703,6 +526,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X GET \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /operations/ OPERATION_ID "
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -752,24 +576,24 @@ datasets, and then copy sample banking data into the input dataset.
 Create an output dataset
 Create a dataset to be used to send the AML pipeline
 outputs to.
-Bash PowerShell
-More
+Bash
 bq mk \
 --location = LOCATION \
 --project_id = PROJECT_ID \
 my_bq_output_dataset
+PowerShell
 bq mk `
 --location = LOCATION `
 --project_id = PROJECT_ID `
 my_bq_output_dataset
 Create an input dataset
 Create a dataset to copy the sample banking tables into.
-Bash PowerShell
-More
+Bash
 bq mk \
 --location = LOCATION \
 --project_id = PROJECT_ID \
 my_bq_input_dataset
+PowerShell
 bq mk `
 --location = LOCATION `
 --project_id = PROJECT_ID `
@@ -795,8 +619,7 @@ state (for example, a random party that is positive, or a party that has
 structuring activity or the highest income and is reported negative)
 The AML schema is defined in the AML input data model .
 Copy the sample banking data into the input dataset you created.
-Bash PowerShell
-More
+Bash
 bq mk --transfer_config \
 --project_id = PROJECT_ID \
 --data_source = cross_region_copy \
@@ -808,6 +631,7 @@ bq mk --transfer_config \
 "source_dataset_id":"aml_ai_input_dataset",
 "overwrite_destination_table":"true"
 }'
+PowerShell
 bq mk --transfer_config `
 --project_id = PROJECT_ID `
 --data_source = cross_region_copy `
@@ -816,12 +640,12 @@ bq mk --transfer_config `
 --schedule = None `
 --params = '{\"source_project_id\":\"bigquery-public-data\",\"source_dataset_id\":\"aml_ai_input_dataset\",\"overwrite_destination_table\":\"true\"}'
 Monitor the data transfer job.
-Bash PowerShell
-More
+Bash
 bq ls --transfer_config \
 --transfer_location = LOCATION \
 --project_id = PROJECT_ID \
 --filter = "dataSourceIds:cross_region_copy"
+PowerShell
 bq ls --transfer_config `
 --transfer_location = LOCATION `
 --project_id = PROJECT_ID `
@@ -839,16 +663,16 @@ Grant access to the BigQuery datasets
 The API automatically creates a service account in your project. The service
 account needs access to the BigQuery input and output datasets.
 Grant read access to the input dataset and its tables.
-Bash PowerShell
-More
+Bash
 bq query --project_id = PROJECT_ID --use_legacy_sql = false \
 'GRANT `roles/bigquery.dataViewer` ON SCHEMA ` PROJECT_ID .my_bq_input_dataset` TO "serviceAccount:service- PROJECT_NUMBER @gcp-sa-financialservices.iam.gserviceaccount.com"'
+PowerShell
 bq query --project_id = PROJECT_ID --use_legacy_sql = false "GRANT ``roles/bigquery.dataViewer`` ON SCHEMA `` PROJECT_ID .my_bq_input_dataset`` TO 'serviceAccount:service- PROJECT_NUMBER @gcp-sa-financialservices.iam.gserviceaccount.com'"
 Grant write access to the output dataset.
-Bash PowerShell
-More
+Bash
 bq query --project_id = PROJECT_ID --use_legacy_sql = false \
 'GRANT `roles/bigquery.dataEditor` ON SCHEMA ` PROJECT_ID .my_bq_output_dataset` TO "serviceAccount:service- PROJECT_NUMBER @gcp-sa-financialservices.iam.gserviceaccount.com"'
+PowerShell
 bq query --project_id = PROJECT_ID --use_legacy_sql = false "GRANT ``roles/bigquery.dataEditor`` ON SCHEMA `` PROJECT_ID .my_bq_output_dataset`` TO 'serviceAccount:service- PROJECT_NUMBER @gcp-sa-financialservices.iam.gserviceaccount.com'"
 Create an AML AI dataset
 Create an AML AI dataset to specify the input
@@ -874,8 +698,7 @@ Request JSON body:
 }
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -890,10 +713,7 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"tableSpecs": {
-"party": "bq:// PROJECT_ID .my_bq_input_dataset.party",
+cat > request.json PROJECT_ID .my_bq_input_dataset.party",
 "account_party_link": "bq:// PROJECT_ID .my_bq_input_dataset.account_party_link",
 "transaction": "bq:// PROJECT_ID .my_bq_input_dataset.transaction",
 "risk_case_event": "bq:// PROJECT_ID .my_bq_input_dataset.risk_case_event",
@@ -910,6 +730,7 @@ cat > request.json << 'EOF'
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/datasets?dataset_id=my-dataset"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -982,8 +803,7 @@ Request JSON body:
 }
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -998,9 +818,7 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"engineVersion": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/engineVersions/aml-commercial.default.v004.008.202411-001",
+cat > request.json PROJECT_ID /locations/ LOCATION /instances/my-instance/engineVersions/aml-commercial.default.v004.008.202411-001",
 "tuning": {
 "primaryDataset": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset",
 "endTime": "2021-07-01T00:00:00Z"
@@ -1012,6 +830,7 @@ cat > request.json << 'EOF'
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/engineConfigs?engine_config_id=my-engine-config"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1064,8 +883,7 @@ Request JSON body:
 "endTime": "2021-07-01T00:00:00Z"
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1080,15 +898,14 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"engineConfig": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/engineConfigs/my-engine-config",
+cat > request.json PROJECT_ID /locations/ LOCATION /instances/my-instance/engineConfigs/my-engine-config",
 "primaryDataset": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset",
 "endTime": "2021-07-01T00:00:00Z"
 }
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/models?model_id=my-model"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1143,8 +960,7 @@ Request JSON body:
 }
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1159,9 +975,7 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"model": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/models/my-model",
+cat > request.json PROJECT_ID /locations/ LOCATION /instances/my-instance/models/my-model",
 "dataset": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset",
 "endTime": "2023-01-01T00:00:00Z",
 "backtestPeriods": 12,
@@ -1172,6 +986,7 @@ cat > request.json << 'EOF'
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/backtestResults?backtest_result_id=my-backtest-results"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1224,8 +1039,7 @@ Request JSON body:
 }
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1240,16 +1054,14 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"structuredMetadataDestination": {
-"tableUri": "bq:// PROJECT_ID .my_bq_output_dataset.my_backtest_results_metadata",
+cat > request.json PROJECT_ID .my_bq_output_dataset.my_backtest_results_metadata",
 "writeDisposition": "WRITE_TRUNCATE"
 }
 }
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/backtestResults/my-backtest-results:exportMetadata"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1341,8 +1153,7 @@ Request JSON body:
 "lineOfBusiness": "COMMERCIAL"
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1357,10 +1168,7 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"partyTables": [
-"bq:// PROJECT_ID .my_bq_input_dataset.party_registration"
+cat > request.json PROJECT_ID .my_bq_input_dataset.party_registration"
 ],
 "mode": "REPLACE",
 "lineOfBusiness": "COMMERCIAL"
@@ -1368,6 +1176,7 @@ cat > request.json << 'EOF'
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance:importRegisteredParties"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1432,8 +1241,7 @@ Request JSON body:
 }
 }
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1448,9 +1256,7 @@ gcloud auth list .
 Save the request body in a file named request.json .
 Run the following command in the terminal to create or overwrite
 this file in the current directory:
-cat > request.json << 'EOF'
-{
-"model": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/models/my-model",
+cat > request.json PROJECT_ID /locations/ LOCATION /instances/my-instance/models/my-model",
 "dataset": "projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset",
 "endTime": "2023-01-01T00:00:00Z",
 "predictionPeriods": "12",
@@ -1468,6 +1274,7 @@ cat > request.json << 'EOF'
 EOF
 Then execute the following command to send your REST request:
 curl -X POST \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/predictionResults?prediction_result_id=my-prediction-results"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1572,8 +1379,7 @@ To delete a prediction result, use the
 projects.locations.instances.predictionResults.delete
 method.
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1587,6 +1393,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/predictionResults/my-prediction-results"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1616,8 +1423,7 @@ To delete a backtest result, use the
 projects.locations.instances.backtestResults.delete
 method.
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1631,6 +1437,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/backtestResults/my-backtest-results"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1660,8 +1467,7 @@ To delete a model, use the
 projects.locations.instances.models.delete
 method.
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1675,6 +1481,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/models/my-model"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1704,8 +1511,7 @@ To delete an engine config, use the
 projects.locations.instances.engineConfigs.delete
 method.
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1719,6 +1525,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/engineConfigs/my-engine-config"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1748,8 +1555,7 @@ To delete a dataset, use the
 projects.locations.instances.datasets.delete
 method.
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1763,6 +1569,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1792,8 +1599,7 @@ To delete an instance, use the
 projects.locations.instances.delete
 method.
 To send your request, choose one of these options:
-curl PowerShell
-More
+curl
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1807,6 +1613,7 @@ You can check the currently active account by running
 gcloud auth list .
 Execute the following command:
 curl -X DELETE \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ "https://financialservices.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /instances/my-instance"
+PowerShell
 Note:
 The following command assumes that you have logged in to
 the gcloud CLI with your user account by running
@@ -1836,12 +1643,12 @@ bq rm -r -f -d PROJECT_ID :my_bq_input_dataset
 bq rm -r -f -d PROJECT_ID :my_bq_output_dataset
 Delete the transfer job configuration
 List the transfer jobs in the project.
-Bash PowerShell
-More
+Bash
 bq ls --transfer_config \
 --transfer_location = LOCATION \
 --project_id = PROJECT_ID \
 --filter = "dataSourceIds:cross_region_copy"
+PowerShell
 bq ls --transfer_config `
 --transfer_location = LOCATION `
 --project_id = PROJECT_ID `
@@ -1853,67 +1660,16 @@ projects/ PROJECT_NUMBER /locations/ LOCATION /transferConfigs/ TRANSFER_CONFIG_
 Copy the entire name, starting with projects/ and ending in the
 TRANSFER_CONFIG_ID .
 Delete the transfer config.
-Bash PowerShell
-More
+Bash
 bq rm --transfer_config TRANSFER_CONFIG_NAME
+PowerShell
 bq rm --transfer_config TRANSFER_CONFIG_NAME
 What's next
 Read about key concepts in the
 overview
 View the reference documentation
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-06 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-06 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

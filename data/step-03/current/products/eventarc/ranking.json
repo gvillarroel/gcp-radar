@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:20:48.760Z",
+  "generated_at": "2026-04-08T21:53:12.331Z",
   "product_name": "Eventarc",
   "product_slug": "eventarc",
   "step02_source_path": "data/step-02/current/eventarc.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "eventarc",
   "dominant_python_slug": "eventarc",
@@ -150,15 +150,15 @@
           "rank": 6
         },
         {
-          "title": "Support a cross-project service account | Eventarc Standard | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/eventarc/docs/use-cross-project-service-account",
-          "description": "Grant roles and permissions so that you can create an Eventarc trigger using a cross-project service account.",
-          "rank": 7
-        },
-        {
           "title": "Route Transcoder API events to Workflows | Eventarc Standard | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/route-trigger-transcoder",
           "description": "Enable the Eventarc, Eventarc Publishing, Workflows, and Workflow Executions APIs. ... If applicable, enable the API related to the direct events. For example, for Transcoder API events, enable the Transcoder API API. If you don&#x27;t already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for a target workflow.",
+          "rank": 7
+        },
+        {
+          "title": "Support a cross-project service account | Eventarc Standard | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/docs/use-cross-project-service-account",
+          "description": "Grant roles and permissions so that you can create an Eventarc trigger using a cross-project service account.",
           "rank": 8
         }
       ]
@@ -214,21 +214,21 @@
           "rank": 2
         },
         {
+          "title": "Eventarc Standard overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
+          "description": "When triggered, Eventarc Standard routes these events to various destinations (in this document, see Event destinations) while managing delivery, security, authorization, observability, and error-handling for you. You can manage Eventarc from the Google Cloud console, from the command line ...",
+          "rank": 3
+        },
+        {
           "title": "Eventarc Standard documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/eventarc/standard/docs?hl=en",
           "description": "<strong>Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services</strong>. ... Use Eventarc to listen to events from Cloud Pub/Sub, Cloud Storage, and Audit Logs and pass ...",
-          "rank": 3
+          "rank": 4
         },
         {
           "title": "Google event types supported by Eventarc | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/eventarc/docs/event-types",
           "description": "Eventarc Standard supports the following Google event types: ... Note: Google Cloud IoT Core was retired on August 16, 2023, and Cloud IoT events were deprecated at that time.",
-          "rank": 4
-        },
-        {
-          "title": "Eventarc Standard overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
-          "description": "When triggered, Eventarc Standard routes these events to various destinations (in this document, see Event destinations) while managing delivery, security, authorization, observability, and error-handling for you. You can manage Eventarc from the Google Cloud console, from the command line ...",
           "rank": 5
         },
         {
@@ -244,9 +244,9 @@
           "rank": 7
         },
         {
-          "title": "Use Eventarc to receive events from Cloud Storage | Cloud Run | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
-          "description": "<strong>Create an Eventarc trigger that routes events from the Cloud Storage bucket to the Cloud Run service</strong>. Generate an event by uploading a file to the Cloud Storage bucket and view the event in the Cloud Run logs.",
+          "title": "Create triggers with Eventarc | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/triggering/trigger-with-events",
+          "description": "Your Eventarc trigger&#x27;s service account must have the permission to invoke your service. By default, Cloud Run uses the Default compute service account. Each event-filters flag specifies a type of event, with the function triggering only when an event meets all of the criteria specified in its event-filters flags. Each trigger must have an event-filters flag specifying a supported event type, such as a new document ...",
           "rank": 8
         }
       ]
@@ -778,11 +778,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -812,19 +815,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
@@ -846,11 +852,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -864,7 +873,7 @@
       "title": "Eventarc Standard documentation | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/eventarc/standard/docs?hl=en",
       "description": "<strong>Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services</strong>. ... Use Eventarc to listen to events from Cloud Pub/Sub, Cloud Storage, and Audit Logs and pass ...",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
@@ -880,11 +889,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -892,7 +904,7 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Access control with IAM | Eventarc Standard | Google Cloud Documentation",
@@ -914,11 +926,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -932,7 +947,7 @@
       "title": "Eventarc Standard overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/eventarc/standard/docs/overview",
       "description": "When triggered, Eventarc Standard routes these events to various destinations (in this document, see Event destinations) while managing delivery, security, authorization, observability, and error-handling for you. You can manage Eventarc from the Google Cloud console, from the command line ...",
-      "rank": 5,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Eventarc\" Google Cloud docs overview",
@@ -948,11 +963,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -982,11 +1000,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1016,11 +1037,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1048,11 +1072,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1069,8 +1096,8 @@
       "rank": 1,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" \"APIs and reference\"",
-        "site:docs.cloud.google.com \"Eventarc\" \"API reference\"",
-        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Eventarc\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
       ],
       "intent_hits": [
         "api_reference",
@@ -1082,11 +1109,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1114,11 +1144,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1146,11 +1179,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1178,11 +1214,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1210,11 +1249,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1242,11 +1284,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1274,11 +1319,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1306,11 +1354,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1338,11 +1389,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1370,11 +1424,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1402,11 +1459,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1434,13 +1494,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1466,13 +1529,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1498,13 +1564,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1528,11 +1597,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1546,7 +1618,7 @@
       "title": "Google event types supported by Eventarc | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/eventarc/docs/event-types",
       "description": "Eventarc Standard supports the following Google event types: ... Note: Google Cloud IoT Core was retired on August 16, 2023, and Cloud IoT events were deprecated at that time.",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation"
       ],
@@ -1556,13 +1628,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1588,11 +1663,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1618,11 +1696,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1648,11 +1729,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1678,11 +1762,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1708,11 +1795,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1726,7 +1816,7 @@
       "title": "Support a cross-project service account | Eventarc Standard | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/eventarc/docs/use-cross-project-service-account",
       "description": "Grant roles and permissions so that you can create an Eventarc trigger using a cross-project service account.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\""
       ],
@@ -1736,17 +1826,20 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1768,11 +1861,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1798,11 +1894,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1828,11 +1927,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1858,11 +1960,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1888,11 +1993,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1918,11 +2026,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1948,11 +2059,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1966,7 +2080,7 @@
       "title": "Route Transcoder API events to Workflows | Eventarc Standard | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/route-trigger-transcoder",
       "description": "Enable the Eventarc, Eventarc Publishing, Workflows, and Workflow Executions APIs. ... If applicable, enable the API related to the direct events. For example, for Transcoder API events, enable the Transcoder API API. If you don&#x27;t already have one, create a user-managed service account, then grant it the roles and permissions necessary so that Eventarc can manage events for a target workflow.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" \"roles and permissions\""
       ],
@@ -1976,13 +2090,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2008,13 +2125,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2038,13 +2158,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2068,13 +2191,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2098,103 +2224,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Node.js client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nodejs/docs/reference/eventarc-publishing/latest",
-      "description": "The Eventarc Publishing API Node.js Client API Reference documentation also contains samples.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Create push subscriptions | Pub/Sub | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/pubsub/docs/create-push-subscription",
-      "description": "When routing events through Eventarc to Workflows destinations for which the push endpoint is set to a Workflows execution, you can only create new push subscriptions through Eventarc.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Configure event-driven function retries | Cloud Run | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/tips/function-retries?authuser=2",
-      "description": "Refer to the Eventarc documentation on retry events. Pub/Sub defaults to using the immediate redelivery policy for all subscriptions. Refer to the Pub/Sub documentation on handling message failures and retry requests. Functions created using the Cloud Functions v2 API, for example, using the Cloud Functions gcloud CLI, the REST API, or Terraform, will create and manage event triggers on your behalf.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2218,24 +2257,126 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 76,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 76,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 70,
+      "final_score": 90,
       "keep": false
     },
     {
-      "title": "Use Eventarc to receive events from Cloud Storage | Cloud Run | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
-      "description": "<strong>Create an Eventarc trigger that routes events from the Cloud Storage bucket to the Cloud Run service</strong>. Generate an event by uploading a file to the Cloud Storage bucket and view the event in the Cloud Run logs.",
+      "title": "Node.js client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nodejs/docs/reference/eventarc-publishing/latest",
+      "description": "The Eventarc Publishing API Node.js Client API Reference documentation also contains samples.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create push subscriptions | Pub/Sub | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/pubsub/docs/create-push-subscription",
+      "description": "When routing events through Eventarc to Workflows destinations for which the push endpoint is set to a Workflows execution, you can only create new push subscriptions through Eventarc.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure event-driven function retries | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/tips/function-retries?authuser=2",
+      "description": "Refer to the Eventarc documentation on retry events. Pub/Sub defaults to using the immediate redelivery policy for all subscriptions. Refer to the Pub/Sub documentation on handling message failures and retry requests. Functions created using the Cloud Functions v2 API, for example, using the Cloud Functions gcloud CLI, the REST API, or Terraform, will create and manage event triggers on your behalf.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Eventarc\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create triggers with Eventarc | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/triggering/trigger-with-events",
+      "description": "Your Eventarc trigger&#x27;s service account must have the permission to invoke your service. By default, Cloud Run uses the Default compute service account. Each event-filters flag specifies a type of event, with the function triggering only when an event meets all of the criteria specified in its event-filters flags. Each trigger must have an event-filters flag specifying a supported event type, such as a new document ...",
       "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Eventarc\" Google Cloud documentation"
@@ -2248,18 +2389,21 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 55,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 55,
-        "parent_page_likelihood": 3,
-        "product_match": 3,
-        "coverage_value": 1,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 52,
+      "final_score": 90,
       "keep": false
     },
     {
@@ -2283,6 +2427,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 37,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,

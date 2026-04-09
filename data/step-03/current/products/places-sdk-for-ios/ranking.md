@@ -12,7 +12,7 @@ This file lists the official Google documentation URLs selected and scored for t
 | 95 | no | irrelevant | https://developers.google.com/maps/documentation/places/ios-sdk/release-notes | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://developers.google.com/maps/documentation/places/ios-sdk/versions | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 95 | no | supporting_page | https://developers.google.com/places/ios-sdk/overview?hl=ko | 2 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | irrelevant | https://developers.google.com/maps/documentation/places/ios-sdk/app-check | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
+| 90 | no | supporting_page | https://developers.google.com/maps/documentation/places/ios-sdk/app-check | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/maps/documentation/places/ios-sdk/legacy/migrate-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://developers.google.com/maps/documentation/places/ios-sdk/places-ui-kit-overview | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |

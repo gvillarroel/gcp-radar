@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:39:59.352Z",
+  "generated_at": "2026-04-09T08:32:40.560Z",
   "product_name": "Tasks API",
   "product_slug": "tasks-api",
   "step02_source_path": "data/step-02/current/tasks-api.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "tasks",
   "dominant_python_slug": "",
@@ -19,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Tasks API\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/tasks \"Google Tasks API\"",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Google Tasks API | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/reference/rest",
+          "description": "The Google Tasks API <strong>lets you manage your tasks and task lists</strong>.",
+          "rank": 1
+        },
+        {
+          "title": "Overview | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/overview",
+          "description": "The Google Tasks API <strong>lets you search, read, and update Google Tasks content and metadata</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Google Tasks API release notes | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/release-notes",
+          "description": "We recommend that Tasks API developers periodically check this list for any new announcements. ... Generally Available: You can now get, edit, and delete tasks assigned from Google Docs documents or Chat spaces using the Tasks API.",
+          "rank": 3
+        },
+        {
+          "title": "JavaScript quickstart | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/quickstart/js",
+          "description": "YOUR_API_KEY: the API key that you created. In your working directory, install the http-server package: ... In your browser, navigate to http://localhost:8000. ... If you&#x27;re not already signed in to your Google Account, sign in when prompted. If you&#x27;re signed in to multiple accounts, select one account to use for authorization. Click Accept. Your JavaScript application runs and calls the <strong>Google Tasks API</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Python quickstart | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/quickstart/python",
+          "description": "This quickstart <strong>uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow</strong>. Set up your environment. Install the client library.",
+          "rank": 5
+        },
+        {
+          "title": "Go quickstart | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/quickstart/go",
+          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Latest version of Go. Latest version of Git. A Google Cloud project. A Google account with Google Tasks ...",
+          "rank": 6
+        },
+        {
+          "title": "Google Tasks API quotas and usage limits | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/limits",
+          "description": "The Tasks API has a courtesy limit of 50,000 queries per day.",
+          "rank": 7
+        },
+        {
+          "title": "Choose Google Tasks API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/auth",
+          "description": "This document contains <strong>Google Tasks API</strong>-specific authorization and authentication information.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -51,15 +107,15 @@
           "rank": 4
         },
         {
-          "title": "TasksRequest (Tasks API v1 (Rev. 71) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/tasks/v1/java/latest/com/google/api/services/tasks/TasksRequest.html",
-          "description": "<strong>public TasksRequest&lt;T&gt; setFields(java.lang.String fields) Selector specifying which fields to include in a partial response</strong>. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
-          "rank": 5
-        },
-        {
           "title": "tasks: Main Page",
           "url": "https://developers.google.com/resources/api-libraries/documentation/tasks/v1/csharp/latest",
           "description": "The complete API documentation for using Tasks API can be found at <strong>https://developers.google.com/google-apps/tasks/firstapp</strong>.",
+          "rank": 5
+        },
+        {
+          "title": "TasksRequest (Tasks API v1 (Rev. 71) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/tasks/v1/java/latest/com/google/api/services/tasks/TasksRequest.html",
+          "description": "<strong>public TasksRequest&lt;T&gt; setFields(java.lang.String fields) Selector specifying which fields to include in a partial response</strong>. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
           "rank": 6
         },
         {
@@ -136,7 +192,7 @@
         {
           "title": "Cloud Tasks API v2 - Package cloud.google.com/go/cloudtasks/apiv2 (v1.13.7) | Go client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/cloudtasks/latest/apiv2",
-          "description": "If Cloud Tasks receives a successful response from the task’s target, then the task will be deleted; otherwise the task’s schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue’s RetryConfig.",
+          "description": "Package cloudtasks is an auto-generated package for the Cloud Tasks API.",
           "rank": 6
         },
         {
@@ -146,9 +202,9 @@
           "rank": 7
         },
         {
-          "title": "Queue workflow executions using Cloud Tasks | Workflows | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/workflows/docs/create-http-task",
-          "description": "Enable the Cloud Tasks API.",
+          "title": "Cloud Tasks API C++ Client Library | C++ client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/cpp/docs/reference/tasks/latest",
+          "description": "#include &quot;google/cloud/tasks/v2/cloud_tasks_client.h&quot; #include &quot;google/cloud/location.h&quot; #include &lt;iostream&gt; int main(int argc, char* argv[]) try { if (argc != 3) { std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0] &lt;&lt; &quot; project-id location-id\\n&quot;; return 1; } auto const location = google::cloud::Location(argv[1], argv[2]); namespace tasks = ::google::cloud::tasks_v2; auto client = tasks::CloudTasksClient(tasks::MakeCloudTasksConnection()); for (auto queue : client.ListQueues(location.FullName())) { if (!queue) throw std::move(queue).status(); std::cout &lt;&lt; queue-&gt;DebugString() &lt;&lt; &quot;\\n&quot;; } return 0; } catch (google::cloud::Status const&amp; status) { std::cerr &lt;&lt; &quot;google::cloud::Status thrown: &quot; &lt;&lt; status &lt;&lt; &quot;\\n&quot;; return 1; }",
           "rank": 8
         }
       ]
@@ -166,6 +222,20 @@
       "query": "site:docs.cloud.google.com \"Tasks API\" \"APIs and reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/tasks overview \"reference/rest\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Google Apps Script quickstart | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/quickstart/apps-script",
+          "description": "* @see https://developers.google.com/tasks/reference/rest/v1/tasklists/list */ function listTaskLists() { const optionalArgs = { maxResults: 10, }; try { // Returns all the authenticated user&#x27;s task lists. const response = Tasks.Tasklists.list(optionalArgs); const taskLists = response.items; // Print task list of user if available.",
+          "rank": 1
+        }
+      ]
     },
     {
       "round": 2,
@@ -187,38 +257,38 @@
         },
         {
           "title": "Overview | Tasks API | Google Developers",
-          "url": "https://developers.google.com/tasks/?hl=ja",
+          "url": "https://developers.google.com/tasks",
           "description": "For example, you could use the Google Tasks API to manage Google task lists in a mobile app, or you could integrate tasks into a more extensive workflow app such as Au-to-do. Start Coding Now: Start writing a simple first application immediately in your chosen language. API Reference and Resources: Download client libraries or go straight to the detailed reference documentation.",
           "rank": 3
-        },
-        {
-          "title": "Tasks Service | Apps Script | Google for Developers",
-          "url": "https://developers.google.com/apps-script/advanced/tasks",
-          "description": "The following sample code uses version 1 of the API. This sample lists the task lists in your account. ... /** * Lists the titles and IDs of tasksList. * @see https://developers.google.com/tasks/reference/rest/v1/tasklists/list */ function listTaskLists() { try { // Returns all the authenticated user&#x27;s task lists.",
-          "rank": 4
         },
         {
           "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
           "url": "https://developers.google.com/api-client-library/dotnet/apis/tasks/v1",
           "description": "Google.Apis.Tasks.v1 · Google Tasks API v1 · Google.Apis.Testing.v1 · Cloud Testing API v1 · Google.Apis.Texttospeech.v1 · Cloud Text-to-Speech API v1 · Google.Apis.Texttospeech.v1beta1 · Cloud Text-to-Speech API v1beta1 · Google.Apis.ThreatIntelligenceService.v1beta ·",
-          "rank": 5
+          "rank": 4
         },
         {
           "title": "Tasks API Downloads | Google Tasks | Google for Developers",
           "url": "https://developers.google.com/workspace/tasks/downloads",
           "description": "Google Tasks · Reference · Send feedback · In the following tables, the first column shows each library&#x27;s stage of development (note that some are in early stages), and links to documentation for the library. The second column links to available samples for each library.",
-          "rank": 6
+          "rank": 5
         },
         {
           "title": "Google Tasks API release notes | Google for Developers",
           "url": "https://developers.google.com/workspace/tasks/release-notes",
           "description": "Generally Available: You can now get, edit, and delete tasks assigned from Google Docs documents or Chat spaces using the Tasks API. For more information, refer to the tasks reference documentation.",
-          "rank": 7
+          "rank": 6
         },
         {
           "title": "Node.js quickstart | Google Tasks | Google for Developers",
           "url": "https://developers.google.com/tasks/quickstart/nodejs",
           "description": "Tasks API reference documentation · google-api-nodejs-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 7
+        },
+        {
+          "title": "JavaScript quickstart | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/tasks/quickstart/dotnet",
+          "description": "Tasks API reference documentation · google-api-javascript-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
           "rank": 8
         }
       ]
@@ -227,7 +297,7 @@
       "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Tasks API\" \"access control\"",
-      "official_result_count": 3,
+      "official_result_count": 2,
       "results": [
         {
           "title": "Access control with IAM | Cloud Tasks | Google Cloud Documentation",
@@ -240,12 +310,6 @@
           "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/cloudtasks/latest/apiv2",
           "description": "// See https://pkg.go.dev/cloud.google.com/go/cloudtasks/apiv2/cloudtaskspb#DeleteTaskRequest. } err = c.DeleteTask(ctx, req) if err != nil { // TODO: Handle error. } } func (c *Client) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyRequest, opts ...gax.CallOption) (*iampb.Policy, error) GetIamPolicy gets the access control policy for a Queue.",
           "rank": 2
-        },
-        {
-          "title": "Package google.cloud.run.v1 | Cloud Run | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/reference/rpc/google.cloud.run.v1",
-          "description": "<strong>Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service</strong>. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates ...",
-          "rank": 3
         }
       ]
     },
@@ -366,6 +430,20 @@
     },
     {
       "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/tasks/reference/rest/v1/tasks \"Google Tasks API\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "REST Resource: tasks | Google for Developers",
+          "url": "https://developers.google.com/tasks/reference/rest/v1/tasks",
+          "description": "The Google Tasks API <strong>allows you to manage tasks, including creating, updating, deleting, and querying tasks</strong>.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview",
       "official_result_count": 8,
@@ -384,7 +462,7 @@
         },
         {
           "title": "Overview | Tasks API | Google Developers",
-          "url": "https://developers.google.com/tasks/?hl=ja",
+          "url": "https://developers.google.com/tasks",
           "description": "The Google Tasks API <strong>lets you search, read, and update Google Tasks content and metadata</strong>.",
           "rank": 3
         },
@@ -424,19 +502,13 @@
       "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Tasks API\" IAM roles permissions",
-      "official_result_count": 2,
+      "official_result_count": 1,
       "results": [
         {
           "title": "Access control with IAM | Cloud Tasks | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/tasks/docs/access-control",
           "description": "Enable the Cloud Tasks API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the <strong>serviceusage.services.enable permission</strong>.",
           "rank": 1
-        },
-        {
-          "title": "Authenticate to Cloud Tasks | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/tasks/docs/authentication",
-          "description": "If that is not feasible, or if you need to test the permissions assigned to a service account, you can use service account impersonation. You must have the iam.serviceAccounts.getAccessToken permission, which is included in the Service Account Token Creator (roles/iam.serviceAccountTokenCreator) IAM role.",
-          "rank": 2
         }
       ]
     },
@@ -523,8 +595,8 @@
         },
         {
           "title": "Types for Cloud Tasks API Client — google-cloud-tasks 0.1.0 documentation",
-          "url": "https://googleapis.dev/python/cloudtasks/1.1.0/gapic/v2beta3/types.html",
-          "description": "To return the next page of results, call [ListTasks][google.cloud.tasks.v2beta3.CloudTasks.ListTasks] with this value as the [page_token][google.cloud.tasks.v2beta 3.ListTasksRequest.page_token]. If the next_page_token is empty, there are no more results. ... Contains information needed for generating an OAuth token. This type of authorization should generally only be used when calling Google APIs hosted on *.googleapis.com.",
+          "url": "https://googleapis.dev/python/cloudtasks/1.1.0/gapic/v2/types.html",
+          "description": "Tasks can be dispatched to secure app handlers, unsecure app handlers, and URIs restricted with `login: admin &lt;https://cloud.google.com/appengine/docs/standard/python/config/appref&gt;`_.",
           "rank": 3
         },
         {
@@ -537,6 +609,45 @@
     }
   ],
   "scored_urls": [
+    {
+      "title": "Google Tasks API | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/reference/rest",
+      "description": "The Google Tasks API <strong>lets you manage your tasks and task lists</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\"",
+        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
+        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference",
+        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
     {
       "title": "Create HTTP target tasks | Cloud Tasks | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
@@ -559,11 +670,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -593,11 +707,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -627,11 +744,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -648,8 +768,8 @@
       "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Tasks API\" \"Java client libraries\"",
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Tasks API\" \"Java client libraries\"",
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -663,11 +783,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -697,63 +820,32 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "api_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": true,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Google Tasks API | Google for Developers",
-      "url": "https://developers.google.com/workspace/tasks/reference/rest",
-      "description": "<strong>The Google Tasks API lets you manage your tasks and task lists</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following ...",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
-        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference",
-        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Cloud Tasks API v2 - Package cloud.google.com/go/cloudtasks/apiv2 (v1.13.7) | Go client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/cloudtasks/latest/apiv2",
-      "description": "If Cloud Tasks receives a successful response from the task’s target, then the task will be deleted; otherwise the task’s schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue’s RetryConfig.",
+      "description": "Package cloudtasks is an auto-generated package for the Cloud Tasks API.",
       "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Tasks API\" \"access control\"",
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -767,13 +859,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -801,19 +896,98 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
+    },
+    {
+      "title": "REST Resource: tasks | Google for Developers",
+      "url": "https://developers.google.com/tasks/reference/rest/v1/tasks",
+      "description": "[[[&quot;Easy to understand&quot;,&quot;easyToUnderstand&quot;,&quot;thumb-up&quot;],[&quot;Solved my problem&quot;,&quot;solvedMyProblem&quot;,&quot;thumb-up&quot;],[&quot;Other&quot;,&quot;otherUp&quot;,&quot;thumb-up&quot;]],[[&quot;Missing the information I need&quot;,&quot;missingTheInformationINeed&quot;,&quot;thumb-down&quot;],[&quot;Too complicated / too many steps&quot;,&quot;tooComplicatedTooManySteps&quot;,&quot;thumb-down&quot;],[&quot;Out of date&quot;,&quot;outOfDate&quot;,&quot;thumb-down&quot;],[&quot;Samples / code issue&quot;,&quot;samplesCodeIssue&quot;,&quot;thumb-down&quot;],[&quot;Other&quot;,&quot;otherDown&quot;,&quot;thumb-down&quot;]],[&quot;Last updated 2025-03-12 UTC.&quot;],[],[&quot;The core content defines a \\&quot;Task\\&quot; resource with properties like `id`, `title`, `status`, `due`, and `completed`. Tasks can have `notes`, `links`, and be organized with a `parent` and `position`. Assigned tasks have `assignmentInfo`, detailing the source (`DOCUMENT` or `SPACE`) via `ContextType`. `DriveResourceInfo` and `SpaceInfo` provide further source details.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
+        "site:developers.google.com/tasks/reference/rest/v1/tasks \"Google Tasks API\"",
+        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference",
+        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs",
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1,
+        3,
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": true
+    },
+    {
+      "title": "Overview | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/overview",
+      "description": "The Google Tasks API <strong>lets you search, read, and update Google Tasks content and metadata</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\"",
+        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
+        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
     },
     {
       "title": "Tasks (Tasks API v1 (Rev. 71) 1.25.0)",
@@ -833,11 +1007,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -851,7 +1028,7 @@
       "title": "TasksRequest (Tasks API v1 (Rev. 71) 1.25.0)",
       "url": "https://developers.google.com/resources/api-libraries/documentation/tasks/v1/java/latest/com/google/api/services/tasks/TasksRequest.html",
       "description": "<strong>public TasksRequest&lt;T&gt; setFields(java.lang.String fields) Selector specifying which fields to include in a partial response</strong>. ... API key. Your API key identifies your project and provides you with API access, quota, and reports.",
-      "rank": 5,
+      "rank": 6,
       "query_hits": [
         "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
         "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
@@ -865,11 +1042,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -881,7 +1061,7 @@
     },
     {
       "title": "Overview | Tasks API | Google Developers",
-      "url": "https://developers.google.com/tasks/?hl=ja",
+      "url": "https://developers.google.com/tasks",
       "description": "For example, you could use the Google Tasks API to manage Google task lists in a mobile app, or you could integrate tasks into a more extensive workflow app such as Au-to-do. Start Coding Now: Start writing a simple first application immediately in your chosen language. API Reference and Resources: Download client libraries or go straight to the detailed reference documentation.",
       "rank": 3,
       "query_hits": [
@@ -897,11 +1077,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -912,30 +1095,33 @@
       "keep": false
     },
     {
-      "title": "Queue workflow executions using Cloud Tasks | Workflows | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/create-http-task",
-      "description": "Enable the Cloud Tasks API.",
+      "title": "Cloud Tasks API C++ Client Library | C++ client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/cpp/docs/reference/tasks/latest",
+      "description": "#include &quot;google/cloud/tasks/v2/cloud_tasks_client.h&quot; #include &quot;google/cloud/location.h&quot; #include &lt;iostream&gt; int main(int argc, char* argv[]) try { if (argc != 3) { std::cerr &lt;&lt; &quot;Usage: &quot; &lt;&lt; argv[0] &lt;&lt; &quot; project-id location-id\\n&quot;; return 1; } auto const location = google::cloud::Location(argv[1], argv[2]); namespace tasks = ::google::cloud::tasks_v2; auto client = tasks::CloudTasksClient(tasks::MakeCloudTasksConnection()); for (auto queue : client.ListQueues(location.FullName())) { if (!queue) throw std::move(queue).status(); std::cout &lt;&lt; queue-&gt;DebugString() &lt;&lt; &quot;\\n&quot;; } return 0; } catch (google::cloud::Status const&amp; status) { std::cerr &lt;&lt; &quot;google::cloud::Status thrown: &quot; &lt;&lt; status &lt;&lt; &quot;\\n&quot;; return 1; }",
       "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview"
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
         1,
-        2
+        3
       ],
-      "best_rank": 7,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -961,19 +1147,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 28,
+      "product_fit_score": 24,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 4,
-        "keep": true,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Class Task.Builder (2.85.0) | Java client libraries | Google Cloud Documentation",
@@ -993,18 +1182,120 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": -12,
+      "product_fit_score": -16,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 1,
+        "product_match": 0,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Choose Google Tasks API scopes | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/auth",
+      "description": "This document contains <strong>Google Tasks API</strong>-specific authorization and authentication information.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": true
+    },
+    {
+      "title": "Tasks API Downloads | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/downloads",
+      "description": "Google Tasks · Reference · Send feedback · In the following tables, the first column shows each library&#x27;s stage of development (note that some are in early stages), and links to documentation for the library. The second column links to available samples for each library.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Google Tasks API quotas and usage limits | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/limits",
+      "description": "The Tasks API has a courtesy limit of 50,000 queries per day.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
       "keep": false
     },
     {
@@ -1023,11 +1314,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1053,11 +1347,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 124,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1071,7 +1368,7 @@
       "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
       "url": "https://developers.google.com/api-client-library/dotnet/apis/tasks/v1",
       "description": "Google.Apis.Tasks.v1 · Google Tasks API v1 · Google.Apis.Testing.v1 · Cloud Testing API v1 · Google.Apis.Texttospeech.v1 · Cloud Text-to-Speech API v1 · Google.Apis.Texttospeech.v1beta1 · Cloud Text-to-Speech API v1beta1 · Google.Apis.ThreatIntelligenceService.v1beta ·",
-      "rank": 5,
+      "rank": 4,
       "query_hits": [
         "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
       ],
@@ -1081,13 +1378,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1113,11 +1413,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1131,7 +1434,7 @@
       "title": "tasks: Main Page",
       "url": "https://developers.google.com/resources/api-libraries/documentation/tasks/v1/csharp/latest",
       "description": "The complete API documentation for using Tasks API can be found at <strong>https://developers.google.com/google-apps/tasks/firstapp</strong>.",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation"
       ],
@@ -1141,13 +1444,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1173,16 +1479,19 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1203,25 +1512,28 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
-      "title": "Tasks API Downloads | Google Tasks | Google for Developers",
-      "url": "https://developers.google.com/workspace/tasks/downloads",
-      "description": "Google Tasks · Reference · Send feedback · In the following tables, the first column shows each library&#x27;s stage of development (note that some are in early stages), and links to documentation for the library. The second column links to available samples for each library.",
-      "rank": 6,
+      "title": "JavaScript quickstart | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/tasks/quickstart/dotnet",
+      "description": "Tasks API reference documentation · google-api-javascript-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
       ],
@@ -1231,26 +1543,62 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 0,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Node.js quickstart | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/tasks/quickstart/nodejs",
+      "description": "Tasks API reference documentation · google-api-nodejs-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
     },
     {
       "title": "Types for Cloud Tasks API Client — google-cloud-tasks 0.1.0 documentation",
-      "url": "https://googleapis.dev/python/cloudtasks/1.1.0/gapic/v2beta3/types.html",
-      "description": "To return the next page of results, call [ListTasks][google.cloud.tasks.v2beta3.CloudTasks.ListTasks] with this value as the [page_token][google.cloud.tasks.v2beta 3.ListTasksRequest.page_token]. If the next_page_token is empty, there are no more results. ... Contains information needed for generating an OAuth token. This type of authorization should generally only be used when calling Google APIs hosted on *.googleapis.com.",
+      "url": "https://googleapis.dev/python/cloudtasks/1.1.0/gapic/v2/types.html",
+      "description": "Tasks can be dispatched to secure app handlers, unsecure app handlers, and URIs restricted with `login: admin &lt;https://cloud.google.com/appengine/docs/standard/python/config/appref&gt;`_.",
       "rank": 3,
       "query_hits": [
         "site:googleapis.dev/python \"Tasks API\""
@@ -1263,16 +1611,19 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 50,
+      "product_fit_score": 94,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1293,13 +1644,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 50,
+      "product_fit_score": 94,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1323,13 +1677,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 50,
+      "product_fit_score": 94,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1353,41 +1710,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 34,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Tasks API C++ Client Library | C++ client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/cpp/docs/reference/tasks/latest",
-      "description": "<strong>An idiomatic C++ client library for Cloud Tasks API, a service that manages the execution of large numbers of distributed requests</strong>.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
       "product_fit_score": 30,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -1396,36 +1726,6 @@
       },
       "final_score": 90,
       "keep": false
-    },
-    {
-      "title": "Authenticate to Cloud Tasks | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/tasks/docs/authentication",
-      "description": "If that is not feasible, or if you need to test the permissions assigned to a service account, you can use service account impersonation. You must have the iam.serviceAccounts.getAccessToken permission, which is included in the Service Account Token Creator (roles/iam.serviceAccountTokenCreator) IAM role.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Tasks API\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 28,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": true
     },
     {
       "title": "google.cloud.tasks_v2.types.task — google-cloud-tasks documentation",
@@ -1443,46 +1743,17 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 4,
-      "deterministic_score": 100,
+      "product_fit_score": 0,
+      "deterministic_score": 99,
       "api_score": {
         "classification": "supporting_page",
-        "score": 100,
+        "score": 99,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 2,
+        "product_match": 1,
         "coverage_value": 4,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Google Tasks API release notes | Google for Developers",
-      "url": "https://developers.google.com/workspace/tasks/release-notes",
-      "description": "<strong>This page contains release notes for features and updates to the Tasks API</strong>. We recommend that Tasks API developers periodically check this list for any new announcements. ... Generally Available: You can now get, edit, and delete tasks assigned ...",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
-        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 58,
-      "deterministic_score": 93,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 93,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1490,65 +1761,73 @@
       "keep": false
     },
     {
-      "title": "Node.js quickstart | Google Tasks | Google for Developers",
-      "url": "https://developers.google.com/tasks/quickstart/nodejs",
-      "description": "Tasks API reference documentation · google-api-nodejs-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 8,
+      "title": "Google Tasks API release notes | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/release-notes",
+      "description": "We recommend that Tasks API developers periodically check this list for any new announcements. ... Generally Available: You can now get, edit, and delete tasks assigned from Google Docs documents or Chat spaces using the Tasks API.",
+      "rank": 3,
       "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\"",
+        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
         "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
       ],
       "intent_hits": [
+        "canonical_docs",
         "developers_docs"
       ],
       "round_hits": [
+        1,
         2
       ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 91,
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 52,
+      "deterministic_score": 92,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 91,
+        "classification": "irrelevant",
+        "score": 92,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 88,
+      "keep": false
+    },
+    {
+      "title": "JavaScript quickstart | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/quickstart/js",
+      "description": "YOUR_API_KEY: the API key that you created. In your working directory, install the http-server package: ... In your browser, navigate to http://localhost:8000. ... If you&#x27;re not already signed in to your Google Account, sign in when prompted. If you&#x27;re signed in to multiple accounts, select one account to use for authorization. Click Accept. Your JavaScript application runs and calls the <strong>Google Tasks API</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "deterministic_score": 95,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 95,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 82,
-      "keep": false
-    },
-    {
-      "title": "Overview | Google Tasks | Google for Developers",
-      "url": "https://developers.google.com/workspace/tasks/overview",
-      "description": "<strong>This document describes how to use a RESTful calling style and client libraries for various programming languages (currently Java, Python, and PHP) to access and edit Google Tasks data</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
-        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 67,
-      "product_fit_score": 6,
-      "deterministic_score": 80,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 80,
-        "parent_page_likelihood": 4,
-        "product_match": 2,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 78,
+      "final_score": 86,
       "keep": false
     },
     {
@@ -1569,112 +1848,54 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": -12,
-      "deterministic_score": 60,
+      "product_fit_score": -16,
+      "deterministic_score": 56,
       "api_score": {
         "classification": "supporting_page",
-        "score": 60,
+        "score": 56,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
-        "product_match": 1,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 61,
+      "final_score": 58,
       "keep": false
     },
     {
-      "title": "REST Resource: tasks | Google for Developers",
-      "url": "https://developers.google.com/tasks/reference/rest/v1/tasks",
-      "description": "[[[&quot;Easy to understand&quot;,&quot;easyToUnderstand&quot;,&quot;thumb-up&quot;],[&quot;Solved my problem&quot;,&quot;solvedMyProblem&quot;,&quot;thumb-up&quot;],[&quot;Other&quot;,&quot;otherUp&quot;,&quot;thumb-up&quot;]],[[&quot;Missing the information I need&quot;,&quot;missingTheInformationINeed&quot;,&quot;thumb-down&quot;],[&quot;Too complicated / too many steps&quot;,&quot;tooComplicatedTooManySteps&quot;,&quot;thumb-down&quot;],[&quot;Out of date&quot;,&quot;outOfDate&quot;,&quot;thumb-down&quot;],[&quot;Samples / code issue&quot;,&quot;samplesCodeIssue&quot;,&quot;thumb-down&quot;],[&quot;Other&quot;,&quot;otherDown&quot;,&quot;thumb-down&quot;]],[&quot;Last updated 2025-03-12 UTC.&quot;],[],[&quot;The core content defines a \\&quot;Task\\&quot; resource with properties like `id`, `title`, `status`, `due`, and `completed`. Tasks can have `notes`, `links`, and be organized with a `parent` and `position`. Assigned tasks have `assignmentInfo`, detailing the source (`DOCUMENT` or `SPACE`) via `ContextType`. `DriveResourceInfo` and `SpaceInfo` provide further source details.",
-      "rank": 3,
+      "title": "Queue workflow executions using Cloud Tasks | Workflows | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/workflows/docs/create-http-task",
+      "description": "<strong>PROJECT_NAME: the name of your Google Cloud project.</strong> REGION_NAME: the region your workflow is in, such as us-central1. WORKFLOW_NAME: the name of the workflow you want to create a task for.",
+      "rank": 7,
       "query_hits": [
-        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
-        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference",
-        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview"
       ],
       "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 100,
-      "product_fit_score": 6,
-      "deterministic_score": 49,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 49,
-        "parent_page_likelihood": 2,
-        "product_match": 2,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 57,
-      "keep": false
-    },
-    {
-      "title": "Package google.cloud.run.v1 | Cloud Run | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/reference/rpc/google.cloud.run.v1",
-      "description": "<strong>Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service</strong>. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates ...",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Tasks API\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
+        "product_docs"
       ],
       "round_hits": [
         2
       ],
-      "best_rank": 3,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": -28,
-      "deterministic_score": 54,
+      "product_fit_score": -26,
+      "deterministic_score": 26,
       "api_score": {
-        "classification": "iam_reference",
-        "score": 54,
-        "parent_page_likelihood": 3,
+        "classification": "supporting_page",
+        "score": 26,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 1,
         "product_match": 0,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 51,
-      "keep": false
-    },
-    {
-      "title": "Tasks Service | Apps Script | Google for Developers",
-      "url": "https://developers.google.com/apps-script/advanced/tasks",
-      "description": "The following sample code uses version 1 of the API. This sample lists the task lists in your account. ... /** * Lists the titles and IDs of tasksList. * @see https://developers.google.com/tasks/reference/rest/v1/tasklists/list */ function listTaskLists() { try { // Returns all the authenticated user&#x27;s task lists.",
-      "rank": 4,
-      "query_hits": [
-        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 12,
-      "deterministic_score": 53,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 53,
-        "parent_page_likelihood": 3,
-        "product_match": 2,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 50,
+      "final_score": 27,
       "keep": false
     },
     {
@@ -1693,18 +1914,120 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 4,
-      "deterministic_score": 9,
+      "product_fit_score": 0,
+      "deterministic_score": 5,
       "api_score": {
         "classification": "supporting_page",
-        "score": 9,
+        "score": 5,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 0,
-        "product_match": 2,
+        "product_match": 1,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 13,
+      "final_score": 9,
+      "keep": false
+    },
+    {
+      "title": "Go quickstart | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/quickstart/go",
+      "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Latest version of Go. Latest version of Git. A Google Cloud project. A Google account with Google Tasks ...",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": -42,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Python quickstart | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/quickstart/python",
+      "description": "This quickstart <strong>uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow</strong>. Set up your environment. Install the client library.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -42,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Google Apps Script quickstart | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/quickstart/apps-script",
+      "description": "* @see https://developers.google.com/tasks/reference/rest/v1/tasklists/list */ function listTaskLists() { const optionalArgs = { maxResults: 10, }; try { // Returns all the authenticated user&#x27;s task lists. const response = Tasks.Tasklists.list(optionalArgs); const taskLists = response.items; // Print task list of user if available.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks overview \"reference/rest\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": -48,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
       "keep": false
     }
   ]

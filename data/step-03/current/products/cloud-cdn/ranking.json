@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T15:55:08.421Z",
+  "generated_at": "2026-04-08T21:50:08.415Z",
   "product_name": "Cloud CDN",
   "product_slug": "cloud-cdn",
-  "step02_source_path": "data/step-02/current/products/cloud-cdn.md",
+  "step02_source_path": "data/step-02/current/cloud-cdn.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "cdn",
   "dominant_python_slug": "",
@@ -19,6 +19,56 @@
       "query": "site:docs.cloud.google.com \"Cloud CDN\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Cloud CDN\" official documentation OR site:developers.google.com \"cloud cdn\" official documentation",
+      "official_result_count": 7,
+      "results": [
+        {
+          "title": "Content delivery networks (CDNs) for Content-Driven Web Apps | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/solutions/content-driven/hosting/cdn",
+          "description": "Key actions for using a CDN include <strong>selecting a suitable provider, configuring DNS records and origin servers, and setting caching preferences</strong>. Implement SSL/TLS encryption, test content delivery, and monitor with analytics. Load testing assesses traffic handling.",
+          "rank": 1
+        },
+        {
+          "title": "Defending Edge Cache with Cloud Armor | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/edgesecuritypolicy-ca",
+          "description": "Validate that your content is being served from the CDN via CDN or Load Balancing Monitoring. You should be able to get close to a 100% hit ratio. If you need to run a few queries you can do the following ... Now that the cache is populated let&#x27;s delete the object from the bucket, reinforcing that we are applying the policy to the cache and not the backend. Navigate to Cloud Storage &gt;&gt; %bucket name% &gt;&gt; objects",
+          "rank": 2
+        },
+        {
+          "title": "compute: Google.Apis.Compute.beta.Data.BackendBucketCdnPolicy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/beta/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1beta_1_1Data_1_1BackendBucketCdnPolicy.html",
+          "description": "When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &quot;Cache-Control: public, max-age=[TTL]&quot; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered. [Output Only] Names of the keys for signing request URLs. The documentation ...",
+          "rank": 3
+        },
+        {
+          "title": "compute: Google.Apis.Compute.v1.Data.BackendBucketCdnPolicy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1v1_1_1Data_1_1BackendBucketCdnPolicy.html",
+          "description": "When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &quot;Cache-Control: public, max-age=[TTL]&quot; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered. [Output Only] Names of the keys for signing request URLs. The documentation ...",
+          "rank": 4
+        },
+        {
+          "title": "compute: google_compute_api::BackendServiceCdnPolicy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/cpp/latest/classgoogle__compute__api_1_1BackendServiceCdnPolicy.html",
+          "description": "After this time period, the response will be revalidated before being served. <strong>Defaults to 1hr (3600s).</strong> When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &quot;Cache-Control: public, max-age=[TTL]&quot; header, regardless of ...",
+          "rank": 5
+        },
+        {
+          "title": "Host and scale a web app in Google Cloud with Compute Engine | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-webapp-hosting-gce/index.html?index=..%2F..index",
+          "description": "gcloud compute backend-services update fancy-fe-frontend \\ --enable-cdn --global · Now, when a user requests content from the load balancer, the request arrives at a Google frontend, which first looks in the Cloud CDN cache for a response to the user&#x27;s request.",
+          "rank": 6
+        },
+        {
+          "title": "Build a modern three-tier architecture web application with Cloud Run | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/learn/pathways/solution-three-tier-cloud-run",
+          "description": "However, to take full advantage of a cloud-centric approach, this could be scaled further to improve performance by providing an additional caching layer for incoming requests or serving static data through a content delivery network and from a service optimized for static data, such as Cloud Storage with Cloud CDN or Firebase Hosting.",
+          "rank": 7
+        }
+      ]
     },
     {
       "round": 1,
@@ -78,15 +128,15 @@
           "rank": 5
         },
         {
-          "title": "Set up a backend bucket | Cloud CDN | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
-          "description": "<strong>By default, Cloud Storage uses the same cache that Cloud CDN uses</strong>. If you enable Cloud CDN on the backend bucket, you can use Cloud CDN controls on your content. Cloud CDN controls include, for example, cache modes, signed URLs, and invalidation.",
-          "rank": 6
-        },
-        {
           "title": "Content delivery best practices | Cloud CDN | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
           "description": "Optimize your content delivery with Cloud CDN best practices. Learn how to maximize cache hit ratios, tune caching policies, implement web security headers, and improve performance with HTTP/3 and TLS",
+          "rank": 6
+        },
+        {
+          "title": "Set up a backend bucket | Cloud CDN | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
+          "description": "<strong>By default, Cloud Storage uses the same cache that Cloud CDN uses</strong>. If you enable Cloud CDN on the backend bucket, you can use Cloud CDN controls on your content. Cloud CDN controls include, for example, cache modes, signed URLs, and invalidation.",
           "rank": 7
         },
         {
@@ -113,6 +163,56 @@
     },
     {
       "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Cloud CDN\" reference OR site:developers.google.com \"cloud cdn\" reference",
+      "official_result_count": 7,
+      "results": [
+        {
+          "title": "Content delivery networks (CDNs) for Content-Driven Web Apps | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/solutions/content-driven/hosting/cdn",
+          "description": "Key actions for using a CDN include selecting a suitable provider, configuring DNS records and origin servers, and setting caching preferences. Implement SSL/TLS encryption, test content delivery, and monitor with analytics. Load testing assesses traffic handling. Google Cloud CDN, a major provider, integrates with other Google services.",
+          "rank": 1
+        },
+        {
+          "title": "compute: Google.Apis.Compute.v1.Data.BackendBucketCdnPolicy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1v1_1_1Data_1_1BackendBucketCdnPolicy.html",
+          "description": "<strong>Message containing Cloud CDN configuration for a backend bucket</strong>.",
+          "rank": 2
+        },
+        {
+          "title": "Defending Edge Cache with Cloud Armor | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/edgesecuritypolicy-ca",
+          "description": "In this lab you will create a CDN distribution and apply Cloud Armor rules to protect your edge cache.",
+          "rank": 3
+        },
+        {
+          "title": "compute: Google.Apis.Compute.beta.Data.BackendBucketCdnPolicy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/beta/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1beta_1_1Data_1_1BackendBucketCdnPolicy.html",
+          "description": "<strong>Message containing Cloud CDN configuration for a backend bucket</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "compute: google_compute_api::BackendServiceCdnPolicy Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/cpp/latest/classgoogle__compute__api_1_1BackendServiceCdnPolicy.html",
+          "description": "Message containing Cloud CDN configuration for a backend service. Standard constructor for an immutable data object instance. ... Standard constructor for a mutable data object instance. ... Standard destructor. Clears the &#x27;cacheKeyPolicy&#x27; attribute. Clears the &#x27;signedUrlCacheMaxAgeSec&#x27; attribute. Clears the &#x27;signedUrlKeyNames&#x27; attribute. Get a reference to the value of the &#x27;cacheKeyPolicy&#x27; attribute.",
+          "rank": 5
+        },
+        {
+          "title": "Build a modern three-tier architecture web application with Cloud Run | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/learn/pathways/solution-three-tier-cloud-run",
+          "description": "However, to take full advantage of a cloud-centric approach, this could be scaled further to improve performance by providing an additional caching layer for incoming requests or serving static data through a content delivery network and from a service optimized for static data, such as Cloud Storage with Cloud CDN or Firebase Hosting.",
+          "rank": 6
+        },
+        {
+          "title": "Host and scale a web app in Google Cloud with Compute Engine | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-webapp-hosting-gce/index.html?index=..%2F..index",
+          "description": "gcloud compute backend-services update fancy-fe-frontend \\ --enable-cdn --global · Now, when a user requests content from the load balancer, the request arrives at a Google frontend, which first looks in the Cloud CDN cache for a response to the user&#x27;s request.",
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Cloud CDN\" \"access control\"",
       "official_result_count": 6,
@@ -130,21 +230,21 @@
           "rank": 2
         },
         {
+          "title": "Quickstart: Set up a backend bucket as an origin | Cloud CDN | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/cdn/docs/quickstart-backend-bucket-console",
+          "description": "For Access control, select Uniform. Click Continue. ... Upload files . In the file dialog, select the file that you downloaded. After the upload completes, the filename and information about the file, such as its size and file type, are displayed. ... Permissions tab. ... Grant access . The Add principals pane is displayed. ... New principals field, enter allUsers. ... Select a role list, select Cloud Storage &gt; Storage Object Viewer.",
+          "rank": 3
+        },
+        {
           "title": "Integrating Cloud Armor with other Google products | Google Cloud Armor | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/armor/docs/integrating-cloud-armor",
           "description": "For more information about configuring <strong>Cloud Armor</strong> backend security policies, see Configure <strong>Cloud Armor</strong> backend security policy to secure your backend services. To protect CDN origin servers, you can use <strong>Cloud Armor</strong> with Cloud CDN.",
-          "rank": 3
+          "rank": 4
         },
         {
           "title": "Set up a backend bucket | Cloud CDN | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
           "description": "To check whether Cloud CDN is serving responses from cache, see Viewing logs. To find information about common problems and solutions, see Troubleshooting. To configure filtering and access control policies for your content, see Edge security policies.",
-          "rank": 4
-        },
-        {
-          "title": "Quickstart: Set up a backend bucket as an origin | Cloud CDN | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/cdn/docs/quickstart-backend-bucket-console",
-          "description": "For Access control, select Uniform. Click Continue. ... Upload files . In the file dialog, select the file that you downloaded. After the upload completes, the filename and information about the file, such as its size and file type, are displayed. ... Permissions tab. ... Grant access . The Add principals pane is displayed. ... New principals field, enter allUsers. ... Select a role list, select Cloud Storage &gt; Storage Object Viewer.",
           "rank": 5
         },
         {
@@ -212,15 +312,15 @@
           "rank": 6
         },
         {
-          "title": "Logs and metrics for caching | Cloud CDN | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/cdn/docs/logging",
-          "description": "In the Google Cloud console, go to the Cloud CDN page. ... Click the name of the origin that you want to view the dashboards for. On the Origin details page, click Monitoring. The predefined dashboards appear by default. The predefined dashboards provide the following key metrics about your CDN origins: ... A dynamic geographical map displaying the source of client requests. This map provides a visual, global overview of where traffic is originating from.",
-          "rank": 7
-        },
-        {
           "title": "Cache locations | Cloud CDN | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/cdn/docs/locations",
           "description": "Cloud CDN operates caches at more than 100 locations across the following metropolitan areas. Google Cloud also has interconnect locations to connect your corporate network to Google Cloud and network edge locations to connect to Google Cloud services.",
+          "rank": 7
+        },
+        {
+          "title": "Logs and metrics for caching | Cloud CDN | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/cdn/docs/logging",
+          "description": "In the Google Cloud console, go to the Cloud CDN page. ... Click the name of the origin that you want to view the dashboards for. On the Origin details page, click Monitoring. The predefined dashboards appear by default. The predefined dashboards provide the following key metrics about your CDN origins: ... A dynamic geographical map displaying the source of client requests. This map provides a visual, global overview of where traffic is originating from.",
           "rank": 8
         }
       ]
@@ -241,23 +341,48 @@
     },
     {
       "round": 3,
-      "intent": "iam_permissions",
-      "query": "site:docs.cloud.google.com \"Cloud CDN\" IAM roles permissions",
-      "official_result_count": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Cloud CDN\" overview OR site:developers.google.com \"cloud cdn\" overview",
+      "official_result_count": 5,
       "results": [
         {
-          "title": "Invalidate cached content | Cloud CDN | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content",
-          "description": "To create a custom role with the required permissions, see Creating and managing custom roles. To add a predefined role, use the IAM quickstart. Note: If you&#x27;re using a global external Application Load Balancer with Shared VPC cross-project service referencing, see Invalidation with Shared VPC cross-project service referencing. In the Google Cloud console, go to the Cloud CDN ...",
+          "title": "Content delivery networks (CDNs) for Content-Driven Web Apps | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/solutions/content-driven/hosting/cdn",
+          "description": "Key actions for using a CDN include selecting a suitable provider, configuring DNS records and origin servers, and setting caching preferences. Implement SSL/TLS encryption, test content delivery, and monitor with analytics. Load testing assesses traffic handling. Google Cloud CDN, a major provider, integrates with other Google services.",
           "rank": 1
         },
         {
-          "title": "Set up Cloud Run, Cloud Functions, or App Engine | Cloud CDN | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-serverless",
-          "description": "Install the Google Cloud CLI. See gcloud Overview for conceptual and installation information about the tool. If you haven&#x27;t run the gcloud CLI previously, first run gcloud init to initialize your gcloud directory. To follow this guide, you need to create a serverless NEG and create an external HTTP(S) load balancer in a project. You should be either a project owner or editor, or you should have the following Compute Engine IAM roles...",
+          "title": "Host and scale a web app in Google Cloud with Compute Engine | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-webapp-hosting-gce/index.html?index=..%2F..index",
+          "description": "Another feature that can help with scaling is to enable Cloud CDN—a content-delivery network service—to provide caching for the frontend service.",
           "rank": 2
+        },
+        {
+          "title": "Build a serverless ecommerce web app with Python, Cloud Run, Cloud SQL, and Firebase | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/learn/pathways/solution-ecommerce-serverless-django",
+          "description": "Static assets are stored and served directly from Cloud Storage, which is optimized for static files and can be enhanced using a content delivery network (CDN).",
+          "rank": 3
+        },
+        {
+          "title": "Build a modern three-tier architecture web application with Cloud Run | Solutions for Developers | Google for Developers",
+          "url": "https://developers.google.com/learn/pathways/solution-three-tier-cloud-run",
+          "description": "However, to take full advantage of a cloud-centric approach, this could be scaled further to improve performance by providing an additional caching layer for incoming requests or serving static data through a content delivery network and from a service optimized for static data, such as Cloud Storage with Cloud CDN or Firebase Hosting.",
+          "rank": 4
+        },
+        {
+          "title": "Defending Edge Cache with Cloud Armor | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/edgesecuritypolicy-ca",
+          "description": "In this lab you will create a CDN distribution and apply Cloud Armor rules to protect your edge cache.",
+          "rank": 5
         }
       ]
+    },
+    {
+      "round": 3,
+      "intent": "iam_permissions",
+      "query": "site:docs.cloud.google.com \"Cloud CDN\" IAM roles permissions",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 3,
@@ -303,21 +428,21 @@
           "rank": 5
         },
         {
+          "title": "Choose a CDN product | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/cdn/docs/choose-cdn-product",
+          "description": "The two products support a similar set of features, but each product is optimized for certain use cases. Comparing Cloud CDN to Media CDN is similar to comparing Cloud SQL to BigQuery. Cloud CDN and Cloud SQL are for small queries at scale. Media CDN and BigQuery are designed for throughput and extreme scale.",
+          "rank": 6
+        },
+        {
           "title": "Cache locations | Cloud CDN | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/cdn/docs/locations",
           "description": "Cloud CDN relies on the same CDN edge points of presence that Google uses to serve Google&#x27;s web properties to billions of users.",
-          "rank": 6
+          "rank": 7
         },
         {
           "title": "Serve static assets with Cloud CDN | Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/set-up-cdn",
           "description": "Cloud CDN <strong>uses Google&#x27;s global edge network to serve content closer to users, which accelerates your websites and applications</strong>.",
-          "rank": 7
-        },
-        {
-          "title": "Choose a CDN product | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/cdn/docs/choose-cdn-product",
-          "description": "The two products support a similar set of features, but each product is optimized for certain use cases. Comparing Cloud CDN to Media CDN is similar to comparing Cloud SQL to BigQuery. Cloud CDN and Cloud SQL are for small queries at scale. Media CDN and BigQuery are designed for throughput and extreme scale.",
           "rank": 8
         }
       ]
@@ -351,11 +476,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -385,11 +513,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -419,19 +550,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Setup overview | Cloud CDN | Google Cloud Documentation",
@@ -453,11 +587,51 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Build a modern three-tier architecture web application with Cloud Run | Solutions for Developers | Google for Developers",
+      "url": "https://developers.google.com/learn/pathways/solution-three-tier-cloud-run",
+      "description": "However, to take full advantage of a cloud-centric approach, this could be scaled further to improve performance by providing an additional caching layer for incoming requests or serving static data through a content delivery network and from a service optimized for static data, such as Cloud Storage with Cloud CDN or Firebase Hosting.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Cloud CDN\" official documentation OR site:developers.google.com \"cloud cdn\" official documentation",
+        "site:developers.google.com \"Cloud CDN\" reference OR site:developers.google.com \"cloud cdn\" reference",
+        "site:developers.google.com \"Cloud CDN\" overview OR site:developers.google.com \"cloud cdn\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -471,7 +645,7 @@
       "title": "Content delivery best practices | Cloud CDN | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
       "description": "Optimize your content delivery with Cloud CDN best practices. Learn how to maximize cache hit ratios, tune caching policies, implement web security headers, and improve performance with HTTP/3 and TLS",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud CDN\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud CDN\" Google Cloud docs overview"
@@ -485,11 +659,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -515,13 +692,16 @@
         1,
         2
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -549,11 +729,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -567,7 +750,7 @@
       "title": "Set up a backend bucket | Cloud CDN | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-bucket",
       "description": "<strong>By default, Cloud Storage uses the same cache that Cloud CDN uses</strong>. If you enable Cloud CDN on the backend bucket, you can use Cloud CDN controls on your content. Cloud CDN controls include, for example, cache modes, signed URLs, and invalidation.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud CDN\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud CDN\" \"access control\""
@@ -580,16 +763,124 @@
         1,
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "compute: Google.Apis.Compute.beta.Data.BackendBucketCdnPolicy Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/beta/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1beta_1_1Data_1_1BackendBucketCdnPolicy.html",
+      "description": "When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &quot;Cache-Control: public, max-age=[TTL]&quot; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered. [Output Only] Names of the keys for signing request URLs. The documentation ...",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Cloud CDN\" official documentation OR site:developers.google.com \"cloud cdn\" official documentation",
+        "site:developers.google.com \"Cloud CDN\" reference OR site:developers.google.com \"cloud cdn\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "compute: google_compute_api::BackendServiceCdnPolicy Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/cpp/latest/classgoogle__compute__api_1_1BackendServiceCdnPolicy.html",
+      "description": "After this time period, the response will be revalidated before being served. <strong>Defaults to 1hr (3600s).</strong> When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &quot;Cache-Control: public, max-age=[TTL]&quot; header, regardless of ...",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Cloud CDN\" official documentation OR site:developers.google.com \"cloud cdn\" official documentation",
+        "site:developers.google.com \"Cloud CDN\" reference OR site:developers.google.com \"cloud cdn\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "compute: Google.Apis.Compute.v1.Data.BackendBucketCdnPolicy Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/csharp/latest/classGoogle_1_1Apis_1_1Compute_1_1v1_1_1Data_1_1BackendBucketCdnPolicy.html",
+      "description": "When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a &quot;Cache-Control: public, max-age=[TTL]&quot; header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered. [Output Only] Names of the keys for signing request URLs. The documentation ...",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Cloud CDN\" official documentation OR site:developers.google.com \"cloud cdn\" official documentation",
+        "site:developers.google.com \"Cloud CDN\" reference OR site:developers.google.com \"cloud cdn\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -614,16 +905,19 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 22,
+      "product_fit_score": 70,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -646,13 +940,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 22,
+      "product_fit_score": 70,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -676,11 +973,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -694,7 +994,7 @@
       "title": "Choose a CDN product | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/cdn/docs/choose-cdn-product",
       "description": "The two products support a similar set of features, but each product is optimized for certain use cases. Comparing Cloud CDN to Media CDN is similar to comparing Cloud SQL to BigQuery. Cloud CDN and Cloud SQL are for small queries at scale. Media CDN and BigQuery are designed for throughput and extreme scale.",
-      "rank": 8,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud CDN\" Google Cloud introduction reference"
       ],
@@ -704,13 +1004,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -721,40 +1024,10 @@
       "keep": false
     },
     {
-      "title": "Invalidate cached content | Cloud CDN | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content",
-      "description": "To create a custom role with the required permissions, see Creating and managing custom roles. To add a predefined role, use the IAM quickstart. Note: If you&#x27;re using a global external Application Load Balancer with Shared VPC cross-project service referencing, see Invalidation with Shared VPC cross-project service referencing. In the Google Cloud console, go to the Cloud CDN ...",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud CDN\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": true
-    },
-    {
       "title": "Quickstart: Set up a backend bucket as an origin | Cloud CDN | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/cdn/docs/quickstart-backend-bucket-console",
       "description": "For Access control, select Uniform. Click Continue. ... Upload files . In the file dialog, select the file that you downloaded. After the upload completes, the filename and information about the file, such as its size and file type, are displayed. ... Permissions tab. ... Grant access . The Add principals pane is displayed. ... New principals field, enter allUsers. ... Select a role list, select Cloud Storage &gt; Storage Object Viewer.",
-      "rank": 5,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud CDN\" \"access control\""
       ],
@@ -764,13 +1037,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -779,36 +1055,6 @@
       },
       "final_score": 90,
       "keep": false
-    },
-    {
-      "title": "Set up Cloud Run, Cloud Functions, or App Engine | Cloud CDN | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-serverless",
-      "description": "Install the Google Cloud CLI. See gcloud Overview for conceptual and installation information about the tool. If you haven&#x27;t run the gcloud CLI previously, first run gcloud init to initialize your gcloud directory. To follow this guide, you need to create a serverless NEG and create an external HTTP(S) load balancer in a project. You should be either a project owner or editor, or you should have the following Compute Engine IAM roles...",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud CDN\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": true
     },
     {
       "title": "Set up third-party object storage | Cloud CDN | Google Cloud Documentation",
@@ -826,11 +1072,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -838,7 +1087,7 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Troubleshoot Cloud CDN | Google Cloud Documentation",
@@ -856,11 +1105,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -868,13 +1120,13 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Integrating Cloud Armor with other Google products | Google Cloud Armor | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/armor/docs/integrating-cloud-armor",
       "description": "For more information about configuring <strong>Cloud Armor</strong> backend security policies, see Configure <strong>Cloud Armor</strong> backend security policy to secure your backend services. To protect CDN origin servers, you can use <strong>Cloud Armor</strong> with Cloud CDN.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud CDN\" \"access control\""
       ],
@@ -884,15 +1136,18 @@
       "round_hits": [
         2
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -904,7 +1159,7 @@
       "title": "Serve static assets with Cloud CDN | Cloud Run | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/set-up-cdn",
       "description": "Cloud CDN <strong>uses Google&#x27;s global edge network to serve content closer to users, which accelerates your websites and applications</strong>.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud CDN\" Google Cloud introduction reference"
       ],
@@ -914,18 +1169,21 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -953,6 +1211,9 @@
       "api_score": {
         "classification": "product_root",
         "score": 91,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 0,
         "coverage_value": 4,
@@ -960,7 +1221,77 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 87,
-      "keep": true
+      "keep": false
+    },
+    {
+      "title": "Content delivery networks (CDNs) for Content-Driven Web Apps | Solutions for Developers | Google for Developers",
+      "url": "https://developers.google.com/solutions/content-driven/hosting/cdn",
+      "description": "Key actions for using a CDN include <strong>selecting a suitable provider, configuring DNS records and origin servers, and setting caching preferences</strong>. Implement SSL/TLS encryption, test content delivery, and monitor with analytics. Load testing assesses traffic handling.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com \"Cloud CDN\" official documentation OR site:developers.google.com \"cloud cdn\" official documentation",
+        "site:developers.google.com \"Cloud CDN\" reference OR site:developers.google.com \"cloud cdn\" reference",
+        "site:developers.google.com \"Cloud CDN\" overview OR site:developers.google.com \"cloud cdn\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 6,
+      "deterministic_score": 70,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 70,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 2,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 75,
+      "keep": false
+    },
+    {
+      "title": "Build a serverless ecommerce web app with Python, Cloud Run, Cloud SQL, and Firebase | Solutions for Developers | Google for Developers",
+      "url": "https://developers.google.com/learn/pathways/solution-ecommerce-serverless-django",
+      "description": "Static assets are stored and served directly from Cloud Storage, which is optimized for static files and can be enhanced using a content delivery network (CDN).",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Cloud CDN\" overview OR site:developers.google.com \"cloud cdn\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "deterministic_score": 50,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 50,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 2,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 47,
+      "keep": false
     },
     {
       "title": "Set up a global external Application Load Balancer with an external backend | Cloud Load Balancing | Google Cloud Documentation",
@@ -983,6 +1314,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 41,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,

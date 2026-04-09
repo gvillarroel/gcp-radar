@@ -21,11 +21,11 @@ This file lists the official Google documentation URLs selected and scored for t
 | 95 | no | iam_reference | https://docs.cloud.google.com/functions/docs/securing/managing-access-iam | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/cloudfunctions | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 95 | no | iam_reference | https://docs.cloud.google.com/iam/docs/roles-permissions/run | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
-| 95 | no | irrelevant | https://docs.cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/com.google.cloud.networkservices.v1.HttpRoute.RequestMirrorPolicy | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
+| 95 | no | supporting_page | https://docs.cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/overview | 2 | Heuristic tail scoring was applied outside the API-ranked set. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/run/docs/ai/cloud-run-for-ai-assisted-developers | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | supporting_page | https://docs.cloud.google.com/run/docs/configuring?hl=en | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/run/docs/configuring/jobs/cpu | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/run/docs/create-jobs | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/run/docs/execute/jobs | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
 | 90 | no | iam_reference | https://docs.cloud.google.com/run/docs/managing/jobs | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |
-| 90 | no | iam_reference | https://docs.cloud.google.com/run/docs/managing/services | 1 | Fallback heuristic scoring was used because API scoring was unavailable. |

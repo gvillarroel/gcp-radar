@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:19:03.514Z",
+  "generated_at": "2026-04-08T21:50:55.405Z",
   "product_name": "Cloud NGFW",
   "product_slug": "cloud-ngfw",
   "step02_source_path": "data/step-02/current/cloud-ngfw.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "firewall",
   "dominant_python_slug": "",
@@ -128,15 +128,15 @@
           "rank": 5
         },
         {
-          "title": "Network contexts | Cloud Next Generation Firewall | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/firewall/docs/understand-network-contexts?hl=en",
-          "description": "Network contexts help you meet your security goals by using fewer firewall policy rules more efficiently. Cloud NGFW supports four network contexts that can be used to create a source combination or destination combination in a rule of a hierarchical firewall policy, global network firewall policy, or regional network firewall policy.",
-          "rank": 6
-        },
-        {
           "title": "Firewall policies and rules | Cloud Next Generation Firewall | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/firewall/docs/firewall-policies-overview",
           "description": "Learn about Google Cloud NGFW policies: hierarchical, global, regional, and system. Define ingress and egress rules to secure your VPC networks.",
+          "rank": 6
+        },
+        {
+          "title": "Network contexts | Cloud Next Generation Firewall | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/firewall/docs/understand-network-contexts?hl=en",
+          "description": "Network contexts help you meet your security goals by using fewer firewall policy rules more efficiently. Cloud NGFW supports four network contexts that can be used to create a source combination or destination combination in a rule of a hierarchical firewall policy, global network firewall policy, or regional network firewall policy.",
           "rank": 7
         },
         {
@@ -347,14 +347,14 @@
           "rank": 1
         },
         {
-          "title": "Cloud NGFW Enterprise Codelab [w/ TLS Inspection] | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/cloud-ngfw-enterprise-tls",
+          "title": "Cloud NGFW Enterprise Domain/SNI Filtering Codelab [Optional TLS Inspection] | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/cloud-ngfw-enterprise-urlf",
           "description": "Distributed firewall service: Cloud NGFW provides a stateful, fully distributed host-based enforcement on each workload to enable zero-trust security architecture.",
           "rank": 2
         },
         {
-          "title": "Cloud NGFW Enterprise Domain/SNI Filtering Codelab [Optional TLS Inspection] | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/cloud-ngfw-enterprise-urlf",
+          "title": "Cloud NGFW Enterprise Codelab [w/ TLS Inspection] | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/cloud-ngfw-enterprise-tls",
           "description": "Distributed firewall service: Cloud NGFW provides a stateful, fully distributed host-based enforcement on each workload to enable zero-trust security architecture.",
           "rank": 3
         },
@@ -460,15 +460,15 @@
           "rank": 3
         },
         {
-          "title": "Cloud NGFW release notes | Cloud Next Generation Firewall | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/firewall/docs/release-notes",
-          "description": "Cloud Firewall in Google Cloud is now Cloud Next Generation Firewall (NGFW).",
-          "rank": 4
-        },
-        {
           "title": "Intrusion detection and prevention service overview | Cloud Next Generation Firewall | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
           "description": "Cloud NGFW <strong>references security profiles and security profile groups to implement deep packet inspection for intrusion detection and prevention service</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Cloud NGFW release notes | Cloud Next Generation Firewall | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/firewall/docs/release-notes",
+          "description": "Cloud Firewall in Google Cloud is now Cloud Next Generation Firewall (NGFW).",
           "rank": 5
         },
         {
@@ -478,15 +478,15 @@
           "rank": 6
         },
         {
-          "title": "Fully qualified domain name objects overview | Cloud Next Generation Firewall | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/firewall/docs/fqdn-objects-overview",
-          "description": "<strong>Cloud Next Generation Firewall periodically resolves FQDN objects to IP addresses</strong>. Cloud NGFW follows the Cloud DNS VPC name resolution order in the VPC network that contains the firewall rule&#x27;s targets.",
-          "rank": 7
-        },
-        {
           "title": "Network Security API | Cloud Next Generation Firewall | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
           "description": "Cloud NGFW · Reference · Send feedback · To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
+          "rank": 7
+        },
+        {
+          "title": "Fully qualified domain name objects overview | Cloud Next Generation Firewall | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/firewall/docs/fqdn-objects-overview",
+          "description": "<strong>Cloud Next Generation Firewall periodically resolves FQDN objects to IP addresses</strong>. Cloud NGFW follows the Cloud DNS VPC name resolution order in the VPC network that contains the firewall rule&#x27;s targets.",
           "rank": 8
         }
       ]
@@ -520,19 +520,22 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Fully qualified domain name objects overview | Cloud Next Generation Firewall | Google Cloud Documentation",
@@ -554,11 +557,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -590,11 +596,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -624,11 +633,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -654,13 +666,16 @@
         2,
         3
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -690,11 +705,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -708,7 +726,7 @@
       "title": "Firewall policies and rules | Cloud Next Generation Firewall | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/firewall/docs/firewall-policies-overview",
       "description": "Learn about Google Cloud NGFW policies: hierarchical, global, regional, and system. Define ingress and egress rules to secure your VPC networks.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud docs overview"
@@ -722,11 +740,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -740,7 +761,7 @@
       "title": "Network contexts | Cloud Next Generation Firewall | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/firewall/docs/understand-network-contexts?hl=en",
       "description": "Network contexts help you meet your security goals by using fewer firewall policy rules more efficiently. Cloud NGFW supports four network contexts that can be used to create a source combination or destination combination in a rule of a hierarchical firewall policy, global network firewall policy, or regional network firewall policy.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud introduction reference"
@@ -754,11 +775,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -791,6 +815,9 @@
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 5,
@@ -798,7 +825,7 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Address groups for firewall policies | Cloud Next Generation Firewall | Google Cloud Documentation",
@@ -823,6 +850,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 98,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -848,11 +878,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -866,7 +899,7 @@
       "title": "Network Security API | Cloud Next Generation Firewall | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/firewall/docs/reference",
       "description": "Cloud NGFW · Reference · Send feedback · To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud introduction reference"
       ],
@@ -876,13 +909,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -896,7 +932,7 @@
       "title": "Network Security API | Cloud Next Generation Firewall | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest",
       "description": "Cloud NGFW · Reference · Send feedback · To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the API requests.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud introduction reference"
       ],
@@ -906,13 +942,16 @@
       "round_hits": [
         3
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -938,14 +977,83 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Collect Cloud Next Generation Firewall logs | Google Security Operations | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/cloud-ngfw",
+      "description": "<strong>This document explains how to export and ingest Cloud NGFW logs into Google Security Operations using Google Cloud</strong>. The parser extracts fields from Google Cloud Firewall logs, transforms and maps them to the UDM.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Selectively enforce firewall policies in GKE | GKE security | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/tags-firewall-policies",
+      "description": "Using Tags with network firewall policies is a more secure, scalable way to manage access to your GKE environments across your organization. You can use network tags in the same cluster as Tags, although you can&#x27;t use network tags to enforce network firewall policies. For a detailed comparison between Tags and network tags, see Comparison of Tags and network tags in the Cloud NGFW documentation.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NGFW\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -973,6 +1081,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 3,
@@ -1003,6 +1114,9 @@
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 3,
@@ -1033,6 +1147,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -1063,11 +1180,14 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1093,43 +1213,16 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Collect Cloud Next Generation Firewall logs | Google Security Operations | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/cloud-ngfw",
-      "description": "<strong>This document explains how to export and ingest Cloud NGFW logs into Google Security Operations using Google Cloud</strong>. The parser extracts fields from Google Cloud Firewall logs, transforms and maps them to the UDM.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NGFW\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 89,
+      "final_score": 90,
       "keep": false
     },
     {
@@ -1153,6 +1246,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 93,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -1183,6 +1279,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 90,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -1190,36 +1289,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 81,
-      "keep": false
-    },
-    {
-      "title": "Selectively enforce firewall policies in GKE | GKE security | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/tags-firewall-policies",
-      "description": "Using Tags with network firewall policies is a more secure, scalable way to manage access to your GKE environments across your organization. You can use network tags in the same cluster as Tags, although you can&#x27;t use network tags to enforce network firewall policies. For a detailed comparison between Tags and network tags, see Comparison of Tags and network tags in the Cloud NGFW documentation.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NGFW\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 87,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 87,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 79,
       "keep": false
     },
     {
@@ -1243,6 +1312,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 77,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 3,
         "coverage_value": 2,
@@ -1273,6 +1345,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 67,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,

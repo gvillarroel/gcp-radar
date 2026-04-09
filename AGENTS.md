@@ -17,6 +17,11 @@ The goal is to collect, validate, and organize product intelligence into hierarc
 - related documentation and evidence
 - relationships between products, features, and controls
 
+## Decision Records
+
+- Record durable technical or workflow decisions as ADRs under `.specs/adr/*.md`.
+- Read existing ADRs before changing a previously chosen technical direction.
+
 ## Core Rule
 
 All project documentation must be written in English.
@@ -27,7 +32,7 @@ This includes:
 
 - `AGENTS.md`
 - `.specs/specs.md`
-- ADRs under `.specs/ADRs/`
+- ADRs under `.specs/adr/*.md`
 - canonical documentation under `docs/`
 - knowledge documents under `knowledge/`
 - evaluation notes, benchmarks, and skill-related documentation
@@ -38,7 +43,7 @@ Agents working in this repository should read these documents in this order:
 
 1. `AGENTS.md`
 2. `.specs/specs.md`
-3. relevant ADRs in `.specs/ADRs/`
+3. relevant ADRs in `.specs/adr/*.md`
 4. relevant knowledge entries in `knowledge/`
 
 ## Repository Structure
@@ -47,7 +52,7 @@ Expected top-level structure:
 
 - `.specs/`
 - `.specs/specs.md`
-- `.specs/ADRs/`
+- `.specs/adr/`
 - `artifacts/`
 - `docs/`
 - `radar/`
@@ -76,7 +81,7 @@ Read this file to understand:
 - data acquisition and validation expectations
 - output shapes and quality bar
 
-### `.specs/ADRs/`
+### `.specs/adr/`
 
 Architecture Decision Records.
 

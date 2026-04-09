@@ -1,87 +1,93 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:16:08+00:00'
-updated_at: '2026-04-08T05:43:34+00:00'
+updated_at: '2026-04-09T16:29:03+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
   export: know export --key corpus
 sources:
 - type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/api-gateway/docs
+  created_at: '2026-04-09T16:21:38+00:00'
+  updated_at: '2026-04-09T16:22:41+00:00'
+  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs --key
+    corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/api-gateway/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-09T16:22:41+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/api-gateway/docs/reference
+  created_at: '2026-04-09T16:21:38+00:00'
+  updated_at: '2026-04-09T16:23:57+00:00'
+  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/reference
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/api-gateway/docs/reference
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T16:23:57+00:00'
+- type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/api-gateway/docs/reference/rest
-  created_at: '2026-04-08T05:41:27+00:00'
-  updated_at: '2026-04-08T05:41:27+00:00'
+  created_at: '2026-04-09T16:21:39+00:00'
+  updated_at: '2026-04-09T16:25:12+00:00'
   update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
   config:
     url: https://docs.cloud.google.com/api-gateway/docs/reference/rest
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-09T16:25:12+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/api-gateway/docs/api-access-overview
+  created_at: '2026-04-09T16:21:39+00:00'
+  updated_at: '2026-04-09T16:26:27+00:00'
+  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/api-access-overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/api-gateway/docs/api-access-overview
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T16:26:27+00:00'
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/python/docs/reference/apigateway/latest
+  created_at: '2026-04-09T16:21:40+00:00'
+  updated_at: '2026-04-09T16:27:42+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/apigateway/latest
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/apigateway/latest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T16:27:42+00:00'
 - type: site
   id: site-java-reference
   title: https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/overview
-  created_at: '2026-04-08T05:41:29+00:00'
-  updated_at: '2026-04-08T05:41:29+00:00'
+  created_at: '2026-04-09T16:21:41+00:00'
+  updated_at: '2026-04-09T16:29:03+00:00'
   update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/overview
     --key corpus --compact
   delete_command: know del --key corpus site-java-reference
   config:
     url: https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/overview
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
-- type: site
-  id: site-docs-root
-  title: https://docs.cloud.google.com/api-gateway/docs/openapi-overview
-  created_at: '2026-04-08T05:41:56+00:00'
-  updated_at: '2026-04-08T05:41:56+00:00'
-  update_command: know sync site https://docs.cloud.google.com/api-gateway/docs/openapi-overview
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-root
-  config:
-    url: https://docs.cloud.google.com/api-gateway/docs/openapi-overview
-    max_depth: 1
-    max_pages: 0
-    compact_output: true
-- type: site
-  id: site-docs-reference
-  title: https://docs.cloud.google.com/ruby/docs/reference/google-cloud-api_gateway-v1/latest/Google-Api-BatchingSettingsProto
-  created_at: '2026-04-08T05:42:49+00:00'
-  updated_at: '2026-04-08T05:42:49+00:00'
-  update_command: know sync site https://docs.cloud.google.com/ruby/docs/reference/google-cloud-api_gateway-v1/latest/Google-Api-BatchingSettingsProto
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-reference
-  config:
-    url: https://docs.cloud.google.com/ruby/docs/reference/google-cloud-api_gateway-v1/latest/Google-Api-BatchingSettingsProto
-    max_depth: 1
-    max_pages: 0
-    compact_output: true
-- type: site
-  id: site-iam-reference
-  title: https://docs.cloud.google.com/iam/docs/roles-permissions/apigateway
-  created_at: '2026-04-08T05:43:07+00:00'
-  updated_at: '2026-04-08T05:43:07+00:00'
-  update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/apigateway
-    --key corpus --compact
-  delete_command: know del --key corpus site-iam-reference
-  config:
-    url: https://docs.cloud.google.com/iam/docs/roles-permissions/apigateway
-    max_depth: 1
-    max_pages: 0
-    compact_output: true
-- type: site
-  id: site-python-reference
-  title: https://googleapis.dev/python/apigateway/latest/index.html
-  created_at: '2026-04-08T05:43:34+00:00'
-  updated_at: '2026-04-08T05:43:34+00:00'
-  update_command: know sync site https://googleapis.dev/python/apigateway/latest/index.html
-    --key corpus --compact
-  delete_command: know del --key corpus site-python-reference
-  config:
-    url: https://googleapis.dev/python/apigateway/latest/index.html
-    max_depth: 1
-    max_pages: 0
-    compact_output: true
+  last_synced_at: '2026-04-09T16:29:03+00:00'

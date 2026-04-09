@@ -1,9 +1,17 @@
-entrypoint: "https://docs.cloud.google.com/access-context-manager/docs/overview"
-source_id: "site-docs-root"
-source_type: "site"
-compact_output: true
-content_origin: "bx_web_fallback"
-page_count: 10
-max_depth: 1
-max_pages: 0
-pages_index: "pages.json"
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+title: https://docs.cloud.google.com/access-context-manager/docs/concepts
+last_synced_at: '2026-04-09T15:38:17+00:00'
+update_command: know sync site https://docs.cloud.google.com/access-context-manager/docs/concepts
+  --key corpus --compact
+delete_command: know del --key corpus site-docs-root
+config:
+  url: https://docs.cloud.google.com/access-context-manager/docs/concepts
+  max_depth: 1
+  max_pages: 30
+  compact_output: true
+stats:
+  pages: 30
+  entrypoint: https://docs.cloud.google.com/access-context-manager/docs/concepts
+  raw_dir: C:\Users\villa\dev\gcp-radar\data\step-04\current\products\access-context-manager\corpus\site\site-docs-root

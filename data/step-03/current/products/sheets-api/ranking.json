@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:39:47.946Z",
+  "generated_at": "2026-04-08T21:56:41.163Z",
   "product_name": "Sheets API",
   "product_slug": "sheets-api",
   "step02_source_path": "data/step-02/current/sheets-api.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "workflows",
   "dominant_python_slug": "",
@@ -129,7 +129,7 @@
         {
           "title": "Query a BigQuery dataset and write the results to a Sheet spreadsheet using connectors | Workflows | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-sheets-bigquery",
-          "description": "Queries a BigQuery dataset using the BigQuery API connector and writes the results to a Sheets spreadsheet using the Google Sheets API connector. For detailed documentation that includes this code sample, see the following: ... main: steps: - init: assign: # Replace with your sheetId and make sure the service account # for the workflow has write permissions to the sheet - sheetId: &quot;1D8n7uoU8kGwQvR4rcLkF10CdAfnUKE2o0yl6P-Z7nfM&quot; - limit: 100 - runQuery: call: googleapis.bigquery.v2.jobs.query args: projectId: ${sys.get_env(&quot;GOOGLE_CLOUD_PROJECT_ID&quot;)} body: useLegacySql: false # Query name and ge",
+          "description": "Queries a BigQuery dataset using the BigQuery API connector and writes the results to a Sheets spreadsheet using the Google Sheets API connector. For detailed documentation that includes this code sample, see the following: Write to Google Sheets from a workflow · main: steps: - init: assign: # Replace with your sheetId and make sure the service account # for the workflow has write permissions to the sheet - sheetId: &quot;1D8n7uoU8kGwQvR4rcLkF10CdAfnUKE2o0yl6P-Z7nfM&quot; - limit: 100 - runQuery: call: googleapis.bigquery.v2.jobs.query args: projectId: ${sys.get_env(&quot;GOOGLE_CLOUD_PROJECT_ID&quot;)} body: u",
           "rank": 6
         },
         {
@@ -197,15 +197,15 @@
           "rank": 5
         },
         {
-          "title": "Standard Query Parameters | Google Sheets | Google for Developers",
-          "url": "https://developers.google.com/sheets/api/reference/query-parameters",
-          "description": "Reference · Send feedback · Query parameters that apply to all Google Sheets API operations are documented at System Parameters. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+          "description": "For more information about the resources available in the Sheets v4 API, see the API Reference.",
           "rank": 6
         },
         {
-          "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
-          "url": "https://developers.google.com/workspace/sheets/api/guides/migration?visit_id=638451430607007100-2276497933&hl=en&rd=1",
-          "description": "In contrast, the Sheets API v4 does not use access methods that are row-specific. Instead, sheet cell data is accessed by referencing the specific ranges required using A1 notation. The ranges can be blocks of cells, entire rows, entire columns, or entire sheets.",
+          "title": "Standard Query Parameters | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/sheets/api/reference/query-parameters",
+          "description": "Reference · Send feedback · Query parameters that apply to all Google Sheets API operations are documented at System Parameters. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
           "rank": 7
         },
         {
@@ -234,7 +234,7 @@
       "round": 2,
       "intent": "product_docs",
       "query": "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview",
-      "official_result_count": 6,
+      "official_result_count": 8,
       "results": [
         {
           "title": "Google Sheets API Connector Overview | Workflows | Google Cloud Documentation",
@@ -255,22 +255,34 @@
           "rank": 3
         },
         {
-          "title": "Connected Sheets quick link | Looker | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/looker/docs/connected-sheets-quicklink",
-          "description": "From the Google Cloud console Open project picker, select the project that you want to use for connecting to Google Sheets from your Looker Explores. You must use the same Google Cloud console project throughout the Connected Sheets quick link setup procedure so that the Google Sheets API is enabled on the same project where you configure OAuth.",
-          "rank": 4
-        },
-        {
           "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
           "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
-          "rank": 5
+          "rank": 4
         },
         {
           "title": "Sheets - Get task | Application Integration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-integration/docs/gcp-tasks/configure-sheets-get-task",
           "description": "It <strong>allows you to create and edit online spreadsheets with real-time collaboration functionality</strong>. Ensure that you perform the following tasks in your Google Cloud project before configuring the Sheets - Get task: Enable the Google Sheets API ...",
+          "rank": 5
+        },
+        {
+          "title": "Connected Sheets quick link | Looker | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/looker/docs/connected-sheets-quicklink",
+          "description": "From the Google Cloud console Open project picker, select the project that you want to use for connecting to Google Sheets from your Looker Explores. You must use the same Google Cloud console project throughout the Connected Sheets quick link setup procedure so that the Google Sheets API is enabled on the same project where you configure OAuth.",
           "rank": 6
+        },
+        {
+          "title": "Query a BigQuery dataset and write the results to a Sheet spreadsheet using connectors | Workflows | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-sheets-bigquery",
+          "description": "Queries a BigQuery dataset using the BigQuery API connector and writes the results to a Sheets spreadsheet using the Google Sheets API connector. For detailed documentation that includes this code sample, see the following: ... main: steps: - init: assign: # Replace with your sheetId and make sure the service account # for the workflow has write permissions to the sheet - sheetId: &quot;1D8n7uoU8kGwQvR4rcLkF10CdAfnUKE2o0yl6P-Z7nfM&quot; - limit: 100 - runQuery: call: googleapis.bigquery.v2.jobs.query args: projectId: ${sys.get_env(&quot;GOOGLE_CLOUD_PROJECT_ID&quot;)} body: useLegacySql: false # Query name and ge",
+          "rank": 7
+        },
+        {
+          "title": "Admin settings - Self-service Explores | Looker | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+          "description": "Google Cloud project that is specified ... for all BigQuery operations · Google Sheets API: <strong>Required for retrieving the names of each sheet in a Google Sheets document</strong>......",
+          "rank": 8
         }
       ]
     },
@@ -337,9 +349,9 @@
           "rank": 7
         },
         {
-          "title": "Read & write cell values | Google Sheets | Google for Developers",
-          "url": "https://developers.google.com/sheets/api/guides/values",
-          "description": "Spreadsheets can have multiple sheets, with each sheet having any number of rows or columns. A cell is a location at the intersection of a particular row and column, and might contain a data value. The Google Sheets API provides the spreadsheets.values resource to enable the reading and writing of values.",
+          "title": "Use Google Sheets as your application's reporting tool | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/sheets-api",
+          "description": "In this codelab, you&#x27;ll learn how you can use Google Sheets as a custom-reporting tool for your users. You&#x27;ll modify a sample order tracking application to export to a spreadsheet and then build visualizations using the Google Sheets API.",
           "rank": 8
         }
       ]
@@ -452,11 +464,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 152,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -486,11 +501,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -520,11 +538,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -554,11 +575,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -567,42 +591,6 @@
       },
       "final_score": 100,
       "keep": true
-    },
-    {
-      "title": "Write to Google Sheets from a workflow | Workflows | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/write-to-google-sheets",
-      "description": "The following example demonstrates how to write to Sheets from a workflow. The workflow queries a BigQuery dataset and writes the results to a Sheets spreadsheet. It uses Workflows connectors to simplify the calling of Google Cloud APIs. Before trying out the example in this document, ensure ...",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"Sheets API\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "product_docs",
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 100,
-      "product_fit_score": 34,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
     },
     {
       "title": "Sheets - Append task | Application Integration | Google Cloud Documentation",
@@ -626,13 +614,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -660,13 +651,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -696,18 +690,95 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Write to Google Sheets from a workflow | Workflows | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/workflows/docs/write-to-google-sheets",
+      "description": "The following example demonstrates how to write to Sheets from a workflow. The workflow queries a BigQuery dataset and writes the results to a Sheets spreadsheet. It uses Workflows connectors to simplify the calling of Google Cloud APIs. Before trying out the example in this document, ensure ...",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Sheets API\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 58,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Query a BigQuery dataset and write the results to a Sheet spreadsheet using connectors | Workflows | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-sheets-bigquery",
+      "description": "Queries a BigQuery dataset using the BigQuery API connector and writes the results to a Sheets spreadsheet using the Google Sheets API connector. For detailed documentation that includes this code sample, see the following: Write to Google Sheets from a workflow · main: steps: - init: assign: # Replace with your sheetId and make sure the service account # for the workflow has write permissions to the sheet - sheetId: &quot;1D8n7uoU8kGwQvR4rcLkF10CdAfnUKE2o0yl6P-Z7nfM&quot; - limit: 100 - runQuery: call: googleapis.bigquery.v2.jobs.query args: projectId: ${sys.get_env(&quot;GOOGLE_CLOUD_PROJECT_ID&quot;)} body: u",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": 152,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
       "keep": false
     },
     {
@@ -728,11 +799,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -760,11 +834,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -775,33 +852,38 @@
       "keep": false
     },
     {
-      "title": "Query a BigQuery dataset and write the results to a Sheet spreadsheet using connectors | Workflows | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-sheets-bigquery",
-      "description": "Queries a BigQuery dataset using the BigQuery API connector and writes the results to a Sheets spreadsheet using the Google Sheets API connector. For detailed documentation that includes this code sample, see the following: ... main: steps: - init: assign: # Replace with your sheetId and make sure the service account # for the workflow has write permissions to the sheet - sheetId: &quot;1D8n7uoU8kGwQvR4rcLkF10CdAfnUKE2o0yl6P-Z7nfM&quot; - limit: 100 - runQuery: call: googleapis.bigquery.v2.jobs.query args: projectId: ${sys.get_env(&quot;GOOGLE_CLOUD_PROJECT_ID&quot;)} body: useLegacySql: false # Query name and ge",
-      "rank": 6,
+      "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
+      "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
+      "rank": 7,
       "query_hits": [
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation"
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview"
       ],
       "intent_hits": [
         "product_docs"
       ],
       "round_hits": [
-        1
+        1,
+        2
       ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 80,
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 58,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 90,
+      "final_score": 95,
       "keep": false
     },
     {
@@ -820,11 +902,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -850,11 +935,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -880,11 +968,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -910,11 +1001,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -925,29 +1019,32 @@
       "keep": false
     },
     {
-      "title": "Read & write cell values | Google Sheets | Google for Developers",
-      "url": "https://developers.google.com/sheets/api/guides/values",
-      "description": "Spreadsheets can have multiple sheets, with each sheet having any number of rows or columns. A cell is a location at the intersection of a particular row and column, and might contain a data value. The Google Sheets API provides the spreadsheets.values resource to enable the reading and writing of values.",
-      "rank": 8,
+      "title": "Class Google_Service_Sheets | Google Sheets API",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/php/latest/class-Google_Service_Sheets.html",
+      "description": "Service definition for Sheets (v4).",
+      "rank": 5,
       "query_hits": [
-        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation"
       ],
       "intent_hits": [
         "developers_docs"
       ],
       "round_hits": [
-        3
+        1
       ],
-      "best_rank": 8,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -958,7 +1055,7 @@
       "title": "Standard Query Parameters | Google Sheets | Google for Developers",
       "url": "https://developers.google.com/sheets/api/reference/query-parameters",
       "description": "Reference · Send feedback · Query parameters that apply to all Google Sheets API operations are documented at System Parameters. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
       ],
@@ -968,13 +1065,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1000,11 +1100,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1030,11 +1133,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1046,9 +1152,9 @@
     },
     {
       "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/guides/migration?visit_id=638451430607007100-2276497933&hl=en&rd=1",
-      "description": "In contrast, the Sheets API v4 does not use access methods that are row-specific. Instead, sheet cell data is accessed by referencing the specific ranges required using A1 notation. The ranges can be blocks of cells, entire rows, entire columns, or entire sheets.",
-      "rank": 7,
+      "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+      "description": "For more information about the resources available in the Sheets v4 API, see the API Reference.",
+      "rank": 6,
       "query_hits": [
         "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
       ],
@@ -1058,13 +1164,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1090,11 +1199,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1102,68 +1214,6 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class Google_Service_Sheets | Google Sheets API",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/php/latest/class-Google_Service_Sheets.html",
-      "description": "Service definition for Sheets (v4).",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 86,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 86,
-        "parent_page_likelihood": 4,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 78,
-      "keep": false
-    },
-    {
-      "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
-      "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 67,
-      "product_fit_score": 34,
-      "deterministic_score": 78,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 78,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 76,
       "keep": false
     },
     {
@@ -1182,18 +1232,54 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 78,
+      "product_fit_score": 130,
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 78,
-        "parent_page_likelihood": 4,
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Admin settings - Self-service Explores | Looker | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+      "description": "Google Cloud project that is specified ... for all BigQuery operations · Google Sheets API: <strong>Required for retrieving the names of each sheet in a Google Sheets document</strong>......",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 71,
+      "final_score": 90,
       "keep": false
     },
     {
@@ -1212,18 +1298,21 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 27,
+      "product_fit_score": 2,
+      "deterministic_score": 51,
       "api_score": {
         "classification": "supporting_page",
-        "score": 27,
-        "parent_page_likelihood": 1,
-        "product_match": 0,
+        "score": 51,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 1,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 28,
+      "final_score": 48,
       "keep": false
     }
   ]

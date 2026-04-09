@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:39:52.270Z",
+  "generated_at": "2026-04-08T21:56:45.557Z",
   "product_name": "Spanner",
   "product_slug": "spanner",
   "step02_source_path": "data/step-02/current/spanner.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "spanner",
   "dominant_python_slug": "spanner",
@@ -46,21 +46,21 @@
           "rank": 2
         },
         {
+          "title": "Getting started with Spanner Vector Search | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/spanner-getting-started-vector-search",
+          "description": "Spanner has <strong>built-in vector search support, enabling you to perform similarity or semantic search and implement retrieval augmented generation (RAG) in GenAI applications at scale</strong>, leveraging either exact K-nearest neighbor (KNN) or approximate nearest neighbor (ANN) features.",
+          "rank": 3
+        },
+        {
           "title": "Spanner (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/Spanner.html",
           "description": "Service definition for Spanner (v1).",
-          "rank": 3
+          "rank": 4
         },
         {
           "title": "spanner: Google.Apis.Spanner.v1.ProjectsResource.InstancesResource.DatabasesResource Class Reference",
           "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1ProjectsResource_1_1InstancesResource_1_1DatabasesResource.html",
           "description": "<strong>Updates the schema of a Cloud Spanner database by creating/altering/dropping tables, columns, indexes, etc</strong>. The returned long-running operation will have a name of the format /operations/ and can be used to track execution of the schema change(s). The metadata field type is UpdateDatabaseD...",
-          "rank": 4
-        },
-        {
-          "title": "Getting started with Spanner Vector Search | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/spanner-getting-started-vector-search",
-          "description": "Spanner has <strong>built-in vector search support, enabling you to perform similarity or semantic search and implement retrieval augmented generation (RAG) in GenAI applications at scale</strong>, leveraging either exact K-nearest neighbor (KNN) or approximate nearest neighbor (ANN) features.",
           "rank": 5
         },
         {
@@ -70,15 +70,15 @@
           "rank": 6
         },
         {
-          "title": "spanner: Google.Apis.Spanner.v1.Data.TransactionOptions Class Reference",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1TransactionOptions.html",
-          "description": "<strong>Clients should attempt to minimize the amount of time a transaction is active</strong>. Faster transactions commit with higher probability and cause less contention. Cloud Spanner attempts to keep read locks active as long as the transaction continues to do reads, and the transaction has not been terminated ...",
+          "title": "Spanner.Projects.Instances.Databases.Sessions (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/Spanner.Projects.Instances.Databases.Sessions.html",
+          "description": "If a session is deleted, requests to it return `NOT_FOUND`. Idle sessions can be kept alive by sending a trivial SQL query periodically, e.g., `&quot;SELECT 1&quot;`. Create a request for the method &quot;sessions.create&quot;. This request holds the parameters needed by the spanner server.",
           "rank": 7
         },
         {
-          "title": "Instance Methods",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/python/latest/spanner_v1.projects.instances.databases.html",
-          "description": "<strong>Gets the state of a Cloud Spanner database</strong>. Args: name: string, Required. The name of the requested database. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`. (required) x__xgafv: string, V1 error format. Allowed values 1 - v1 error format 2 - v2 error ...",
+          "title": "spanner: Google.Apis.Spanner.v1.Data.TransactionOptions Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1TransactionOptions.html",
+          "description": "<strong>Clients should attempt to minimize the amount of time a transaction is active</strong>. Faster transactions commit with higher probability and cause less contention. Cloud Spanner attempts to keep read locks active as long as the transaction continues to do reads, and the transaction has not been terminated ...",
           "rank": 8
         }
       ]
@@ -164,9 +164,9 @@
           "rank": 3
         },
         {
-          "title": "Interface GroupOrBuilder (6.107.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.GroupOrBuilder",
-          "description": "repeated .google.spanner.v1.Tablet tablets = 2; public abstract int getTabletsCount() A list of tablets that are part of the group. Note that this list may not be exhaustive; it will only include tablets the server considers useful to the client. The returned list is ordered ascending by distance.",
+          "title": "Class Transaction.Builder (6.103.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.Transaction.Builder",
+          "description": ".google.spanner.v1.MultiplexedSessionPrecommitToken precommit_token = 3;",
           "rank": 4
         },
         {
@@ -176,21 +176,21 @@
           "rank": 5
         },
         {
-          "title": "Interface Mutation.SendOrBuilder (6.107.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.Mutation.SendOrBuilder",
-          "description": "If deliver_time is in the past, <strong>Spanner</strong> will replace it with a value closer to the current time.",
+          "title": "Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection",
+          "description": "For this library, we recommend using com.google.cloud.spanner for new applications.",
           "rank": 6
         },
         {
-          "title": "Interface InstanceAdminClient (6.108.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.InstanceAdminClient",
-          "description": "Creates an instance and begins preparing it to begin serving. The returned Operation can be used to track the progress of preparing the new instance. The instance name is assigned by the caller. If the named instance already exists, a <strong>Spanner</strong>Exception is thrown.",
+          "title": "Interface GroupOrBuilder (6.107.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.GroupOrBuilder",
+          "description": "repeated .google.spanner.v1.Tablet tablets = 2; public abstract int getTabletsCount() A list of tablets that are part of the group. Note that this list may not be exhaustive; it will only include tablets the server considers useful to the client. The returned list is ordered ascending by distance.",
           "rank": 7
         },
         {
-          "title": "Interface Spanner (2.35.2) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/com.google.cloud.spanner.Spanner",
-          "description": "public interface <strong>Spanner</strong> extends Service&lt;<strong>Spanner</strong>Options&gt;, AutoCloseable · com.google.cloud.Service&lt;com.google.cloud.spanner.<strong>Spanner</strong>Options&gt;, AutoCloseable ·",
+          "title": "Interface Mutation.SendOrBuilder (6.107.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.Mutation.SendOrBuilder",
+          "description": "If deliver_time is in the past, <strong>Spanner</strong> will replace it with a value closer to the current time.",
           "rank": 8
         }
       ]
@@ -208,21 +208,21 @@
           "rank": 1
         },
         {
-          "title": "Manage your data using the Google Cloud console | Spanner | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/spanner/docs/manage-data-using-console",
-          "description": "This page explains how to explore and manage your Spanner data using Spanner Studio in the Google Cloud console.",
-          "rank": 2
-        },
-        {
           "title": "Instances overview | Spanner | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/spanner/docs/instances",
           "description": "Once an instance is created, you can list, edit, or delete it. Spanner is <strong>a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime</strong>.",
-          "rank": 3
+          "rank": 2
         },
         {
           "title": "Managed autoscaler | Spanner | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/spanner/docs/managed-autoscaler",
           "description": "Periodically review your Cloud Monitoring metrics to verify that secondary replicas have the capacity required to support the combined traffic of your primary deployment. To configure the managed autoscaler, you need to be a principal in a role that has create and update permissions for the instance or instance partition that you are configuring. Spanner provides several metrics to help you understand how well the managed autoscaler is working as it scales up and down to meet workload requirements.",
+          "rank": 3
+        },
+        {
+          "title": "Manage your data using the Google Cloud console | Spanner | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/spanner/docs/manage-data-using-console",
+          "description": "This page explains how to explore and manage your Spanner data using Spanner Studio in the Google Cloud console.",
           "rank": 4
         },
         {
@@ -276,33 +276,33 @@
           "rank": 3
         },
         {
-          "title": "Class InstanceAdminClient (3.59.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminClient",
-          "description": "The Cloud <strong>Spanner</strong> Instance Admin API can be used to create, delete, modify and list instances.",
-          "rank": 4
-        },
-        {
-          "title": "Spanner for LangChain - Python",
-          "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest",
-          "description": "pip install virtualenv virtualenv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate &lt;your-env&gt;/bin/pip install langchain-google-spanner",
-          "rank": 5
-        },
-        {
-          "title": "Class Session (3.62.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.types.Session",
-          "description": "A session in the Cloud <strong>Spanner</strong> API.",
-          "rank": 6
-        },
-        {
           "title": "Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient",
           "description": "The Cloud <strong>Spanner</strong> API can be used to manage sessions and execute transactions on data stored in Cloud <strong>Spanner</strong> databases.",
+          "rank": 4
+        },
+        {
+          "title": "Class Session (3.62.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.session.Session",
+          "description": "Representation of a Cloud <strong>Spanner</strong> Session.",
+          "rank": 5
+        },
+        {
+          "title": "Class Client (3.58.0) | Python client library | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client",
+          "description": "Client for interacting with Cloud <strong>Spanner</strong> API.",
+          "rank": 6
+        },
+        {
+          "title": "Class DatabaseAdminAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+          "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import spanner_admin_database_v1 async def sample_add_split_points(): # Create a client client = spanner_admin_database_v1.DatabaseAdminAsyncClient() # Initialize request argument(s) request = spanner_admin_database_v1.AddSplitPointsRequest( database=&quot;database_value&quot;, ) # Make the request response = await client.add_split_points(request=request) # Handle the response print(response)",
           "rank": 7
         },
         {
-          "title": "Class KeyRange (3.62.0) | Python client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.types.KeyRange",
-          "description": "Keys are represented by lists, where the ith value in the list corresponds to the ith component of the table or index primary key. Individual values are encoded as described here][google.spanner.v1.TypeCode].",
+          "title": "Class InstanceAdminClient (3.59.0) | Python client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminClient",
+          "description": "The Cloud <strong>Spanner</strong> Instance Admin API can be used to create, delete, modify and list instances.",
           "rank": 8
         }
       ]
@@ -363,9 +363,9 @@
           "rank": 7
         },
         {
-          "title": "spanner: Google.Apis.Spanner.v1.Data.PartialResultSet Class Reference",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1PartialResultSet.html",
-          "description": "Google.Apis.Spanner.v1.Data.PartialResultSet Class Reference · Partial results from a streaming read or SQL query. Streaming reads and SQL queries better tolerate large result sets, large rows, and large values, but are a little trickier to consume. More... Inheritance diagram for Google.Apis.Spanner.v1.Data.PartialResultSet: Partial results from a streaming read or SQL query.",
+          "title": "spanner: Google.Apis.Spanner.v1.Data.BatchCreateSessionsRequest Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1BatchCreateSessionsRequest.html",
+          "description": "Google.Apis.Spanner.v1.Data.BatchCreateSessionsRequest Class Reference · The request for BatchCreateSessions. More... Inheritance diagram for Google.Apis.Spanner.v1.Data.BatchCreateSessionsRequest: The request for BatchCreateSessions. The ETag of the item. Required.",
           "rank": 8
         }
       ]
@@ -451,15 +451,15 @@
           "rank": 3
         },
         {
-          "title": "Class CloudExecutor (6.111.1) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.CloudExecutor",
-          "description": "Superclass of cloud Java Client implementations for cloud requests.",
-          "rank": 4
-        },
-        {
           "title": "Java client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection",
           "description": "For this library, we recommend using com.google.cloud.spanner for new applications. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java ...",
+          "rank": 4
+        },
+        {
+          "title": "Class CloudExecutor (6.111.1) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.CloudExecutor",
+          "description": "Superclass of cloud Java Client implementations for cloud requests.",
           "rank": 5
         },
         {
@@ -815,7 +815,7 @@
         {
           "title": "Package google.spanner.v1 | Spanner | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1",
-          "description": "<strong>The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases</strong>.",
+          "description": "KeySet defines a collection of Cloud Spanner keys and/or key ranges. All the keys are expected to be in the same table or index.",
           "rank": 6
         },
         {
@@ -825,9 +825,9 @@
           "rank": 7
         },
         {
-          "title": "Cloud Spanner | Ruby client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-spanner/latest",
-          "description": "Cloud Spanner is <strong>a fully managed, mission-critical, relational database service</strong> that offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability.",
+          "title": "Create and query a database using the Google Cloud CLI | Spanner | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/spanner/docs/getting-started/gcloud",
+          "description": "For the complete Spanner gcloud reference, see gcloud. Note: To explore Spanner using a 90-day free trial instance, see Create a Spanner free trial instance. This tutorial uses Spanner, which is a billable component of Google Cloud.",
           "rank": 8
         }
       ]
@@ -845,14 +845,14 @@
           "rank": 1
         },
         {
-          "title": "Cloud Spanner support for Django — google-cloud-spanner-django documentation",
-          "url": "https://googleapis.dev/python/django-google-spanner/3.0.0",
+          "title": "Python Client for Cloud Spanner",
+          "url": "https://googleapis.dev/python/spanner/latest/index.html",
           "description": "Cloud <strong>Spanner</strong> is the world’s first fully managed relational database service to offer both strong consistency and horizontal scalability for mission-critical online transaction processing (OLTP) applications.",
           "rank": 2
         },
         {
-          "title": "Python Client for Cloud Spanner",
-          "url": "https://googleapis.dev/python/spanner/latest/index.html",
+          "title": "Cloud Spanner support for Django — google-cloud-spanner-django documentation",
+          "url": "https://googleapis.dev/python/django-google-spanner/3.0.0",
           "description": "Cloud <strong>Spanner</strong> is the world’s first fully managed relational database service to offer both strong consistency and horizontal scalability for mission-critical online transaction processing (OLTP) applications.",
           "rank": 3
         },
@@ -910,11 +910,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -946,11 +949,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -980,11 +986,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1012,11 +1021,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1044,11 +1056,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1062,7 +1077,7 @@
       "title": "Instances overview | Spanner | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/spanner/docs/instances",
       "description": "Once an instance is created, you can list, edit, or delete it. Spanner is <strong>a fully managed database service which oversees its own underlying tasks and resources, including monitoring and restarting processes when necessary with zero downtime</strong>.",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Spanner\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Spanner\" Google Cloud docs overview"
@@ -1074,13 +1089,16 @@
         1,
         2
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1110,16 +1128,54 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection",
+      "description": "For this library, we recommend using com.google.cloud.spanner for new applications.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Spanner\"",
+        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
       "keep": false
@@ -1142,43 +1198,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Interface InstanceAdminClient (6.108.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.InstanceAdminClient",
-      "description": "Creates an instance and begins preparing it to begin serving. The returned Operation can be used to track the progress of preparing the new instance. The instance name is assigned by the caller. If the named instance already exists, a <strong>Spanner</strong>Exception is thrown.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Spanner\"",
-        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 7,
-      "consistency_score": 67,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1206,11 +1233,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1219,6 +1249,41 @@
       },
       "final_score": 95,
       "keep": true
+    },
+    {
+      "title": "Class DatabaseAdminAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import spanner_admin_database_v1 async def sample_add_split_points(): # Create a client client = spanner_admin_database_v1.DatabaseAdminAsyncClient() # Initialize request argument(s) request = spanner_admin_database_v1.AddSplitPointsRequest( database=&quot;database_value&quot;, ) # Make the request response = await client.add_split_points(request=request) # Handle the response print(response)",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Spanner\"",
+        "site:docs.cloud.google.com \"Spanner\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Class SpannerAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation",
@@ -1238,11 +1303,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1256,7 +1324,7 @@
       "title": "Class SpannerClient (3.62.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.services.spanner.SpannerClient",
       "description": "The Cloud <strong>Spanner</strong> API can be used to manage sessions and execute transactions on data stored in Cloud <strong>Spanner</strong> databases.",
-      "rank": 7,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Spanner\"",
         "site:docs.cloud.google.com \"Spanner\" \"Python client libraries\""
@@ -1270,11 +1338,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -1288,7 +1359,7 @@
       "title": "Spanner (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
       "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/Spanner.html",
       "description": "Service definition for Spanner (v1).",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation",
         "site:developers.google.com \"Spanner\" overview OR site:developers.google.com \"spanner\" overview"
@@ -1300,113 +1371,20 @@
         1,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Interface Spanner (2.35.2) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/com.google.cloud.spanner.Spanner",
-      "description": "public interface <strong>Spanner</strong> extends Service&lt;<strong>Spanner</strong>Options&gt;, AutoCloseable · com.google.cloud.Service&lt;com.google.cloud.spanner.<strong>Spanner</strong>Options&gt;, AutoCloseable ·",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Spanner\"",
-        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Interface Spanner (2.35.2) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/overview",
-      "description": "public interface <strong>Spanner</strong> extends Service&lt;<strong>Spanner</strong>Options&gt;, AutoCloseable · com.google.cloud.Service&lt;com.google.cloud.spanner.<strong>Spanner</strong>Options&gt;, AutoCloseable ·",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Spanner\"",
-        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "java_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 3,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Spanner for LangChain - Python",
-      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest",
-      "description": "pip install virtualenv virtualenv &lt;your-env&gt; source &lt;your-env&gt;/bin/activate &lt;your-env&gt;/bin/pip install langchain-google-spanner",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Spanner\"",
-        "site:docs.cloud.google.com \"Spanner\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "python_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 4,
-        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
@@ -1430,13 +1408,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1462,13 +1443,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1492,11 +1476,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1522,11 +1509,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1552,11 +1542,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1582,11 +1575,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1612,11 +1608,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1642,15 +1641,18 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1672,11 +1674,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1702,11 +1707,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1732,11 +1740,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1762,11 +1773,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1792,15 +1806,51 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Create and query a database using the Google Cloud CLI | Spanner | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/spanner/docs/getting-started/gcloud",
+      "description": "For the complete Spanner gcloud reference, see gcloud. Note: To explore Spanner using a 90-day free trial instance, see Create a Spanner free trial instance. This tutorial uses Spanner, which is a billable component of Google Cloud.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Spanner\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1822,16 +1872,19 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1852,11 +1905,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1882,11 +1938,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1912,11 +1971,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1942,11 +2004,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1972,11 +2037,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1990,7 +2058,7 @@
       "title": "Manage your data using the Google Cloud console | Spanner | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/spanner/docs/manage-data-using-console",
       "description": "This page explains how to explore and manage your Spanner data using Spanner Studio in the Google Cloud console.",
-      "rank": 2,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Spanner\" Google Cloud documentation"
       ],
@@ -2000,13 +2068,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 2,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2020,7 +2091,7 @@
       "title": "Managed autoscaler | Spanner | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/spanner/docs/managed-autoscaler",
       "description": "Periodically review your Cloud Monitoring metrics to verify that secondary replicas have the capacity required to support the combined traffic of your primary deployment. To configure the managed autoscaler, you need to be a principal in a role that has create and update permissions for the instance or instance partition that you are configuring. Spanner provides several metrics to help you understand how well the managed autoscaler is working as it scales up and down to meet workload requirements.",
-      "rank": 4,
+      "rank": 3,
       "query_hits": [
         "site:docs.cloud.google.com \"Spanner\" Google Cloud documentation"
       ],
@@ -2030,13 +2101,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 4,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2062,11 +2136,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2092,11 +2169,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2122,11 +2202,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2152,15 +2235,18 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -2169,7 +2255,7 @@
     {
       "title": "Package google.spanner.v1 | Spanner | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1",
-      "description": "<strong>The Cloud Spanner API can be used to manage sessions and execute transactions on data stored in Cloud Spanner databases</strong>.",
+      "description": "KeySet defines a collection of Cloud Spanner keys and/or key ranges. All the keys are expected to be in the same table or index.",
       "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Spanner\" Google Cloud introduction reference"
@@ -2182,11 +2268,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2212,11 +2301,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2242,11 +2334,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2272,11 +2367,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2302,11 +2400,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2332,11 +2433,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2362,11 +2466,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2392,11 +2499,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -2410,36 +2520,6 @@
       "title": "Class CloudExecutor (6.111.1) | Java client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.CloudExecutor",
       "description": "Superclass of cloud Java Client implementations for cloud requests.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.connection",
-      "description": "For this library, we recommend using com.google.cloud.spanner for new applications. ... Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java ...",
       "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
@@ -2452,11 +2532,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2482,11 +2565,47 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Interface InstanceAdminClient (6.108.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.InstanceAdminClient",
+      "description": "Client to do admin operations on Cloud Spanner Instance and Instance Configs.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2512,11 +2631,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2530,7 +2652,7 @@
       "title": "Interface GroupOrBuilder (6.107.0) | Java client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.GroupOrBuilder",
       "description": "repeated .google.spanner.v1.Tablet tablets = 2; public abstract int getTabletsCount() A list of tablets that are part of the group. Note that this list may not be exhaustive; it will only include tablets the server considers useful to the client. The returned list is ordered ascending by distance.",
-      "rank": 4,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Spanner\""
       ],
@@ -2540,13 +2662,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 4,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2560,7 +2685,7 @@
       "title": "Interface Mutation.SendOrBuilder (6.107.0) | Java client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.Mutation.SendOrBuilder",
       "description": "If deliver_time is in the past, <strong>Spanner</strong> will replace it with a value closer to the current time.",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com/java/docs/reference \"Spanner\""
       ],
@@ -2570,13 +2695,49 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Transaction.Builder (6.103.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.spanner.v1.Transaction.Builder",
+      "description": ".google.spanner.v1.MultiplexedSessionPrecommitToken precommit_token = 3;",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Spanner\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2602,41 +2763,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class DatabaseAdminAsyncClient (3.63.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
-      "description": "Lists Cloud Spanner database roles. # This snippet has been automatically generated and should be regarded as a # code template only. # It will require modifications to work: # - It may require correct/in-range values for request initialization. # - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import spanner_admin_database_v1 async def sample_list_database_roles(): # Create a client client = spanner_admin_database_v1.DatabaseAdminAsyncClient() # Initialize request argument(s) request = spanner_admin_database_v1.ListDatabaseRolesRequest( parent=&quot;parent_value&quot;, ) # Make the request page_result = client.list_database_roles(request=request) # Handle the response async for response in page_result: print(response)",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Spanner\" \"Python client libraries\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2650,36 +2784,6 @@
       "title": "Class InstanceAdminClient (3.59.0) | Python client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminClient",
       "description": "The Cloud <strong>Spanner</strong> Instance Admin API can be used to create, delete, modify and list instances.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Spanner\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 70,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class KeyRange (3.62.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.types.KeyRange",
-      "description": "Keys are represented by lists, where the ith value in the list corresponds to the ith component of the table or index primary key. Individual values are encoded as described here][google.spanner.v1.TypeCode].",
       "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Spanner\""
@@ -2692,11 +2796,14 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2707,9 +2814,9 @@
       "keep": false
     },
     {
-      "title": "Class Session (3.62.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.types.Session",
-      "description": "A session in the Cloud <strong>Spanner</strong> API.",
+      "title": "Class Client (3.58.0) | Python client library | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.client.Client",
+      "description": "Client for interacting with Cloud <strong>Spanner</strong> API.",
       "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com/python/docs/reference \"Spanner\""
@@ -2722,11 +2829,47 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class Session (3.62.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_v1.session.Session",
+      "description": "Representation of a Cloud <strong>Spanner</strong> Session.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Spanner\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 118,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -2752,14 +2895,50 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "spanner: Google.Apis.Spanner.v1.Data.BatchCreateSessionsRequest Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1BatchCreateSessionsRequest.html",
+      "description": "Google.Apis.Spanner.v1.Data.BatchCreateSessionsRequest Class Reference · The request for BatchCreateSessions. More... Inheritance diagram for Google.Apis.Spanner.v1.Data.BatchCreateSessionsRequest: The request for BatchCreateSessions. The ETag of the item. Required.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Spanner\" reference OR site:developers.google.com \"spanner\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2782,11 +2961,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2812,41 +2994,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "spanner: Google.Apis.Spanner.v1.Data.PartialResultSet Class Reference",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1PartialResultSet.html",
-      "description": "Google.Apis.Spanner.v1.Data.PartialResultSet Class Reference · Partial results from a streaming read or SQL query. Streaming reads and SQL queries better tolerate large result sets, large rows, and large values, but are a little trickier to consume. More... Inheritance diagram for Google.Apis.Spanner.v1.Data.PartialResultSet: Partial results from a streaming read or SQL query.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Spanner\" reference OR site:developers.google.com \"spanner\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2860,7 +3015,7 @@
       "title": "spanner: Google.Apis.Spanner.v1.Data.TransactionOptions Class Reference",
       "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1Data_1_1TransactionOptions.html",
       "description": "<strong>Clients should attempt to minimize the amount of time a transaction is active</strong>. Faster transactions commit with higher probability and cause less contention. Cloud Spanner attempts to keep read locks active as long as the transaction continues to do reads, and the transaction has not been terminated ...",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation"
       ],
@@ -2870,13 +3025,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2902,11 +3060,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2932,11 +3093,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2950,7 +3114,7 @@
       "title": "spanner: Google.Apis.Spanner.v1.ProjectsResource.InstancesResource.DatabasesResource Class Reference",
       "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/classGoogle_1_1Apis_1_1Spanner_1_1v1_1_1ProjectsResource_1_1InstancesResource_1_1DatabasesResource.html",
       "description": "<strong>Updates the schema of a Cloud Spanner database by creating/altering/dropping tables, columns, indexes, etc</strong>. The returned long-running operation will have a name of the format /operations/ and can be used to track execution of the schema change(s). The metadata field type is UpdateDatabaseD...",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation"
       ],
@@ -2960,13 +3124,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -2992,11 +3159,47 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "spanner: Class Members",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/functions_n.html",
+      "description": "Here is a list of all documented class members with links to the class documentation for each member: Name : Google.Apis.Spanner.v1.Data.Backup , Google.Apis.Spanner.v1.Data.CreateBackupMetadata , Google.Apis.Spanner.v1.Data.Database , Google.Apis.Spanner.v1.Data.Field , Google.Apis.Spanne...",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -3022,11 +3225,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -3052,11 +3258,113 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Database (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/model/Database.html",
+      "description": "A Cloud Spanner database.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Spanner\" overview OR site:developers.google.com \"spanner\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Spanner.Projects.Instances.Databases.Sessions (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/Spanner.Projects.Instances.Databases.Sessions.html",
+      "description": "If a session is deleted, requests to it return `NOT_FOUND`. Idle sessions can be kept alive by sending a trivial SQL query periodically, e.g., `&quot;SELECT 1&quot;`. Create a request for the method &quot;sessions.create&quot;. This request holds the parameters needed by the spanner server.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "SpannerScopes (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/SpannerScopes.html",
+      "description": "View and manage the contents of your Spanner databases. See Also: Constant Field Values · public static java.util.Set&lt;java.lang.String&gt; all() Returns an unmodifiable set that contains all scopes declared by this class. Since: 1.16 · Skip navigation links · Overview ·",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Spanner\" overview OR site:developers.google.com \"spanner\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -3082,11 +3390,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -3100,7 +3411,7 @@
       "title": "Cloud Spanner support for Django — google-cloud-spanner-django documentation",
       "url": "https://googleapis.dev/python/django-google-spanner/3.0.0",
       "description": "Cloud <strong>Spanner</strong> is the world’s first fully managed relational database service to offer both strong consistency and horizontal scalability for mission-critical online transaction processing (OLTP) applications.",
-      "rank": 2,
+      "rank": 3,
       "query_hits": [
         "site:googleapis.dev/python \"Spanner\""
       ],
@@ -3110,15 +3421,18 @@
       "round_hits": [
         3
       ],
-      "best_rank": 2,
+      "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3142,14 +3456,50 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "django_spanner.operations — google-cloud-spanner-django documentation",
+      "url": "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html",
+      "description": "[docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A <strong>Spanner</strong>-specific version of Django database operations.&quot;&quot;&quot; cast_data_types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast_char_field_without_max_length = &quot;STRING&quot; compiler_module = &quot;django_spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in <strong>Spanner</strong>&#x27;s # EXTRACT() function.",
+      "rank": 6,
+      "query_hits": [
+        "site:googleapis.dev/python \"Spanner\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -3172,13 +3522,16 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3202,13 +3555,82 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Current limitations — google-cloud-spanner-django documentation",
+      "url": "https://googleapis.dev/python/django-google-spanner/latest/limitations.html",
+      "description": "<strong>Spanner</strong> doesn’t have support for auto-generating primary key values. Therefore, django-google-spanner monkey-patches AutoField to generate a random UUID4. It generates a default using Field’s default option which means AutoFields will have a value when a model instance is created.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Spanner\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Operations API — google-cloud-spanner-django documentation",
+      "url": "https://googleapis.dev/python/django-google-spanner/latest/operations-api.html",
+      "description": "A <strong>Spanner</strong>-specific version of Django database operations.",
+      "rank": 8,
+      "query_hits": [
+        "site:googleapis.dev/python \"Spanner\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3232,13 +3654,16 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3250,7 +3675,7 @@
       "title": "Python Client for Cloud Spanner",
       "url": "https://googleapis.dev/python/spanner/latest",
       "description": "Cloud <strong>Spanner</strong> is the world’s first fully managed relational database service to offer both strong consistency and horizontal scalability for mission-critical online transaction processing (OLTP) applications.",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:googleapis.dev/python \"Spanner\""
       ],
@@ -3260,15 +3685,18 @@
       "round_hits": [
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3280,7 +3708,7 @@
       "title": "Python Client for Cloud Spanner",
       "url": "https://googleapis.dev/python/spanner/latest/index.html",
       "description": "Cloud <strong>Spanner</strong> is the world’s first fully managed relational database service to offer both strong consistency and horizontal scalability for mission-critical online transaction processing (OLTP) applications.",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:googleapis.dev/python \"Spanner\""
       ],
@@ -3290,16 +3718,85 @@
       "round_hits": [
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Interface Spanner (2.35.2) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/com.google.cloud.spanner.Spanner",
+      "description": "Java · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 2.35.2 (latest) 2.35.0 · 2.34.0 · 2.33.2 · 2.32.3 · 2.31.2 · 2.30.4 · 2.28.0 · 2.27.1 · 2.26.1 · 2.25.1 · 2.24.1 · 2.23.0 · 2.22.1 · 2.21.0 · 2.20.2 · 2.19.3 · 2.18.1 · 2.17.0 · 2.16.1 · 2.15.5 · 2.14.6 · 2.13.4 · 2.11.4 · 2.10.0 · 2.9.16 · 2.8.0 · 2.7.12 · 2.6.4 · 2.5.11 · public interface Spanner extends Service&lt;SpannerOptions&gt;, AutoCloseable ·",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Interface Spanner (2.35.2) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner-jdbc/latest/overview",
+      "description": "Java · Client libraries · Send feedback · Version latestkeyboard_arrow_down · 2.35.2 (latest) 2.35.0 · 2.34.0 · 2.33.2 · 2.32.3 · 2.31.2 · 2.30.4 · 2.28.0 · 2.27.1 · 2.26.1 · 2.25.1 · 2.24.1 · 2.23.0 · 2.22.1 · 2.21.0 · 2.20.2 · 2.19.3 · 2.18.1 · 2.17.0 · 2.16.1 · 2.15.5 · 2.14.6 · 2.13.4 · 2.11.4 · 2.10.0 · 2.9.16 · 2.8.0 · 2.7.12 · 2.6.4 · 2.5.11 · public interface Spanner extends Service&lt;SpannerOptions&gt;, AutoCloseable ·",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Spanner\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "java_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -3322,13 +3819,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3352,14 +3852,50 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": 74,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/langchain-google-spanner/latest",
+      "description": "pip install virtualenv virtualenv &lt;your-env&gt; &lt;your-env&gt;\\Scripts\\activate &lt;your-env&gt;\\Scripts\\pip.exe install langchain-google-spanner",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Spanner\" \"Python client libraries\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 74,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -3382,13 +3918,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3412,13 +3951,16 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3442,13 +3984,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3457,29 +4002,65 @@
       "keep": false
     },
     {
-      "title": "Cloud Spanner | Ruby client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/ruby/docs/reference/google-cloud-spanner/latest",
-      "description": "Cloud Spanner is <strong>a fully managed, mission-critical, relational database service</strong> that offers transactional consistency at global scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication for high availability.",
-      "rank": 8,
+      "title": "Database types | Dataproc Metastore | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/dataproc-metastore/docs/database-type",
+      "description": "*The Cloud SQL and Spanner SLOs don&#x27;t directly translate to Dataproc Metastore SLOs. Dataproc Metastore Your database type selection does not affect Dataproc Metastore SLOs. There&#x27;s no pricing difference between the two database types. Enable Dataproc Metastore in your project. Understand networking requirements specific to your project. To get the permission that you need to create a Dataproc Metastore, ask your administrator to grant you the following IAM roles ...",
+      "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com \"Spanner\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Spanner\" \"roles and permissions\""
       ],
       "intent_hits": [
-        "product_docs"
+        "iam_permissions"
       ],
       "round_hits": [
-        3
+        1
       ],
-      "best_rank": 8,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Package com.google.cloud.spanner.pgadapter (0.27.1) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/pgadapter/latest/com.google.cloud.spanner.pgadapter",
+      "description": "This ConnectionHandler uses WireMessage to receive and send all messages from and to the client, using the intermediate representation IntermediateStatement that servers as a middle layer between Postgres and <strong>Spanner</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Spanner\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 26,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
-        "coverage_value": 2,
+        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -3502,288 +4083,21 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": -22,
+      "product_fit_score": 26,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 0,
+        "product_match": 3,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "SpannerScopes (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/SpannerScopes.html",
-      "description": "View and manage the contents of your Spanner databases. See Also: Constant Field Values · public static java.util.Set&lt;java.lang.String&gt; all() Returns an unmodifiable set that contains all scopes declared by this class. Since: 1.16 · Skip navigation links · Overview ·",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Spanner\" overview OR site:developers.google.com \"spanner\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 89,
-      "keep": false
-    },
-    {
-      "title": "Database (Cloud Spanner API v1 (Rev. 71) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/java/latest/com/google/api/services/spanner/v1/model/Database.html",
-      "description": "A Cloud Spanner database.",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Spanner\" overview OR site:developers.google.com \"spanner\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 97,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 97,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 87,
-      "keep": false
-    },
-    {
-      "title": "spanner: Class Members",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/csharp/latest/functions_n.html",
-      "description": "Here is a list of all documented class members with links to the class documentation for each member: Name : Google.Apis.Spanner.v1.Data.Backup , Google.Apis.Spanner.v1.Data.CreateBackupMetadata , Google.Apis.Spanner.v1.Data.Database , Google.Apis.Spanner.v1.Data.Field , Google.Apis.Spanne...",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 95,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 95,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 86,
-      "keep": false
-    },
-    {
-      "title": "Current limitations — google-cloud-spanner-django documentation",
-      "url": "https://googleapis.dev/python/django-google-spanner/latest/limitations.html",
-      "description": "<strong>Spanner</strong> doesn’t have support for auto-generating primary key values. Therefore, django-google-spanner monkey-patches AutoField to generate a random UUID4. It generates a default using Field’s default option which means AutoFields will have a value when a model instance is created.",
-      "rank": 1,
-      "query_hits": [
-        "site:googleapis.dev/python \"Spanner\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 94,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 94,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 85,
-      "keep": false
-    },
-    {
-      "title": "Instance Methods",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/spanner/v1/python/latest/spanner_v1.projects.instances.databases.html",
-      "description": "<strong>Gets the state of a Cloud Spanner database</strong>. Args: name: string, Required. The name of the requested database. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`. (required) x__xgafv: string, V1 error format. Allowed values 1 - v1 error format 2 - v2 error ...",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Spanner\" official documentation OR site:developers.google.com \"spanner\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 91,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 91,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 82,
-      "keep": false
-    },
-    {
-      "title": "Operations API — google-cloud-spanner-django documentation",
-      "url": "https://googleapis.dev/python/django-google-spanner/latest/operations-api.html",
-      "description": "A <strong>Spanner</strong>-specific version of Django database operations.",
-      "rank": 8,
-      "query_hits": [
-        "site:googleapis.dev/python \"Spanner\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 91,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 91,
-        "parent_page_likelihood": 5,
-        "product_match": 4,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 82,
-      "keep": false
-    },
-    {
-      "title": "Database types | Dataproc Metastore | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/dataproc-metastore/docs/database-type",
-      "description": "*The Cloud SQL and Spanner SLOs don&#x27;t directly translate to Dataproc Metastore SLOs. Dataproc Metastore Your database type selection does not affect Dataproc Metastore SLOs. There&#x27;s no pricing difference between the two database types. Enable Dataproc Metastore in your project. Understand networking requirements specific to your project. To get the permission that you need to create a Dataproc Metastore, ask your administrator to grant you the following IAM roles ...",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Spanner\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 89,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 89,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 81,
-      "keep": false
-    },
-    {
-      "title": "django_spanner.operations — google-cloud-spanner-django documentation",
-      "url": "https://googleapis.dev/python/django-google-spanner/latest/_modules/django_spanner/operations.html",
-      "description": "[docs]class DatabaseOperations(BaseDatabaseOperations): &quot;&quot;&quot;A <strong>Spanner</strong>-specific version of Django database operations.&quot;&quot;&quot; cast_data_types = {&quot;CharField&quot;: &quot;STRING&quot;, &quot;TextField&quot;: &quot;STRING&quot;} cast_char_field_without_max_length = &quot;STRING&quot; compiler_module = &quot;django_spanner.compiler&quot; # Django&#x27;s lookup names that require a different name in <strong>Spanner</strong>&#x27;s # EXTRACT() function.",
-      "rank": 6,
-      "query_hits": [
-        "site:googleapis.dev/python \"Spanner\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 44,
-      "deterministic_score": 79,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 79,
-        "parent_page_likelihood": 4,
-        "product_match": 4,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 72,
-      "keep": false
-    },
-    {
-      "title": "Package com.google.cloud.spanner.pgadapter (0.27.1) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/pgadapter/latest/com.google.cloud.spanner.pgadapter",
-      "description": "This ConnectionHandler uses WireMessage to receive and send all messages from and to the client, using the intermediate representation IntermediateStatement that servers as a middle layer between Postgres and <strong>Spanner</strong>.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Spanner\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 59,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 59,
-        "parent_page_likelihood": 3,
-        "product_match": 0,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 55,
       "keep": false
     }
   ]

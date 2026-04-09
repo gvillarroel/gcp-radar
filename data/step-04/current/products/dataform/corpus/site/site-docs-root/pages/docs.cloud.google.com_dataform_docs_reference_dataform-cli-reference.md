@@ -1,0 +1,62 @@
+---
+title: "Dataform CLI reference \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/dataform/docs/reference/dataform-cli-reference
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/dataform/docs
+source_metadata:
+  url: https://docs.cloud.google.com/dataform/docs/reference/dataform-cli-reference
+  title: "Dataform CLI reference \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+Dataform
+Reference
+Send feedback
+Dataform CLI reference
+Stay organized with collections
+Save and categorize content based on your preferences.
+This document describes commands of the open source Dataform command line interface (CLI).
+Dataform CLI commands
+The open-source Dataform CLI provides commands to initialize, compile,
+test, and run
+Dataform core
+locally, outside of Google Cloud.
+Dataform CLI command
+Description
+dataform help
+Shows help for all Dataform CLI commands.
+dataform help [command]
+Shows help for the specified command.
+dataform init [project-dir]
+Creates a new Dataform project.
+dataform install [project-dir]
+Installs NPM dependencies for the specified Dataform project.
+dataform init-creds [project-dir]
+Creates a .df-credentials.json file for Dataform to
+use when accessing Google Cloud APIs.
+dataform compile [project-dir]
+Compiles the specified Dataform project. Produces JSON output
+describing the non-executable graph.
+dataform test [project-dir]
+Runs the specified Dataform project's unit tests on BigQuery.
+dataform run [project-dir]
+Runs the specified Dataform project's scripts on BigQuery.
+dataform format [project-dir]
+Formats the specified Dataform project's files.
+--help
+Shows help [boolean].
+--version
+Shows the version number of the Dataform CLI [boolean].
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

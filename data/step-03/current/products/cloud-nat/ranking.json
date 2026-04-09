@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:18:58.967Z",
+  "generated_at": "2026-04-08T21:50:50.968Z",
   "product_name": "Cloud NAT",
   "product_slug": "cloud-nat",
   "step02_source_path": "data/step-02/current/cloud-nat.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "nat",
   "dominant_python_slug": "",
@@ -69,9 +69,9 @@
           "rank": 7
         },
         {
-          "title": "Private Service Connect with automatic DNS configuration | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/psc-automatic-dns",
-          "description": "Inside Cloud Shell, create the service attachment. Make sure to add the ‘.&#x27; at the end of the domain name. gcloud compute service-attachments create published-service --region=us-central1 --producer-forwarding-rule=l7-ilb-forwarding-rule --connection-preference=ACCEPT_AUTOMATIC --nat-subnets=psc-nat-subnet --domain-names=cosmopup.net.",
+          "title": "globalAddresses()",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/python/latest/compute_v1.globalAddresses.html",
+          "description": "# # Use regional external addresses for the following resources: # # - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA) # # Use regional internal IP addresses for subnet IP ranges (primary and secondary).",
           "rank": 8
         }
       ]
@@ -134,15 +134,15 @@
           "rank": 4
         },
         {
-          "title": "Public NAT | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/public-nat",
-          "description": "For NAT44, Public NAT can provide NAT for outbound packets sent from the following: The VM&#x27;s network interface&#x27;s primary internal IP address, provided that the network interface doesn&#x27;t have an external IP address assigned to it: if the network interface has an external IP address assigned to it, Google Cloud automatically performs one-to-one NAT for packets whose sources match the interface&#x27;s primary internal IP address because the network interface meets the Google Cloud internet access requirements.",
+          "title": "Set up and manage Cloud NAT rules | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/using-nat-rules",
+          "description": "Add a NAT rule that matches traffic from 10.10.1.0/24 and translates the source IP to IP_ADDRESS_1. <strong>In the Google Cloud console, go to the Cloud NAT page.</strong>",
           "rank": 5
         },
         {
-          "title": "Cloud NAT rules | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
-          "description": "If a packet originates from IP address 10.1.1.2 or IP range 10.2.1.0/24, the VM must use NAT IP address 203.0.113.30 to send traffic to any internet destination. Cloud NAT configuration with two source-based rules (click to enlarge).",
+          "title": "Public NAT | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/public-nat",
+          "description": "The existence of an external IP address on an interface always takes precedence and always performs one-to-one NAT, without using Public NAT. An alias IP range assigned to the VM&#x27;s network interface: even if the network interface has an external IP address assigned to it, you can configure a Cloud NAT gateway for Public NAT to provide NAT for packets whose sources come from an alias IP range of the interface.",
           "rank": 6
         },
         {
@@ -152,9 +152,9 @@
           "rank": 7
         },
         {
-          "title": "Set up and manage Cloud NAT rules | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/using-nat-rules",
-          "description": "Add a NAT rule that matches traffic from 10.10.1.0/24 and translates the source IP to IP_ADDRESS_1. <strong>In the Google Cloud console, go to the Cloud NAT page.</strong>",
+          "title": "Cloud NAT rules | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
+          "description": "If a packet originates from IP address 10.1.1.2 or IP range 10.2.1.0/24, the VM must use NAT IP address 203.0.113.30 to send traffic to any internet destination. Cloud NAT configuration with two source-based rules (click to enlarge).",
           "rank": 8
         }
       ]
@@ -313,9 +313,9 @@
           "rank": 5
         },
         {
-          "title": "NAT Overview | Google Distributed Cloud air-gapped | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/distributed-cloud/hosted/docs/latest/gdch/platform/pa-user/nat-overview",
-          "description": "Cloud NAT <strong>lets you send traffic out of the Google Distributed Cloud (GDC) air-gapped deployment through Cloud NAT gateways</strong>. You can select which specific Internet Protocol (IP) addresses each gateway uses to send traffic out by specifying leaf ...",
+          "title": "Quickstart: Set up and manage network address translation with Public NAT | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/set-up-manage-network-address-translation",
+          "description": "This page describes how to set up and manage network address translation (NAT) by using Public NAT. Before setting up Public NAT, see the Public NAT overview. If you change the network tier of the automatically allocated IP addresses for a Cloud NAT gateway, all connections on the previously allocated IP addresses immediately close.",
           "rank": 6
         },
         {
@@ -325,9 +325,9 @@
           "rank": 7
         },
         {
-          "title": "Quickstart: Set up and manage network address translation with Public NAT | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/set-up-manage-network-address-translation",
-          "description": "This page describes how to set up and manage network address translation (NAT) by using Public NAT. Before setting up Public NAT, see the Public NAT overview. If you change the network tier of the automatically allocated IP addresses for a Cloud NAT gateway, all connections on the previously allocated IP addresses immediately close.",
+          "title": "NAT Overview | Google Distributed Cloud air-gapped | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/distributed-cloud/hosted/docs/latest/gdch/platform/pa-user/nat-overview",
+          "description": "Cloud NAT <strong>lets you send traffic out of the Google Distributed Cloud (GDC) air-gapped deployment through Cloud NAT gateways</strong>. You can select which specific Internet Protocol (IP) addresses each gateway uses to send traffic out by specifying leaf ...",
           "rank": 8
         }
       ]
@@ -389,15 +389,15 @@
           "rank": 6
         },
         {
-          "title": "Private Service Connect Interface | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/psc-interface",
-          "description": "Cloud NAT <strong>enables VMs with private IP addresses to access the internet</strong>.",
-          "rank": 7
-        },
-        {
           "title": "Using Private Service Connect for Google APIs to Access Gemini over a Hybrid Connection | Google Codelabs",
           "url": "https://codelabs.developers.google.com/cloudnet-psc-hybridGemini",
           "description": "In that VPC, an HA-VPN will be configured to the on-prem VPC, which mimics an on-prem environment. The HA-VPN will be configured as a Hybrid Spoke in the NCC hub. In the on-prem VPC, you will create a subnet where a Workbench Instance will be hosted. You&#x27;ll also create a Cloud NAT to be used for downloading packages on the Workbench instance.",
+          "rank": 7
+        },
+        {
+          "title": "Private Service Connect Interface | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/psc-interface",
+          "description": "Cloud NAT <strong>enables VMs with private IP addresses to access the internet</strong>.",
           "rank": 8
         }
       ]
@@ -460,15 +460,15 @@
           "rank": 3
         },
         {
-          "title": "Quickstart: Set up and manage network address translation with Public NAT | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/nat/docs/set-up-manage-network-address-translation",
-          "description": "This page describes how to set up and manage network address translation (NAT) by using Public NAT. Before setting up Public NAT, see the Public NAT overview. If you change the network tier of the automatically allocated IP addresses for a Cloud NAT gateway, all connections on the previously allocated IP addresses immediately close.",
-          "rank": 4
-        },
-        {
           "title": "IP addresses and ports | Cloud NAT | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/nat/docs/ports-and-addresses",
           "description": "When you create a Public NAT gateway with the manual NAT IP address assignment method, you can assign a mix of Premium Tier and Standard Tier IP addresses as long as the IP addresses of different network tiers do not belong to the same rule (including the default rule). Inside a rule (including the default rule), all IP addresses assigned to active ranges must be of the same network tier. If you try to use IP addresses of different tiers as part of the same rule, Google Cloud rejects the configuration.",
+          "rank": 4
+        },
+        {
+          "title": "Quickstart: Set up and manage network address translation with Public NAT | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/nat/docs/set-up-manage-network-address-translation",
+          "description": "This page describes how to set up and manage network address translation (NAT) by using Public NAT. Before setting up Public NAT, see the Public NAT overview. If you change the network tier of the automatically allocated IP addresses for a Cloud NAT gateway, all connections on the previously allocated IP addresses immediately close.",
           "rank": 5
         },
         {
@@ -520,19 +520,22 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Concepts | Cloud NAT | Google Cloud Documentation",
@@ -554,11 +557,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -572,7 +578,7 @@
       "title": "Cloud NAT rules | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/nat/docs/nat-rules-overview",
       "description": "If a packet originates from IP address 10.1.1.2 or IP range 10.2.1.0/24, the VM must use NAT IP address 203.0.113.30 to send traffic to any internet destination. Cloud NAT configuration with two source-based rules (click to enlarge).",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
@@ -588,11 +594,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -622,11 +631,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -634,7 +646,7 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": true
+      "keep": false
     },
     {
       "title": "IP addresses and ports | Cloud NAT | Google Cloud Documentation",
@@ -656,11 +668,51 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Public NAT | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/nat/docs/public-nat",
+      "description": "The existence of an external IP address on an interface always takes precedence and always performs one-to-one NAT, without using Public NAT. An alias IP range assigned to the VM&#x27;s network interface: even if the network interface has an external IP address assigned to it, you can configure a Cloud NAT gateway for Public NAT to provide NAT for packets whose sources come from an alias IP range of the interface.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -690,47 +742,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Public NAT | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/nat/docs/public-nat",
-      "description": "For NAT44, Public NAT can provide NAT for outbound packets sent from the following: The VM&#x27;s network interface&#x27;s primary internal IP address, provided that the network interface doesn&#x27;t have an external IP address assigned to it: if the network interface has an external IP address assigned to it, Google Cloud automatically performs one-to-one NAT for packets whose sources match the interface&#x27;s primary internal IP address because the network interface meets the Google Cloud internet access requirements.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 100,
-      "product_fit_score": 28,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -757,11 +778,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -770,6 +794,41 @@
       },
       "final_score": 95,
       "keep": true
+    },
+    {
+      "title": "globalAddresses()",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/python/latest/compute_v1.globalAddresses.html",
+      "description": "# # Use regional external addresses for the following resources: # # - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA) # # Use regional internal IP addresses for subnet IP ranges (primary and secondary).",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud NAT\" official documentation OR site:developers.google.com \"cloud nat\" official documentation",
+        "site:developers.google.com \"Cloud NAT\" reference OR site:developers.google.com \"cloud nat\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
     },
     {
       "title": "Prerequisites for deploying an SAP S/4HANA application | Workload Manager | Google Cloud Documentation",
@@ -789,13 +848,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
@@ -807,7 +869,7 @@
       "title": "Set up and manage Cloud NAT rules | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/nat/docs/using-nat-rules",
       "description": "Add a NAT rule that matches traffic from 10.10.1.0/24 and translates the source IP to IP_ADDRESS_1. <strong>In the Google Cloud console, go to the Cloud NAT page.</strong>",
-      "rank": 8,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud documentation"
       ],
@@ -817,13 +879,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -837,7 +902,7 @@
       "title": "NAT Overview | Google Distributed Cloud air-gapped | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/distributed-cloud/hosted/docs/latest/gdch/platform/pa-user/nat-overview",
       "description": "Cloud NAT <strong>lets you send traffic out of the Google Distributed Cloud (GDC) air-gapped deployment through Cloud NAT gateways</strong>. You can select which specific Internet Protocol (IP) addresses each gateway uses to send traffic out by specifying leaf ...",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud NAT\" Google Cloud docs overview"
       ],
@@ -847,13 +912,148 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Learn GKE networking architecture | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/learn/learn-gke-net-architecture",
+      "description": "Fundamental connectivity requirements: all GKE clusters require outbound connectivity to the *.googleapis.com, *.gcr.io, and *.pkg.dev domains. Outbound connectivity to the control plane&#x27;s IP address must also function correctly. Internet access for Pods by using Cloud NAT: in private clusters where Pods don&#x27;t have public IP addresses, use Cloud NAT to enable outbound internet access.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "APIs and Reference | Cloud Natural Language API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/natural-language/docs/apis",
+      "description": "You can find out more about client libraries for Cloud APIs in Client Libraries Explained. ... If you are an advanced user and our client libraries don&#x27;t meet your specific needs, you can also develop your own client libraries to directly access Cloud Natural Language&#x27;s REST/HTTP and gRPC interfaces.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" \"APIs and reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Natural Language client libraries | Cloud Natural Language API | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
+      "description": "If you&#x27;re using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: ... The plugins provide additional functionality, such as key management for service accounts. Refer to each plugin&#x27;s documentation for details. Note: Cloud Java client libraries do not currently support Android.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Cloud Run release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/release-notes",
+      "description": "You can now control egress traffic from a service and route all outbound requests to your VPC network. This allows you to configure a static outbound IP address by leveraging Cloud NAT.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud NAT\" \"access control\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -884,6 +1084,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
@@ -891,156 +1094,6 @@
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Learn GKE networking architecture | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/learn/learn-gke-net-architecture",
-      "description": "Fundamental connectivity requirements: all GKE clusters require outbound connectivity to the *.googleapis.com, *.gcr.io, and *.pkg.dev domains. Outbound connectivity to the control plane&#x27;s IP address must also function correctly. Internet access for Pods by using Cloud NAT: in private clusters where Pods don&#x27;t have public IP addresses, use Cloud NAT to enable outbound internet access.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "APIs and Reference | Cloud Natural Language API | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/natural-language/docs/apis",
-      "description": "You can find out more about client libraries for Cloud APIs in Client Libraries Explained. ... If you are an advanced user and our client libraries don&#x27;t meet your specific needs, you can also develop your own client libraries to directly access Cloud Natural Language&#x27;s REST/HTTP and gRPC interfaces.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" \"APIs and reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Natural Language client libraries | Cloud Natural Language API | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/natural-language/docs/reference/libraries",
-      "description": "If you&#x27;re using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: ... The plugins provide additional functionality, such as key management for service accounts. Refer to each plugin&#x27;s documentation for details. Note: Cloud Java client libraries do not currently support Android.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 3,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "globalAddresses()",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/compute/v1/python/latest/compute_v1.globalAddresses.html",
-      "description": "&quot;purpose&quot;: &quot;A String&quot;, # The purpose of this resource, which can be one of the following values: # - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources. # - `DNS_RESOLVER` for a DNS resolver address in a subnetwork # - `VPC_PEERING` for addresses that are reserved for VPC peer networks. # - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Cloud NAT\" reference OR site:developers.google.com \"cloud nat\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 52,
-      "deterministic_score": 99,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 99,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 89,
-      "keep": false
-    },
-    {
-      "title": "Cloud Run release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/release-notes",
-      "description": "You can now control egress traffic from a service and route all outbound requests to your VPC network. This allows you to configure a static outbound IP address by leveraging Cloud NAT.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud NAT\" \"access control\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 24,
-      "deterministic_score": 81,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 81,
-        "parent_page_likelihood": 4,
-        "product_match": 3,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 74,
       "keep": false
     },
     {
@@ -1066,6 +1119,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 58,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,

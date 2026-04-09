@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:19:17.363Z",
+  "generated_at": "2026-04-08T21:51:10.723Z",
   "product_name": "Cloud Run functions",
   "product_slug": "cloud-run-functions",
   "step02_source_path": "data/step-02/current/cloud-run-functions.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "functions",
   "dominant_python_slug": "",
@@ -195,15 +195,15 @@
           "rank": 6
         },
         {
-          "title": "Manage functions | Cloud Run functions | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/functions/docs/managing",
-          "description": "This guide shows you how to manage and detach a function that was created with the gcloud functions command. To learn how to manage a function that was created with the gcloud run command, see Manage Cloud Run services.",
-          "rank": 7
-        },
-        {
           "title": "Cloud Run function triggers | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/function-triggers",
           "description": "All event-driven functions use Eventarc for event delivery. Pub/Sub triggers and Cloud Storage triggers are implemented as particular types of Eventarc triggers. Note: Eventarc does not support direct events from Google Analytics for Firebase, or Firebase Authentication. Because Cloud Run functions can be triggered by messages on a Pub/Sub topic, you can integrate Cloud Run functions with any other Google service that supports Pub/Sub as an event bus.",
+          "rank": 7
+        },
+        {
+          "title": "Compare Cloud Run functions | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/functions/comparison",
+          "description": "This guide compares the latest and original Google Cloud choices for deploying functions. This page helps those who previously created functions with the Cloud Functions API and are transitioning to the Cloud Run Admin API.",
           "rank": 8
         }
       ]
@@ -309,21 +309,21 @@
           "rank": 4
         },
         {
+          "title": "Trigger Cloud Composer DAGs with Cloud Run functions and Airflow REST API | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-2/triggering-with-gcf",
+          "description": "<strong>Cloud Run functions can reach out to Airflow REST API either using IPv4 or IPv6 address</strong>. If you are not sure what will be the calling IP range then use a default configuration option in Webserver Access Control which is All IP addresses have ...",
+          "rank": 5
+        },
+        {
           "title": "Deploy a secured serverless architecture using Cloud Run functions | Cloud Architecture Center | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/architecture/blueprints/serverless-functions-blueprint",
           "description": "By default, this blueprint deploys Serverless VPC access in the Shared VPC host project to align with the Shared VPC model of centralizing network configuration resources. For more information, see Comparison of configuration methods. VPC Service Controls creates a security perimeter that isolates your Cloud Run functions services and resources by setting up authorization, access controls, and secure data exchange.",
-          "rank": 5
+          "rank": 6
         },
         {
           "title": "Configure Cloud Run services | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/configuring",
           "description": "Labels you previously set for your Cloud Run functions using either gcloud functions commands or the Cloud Functions v2 API propagate to Cloud Run when you deploy your functions in Cloud Run. See Optimize with Recommender to learn the optimizations provided by Recommender on Cloud Run. Tags are key-value pairs you can apply to your resources for fine-grained access control using Cloud Run console.",
-          "rank": 6
-        },
-        {
-          "title": "Trigger Cloud Composer DAGs with Cloud Run functions and Airflow REST API | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-2/triggering-with-gcf",
-          "description": "<strong>Cloud Run functions can reach out to Airflow REST API either using IPv4 or IPv6 address</strong>. If you are not sure what will be the calling IP range then use a default configuration option in Webserver Access Control which is All IP addresses have ...",
           "rank": 7
         },
         {
@@ -349,7 +349,7 @@
         {
           "title": "Spanner client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/spanner/docs/reference/libraries",
-          "description": "Spanner provides client libraries ... C#, Go, Java, Node.js, PHP, Python, and Ruby. The client libraries connect to the Spanner service using gRPC over a TLS-encrypted HTTP/2 connection, so you don&#x27;t need to manually configure SSL or TLS. The Spanner client libraries are supported on Compute Engine, App Engine flexible environment, Google Kubernetes Engine, and Cloud Run functions...",
+          "description": "Spanner provides client libraries for popular programming languages, including C++, C#, Go, Java, Node.js, PHP, Python, and Ruby. The client libraries connect to the Spanner service using gRPC over a TLS-encrypted HTTP/2 connection, so you don&#x27;t need to manually configure SSL or TLS. The Spanner client libraries are supported on Compute Engine, App Engine flexible environment, Google Kubernetes Engine, and Cloud Run functions.",
           "rank": 2
         }
       ]
@@ -542,9 +542,9 @@
           "rank": 7
         },
         {
-          "title": "Policy | Cloud Run functions | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy",
-          "description": "Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). <strong>A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role</strong>.",
+          "title": "Authenticate for invocation | Cloud Run functions | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/functions/docs/securing/authenticating?hl=en",
+          "description": "To invoke an authenticated function, the principal must have the invoker IAM permission: run.routes.invoke. This is usually through the Cloud Run Invoker role.",
           "rank": 8
         }
       ]
@@ -641,11 +641,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -675,11 +678,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -709,11 +715,51 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Compare Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/functions/comparison",
+      "description": "This guide compares the latest and original Google Cloud choices for deploying functions. This page helps those who previously created functions with the Cloud Functions API and are transitioning to the Cloud Run Admin API.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 100,
+      "product_fit_score": 78,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -743,13 +789,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -777,13 +826,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -809,11 +861,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -841,11 +896,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -873,13 +931,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -891,7 +952,7 @@
       "title": "Cloud Run function triggers | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/function-triggers",
       "description": "All event-driven functions use Eventarc for event delivery. Pub/Sub triggers and Cloud Storage triggers are implemented as particular types of Eventarc triggers. Note: Eventarc does not support direct events from Google Analytics for Firebase, or Firebase Authentication. Because Cloud Run functions can be triggered by messages on a Pub/Sub topic, you can integrate Cloud Run functions with any other Google service that supports Pub/Sub as an event bus.",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud docs overview"
@@ -905,45 +966,16 @@
       ],
       "best_rank": 7,
       "consistency_score": 67,
-      "product_fit_score": 30,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Compare Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/functions/comparison",
-      "description": "This is the code that will be executed when your function runs. The value of this flag must be a function name or fully-qualified class name that exists in your source code. For a complete reference on the functions deploy command and its flags, see the gcloud functions deploy documentation. The following table compares triggers and retries for functions: Functions created using the Cloud Functions v2 API (for example, by using gcloud functions, the REST API, or Terraform) can be detached from its existing API environment.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -969,13 +1001,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1001,13 +1036,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1031,11 +1069,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -1061,11 +1102,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1091,41 +1135,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Manage functions | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/managing",
-      "description": "This guide shows you how to manage and detach a function that was created with the gcloud functions command. To learn how to manage a function that was created with the gcloud run command, see Manage Cloud Run services.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run functions\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1153,11 +1170,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1183,15 +1203,18 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1213,75 +1236,18 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Policy | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/reference/rest",
-      "description": "Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). <strong>A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role</strong>.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run functions\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": true
-    },
-    {
-      "title": "Policy | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy",
-      "description": "Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). <strong>A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role</strong>.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run functions\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 80,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1303,11 +1269,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1333,11 +1302,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1363,15 +1335,51 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Authenticate for invocation | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/securing/authenticating?hl=en",
+      "description": "To invoke an authenticated function, the principal must have the invoker IAM permission: run.routes.invoke. This is usually through the Cloud Run Invoker role.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run functions\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 128,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1393,11 +1401,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1423,11 +1434,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -1441,7 +1455,7 @@
       "title": "Deploy a secured serverless architecture using Cloud Run functions | Cloud Architecture Center | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/architecture/blueprints/serverless-functions-blueprint",
       "description": "By default, this blueprint deploys Serverless VPC access in the Shared VPC host project to align with the Shared VPC model of centralizing network configuration resources. For more information, see Comparison of configuration methods. VPC Service Controls creates a security perimeter that isolates your Cloud Run functions services and resources by setting up authorization, access controls, and secure data exchange.",
-      "rank": 5,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run functions\" \"access control\""
       ],
@@ -1451,18 +1465,21 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
       "keep": false
@@ -1483,11 +1500,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 58,
+      "product_fit_score": 106,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1513,13 +1533,16 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1543,13 +1566,16 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1561,7 +1587,7 @@
       "title": "Trigger Cloud Composer DAGs with Cloud Run functions and Airflow REST API | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/composer/docs/composer-2/triggering-with-gcf",
       "description": "<strong>Cloud Run functions can reach out to Airflow REST API either using IPv4 or IPv6 address</strong>. If you are not sure what will be the calling IP range then use a default configuration option in Webserver Access Control which is All IP addresses have ...",
-      "rank": 7,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run functions\" \"access control\""
       ],
@@ -1571,15 +1597,18 @@
       "round_hits": [
         2
       ],
-      "best_rank": 7,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1603,13 +1632,16 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1621,7 +1653,7 @@
       "title": "Configure Cloud Run services | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/configuring",
       "description": "Labels you previously set for your Cloud Run functions using either gcloud functions commands or the Cloud Functions v2 API propagate to Cloud Run when you deploy your functions in Cloud Run. See Optimize with Recommender to learn the optimizations provided by Recommender on Cloud Run. Tags are key-value pairs you can apply to your resources for fine-grained access control using Cloud Run console.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run functions\" \"access control\""
       ],
@@ -1631,15 +1663,18 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1663,13 +1698,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1680,7 +1718,7 @@
     {
       "title": "Spanner client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/spanner/docs/reference/libraries",
-      "description": "Spanner provides client libraries ... C#, Go, Java, Node.js, PHP, Python, and Ruby. The client libraries connect to the Spanner service using gRPC over a TLS-encrypted HTTP/2 connection, so you don&#x27;t need to manually configure SSL or TLS. The Spanner client libraries are supported on Compute Engine, App Engine flexible environment, Google Kubernetes Engine, and Cloud Run functions...",
+      "description": "Spanner provides client libraries for popular programming languages, including C++, C#, Go, Java, Node.js, PHP, Python, and Ruby. The client libraries connect to the Spanner service using gRPC over a TLS-encrypted HTTP/2 connection, so you don&#x27;t need to manually configure SSL or TLS. The Spanner client libraries are supported on Compute Engine, App Engine flexible environment, Google Kubernetes Engine, and Cloud Run functions.",
       "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run functions\" \"Java client libraries\""
@@ -1693,13 +1731,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1723,13 +1764,16 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1753,13 +1797,16 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1788,6 +1835,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 0,
         "coverage_value": 3,
@@ -1820,6 +1870,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 83,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 4,
         "product_match": 0,
         "coverage_value": 2,

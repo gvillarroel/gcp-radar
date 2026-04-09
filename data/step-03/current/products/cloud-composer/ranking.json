@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-07T15:55:10.670Z",
+  "generated_at": "2026-04-08T21:50:10.748Z",
   "product_name": "Cloud Composer",
   "product_slug": "cloud-composer",
-  "step02_source_path": "data/step-02/current/products/cloud-composer.md",
+  "step02_source_path": "data/step-02/current/cloud-composer.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "composer",
   "dominant_python_slug": "composer",
@@ -19,6 +19,62 @@
       "query": "site:docs.cloud.google.com \"Cloud Composer\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "CloudComposer (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.html",
+          "description": "Service definition for CloudComposer (v1beta1).",
+          "rank": 1
+        },
+        {
+          "title": "CloudComposer (Cloud Composer API v1 (Rev. 27) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/java/latest/com/google/api/services/composer/v1/CloudComposer.html",
+          "description": "<strong>CloudComposer composer = new CloudComposer(...); CloudComposer.Projects.List request = composer.projects().list(parameters ...)</strong>",
+          "rank": 2
+        },
+        {
+          "title": "Instance Methods",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/python/latest/composer_v1beta1.projects.locations.environments.html",
+          "description": "If both this field and `nodeConfig.machineType` are specified, # `nodeConfig.machineType` must belong to this `location`; if both are # unspecified, the service will pick a zone in the Compute Engine region # corresponding to the Cloud Composer location, and propagate that choice to # both fields.",
+          "rank": 3
+        },
+        {
+          "title": "SoftwareConfig (Cloud Composer API v1 (Rev. 27) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/java/latest/com/google/api/services/composer/v1/model/SoftwareConfig.html",
+          "description": "<strong>Property values can contain any character, and can be written in any lower/upper case format</strong>. Certain Apache Airflow configuration property values are [blacklisted](/composer/docs/how- to/managing/setting-airflow-configurations#airflow_configuration_blacklists), and cannot be overridden.",
+          "rank": 4
+        },
+        {
+          "title": "composer: Google.Apis.CloudComposer.v1.Data.SoftwareConfig Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1SoftwareConfig.html",
+          "description": "<strong>The version of the software running in the environment</strong>. This encapsulates both the version of Cloud Composer functionality and the version of Apache Airflow. It must match the regular expression composer-([0-9]+\\.[0-9]+\\.[0-9]+|latest)-airflow-[0-9]+\\.[0-9]+(\\.[0-9]+.*)?.",
+          "rank": 5
+        },
+        {
+          "title": "Running a Hadoop wordcount job on a Dataproc cluster | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/intro-cloud-composer",
+          "description": "This codelab shows you how to create and run an Apache Airflow workflow in Cloud Composer that completes the following tasks:",
+          "rank": 6
+        },
+        {
+          "title": "composer: Google.Apis.CloudComposer.v1.Data.EnvironmentConfig Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1EnvironmentConfig.html",
+          "description": "<strong>The configuration used for the Private IP Cloud Composer environment</strong>. The configuration settings for software inside the environment. The documentation for this class was generated from the following file:",
+          "rank": 7
+        },
+        {
+          "title": "SoftwareConfig (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/model/SoftwareConfig.html",
+          "description": "<strong>When `latest` is provided instead of an explicit version number, the server replaces `latest` with the current Cloud Composer version and stores that version number in the same field. The portion of the image version that follows airflow- is an official Apache Airflow repository [release</strong> ...",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 1,
@@ -46,13 +102,13 @@
         },
         {
           "title": "Access resources in another project | Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-2/access-resources-in-another-project",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-3/access-resources-in-another-project",
           "description": "For example, the google_cloud_default connection is used by many Google Cloud operators and is automatically configured when you create an environment. Grant extra IAM permissions and roles to the service account of your environment, so that it can access resources in a different project.",
           "rank": 4
         },
         {
           "title": "Troubleshooting environment creation | Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-3/troubleshooting-environment-creation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-1/troubleshooting-environment-creation",
           "description": "In case of Shared VPC configuration, ... enable this check in Shared VPC, <strong>the Cloud Composer Service Agent account from the service project must have permission to view roles in the host project</strong>....",
           "rank": 5
         }
@@ -103,15 +159,15 @@
           "rank": 4
         },
         {
-          "title": "Cloud Composer version list | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-versions",
-          "description": "This page lists the released versions of Cloud Composer images, and their support dates.",
-          "rank": 5
-        },
-        {
           "title": "Create Cloud Composer environments | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/composer/docs/composer-2/create-environments",
           "description": "Learn how to create a Cloud Composer environment. A Cloud Composer environment is <strong>a self-contained Apache Airflow installation deployed into a managed Google Kubernetes Engine cluster</strong>.",
+          "rank": 5
+        },
+        {
+          "title": "Cloud Composer version list | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-versions",
+          "description": "This page lists the released versions of Cloud Composer images, and their support dates.",
           "rank": 6
         },
         {
@@ -121,9 +177,9 @@
           "rank": 7
         },
         {
-          "title": "Environment architecture | Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-3/environment-architecture",
-          "description": "Google Cloud console, Monitoring, and Logging in the customer project provide ways to manage the environment, DAGs and DAG runs, and to access environment&#x27;s metrics and logs. You can also use Airflow UI, Google Cloud CLI, Cloud Composer API and Terraform for the same purposes.",
+          "title": "Enable and disable the Cloud Composer service | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-2/enable-composer-service",
+          "description": "Use the google_project_service resource to configure the composer.googleapis.com API. Important: If you disable the BigQuery API, your Cloud Composer environment stops working.",
           "rank": 8
         }
       ]
@@ -154,6 +210,62 @@
       "query": "site:docs.cloud.google.com \"Cloud Composer\" \"APIs and reference\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 2,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "composer: Google.Apis.CloudComposer.v1.Data.EnvironmentConfig Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1EnvironmentConfig.html",
+          "description": "Inheritance diagram for Google.Apis.CloudComposer.v1.Data.EnvironmentConfig:",
+          "rank": 1
+        },
+        {
+          "title": "CloudComposer (Cloud Composer API v1 (Rev. 27) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/java/latest/com/google/api/services/composer/v1/CloudComposer.html",
+          "description": "com.google.api.services.composer.v1.CloudComposer · public class CloudComposer extends com.google.api.client.googleapis.services.json.AbstractGoogleJsonClient · Service definition for CloudComposer (v1). Manages Apache Airflow environments on Google Cloud Platform.",
+          "rank": 2
+        },
+        {
+          "title": "CloudComposer (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.html",
+          "description": "com.google.api.services.composer.v1beta1.CloudComposer · public class CloudComposer extends com.google.api.client.googleapis.services.json.AbstractGoogleJsonClient · Service definition for CloudComposer (v1beta1). <strong>Manages Apache Airflow environments on Google Cloud Platform</strong>.",
+          "rank": 3
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/composer/v1",
+          "description": "Cloud Composer API v1 · Google.Apis.CloudComposer.v1beta1 · Cloud Composer API v1beta1 · Google.Apis.CloudControlsPartnerService.v1 · Cloud Controls Partner API v1 · Google.Apis.CloudControlsPartnerService.v1beta · Cloud Controls Partner API v1beta · Google.Apis.CloudDataplex.v1 ·",
+          "rank": 4
+        },
+        {
+          "title": "Instance Methods",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/python/latest/composer_v1beta1.projects.locations.environments.html",
+          "description": "It must match the regular expression # `composer-([0-9]+\\.[0-9]+\\.[0-9]+|latest)-airflow-[0-9]+\\.[0-9]+(\\.[0-9]+.*)?`. # When used as input, the server also checks if the provided version is # supported and denies the request for an unsupported version. # # The Cloud Composer portion of the version is a # [semantic version](https://semver.org) or `latest`. When the patch version # is omitted, the current Cloud Composer patch version is selected.",
+          "rank": 5
+        },
+        {
+          "title": "composer: Google.Apis.CloudComposer.v1.Data.SoftwareConfig Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1SoftwareConfig.html",
+          "description": "<strong>The version of the software running in the environment</strong>. This encapsulates both the version of Cloud Composer functionality and the version of Apache Airflow. It must match the regular expression composer-([0-9]+\\.[0-9]+\\.[0-9]+|latest)-airflow-[0-9]+\\.[0-9]+(\\.[0-9]+.*)?.",
+          "rank": 6
+        },
+        {
+          "title": "composer: Google.Apis.CloudComposer.v1.Data.NodeConfig Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1NodeConfig.html",
+          "description": "Inheritance diagram for Google.Apis.CloudComposer.v1.Data.NodeConfig:",
+          "rank": 7
+        },
+        {
+          "title": "Running a Hadoop wordcount job on a Dataproc cluster | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/intro-cloud-composer/index.html",
+          "description": "If your Composer Environment has not finished being created, skip ahead to the Sample Workflow step and come back to this part after ... Click the name of the environment to see its details. The Environment details page provides information, such as the Airflow web interface URL, Google Kubernetes Engine cluster ID, name of the Cloud Storage bucket, and path for the /dags folder.",
+          "rank": 8
+        }
+      ]
     },
     {
       "round": 2,
@@ -192,21 +304,21 @@
           "rank": 5
         },
         {
-          "title": "Access the Airflow web interface | Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface",
-          "description": "When you update an environment, the following arguments control web server access parameters: <strong>--web-server-allow-all provides access to Airflow from all IP addresses</strong>. This is the default option.",
-          "rank": 6
-        },
-        {
           "title": "Security best practices | Cloud Composer | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/composer/docs/composer-1/security-practices",
           "description": "For example, the Composer User role enables access only to DAG UI and Airflow UI. Enforce Airflow UI Access Control, which allows to reduce visibility in Airflow UI and DAG UI based on user&#x27;s Airflow role, and can be used to assign DAG-level permissions for individual DAGs.",
+          "rank": 6
+        },
+        {
+          "title": "Access the Airflow web interface | Cloud Composer | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-2/access-airflow-web-interface",
+          "description": "If Chrome Enterprise Premium Context-Aware Access bindings are used with access levels that rely on device attributes, and the Apache Airflow in Cloud Composer app is not exempted, then it&#x27;s not possible to access the Airflow UI because of a login loop. To allow access, perform steps provided in Allow access to Airflow UI in Context-Aware Access bindings. If ingress rules are configured in a VPC Service Controls perimeter that protects the project, and the ingress rule that allows access to the Cloud Composer service uses ANY_SERVICE_ACCOUNT or ANY_USER_ACCOUNT identity type, then users can&#x27;t access the Airflow UI, ending up in a login loop.",
           "rank": 7
         },
         {
-          "title": "Cloud Composer overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-3/composer-overview",
-          "description": "If someone does not have access to your project or does not have an appropriate Cloud Composer IAM role, that person cannot access any of your environments. In addition to IAM, you can use <strong>Airflow UI access control</strong>, which is based on the Apache ...",
+          "title": "Enable and disable the Cloud Composer service | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-2/enable-composer-service",
+          "description": "For a list of services required ... Configure VPC Service Controls. This section describes how to enable the Cloud Composer service in your Google Cloud project. To enable the Cloud Composer service, you must have the correct Identity and Access Management permissi...",
           "rank": 8
         }
       ]
@@ -244,15 +356,15 @@
           "rank": 2
         },
         {
-          "title": "Cloud Composer versioning overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-versioning-overview",
-          "description": "Cloud Composer 3 provides environments with Airflow 2 and Airflow 3. While Airflow 3 is in Preview, some Airflow and Cloud Composer features might not be available. The following table summarizes Cloud Composer 3 features that aren&#x27;t yet supported in the Airflow 3 Preview.",
-          "rank": 3
-        },
-        {
           "title": "Choose Workflows or Cloud Composer for service orchestration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/workflows/docs/choose-orchestration",
           "description": "Cloud Composer is <strong>designed to orchestrate data driven workflows (particularly ETL/ELT).</strong> It&#x27;s built on the Apache Airflow project, but Cloud Composer is fully managed. Cloud Composer supports your pipelines wherever they are, including on-premises ...",
+          "rank": 3
+        },
+        {
+          "title": "Cloud Composer versioning overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-versioning-overview",
+          "description": "Cloud Composer 3 provides environments with Airflow 2 and Airflow 3. While Airflow 3 is in Preview, some Airflow and Cloud Composer features might not be available. The following table summarizes Cloud Composer 3 features that aren&#x27;t yet supported in the Airflow 3 Preview.",
           "rank": 4
         },
         {
@@ -262,9 +374,9 @@
           "rank": 5
         },
         {
-          "title": "Environment architecture | Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/composer-2/environment-architecture",
-          "description": "By default, Cloud Composer 2 uses Private Service Connect, so that your Private IP environments communicate internally without the use of VPC peerings. It&#x27;s also possible to use VPC peerings instead of Private Service Connect in your environment. This is a non-default option. ... The tenant project hosts a Cloud SQL instance and Cloud SQL storage.",
+          "title": "APIs & reference &nbsp;| Cloud Composer | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/apis",
+          "description": "Documentation · Data analytics · Cloud Composer · Reference · Send feedback · Overview of the Cloud Composer REST API · Overview of the Cloud Composer RPC API · Installing the Cloud SDK · Command reference for the gcloud composer commands · Reference for the default values for Airflow configurations in Cloud Composer ·",
           "rank": 6
         },
         {
@@ -274,9 +386,9 @@
           "rank": 7
         },
         {
-          "title": "APIs & reference &nbsp;| Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/apis",
-          "description": "Documentation · Data analytics · Cloud Composer · Reference · Send feedback · Overview of the Cloud Composer REST API · Overview of the Cloud Composer RPC API · Installing the Cloud SDK · Command reference for the gcloud composer commands · Reference for the default values for Airflow configurations in Cloud Composer ·",
+          "title": "Environment architecture | Cloud Composer | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-2/environment-architecture",
+          "description": "By default, Cloud Composer 2 uses Private Service Connect, so that your Private IP environments communicate internally without the use of VPC peerings. It&#x27;s also possible to use VPC peerings instead of Private Service Connect in your environment. This is a non-default option. ... The tenant project hosts a Cloud SQL instance and Cloud SQL storage.",
           "rank": 8
         }
       ]
@@ -312,6 +424,62 @@
           "url": "https://docs.cloud.google.com/composer/docs/composer-2/lineage-integration",
           "description": "Cloud Composer uses the <strong>apache-airflow-providers-openlineage</strong> package to generate the lineage events that are sent to the Data Lineage API.",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "developers_docs",
+      "query": "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Running a Hadoop wordcount job on a Dataproc cluster | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/intro-cloud-composer",
+          "description": "Workflows are a common use case in data analytics - they involve ingesting, transforming, and analyzing data to find the meaningful information within. In Google Cloud Platform, the tool for orchestrating workflows is Cloud Composer, which is a hosted version of the popular open source workflow tool Apache Airflow.",
+          "rank": 1
+        },
+        {
+          "title": "CloudComposer (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.html",
+          "description": "Manages Apache Airflow environments on Google Cloud Platform.",
+          "rank": 2
+        },
+        {
+          "title": "CloudComposer (Cloud Composer API v1 (Rev. 27) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/java/latest/com/google/api/services/composer/v1/CloudComposer.html",
+          "description": "Manages Apache Airflow environments on Google Cloud Platform.",
+          "rank": 3
+        },
+        {
+          "title": "CloudComposer.Projects (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.Projects.html",
+          "description": "CloudComposer composer = new CloudComposer(...); CloudComposer.Locations.List request = composer.locations().list(parameters ...) Returns: the resource collection · Skip navigation links · Overview · Package · Class · Use · Tree · Deprecated · Index · Help ·",
+          "rank": 4
+        },
+        {
+          "title": "Instance Methods",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/python/latest/composer_v1beta1.projects.locations.environments.html",
+          "description": "# <strong>When `latest` is provided instead of an explicit version number, # the server replaces `latest` with the current Cloud Composer version # and stores that version number in the same field</strong>. # # The portion of the image version that follows &lt;em&gt;airflow-&lt;/em&gt; is an # official Apache Airflow ...",
+          "rank": 5
+        },
+        {
+          "title": "CloudComposer.Projects.Locations.Operations.List (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.Projects.Locations.Operations.List.html",
+          "description": "public class CloudComposer.Projects.Locations.Operations.List extends CloudComposerRequest&lt;ListOperationsResponse&gt;",
+          "rank": 6
+        },
+        {
+          "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+          "url": "https://developers.google.com/api-client-library/dotnet/apis/composer/v1",
+          "description": "Cloud Composer API v1 · Google.Apis.CloudComposer.v1beta1 · Cloud Composer API v1beta1 · Google.Apis.CloudControlsPartnerService.v1 · Cloud Controls Partner API v1 · Google.Apis.CloudControlsPartnerService.v1beta · Cloud Controls Partner API v1beta · Google.Apis.CloudDataplex.v1 ·",
+          "rank": 7
+        },
+        {
+          "title": "composer: Google.Apis.CloudComposer.v1.Data.EnvironmentConfig Class Reference",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1EnvironmentConfig.html",
+          "description": "The configuration used for the Private IP Cloud Composer environment.",
+          "rank": 8
         }
       ]
     },
@@ -421,15 +589,15 @@
           "rank": 6
         },
         {
-          "title": "Cloud Composer v1 API - Class PrivateClusterConfig (2.10.0) | .NET client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Orchestration.Airflow.Service.V1/latest/Google.Cloud.Orchestration.Airflow.Service.V1.PrivateClusterConfig",
-          "description": "Reference documentation and code samples for the Cloud Composer v1 API class PrivateClusterConfig.",
+          "title": "Cloud Composer release notes | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/composer/docs/release-notes",
+          "description": "Existing Cloud Composer 2 environments in these regions aren&#x27;t affected by this change. ... (Airflow 3.1.7 in Cloud Composer 3) The apache-airflow-providers-cncf-kubernetes package was upgraded to version 10.14.0.",
           "rank": 7
         },
         {
-          "title": "APIs & reference &nbsp;| Cloud Composer | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/composer/docs/apis",
-          "description": "On September 15, 2026, all Cloud Composer 1 versions and versions 2.0.x of Cloud Composer 2 will reach their planned end of life. You will not be able to use environments with these versions. We recommend planning migration to Cloud Composer 3.",
+          "title": "Cloud Composer v1 API - Class PrivateClusterConfig (2.10.0) | .NET client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Orchestration.Airflow.Service.V1/latest/Google.Cloud.Orchestration.Airflow.Service.V1.PrivateClusterConfig",
+          "description": "Reference documentation and code samples for the Cloud Composer v1 API class PrivateClusterConfig.",
           "rank": 8
         }
       ]
@@ -470,11 +638,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -492,12 +663,10 @@
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud introduction reference",
-        "site:docs.cloud.google.com \"Cloud Composer\" \"access control\""
+        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "product_docs",
-        "iam_permissions"
+        "product_docs"
       ],
       "round_hits": [
         1,
@@ -506,16 +675,204 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Cloud Composer release notes | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/release-notes",
+      "description": "Data lineage in Cloud Composer now uses OpenLineage. Data lineage support for a specific Airflow operator is now provided by the provider package where the operator is located. See Supported classes in the apache-airflow-providers-openlineage documentation for a list of latest supported operators.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 100,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "composer: Google.Apis.CloudComposer.v1.Data.EnvironmentConfig Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1EnvironmentConfig.html",
+      "description": "<strong>The configuration used for the Private IP Cloud Composer environment</strong>. The configuration settings for software inside the environment. The documentation for this class was generated from the following file:",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation",
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference",
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "CloudComposer (Cloud Composer API v1 (Rev. 27) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/java/latest/com/google/api/services/composer/v1/CloudComposer.html",
+      "description": "<strong>CloudComposer composer = new CloudComposer(...); CloudComposer.Projects.List request = composer.projects().list(parameters ...)</strong>",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation",
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference",
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "CloudComposer (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.html",
+      "description": "Service definition for CloudComposer (v1beta1).",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation",
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference",
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Instance Methods",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/python/latest/composer_v1beta1.projects.locations.environments.html",
+      "description": "If both this field and `nodeConfig.machineType` are specified, # `nodeConfig.machineType` must belong to this `location`; if both are # unspecified, the service will pick a zone in the Compute Engine region # corresponding to the Cloud Composer location, and propagate that choice to # both fields.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation",
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference",
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 100,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
@@ -540,13 +897,16 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -555,42 +915,10 @@
       "keep": false
     },
     {
-      "title": "APIs & reference &nbsp;| Cloud Composer | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/apis",
-      "description": "Documentation · Data analytics · Cloud Composer · Reference · Send feedback · Overview of the Cloud Composer REST API · Overview of the Cloud Composer RPC API · Installing the Cloud SDK · Command reference for the gcloud composer commands · Reference for the default values for Airflow configurations in Cloud Composer ·",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 8,
-      "consistency_score": 67,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
       "title": "Security best practices | Cloud Composer | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/composer/docs/composer-1/security-practices",
       "description": "For example, the Composer User role enables access only to DAG UI and Airflow UI. Enforce Airflow UI Access Control, which allows to reduce visibility in Airflow UI and DAG UI based on user&#x27;s Airflow role, and can be used to assign DAG-level permissions for individual DAGs.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" \"access control\"",
         "site:docs.cloud.google.com \"Cloud Composer\" IAM roles permissions"
@@ -604,11 +932,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -636,11 +967,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -651,10 +985,10 @@
       "keep": true
     },
     {
-      "title": "Access resources in another project | Cloud Composer | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/composer-2/access-resources-in-another-project",
-      "description": "For example, the google_cloud_default connection is used by many Google Cloud operators and is automatically configured when you create an environment. Grant extra IAM permissions and roles to the service account of your environment, so that it can access resources in a different project.",
-      "rank": 4,
+      "title": "Troubleshooting environment creation | Cloud Composer | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/composer-1/troubleshooting-environment-creation",
+      "description": "In case of Shared VPC configuration, ... enable this check in Shared VPC, <strong>the Cloud Composer Service Agent account from the service project must have permission to view roles in the host project</strong>....",
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" \"roles and permissions\"",
         "site:docs.cloud.google.com \"Cloud Composer\" IAM roles permissions"
@@ -666,17 +1000,20 @@
         1,
         3
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": true,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
@@ -686,7 +1023,7 @@
       "title": "Create Cloud Composer environments | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/composer/docs/composer-2/create-environments",
       "description": "Learn how to create a Cloud Composer environment. A Cloud Composer environment is <strong>a self-contained Apache Airflow installation deployed into a managed Google Kubernetes Engine cluster</strong>.",
-      "rank": 6,
+      "rank": 5,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud introduction reference"
@@ -700,11 +1037,50 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Enable and disable the Cloud Composer service | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/composer-2/enable-composer-service",
+      "description": "Use the google_project_service resource to configure the composer.googleapis.com API. Important: If you disable the BigQuery API, your Cloud Composer environment stops working.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Composer\" \"access control\""
+      ],
+      "intent_hits": [
+        "product_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 67,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -734,47 +1110,18 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Cloud Composer release notes | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/release-notes",
-      "description": "Data lineage in Cloud Composer now uses OpenLineage. Data lineage support for a specific Airflow operator is now provided by the provider package where the operator is located. See Supported classes in the apache-airflow-providers-openlineage documentation for a list of latest supported operators.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 95,
@@ -798,11 +1145,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -830,14 +1180,87 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 70,
+      "product_fit_score": 118,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
+      "url": "https://developers.google.com/api-client-library/dotnet/apis/composer/v1",
+      "description": "Cloud Composer API v1 · Google.Apis.CloudComposer.v1beta1 · Cloud Composer API v1beta1 · Google.Apis.CloudControlsPartnerService.v1 · Cloud Controls Partner API v1 · Google.Apis.CloudControlsPartnerService.v1beta · Cloud Controls Partner API v1beta · Google.Apis.CloudDataplex.v1 ·",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference",
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "composer: Google.Apis.CloudComposer.v1.Data.SoftwareConfig Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1SoftwareConfig.html",
+      "description": "<strong>The version of the software running in the environment</strong>. This encapsulates both the version of Cloud Composer functionality and the version of Apache Airflow. It must match the regular expression composer-([0-9]+\\.[0-9]+\\.[0-9]+|latest)-airflow-[0-9]+\\.[0-9]+(\\.[0-9]+.*)?.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation",
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -862,13 +1285,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -894,13 +1320,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 22,
+      "product_fit_score": 70,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -909,34 +1338,37 @@
       "keep": false
     },
     {
-      "title": "Access the Airflow web interface | Cloud Composer | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/composer-1/access-airflow-web-interface",
-      "description": "When you update an environment, the following arguments control web server access parameters: <strong>--web-server-allow-all provides access to Airflow from all IP addresses</strong>. This is the default option.",
+      "title": "APIs & reference &nbsp;| Cloud Composer | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/apis",
+      "description": "Documentation · Data analytics · Cloud Composer · Reference · Send feedback · Overview of the Cloud Composer REST API · Overview of the Cloud Composer RPC API · Installing the Cloud SDK · Command reference for the gcloud composer commands · Reference for the default values for Airflow configurations in Cloud Composer ·",
       "rank": 6,
       "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Composer\" \"access control\""
+        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview"
       ],
       "intent_hits": [
-        "iam_permissions"
+        "product_docs"
       ],
       "round_hits": [
         2
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Access control with IAM | Cloud Composer | Google Cloud Documentation",
@@ -954,11 +1386,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -984,11 +1419,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -999,30 +1437,33 @@
       "keep": false
     },
     {
-      "title": "Troubleshooting environment creation | Cloud Composer | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/composer-1/troubleshooting-environment-creation",
-      "description": "Solution: Assign roles to both to your account and to the service account of your environment as described in Access control. In Cloud Composer 2, make sure that Cloud Composer Service Agent service account (service-PROJECT_NUMBER@cloudcomposer-accounts.iam.gserviceaccount.com) has the Cloud Composer v2 API Service Agent Extension role assigned.",
-      "rank": 5,
+      "title": "Access the Airflow web interface | Cloud Composer | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/composer-2/access-airflow-web-interface",
+      "description": "If Chrome Enterprise Premium Context-Aware Access bindings are used with access levels that rely on device attributes, and the Apache Airflow in Cloud Composer app is not exempted, then it&#x27;s not possible to access the Airflow UI because of a login loop. To allow access, perform steps provided in Allow access to Airflow UI in Context-Aware Access bindings. If ingress rules are configured in a VPC Service Controls perimeter that protects the project, and the ingress rule that allows access to the Cloud Composer service uses ANY_SERVICE_ACCOUNT or ANY_USER_ACCOUNT identity type, then users can&#x27;t access the Airflow UI, ending up in a login loop.",
+      "rank": 7,
       "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Composer\" IAM roles permissions"
+        "site:docs.cloud.google.com \"Cloud Composer\" \"access control\""
       ],
       "intent_hits": [
         "iam_permissions"
       ],
       "round_hits": [
-        3
+        2
       ],
-      "best_rank": 5,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "iam_reference",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": true,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1044,11 +1485,47 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Access resources in another project | Cloud Composer | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/composer-2/access-resources-in-another-project",
+      "description": "For example, the google_cloud_default connection is used by many Google Cloud operators and is automatically configured when you create an environment. Grant extra IAM permissions and roles to the service account of your environment, so that it can access resources in a different project.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Composer\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 122,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1074,11 +1551,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1104,11 +1584,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1122,7 +1605,7 @@
       "title": "Environment architecture | Cloud Composer | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/composer/docs/composer-2/environment-architecture",
       "description": "By default, Cloud Composer 2 uses Private Service Connect, so that your Private IP environments communicate internally without the use of VPC peerings. It&#x27;s also possible to use VPC peerings instead of Private Service Connect in your environment. This is a non-default option. ... The tenant project hosts a Cloud SQL instance and Cloud SQL storage.",
-      "rank": 6,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview"
       ],
@@ -1132,13 +1615,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 6,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1164,16 +1650,19 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1194,11 +1683,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1209,40 +1701,10 @@
       "keep": false
     },
     {
-      "title": "Environment architecture | Cloud Composer | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/composer-3/environment-architecture",
-      "description": "Google Cloud console, Monitoring, and Logging in the customer project provide ways to manage the environment, DAGs and DAG runs, and to access environment&#x27;s metrics and logs. You can also use Airflow UI, Google Cloud CLI, Cloud Composer API and Terraform for the same purposes.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Troubleshooting environment creation | Cloud Composer | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/composer/docs/composer-3/troubleshooting-environment-creation",
-      "description": "In case of Shared VPC configuration, ... enable this check in Shared VPC, <strong>the Cloud Composer Service Agent account from the service project must have permission to view roles in the host project</strong>....",
-      "rank": 5,
+      "title": "Access resources in another project | Cloud Composer | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/composer/docs/composer-3/access-resources-in-another-project",
+      "description": "For example, the google_cloud_default connection is used by many Google Cloud operators and is automatically configured when you create an environment. Grant extra IAM permissions and roles to the service account of your environment, so that it can access resources in a different project.",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" \"roles and permissions\""
       ],
@@ -1252,17 +1714,20 @@
       "round_hits": [
         1
       ],
-      "best_rank": 5,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1272,7 +1737,7 @@
       "title": "Cloud Composer versioning overview | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/composer/docs/composer-versioning-overview",
       "description": "Cloud Composer 3 provides environments with Airflow 2 and Airflow 3. While Airflow 3 is in Preview, some Airflow and Cloud Composer features might not be available. The following table summarizes Cloud Composer 3 features that aren&#x27;t yet supported in the Airflow 3 Preview.",
-      "rank": 3,
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud docs overview"
       ],
@@ -1282,13 +1747,16 @@
       "round_hits": [
         2
       ],
-      "best_rank": 3,
+      "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1302,7 +1770,7 @@
       "title": "Cloud Composer version list | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/composer/docs/composer-versions",
       "description": "This page lists the released versions of Cloud Composer images, and their support dates.",
-      "rank": 5,
+      "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud documentation"
       ],
@@ -1312,13 +1780,16 @@
       "round_hits": [
         1
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1344,11 +1815,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1374,14 +1848,149 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 74,
+      "product_fit_score": 122,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "SoftwareConfig (Cloud Composer API v1 (Rev. 27) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/java/latest/com/google/api/services/composer/v1/model/SoftwareConfig.html",
+      "description": "<strong>Property values can contain any character, and can be written in any lower/upper case format</strong>. Certain Apache Airflow configuration property values are [blacklisted](/composer/docs/how- to/managing/setting-airflow-configurations#airflow_configuration_blacklists), and cannot be overridden.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "CloudComposer.Projects (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.Projects.html",
+      "description": "CloudComposer composer = new CloudComposer(...); CloudComposer.Locations.List request = composer.locations().list(parameters ...) Returns: the resource collection · Skip navigation links · Overview · Package · Class · Use · Tree · Deprecated · Index · Help ·",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "CloudComposer.Projects.Locations.Operations.List (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/CloudComposer.Projects.Locations.Operations.List.html",
+      "description": "public class CloudComposer.Projects.Locations.Operations.List extends CloudComposerRequest&lt;ListOperationsResponse&gt;",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" overview OR site:developers.google.com \"cloud composer\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "SoftwareConfig (Cloud Composer API v1beta1 (Rev. 34) 1.25.0)",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1beta1/java/latest/com/google/api/services/composer/v1beta1/model/SoftwareConfig.html",
+      "description": "<strong>When `latest` is provided instead of an explicit version number, the server replaces `latest` with the current Cloud Composer version and stores that version number in the same field. The portion of the image version that follows airflow- is an official Apache Airflow repository [release</strong> ...",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" official documentation OR site:developers.google.com \"cloud composer\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 100,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1404,15 +2013,51 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 52,
+      "product_fit_score": 100,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Python client library | Google Cloud",
+      "url": "https://googleapis.dev/python/composer/latest",
+      "description": "Cloud Composer: is <strong>a managed Apache Airflow service that helps you create, schedule, monitor and manage workflows</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:googleapis.dev/python \"Cloud Composer\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 92,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "python_reference",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1434,15 +2079,18 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 44,
+      "product_fit_score": 92,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "python_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 4,
+        "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1452,7 +2100,7 @@
       "title": "Cloud Composer v1 API - Class PrivateClusterConfig (2.10.0) | .NET client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Orchestration.Airflow.Service.V1/latest/Google.Cloud.Orchestration.Airflow.Service.V1.PrivateClusterConfig",
       "description": "Reference documentation and code samples for the Cloud Composer v1 API class PrivateClusterConfig.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Composer\" Google Cloud introduction reference"
       ],
@@ -1462,15 +2110,18 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1494,18 +2145,54 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 24,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "composer: Google.Apis.CloudComposer.v1.Data.NodeConfig Class Reference",
+      "url": "https://developers.google.com/resources/api-libraries/documentation/composer/v1/csharp/latest/classGoogle_1_1Apis_1_1CloudComposer_1_1v1_1_1Data_1_1NodeConfig.html",
+      "description": "Inheritance diagram for Google.Apis.CloudComposer.v1.Data.NodeConfig:",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Cloud Composer\" reference OR site:developers.google.com \"cloud composer\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 44,
+      "deterministic_score": 86,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 86,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 4,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 78,
       "keep": false
     }
   ]

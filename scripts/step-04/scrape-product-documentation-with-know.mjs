@@ -165,9 +165,53 @@ function sourceIdForFamily(family) {
   return `site-${family.replace(/_/g, "-")}`;
 }
 
+function familySelectionScore(source) {
+  const url = normalizeUrl(source?.url);
+  const pathname = (() => {
+    try {
+      return new URL(url).pathname.toLowerCase();
+    } catch {
+      return "";
+    }
+  })();
+
+  let score = Number(source?.final_score || 0) * 10;
+  const family = String(source?.family || "");
+
+  if (family === "docs_root") {
+    if (/\/docs$/.test(pathname)) score += 80;
+    if (/\/docs\/(overview|introduction)$/.test(pathname)) score += 40;
+  }
+  if (family === "docs_reference") {
+    if (/\/docs\/reference$/.test(pathname)) score += 80;
+    if (/\/docs\/apis$/.test(pathname)) score += 70;
+  }
+  if (family === "api_reference") {
+    if (/\/reference\/(rest|rpc)$/.test(pathname)) score += 70;
+    if (/\/reference\/rest\/.+/.test(pathname) || /\/reference\/rpc\/.+/.test(pathname)) score -= 60;
+  }
+  if (family === "iam_reference") {
+    if (/\/roles-permissions\//.test(pathname)) score += 80;
+    if (/\/(iam-and-access-control|access-control|iam-roles|iam-permissions)$/.test(pathname)) score += 60;
+    if (/\/samples?\//.test(pathname) || /\/guides\//.test(pathname)) score -= 50;
+  }
+  if (family === "python_reference") {
+    if (/\/python\/docs\/reference\/[^/]+\/latest(?:\/index\.html)?$/.test(pathname)) score += 60;
+    if (/\/python\/docs\/reference\/[^/]+\/latest\/.+/.test(pathname)) score -= 60;
+  }
+  if (family === "java_reference") {
+    if (/\/java\/docs\/reference\/[^/]+\/latest\/overview$/.test(pathname)) score += 60;
+    if (/\/java\/docs\/reference\/[^/]+\/latest\/(?!overview$).+/.test(pathname)) score -= 60;
+  }
+
+  const depth = pathname.split("/").filter(Boolean).length;
+  score -= depth;
+  return score;
+}
+
 function selectSources(ranking) {
-  const chosen = new Map();
   const ranked = Array.isArray(ranking.scored_urls) ? ranking.scored_urls : [];
+  const candidatesByFamily = new Map();
 
   for (const candidate of ranked) {
     if (!candidate?.keep) {
@@ -184,12 +228,11 @@ function selectSources(ranking) {
       continue;
     }
 
-    if (chosen.has(family)) {
-      continue;
-    }
-
     const budget = crawlBudgets[family];
-    chosen.set(family, {
+    if (!candidatesByFamily.has(family)) {
+      candidatesByFamily.set(family, []);
+    }
+    candidatesByFamily.get(family).push({
       source_id: sourceIdForFamily(family),
       product_slug: ranking.product_slug,
       family,
@@ -202,7 +245,9 @@ function selectSources(ranking) {
     });
   }
 
-  return familyPriority.filter((family) => chosen.has(family)).map((family) => chosen.get(family));
+  return familyPriority
+    .filter((family) => candidatesByFamily.has(family))
+    .map((family) => candidatesByFamily.get(family).sort((a, b) => familySelectionScore(b) - familySelectionScore(a) || a.url.localeCompare(b.url))[0]);
 }
 
 function selectedSourceSignature(selectedSources) {

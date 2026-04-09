@@ -10,131 +10,17 @@ source_metadata:
   url: https://docs.cloud.google.com/access-context-manager/docs/browser-attributes
   title: "Configuring Chrome browser attributes \_|\_ Access Context Manager \_|\_\
     \ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Configuring Chrome browser attributes | Access Context Manager | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Access Context Manager
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-How-to guides
-All how-to guides
-Access control with IAM
-Create an access policy
-Create a basic access level
-Create a custom access level
-Use mobile devices with access levels
-Manage an access policy
-Create custom constraints
-Manage access levels
-Make bulk changes to access levels
-Audit logging
-Use Context-Aware Access
-Set up context-aware access
-Define access policies using access levels
-Apply policies to user groups with access bindings
-Configure session controls for re-authentication
-Configure a credential strength policy
-Configure Chrome browser attributes
-Configure enterprise certificate conditions
-Configure time and date conditions
-Manage access bindings
-Context-aware access enforcement points
-Use certificate-based access
-Certificate-based access overview
-Understand mutual TLS at Google Cloud
-Set up certificate-based access
-Create access levels for certificate-based access
-Enforce certificate-based access for a user group
-Enforce certificate-based access with VPC Service Controls
-Enable certificate-based access in client applications
-Enable certificate-based access for web applications
-Enable certificate-based access for VMs
-Setting up Endpoint Verification
-Enable certificate-based access with your enterprise certificates
-Enable certificate-based access with Endpoint Verification certificates
-Configure certificate-based access for Workload Identity Federation
-Concepts
-All concepts
-Overview
-Scoped policies
-Custom access levels
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
 Home
 Documentation
 Security
 Access Context Manager
 Guides
-Was this helpful?
 Send feedback
 Configuring Chrome browser attributes
 Stay organized with collections
@@ -149,29 +35,29 @@ IMPORTANT: The Chrome attributes are only effective for browser-based traffic; t
 Following are new access conditions that you can use in Access Context Manager's custom access levels.
 Attribute/Function
 Definition
-management_ state
+management_state
 Is the browser managed, at the browser level or at the profile level, and by the enterprise under the correct domain.
 A browser is considered to be managed if the policies are centrally managed and pushed, and that the domain of the managed browser or profile matches the expected domain on the server side.
 Managed refers to cloud-managed only. This setting does not take into account platform management, such as Managed Microsoft AD Group Policy Object.
 The management states are mutually exclusive. For example, if the browser is enrolled in Chrome Browser Cloud Management (CBCM) , then CHROME_MANAGEMENT_STATE_PROFILE_MANAGED=False .
 If the browser is CBCM enrolled in another domain, it will always be CHROME_MANAGEMENT_STATE_MANAGED_BY_OTHER_DOMAIN , even if the logged-in user is in a different domain.
 device.chrome.management_state == ChromeManagementState.CHROME_MANAGEMENT_STATE_MANAGED_BY_OTHER_DOMAIN | ChromeManagementState.CHROME_MANAGEMENT_STATE_BROWSER_MANAGED | ChromeManagementState.CHROME_MANAGEMENT_STATE_PROFILE_MANAGED | ChromeManagementState.CHROME_MANAGEMENT_STATE_UNMANAGED
-versionAtLeast( min_ version)
+versionAtLeast(min_version)
 Is the browser above a certain minimum version.
 device.chrome.versionAtLeast("88.0.4321.44")
-is_ realtime_ url_ check_ enabled
+is_realtime_url_check_enabled
 Is the real-time URL check connector enabled.
 device.chrome.is_realtime_url_check_enabled == true | false
-is_ file_ upload_ analysis_ enabled
+is_file_upload_analysis_enabled
 Is the file upload analysis connector enabled.
 device.chrome.is_file_upload_analysis_enabled == true | false
-is_ file_ download_ analysis_ enabled
+is_file_download_analysis_enabled
 Is the file download analysis connector enabled.
 device.chrome.is_file_download_analysis_enabled == true | false
-is_ bulk_ data_ entry_ analysis_ enabled
+is_bulk_data_entry_analysis_enabled
 Is the bulk text (paste) analysis connector enabled.
 device.chrome.is_bulk_data_entry_analysis_enabled == true | false
-is_ security_ event_ analysis_ enabled
+is_security_event_analysis_enabled
 Is the security event reporting connector enabled.
 device.chrome.is_security_event_analysis_enabled == true | false
 The following table contains examples of policies that you can set:
@@ -181,68 +67,17 @@ Only allow access when the user is coming from a fully managed Chrome
 browser and not just a managed Chrome profile.
 After authentication through a fully managed Chrome browser, the user may also
 use the Google Cloud CLI to access the resources.
-device. chrome. management_ state == Chrome Management State. CHROME_ MANAGEMENT_ STATE_ BROWSER_ MANAGED
+device.chrome.management_state == ChromeManagementState.CHROME_MANAGEMENT_STATE_BROWSER_MANAGED
 Only allow access to resources if download content analysis is enabled so administrators can ensure that sensitive content download can be detected.
-device. chrome. is_ file_ download_ analysis_ enabled == true
+device.chrome.is_file_download_analysis_enabled == true
 Only allow access to content if the browser has threat and data protection capabilities enabled.
-device. chrome. is_ file_ download_ analysis_ enabled == true &&
-device. chrome. is_ file_ upload_ analysis_ enabled == true &&
-device. chrome. is_ realtime_ url_ check_ enabled == true
+device.chrome.is_file_download_analysis_enabled == true &&
+device.chrome.is_file_upload_analysis_enabled == true &&
+device.chrome.is_realtime_url_check_enabled == true
 Only allow access to content if security event reporting is enabled.
-device. chrome. is_ security_ event_ analysis_ enabled == true
-Was this helpful?
+device.chrome.is_security_event_analysis_enabled == true
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

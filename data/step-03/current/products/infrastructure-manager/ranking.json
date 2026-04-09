@@ -1,12 +1,12 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T17:37:47.946Z",
+  "generated_at": "2026-04-08T21:54:40.434Z",
   "product_name": "Infrastructure Manager",
   "product_slug": "infrastructure-manager",
   "step02_source_path": "data/step-02/current/infrastructure-manager.md",
   "rounds": 3,
   "search_count": 8,
-  "reprocess_requested": false,
+  "reprocess_requested": true,
   "pi_model": "",
   "dominant_doc_family": "infrastructure-manager",
   "dominant_python_slug": "config",
@@ -99,7 +99,7 @@
         {
           "title": "View deployments | Infrastructure Manager | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/infrastructure-manager/docs/view-deployments",
-          "description": "gcloud infra-manager deployments list --project PROJECT_ID --location &quot;LOCATION&quot; ... PROJECT_ID: the project ID where Infrastructure Manager runs.",
+          "description": "gcloud infra-manager deployments describe <strong>projects/PROJECT_ID/locations/LOCATION/deployments/DEPLOYMENT_ID</strong> ... PROJECT_ID: the project ID where Infrastructure Manager runs.",
           "rank": 8
         }
       ]
@@ -158,15 +158,15 @@
           "rank": 1
         },
         {
-          "title": "Deploy infrastructure using Infrastructure Manager | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
-          "description": "Service account: Select an existing service account or create a new one. Infra Manager validates permissions based on the infrastructure outlined in your Terraform configuration automatically.",
-          "rank": 2
-        },
-        {
           "title": "Policy | Infrastructure Manager | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest/v1/Policy",
           "description": "{ &quot;bindings&quot;: [ { &quot;role&quot;: &quot;roles/resourcemanager.organizationAdmin&quot;, &quot;members&quot;: [ &quot;user:mike@example.com&quot;, &quot;group:admins@example.com&quot;, &quot;domain:google.com&quot;, &quot;serviceAccount:my-project-id@appspot.gserviceaccount.com&quot; ] }, { &quot;role&quot;: &quot;roles/resourcemanager.organizationViewer&quot;, &quot;members&quot;: [ &quot;user:eve@example.com&quot; ], &quot;condition&quot;: { &quot;title&quot;: &quot;expirable access&quot;, &quot;description&quot;: &quot;Does not grant access after Sep 2020&quot;, &quot;expression&quot;: &quot;request.time &lt; timestamp(&#x27;2020-10-01T00:00:00.000Z&#x27;)&quot;, } } ], &quot;etag&quot;: &quot;BwWWja0YfJA=&quot;, &quot;version&quot;: 3 }",
+          "rank": 2
+        },
+        {
+          "title": "Deploy infrastructure using Infrastructure Manager | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+          "description": "Service account: Select an existing service account or create a new one. Infra Manager validates permissions based on the infrastructure outlined in your Terraform configuration automatically.",
           "rank": 3
         },
         {
@@ -293,7 +293,7 @@
         {
           "title": "API Reference | Cloud Deployment Manager | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/deployment-manager/v2beta1",
-          "description": "If you currently use Deployment Manager, please migrate to Infrastructure Manager or an alternative deployment technology by March 31, 2026 to ensure your services continue without interruption. For more information on the deprecation and shutdown, see Deployment Manager deprecation. ... Caution: This is a deprecated version of the Deployment Manager API. Please use the latest API version instead. This API reference ...",
+          "description": "For more information on the deprecation ... Manager API. Please use the latest API version instead. This API reference is <strong>organized by resource type</strong>....",
           "rank": 1
         },
         {
@@ -483,11 +483,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
@@ -519,11 +522,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -554,13 +560,16 @@
         2,
         3
       ],
-      "best_rank": 2,
+      "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -590,11 +599,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -624,11 +636,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -658,11 +673,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 100,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -692,11 +710,14 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -710,7 +731,7 @@
       "title": "Policy | Infrastructure Manager | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
       "description": "{ &quot;bindings&quot;: [ { &quot;role&quot;: &quot;roles/resourcemanager.organizationAdmin&quot;, &quot;members&quot;: [ &quot;user:mike@example.com&quot;, &quot;group:admins@example.com&quot;, &quot;domain:google.com&quot;, &quot;serviceAccount:my-project-id@appspot.gserviceaccount.com&quot; ] }, { &quot;role&quot;: &quot;roles/resourcemanager.organizationViewer&quot;, &quot;members&quot;: [ &quot;user:eve@example.com&quot; ], &quot;condition&quot;: { &quot;title&quot;: &quot;expirable access&quot;, &quot;description&quot;: &quot;Does not grant access after Sep 2020&quot;, &quot;expression&quot;: &quot;request.time &lt; timestamp(&#x27;2020-10-01T00:00:00.000Z&#x27;)&quot;, } } ], &quot;etag&quot;: &quot;BwWWja0YfJA=&quot;, &quot;version&quot;: 3 }",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Infrastructure Manager\" \"access control\"",
         "site:docs.cloud.google.com \"Infrastructure Manager\" IAM roles permissions"
@@ -722,13 +743,16 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "api_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
@@ -742,7 +766,7 @@
       "title": "Policy | Infrastructure Manager | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest/v1/Policy",
       "description": "{ &quot;bindings&quot;: [ { &quot;role&quot;: &quot;roles/resourcemanager.organizationAdmin&quot;, &quot;members&quot;: [ &quot;user:mike@example.com&quot;, &quot;group:admins@example.com&quot;, &quot;domain:google.com&quot;, &quot;serviceAccount:my-project-id@appspot.gserviceaccount.com&quot; ] }, { &quot;role&quot;: &quot;roles/resourcemanager.organizationViewer&quot;, &quot;members&quot;: [ &quot;user:eve@example.com&quot; ], &quot;condition&quot;: { &quot;title&quot;: &quot;expirable access&quot;, &quot;description&quot;: &quot;Does not grant access after Sep 2020&quot;, &quot;expression&quot;: &quot;request.time &lt; timestamp(&#x27;2020-10-01T00:00:00.000Z&#x27;)&quot;, } } ], &quot;etag&quot;: &quot;BwWWja0YfJA=&quot;, &quot;version&quot;: 3 }",
-      "rank": 3,
+      "rank": 2,
       "query_hits": [
         "site:docs.cloud.google.com \"Infrastructure Manager\" \"access control\"",
         "site:docs.cloud.google.com \"Infrastructure Manager\" IAM roles permissions"
@@ -754,13 +778,16 @@
         2,
         3
       ],
-      "best_rank": 3,
+      "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
@@ -788,11 +815,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "irrelevant",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
@@ -805,7 +835,7 @@
     {
       "title": "View deployments | Infrastructure Manager | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/infrastructure-manager/docs/view-deployments",
-      "description": "gcloud infra-manager deployments list --project PROJECT_ID --location &quot;LOCATION&quot; ... PROJECT_ID: the project ID where Infrastructure Manager runs.",
+      "description": "gcloud infra-manager deployments describe <strong>projects/PROJECT_ID/locations/LOCATION/deployments/DEPLOYMENT_ID</strong> ... PROJECT_ID: the project ID where Infrastructure Manager runs.",
       "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Infrastructure Manager\" Google Cloud documentation",
@@ -821,11 +851,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -853,13 +886,16 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 28,
+      "product_fit_score": 76,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -883,11 +919,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -915,11 +954,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -945,11 +987,14 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -975,11 +1020,14 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1005,11 +1053,14 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1035,11 +1086,14 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1065,11 +1119,14 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
@@ -1095,11 +1152,14 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
@@ -1125,45 +1185,18 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 80,
+      "product_fit_score": 128,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "API Reference | Cloud Deployment Manager | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/deployment-manager/v2beta1",
-      "description": "If you currently use Deployment Manager, please migrate to Infrastructure Manager or an alternative deployment technology by March 31, 2026 to ensure your services continue without interruption. For more information on the deprecation and shutdown, see Deployment Manager deprecation. ... Caution: This is a deprecated version of the Deployment Manager API. Please use the latest API version instead. This API reference ...",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Infrastructure Manager\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 58,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 3,
-        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1185,13 +1218,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1215,13 +1251,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
         "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1245,15 +1284,18 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "irrelevant",
+        "classification": "product_reference",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 4,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
@@ -1275,14 +1317,50 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 30,
+      "product_fit_score": 78,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 5,
         "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "API Reference | Cloud Deployment Manager | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/deployment-manager/v2beta1",
+      "description": "For more information on the deprecation ... Manager API. Please use the latest API version instead. This API reference is <strong>organized by resource type</strong>....",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Infrastructure Manager\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 6,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 2,
+        "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1306,17 +1384,20 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 12,
-      "deterministic_score": 68,
+      "deterministic_score": 86,
       "api_score": {
-        "classification": "irrelevant",
-        "score": 68,
-        "parent_page_likelihood": 3,
+        "classification": "iam_reference",
+        "score": 86,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
         "product_match": 2,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 63,
+      "final_score": 78,
       "keep": false
     },
     {
@@ -1340,6 +1421,9 @@
       "api_score": {
         "classification": "iam_reference",
         "score": 63,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
@@ -1370,6 +1454,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 59,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
@@ -1377,6 +1464,39 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 55,
+      "keep": false
+    },
+    {
+      "title": "Quickstart: Manage Google Cloud resources as a deployment | Cloud Deployment Manager | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+      "description": "# # For a list of supported resources, # see https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types. resources: - type: compute.v1.instance name: quickstart-deployment-vm properties: # The properties of the resource depend on the type of resource. For a list # of properties, see the API reference for the resource.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Infrastructure Manager\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -22,
+      "deterministic_score": 56,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 56,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 53,
       "keep": false
     },
     {
@@ -1400,6 +1520,9 @@
       "api_score": {
         "classification": "supporting_page",
         "score": 53,
+        "family_score": 0,
+        "family_preferred": false,
+        "family_forbidden": false,
         "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 2,
@@ -1407,36 +1530,6 @@
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 50,
-      "keep": false
-    },
-    {
-      "title": "Quickstart: Manage Google Cloud resources as a deployment | Cloud Deployment Manager | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
-      "description": "# # For a list of supported resources, # see https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types. resources: - type: compute.v1.instance name: quickstart-deployment-vm properties: # The properties of the resource depend on the type of resource. For a list # of properties, see the API reference for the resource.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Infrastructure Manager\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 38,
-      "api_score": {
-        "classification": "irrelevant",
-        "score": 38,
-        "parent_page_likelihood": 2,
-        "product_match": 0,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 37,
       "keep": false
     }
   ]
