@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:04.775Z"
+generated_at: "2026-04-10T13:25:38.420Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Apache Spark demo notebook in BigQuery welcome tab"

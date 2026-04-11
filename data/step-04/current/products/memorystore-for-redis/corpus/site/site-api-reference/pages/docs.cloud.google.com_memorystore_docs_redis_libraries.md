@@ -1,0 +1,124 @@
+---
+title: "Set up client libraries \_|\_ Memorystore for Redis \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/memorystore/docs/redis/libraries
+knowledge_key: corpus
+source_id: site-api-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/memorystore/docs/redis/reference/rest
+source_metadata:
+  url: https://docs.cloud.google.com/memorystore/docs/redis/libraries
+  title: "Set up client libraries \_|\_ Memorystore for Redis \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Databases
+Memorystore
+Memorystore for Redis
+Reference
+Send feedback
+Set up client libraries
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page shows how to install client libraries for the Memorystore for Redis API
+so you can connect to the API with the language of your choice.
+Installing the client library
+C++
+See Setting up a C++ development environment
+for details about this client library's requirements and install dependencies.
+C#
+Install the Google.Cloud.Redis.V1 package in Visual Studio
+Go
+go get cloud.google.com/go/redis/apiv1
+Java
+If you are using Maven, add this to your pom.xml file:
+< dependency >
+< groupId>com . google . cloud < / groupId >
+< artifactId>google - cloud - redis < / artifactId >
+< version>0 .62.0 - alpha < / version >
+< / dependency >
+If you are using Gradle, add this to your dependencies:
+compile ' com . google . cloud : google - cloud - redis : 0.62.0 - alpha '
+If you are using SBT, add this to your dependencies:
+libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "0.62.0-alpha"
+If you're using VS Code, IntelliJ, or Eclipse, you can add client libraries
+to your project using these IDE plugins:
+Cloud Code for VS Code
+Cloud Code for IntelliJ
+The plugins provide additional functionality, such as key management for
+service accounts. Refer to each plugin's documentation for details.
+Node.js
+npm install @google-cloud/redis
+PHP
+composer require google/cloud-redis
+Python
+For more on setting up your Python development environment, refer to Python Development Environment Setup Guide .
+pip install --upgrade google-cloud-redis
+Ruby
+gem install google-cloud-redis
+Setting up authentication
+Install the Google Cloud CLI.
+After installation,
+initialize the Google Cloud CLI by running the following command:
+gcloud init
+If you're using an external identity provider (IdP), you must first
+sign in to the gcloud CLI with your federated identity .
+If you're using a local shell, then create local authentication credentials for your user
+account:
+gcloud auth application-default login
+You don't need to do this if you're using Cloud Shell.
+If an authentication error is returned, and you are using an external identity provider
+(IdP), confirm that you have
+signed in to the gcloud CLI with your federated identity .
+A sign-in screen appears. After you sign in, your credentials are stored in the
+local credential file used by ADC .
+Additional Resources
+C++
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+C#
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+Go
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+Java
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+Node.js
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+PHP
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+Python
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+Ruby
+API Reference Documentation
+Source Code
+GitHub Issue Tracker
+Stack Overflow
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

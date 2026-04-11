@@ -1,0 +1,167 @@
+---
+title: "DoubleClick Campaigns Service \_|\_ Apps Script \_|\_ Google for Developers"
+url: https://developers.google.com/apps-script/advanced/doubleclick-campaigns
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://developers.google.com/apps-script/reference
+source_metadata:
+  url: https://developers.google.com/apps-script/advanced/doubleclick-campaigns
+  title: "DoubleClick Campaigns Service \_|\_ Apps Script \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Google Workspace
+Apps Script
+Reference
+Send feedback
+DoubleClick Campaigns Service
+Stay organized with collections
+Save and categorize content based on your preferences.
+Page Summary
+outlined_flag
+The DoubleClick Campaigns service in Apps Script allows programmatic access to DoubleClick Campaign Manager and DoubleClick Digital Marketing Reporting through the DCM/DFA Reporting and Trafficking API.
+This is an advanced service that requires explicit enablement before use.
+The service uses the same objects, methods, and parameters as the public DCM/DFA Reporting and Trafficking API.
+Sample code is provided for tasks like listing user profiles, listing active campaigns, and creating new advertisers and campaigns.
+DoubleClick Campaign Manager and DoubleClick Digital Marketing Reporting
+from Apps Script.
+The DoubleClick Campaigns service lets you use the
+DCM/DFA Reporting and Trafficking API in
+Google Apps Script. This API provides programmatic access to DoubleClick
+Campaign Manager (DCM) and DoubleClick Digital Marketing (DDM) Reporting.
+This is an advanced service that must be
+enabled before use .
+Reference
+For detailed information on this service, see the
+reference documentation for the
+DCM/DFA Reporting and Trafficking API. Like all advanced services in
+Apps Script, the DoubleClick Campaigns service uses the same
+objects, methods, and parameters as the public API. For more information, see
+How method signatures are determined .
+To report issues and find other support, see the
+DCM/DFA Reporting and Trafficking support guide .
+Sample code
+The following sample code uses
+version 4 of the API.
+Get a list of user profiles
+This sample logs all of the user profiles available in the account.
+advanced/doubleclick.gs
+View on GitHub
+/**
+* Logs all of the user profiles available in the account.
+*/
+function listUserProfiles () {
+// Retrieve the list of available user profiles
+try {
+const profiles = DoubleClickCampaigns . UserProfiles . list ();
+if ( profiles . items ) {
+// Print out the user ID and name of each
+for ( let i = 0 ; i < profiles . items . length ; i ++ ) {
+const profile = profiles . items [ i ];
+console . log (
+'Found profile with ID %s and name "%s".' ,
+profile . profileId ,
+profile . userName ,
+);
+}
+}
+} catch ( e ) {
+// TODO (Developer) - Handle exception
+console . log ( "Failed with error: %s" , e . error );
+}
+}
+Get a list of active campaigns
+This sample logs names and ID's of all active campaigns. Note the use of
+paging tokens to retrieve the whole list.
+advanced/doubleclick.gs
+View on GitHub
+/**
+* Logs names and ID's of all active campaigns.
+* Note the use of paging tokens to retrieve the whole list.
+*/
+function listActiveCampaigns () {
+const profileId = "1234567" ; // Replace with your profile ID.
+const fields = "nextPageToken,campaigns(id,name)" ;
+let result ;
+let pageToken ;
+try {
+do {
+result = DoubleClickCampaigns . Campaigns . list ( profileId , {
+archived : false ,
+fields : fields ,
+pageToken : pageToken ,
+});
+if ( result . campaigns ) {
+for ( let i = 0 ; i < result . campaigns . length ; i ++ ) {
+const campaign = result . campaigns [ i ];
+console . log (
+'Found campaign with ID %s and name "%s".' ,
+campaign . id ,
+campaign . name ,
+);
+}
+}
+pageToken = result . nextPageToken ;
+} while ( pageToken );
+} catch ( e ) {
+// TODO (Developer) - Handle exception
+console . log ( "Failed with error: %s" , e . error );
+}
+}
+Create a new advertiser and campaign
+This sample creates a new advertiser, and creates a new campaign with that
+advertiser. The campaign is set to last for one month.
+advanced/doubleclick.gs
+View on GitHub
+/**
+* Creates a new advertiser, and creates a new campaign with that advertiser.
+* The campaign is set to last for one month.
+*/
+function createAdvertiserAndCampaign () {
+const profileId = "1234567" ; // Replace with your profile ID.
+const advertiser = {
+name : "Example Advertiser" ,
+status : "APPROVED" ,
+};
+try {
+const advertiserId = DoubleClickCampaigns . Advertisers . insert (
+advertiser ,
+profileId ,
+). id ;
+const landingPage = {
+advertiserId : advertiserId ,
+archived : false ,
+name : "Example landing page" ,
+url : "https://www.google.com" ,
+};
+const landingPageId = DoubleClickCampaigns . AdvertiserLandingPages . insert (
+landingPage ,
+profileId ,
+). id ;
+const campaignStart = new Date ();
+// End campaign after 1 month.
+const campaignEnd = new Date ();
+campaignEnd . setMonth ( campaignEnd . getMonth () + 1 );
+const campaign = {
+advertiserId : advertiserId ,
+defaultLandingPageId : landingPageId ,
+name : "Example campaign" ,
+startDate : Utilities . formatDate ( campaignStart , "GMT" , "yyyy-MM-dd" ),
+endDate : Utilities . formatDate ( campaignEnd , "GMT" , "yyyy-MM-dd" ),
+};
+DoubleClickCampaigns . Campaigns . insert ( campaign , profileId );
+} catch ( e ) {
+// TODO (Developer) - Handle exception
+console . log ( "Failed with error: %s" , e . error );
+}
+}
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-01 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]

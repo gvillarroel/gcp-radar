@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:13.440Z"
+product_name: "Deep Learning VM Images"
+product_slug: "deep-learning-vm-images"
+feature_name: "TensorFlow Enterprise 2.5 images"
+feature_slug: "tensorflow-enterprise-2-5-images"
+latest_feature_date: "2021-05-14"
+deprecation_date: "2021-08-18"
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "tensorflow"
+  - "enterprise"
+  - "images"
+  - "deep"
+  - "learning"
+  - "vm"
+  - "provide"
+  - "environments"
+---
+
+# TensorFlow Enterprise 2.5 images
+
+Product: Deep Learning VM Images
+Coverage: NONE
+
+## Step 02 Summary
+
+TensorFlow Enterprise 2.5 Deep Learning VM Images provide enterprise TensorFlow 2.5 environments; Deep Learning VM Images provide TensorFlow Enterprise 2.5 environments; deprecated on 2021-08-18.
+
+## Extended Definition
+
+TensorFlow Enterprise 2.5 Deep Learning VM Images provide enterprise TensorFlow 2.5 environments; Deep Learning VM Images provide TensorFlow Enterprise 2.5 environments; deprecated on 2021-08-18.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

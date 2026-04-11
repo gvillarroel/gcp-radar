@@ -1,6 +1,5 @@
 ---
-title: "About metadata management in Dataplex Universal Catalog \_|\_ Google Cloud\
-  \ Documentation"
+title: "About metadata management in Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/catalog-overview
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -8,33 +7,33 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/catalog-overview
-  title: "About metadata management in Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "About metadata management in Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
-About metadata management in Dataplex Universal Catalog
+About metadata management in Knowledge Catalog
 Stay organized with collections
 Save and categorize content based on your preferences.
-Dataplex Universal Catalog is a fully managed service that automates the discovery and
+Knowledge Catalog (formerly Dataplex Universal Catalog) is a fully managed service that automates the discovery and
 inventory of your distributed data and AI assets. It creates a unified,
 searchable knowledge base that governs data across Google Cloud and other
 environments, ensuring your analytics and AI models are built on trusted,
 compliant information.
-Note: You can set your default catalog experience to Dataplex Universal Catalog. If
+Note: You can set your default catalog experience to Knowledge Catalog. If
 you're using Data Catalog, transition your standalone
-Data Catalog content and usage to Dataplex Universal Catalog. For more
+Data Catalog content and usage to Knowledge Catalog. For more
 information, see Transition from Data Catalog to
-Dataplex Universal Catalog .
+Knowledge Catalog .
 Use cases
 Accelerate self-service analytics: Solves the "cold start" problem by letting
 analysts find, understand, and verify data quality without waiting on
@@ -44,15 +43,15 @@ together, ensuring downstream AI applications rely on secure, approved inputs.
 Streamline compliance: Automates data lineage tracking to map how sensitive
 information, including personally identifiable information (PII), flows across
 your organization.
-How Dataplex Universal Catalog works
-Think of Dataplex Universal Catalog as an automated smart library for your
+How Knowledge Catalog works
+Think of Knowledge Catalog as an automated smart library for your
 enterprise. Instead of manually entering, the system automatically ingests
 technical metadata from your storage systems such as BigQuery.
 It then lets you enrich this metadata with business context—such as data quality
 scores or ownership—and organize it into logical groups. This ensures that when
 users search the catalog, they find assets that are discoverable and governed by
 active security policies.
-Additionally, Dataplex Universal Catalog can stream metadata changes in near
+Additionally, Knowledge Catalog can stream metadata changes in near
 real-time using metadata change feeds. A metadata change feed sends
 notifications about metadata creation, updates, or deletion to a Pub/Sub
 topic that you specify. Pub/Sub is an asynchronous and scalable
@@ -64,7 +63,7 @@ automatically trigger data quality checks when a table schema changes. For more
 information, see Metadata change
 feeds .
 Terminology
-The metadata management features in Dataplex Universal Catalog are based on the
+The metadata management features in Knowledge Catalog are based on the
 following concepts:
 Entry
 An entry represents a data asset. This is similar to entries in
@@ -84,7 +83,7 @@ For more information about entries, see
 Entries .
 Entry link
 An entry link establishes a relationship between two data assets
-(entries) within Dataplex Universal Catalog. Links can be symmetric
+(entries) within Knowledge Catalog. Links can be symmetric
 (non-directional) such as synonym , related items , or schema-join ,
 or asymmetric (directional) such as definition with an explicit source and
 target. Links can reference an entire entry or a specific path (for example,
@@ -102,7 +101,7 @@ Example: To indicate that the data in the linked entries can be joined based
 on their schema, you can use a schema-join entry link type. To explain
 the meaning of columns in a table, you can use a definition entry link
 type for linking between these columns and business glossary terms.
-Dataplex Universal Catalog supports the following entry link types:
+Knowledge Catalog supports the following entry link types:
 synonym , related , definition , and schema-join .
 Aspect
 An aspect is a set of related metadata fields. You can attach an aspect to
@@ -153,11 +152,11 @@ groups .
 Figure 1. Entry groups, entries, and entry links
 Figure 2. Aspect types and entry types
 Figure 3. Entry link with linked entries, aspects, and their types
-Dataplex Universal Catalog versus Data Catalog
-Dataplex Universal Catalog provides integrated capabilities to manage your
+Knowledge Catalog versus Data Catalog
+Knowledge Catalog provides integrated capabilities to manage your
 metadata. The metadata storage and API methods are integrated into the
 Dataplex API.
-The main metadata management features in Dataplex Universal Catalog include the
+The main metadata management features in Knowledge Catalog include the
 following:
 More robust metamodel
 Typed entries. You can enforce minimal metadata standards by defining
@@ -172,10 +171,10 @@ that is associated with an entry through single atomic CRUD operations and
 the ability to fetch multiple metadata annotations associated in search or
 list responses.
 The following table compares the metadata management features of
-Dataplex Universal Catalog and Data Catalog:
-Comparison between Dataplex Universal Catalog and Data Catalog
+Knowledge Catalog and Data Catalog:
+Comparison between Knowledge Catalog and Data Catalog
 Feature
-Dataplex Universal Catalog
+Knowledge Catalog
 Data Catalog
 Supported Google Cloud sources
 All sources as described in the
@@ -186,7 +185,7 @@ Custom sources ingestion
 Ingestion into custom entries with governed structure, defined by
 entry types.
 Data Catalog custom entries and entry groups are made available in
-Dataplex Universal Catalog under the generic entry type.
+Knowledge Catalog under the generic entry type.
 Ingestion into generic custom entries.
 Metadata enrichment
 Metadata context for entries is captured using business glossaries,
@@ -206,11 +205,11 @@ Search
 Search is performed over the following:
 All Google Cloud sources described in
 Supported Google Cloud sources
-Custom entries that are created in Dataplex Universal Catalog
-Aspects that are created in Dataplex Universal Catalog except for those
+Custom entries that are created in Knowledge Catalog
+Aspects that are created in Knowledge Catalog except for those
 attached to the entry links.
 Custom entries that are created in Data Catalog and are
-brought into Dataplex Universal Catalog
+brought into Knowledge Catalog
 The search results include only those resources that belong to the same
 organization and the same VPC Service Controls perimeter as the project under
 which search is performed. When using the Google Cloud console, this is the
@@ -238,32 +237,32 @@ assets linked to a term.
 Business glossary lets you build a taxonomy for business terms, and
 associate them with columns. You can use search to discover assets linked to
 a term.
-The following table describes how resources in Dataplex Universal Catalog
+The following table describes how resources in Knowledge Catalog
 correspond to Data Catalog resources:
-Mapping between Dataplex Universal Catalog and Data Catalog
+Mapping between Knowledge Catalog and Data Catalog
 resources
-Dataplex Universal Catalog resource
+Knowledge Catalog resource
 Data Catalog resource
 Description
 Aspect type ( global )
 Public tag template
 Tag templates are regional resources. However, you can use them to create
 tags across regions. Tag templates correspond to global aspect
-types in Dataplex Universal Catalog.
+types in Knowledge Catalog.
 Optional aspect
 Public tag
 Public tags in Data Catalog correspond to optional aspects in
-Dataplex Universal Catalog.
+Knowledge Catalog.
 Entry group
 Entry group
 For Google Cloud sources, system entry groups such as @bigquery
-are established per-project in Dataplex Universal Catalog.
+are established per-project in Knowledge Catalog.
 Custom entry required aspects
 Custom entry
-Data Catalog and Dataplex Universal Catalog share
+Data Catalog and Knowledge Catalog share
 similar concepts for custom entries.
 Standard entry properties are modeled as required aspects in
-Dataplex Universal Catalog.
+Knowledge Catalog.
 System entry required aspects
 System (Google Cloud) entry
 Metadata describing built-in entities, such as Schema for
@@ -274,41 +273,41 @@ Business glossaries
 Use glossaries to build a taxonomy of business terms standardizing
 business context across the enterprise.
 For more information about the features that are available in
-Data Catalog but are not supported in Dataplex Universal Catalog, see the
-Metadata management features that aren't supported in Dataplex Universal Catalog
+Data Catalog but are not supported in Knowledge Catalog, see the
+Metadata management features that aren't supported in Knowledge Catalog
 section in this document.
 For existing Data Catalog users
 If you're already using Data Catalog, note the following:
 Custom entries, overview context, glossaries, and entry groups that you
 created in Data Catalog are made available in
-Dataplex Universal Catalog.
+Knowledge Catalog.
 As an administrator, you can choose to make the content of
 Data Catalog tag templates and tags simultaneously available in
-Dataplex Universal Catalog. For more information, see Transition from
+Knowledge Catalog. For more information, see Transition from
 Data Catalog to
-Dataplex Universal Catalog .
-When you search for data assets in Dataplex Universal Catalog, both the
-metadata that was created in Dataplex Universal Catalog directly and the
+Knowledge Catalog .
+When you search for data assets in Knowledge Catalog, both the
+metadata that was created in Knowledge Catalog directly and the
 metadata that was brought from Data Catalog into
-Dataplex Universal Catalog are included.
+Knowledge Catalog are included.
 When you search for data assets in Data Catalog, only the metadata
 that was created in Data Catalog is included.
 The entry group descriptions in Data Catalog that exceed 1024
-characters are truncated to 1024 characters in Dataplex Universal Catalog.
+characters are truncated to 1024 characters in Knowledge Catalog.
 As an administrator, to make glossaries and associated links between
 business terms and columns that you created in Data Catalog
-available in Dataplex Universal Catalog, see Migrate glossaries to
-Dataplex Universal Catalog .
+available in Knowledge Catalog, see Migrate glossaries to
+Knowledge Catalog .
 For more information about how to transition your standalone
-Data Catalog content and usage to Dataplex Universal Catalog, see
+Data Catalog content and usage to Knowledge Catalog, see
 Transition from Data Catalog to
-Dataplex Universal Catalog .
-Map Data Catalog API methods to Dataplex Universal Catalog
-If you're migrating from Data Catalog to Dataplex Universal Catalog, you
+Knowledge Catalog .
+Map Data Catalog API methods to Knowledge Catalog
+If you're migrating from Data Catalog to Knowledge Catalog, you
 must update your programmatic workflows to use the Dataplex API. This
 section provides a mapping between the Data Catalog API and the
 Dataplex API.
-For more information about the Dataplex Universal Catalog API methods, see the
+For more information about the Dataplex API methods, see the
 documentation for Dataplex API for REST
 methods and the
 documentation for Dataplex API for RPC
@@ -316,7 +315,7 @@ methods .
 The following tables provide a mapping of Data Catalog API methods to
 their equivalents in the Dataplex API.
 Entry groups
-The concept of entry groups is the same in both Dataplex Universal Catalog and
+The concept of entry groups is the same in both Knowledge Catalog and
 Data Catalog.
 Data Catalog API method
 Dataplex API method
@@ -332,7 +331,7 @@ projects.locations.entryGroups.list (REST) ListEntryGroups (RPC)
 projects.locations.entryGroups.list (REST) ListEntryGroups (RPC)
 Entries
 The concept of entries, which represent data assets, is similar in both
-Dataplex Universal Catalog and Data Catalog.
+Knowledge Catalog and Data Catalog.
 Data Catalog API method
 Dataplex API method
 projects.locations.entryGroups.entries.create (REST) CreateEntry (RPC)
@@ -341,14 +340,14 @@ projects.locations.entryGroups.entries.get (REST) GetEntry (RPC)
 projects.locations.entryGroups.entries.get (REST) GetEntry (RPC)
 projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC)
 projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC)
-Note: You can also use the projects.locations.modifyEntry (REST) and ModifyEntry (RPC) methods to update system entries using source-system permissions instead of Dataplex Universal Catalog permissions.
+Note: You can also use the projects.locations.modifyEntry (REST) and ModifyEntry (RPC) methods to update system entries using source-system permissions instead of Knowledge Catalog permissions.
 projects.locations.entryGroups.entries.delete (REST) DeleteEntry (RPC)
 projects.locations.entryGroups.entries.delete (REST) DeleteEntry (RPC)
 projects.locations.entryGroups.entries.list (REST) ListEntries (RPC)
 projects.locations.entryGroups.entries.list (REST) ListEntries (RPC)
 entries.lookup (REST) LookupEntry (RPC)
 projects.locations.lookupEntry (REST) LookupEntry (RPC)
-Note: To use the projects.locations.lookupEntry (REST) and LookupEntry (RPC) methods, you must provide the Dataplex Universal Catalog entry name. To translate a BigQuery SQL name, fully qualified name, or linked resource name to a Dataplex Universal Catalog entry name, first call the projects.locations.searchEntries (REST) or SearchEntries (RPC) method.
+Note: To use the projects.locations.lookupEntry (REST) and LookupEntry (RPC) methods, you must provide the Knowledge Catalog entry name. To translate a BigQuery SQL name, fully qualified name, or linked resource name to a Knowledge Catalog entry name, first call the projects.locations.searchEntries (REST) or SearchEntries (RPC) method.
 projects.locations.entryGroups.entries.modifyEntryContacts (REST) ModifyEntryContacts (RPC)
 projects.locations.entryGroups.entries.patch (REST) UpdateEntry (RPC)
 Note: When you migrate from the Data Catalog entries.modifyEntryContacts method, use update_mask to modify only the contacts aspect.
@@ -360,9 +359,9 @@ projects.locations.metadataJobs.create (REST) CreateMetadataJob (RPC), projects.
 Note: When you migrate from the Data Catalog projects.locations.entryGroups.entries.reconcileTags method, use the projects.locations.metadataJobs.create (REST) or CreateMetadataJob (RPC) method with the import job type to import Catalog content for multiple entries. To update all aspects for a single entry, use the projects.locations.entryGroups.entries.patch (REST) or UpdateEntry (RPC) method.
 catalog.search (REST) SearchCatalog (RPC)
 projects.locations.searchEntries (REST) SearchEntries (RPC)
-Note: The Dataplex Universal Catalog projects.locations.searchEntries (REST) and SearchEntries (RPC) methods don't support searching across multiple organizations. You must issue separate API calls for each of your organizations.
+Note: The Knowledge Catalog projects.locations.searchEntries (REST) and SearchEntries (RPC) methods don't support searching across multiple organizations. You must issue separate API calls for each of your organizations.
 Tag templates and tags
-In Dataplex Universal Catalog, aspect types are the successor to
+In Knowledge Catalog, aspect types are the successor to
 Data Catalog tag templates, and aspects are the successor to
 Data Catalog tags.
 Data Catalog API method
@@ -381,7 +380,7 @@ Tag template fields
 Tag template fields correspond to the contents of the metadata_template field
 in an aspect type. To migrate a Data Catalog field-level operation, use
 the UpdateAspectType operation with the corresponding payload in
-Dataplex Universal Catalog.
+Knowledge Catalog.
 Data Catalog API method
 Dataplex API method
 projects.locations.tagTemplates.fields.create (REST) CreateTagTemplateField (RPC)
@@ -420,7 +419,7 @@ These APIs are not changing and therefore don't need to be migrated.
 Supported sources
 Automatic discovery of Cloud Storage data
 Metadata from the following Google Cloud sources is automatically ingested
-into Dataplex Universal Catalog:
+into Knowledge Catalog:
 BigQuery sharing (formerly Analytics Hub) exchanges and listings
 BigQuery datasets, tables, views, models, routines,
 connections, and linked datasets
@@ -433,20 +432,20 @@ Pub/Sub topics
 Spanner instances, databases, tables, and views
 Vertex AI models, datasets, feature groups, feature views, and
 online store instances
-If Dataplex Universal Catalog integration is enabled, then metadata from the
+If Knowledge Catalog integration is enabled, then metadata from the
 following Google Cloud sources is automatically ingested into
-Dataplex Universal Catalog:
+Knowledge Catalog:
 AlloyDB for PostgreSQL clusters, instances, databases, schemas, tables,
 views—see
 Enable the AlloyDB for PostgreSQL integration
 ( Preview )
 Cloud SQL instances, databases, schemas, tables, views—see
 Enable the Cloud SQL integration
-To import metadata from a third-party source into Dataplex Universal Catalog, you
+To import metadata from a third-party source into Knowledge Catalog, you
 can use a managed connectivity pipeline. For more information, see Managed
 connectivity overview .
 Project and location constraints
-Catalog resources in Dataplex Universal Catalog are housed within various projects
+Catalog resources in Knowledge Catalog are housed within various projects
 and locations. The following limitations apply:
 Location:
 Entries:
@@ -468,65 +467,65 @@ in the same location as the entry link type.
 Project:
 If an entry type references custom aspect types, then the aspect types
 must be in the same location and project as the entry type.
-Metadata management features that aren't supported in Dataplex Universal Catalog
+Metadata management features that aren't supported in Knowledge Catalog
 The following features that are available in Data Catalog are not
-supported in Dataplex Universal Catalog:
+supported in Knowledge Catalog:
 The concept of private aspects and private aspect types (counterparts to
 private tags and private tag templates in Data Catalog)
-doesn't exist in Dataplex Universal Catalog.
-Search for policy tags isn't supported in Dataplex Universal Catalog search;
+doesn't exist in Knowledge Catalog.
+Search for policy tags isn't supported in Knowledge Catalog search;
 consequently, the predicates policytag and policytagid don't work in the
-Dataplex Universal Catalog search.
+Knowledge Catalog search.
 When you bring Data Catalog custom entry groups, custom entries,
-tag templates, and tags into Dataplex Universal Catalog, their original
+tag templates, and tags into Knowledge Catalog, their original
 permissions don't carry over. You must explicitly configure
 IAM permissions for the copied metadata before using it.
 Sending Sensitive Data Protection inspection results directly to the
-catalog in Dataplex Universal Catalog isn't supported. Instead, you can send
+catalog in Knowledge Catalog isn't supported. Instead, you can send
 Sensitive Data Protection inspection results to
 Data Catalog ,
 and then transition the results to
-Dataplex Universal Catalog .
+Knowledge Catalog .
 You can't list entry types, entry link types, and aspect types across
 projects using the API. You can scope the list request to a project only.
-Registering lakes, zones, assets, and entities as Dataplex Universal Catalog
+Registering lakes, zones, assets, and entities as Knowledge Catalog
 entries isn't supported. This means that Data Catalog
 metadata that is attached to lakes, zones, assets, and entities doesn't
-carry over to the catalog in Dataplex Universal Catalog. In addition, when
-using Dataplex Universal Catalog search, searching for zones and entities isn't
+carry over to the catalog in Knowledge Catalog. In addition, when
+using Knowledge Catalog search, searching for zones and entities isn't
 supported, and filtering by lakes and zones isn't supported. You can use
-lakes and zones independently from the catalog in Dataplex Universal Catalog.
+lakes and zones independently from the catalog in Knowledge Catalog.
 Administrator search, which ensures full recall, isn't supported. Instead,
 you can export metadata to
 Cloud Storage and then query it from BigQuery.
 For a comparison of features and resources that are supported in both
-Dataplex Universal Catalog and Data Catalog, see the
-Dataplex Universal Catalog versus
+Knowledge Catalog and Data Catalog, see the
+Knowledge Catalog versus
 Data Catalog section in this
 document.
 Pricing
-Dataplex Universal Catalog uses the metadata storage SKU to charge for metadata storage.
-For more information, see Dataplex Universal Catalog
+Knowledge Catalog uses the metadata storage SKU to charge for metadata storage.
+For more information, see Knowledge Catalog
 pricing .
 There are no charges to use the following:
-Creating and managing catalog resources in Dataplex Universal Catalog
-Search API calls for Dataplex Universal Catalog
-Search queries performed on the Dataplex Universal Catalog page in the
+Creating and managing catalog resources in Knowledge Catalog
+Search API calls for Knowledge Catalog
+Search queries performed on the Knowledge Catalog page in the
 Google Cloud console
 What's next
 Learn how to search for resources in
-Dataplex Universal Catalog .
+Knowledge Catalog .
 Learn how to manage aspects and enrich
 metadata .
 Learn how to manage entries and ingest custom
 sources .
 Learn more about transitioning from Data Catalog to
-Dataplex Universal Catalog .
+Knowledge Catalog .
 Learn more about transitioning glossaries to
-Dataplex Universal Catalog .
-Follow the codelab: Build the data foundation with Dataplex Universal Catalog metadata .
+Knowledge Catalog .
+Follow the codelab: Build the data foundation with Knowledge Catalog metadata .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

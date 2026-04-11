@@ -10,339 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks
   title: "Quickstart: Create and manage VPC networks \_|\_ Virtual Private Cloud \_\
     |\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Quickstart: Create and manage VPC networks | Virtual Private Cloud | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-עברית
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Virtual Private Cloud
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-Discover
-Virtual Private Cloud overview
-Get started
-VPC networks
-Subnets
-IPv6 support
-Create and manage VPC networks
-Add networking features
-Add IP addresses
-Overview
-Reserve internal IP addresses
-Reserve external IP addresses
-Move an external IPv4 address to a different project
-Add alias IP ranges
-Overview
-Configure alias IP ranges
-Bring your own IP addresses (BYOIP)
-Overview
-Planning and architecture
-Create a public advertised prefix
-Create public delegated prefixes
-Create IPv4 sub-prefixes and IP addresses
-Create and use IPv6 sub-prefixes
-Manage BGP announcement
-Deprovision BYOIP
-Add routes
-Routes overview
-Static routes overview
-Use routes
-Add policy-based routes
-Overview
-Use policy-based-routes
-Change MTU
-Overview
-Change MTU of a VPC network
-Create and verify a jumbo frame MTU network
-Access IPv4 destinations from IPv6-only instances
-Overview
-Configure IPv6-only subnets and instances with DNS64 and NAT64
-Configure VMs
-Add network tags
-Add VMs with multiple network interfaces
-Overview
-Create VMs with multiple network interfaces
-Configure Dynamic NICs
-Add Dynamic NICs
-Delete Dynamic NICs
-Configure routing for an additional network interface
-Troubleshoot
-Add capabilities
-Network Connectivity Center
-VPC Network Peering
-Overview
-About peering connections
-Set up and manage VPC Network Peering
-Peer two VPC networks
-Shared VPC
-Overview
-Provision Shared VPC
-Deprovision Shared VPC
-Hybrid Subnets
-About migrating to Google Cloud with Hybrid Subnets
-Prepare for Hybrid Subnets connectivity
-Migrate to Google Cloud with Hybrid Subnets
-Disable hybrid subnet routing
-Internal ranges
-Overview
-Create and use internal ranges
-Network profiles for specific use cases
-Overview
-RDMA network profiles
-Create a VPC network for RDMA NICs
-View network profiles
-Access APIs and services
-Choose a private access option
-Private Service Connect
-Overview
-Compatibility
-Deployment patterns
-Architecture
-Security
-Create and access your own service
-Overview
-Create a load-balanced service
-Make the service accessible to other VPC networks
-Access the service from another VPC network
-Service consumers
-Endpoints
-Published services
-About accessing published services
-Access published services
-Manage endpoints that access published services
-Global Google APIs
-About accessing global Google APIs
-Access global Google APIs
-Regional Google APIs
-About accessing regional Google APIs
-Access regional Google APIs
-About propagated connections
-Backends
-About backends
-Create a backend
-Access published services
-Access regional Google APIs
-Access global Google APIs
-Network attachments
-About network attachments
-Create network attachments
-Configure security
-Service connection policies
-About service connectivity automation
-About service connection policies
-Configure connectivity to services
-Configure service connection policies
-Deploy service instances
-Manage consumer security
-Service producers
-Published services
-About published services
-About controlling access to published services
-Publish services
-Manage published services
-DNS configuration for services
-Private Service Connect health
-About Private Service Connect health
-Configure Private Service Connect health for failover
-View, update, and delete Private Service Connect health configurations
-Port mapping
-About port mapping
-Create port mapping services
-Update port mapping services
-Migrate peering services to Private Service Connect
-About migrating peering services
-Migrate peering services
-Interfaces
-About interfaces
-Create interfaces
-Configure routing
-Configure security
-Manage destination overlap
-Manage producer security
-Monitor connections
-Private Google Access
-Overview
-Configure Private Google Access
-Private Google Access for on-premises hosts
-Overview
-Configure Private Google Access for on-premises hosts
-Access APIs from VMs with external IP addresses
-Private services access
-Overview
-Configure private services access
-Send serverless traffic to a VPC network
-Overview
-Configure serverless traffic
-Monitor
-VPC Flow Logs
-Overview
-About VPC Flow Logs records
-About traffic flows
-Configure VPC Flow Logs
-Configure organization policy constraints
-Access flow logs
-Audit logging
-VPC audit logging
-Private services access audit logging
-Serverless VPC Access audit logging
-Packet Mirroring
-Overview
-Use Packet Mirroring
-Monitor Packet Mirroring
-Packet Mirroring partner providers
-Control access
-Manage resources by using custom constraints
-Create and manage tags for VPC resources
-Troubleshoot
-Troubleshoot internal connectivity between VMs
-Troubleshoot policy and access problems
-Advanced topics
-Advanced VPC concepts
-Legacy networks
-Overview
-Manage legacy networks
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Create networks Create an auto mode VPC network
-Create a custom mode VPC network with IPv4-only subnets
-Create a custom mode VPC network with a dual-stack subnet
-Create a custom mode VPC network with IPv6-only subnets
-About firewall rules
-View networks
-Work with subnets List subnets
-Describe a subnet
-Add an IPv4-only subnet
-Add a dual-stack subnet
-Add an IPv6-only subnet
-Change an IPv4-only subnet to dual-stack
-Change a dual-stack subnet to IPv4 only
-Add a subnet that uses an IPv6 BYOIP address range
-Add a subnet that uses a reserved IPv4 internal range
-Delete a subnet
-Expand a primary IPv4 range
-Edit secondary IPv4 ranges
-Modify networks Convert an auto mode VPC network to custom mode
-Assign an internal IPv6 ULA range to a network
-Change the dynamic routing mode
-Change the MTU of a network
-Delete a network
-Monitor your VPC network
-Migrate VMs
-Troubleshooting Can't delete a VPC network that was used with Serverless VPC Access
-Error: Constraint constraints/compute.requireVpcFlowLogs violated
-Resource not found error
-Resource already exists
-What's next
 Home
 Documentation
 Networking
 Virtual Private Cloud
 Guides
-Was this helpful?
 Send feedback
-On this page
-Create networks Create an auto mode VPC network
-Create a custom mode VPC network with IPv4-only subnets
-Create a custom mode VPC network with a dual-stack subnet
-Create a custom mode VPC network with IPv6-only subnets
-About firewall rules
-View networks
-Work with subnets List subnets
-Describe a subnet
-Add an IPv4-only subnet
-Add a dual-stack subnet
-Add an IPv6-only subnet
-Change an IPv4-only subnet to dual-stack
-Change a dual-stack subnet to IPv4 only
-Add a subnet that uses an IPv6 BYOIP address range
-Add a subnet that uses a reserved IPv4 internal range
-Delete a subnet
-Expand a primary IPv4 range
-Edit secondary IPv4 ranges
-Modify networks Convert an auto mode VPC network to custom mode
-Assign an internal IPv6 ULA range to a network
-Change the dynamic routing mode
-Change the MTU of a network
-Delete a network
-Monitor your VPC network
-Migrate VMs
-Troubleshooting Can't delete a VPC network that was used with Serverless VPC Access
-Error: Constraint constraints/compute.requireVpcFlowLogs violated
-Resource not found error
-Resource already exists
-What's next
-Create and manage VPC networks
 Stay organized with collections
 Save and categorize content based on your preferences.
+Create and manage VPC networks
 This document describes how to create, modify, and delete Virtual Private Cloud (VPC)
 networks and subnetworks. Before reading this document,
 ensure that you are familiar with the characteristics of
@@ -385,8 +67,7 @@ networks before you create one for
 production use. Production networks should be planned in advance, and custom
 mode VPC networks are better suited for most production use cases.
 To create an auto mode VPC network, follow these steps.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click Create VPC network .
@@ -422,6 +103,7 @@ For more information, see dynamic routing
 mode . You can change the
 dynamic routing mode later.
 Click Create .
+gcloud
 Use the
 networks create command .
 gcloud compute networks create NETWORK \
@@ -438,6 +120,7 @@ MTU : the maximum transmission unit (MTU), which is the
 largest packet size of the network. MTU can be set to any value from
 1300 to 8896 . The default is 1460 . Before setting the MTU to a
 value higher than 1460 , review Maximum transmission unit .
+Terraform
 Use
 the google_compute_network Terraform resource .
 MTU is the maximum transmission unit, or largest packet
@@ -452,6 +135,7 @@ mtu = 1460
 }
 To learn how to apply or remove a Terraform configuration, see
 Basic Terraform commands .
+API
 Make a POST request to
 the networks.insert method .
 POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks
@@ -501,8 +185,7 @@ you don't need to configure them all as IPv4-only, for example. You can also
 change an IPv4-only only subnet to dual-stack later.
 To create a custom mode VPC network with IPv4-only subnets,
 follow these steps.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click Create VPC network .
@@ -566,6 +249,7 @@ For more information, see dynamic routing
 mode . You can change the
 dynamic routing mode later.
 Click Create .
+gcloud
 Use the networks create command .
 gcloud compute networks create NETWORK \
 --subnet-mode=custom \
@@ -582,6 +266,7 @@ largest packet size of the network. MTU can be set to any value from
 1300 to 8896 . The default is 1460 . Before setting the MTU to a
 value higher than 1460 , review Maximum transmission unit .
 Next, add subnets to your network.
+Terraform
 Use the google_compute_network Terraform resource .
 MTU is the maximum transmission unit, or largest packet
 size, of the network. MTU can be set to any value from 1300 to 8896 .
@@ -596,6 +281,7 @@ mtu = 1460
 Next, add subnets to your network.
 To learn how to apply or remove a Terraform configuration, see
 Basic Terraform commands .
+API
 Make a POST request to the
 networks.insert method .
 POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks
@@ -632,8 +318,7 @@ By default, the addresses for a subnet's IPv6 range are provided by
 Google. If you want to use BYOIP to bring your own IPv6 addresses,
 see Assign subnet ranges
 instead.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click Create VPC network .
@@ -703,6 +388,7 @@ For more information, see dynamic routing
 mode . You can change the
 dynamic routing mode later.
 Click Create .
+gcloud
 Use the networks create command .
 After you have created the network, you can add subnets
 to it.
@@ -732,6 +418,7 @@ MTU : the maximum transmission unit (MTU), which is the
 largest packet size of the network. MTU can be set to any value from
 1300 to 8896 . The default is 1460 . Before setting the MTU to a
 value higher than 1460 , review Maximum transmission unit .
+Terraform
 Use the google_compute_network Terraform resource .
 If you want to configure internal IPv6 ranges on any subnets in this network,
 use the enable_ula_internal_ipv6 argument.
@@ -744,6 +431,7 @@ enable_ula_internal_ipv6 = true
 Next, add subnets to your network.
 To learn how to apply or remove a Terraform configuration, see
 Basic Terraform commands .
+API
 Make a POST request to the
 networks.insert method .
 After you have created the network, you can add subnets
@@ -794,8 +482,7 @@ By default, the IPv6 addresses for a subnet are provided by Google.
 If you want to use BYOIP to bring your own IPv6 addresses,
 see Assign subnet ranges
 instead.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click Create VPC network .
@@ -855,6 +542,7 @@ For more information, see Dynamic routing
 mode . You can change the
 dynamic routing mode later.
 Click Create .
+gcloud
 Use the networks create command .
 After you have created the network, you can add subnets
 to it.
@@ -884,6 +572,7 @@ MTU : the maximum transmission unit (MTU), which is the
 largest packet size of the network. MTU can be set to any value from
 1300 to 8896 . The default is 1460 . Before setting the MTU to a
 value higher than 1460 , review Maximum transmission unit .
+Terraform
 Use the google_compute_network Terraform resource .
 If you want to configure internal IPv6 ranges on any subnets in this network,
 use the enable_ula_internal_ipv6 argument.
@@ -896,6 +585,7 @@ enable_ula_internal_ipv6 = true
 Next, add subnets to your network.
 To learn how to apply or remove a Terraform configuration, see
 Basic Terraform commands .
+API
 Make a POST request to the
 networks.insert method .
 After you have created the network, you can add subnets
@@ -943,13 +633,13 @@ View networks
 View the VPC and legacy networks in your project. For
 VPC networks, you can view information about their subnets and
 their subnet creation mode.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 The console lists all of your VPC and legacy networks.
 Select a VPC network to view its details, such as its
 peering connections and subnets.
+gcloud
 To list the networks in your project, use the
 networks list command .
 gcloud compute networks list
@@ -965,6 +655,7 @@ and subnets, use the
 networks describe command .
 gcloud compute networks describe NETWORK
 Replace NETWORK with the name of the network.
+API
 To list all networks in your project, make a GET request to the
 networks.list method .
 GET https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks
@@ -997,8 +688,7 @@ To view utilization details for IPv6 addresses, use the
 gcloud CLI or send an API request. For IPv6 utilization, the
 total values are calculated by the following equation:
 ( high * 2^64) + low = total value.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 To view subnets, do one of the following:
@@ -1014,6 +704,7 @@ displayed in the Primary IPv4 range availability column.
 To see the specific number of free and allocated IP addresses,
 hold the pointer over this column in the row where you want to
 view details.
+gcloud
 You can list all subnets in all networks in your project, or you can show
 only the subnets for a particular network or region. The following examples
 demonstrate how to use the
@@ -1034,6 +725,7 @@ To list all subnets in your project and include their IP address
 utilization, use the following command:
 gcloud compute networks subnets list \
 --view=WITH_UTILIZATION
+API
 To list all subnets in your project, make a GET request to the
 subnetworks.aggregatedList method .
 GET https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /aggregated/subnetworks
@@ -1060,8 +752,7 @@ To view utilization details for IPv6 addresses, use the
 gcloud CLI or send an API request. For IPv6 utilization, the
 total values are calculated by the following equation:
 ( high * 2^64) + low = total value.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 All networks and subnets in your project are presented in a hierarchical
@@ -1069,6 +760,7 @@ view, where subnets are shown as entries within networks.
 To focus on subnets for a particular network, click the name of a
 network. On its VPC network details page, click the name of a subnet in
 the Subnets tab to view its Subnet details page.
+gcloud
 List subnets to determine the names
 and regions of existing subnets in your project.
 Use the
@@ -1084,6 +776,7 @@ following command:
 gcloud compute networks subnets describe SUBNET \
 --region= REGION \
 --view=WITH_UTILIZATION
+API
 To list subnets in a particular region and find a subnet's name,
 make a GET request to the
 subnetworks.list method .
@@ -1110,8 +803,7 @@ When you create a subnet, you set a name, a region, and at least a primary IPv4
 address range according to the name and
 IPv4 subnet range limitations.
 To create an IPv4-only subnet, do the following.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a VPC network to show its VPC network
@@ -1138,6 +830,7 @@ Flow logs : You can enable VPC flow
 logs for the subnet when you create it
 or later by editing it.
 Click Add .
+gcloud
 Use the subnets create
 command .
 gcloud compute networks subnets create SUBNET \
@@ -1171,6 +864,7 @@ subnet .
 proxy-only subnet .
 Next, create firewall
 rules .
+Terraform
 Use a
 Terraform module .
 MTU is the maximum transmission unit, or largest packet
@@ -1209,6 +903,7 @@ subnet_flow_logs_filter = "false"
 ]
 }
 Next, create firewall rules .
+API
 Make a POST request to the
 subnetworks.insert method .
 POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /subnetworks
@@ -1238,8 +933,7 @@ Google. If you want to use BYOIP to bring your own IPv6 addresses,
 see Assign subnet ranges
 instead.
 To create a dual-stack subnet, do the following.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a VPC network to show its VPC network
@@ -1259,6 +953,7 @@ If you want to set the access type to Internal , but the
 Internal option is not available, check that an internal IPv6
 range is assigned on the network.
 Click Add .
+gcloud
 Use the
 subnets create command .
 If you're creating an internal IPv6 subnet range, make sure that the network
@@ -1280,6 +975,7 @@ IPv6_ACCESS_TYPE : the IPv6 access type.
 It can be EXTERNAL or INTERNAL .
 REGION : the Google Cloud region in which the new
 subnet will be created.
+Terraform
 Use the google_compute_subnetwork Terraform resource .
 See the following example:
 resource "google_compute_subnetwork" "subnet_dual_stack" {
@@ -1292,6 +988,7 @@ network = google_compute_network.default.id
 }
 To learn how to apply or remove a Terraform configuration, see
 Basic Terraform commands .
+API
 Make a POST request to the
 subnetworks.insert method .
 If you're creating an internal IPv6 subnet range, make sure that the network
@@ -1324,8 +1021,7 @@ By default, the addresses for a subnet's IPv6 range are provided by
 Google. If you want to use BYOIP to bring your own IPv6 addresses,
 see Assign subnet ranges
 instead.
-Console gcloud Terraform API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 To view the VPC network details page, click the name of a VPC network.
@@ -1339,6 +1035,7 @@ If you want to set the access type to Internal , but the
 Internal option is not available, check that an internal IPv6
 range is assigned on the network.
 Click Add .
+gcloud
 Use the
 gcloud compute networks subnets create command .
 gcloud compute networks subnets create SUBNET \
@@ -1354,6 +1051,7 @@ IPv6_ACCESS_TYPE : the IPv6 access type.
 The access type can be either EXTERNAL or INTERNAL .
 REGION : the Google Cloud region in which the new
 subnet is to be created.
+Terraform
 Use the google_compute_subnetwork Terraform resource .
 See the following example:
 resource "google_compute_subnetwork" "subnet_ipv6_only" {
@@ -1365,6 +1063,7 @@ ipv6_access_type = "INTERNAL"
 }
 To learn how to apply or remove a Terraform configuration, see
 Basic Terraform commands .
+API
 Make a POST request to the
 subnetworks.insert method .
 POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /subnetworks
@@ -1394,8 +1093,7 @@ Google. If you want to use BYOIP to bring your own IPv6 addresses,
 see Assign subnet ranges
 instead.
 To change a subnet's stack type to dual-stack, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a network to view the VPC network details page.
@@ -1408,6 +1106,7 @@ If you want to set the access type to Internal , but the
 Internal option is not available, check that an internal IPv6
 range is assigned for the network.
 Click Save .
+gcloud
 Use the
 subnets update command .
 gcloud compute networks subnets update SUBNET \
@@ -1419,6 +1118,7 @@ SUBNET : the name of the subnet.
 REGION : the region of the subnet.
 IPv6_ACCESS_TYPE : the IPv6 access type of the subnet.
 It can be EXTERNAL or INTERNAL .
+API
 Make a PATCH request to
 the subnetworks.patch method .
 PATCH https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /subnetworks/ SUBNET
@@ -1444,8 +1144,7 @@ This change is supported in Google Cloud CLI and the API only.
 Changing the stack type from IPv4 and IPv6 (dual-stack) to IPv4 only
 (single-stack) is not supported if the IPv6 access type is internal .
 To change a subnet's stack type to IPv4 only, do the following.
-gcloud API
-More
+gcloud
 Use the
 subnets update command .
 gcloud compute networks subnets update SUBNET \
@@ -1454,6 +1153,7 @@ gcloud compute networks subnets update SUBNET \
 Replace the following:
 SUBNET : the name of the subnet.
 REGION : the subnet's Google Cloud region
+API
 Make a PATCH request to the
 subnetworks.patch method .
 PATCH https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /subnetworks/ SUBNET
@@ -1489,8 +1189,7 @@ created subnets. However, you can convert an auto mode VPC network to a custom
 mode VPC network and then delete any unused automatically
 created subnets.
 To delete a subnet, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 All networks and subnets in your project are presented in a hierarchical
@@ -1500,12 +1199,14 @@ network. On its VPC network details page, click the name of a subnet
 in the Subnets tab to view its Subnet details page.
 Click Delete subnet .
 In the message that appears, click Delete to confirm.
+gcloud
 Use the subnets delete command .
 gcloud compute networks subnets delete SUBNET \
 --region= REGION
 Replace the following:
 SUBNET : the name of the subnet to delete.
 REGION : the region of the subnet to delete.
+API
 Make a DELETE request to the
 subnetworks.delete method .
 DELETE https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /subnetworks/ SUBNET
@@ -1548,8 +1249,7 @@ conservatively; you can always expand them again. Consider IPv4 address
 space in any networks to which your VPC network is or will be
 connected before you expand a subnet's primary IPv4 range.
 To expand a subnet's primary IPv4 range, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 All networks and subnets in your project are presented in a hierarchical
@@ -1562,6 +1262,7 @@ Enter a new, broader CIDR block in the IP address range field.
 For valid ranges, see IPv4 subnet
 ranges .
 Click Save .
+gcloud
 Use the
 subnets expand-ip-range command .
 gcloud compute networks subnets expand-ip-range SUBNET \
@@ -1575,6 +1276,7 @@ range is 10.1.2.0/24 , you can supply 20 to reduce the subnet mask to
 20 bits, which changes the primary IPv4 range to 10.1.2.0/20 . For valid
 ranges, see IPv4 subnet
 ranges .
+API
 Make a POST request to the
 subnetworks.expandIpCidrRange method .
 POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /subnetworks/ SUBNET /expandIpCidrRange
@@ -1593,8 +1295,7 @@ ranges .
 Edit secondary IPv4 ranges
 You can add secondary IPv4 ranges to subnets, or you can remove any
 secondary IPv4 range as long as no resources are using IP addresses in it.
-gcloud API
-More
+gcloud
 To add a new secondary IPv4 range to a subnet, use the
 subnets update command .
 gcloud compute networks subnets update SUBNET \
@@ -1617,6 +1318,7 @@ SUBNET : the name of the subnet.
 REGION : the region in which the subnet is located.
 SECONDARY_RANGE_NAME : the name of the secondary range to
 remove.
+API
 To modify secondary IPv4 address ranges for an existing subnet, make a
 PATCH request to the
 subnetworks.patch method .
@@ -1670,8 +1372,7 @@ subnet specification flag ( --subnet ), that flag is required to reference
 subnets in a custom mode VPC network.
 To convert an auto mode VPC network to a custom mode
 VPC network, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a VPC network to show its VPC network
@@ -1679,12 +1380,14 @@ details page.
 Click Edit .
 In the Subnet creation mode section, choose Custom .
 Click Save .
+gcloud
 Use the
 networks update command .
 gcloud compute networks update NETWORK \
 --switch-to-custom-subnet-mode
 Replace NETWORK with the name of the network to
 update.
+API
 Make a POST request to the
 networks.switchToCustomMode method .
 POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks/ NETWORK /switchToCustomMode
@@ -1706,8 +1409,7 @@ Add dual-stack subnets
 Change an IPv4-only subnet to dual-stack
 Add IPv6-only subnets
 To assign an internal ULA range to a network, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a VPC network to show its VPC network
@@ -1720,6 +1422,7 @@ For Allocate ULA internal IPv6 range , click Manually .
 Enter a /48 range from within the fd20::/20 range.
 If the range is in use, you are prompted to enter a different range.
 Click Save .
+gcloud
 Use the
 networks update command .
 The --enable-ula-internal-ipv6 flag assigns a /48 prefix from within the
@@ -1733,6 +1436,7 @@ Replace the following:
 NAME : the name of the VPC network.
 ULA_IPV6_RANGE : the range of IPv6 addresses to which you need
 to allocate a ULA prefix.
+API
 Make a PATCH request to the
 networks.insert method .
 Setting enableUlaInternalIpv6 to true assigns a /48 range from within
@@ -1763,8 +1467,7 @@ traffic within the network, or enable or disable routes in unexpected ways.
 Carefully review the role of each Cloud Router before changing the
 dynamic routing mode.
 To change a VPC network's dynamic routing mode, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a VPC network to show its VPC network
@@ -1773,6 +1476,7 @@ Click Edit .
 In the Dynamic routing mode section, choose either Global or
 Regional .
 Click Save .
+gcloud
 Use the
 networks update command .
 gcloud compute networks update NETWORK \
@@ -1784,6 +1488,7 @@ DYNAMIC_ROUTING_MODE : controls the behavior of
 Cloud Routers in the network. Can be either global or
 regional . The default is regional . For more information, see
 dynamic routing mode .
+API
 Make a
 PATCH request to the
 subnetworks.patch method .
@@ -1814,18 +1519,19 @@ include VPC Network Peering connections , Cloud VPN gateways , Cloud Routers ,
 Serverless VPC Access connectors and their connected services,
 firewall rules , and custom static routes .
 To delete a VPC network, do the following.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to the VPC networks page.
 Go to VPC networks
 Click the name of a VPC network to show its VPC network
 details page.
 Click Delete VPC network .
 In the message that appears, click Delete to confirm.
+gcloud
 Use the
 networks delete command .
 gcloud compute networks delete NETWORK
 Replace NETWORK with the name of the network to delete.
+API
 Make a DELETE request to the
 networks.delete method .
 DELETE https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /global/networks/ NETWORK
@@ -1905,60 +1611,8 @@ VPC performs in real-world
 scenarios. New customers also get $300 in free credits to run, test, and
 deploy workloads.
 Try VPC free
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-עברית
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

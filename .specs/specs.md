@@ -179,6 +179,15 @@ Each Step 03 per-product ranking should contain:
 - a rubric-based classification and score for each candidate
 - a final keep or drop recommendation for later crawling
 
+Current operational lessons for Step 03:
+
+- prefer crawlable parent documentation roots over deep leaf pages, because Step 04 depends on seeds that can expand into broad product corpora
+- treat `developers.google.com` product families as first-class official sources, not only `docs.cloud.google.com`
+- use product-family-specific exclusions to avoid false positives from adjacent Google products that share overlapping vocabulary
+- prefer real API reference parent pages such as `reference/rest/v3` over intermediate hub pages when the hub pages repeatedly fail in Step 04 sync
+- prefer product auth or scope pages as IAM evidence for Workspace-style APIs when Cloud IAM role pages do not exist
+- use Step 02 feature inventories to bias Step 03 toward pages that match the product's actual feature surface, not only generic overviews
+
 Expected storage location:
 
 - `data/step-03/`
@@ -229,6 +238,15 @@ Current operational guidance for Step 04:
 - prefer normal `know` site sync when the target host allows it
 - when `docs.cloud.google.com` returns anti-bot or `sorry` pages, run `know` with `KNOW_SITE_CDP_URL` pointed at a live Chrome or Brave session that already has the documentation pages open
 - treat anti-bot pages as failed syncs and preserve the previous healthy corpus instead of overwriting it
+
+Current operational lessons for Step 04:
+
+- Step 04 reliability depends heavily on Step 03 seed quality; broad parent pages consistently outperform deep leaf seeds
+- browser-assisted capture is often required for Google documentation hosts that block repeated automated syncs
+- the best seed is not always the nominal reference hub; some products work better from a specific REST root or overview page
+- multi-seed selection per family improves corpus coverage for large products, especially when one seed covers concepts and another covers templates, guides, or reference trees
+- failed seeds should be preserved in `source_failures` so they can feed Step 03 ranking improvements instead of being silently discarded
+- corpus-health checks are necessary because a successful sync can still produce a weak corpus for Step 06
 
 Expected storage location:
 

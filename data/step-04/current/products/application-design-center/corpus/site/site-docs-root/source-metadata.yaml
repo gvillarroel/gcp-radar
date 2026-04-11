@@ -1,9 +1,17 @@
-entrypoint: "https://docs.cloud.google.com/application-design-center/docs"
-source_id: "site-docs-root"
-source_type: "site"
-compact_output: true
-content_origin: "bx_web_fallback"
-page_count: 8
-max_depth: 1
-max_pages: 0
-pages_index: "pages.json"
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+title: https://docs.cloud.google.com/application-design-center/docs
+last_synced_at: '2026-04-09T18:00:04+00:00'
+update_command: know sync site https://docs.cloud.google.com/application-design-center/docs
+  --key corpus --compact
+delete_command: know del --key corpus site-docs-root
+config:
+  url: https://docs.cloud.google.com/application-design-center/docs
+  max_depth: 1
+  max_pages: 30
+  compact_output: true
+stats:
+  pages: 17
+  entrypoint: https://docs.cloud.google.com/application-design-center/docs
+  raw_dir: C:\Users\villa\dev\gcp-radar\data\step-04\current\products\application-design-center\corpus\site\site-docs-root

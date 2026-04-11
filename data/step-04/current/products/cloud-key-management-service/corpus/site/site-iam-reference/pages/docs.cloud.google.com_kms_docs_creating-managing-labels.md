@@ -8,218 +8,21 @@ entrypoint: https://docs.cloud.google.com/kms/docs/iam
 source_metadata:
   url: https://docs.cloud.google.com/kms/docs/creating-managing-labels
   title: "Labeling keys \_|\_ Cloud Key Management Service \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Labeling keys | Cloud Key Management Service | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud KMS
-Start free
-Overview
-Guides
-Reference
-Samples
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Samples
-Resources
-Cross-product tools
-More
-Console
-Discover
-Product overview
-Protection levels
-Overview
-Cloud HSM overview
-Single-tenant Cloud HSM overview
-Cloud EKM overview
-Reference architectures for Cloud EKM
-CMEK overview
-Cloud KMS with Autokey
-Compatible services
-Cloud HSM for Google Workspace
-Locations
-Get started
-Cloud KMS resources
-Key purposes and algorithms
-Separation of duties
-Create and use encryption keys
-CMEK best practices
-Create and manage Single-tenant Cloud HSM instances
-Create keys
-Automate key creation
-Autokey overview
-Enable Autokey
-Create a resource with Autokey
-Create a key ring
-Create a key
-Import keys
-About key import
-Key wrapping
-Format a key for import
-Manually wrap a key for import
-Configure OpenSSL for manual key wrapping
-Wrap a key using OpenSSL
-Set up automatic key wrapping
-Import a key version
-Verify an imported key version
-Create external keys
-Set up Cloud EKM over the internet
-Create an EKM connection
-Create an external Key
-Control access
-Manage IAM roles
-Use Organization Policy Contraints
-Create custom organization policy constraints for Cloud KMS
-CMEK organization policies
-Control key destruction
-Secure data using keys
-Key APIs
-Use gRPC
-Access the API
-Sort and filter API list results
-Generate random bytes
-Use Cloud KMS keys in Google Cloud
-Encrypt and decrypt data
-Envelope encryption
-Additional authenticated data
-Asymmetric encryption
-Encrypt and decrypt data with a symmetric key
-Encrypt and decrypt data with a raw symmetric key
-Encrypt and decrypt data with an asymmetric key
-Verify end-to-end data integrity
-Encrypt application data
-Set up client-side encryption with Tink
-Onboard to Cloud HSM for Google Workspace
-Sign and validate data
-Digital signatures
-Create and validate signatures
-MAC signatures
-Create and validate MAC signatures
-Share secrets using key encapsulation mechanisms
-Key encapsulation mechanisms
-Encapsulate and decapsulate using KEMs
-Manage keys
-Resource consistency
-Key version states
-View keys and key details
-View keys by project
-View encryption metrics
-View key usage
-Get a Cloud KMS resource ID
-Retrieve a public key
-Attest a Cloud HSM key
-Label a key
-Create and manage tags
-Enable and disable a key version
-Destroy and restore a key version
-Delete Cloud KMS resources
-Rotate keys
-About key rotation
-Rotate a key
-Re-encrypt data
-Update external key reference
-Monitor
-Using Cloud Audit Logging
-Cloud KMS Inventory Service audit logging
-Monitor state changes
-Monitor and adjust quotas
-Use Cloud Monitoring
-Monitor EKM usage
-Troubleshoot
-Troubleshoot failed imports
-Troubleshoot EKM via VPC errors
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-What are labels?
-Requirements for labels
-Common uses of labels
-Labels and tags
-Creating a key with labels
-Viewing labels on a key
-Adding or updating labels
-Removing labels
-Audit logging
 Home
 Documentation
 Security
 Cloud KMS
 Guides
-Was this helpful?
 Send feedback
 Labeling keys
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-What are labels?
-Requirements for labels
-Common uses of labels
-Labels and tags
-Creating a key with labels
-Viewing labels on a key
-Adding or updating labels
-Removing labels
-Audit logging
 Cloud Key Management Service provides the option to add labels to your
 Cloud KMS keys. Labels are
 key-value pairs that you can use to group related
@@ -291,8 +94,7 @@ Tags overview .
 Creating a key with labels
 When creating a key, you can add labels by providing one or more key value
 pairs as labels when you create your key.
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the
 Key Management page.
 Go to Key Management
@@ -304,6 +106,7 @@ Click Additional settings .
 For each label you want to add, click Add label , and then enter the
 Key and Value .
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 This example shows how to create a new key and assign labels to the key. You can
@@ -327,6 +130,7 @@ Cloud Key Management Service key. If a label key is specified multiple times
 with different values, each new value overwrites the previous value.
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -357,6 +161,7 @@ CryptoKey result = client . CreateCryptoKey ( keyRingName , id , key );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -400,6 +205,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -444,6 +250,7 @@ System . out . printf ( "Created key with labels %s%n" , createdKey . getName ()
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -478,6 +285,7 @@ console . log ( `Created labeled key: ${ key . name } ` );
 return key ;
 }
 return createKeyLabels ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -515,6 +323,7 @@ $createdKey = $client->createCryptoKey($createCryptoKeyRequest);
 printf('Created labeled key: %s' . PHP_EOL, $createdKey->getName());
 return $createdKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -553,6 +362,7 @@ request = { "parent" : key_ring_name , "crypto_key_id" : key_id , "crypto_key" :
 )
 print ( f "Created labeled key: { created_key . name } " )
 return created_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -580,6 +390,7 @@ labels : {
 # Call the API.
 created_key = client . create_crypto_key parent : key_ring_name , crypto_key_id : id , crypto_key : key
 puts "Created labeled key: #{ created_key . name } "
+API
 Add labels when you create a new key by using the CryptoKeys.create
 method, and include the labels property in your request body. For example:
 {
@@ -598,14 +409,14 @@ You can add multiple label keys, each with its own value. Each label key can be
 used only once on a Cloud Key Management Service key. If a label key is specified multiple
 times with different values, each new value overwrites the previous value.
 Viewing labels on a key
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the
 Key Management page.
 Go to Key Management
 Click the name of the key ring for the key you want to inspect.
 In the header, click Show info panel .
 In the panel, choose the Labels tab.
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys describe KEY_NAME \
@@ -617,6 +428,7 @@ KEY_RING : the name of the key ring that contains the key.
 LOCATION : the location of the key ring.
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -642,6 +454,7 @@ String value = item . Value ;
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -676,6 +489,7 @@ fmt . Fprintf ( w , "%s=%s\n" , k , v )
 }
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -708,6 +522,7 @@ key . getLabelsMap (). forEach (( k , v ) - > System . out . printf ( "%s=%s%n" 
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -733,6 +548,7 @@ console . log ( ` ${ k } : ${ key . labels [ k ] } ` );
 return key ;
 }
 return getKeyLabels ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -757,6 +573,7 @@ printf('%s = %s' . PHP_EOL, $k, $v);
 }
 return $key;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -783,6 +600,7 @@ key = client . get_crypto_key ( request = { "name" : key_name })
 for k , v in key . labels . items ():
 print ( f " { k } = { v } " )
 return key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -805,6 +623,7 @@ key = client . get_crypto_key name : key_name
 key . labels . each do | k , v |
 puts " #{ k } = #{ v } "
 end
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -822,8 +641,7 @@ KEY_NAME : the name of the key for which you want to view labels.
 KEY_RING : the name of the key ring that contains the key.
 LOCATION : the location of the key ring.
 Adding or updating labels
-Console gcloud C# Go Java Node.js PHP Ruby Python API
-More
+Console
 In the Google Cloud console, go to the
 Key Management page.
 Go to Key Management
@@ -834,6 +652,7 @@ Edit the value of a label directly in the corresponding text field.
 Edit the key of a label by adding a new label with the desired key name and
 delete the old label by clicking the Delete delete next to the label you want to delete.
 Click Save .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys update KEY_NAME \
@@ -851,6 +670,7 @@ Cloud Key Management Service key. If a label key is specified multiple times
 with different values, each new value overwrites the previous value.
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -884,6 +704,7 @@ CryptoKey result = client . UpdateCryptoKey ( key , fieldMask );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -942,6 +763,7 @@ fmt . Fprintf ( w , "%s=%s\n" , k , v )
 }
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -987,6 +809,7 @@ System . out . printf ( "Updated key %s%n" , updatedKey . getName ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1019,6 +842,7 @@ console . log ( `Updated labels for: ${ key . name } ` );
 return key ;
 }
 return updateKeyUpdateLabels ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -1050,6 +874,7 @@ $updatedKey = $client->updateCryptoKey($updateCryptoKeyRequest);
 printf('Updated key: %s' . PHP_EOL, $updatedKey->getName());
 return $updatedKey;
 }
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -1078,6 +903,7 @@ update_mask = { paths : [ "labels" ] }
 # Call the API.
 updated_key = client . update_crypto_key crypto_key : key , update_mask : update_mask
 puts "Updated key: #{ updated_key . name } "
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -1107,6 +933,7 @@ request = { "crypto_key" : key , "update_mask" : update_mask }
 )
 print ( f "Updated key: { updated_key . name } " )
 return updated_key
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1122,8 +949,7 @@ method, and include the labels property in your request body. For example:
 ]
 }
 Removing labels
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the
 Key Management page.
 Go to Key Management
@@ -1133,6 +959,7 @@ In the panel, choose the Labels tab.
 Click the Delete delete
 icon next to the labels you want to delete.
 Click Save .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys update KEY_NAME \
@@ -1146,6 +973,7 @@ LABEL_LIST : a comma-separated list of label keys that
 you want to remove from the key—for example, env,team .
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -1172,6 +1000,7 @@ CryptoKey result = client . UpdateCryptoKey ( key , fieldMask );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -1210,6 +1039,7 @@ return fmt . Errorf ( "failed to update key: %w" , err )
 fmt . Fprintf ( w , "Updated key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -1247,6 +1077,7 @@ System . out . printf ( "Updated key %s%n" , createdKey . getName ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1277,6 +1108,7 @@ console . log ( `Removed labels from: ${ key . name } ` );
 return key ;
 }
 return updateKeyRemoveLabels ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -1308,6 +1140,7 @@ $updatedKey = $client->updateCryptoKey($updateCryptoKeyRequest);
 printf('Updated key: %s' . PHP_EOL, $updatedKey->getName());
 return $updatedKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -1340,6 +1173,7 @@ request = { "crypto_key" : key , "update_mask" : update_mask }
 )
 print ( f "Updated key: { updated_key . name } " )
 return updated_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -1366,6 +1200,7 @@ update_mask = { paths : [ "labels" ] }
 # Call the API.
 updated_key = client . update_crypto_key crypto_key : key , update_mask : update_mask
 puts "Updated key: #{ updated_key . name } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1381,59 +1216,8 @@ Cloud Audit Logs for Cloud KMS can be used to log label
 information when keys are created or updated. Key creation and updates are
 both admin activities , and changes to labels are noted in the admin
 activity log.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

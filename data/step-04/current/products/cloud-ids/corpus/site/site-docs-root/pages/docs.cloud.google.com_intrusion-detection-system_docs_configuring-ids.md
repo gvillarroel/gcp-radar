@@ -10,129 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/intrusion-detection-system/docs/configuring-ids
   title: "Configure Cloud IDS \_|\_ Cloud Intrusion Detection System \_|\_ Google\
     \ Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Configure Cloud IDS | Cloud Intrusion Detection System | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-עברית
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud IDS
-Start free
-Overview
-Guides
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Resources
-Cross-product tools
-More
-Console
-Discover
-Product overview
-Best practices
-Get started
-Configure Cloud IDS
-Monitor
-Cloud IDS logging information
-Audit logging information
-Investigate Threat Alerts
-Troubleshoot
-Troubleshoot endpoints and inspection
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Before you begin Set up IAM permissions for Cloud IDS
-Set up private services access
-Optional: Enable VPC Service Controls
-Understand best practices
-Configure Cloud IDS endpoints Create a Cloud IDS endpoint
-Attach a Packet Mirroring policy to a Cloud IDS endpoint
-Describe a Cloud IDS endpoint
-List Cloud IDS endpoints
-Delete a Cloud IDS endpoint
-Optional: Configure threat exceptions
-View threat logs
-What's next
 Home
 Documentation
 Networking
 Cloud IDS
 Guides
-Was this helpful?
 Send feedback
 Configure Cloud IDS
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Before you begin Set up IAM permissions for Cloud IDS
-Set up private services access
-Optional: Enable VPC Service Controls
-Understand best practices
-Configure Cloud IDS endpoints Create a Cloud IDS endpoint
-Attach a Packet Mirroring policy to a Cloud IDS endpoint
-Describe a Cloud IDS endpoint
-List Cloud IDS endpoints
-Delete a Cloud IDS endpoint
-Optional: Configure threat exceptions
-View threat logs
-What's next
 Use these instructions to configure Cloud IDS for your application. For
 conceptual information about Cloud IDS, see the
 Cloud IDS overview .
@@ -145,9 +37,6 @@ Cloud IDS Admin role ( roles/ids.admin ). Project principals with
 this role can create IDS endpoints. If you are a project owner,
 you already have this permission and don't need an explicit
 ids.admin role to create IDS endpoints.
-See more code actions.
-Light code theme
-Dark code theme
 gcloud projects add-iam-policy-binding PROJECT_ID \
 --role=roles/ids.admin \
 --member=user: USER_NAME ;
@@ -275,8 +164,7 @@ We recommend that you create an IDS endpoint for every region in which you have
 deployed workloads. You can also create multiple IDS endpoints per region. Use
 the following steps to create an IDS endpoint and assign it an IDS service
 profile.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to IDS Endpoints .
 Go to IDS Endpoints
 Configure the endpoint:
@@ -292,6 +180,7 @@ Select the Cloud IDS service profile:
 Click Select IDS service profile .
 Under Minimum threat severity level , select the correct alert level.
 Click Create . The creation process can take 10-15 minutes.
+gcloud
 Optional flags
 The commands in this section might have some or all of the following
 optional flags:
@@ -347,6 +236,7 @@ LOW
 MEDIUM
 HIGH
 CRITICAL
+API
 Cloud IDS endpoint resources have the following fields:
 Field
 Type
@@ -401,8 +291,7 @@ Important: After your endpoint is created, you must attach a packet mirroring
 policy to it to begin inspecting traffic.
 Attach a Packet Mirroring policy to a Cloud IDS endpoint
 Use the following steps to attach a Packet Mirroring policy to the IDS endpoint.
-Console gcloud
-More
+Console
 After the IDS endpoint is created, attach a Packet Mirroring
 policy to the IDS endpoint:
 In the Google Cloud console, go to IDS Endpoints .
@@ -420,6 +309,7 @@ ingress or egress traffic, select Mirror filtered traffic :
 Select either Allow all protocols or Allow specific protocols .
 Select either Allow all IP ranges or Allow specific IP ranges .
 Click Submit . The endpoint is created.
+gcloud
 After the endpoint has been created, attach a Packet Mirroring policy
 to it. First, obtain the URL from the endpoint_forwarding_rule field by using
 the following command:
@@ -436,12 +326,12 @@ egress traffic. For more information about these optional flags, see the
 Packet Mirroring reference .
 Describe a Cloud IDS endpoint
 Use the following steps to describe an IDS endpoint.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to IDS Endpoints .
 Go to IDS Endpoints
 On the IDS Endpoints page, click the name of the
 IDS endpoint. The Endpoint details page is displayed.
+gcloud
 To describe an IDS endpoint, use the command gcloud ids endpoints describe command .
 gcloud ids endpoints describe ENDPOINT_NAME \
 [--project= PROJECT_ID ] \
@@ -451,15 +341,16 @@ Replace the following:
 ENDPOINT_NAME : the name or ID of the endpoint.
 PROJECT_ID : the ID of the project.
 ZONE : the zone of the endpoint.
+API
 To get a Cloud IDS endpoint, use an HTTP GET request like the
 following, replacing variables as appropriate:
 GET https://ids.googleapis.com/v1/projects/ PROJECT_NAME /locations/ ZONE /endpoints?endpointId= ENDPOINT_NAME
 List Cloud IDS endpoints
 Use the following steps to list all IDS endpoints.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to IDS Endpoints .
 Go to IDS Endpoints
+gcloud
 To list IDS endpoints, use the gcloud ids endpoints list
 command :
 gcloud ids endpoints list \
@@ -475,6 +366,7 @@ the expression evaluates True, then that item is listed.
 LIMIT : the maximum number of resources to list.
 PAGE_SIZE : the maximum number of resources per page.
 FIELD : a comma-separated list of resource field key names to sort by.
+API
 To list all Cloud IDS endpoints in a zone, use an HTTP GET request like
 the following, replacing variables as appropriate:
 GET https://ids.googleapis.com/v1/projects/ PROJECT_NAME /locations/ ZONE /endpoints
@@ -484,14 +376,14 @@ GET https://ids.googleapis.com/v1/projects/ PROJECT_NAME /locations/-/endpoints
 Delete a Cloud IDS endpoint
 Use the following steps to delete an IDS endpoint.
 Note: An endpoint needs to be deleted in order to stop charges associated with Cloud IDS.
-Console gcloud API
-More
+Console
 In the Google Cloud console, go to IDS Endpoints .
 Go to IDS Endpoints
 On the IDS Endpoints page, click the name of the
 IDS endpoint. The Endpoint details page is displayed.
 Click
 delete Delete Endpoint .
+gcloud
 To delete an IDS endpoint, use the command gcloud ids endpoints delete command .
 gcloud ids endpoints delete ENDPOINT_NAME \
 [--project= PROJECT_ID ] \
@@ -502,6 +394,7 @@ Replace the following:
 ENDPOINT_NAME : the name or ID of the endpoint.
 PROJECT_ID : the ID of the project.
 ZONE : the zone of the endpoint.
+API
 To delete a Cloud IDS endpoint, use an HTTP DELETE request like the
 following, replacing variables as appropriate:
 DELETE https://ids.googleapis.com/v1/projects/ PROJECT_NAME /locations/ ZONE /endpoints?endpointId= ENDPOINT_NAME
@@ -524,60 +417,8 @@ right of your IDS endpoint, and select View threat logs .
 What's next
 Examine logs
 Troubleshoot issues
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-עברית
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

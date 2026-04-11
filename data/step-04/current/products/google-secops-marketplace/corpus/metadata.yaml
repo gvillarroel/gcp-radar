@@ -1,0 +1,51 @@
+version: 1
+name: corpus
+created_at: '2026-04-10T00:01:46+00:00'
+updated_at: '2026-04-11T13:35:01+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations
+  created_at: '2026-04-11T13:28:04+00:00'
+  updated_at: '2026-04-11T13:30:31+00:00'
+  update_command: know sync site https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-11T13:30:31+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender
+  created_at: '2026-04-11T13:28:04+00:00'
+  updated_at: '2026-04-11T13:33:01+00:00'
+  update_command: know sync site https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender
+    max_depth: 1
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-11T13:33:01+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc
+  created_at: '2026-04-11T13:28:05+00:00'
+  updated_at: '2026-04-11T13:35:01+00:00'
+  update_command: know sync site https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/chronicle/docs/secops/google-secops-soar-toc
+    max_depth: 1
+    max_pages: 32
+    compact_output: true
+  last_synced_at: '2026-04-11T13:35:01+00:00'

@@ -4,137 +4,25 @@ url: https://docs.cloud.google.com/hub/docs/setup-cloud-hub
 knowledge_key: corpus
 source_id: site-iam-reference
 source_type: site
-entrypoint: https://docs.cloud.google.com/hub/docs/deployments
+entrypoint: https://docs.cloud.google.com/hub/docs/maintenance
 source_metadata:
   url: https://docs.cloud.google.com/hub/docs/setup-cloud-hub
   title: "Set up Cloud Hub \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Set up Cloud Hub | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud Hub
-Start free
-Overview
-Guides
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Resources
-Cross-product tools
-More
-Console
-Discover
-Explore Application-centric Google Cloud
-Cloud Hub overview
-Application views and project views
-Get started
-Set up Cloud Hub
-Control access
-Access control with IAM
-Review data and insights
-View top items on the home page
-View deployments
-View application and resource health
-Optimize resource costs and utilization
-View maintenance activities
-View quotas and reservations
-Get support and manage support cases
-Troubleshoot
-Troubleshoot Cloud Hub
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Set up application management Required roles
-Enable a application management
-Link a billing account to the management project
-Configure observability scopes
-Create applications
-Enable APIs for Cloud Hub Required roles
-Enable APIs
-Grant access to Cloud Hub users Required roles
-Grant access for application data
-Grant access for project data
-What's next
 Home
 Documentation
 Access and resource management
 Cloud Hub
 Guides
-Was this helpful?
 Send feedback
 Set up Cloud Hub
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Set up application management Required roles
-Enable a application management
-Link a billing account to the management project
-Configure observability scopes
-Create applications
-Enable APIs for Cloud Hub Required roles
-Enable APIs
-Grant access to Cloud Hub users Required roles
-Grant access for application data
-Grant access for project data
-What's next
 This document describes how to set up Cloud Hub.
 There are several main steps in the setup process:
 To create App Hub applications and view data about them in
@@ -201,8 +89,7 @@ The system enables required APIs on the management project.
 The management project stores application data, including enabled APIs,
 billing, quotas, and access controls.
 To enable application management on a folder, do the following:
-Console gcloud Terraform
-More
+Console
 Select or create the Google Cloud folder that you want to configure as an
 app-enabled folder. To create a new folder, see
 Creating folders .
@@ -237,17 +124,15 @@ Replace FOLDER_ID with the ID of the
 app-enabled folder.
 For more information, see
 Find the project name, number, and ID .
-In one of the following development environments, set up the gcloud CLI:
-Cloud Shell : to use an online terminal with the gcloud CLI
-already set up, activate Cloud Shell.
-Activate Cloud Shell on this page
-At the bottom of this page, a Cloud Shell session starts and displays a
-command-line prompt. It can take a few seconds for the session to initialize.
-Local shell : to use a local development environment,
-install and
-initialize the gcloud CLI.
-If you're using an external identity provider (IdP), you must first
-sign in to the gcloud CLI with your federated identity .
+gcloud
+In the Google Cloud console, activate Cloud Shell.
+Activate Cloud Shell
+At the bottom of the Google Cloud console, a
+Cloud Shell
+session starts and displays a command-line prompt. Cloud Shell is a shell environment
+with the Google Cloud CLI
+already installed and with values already set for
+your current project. It can take a few seconds for the session to initialize.
 Make sure that the most recent version of Google Cloud CLI is installed:
 gcloud components update
 To enable application management on a specific folder, use the
@@ -262,6 +147,7 @@ within that folder to serve as the management project.
 Optionally, to enable recommended APIs on the
 management project, follow the instructions to
 enable Google Cloud services on a project .
+Terraform
 To enable application management on a folder using Terraform, use
 the google_resource_manager_capability resource ,
 for example:
@@ -308,8 +194,7 @@ free data usage allotments for Google Cloud Observability usage in the
 management project.
 Follow these steps to link an active billing account to your
 management project:
-Console gcloud
-More
+Console
 Verify the billing account that you want to use for application
 management exists. To create a billing account, see
 Create a new self-serve Cloud Billing account .
@@ -321,6 +206,7 @@ more_vert Actions menu, select
 Change billing , and then choose the Cloud Billing account.
 For more information about enabling billing for a project, see
 Enabling billing for a project .
+gcloud
 gcloud billing projects link PROJECT_ID \
 --billing-account ACCOUNT_ID
 Replace the following:
@@ -492,8 +378,7 @@ roles .
 Enable APIs
 For information about APIs that Cloud Hub uses, see
 Enable APIs for Cloud Hub .
-Console gcloud
-More
+Console
 From the Cloud Hub Home page, you can view a list of APIs
 that are not enabled for Cloud Hub and enable those APIs.
 In the Google Cloud console, go to the Home page,
@@ -503,6 +388,7 @@ Next to Enable Recommended APIs click Enable APIs . A panel opens
 and displays APIs that are not yet enabled.
 Select the APIs that you want To enable the APIs, and then click
 Enable .
+gcloud
 Set the default project to the project where you want to enable the API.
 gcloud config set project PROJECT_ID
 Replace PROJECT_ID with your project ID.
@@ -537,8 +423,7 @@ the required permissions through custom
 roles or other predefined
 roles .
 Grant access for application data
-Console gcloud
-More
+Console
 In the Google Cloud console, go to the IAM page.
 Go to IAM
 In the project selector, choose the app-enabled folder.
@@ -564,17 +449,15 @@ or Viewer ( roles/viewer ), or a custom role that contains the
 billing.resourceCosts.get permission.
 To view Gemini Cloud Assist investigations -
 Investigation Viewer ( roles/geminicloudassist.investigationViewer )
-In one of the following development environments, set up the gcloud CLI:
-Cloud Shell : to use an online terminal with the gcloud CLI
-already set up, activate Cloud Shell.
-Activate Cloud Shell on this page
-At the bottom of this page, a Cloud Shell session starts and displays a
-command-line prompt. It can take a few seconds for the session to initialize.
-Local shell : to use a local development environment,
-install and
-initialize the gcloud CLI.
-If you're using an external identity provider (IdP), you must first
-sign in to the gcloud CLI with your federated identity .
+gcloud
+In the Google Cloud console, activate Cloud Shell.
+Activate Cloud Shell
+At the bottom of the Google Cloud console, a
+Cloud Shell
+session starts and displays a command-line prompt. Cloud Shell is a shell environment
+with the Google Cloud CLI
+already installed and with values already set for
+your current project. It can take a few seconds for the session to initialize.
 Make sure that the most recent version of Google Cloud CLI is installed.
 Run the following command from the Cloud Shell:
 gcloud components update
@@ -610,8 +493,7 @@ gcloud projects add-iam-policy-binding PROJECT-ID \
 --member='user: PRINCIPAL ' \
 --role='roles/geminicloudassist.investigationViewer'
 Grant access for project data
-Console gcloud
-More
+Console
 In the Google Cloud console, go to the Cloud Hub
 Home page.
 Go to Home
@@ -631,17 +513,15 @@ or Viewer ( roles/viewer ), or a custom role that contains the
 billing.resourceCosts.get permission.
 To view Gemini Cloud Assist investigations -
 Investigation Viewer ( roles/geminicloudassist.investigationViewer )
-In one of the following development environments, set up the gcloud CLI:
-Cloud Shell : to use an online terminal with the gcloud CLI
-already set up, activate Cloud Shell.
-Activate Cloud Shell on this page
-At the bottom of this page, a Cloud Shell session starts and displays a
-command-line prompt. It can take a few seconds for the session to initialize.
-Local shell : to use a local development environment,
-install and
-initialize the gcloud CLI.
-If you're using an external identity provider (IdP), you must first
-sign in to the gcloud CLI with your federated identity .
+gcloud
+In the Google Cloud console, activate Cloud Shell.
+Activate Cloud Shell
+At the bottom of the Google Cloud console, a
+Cloud Shell
+session starts and displays a command-line prompt. Cloud Shell is a shell environment
+with the Google Cloud CLI
+already installed and with values already set for
+your current project. It can take a few seconds for the session to initialize.
 Make sure that the most recent version of Google Cloud CLI is installed.
 Run the following command from the Cloud Shell:
 gcloud components update
@@ -663,59 +543,8 @@ gcloud projects add-iam-policy-binding PROJECT_ID \
 --role='roles/geminicloudassist.investigationViewer'
 What's next
 View the Home page.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

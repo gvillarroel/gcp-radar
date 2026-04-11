@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:05.132Z"
+generated_at: "2026-04-10T13:25:38.734Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery Omni VPC Service Controls in Cloud console"

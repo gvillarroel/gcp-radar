@@ -1,35 +1,51 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:30:07+00:00'
-updated_at: '2026-04-08T05:59:49+00:00'
+updated_at: '2026-04-09T18:21:34+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
   export: know export --key corpus
 sources:
 - type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/assured-open-source-software/docs
+  created_at: '2026-04-09T18:18:28+00:00'
+  updated_at: '2026-04-09T18:19:05+00:00'
+  update_command: know sync site https://docs.cloud.google.com/assured-open-source-software/docs
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/assured-open-source-software/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-09T18:19:05+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/assured-open-source-software/docs/download-go-packages
+  created_at: '2026-04-09T18:18:28+00:00'
+  updated_at: '2026-04-09T18:20:16+00:00'
+  update_command: know sync site https://docs.cloud.google.com/assured-open-source-software/docs/download-go-packages
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/assured-open-source-software/docs/download-go-packages
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-09T18:20:16+00:00'
+- type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/iam/docs/roles-permissions/assuredoss
-  created_at: '2026-04-08T05:59:31+00:00'
-  updated_at: '2026-04-08T05:59:31+00:00'
+  created_at: '2026-04-09T18:18:29+00:00'
+  updated_at: '2026-04-09T18:21:34+00:00'
   update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/assuredoss
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
     url: https://docs.cloud.google.com/iam/docs/roles-permissions/assuredoss
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
-- type: site
-  id: site-docs-root
-  title: https://docs.cloud.google.com/assured-open-source-software/docs/virtual-repository-access
-  created_at: '2026-04-08T05:59:49+00:00'
-  updated_at: '2026-04-08T05:59:49+00:00'
-  update_command: know sync site https://docs.cloud.google.com/assured-open-source-software/docs/virtual-repository-access
-    --key corpus --compact
-  delete_command: know del --key corpus site-docs-root
-  config:
-    url: https://docs.cloud.google.com/assured-open-source-software/docs/virtual-repository-access
-    max_depth: 1
-    max_pages: 0
-    compact_output: true
+  last_synced_at: '2026-04-09T18:21:34+00:00'

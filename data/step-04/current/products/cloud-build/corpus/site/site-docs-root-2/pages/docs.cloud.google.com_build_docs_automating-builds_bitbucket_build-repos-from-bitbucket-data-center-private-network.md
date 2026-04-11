@@ -1,0 +1,96 @@
+---
+title: "Build repositories from Bitbucket Data Center in a private network \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/build/docs/overview
+source_metadata:
+  url: https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network
+  title: "Build repositories from Bitbucket Data Center in a private network \_|\_\
+    \ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Application development
+Cloud Build
+Guides
+Send feedback
+Build repositories from Bitbucket Data Center in a private network
+Stay organized with collections
+Save and categorize content based on your preferences.
+1st gen
+2nd gen
+Cloud Build enables you to create triggers to build from repositories
+hosted on Bitbucket Data Center ,
+allowing you to execute builds in response to events such as commit pushes or
+pull requests associated with your Bitbucket Data Center repository.
+This page explains how you can enable trigger functionality on a
+Bitbucket Data Center instance if your instance is hosted in a private network.
+Before you begin
+Enable the Cloud Build, Secret Manager, and Compute Engine APIs.
+Roles required to enable APIs
+To enable APIs, you need the Service Usage Admin IAM
+role ( roles/serviceusage.serviceUsageAdmin ), which
+contains the serviceusage.services.enable permission. Learn how to grant
+roles .
+Enable the APIs
+Follow the instructions to connect a Bitbucket Data Center host .
+Follow the instructions to connect a Bitbucket Data Center repository .
+Build repositories from Bitbucket Data Center in a private network
+If your Bitbucket Data Center instance is hosted in a private network and not
+reachable over a public internet connection, you must create a private
+connection between your VPC network and the
+service producer network .
+You also need a private pool
+to build in a private network.
+To create a Bitbucket Data Center trigger to build in a private network:
+Create a private connection between the VPC network
+and your service producer network by completing the following steps:
+Create a new VPC network or select an existing VPC network .
+Note: You must configure your VPC network to have access to your Bitbucket Data Center instance in a private network.
+Allocate a named IP range in the VPC network for your peered network.
+Allocate an internal IP range in the VPC that the Cloud Build
+producer network can use to allocate to VMs maintaining a connection
+with private repositories.
+To use the VPC network with Cloud Build, your
+prefix length must be /23 or lower, such as /22 , /21 .
+You can specify the range using the Classless Inter-Domain Routing (CIDR)
+routing notation in the format STARTING_IP/SUBNET_PREFIX_SIZE . For example,
+192.0.2.0/24 has a prefix length of 24. The first 24 bits of the IP range
+are used as the subnet mask ( 192.0.2.0 ) while the possible hosts addresses
+range from 192.0.2.0 to 192.0.2.255 .
+Note: The value of your prefix length must not exceed /29 . If no
+value is specified for the range, a default value of /24 is automatically
+assigned. If no value is specified for the prefix length, IP addresses
+are automatically assigned within the peered VPC network.
+Establish a VPC network private connection between your VPC network and Google Cloud. To learn more, see Creating a private connection .
+If you have DNS configured for your Bitbucket Data Center instance, you need to manually peer your DNS zone to our service provider. To learn
+more, see the Sharing private DNS zones with service producers .
+Optional: If you don't want to create a private connection from your Cloud project,
+you can set up a Shared VPC and have your Cloud project use that network instead if your project is part of an organization. You will still need the Shared VPC to be peered to the network.
+Use private pools
+to run your builds. If you have not created a private pool,
+see create a new private pool .
+Connect a Bitbucket Data Center host .
+Connect a Bitbucket Data Center repository .
+Create a Bitbucket Data Center trigger
+to build repositories hosted on a Bitbucket Data Center instance.
+Your Bitbucket Data Center trigger will now automatically invoke builds on
+your Bitbucket Data Center instance based on your configuration. To learn how to
+run builds using a private pool, see
+Running builds in a private pool .
+What's next
+Learn how to create and manage build triggers .
+Learn how to perform blue/green deployments on Compute Engine .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

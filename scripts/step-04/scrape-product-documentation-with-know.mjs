@@ -68,6 +68,7 @@ const familyPriority = [
   "python_reference",
   "java_reference",
 ];
+const featureOverlapTokenFloor = Number(process.env.GCP_RADAR_STEP04_FEATURE_TOKEN_OVERLAP_FLOOR || 6);
 
 function hashValue(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -79,7 +80,7 @@ function normalizeUrl(input) {
     url.hash = "";
     const params = new URLSearchParams();
     for (const [key, value] of url.searchParams.entries()) {
-      if (!key.toLowerCase().startsWith("utm_")) {
+      if (!key.toLowerCase().startsWith("utm_") && key.toLowerCase() !== "hl") {
         params.set(key, value);
       }
     }
@@ -165,6 +166,81 @@ function sourceIdForFamily(family) {
   return `site-${family.replace(/_/g, "-")}`;
 }
 
+function parseStep02Markdown(markdown, productSlug) {
+  const productNameMatch = markdown.match(/^#\s+(.+)\r?$/m);
+  const featureCountMatch = markdown.match(/Unique features:\s+(\d+)/);
+  const lines = markdown.split(/\r?\n/);
+  const features = [];
+  for (const line of lines) {
+    const match = line.match(/^\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|$/);
+    if (!match || match[1] === "---" || match[1] === "Latest feature date") continue;
+    features.push({
+      feature_name: match[2].replace(/\\\|/g, "|").trim(),
+      feature_summary: match[4].replace(/\\\|/g, "|").trim(),
+    });
+  }
+  return {
+    product_name: productNameMatch?.[1]?.trim() || productSlug,
+    feature_count: Number(featureCountMatch?.[1] || features.length),
+    features,
+  };
+}
+
+function normalizeText(text) {
+  return String(text || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function tokenize(text) {
+  return normalizeText(text).split(" ").filter((token) => token.length >= 3);
+}
+
+async function loadFeatureInventoryForRanking(ranking) {
+  if (ranking?.step02_feature_inventory?.feature_count) {
+    return ranking.step02_feature_inventory;
+  }
+  const step02Path = ranking?.step02_source_path ? path.resolve(process.cwd(), String(ranking.step02_source_path)) : "";
+  if (!step02Path || !(await exists(step02Path))) {
+    return { feature_count: 0, top_phrases: [], top_tokens: [], inventory_profile: "user_facing" };
+  }
+  const parsed = parseStep02Markdown(await readFile(step02Path, "utf8"), ranking.product_slug);
+  const phrases = [];
+  const tokens = new Set();
+  for (const feature of parsed.features) {
+    const name = normalizeText(feature.feature_name);
+    const summary = normalizeText(feature.feature_summary);
+    if (name.length >= 10) phrases.push(name);
+    for (const token of tokenize(`${feature.feature_name} ${feature.feature_summary}`)) tokens.add(token);
+  }
+  return {
+    feature_count: parsed.feature_count,
+    top_phrases: [...new Set(phrases)].slice(0, 40),
+    top_tokens: [...tokens].slice(0, 80),
+    inventory_profile: "user_facing",
+  };
+}
+
+function adaptiveBudgetForFamily(family, featureCount, broaden = false, productSlug = "") {
+  const base = crawlBudgets[family];
+  const pagesBoost = featureCount >= 250 ? 22 : featureCount >= 100 ? 12 : featureCount >= 40 ? 6 : 0;
+  const depthBoost = featureCount >= 120 ? 1 : 0;
+  const bigqueryBoost = productSlug === "bigquery" && (family === "docs_reference" || family === "docs_root") ? 12 : 0;
+  const appEngineBoost = /^app-engine-(standard|flexible)-environment-/.test(productSlug) && family === "docs_reference" ? 10 : 0;
+  const agentBuilderBoost = productSlug === "vertex-ai-agent-builder" && (family === "docs_reference" || family === "iam_reference") ? 8 : 0;
+  return {
+    maxDepth: base.maxDepth + depthBoost + (broaden ? 1 : 0),
+    maxPages: base.maxPages + pagesBoost + bigqueryBoost + appEngineBoost + agentBuilderBoost + (broaden ? Math.max(6, Math.round(base.maxPages * 0.35)) : 0),
+  };
+}
+
+function familySelectionLimit(family, featureCount, broaden = false, productSlug = "") {
+  const extra = featureCount >= 250 ? 2 : featureCount >= 100 ? 1 : featureCount >= 40 ? 1 : 0;
+  const base = family === "docs_root" || family === "docs_reference" ? 1 + extra : family === "api_reference" && featureCount >= 120 ? 2 : 1;
+  const appEngineExtra = /^app-engine-(standard|flexible)-environment-/.test(productSlug) && family === "docs_reference" ? 2 : 0;
+  const bigqueryExtra = productSlug === "bigquery" && family === "docs_reference" ? 2 : 0;
+  const agentBuilderExtra = productSlug === "vertex-ai-agent-builder" && (family === "docs_reference" || family === "iam_reference") ? 1 : 0;
+  return base + appEngineExtra + bigqueryExtra + agentBuilderExtra + (broaden && (family === "docs_root" || family === "docs_reference") ? 1 : 0);
+}
+
 function familySelectionScore(source) {
   const url = normalizeUrl(source?.url);
   const pathname = (() => {
@@ -181,19 +257,113 @@ function familySelectionScore(source) {
   if (family === "docs_root") {
     if (/\/docs$/.test(pathname)) score += 80;
     if (/\/docs\/(overview|introduction)$/.test(pathname)) score += 40;
+    if (/^\/translate\/docs\/intro-to-v3$/.test(pathname)) score += 100;
+    if (/^\/translate\/docs\/advanced\//.test(pathname)) score -= 80;
+    if (/^\/workspace\/gmail\/api\/guides(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/meet\/api\/guides\/overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/admin-sdk\/overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/bigquery\/docs$/.test(pathname)) score += 120;
+    if (/^\/unified-maintenance\/docs(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/video-intelligence\/docs(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vpc-service-controls\/docs(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vertex-ai\/docs\/start\/introduction-unified-platform(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/appengine\/docs\/flexible\/nodejs\/runtime(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/appengine\/docs\/standard\/[^/]+\/runtime(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/sheets\/api\/guides\/concepts(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/tasks\/overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/vault\/guides(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/maps\/documentation\/routes\/overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/chronicle\/docs\/secops\/secops-overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/what-is-hybrid(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/chronicle\/docs\/secops$/.test(pathname)) score -= 140;
+    if (/^\/chronicle\/docs\/administration(?:\/|$)/.test(pathname)) score -= 180;
   }
   if (family === "docs_reference") {
     if (/\/docs\/reference$/.test(pathname)) score += 80;
     if (/\/docs\/apis$/.test(pathname)) score += 70;
+    if (/^\/translate\/docs\/reference\/api-overview$/.test(pathname)) score += 100;
+    if (/^\/translate\/docs\/advanced\/(automl-models|automl-prepare|custom-translation-quickstart|automl-datasets|translate-documents)$/.test(pathname)) score += 40;
+    if (/^\/dotnet\/docs\/reference\/google\.cloud\.translate\.v3\//.test(pathname) || /^\/php\/docs\/reference\/cloud-translate\//.test(pathname)) score -= 160;
+    if (/^\/workspace\/gmail\/api\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/workspace\/meet\/api\/reference\/rest\/v2(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/admin-sdk\/reference-overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/workspace\/sheets\/api\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/workspace\/tasks\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/workspace\/vault\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/maps\/documentation\/routes\/compute-route-over(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/service-catalog\/docs\/concepts(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/bigquery\/docs\/(reference|release-notes|admin-intro|routines|reservations-workload-management)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/bigquery\/docs\/(migration-intro|migration\/pipelines|ml-pipelines-overview|create-pipelines|dts-introduction)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/bigquery\/docs\/(pipeline-connection-page|data-insights|use-bigquery-migration-mcp|migration-custom-org-policies)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/unified-maintenance\/docs\/(set-up-unified-maintenance|view-maintenance-api)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/video-intelligence\/docs\/(apis|reference\/api-overview)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vpc-service-controls\/docs\/service-perimeters(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/appengine\/docs\/flexible\/nodejs\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app|building-app|services\/access|upgrade-[^/]+runtime|customizing-the-python-runtime)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/appengine\/docs\/flexible\/custom-runtimes\/(build|configuring-your-app-with-app-yaml|create-app|release-notes)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/apigee\/docs\/hybrid\/(release-notes|v[\d.]+\/config-prop-ref|v[\d.]+\/install-before-begin|v[\d.]+\/data-collection-with-data-residency)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vision-ai\/docs\/(build-app|create-manage-streams|how-to|warehouse-overview)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/agent-builder\/agent-engine\/overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/agent-builder\/(agent-development-kit\/overview|agent-engine\/develop\/overview|release-notes)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vertex-ai\/docs\/(reference|core-release-notes|pipelines\/introduction)(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vertex-ai\/docs\/workbench\/reference(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/generative-ai-app-builder\/docs\/data-source-access-control(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/chronicle\/docs\/secops\/understand-the-secops-platform(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/go\/docs\/reference\/cloud\.google\.com\/go\/apps\/latest\/meet\/apiv2(?:\/|$)/.test(pathname)) score -= 240;
+    if (/^\/workspace\/gmail\/api\/reference(?:\/|$)/.test(pathname) || /^\/workspace\/meet\/api\/reference(?:\/|$)/.test(pathname)) score -= 180;
+    if (/^\/workspace\/sheets\/api\/reference(?:\/|$)/.test(pathname)) score -= 180;
+    if (/^\/tasks\/reference\/rest\/v1\/tasks(?:\/|$)/.test(pathname)) score -= 220;
+    if (/^\/service-catalog\/docs\/create-catalog(?:\/|$)/.test(pathname)) score -= 160;
+    if (/^\/bigquery\/docs\/reference\/auditlogs\/rest(?:\/|$)/.test(pathname)) score -= 220;
+    if (/^\/bigquery\/docs\/reference\/libraries(?:\/|$)/.test(pathname)) score -= 240;
+    if (/^\/appengine\/docs\/(standard|flexible)\/apis(?:\/|$)/.test(pathname)) score -= 180;
+    if (/^\/chronicle\/docs\/onboard(?:\/|$)/.test(pathname)) score -= 180;
+    if (/^\/vertex-ai\/docs\/workbench\/reference\/libraries(?:\/|$)/.test(pathname)) score -= 180;
   }
   if (family === "api_reference") {
     if (/\/reference\/(rest|rpc)$/.test(pathname)) score += 70;
     if (/\/reference\/rest\/.+/.test(pathname) || /\/reference\/rpc\/.+/.test(pathname)) score -= 60;
+    if (/^\/admin-sdk\/(directory|reports)\/reference\/rest(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/chronicle\/docs\/reference\/google-unified-security(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/chronicle\/docs\/reference\/google-secops-api-libraries-overview(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/generative-ai-app-builder\/docs\/builder-apis(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vertex-ai\/docs\/workbench\/reference\/rest(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/bigquery\/docs\/reference\/rest(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/unified-maintenance\/docs\/reference\/rpc\/google\.cloud\.maintenance\.api\.v1(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/video-intelligence\/docs\/reference\/rest(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/vertex-ai\/docs\/reference\/rest(?:\/|$)/.test(pathname)) score += 120;
+    if (/^\/generative-ai-app-builder\/docs\/reference(?:\/|$)/.test(pathname)) score -= 220;
+    if (/^\/vertex-ai\/docs\/workbench\/reference\/libraries(?:\/|$)/.test(pathname)) score -= 180;
   }
   if (family === "iam_reference") {
     if (/\/roles-permissions\//.test(pathname)) score += 80;
     if (/\/(iam-and-access-control|access-control|iam-roles|iam-permissions)$/.test(pathname)) score += 60;
     if (/\/samples?\//.test(pathname) || /\/guides\//.test(pathname)) score -= 50;
+    if (/^\/translate\/docs\/access-control$/.test(pathname)) score += 120;
+    if (/^\/translate\/docs\/advanced\/automl-beginner$/.test(pathname)) score -= 160;
+    if (/^\/distributed-cloud\/edge\/.+\/vpn-connections(?:\/|$)/.test(pathname)) score -= 200;
+    if (/^\/network-connectivity\/docs\/vpn\/concepts\/best-practices(?:\/|$)/.test(pathname)) score -= 120;
+    if (/^\/admin-sdk\/(directory\/v1\/guides\/authorizing|reports\/auth|reports\/v1\/guides\/authorizing)(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/workspace\/gmail\/api\/auth\/(scopes|web-server)(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/workspace\/meet\/api\/guides\/authenticate-authorize(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/workspace\/sheets\/api\/scopes(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/workspace\/tasks\/auth(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/workspace\/vault\/auth(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/maps\/documentation\/routes\/get-api-key(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/bigquery\/docs\/access-control(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/translate\/docs\/access-control(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/vpc-service-controls\/docs\/(access-control|configure-iam-roles)(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/(sa-about|enable-workload-identity|install-enable-control-plane-access)(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/(sa-authentication-methods|install-sa-authentication)(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/agent-builder\/(authentication|agent-engine\/manage\/access|agent-engine\/agent-identity)(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/vertex-ai\/docs\/general\/access-control(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/video-intelligence\/docs\/authentication(?:\/|$)/.test(pathname)) score += 160;
+    if (/^\/generative-ai-app-builder\/docs\/access-control(?:\/|$)/.test(pathname)) score -= 220;
+    if (/^\/chronicle\/docs\/reference\/feature-rbac-permissions-roles(?:\/|$)/.test(pathname) || /^\/chronicle\/docs\/onboard\/configure-cloud-authentication(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/chronicle\/docs\/reference\/authentication(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/generative-ai-app-builder\/docs\/authentication(?:\/|$)/.test(pathname)) score += 140;
+    if (/^\/integration-connectors\/docs\/connectors\/gsc_admin_sdk\/configure(?:\/|$)/.test(pathname)) score -= 260;
+    if (/^\/generative-ai-app-builder\/docs\/access-control(?:\/|$)/.test(pathname)) score -= 120;
   }
   if (family === "python_reference") {
     if (/\/python\/docs\/reference\/[^/]+\/latest(?:\/index\.html)?$/.test(pathname)) score += 60;
@@ -209,9 +379,11 @@ function familySelectionScore(source) {
   return score;
 }
 
-function selectSources(ranking) {
+function selectSources(ranking, featureInventory, options = {}) {
+  const broaden = options.broaden === true;
   const ranked = Array.isArray(ranking.scored_urls) ? ranking.scored_urls : [];
   const candidatesByFamily = new Map();
+  const featureCount = Number(featureInventory?.feature_count || 0);
 
   for (const candidate of ranked) {
     if (!candidate?.keep) {
@@ -228,7 +400,7 @@ function selectSources(ranking) {
       continue;
     }
 
-    const budget = crawlBudgets[family];
+    const budget = adaptiveBudgetForFamily(family, featureCount, broaden, ranking.product_slug);
     if (!candidatesByFamily.has(family)) {
       candidatesByFamily.set(family, []);
     }
@@ -240,6 +412,7 @@ function selectSources(ranking) {
       url: normalizeUrl(candidate.url),
       final_score: Number(candidate.final_score || 0),
       best_rank: Number(candidate.best_rank || 0),
+      matched_feature_phrases: Array.isArray(candidate.api_score?.matched_feature_phrases) ? candidate.api_score.matched_feature_phrases : [],
       max_depth: budget.maxDepth,
       max_pages: budget.maxPages,
     });
@@ -247,7 +420,10 @@ function selectSources(ranking) {
 
   return familyPriority
     .filter((family) => candidatesByFamily.has(family))
-    .map((family) => candidatesByFamily.get(family).sort((a, b) => familySelectionScore(b) - familySelectionScore(a) || a.url.localeCompare(b.url))[0]);
+    .flatMap((family) => candidatesByFamily.get(family)
+      .sort((a, b) => familySelectionScore(b) - familySelectionScore(a) || b.matched_feature_phrases.length - a.matched_feature_phrases.length || a.url.localeCompare(b.url))
+      .slice(0, familySelectionLimit(family, featureCount, broaden, ranking.product_slug))
+      .map((source, index) => ({ ...source, source_id: `${sourceIdForFamily(family)}${index === 0 ? "" : `-${index + 1}`}` })));
 }
 
 function selectedSourceSignature(selectedSources) {
@@ -674,7 +850,7 @@ async function reconcileSources(storePath, selectedSources) {
   return actions;
 }
 
-function buildSelectionDocument(ranking, rankingPath, selectedSources, productDir) {
+function buildSelectionDocument(ranking, rankingPath, selectedSources, productDir, featureInventory, options = {}) {
   return {
     schema_version: schemaVersion,
     generated_at: new Date().toISOString(),
@@ -682,8 +858,10 @@ function buildSelectionDocument(ranking, rankingPath, selectedSources, productDi
     product_slug: ranking.product_slug,
     step03_ranking_path: relativeToCwd(rankingPath),
     source_selection_strategy: {
-      type: "one-best-url-per-family",
+      type: "coverage-aware-multi-seed-per-family",
+      broadened_retry: options.broaden === true,
       families: familyPriority.filter((family) => selectedSources.some((source) => source.family === family)),
+      feature_count: Number(featureInventory?.feature_count || 0),
     },
     site_output_mode: compactSiteOutput ? "compact" : "full",
     selected_source_count: selectedSources.length,
@@ -722,6 +900,70 @@ async function summarizeCorpusPages(productDir) {
   return summaries;
 }
 
+async function loadCorpusDocuments(productDir) {
+  const siteDir = path.join(productDir, knowKey, "site");
+  if (!(await exists(siteDir))) {
+    return [];
+  }
+  const sourceDirs = (await readdir(siteDir, { withFileTypes: true }))
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+  const documents = [];
+  for (const sourceId of sourceDirs) {
+    const pages = await readPagesIndex(productDir, sourceId);
+    for (const page of pages) {
+      const relativePath = String(page?.path || "");
+      if (!relativePath) continue;
+      const markdownPath = path.join(siteDir, sourceId, relativePath);
+      const markdown = await readFile(markdownPath, "utf8").catch(() => "");
+      documents.push({
+        source_id: sourceId,
+        url: String(page?.url || "").trim(),
+        title: normalizeText(String(page?.title || "")),
+        body: normalizeText(markdown),
+      });
+    }
+  }
+  return documents;
+}
+
+function assessCorpusHealth(featureInventory, summaries, documents) {
+  const featureCount = Number(featureInventory?.feature_count || 0);
+  const minPageCount = featureCount >= 250 ? 28 : featureCount >= 100 ? 18 : featureCount >= 40 ? 10 : 6;
+  const minUniqueUrlCount = featureCount >= 250 ? 22 : featureCount >= 100 ? 14 : featureCount >= 40 ? 8 : 5;
+  const minSourceFamilies = featureCount >= 120 ? 3 : 2;
+  const uniqueUrls = new Set(summaries.flatMap((summary) => Array.isArray(summary.urls) ? summary.urls : []));
+  const nonEmptyFamilies = summaries.filter((summary) => Number(summary.page_count || 0) > 0).length;
+  const tokenMatches = new Set();
+  const phraseMatches = new Set();
+  const tokens = Array.isArray(featureInventory?.top_tokens) ? featureInventory.top_tokens.slice(0, 40) : [];
+  const phrases = Array.isArray(featureInventory?.top_phrases) ? featureInventory.top_phrases.slice(0, 20) : [];
+  for (const document of documents) {
+    const text = `${document.title} ${document.body} ${document.url}`;
+    for (const token of tokens) {
+      if (text.includes(token)) tokenMatches.add(token);
+    }
+    for (const phrase of phrases) {
+      if (text.includes(phrase)) phraseMatches.add(phrase);
+    }
+  }
+  const checks = {
+    min_page_count: { actual: documents.length, expected: minPageCount, passed: documents.length >= minPageCount },
+    min_unique_url_count: { actual: uniqueUrls.size, expected: minUniqueUrlCount, passed: uniqueUrls.size >= minUniqueUrlCount },
+    source_family_diversity: { actual: nonEmptyFamilies, expected: minSourceFamilies, passed: nonEmptyFamilies >= minSourceFamilies },
+    lexical_overlap: { actual: tokenMatches.size, expected: featureOverlapTokenFloor, passed: tokenMatches.size >= featureOverlapTokenFloor, matched_tokens: [...tokenMatches].slice(0, 16), matched_phrases: [...phraseMatches].slice(0, 10) },
+  };
+  return {
+    status: Object.values(checks).every((check) => check.passed) ? "healthy" : "weak",
+    checks,
+    total_corpus_pages: documents.length,
+    unique_url_count: uniqueUrls.size,
+    matched_feature_token_count: tokenMatches.size,
+    matched_feature_phrase_count: phraseMatches.size,
+  };
+}
+
 async function scrapeProduct(rankingPath, crawl4aiAvailable) {
   const ranking = await readJson(rankingPath);
   const productSlug = ranking.product_slug;
@@ -732,10 +974,11 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
 
   await mkdir(productDir, { recursive: true });
   const keyCreated = await ensureKnowKey(productDir);
-  const selectedSources = selectSources(ranking);
+  const featureInventory = await loadFeatureInventoryForRanking(ranking);
+  let selectedSources = selectSources(ranking, featureInventory);
 
   if (selectedSources.length === 0) {
-    const selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir);
+    const selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir, featureInventory);
     await writeJson(selectionPath, selection);
     await writeJson(statePath, {
       schema_version: schemaVersion,
@@ -747,6 +990,7 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
       status: "no_sources_selected",
       key_created: keyCreated,
       crawl4ai_available: crawl4aiAvailable,
+      feature_inventory: featureInventory,
     });
 
     return {
@@ -759,7 +1003,8 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
     };
   }
 
-  let selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir);
+  let selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir, featureInventory);
+  await writeJson(selectionPath, selection);
   const previousState = await readJson(statePath).catch(() => null);
   const signatureUnchanged = previousState?.selected_sources_signature === selection.selected_sources_signature;
   const corpusReady = await exists(path.join(corpusRoot, "site"));
@@ -770,6 +1015,7 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
     changed: [],
     sync_urls: [],
   };
+  const source_failures = {};
   let exportRun = false;
   let skippedSync = false;
 
@@ -791,6 +1037,7 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
         synced = selected ? (await sourcePageCount(productDir, selected.source_id)) > 0 : true;
       } catch {
         synced = false;
+        if (selected) source_failures[selected.source_id] = { family: selected.family, initial_url: url, failure_stage: "sync", attempted_urls: [...attemptedUrls] };
       }
 
       if (!synced && selected) {
@@ -821,6 +1068,7 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
             }
           } catch {
             synced = false;
+            source_failures[selected.source_id] = { family: selected.family, initial_url: url, failure_stage: "recovery_sync", attempted_urls: [...attemptedUrls] };
           }
         }
       }
@@ -835,6 +1083,7 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
       }
 
       if (!synced) {
+        if (selected) source_failures[selected.source_id] = { family: selected.family, initial_url: url, failure_stage: "fallback_exhausted", attempted_urls: [...attemptedUrls] };
         throw new Error(`site sync failed after recovery attempts for ${url}`);
       }
 
@@ -856,8 +1105,43 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
 
   const finalSources = await listSources(productDir);
   const corpusPages = await summarizeCorpusPages(productDir);
+  const corpusDocuments = await loadCorpusDocuments(productDir);
+  let corpusHealth = assessCorpusHealth(featureInventory, corpusPages, corpusDocuments);
+  if (!skippedSync && corpusHealth.status !== "healthy") {
+    const broaderSources = selectSources(ranking, featureInventory, { broaden: true }).filter((source) => !selectedSources.some((current) => current.url === source.url && current.family === source.family));
+    if (broaderSources.length > 0) {
+      selectedSources = [...selectedSources, ...broaderSources];
+      selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir, featureInventory, { broaden: true });
+      await writeJson(selectionPath, selection);
+      const broaderActions = await reconcileSources(productDir, selectedSources);
+      actions = {
+        deleted: [...new Set([...actions.deleted, ...broaderActions.deleted])],
+        added: [...new Set([...actions.added, ...broaderActions.added])],
+        changed: [...new Set([...actions.changed, ...broaderActions.changed])],
+        sync_urls: [...new Set([...actions.sync_urls, ...broaderActions.sync_urls])],
+      };
+      for (const url of broaderActions.sync_urls) {
+        await runKnow(productDir, ["sync", "site", url, "--key", knowKey]).catch((error) => {
+          const selected = selectedSources.find((source) => source.url === url);
+          if (selected) {
+            source_failures[selected.source_id] = {
+              family: selected.family,
+              initial_url: url,
+              failure_stage: "broadened_sync",
+              attempted_urls: [url],
+              error: sanitizeErrorMessage(error),
+            };
+          }
+          return "";
+        });
+      }
+    }
+  }
+  const refreshedCorpusPages = await summarizeCorpusPages(productDir);
+  const refreshedCorpusDocuments = await loadCorpusDocuments(productDir);
+  corpusHealth = assessCorpusHealth(featureInventory, refreshedCorpusPages, refreshedCorpusDocuments);
   const singlePageFallbackDetected = !crawl4aiAvailable && corpusPages.length > 0 && corpusPages.every((source) => source.page_count <= 1);
-  selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir);
+  selection = buildSelectionDocument(ranking, rankingPath, selectedSources, productDir, featureInventory, { broaden: selection.source_selection_strategy?.broadened_retry === true });
   await writeJson(selectionPath, selection);
   await writeJson(statePath, {
     schema_version: schemaVersion,
@@ -868,6 +1152,7 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
     selected_source_count: selectedSources.length,
     key_created: keyCreated,
     crawl4ai_available: crawl4aiAvailable,
+    feature_inventory: featureInventory,
     single_page_fallback_detected: singlePageFallbackDetected,
     limitation: singlePageFallbackDetected
       ? "know site sync is running without crawl4ai in this environment, so each source currently materializes only its seed page."
@@ -876,8 +1161,10 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
     export_run: exportRun,
     reprocess_requested: reprocess,
     actions,
+    source_failures,
     registered_source_count: finalSources.length,
-    corpus_page_summaries: corpusPages,
+    corpus_page_summaries: refreshedCorpusPages,
+    corpus_health: corpusHealth,
     corpus_paths: selection.corpus_paths,
   });
 
@@ -888,7 +1175,8 @@ async function scrapeProduct(rankingPath, crawl4aiAvailable) {
     registered_source_count: finalSources.length,
     crawl4ai_available: crawl4aiAvailable,
     single_page_fallback_detected: singlePageFallbackDetected,
-    total_corpus_pages: corpusPages.reduce((sum, source) => sum + source.page_count, 0),
+    total_corpus_pages: refreshedCorpusPages.reduce((sum, source) => sum + source.page_count, 0),
+    corpus_health_status: corpusHealth.status,
     skipped_sync: skippedSync,
     export_run: exportRun,
     site_output_mode: compactSiteOutput ? "compact" : "full",

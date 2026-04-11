@@ -1,0 +1,54 @@
+---
+title: "Drive UI integration overview \_|\_ Google Drive \_|\_ Google for Developers"
+url: https://developers.google.com/workspace/drive/api/guides/about-apps
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://developers.google.com/workspace/marketplace
+source_metadata:
+  url: https://developers.google.com/workspace/drive/api/guides/about-apps
+  title: "Drive UI integration overview \_|\_ Google Drive \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Google Workspace
+Google Drive
+Guides
+Send feedback
+Drive UI integration overview
+Stay organized with collections
+Save and categorize content based on your preferences.
+The Google Drive user interface
+(UI) is a
+Google-provided application where Drive users can create,
+organize, discover, and share content stored on Google Drive. You can
+integrate your Drive-enabled app with the Drive UI
+to take advantage of these features. There are two integrations that you can
+perform:
+Using the Drive UI's "New" button .
+Using the Drive UI's "Open with" menu item .
+Drive UI's "New" button
+If you want Drive UI users to call your app to create a file,
+integrate your app with the Drive UI's "New" button.
+The "New" button lets users open your application or other editor-style apps,
+such as Google Docs and Google Sheets, to create a new document.
+Figure 1. Using Drive UI's "New" button.
+Drive UI's "Open with" menu item
+If you want Drive UI users to open documents with your app,
+integrate your app with the Drive UI's "Open with" menu item.
+When a user right-clicks on a file in the Drive UI, a context
+menu opens. The right-click menu contains an "Open with" item letting the user
+select an application to open the file.
+Figure 2. Using Drive UI's "Open with" menu item.
+Related topics
+For instructions on how to begin your integration, continue to Configure a
+Drive UI integration .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-01 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]

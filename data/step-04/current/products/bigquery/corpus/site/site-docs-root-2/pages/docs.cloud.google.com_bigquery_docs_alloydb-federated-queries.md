@@ -1,0 +1,129 @@
+---
+title: "AlloyDB federated queries \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/introduction
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries
+  title: "AlloyDB federated queries \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+AlloyDB federated queries
+As a data analyst, you can query data in AlloyDB for PostgreSQL from BigQuery
+using federated queries .
+BigQuery AlloyDB federation lets BigQuery
+query data residing in AlloyDB in real time without copying or
+moving the data.
+Before you begin
+Ensure that your BigQuery administrator has created an AlloyDB connection and
+shared
+it with you.
+To get the permissions that
+you need to query an AlloyDB instance,
+ask your administrator to grant you the
+BigQuery Connection User ( roles/bigquery.connectionUser )
+IAM role on your project.
+For more information about granting roles, see Manage access to projects, folders, and organizations .
+You might also be able to get
+the required permissions through custom
+roles or other predefined
+roles .
+Query data
+To send a federated query to AlloyDB from a
+GoogleSQL query, use the
+EXTERNAL_QUERY function .
+Suppose that you store a customer table in BigQuery, while
+storing a sales table in AlloyDB, and want to join the two tables in
+a single query. The following example makes a federated query to an
+AlloyDB table named orders and joins the results with a
+BigQuery table named mydataset.customers .
+The example query includes 3 parts:
+Run the external query SELECT customer_id, MIN(order_date) AS
+first_order_date FROM orders GROUP BY customer_id in the AlloyDB database
+to get the first order date for each customer through
+the EXTERNAL_QUERY function.
+Join the external query results table with the customers table in
+BigQuery by customer_id .
+Select customer information and first order date in the final result set.
+SELECT c . customer_id , c . name , rq . first_order_date
+FROM mydataset . customers AS c
+LEFT OUTER JOIN EXTERNAL_QUERY (
+'us.connection_id' ,
+' '' SELECT customer_id, MIN(order_date) AS first_order_date
+FROM orders
+GROUP BY customer_id '' ' ) AS rq ON rq . customer_id = c . customer_id
+GROUP BY c . customer_id , c . name , rq . first_order_date ;
+View an AlloyDB table schema
+You can use the EXTERNAL_QUERY function to query information_schema tables
+to access database metadata. For example, you can list all of the tables in the
+database or view the table schema. For more information, see PostgreSQL information_schema tables .
+-- List all tables in a database.
+SELECT * FROM EXTERNAL_QUERY ( "region.connection_id" ,
+"select * from information_schema.tables;" );
+-- List all columns in a table.
+SELECT * FROM EXTERNAL_QUERY ( "region.connection_id" ,
+"select * from information_schema.columns where table_name='x';" );
+Track BigQuery federated queries
+When you run a federated query against AlloyDB,
+BigQuery annotates the query with a comment similar to the following:
+/* Federated query from BigQuery. Project ID: PROJECT_ID , BigQuery Job ID: JOB_ID . */
+If you are monitoring logs for query usage, the following annotation can help you
+identify queries coming from BigQuery.
+Go to the Logs Explorer page.
+Go to the Logs Explorer
+In the Query tab, enter the following query:
+resource.type="alloydb.googleapis.com/Instance"
+textPayload=~"Federated query from BigQuery"
+Click Run query .
+If there are records available for BigQuery federated queries,
+a list of records similar to the following appears in Query results .
+YYYY-MM-DD hh:mm:ss.millis UTC [3210064]: [4-1]
+db= DATABASE , user= USER_ACCOUNT
+STATEMENT: SELECT 1 FROM (SELECT FROM company_name_table) t;
+/* Federated query from BigQuery.
+Project ID: PROJECT_ID , BigQuery Job ID: JOB_ID
+*/
+YYYY-MM-DD hh:mm:ss.millis UTC [3210532]: [2-1]
+db= DATABASE , user= USER_ACCOUNT
+STATEMENT: SELECT "company_id", "company type_id" FROM
+(SELECT FROM company_name_table) t;
+/* Federated query from BigQuery.
+Project ID: PROJECT_ID , BigQuery Job ID: JOB_ID
+*/
+For more information about Cloud Logging, see Cloud Logging .
+Troubleshooting
+This section describes potential errors you might encounter when sending a
+federated query to AlloyDB and provides possible troubleshooting
+resolutions.
+Issue: Failed to connect to the database server with this error:
+Invalid table-valued function EXTERNAL_QUERY Connect to PostgreSQL server failed: server closed the connection unexpectedly. This probably means the server terminated abnormally before or while processing the request.
+Resolution: Ensure that you used valid credentials and followed all prerequisites
+while creating the connection to AlloyDB .
+Check if the service account that is automatically created
+when a connection to AlloyDB is
+created has the AlloyDB Client ( roles/alloydb.client ) role.
+For more information, see
+Grant access to the service account .
+What's next
+Learn about federated queries .
+Learn about PostgreSQL to BigQuery data type mapping .
+Learn about unsupported data types .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

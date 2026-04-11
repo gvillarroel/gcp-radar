@@ -1,29 +1,58 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T06:03:03.041Z",
+  "generated_at": "2026-04-10T17:55:07.368Z",
   "product_name": "Backup for GKE",
   "product_slug": "backup-for-gke",
   "step03_ranking_path": "data/step-03/current/products/backup-for-gke/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
+      "docs_root",
+      "api_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 15
   },
   "site_output_mode": "compact",
-  "selected_source_count": 1,
-  "selected_sources_signature": "8ef2ce8180f3cd4adb306e705b5a70c9e42057d8bac71f9fdf1bea8710aad95c",
+  "selected_source_count": 3,
+  "selected_sources_signature": "5d5f192fd7b38bb46e012ec9dc7e2b5e9c9a7528c9025a3540dfb931fa4c3b06",
   "selected_sources": [
+    {
+      "source_id": "site-docs-root",
+      "product_slug": "backup-for-gke",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke",
+      "final_score": 100,
+      "best_rank": 2,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 30
+    },
+    {
+      "source_id": "site-api-reference",
+      "product_slug": "backup-for-gke",
+      "family": "api_reference",
+      "classification": "api_reference",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+      "final_score": 95,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 20
+    },
     {
       "source_id": "site-iam-reference",
       "product_slug": "backup-for-gke",
       "family": "iam_reference",
       "classification": "iam_reference",
       "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
-      "final_score": 100,
-      "best_rank": 3,
+      "final_score": 95,
+      "best_rank": 2,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     }
   ],
   "corpus_paths": {

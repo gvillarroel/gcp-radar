@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:28:14.143Z"
+product_name: "VPC Service Controls"
+product_slug: "vpc-service-controls"
+feature_name: "Storage Intelligence API integration"
+feature_slug: "storage-intelligence-api-integration"
+latest_feature_date: "2025-03-28"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "storage"
+  - "intelligence"
+  - "api"
+  - "integration"
+  - "vpc"
+  - "controls"
+  - "supports"
+  - "with"
+---
+
+# Storage Intelligence API integration
+
+Product: VPC Service Controls
+Coverage: NONE
+
+## Step 02 Summary
+
+VPC Service Controls supports integration with the Storage Intelligence API.
+
+## Extended Definition
+
+VPC Service Controls supports integration with the Storage Intelligence API.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

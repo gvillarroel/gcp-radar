@@ -1,18 +1,21 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T21:49:59.482Z",
+  "generated_at": "2026-04-10T19:26:36.915Z",
   "product_name": "Cloud-based maps styling",
   "product_slug": "cloud-based-maps-styling",
   "step03_ranking_path": "data/step-03/current/products/cloud-based-maps-styling/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
-      "docs_root"
-    ]
+      "docs_root",
+      "docs_reference"
+    ],
+    "feature_count": 2
   },
   "site_output_mode": "compact",
-  "selected_source_count": 1,
-  "selected_sources_signature": "8e8d809ffcf720e6b01b36ba9bda0b5bfa2086e1b2291091be3302842592e9dc",
+  "selected_source_count": 2,
+  "selected_sources_signature": "a731be34ed017818a23fd61d30857088ae27026f7bfdcc760dcf34da23024123",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -22,8 +25,21 @@
       "url": "https://developers.google.com/maps/documentation/cloud-customization?csw=1",
       "final_score": 90,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 30
+    },
+    {
+      "source_id": "site-docs-reference",
+      "product_slug": "cloud-based-maps-styling",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://developers.google.com/maps/documentation/cloud-customization/overview?csw=1",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 20
     }
   ],
   "corpus_paths": {

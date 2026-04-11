@@ -20,3 +20,15 @@ Each product ranking currently contains:
 
 These outputs are intermediate discovery artifacts.
 They are useful inputs for Step 04 cleanup, but they are not yet validated source-of-truth artifacts.
+
+## What We Learned
+
+The current Step 03 implementation has shown a few repeatable patterns:
+
+- parent documentation roots are usually better Step 04 seeds than deep guide or class-level pages
+- some products require host-specific handling, especially `developers.google.com/workspace`, `developers.google.com/maps`, and `developers.google.com/earth-engine`
+- the same query strategy does not work for every product family; family-specific query templates and exclusions materially improve ranking quality
+- false IAM candidates are common for products with overlapping names, so Step 03 must explicitly filter adjacent-product pages
+- Step 02 feature inventories are useful as ranking signals because they help distinguish broad but relevant pages from unrelated official pages
+
+Step 03 should therefore be treated as a learned ranking system, not as a one-time search dump.

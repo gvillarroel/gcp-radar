@@ -1,0 +1,131 @@
+---
+title: "REST Resource: projects.locations.connectors \_|\_ Virtual Private Cloud \_\
+  |\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/vpc/docs
+source_metadata:
+  url: https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors
+  title: "REST Resource: projects.locations.connectors \_|\_ Virtual Private Cloud\
+    \ \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Networking
+Virtual Private Cloud
+Send feedback
+REST Resource: projects.locations.connectors
+Stay organized with collections
+Save and categorize content based on your preferences.
+Resource: Connector
+JSON representation
+State
+Subnet
+JSON representation
+Methods
+Resource: Connector
+Definition of a Serverless VPC Access connector.
+JSON representation
+{
+"name" : string ,
+"network" : string ,
+"ipCidrRange" : string ,
+"state" : enum ( State ) ,
+"minThroughput" : integer ,
+"maxThroughput" : integer ,
+"connectedProjects" : [
+string
+] ,
+"subnet" : {
+object ( Subnet )
+} ,
+"machineType" : string ,
+"minInstances" : integer ,
+"maxInstances" : integer
+}
+Fields
+name
+string
+The resource name in the format projects/*/locations/*/connectors/* .
+network
+string
+Name of a VPC network.
+ipCidrRange
+string
+The range of internal addresses that follows RFC 4632 notation. Example: 10.132.0.0/28 .
+state
+enum ( State )
+Output only. State of the VPC access connector.
+minThroughput
+integer
+Minimum throughput of the connector in Mbps. Default and min is 200. If both min-throughput and min-instances are provided, min-instances takes precedence over min-throughput.
+maxThroughput
+integer
+Maximum throughput of the connector in Mbps. Default is 300, max is 1000. If both max-throughput and max-instances are provided, max-instances takes precedence over max-throughput.
+connectedProjects[]
+string
+Output only. List of projects using the connector.
+subnet
+object ( Subnet )
+The subnet in which to house the VPC Access Connector.
+machineType
+string
+Machine type of VM Instance underlying connector. Default is e2-micro
+minInstances
+integer
+Minimum value of instances in autoscaling group underlying the connector.
+maxInstances
+integer
+Maximum value of instances in autoscaling group underlying the connector.
+State
+State of a connector.
+Enums
+STATE_UNSPECIFIED
+Invalid state.
+READY
+Connector is deployed and ready to receive traffic.
+CREATING
+An Insert operation is in progress. Transient condition.
+DELETING
+A Delete operation is in progress. Transient condition.
+ERROR
+Connector is in a bad state, manual deletion recommended.
+UPDATING
+The connector is being updated.
+Subnet
+The subnet in which to house the connector
+JSON representation
+{
+"name" : string ,
+"projectId" : string
+}
+Fields
+name
+string
+Subnet name (relative, not fully qualified). E.g. if the full subnet selfLink is https://compute.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetName } the correct input for this field would be {subnetName}
+projectId
+string
+Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.
+Methods
+create
+Creates a Serverless VPC Access connector, returns an operation.
+delete
+Deletes a Serverless VPC Access connector.
+get
+Gets a Serverless VPC Access connector.
+list
+Lists Serverless VPC Access connectors.
+patch
+Updates a Serverless VPC Access connector, returns an operation.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-07-23 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-07-23 UTC."],[],[]]

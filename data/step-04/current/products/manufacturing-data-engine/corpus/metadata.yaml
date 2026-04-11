@@ -1,0 +1,37 @@
+version: 1
+name: corpus
+created_at: '2026-04-10T00:08:14+00:00'
+updated_at: '2026-04-11T15:10:12+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/manufacturing-data-engine/docs
+  created_at: '2026-04-11T15:08:09+00:00'
+  updated_at: '2026-04-11T15:08:45+00:00'
+  update_command: know sync site https://docs.cloud.google.com/manufacturing-data-engine/docs
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/manufacturing-data-engine/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-11T15:08:45+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts
+  created_at: '2026-04-11T15:08:10+00:00'
+  updated_at: '2026-04-11T15:10:12+00:00'
+  update_command: know sync site https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T15:10:12+00:00'

@@ -1,0 +1,303 @@
+---
+title: "Authorize with authorized networks \_|\_ Cloud SQL for PostgreSQL \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/sql/docs/postgres/authorize-networks
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy
+source_metadata:
+  url: https://docs.cloud.google.com/sql/docs/postgres/authorize-networks
+  title: "Authorize with authorized networks \_|\_ Cloud SQL for PostgreSQL \_|\_\
+    \ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Databases
+Cloud SQL
+PostgreSQL
+Guides
+Send feedback
+Authorize with authorized networks
+Stay organized with collections
+Save and categorize content based on your preferences.
+MySQL
+| PostgreSQL
+| SQL Server
+This page describes how to use the authorized networks settings for connecting
+to Cloud SQL instances that use IP addresses.
+Configure authorized networks
+Your client application's IP address or address range must be configured as
+authorized networks for the following conditions:
+Your client application is connecting directly to a
+Cloud SQL instance on its public IP address.
+Your client application is connecting directly to a
+Cloud SQL instance on its private IP address, and your client's
+IP address is a non-RFC 1918 address
+The IP address can be either a single endpoint or consist of a range in
+CIDR notation .
+Console
+In the Google Cloud console, go to the Cloud SQL Instances page.
+Go to Cloud SQL Instances
+To open the Overview page of an instance, click the instance name.
+From the SQL navigation menu, select Connections .
+Click the Networking tab.
+Select the Public IP checkbox.
+In the Authorized networks section, expand New IP range .
+In the Name field, enter a name for the New IP range .
+In the IP range field, enter the public IPv4 address or address
+range from which you want to allow connections.
+Alternatively, click Use My IP to let Cloud SQL populate
+the IPv4 address of the client machine from which you are accessing
+Google Cloud.
+The Use my IP option isn't available for clients that use IPv6
+addresses.
+For the address range, you must use a valid
+CIDR notation (for example, 10.10.10.0/24).
+Click Done .
+Click Save .
+gcloud
+Configuring authorized networks replaces the existing authorized networks
+list.
+gcloud sql instances patch INSTANCE_ID \
+--authorized-networks = NETWORK_RANGE_1 , NETWORK_RANGE_2 ...
+Terraform
+To configure authorized networks, use a Terraform resource .
+resource "google_sql_database_instance" "default" {
+name = "postgres-instance-with-authorized-network"
+region = "us-central1"
+database_version = "POSTGRES_14"
+settings {
+tier = "db-custom-2-7680"
+ip_configuration {
+authorized_networks {
+name = "Network Name"
+value = "192.0.2.0/24"
+expiration_time = "3021-11-15T16:19:00.094Z"
+}
+}
+}
+}
+Apply the changes
+To apply your Terraform configuration in a Google Cloud project, complete the steps in the
+following sections.
+Prepare Cloud Shell
+Launch Cloud Shell .
+Set the default Google Cloud project
+where you want to apply your Terraform configurations.
+You only need to run this command once per project, and you can run it in any directory.
+export GOOGLE_CLOUD_PROJECT= PROJECT_ID
+Environment variables are overridden if you set explicit values in the Terraform
+configuration file.
+Prepare the directory
+Each Terraform configuration file must have its own directory (also
+called a root module ).
+In Cloud Shell , create a directory and a new
+file within that directory. The filename must have the
+.tf extension—for example main.tf . In this
+tutorial, the file is referred to as main.tf .
+mkdir DIRECTORY && cd DIRECTORY && touch main.tf
+If you are following a tutorial, you can copy the sample code in each section or step.
+Copy the sample code into the newly created main.tf .
+Optionally, copy the code from GitHub. This is recommended
+when the Terraform snippet is part of an end-to-end solution.
+Review and modify the sample parameters to apply to your environment.
+Save your changes.
+Initialize Terraform. You only need to do this once per directory.
+terraform init
+Optionally, to use the latest Google provider version, include the -upgrade
+option:
+terraform init -upgrade
+Apply the changes
+Review the configuration and verify that the resources that Terraform is going to create or
+update match your expectations:
+terraform plan
+Make corrections to the configuration as necessary.
+Apply the Terraform configuration by running the following command and entering yes
+at the prompt:
+terraform apply
+Wait until Terraform displays the "Apply complete!" message.
+Open your Google Cloud project to view
+the results. In the Google Cloud console, navigate to your resources in the UI to make sure
+that Terraform has created or updated them.
+Note: Terraform samples typically assume that the required APIs are
+enabled in your Google Cloud project.
+Delete the changes
+To delete your changes, do the following:
+To disable deletion protection, in your Terraform configuration file set the
+deletion_protection argument to false .
+deletion_protection = "false"
+Apply the updated Terraform configuration by running the following command and
+entering yes at the prompt:
+terraform apply
+Remove resources previously applied with your Terraform configuration by running the following
+command and entering yes at the prompt:
+terraform destroy
+REST v1
+Configuring authorized networks replaces the existing authorized networks
+list.
+Before using any of the request data,
+make the following replacements:
+project-id : The project ID
+instance-id : The instance ID
+network_range_1 An authorized ip address or range
+network_range_2 Another authorized ip address or range
+HTTP method and URL:
+PATCH https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id
+Request JSON body:
+{
+"settings":
+{
+"ipConfiguration":
+{
+"authorizedNetworks":
+[{"value": " network_range_1 "}, {"value": " network_range_2 "}]
+}
+}
+}
+To send your request, expand one of these options:
+curl (Linux, macOS, or Cloud Shell)
+Note:
+The following command assumes that you have logged in to
+the gcloud CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+, or by using Cloud Shell ,
+which automatically logs you into the gcloud CLI
+.
+You can check the currently active account by running
+gcloud auth list .
+Save the request body in a file named request.json ,
+and execute the following command:
+curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id "
+PowerShell (Windows)
+Note:
+The following command assumes that you have logged in to
+the gcloud CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+.
+You can check the currently active account by running
+gcloud auth list .
+Save the request body in a file named request.json ,
+and execute the following command:
+$cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest ` -Method PATCH ` -Headers $headers ` -ContentType: "application/json; charset=utf-8" ` -InFile request.json ` -Uri "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id " | Select-Object -Expand Content
+You should receive a JSON response similar to the following:
+Response
+{
+"kind": "sql#operation",
+"targetLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ",
+"status": "PENDING",
+"user": "user@example.com",
+"insertTime": "2020-01-21T22:43:37.981Z",
+"operationType": "UPDATE",
+"name": " operation-id ",
+"targetId": " instance-id ",
+"selfLink": "https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id ",
+"targetProject": " project-id "
+}
+REST v1beta4
+Configuring authorized networks replaces the existing authorized networks
+list.
+Before using any of the request data,
+make the following replacements:
+project-id : The project ID
+instance-id : The instance ID
+network_range_1 An authorized ip address or range
+network_range_2 Another authorized ip address or range
+HTTP method and URL:
+PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id
+Request JSON body:
+{
+"settings":
+{
+"ipConfiguration":
+{
+"authorizedNetworks":
+[{"value": " network_range_1 "}, {"value": " network_range_2 "}]
+}
+}
+}
+To send your request, expand one of these options:
+curl (Linux, macOS, or Cloud Shell)
+Note:
+The following command assumes that you have logged in to
+the gcloud CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+, or by using Cloud Shell ,
+which automatically logs you into the gcloud CLI
+.
+You can check the currently active account by running
+gcloud auth list .
+Save the request body in a file named request.json ,
+and execute the following command:
+curl -X PATCH \ -H "Authorization: Bearer $(gcloud auth print-access-token)" \ -H "Content-Type: application/json; charset=utf-8" \ -d @request.json \ "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id "
+PowerShell (Windows)
+Note:
+The following command assumes that you have logged in to
+the gcloud CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+.
+You can check the currently active account by running
+gcloud auth list .
+Save the request body in a file named request.json ,
+and execute the following command:
+$cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest ` -Method PATCH ` -Headers $headers ` -ContentType: "application/json; charset=utf-8" ` -InFile request.json ` -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id " | Select-Object -Expand Content
+You should receive a JSON response similar to the following:
+Response
+{
+"kind": "sql#operation",
+"targetLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ",
+"status": "PENDING",
+"user": "user@example.com",
+"insertTime": "2020-01-21T22:43:37.981Z",
+"operationType": "UPDATE",
+"name": " operation-id ",
+"targetId": " instance-id ",
+"selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id ",
+"targetProject": " project-id "
+}
+Limitations
+Some IP address ranges can't be added as authorized networks.
+Address range
+Notes
+10.0.0.0/8
+RFC 1918 address range. These are automatically and implicitly
+included in the authorized networks by Cloud SQL
+172.16.0.0/12
+RFC 1918 address range. These are automatically and implicitly
+included in the authorized networks by Cloud SQL
+192.168.0.0/16
+RFC 1918 address range. These are automatically and implicitly
+included in the authorized networks by Cloud SQL
+Note: The authorized networks list is implemented on
+the Cloud SQL instance VM by a local firewall. Learn more about
+managing
+connections .
+Cloud SQL doesn't support IPv6 authorized networks. If your client
+machine uses the IPv6 protocol, then the optional Use my IP button isn't
+available in the Networking tab of the Google Cloud console.
+If you're using a VPN or proxy server, then the Use my IP option
+doesn't display the client machine's actual IP address. This is by design.
+What's next
+Learn more about instance access control .
+Configure your instance to
+use SSL/TLS.
+Connect to your instance
+with the psql client using SSL/TLS.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

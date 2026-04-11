@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:51:07.328Z",
+  "generated_at": "2026-04-09T22:42:01.014Z",
   "product_name": "Cloud Run",
   "product_slug": "cloud-run",
   "step02_source_path": "data/step-02/current/cloud-run.md",
@@ -29,6 +29,26 @@
     },
     {
       "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/run/docs \"Cloud Run documentation\"",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Cloud Run documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs",
+          "description": "API services running on Cloud Run allow developers to persist data reliably on managed databases such as Cloud SQL or Firestore (NoSQL). Logging in to Cloud Run grants users access to app‐resource data stored in Cloud Databases. ... Back‐office administration often requires documents, spreadsheets, and other custom integrations, and running a vendor‐supplied web application.",
+          "rank": 1
+        },
+        {
+          "title": "Introduction to Cloud Run troubleshooting | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/troubleshooting/overview",
+          "description": "This page describes the common troubleshooting strategies for Cloud Run errors. Personalized Service Health publishes all Cloud Run incidents that stem from the underlying Google Cloud infrastructure to identify Google Cloud service disruptions impacting your projects.",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "round": 1,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Cloud Run\" official documentation OR site:developers.google.com \"cloud run\" official documentation",
       "official_result_count": 8,
@@ -36,25 +56,25 @@
         {
           "title": "Getting Started with Cloud Run functions (HTTP) | Google Codelabs",
           "url": "https://codelabs.developers.google.com/codelabs/getting-started-with-cloud-run-functions-http",
-          "description": "To invoke the function, you need ... has the Cloud Run Invoker role, as shown below: # get the Service URL SERVICE_URL=&quot;$(gcloud run services describe $SERVICE_NAME --region us-central1 --format &#x27;value(status.url)&#x27;)&quot; # invoke the service curl -H &quot;Authorization: bearer $(gcloud auth print-identity-token)&quot; -X GET $SERVICE_URL · Congratulations for completing the codelab! We recommend reviewing the documentation on Cloud Run ...",
+          "description": "To invoke the function, you need to send an authenticated request with your identity token or the identity token of a principle that has the Cloud Run Invoker role, as shown below: # get the Service URL SERVICE_URL=&quot;$(gcloud run services describe $SERVICE_NAME --region us-central1 --format &#x27;value(status.url)&#x27;)&quot; # invoke the service curl -H &quot;Authorization: bearer $(gcloud auth print-identity-token)&quot; -X GET $SERVICE_URL · Congratulations for completing the codelab! We recommend reviewing the documentation on Cloud Run functions",
           "rank": 1
-        },
-        {
-          "title": "Cloud Run and serverless computing | Google for Developers",
-          "url": "https://developers.google.com/learn/pathways/cloud-run-serverless-computing",
-          "description": "Learn about the key features of Cloud Run and the two ways to run your code on Cloud Run.",
-          "rank": 2
         },
         {
           "title": "Hello Cloud Run with Python (FastAPI) | Google Codelabs",
           "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-fastapi",
           "description": "Learn more about all three of these values in the documentation. Caution: A project ID is globally unique and can&#x27;t be used by anyone else after you&#x27;ve selected it. You are the only user of that ID. Even if a project is deleted, the ID can&#x27;t be used again · Note: If you use a Gmail account, you can leave the default location set to No organization. If you use a Google Workspace account, choose a location that makes sense for your organization. Next, you&#x27;ll need to enable billing in the Cloud Console to use Cloud resources/APIs.",
-          "rank": 3
+          "rank": 2
         },
         {
           "title": "Dev to Prod in Three Easy Steps with Cloud Run | Google Codelabs",
           "url": "https://codelabs.developers.google.com/codelabs/cloud-run-dev2prod",
           "description": "Once you got your app working in your developer environment, how many lines of code did you have to modify to deploy it to the cloud, with all the production-grade attributes offered by Cloud Run? The answer, of course, is zero. :) Many other languages are documented to get started with Cloud Run - you can find instructions for Go, Node.js, Java, C#, PHP, Ruby, Shell scripts, and others here: https://cloud.google.com/run/docs/quickstarts/build-and-deploy",
+          "rank": 3
+        },
+        {
+          "title": "Cloud Run and serverless computing | Google for Developers",
+          "url": "https://developers.google.com/learn/pathways/cloud-run-serverless-computing",
+          "description": "Learn about the key features of Cloud Run and the two ways to run your code on Cloud Run.",
           "rank": 4
         },
         {
@@ -76,9 +96,9 @@
           "rank": 7
         },
         {
-          "title": "Deploy a website with Cloud Run | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-deploy",
-          "description": "Learn to deploy a website with Cloud Run, which brings serverless agility to your containerized apps.",
+          "title": "Hello Cloud Run with Python | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-hello-python3",
+          "description": "Learn more about all three of these values in the documentation. Caution: A project ID is globally unique and can&#x27;t be used by anyone else after you&#x27;ve selected it. You are the only user of that ID. Even if a project is deleted, the ID can&#x27;t be used again · Note: If you use a Gmail account, you can leave the default location set to No organization. If you use a Google Workspace account, choose a location that makes sense for your organization. Next, you&#x27;ll need to enable billing in the Cloud Console to use Cloud resources/APIs.",
           "rank": 8
         }
       ]
@@ -126,15 +146,15 @@
           "rank": 6
         },
         {
-          "title": "Configure CPU limits for jobs | Cloud Run | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/cpu",
-          "description": "Cloud Run Developer (roles/run.developer) on the Cloud Run job · Service Account User (roles/iam.serviceAccountUser) on the service identity · For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
-          "rank": 7
-        },
-        {
           "title": "Manage jobs | Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/managing/jobs",
           "description": "To get the permissions that you need to manage Cloud Run jobs, ask your administrator to grant you the Cloud Run Developer (roles/run.developer) IAM role on your Cloud Run job. For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run ...",
+          "rank": 7
+        },
+        {
+          "title": "Configure CPU limits for jobs | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/cpu",
+          "description": "Cloud Run Developer (roles/run.developer) on the Cloud Run job · Service Account User (roles/iam.serviceAccountUser) on the service identity · For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
           "rank": 8
         }
       ]
@@ -305,19 +325,57 @@
       "round": 2,
       "intent": "api_reference",
       "query": "site:docs.cloud.google.com \"Cloud Run\" \"APIs and reference\"",
-      "official_result_count": 2,
+      "official_result_count": 1,
       "results": [
         {
           "title": "APIs and references | Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/apis",
           "description": "Cloud Run Overview page for the Cloud Run Admin API. Cloud Run gcloud command reference. Cloud Run YAML reference. Describes difference between v1 and v2 of the Cloud Run Admin API.",
           "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\"",
+      "official_result_count": 6,
+      "results": [
+        {
+          "title": "Configure service identity for services | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/configuring/services/service-identity",
+          "description": "Service identity as a principal: To access Google Cloud APIs from a Cloud Run service or revision, <strong>you must grant the service identity the required roles or permissions for the operations you want your service or revision to perform</strong>.",
+          "rank": 1
         },
         {
-          "title": "Workflows overview | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/workflows/docs/overview",
-          "description": "The Cloud Client Libraries for the Workflows API, or the REST API, can be used to manage workflows. For details, see Workflows APIs and reference. ... You can use Cloud Scheduler to run a workflow on a particular schedule, such as every Monday at 9 AM or every 15 minutes.",
+          "title": "Configure service identity for jobs | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/service-identity",
+          "description": "Service identity as a principal: To access Google Cloud APIs from a Cloud Run job, <strong>you must grant the service identity the required roles or permissions for the operations you want your job to perform</strong>.",
           "rank": 2
+        },
+        {
+          "title": "Cloud Run IAM roles | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+          "description": "This page lists the Identity and Access Management (IAM) predefined roles for accessing Cloud Run resources.",
+          "rank": 3
+        },
+        {
+          "title": "Configure service identity for worker pools | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/configuring/workerpools/service-identity",
+          "description": "Service identity as a principal: To access Google Cloud APIs from a Cloud Run worker pool, you must <strong>grant the service identity the required roles or permissions for the operations you want your worker pool to perform</strong>.",
+          "rank": 4
+        },
+        {
+          "title": "Restrict network endpoint ingress for Cloud Run services | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/securing/ingress",
+          "description": "The default ingress paths and ingress setting allow any resource on the internet to reach your Cloud Run service. You can use a custom constraint to restrict ingress settings for your organization or for a set of projects. IAM authentication still applies to requests reaching the service endpoints from any of the preceding network ingress paths. For a layered approach to managing access, use both network ingress settings and IAM authentication.",
+          "rank": 5
+        },
+        {
+          "title": "gcloud command line inside a Cloud Run service tutorial | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/tutorials/gcloud",
+          "description": "See Managing access using IAM for how to grant Google Cloud users access to invoke this service. Project editors and owners automatically have this access. ... Replace SERVICE_URL with the URL provided by Cloud Run after completing deployment.",
+          "rank": 6
         }
       ]
     },
@@ -352,15 +410,15 @@
           "rank": 4
         },
         {
-          "title": "Deploy a website with Cloud Run | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-deploy",
-          "description": "The project ID is a unique name across all Google Cloud projects, so the name in the screenshot has already been taken and will not work for you. It will be referred to later as PROJECT_ID. Next, you need to enable billing in the Cloud Console to use Google Cloud resources and enable the Cloud Run API.",
-          "rank": 5
-        },
-        {
           "title": "Cloud Run and serverless computing | Google for Developers",
           "url": "https://developers.google.com/learn/pathways/cloud-run-serverless-computing",
           "description": "Learn about Cloud Run services for containers that serve web requests and Cloud Run jobs for containers that run to completion and don&#x27;t serve requests.",
+          "rank": 5
+        },
+        {
+          "title": "Deploy a website with Cloud Run | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-deploy",
+          "description": "The project ID is a unique name across all Google Cloud projects, so the name in the screenshot has already been taken and will not work for you. It will be referred to later as PROJECT_ID. Next, you need to enable billing in the Cloud Console to use Google Cloud resources and enable the Cloud Run API.",
           "rank": 6
         },
         {
@@ -370,8 +428,8 @@
           "rank": 7
         },
         {
-          "title": "Hello Cloud Run with Python (Streamlit) | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-streamlit",
+          "title": "Hello Cloud Run with Python | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run-hello-python3",
           "description": "The Project ID is unique across all Google Cloud projects and is immutable (cannot be changed after it has been set). The Cloud Console auto-generates a unique string; usually you don&#x27;t care what it is. In most codelabs, you&#x27;ll need to reference your Project ID (typically identified as PROJECT_ID).",
           "rank": 8
         }
@@ -453,7 +511,7 @@
         },
         {
           "title": "Set up a Java development environment | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/setup?authuser=5",
+          "url": "https://docs.cloud.google.com/java/docs/setup",
           "description": "Tip: If you want to get started quickly, Cloud Shell Editor provides IDE support for the full development cycle of Google Kubernetes Engine and Cloud Run applications. Cloud Shell Editor is based on Code - OSS and comes with the Google Cloud CLI and Cloud Code tools preinstalled. Install a JDK (Java Development Kit). Install a build automation tool. Install the gcloud CLI. ... Install the Cloud Client Libraries for Java.",
           "rank": 3
         },
@@ -497,7 +555,7 @@
         },
         {
           "title": "Configure Cloud Run services | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/run/docs/configuring?hl=en",
+          "url": "https://docs.cloud.google.com/run/docs/configuring",
           "description": "Documentation · Application hosting · Cloud Run · Guides · Send feedback · This page provides an overview of configuration options for Cloud Run services. You can avoid cold starts for your application and reduce application latency by setting a minimum number of instances.",
           "rank": 3
         },
@@ -520,9 +578,9 @@
           "rank": 6
         },
         {
-          "title": "Deploy a Cloud Run service, job, or worker pool | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/deploy/docs/run-targets",
-          "description": "This document <strong>describes how to deploy your applications, including Cloud Run services, Cloud Run jobs, and Cloud Run worker pools</strong>.",
+          "title": "Cloud Run functions overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/functions/overview",
+          "description": "This guide provides an introductory overview of how other Google Cloud services are involved in the Cloud Run functions deployment process.",
           "rank": 7
         },
         {
@@ -587,6 +645,20 @@
     },
     {
       "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:docs.cloud.google.com/run/docs/reference \"Cloud Run Admin API overview\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Cloud Run Admin API overview | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+          "description": "The Cloud Run Admin API <strong>provides programmatic access to various administrative features, including creating, configuring, and managing services and jobs</strong>.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Cloud Run\" overview OR site:developers.google.com \"cloud run\" overview",
       "official_result_count": 8,
@@ -598,15 +670,15 @@
           "rank": 1
         },
         {
-          "title": "Hello Cloud Run with Python (Streamlit) | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-streamlit",
-          "description": "Cloud Run is <strong>a managed compute platform that enables you to run stateless containers that are invocable using HTTP requests</strong>. It is built on the Knative open-source project, enabling portability of your workloads across platforms.",
-          "rank": 2
-        },
-        {
           "title": "Cloud Run and serverless computing | Google for Developers",
           "url": "https://developers.google.com/learn/pathways/cloud-run-serverless-computing",
           "description": "Learn about Cloud Run services for containers that serve web requests and Cloud Run jobs for containers that run to completion and don&#x27;t serve requests.",
+          "rank": 2
+        },
+        {
+          "title": "Hello Cloud Run with Python (Streamlit) | Google Codelabs",
+          "url": "https://codelabs.developers.google.com/codelabs/cloud-run/cloud-run-hello-streamlit",
+          "description": "Cloud Run is <strong>a managed compute platform that enables you to run stateless containers that are invocable using HTTP requests</strong>. It is built on the Knative open-source project, enabling portability of your workloads across platforms.",
           "rank": 3
         },
         {
@@ -624,7 +696,7 @@
         {
           "title": "Getting started with Cloud Run jobs | Google Codelabs",
           "url": "https://codelabs.developers.google.com/codelabs/cloud-starting-cloudrun-jobs",
-          "description": "In this codelab, you will first explore a Node.js application to take screenshots of web pages and store them to Cloud Storage. You will then build a container image for the application, run it as a job on Cloud Run, update the job to process more web pages and run the job on a schedule with Cloud Scheduler.",
+          "description": "In this codelab, you will first explore a Node.js application to take screenshots of web pages and store them to Cloud Storage. You will then build a container image for the application, run it as a job on Cloud Run, update the job to process more web pages and run the job on a schedule with ...",
           "rank": 6
         },
         {
@@ -666,15 +738,15 @@
           "rank": 3
         },
         {
-          "title": "Cloud Run functions roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudfunctions",
-          "description": "This page lists the IAM roles and permissions for Cloud Run functions.",
-          "rank": 4
-        },
-        {
           "title": "Access control with IAM | Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/securing/managing-access",
           "description": "... Click the checkbox next to the service that you want to add principals to. (Don&#x27;t click the service itself.) <strong>In the information pane in the top right corner click the Permissions tab.</strong>",
+          "rank": 4
+        },
+        {
+          "title": "Cloud Run functions roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudfunctions",
+          "description": "This page lists the IAM roles and permissions for Cloud Run functions.",
           "rank": 5
         },
         {
@@ -684,15 +756,15 @@
           "rank": 6
         },
         {
-          "title": "Authorize access with IAM | Cloud Run functions | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
-          "description": "To get the permission that you need to control access for a specific function or all functions in a project, ask your administrator to grant you the Cloud Functions Admin (roles/roles/cloudfunctions.admin) IAM role on the function or the project.",
-          "rank": 7
-        },
-        {
           "title": "Access control with IAM | Cloud Run functions | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/functions/docs/concepts/iam",
           "description": "<strong>Make sure the Include Google-provided role grants box on the Permissions tab of the Console IAM page is checked to see this account</strong>. Or you can use gcloud projects add-iam-policy-binding PROJECT_ID.",
+          "rank": 7
+        },
+        {
+          "title": "Authorize access with IAM | Cloud Run functions | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+          "description": "To get the permission that you need to control access for a specific function or all functions in a project, ask your administrator to grant you the Cloud Functions Admin (roles/roles/cloudfunctions.admin) IAM role on the function or the project.",
           "rank": 8
         }
       ]
@@ -711,15 +783,15 @@
       "official_result_count": 8,
       "results": [
         {
-          "title": "Cloud Run functions documentation | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/functions/docs",
-          "description": "Cloud Run functions is <strong>a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment</strong>.",
-          "rank": 1
-        },
-        {
           "title": "Cloud Run documentation | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs",
           "description": "Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services. ... Learn how to write, deploy, and call a Cloud Run service from a Pub/Sub push subscription.",
+          "rank": 1
+        },
+        {
+          "title": "Cloud Run functions documentation | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/functions/docs",
+          "description": "Cloud Run functions is <strong>a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment</strong>.",
           "rank": 2
         },
         {
@@ -735,27 +807,27 @@
           "rank": 4
         },
         {
-          "title": "Deploy a Cloud Run service, job, or worker pool | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/deploy/docs/run-targets",
-          "description": "To create a Cloud Run service definition, you can either create one manually, or copy one from an existing service. Both are described in this section. The service.yaml defines your Cloud Run service.",
-          "rank": 5
-        },
-        {
           "title": "Overview | Cloud Run functions | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/functions/docs/reference",
           "description": "If you are creating a new function, see the Console Quickstart on Cloud Run.",
-          "rank": 6
+          "rank": 5
         },
         {
-          "title": "google-cloud-run overview (0.88.0) | Java client libraries | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview",
-          "description": "Cloud Run Description: Is <strong>a managed compute platform that enables you to run containers that are invocable via requests or events</strong>.",
-          "rank": 7
+          "title": "Deploy a Cloud Run service, job, or worker pool | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/deploy/docs/run-targets",
+          "description": "To create a Cloud Run service definition, you can either create one manually, or copy one from an existing service. Both are described in this section. The service.yaml defines your Cloud Run service.",
+          "rank": 6
         },
         {
           "title": "Quickstarts | Cloud Run | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/run/docs/quickstarts",
           "description": "Set up your Google Cloud project and deploy a service in an existing sample container to Cloud Run.",
+          "rank": 7
+        },
+        {
+          "title": "google-cloud-run overview (0.88.0) | Java client libraries | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview",
+          "description": "Cloud Run Description: Is <strong>a managed compute platform that enables you to run containers that are invocable via requests or events</strong>.",
           "rank": 8
         }
       ]
@@ -821,14 +893,16 @@
     {
       "title": "Cloud Run documentation | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs",
-      "description": "Hosting the containerized internal web application on Cloud Run means it is always ready and you are only billed when it is used. ... Build Cloud Run data processing applications that transform lightweight data as it arrives and store it as structured data. Transformations can be triggered from Google Cloud sources.",
+      "description": "API services running on Cloud Run allow developers to persist data reliably on managed databases such as Cloud SQL or Firestore (NoSQL). Logging in to Cloud Run grants users access to app‐resource data stored in Cloud Databases. ... Back‐office administration often requires documents, spreadsheets, and other custom integrations, and running a vendor‐supplied web application.",
       "rank": 1,
       "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run documentation\"",
         "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Cloud Run\" Google Cloud docs overview",
         "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
       ],
       "intent_hits": [
+        "canonical_docs",
         "product_docs"
       ],
       "round_hits": [
@@ -838,13 +912,13 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -875,22 +949,22 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "supporting_page",
+        "classification": "product_root",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
-        "keep": false,
+        "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": false
+      "keep": true
     },
     {
       "title": "Quickstarts | Cloud Run | Google Cloud Documentation",
@@ -912,13 +986,13 @@
       ],
       "best_rank": 5,
       "consistency_score": 100,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -951,13 +1025,13 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 118,
+      "product_fit_score": 160,
       "deterministic_score": 100,
       "api_score": {
         "classification": "java_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -972,7 +1046,7 @@
       "title": "Cloud Run and serverless computing | Google for Developers",
       "url": "https://developers.google.com/learn/pathways/cloud-run-serverless-computing",
       "description": "Learn about the key features of Cloud Run and the two ways to run your code on Cloud Run.",
-      "rank": 2,
+      "rank": 4,
       "query_hits": [
         "site:developers.google.com \"Cloud Run\" official documentation OR site:developers.google.com \"cloud run\" official documentation",
         "site:developers.google.com \"Cloud Run\" reference OR site:developers.google.com \"cloud run\" reference",
@@ -988,12 +1062,12 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 100,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -1004,80 +1078,6 @@
       },
       "final_score": 100,
       "keep": false
-    },
-    {
-      "title": "Deploy a Cloud Run service, job, or worker pool | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/deploy/docs/run-targets",
-      "description": "This document describes how to deploy your applications, including Cloud Run services, Cloud Run jobs, and Cloud Run worker pools.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 100,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Cloud Run functions documentation | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs",
-      "description": "Cloud Run functions is <strong>a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment</strong>.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 5,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 100,
-      "keep": true
     },
     {
       "title": "APIs and references | Cloud Run | Google Cloud Documentation",
@@ -1099,17 +1099,53 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 122,
+      "product_fit_score": 174,
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 52,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
+    },
+    {
+      "title": "Cloud Run IAM roles | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+      "description": "This page lists the Identity and Access Management (IAM) predefined roles for accessing Cloud Run resources.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\"",
+        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1134,13 +1170,13 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1169,13 +1205,13 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 118,
+      "product_fit_score": 160,
       "deterministic_score": 100,
       "api_score": {
         "classification": "python_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1204,193 +1240,18 @@
       ],
       "best_rank": 2,
       "consistency_score": 67,
-      "product_fit_score": 118,
+      "product_fit_score": 160,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
         "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Build a modern three-tier architecture web application with Cloud Run | Solutions for Developers | Google for Developers",
-      "url": "https://developers.google.com/learn/pathways/solution-three-tier-cloud-run",
-      "description": "Learn about architecting a traditional multi-tier web application and how to transition it to the cloud. Learn about containerizing your frontend and backend for hosting on Cloud Run.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Cloud Run\" reference OR site:developers.google.com \"cloud run\" reference",
-        "site:developers.google.com \"Cloud Run\" overview OR site:developers.google.com \"cloud run\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 100,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Access control with IAM | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/concepts/iam",
-      "description": "This page provides supplemental information for using Identity and Access Management (IAM) roles to set access controls at a project level, to determine the level of access to your Google Cloud project and functions created using gcloud functions commands or the Cloud Functions v2 API. If you&#x27;ve created or deployed functions using Cloud Run, see Access control with IAM and Cloud Run roles for a detailed description of Cloud Run predefined roles, controlling access to individual services, making a service public, or configuring organization policy for the Cloud Run invoker IAM.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"access control\"",
-        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": true
-    },
-    {
-      "title": "Cloud Functions IAM Roles | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
-      "description": "For Cloud Run functions, the default runtime service account is PROJECT_NUMBER-compute@developer.gserviceaccount.com. Display the Principals with access tab.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"access control\"",
-        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 67,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Authorize access with IAM | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
-      "description": "To get the permission that you need to control access for a specific function or all functions in a project, ask your administrator to grant you the Cloud Functions Admin (roles/roles/cloudfunctions.admin) IAM role on the function or the project.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"access control\"",
-        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        2,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 67,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 95,
-      "keep": false
-    },
-    {
-      "title": "Cloud Run functions roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudfunctions",
-      "description": "This page lists the IAM roles and permissions for Cloud Run functions.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"roles and permissions\"",
-        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1,
-        3
-      ],
-      "best_rank": 2,
-      "consistency_score": 67,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 95,
@@ -1414,13 +1275,13 @@
       ],
       "best_rank": 1,
       "consistency_score": 67,
-      "product_fit_score": 72,
+      "product_fit_score": 114,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1432,34 +1293,69 @@
       "keep": false
     },
     {
-      "title": "Class HttpRoute.RequestMirrorPolicy (0.43.0) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/com.google.cloud.networkservices.v1.HttpRoute.RequestMirrorPolicy",
-      "description": "Specifies the policy on how requests ... the shadow service, the host/authority header is suffixed with -shadow. Mirroring is currently not supported for <strong>Cloud Run</strong> destinations....",
-      "rank": 7,
+      "title": "Build a modern three-tier architecture web application with Cloud Run | Solutions for Developers | Google for Developers",
+      "url": "https://developers.google.com/learn/pathways/solution-three-tier-cloud-run",
+      "description": "Learn about architecting a traditional multi-tier web application and how to transition it to the cloud. Learn about containerizing your frontend and backend for hosting on Cloud Run.",
+      "rank": 3,
       "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\"",
-        "site:docs.cloud.google.com \"Cloud Run\" \"Java client libraries\""
+        "site:developers.google.com \"Cloud Run\" reference OR site:developers.google.com \"cloud run\" reference",
+        "site:developers.google.com \"Cloud Run\" overview OR site:developers.google.com \"cloud run\" overview"
       ],
       "intent_hits": [
-        "java_client"
+        "developers_docs"
       ],
       "round_hits": [
-        1,
-        2
+        2,
+        3
       ],
-      "best_rank": 6,
+      "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Cloud Run functions roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudfunctions",
+      "description": "This page lists the IAM roles and permissions for Cloud Run functions.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"roles and permissions\"",
+        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": 44,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 4,
+        "coverage_value": 4,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1484,16 +1380,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 26,
+      "product_fit_score": -2,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 1,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -1517,13 +1413,13 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1536,7 +1432,7 @@
     },
     {
       "title": "Configure Cloud Run services | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/configuring?hl=en",
+      "url": "https://docs.cloud.google.com/run/docs/configuring",
       "description": "Documentation · Application hosting · Cloud Run · Guides · Send feedback · This page provides an overview of configuration options for Cloud Run services. You can avoid cold starts for your application and reduce application latency by setting a minimum number of instances.",
       "rank": 3,
       "query_hits": [
@@ -1550,13 +1446,13 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1571,7 +1467,7 @@
       "title": "Configure CPU limits for jobs | Cloud Run | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/cpu",
       "description": "Cloud Run Developer (roles/run.developer) on the Cloud Run job · Service Account User (roles/iam.serviceAccountUser) on the service identity · For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions.",
-      "rank": 7,
+      "rank": 8,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run\" \"roles and permissions\""
       ],
@@ -1581,20 +1477,119 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure service identity for jobs | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/jobs/service-identity",
+      "description": "Service identity as a principal: To access Google Cloud APIs from a Cloud Run job, <strong>you must grant the service identity the required roles or permissions for the operations you want your job to perform</strong>.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure service identity for services | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/services/service-identity",
+      "description": "Service identity as a principal: To access Google Cloud APIs from a Cloud Run service or revision, <strong>you must grant the service identity the required roles or permissions for the operations you want your service or revision to perform</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Configure service identity for worker pools | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/configuring/workerpools/service-identity",
+      "description": "Service identity as a principal: To access Google Cloud APIs from a Cloud Run worker pool, you must <strong>grant the service identity the required roles or permissions for the operations you want your worker pool to perform</strong>.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 90,
@@ -1616,13 +1611,13 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1649,13 +1644,13 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1667,10 +1662,43 @@
       "keep": false
     },
     {
+      "title": "Cloud Run functions overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/functions/overview",
+      "description": "This guide provides an introductory overview of how other Google Cloud services are involved in the Cloud Run functions deployment process.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
       "title": "Manage jobs | Cloud Run | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/run/docs/managing/jobs",
       "description": "To get the permissions that you need to manage Cloud Run jobs, ask your administrator to grant you the Cloud Run Developer (roles/run.developer) IAM role on your Cloud Run job. For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run ...",
-      "rank": 8,
+      "rank": 7,
       "query_hits": [
         "site:docs.cloud.google.com \"Cloud Run\" \"roles and permissions\""
       ],
@@ -1680,15 +1708,15 @@
       "round_hits": [
         1
       ],
-      "best_rank": 8,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1715,13 +1743,13 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1748,13 +1776,13 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
@@ -1764,6 +1792,39 @@
       },
       "final_score": 90,
       "keep": false
+    },
+    {
+      "title": "Cloud Run Admin API overview | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+      "description": "The Cloud Run Admin API <strong>provides programmatic access to various administrative features, including creating, configuring, and managing services and jobs</strong>.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs/reference \"Cloud Run Admin API overview\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "api_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": true
     },
     {
       "title": "Cloud Run IAM permissions | Google Cloud Documentation",
@@ -1781,52 +1842,19 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Run IAM roles | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/run/docs/reference/iam/roles",
-      "description": "When using Infrastructure-as-Code (IaC) tools like Config Connector to deploy Cloud Run services, <strong>the deployer account needs permission to read container images from Artifact Registry</strong>.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 122,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1847,19 +1875,52 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Restrict network endpoint ingress for Cloud Run services | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/securing/ingress",
+      "description": "The default ingress paths and ingress setting allow any resource on the internet to reach your Cloud Run service. You can use a custom constraint to restrict ingress settings for your organization or for a set of projects. IAM authentication still applies to requests reaching the service endpoints from any of the preceding network ingress paths. For a layered approach to managing access, use both network ingress settings and IAM authentication.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1880,19 +1941,85 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Introduction to Cloud Run troubleshooting | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/troubleshooting/overview",
+      "description": "This page describes the common troubleshooting strategies for Cloud Run errors. Personalized Service Health publishes all Cloud Run incidents that stem from the underlying Google Cloud infrastructure to identify Google Cloud service disruptions impacting your projects.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run documentation\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "gcloud command line inside a Cloud Run service tutorial | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/tutorials/gcloud",
+      "description": "See Managing access using IAM for how to grant Google Cloud users access to invoke this service. Project editors and owners automatically have this access. ... Replace SERVICE_URL with the URL provided by Cloud Run after completing deployment.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/run/docs \"Cloud Run\" apis \"managing access\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 164,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1913,19 +2040,184 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 122,
+      "product_fit_score": 164,
       "deterministic_score": 100,
       "api_score": {
         "classification": "iam_reference",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
+        "family_score": 42,
+        "family_preferred": true,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
         "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Package executions (0.13.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions",
+      "description": "API documentation for run_v2.services.executions package. <strong>Cloud Run</strong> Execution Control Plane API.",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 160,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class ExecutionsClient (0.11.0) | Python client library | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient",
+      "description": "Gets the latest state of a long-running operation. job_path(project: str, location: str, job: str) -&gt; str · Returns a fully-qualified job string. list_executions( request: typing.Optional[ typing.Union[google.cloud.run_v2.types.execution.ListExecutionsRequest, dict] ] = None, *, parent: typing.Optional[str] = None, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) -&gt; google.cloud.run_v2.services.executions.pagers.ListExecutionsPager",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 160,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class InstancesClient (0.15.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.instances.InstancesClient",
+      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import run_v2 def sample_create_instance(): # Create a client client = run_v2.InstancesClient() # Initialize request argument(s) instance = run_v2.Instance() instance.containers.image = &quot;image_value&quot; request = run_v2.CreateInstanceRequest( parent=&quot;parent_value&quot;, instance=instance, instance_id=&quot;instance_id_value&quot;, ) # Make the request operation = client.create_instance(request=request) print(&quot;Waiting for operation to complete...&quot;) response = operation.result() # Handle the response print(response)",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 160,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class JobsAsyncClient (0.14.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import run_v2 async def sample_create_job(): # Create a client client = run_v2.JobsAsyncClient() # Initialize request argument(s) job = run_v2.Job() job.start_execution_token = &quot;start_execution_token_value&quot; job.template.template.max_retries = 1187 request = run_v2.CreateJobRequest( parent=&quot;parent_value&quot;, job=job, job_id=&quot;job_id_value&quot;, ) # Make the request operation = client.create_job(request=request) print(&quot;Waiting for operation to complete...&quot;) response = (await operation).result() # Handle the response print(response)",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 160,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Class ExecutionTemplate (0.15.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.types.ExecutionTemplate",
+      "description": "ExecutionTemplate describes the data an execution should have when created from a template · <strong>Cloud Run</strong> API v2 does not support labels with run.googleapis.com, cloud.googleapis.com, serving.knative.dev, or autoscaling.knative.dev namespaces, and they will be rejected.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 160,
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1946,12 +2238,12 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 118,
+      "product_fit_score": 90,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -1979,177 +2271,12 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 118,
+      "product_fit_score": 90,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Package executions (0.13.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions",
-      "description": "API documentation for run_v2.services.executions package. <strong>Cloud Run</strong> Execution Control Plane API.",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 118,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class ExecutionsClient (0.11.0) | Python client library | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient",
-      "description": "Gets the latest state of a long-running operation. job_path(project: str, location: str, job: str) -&gt; str · Returns a fully-qualified job string. list_executions( request: typing.Optional[ typing.Union[google.cloud.run_v2.types.execution.ListExecutionsRequest, dict] ] = None, *, parent: typing.Optional[str] = None, retry: typing.Optional[ typing.Union[ google.api_core.retry.retry_unary.Retry, google.api_core.gapic_v1.method._MethodDefault, ] ] = _MethodDefault._DEFAULT_VALUE, timeout: typing.Union[float, object] = _MethodDefault._DEFAULT_VALUE, metadata: typing.Sequence[typing.Tuple[str, typing.Union[str, bytes]]] = () ) -&gt; google.cloud.run_v2.services.executions.pagers.ListExecutionsPager",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 118,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class InstancesClient (0.15.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.instances.InstancesClient",
-      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import run_v2 def sample_create_instance(): # Create a client client = run_v2.InstancesClient() # Initialize request argument(s) instance = run_v2.Instance() instance.containers.image = &quot;image_value&quot; request = run_v2.CreateInstanceRequest( parent=&quot;parent_value&quot;, instance=instance, instance_id=&quot;instance_id_value&quot;, ) # Make the request operation = client.create_instance(request=request) print(&quot;Waiting for operation to complete...&quot;) response = operation.result() # Handle the response print(response)",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 118,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class JobsAsyncClient (0.14.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
-      "description": "# - It may require specifying regional endpoints when creating the service # client as shown in: # https://googleapis.dev/python/google-api-core/latest/client_options.html from google.cloud import run_v2 async def sample_create_job(): # Create a client client = run_v2.JobsAsyncClient() # Initialize request argument(s) job = run_v2.Job() job.start_execution_token = &quot;start_execution_token_value&quot; job.template.template.max_retries = 1187 request = run_v2.CreateJobRequest( parent=&quot;parent_value&quot;, job=job, job_id=&quot;job_id_value&quot;, ) # Make the request operation = client.create_job(request=request) print(&quot;Waiting for operation to complete...&quot;) response = (await operation).result() # Handle the response print(response)",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 118,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Class ExecutionTemplate (0.15.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.types.ExecutionTemplate",
-      "description": "ExecutionTemplate describes the data an execution should have when created from a template · <strong>Cloud Run</strong> API v2 does not support labels with run.googleapis.com, cloud.googleapis.com, serving.knative.dev, or autoscaling.knative.dev namespaces, and they will be rejected.",
-      "rank": 7,
-      "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "python_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 118,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2177,12 +2304,12 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 100,
+      "product_fit_score": 72,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2210,12 +2337,12 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2243,12 +2370,12 @@
       ],
       "best_rank": 1,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2276,12 +2403,12 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2309,12 +2436,12 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2342,12 +2469,12 @@
       ],
       "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2375,12 +2502,12 @@
       ],
       "best_rank": 2,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2408,12 +2535,12 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2441,12 +2568,12 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 92,
+      "product_fit_score": 64,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
@@ -2474,215 +2601,17 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/eventarc/docs/roles-permissions",
-      "description": "This applies if you are routing events to an authenticated Cloud Run service. ... If you are creating a trigger for direct events from Cloud Storage, grant the Pub/Sub Publisher role. If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, grant the Service Account Token Creator role. For more information about granting IAM roles, see Manage access. You might also be able to get the required permissions through custom roles or other predefined roles.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"roles and permissions\""
-      ],
-      "intent_hits": [
-        "iam_permissions"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "API Reference | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/apis",
-      "description": "If you are creating a new function, see the Console Quickstart on Cloud Run. ... Reference for the Google Cloud CLI interface for Cloud Functions. Language-specific client libraries for managing Cloud Functions deployments. Cloud Functions Terraform Reference. Cloud Functions REST API Reference.",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Functions client libraries | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/apis/libraries",
-      "description": "Start writing code for Cloud Functions in Node.js, Python, Go, Java, C#, Ruby, PHP.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"Java client libraries\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": 72,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
+        "product_match": 4,
         "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Functions overview | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/concepts/overview",
-      "description": "Learn how to deploy a Cloud Run function. If you have existing functions and need to use gcloud functions commands or the Cloud Functions v2 API for backward compatibility, see Deploy functions created with the v2 API.",
-      "rank": 8,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Overview | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/reference",
-      "description": "If you are creating a new function, see the Console Quickstart on Cloud Run.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 5,
-        "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Retry on error | Cloud Run functions | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/functions/docs/samples/functions-tips-retry",
-      "description": "To authenticate to Cloud Run functions, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. // Package tips contains tips for writing Cloud Functions in Go. package tips import ( &quot;context&quot; &quot;errors&quot; &quot;log&quot; ) // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Data []byte `json:&quot;data&quot;` } // RetryPubSub demonstrates how to toggle using retries.",
-      "rank": 1,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"reference/rest\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 1,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2705,16 +2634,16 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 72,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
+        "product_match": 4,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2724,7 +2653,7 @@
     },
     {
       "title": "Set up a Java development environment | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/setup?authuser=5",
+      "url": "https://docs.cloud.google.com/java/docs/setup",
       "description": "Tip: If you want to get started quickly, Cloud Shell Editor provides IDE support for the full development cycle of Google Kubernetes Engine and Cloud Run applications. Cloud Shell Editor is based on Code - OSS and comes with the Google Cloud CLI and Cloud Code tools preinstalled. Install a JDK (Java Development Kit). Install a build automation tool. Install the gcloud CLI. ... Install the Cloud Client Libraries for Java.",
       "rank": 3,
       "query_hits": [
@@ -2738,49 +2667,16 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 72,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Cloud Run API reference | Cloud Service Mesh | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/service-mesh/docs/cloud-run-api-reference",
-      "description": "This page provides a reference for the APIs that are used to configure Cloud Service Mesh for Cloud Run workloads.",
-      "rank": 3,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"API reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 72,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
+        "product_match": 4,
         "coverage_value": 2,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2804,50 +2700,17 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 72,
+      "product_fit_score": 44,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
+        "product_match": 4,
         "coverage_value": 3,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Package com.google.auth.oauth2 (1.42.1) | Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-auth-library/latest/com.google.auth.oauth2",
-      "description": "IdTokenCredentials provides a Google Issued OpenIdConnect token. Use an ID token to access services that require presenting an ID token for authentication such as Cloud Functions or <strong>Cloud Run</strong>.",
-      "rank": 6,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2870,50 +2733,17 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": -2,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 1,
         "coverage_value": 3,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Java client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/history",
-      "description": "Add <strong>Cloud Run</strong> Jobs support (#1574) (1dd64d0) deps: Update the Java code generator (gapic-generator-java) to 2.39.0 (#1587) (848418b) Update dependency com.google.cloud:sdk-platform-java-config to v3.29.0 (#1586) (edcaf8d) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 (#1569) (8eb0781) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.0 (#1560) (d52e623) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 (#1563) (81aa3e6) deps: Update the Java code generator (gapic-generator-java) to 2.37.0 (#1553) (15b05fc) Update dependency com.g",
-      "rank": 5,
-      "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\""
-      ],
-      "intent_hits": [
-        "java_client"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2936,16 +2766,16 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": -2,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 1,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -2969,16 +2799,16 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": -2,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 1,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3002,16 +2832,16 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 26,
+      "product_fit_score": -2,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 3,
+        "product_match": 1,
         "coverage_value": 4,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
@@ -3020,102 +2850,73 @@
       "keep": false
     },
     {
-      "title": "Class GoogleCloudRun (0.4.0) | Python client libraries | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.types.GoogleCloudRun",
-      "description": "GoogleCloudRun represents the <strong>Cloud Run</strong> runtime.",
-      "rank": 6,
+      "title": "Overview | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/reference",
+      "description": "If you are creating a new function, see the Console Quickstart on Cloud Run.",
+      "rank": 5,
       "query_hits": [
-        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "python_client"
+        "product_docs"
       ],
       "round_hits": [
-        1
+        3
       ],
-      "best_rank": 6,
+      "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 100,
+      "product_fit_score": -76,
+      "deterministic_score": 84,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
+        "classification": "irrelevant",
+        "score": 84,
+        "family_score": -148,
         "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Workflows overview | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/overview",
-      "description": "The Cloud Client Libraries for the Workflows API, or the REST API, can be used to manage workflows. For details, see Workflows APIs and reference. ... You can use Cloud Scheduler to run a workflow on a particular schedule, such as every Monday at 9 AM or every 15 minutes.",
-      "rank": 2,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Cloud Run\" \"APIs and reference\""
-      ],
-      "intent_hits": [
-        "api_reference"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 2,
-      "consistency_score": 33,
-      "product_fit_score": -22,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_reference",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
         "product_match": 0,
-        "coverage_value": 4,
-        "keep": true,
+        "coverage_value": 5,
+        "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 90,
+      "final_score": 76,
       "keep": false
     },
     {
-      "title": "Class OidcToken.Builder (2.78.0) | Java client library | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/com.google.cloud.scheduler.v1.OidcToken.Builder",
-      "description": "Contains information needed for generating an OpenID Connect token. This type of authorization can be used for many scenarios, including calling <strong>Cloud Run</strong>, or endpoints where you intend to validate the token yourself.",
+      "title": "Cloud Run functions documentation | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs",
+      "description": "Cloud Run functions is <strong>a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment</strong>.",
       "rank": 4,
       "query_hits": [
-        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\""
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
       ],
       "intent_hits": [
-        "java_client"
+        "product_docs"
       ],
       "round_hits": [
-        1
+        1,
+        2,
+        3
       ],
-      "best_rank": 4,
-      "consistency_score": 33,
-      "product_fit_score": 26,
-      "deterministic_score": 93,
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": -76,
+      "deterministic_score": 67,
       "api_score": {
-        "classification": "supporting_page",
-        "score": 93,
-        "family_score": 0,
+        "classification": "irrelevant",
+        "score": 67,
+        "family_score": -148,
         "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 3,
-        "coverage_value": 0,
+        "family_forbidden": true,
+        "parent_page_likelihood": 3,
+        "product_match": 0,
+        "coverage_value": 5,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 84,
+      "final_score": 72,
       "keep": false
     },
     {
@@ -3134,21 +2935,289 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": -28,
-      "deterministic_score": 93,
+      "product_fit_score": -56,
+      "deterministic_score": 65,
       "api_score": {
         "classification": "supporting_page",
-        "score": 93,
-        "family_score": 0,
+        "score": 65,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 5,
+        "parent_page_likelihood": 3,
         "product_match": 0,
         "coverage_value": 3,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 84,
+      "final_score": 60,
+      "keep": false
+    },
+    {
+      "title": "API Reference | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/apis",
+      "description": "If you are creating a new function, see the Console Quickstart on Cloud Run. ... Reference for the Google Cloud CLI interface for Cloud Functions. Language-specific client libraries for managing Cloud Functions deployments. Cloud Functions Terraform Reference. Cloud Functions REST API Reference.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": -76,
+      "deterministic_score": 65,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 65,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 3,
+        "product_match": 0,
+        "coverage_value": 4,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 60,
+      "keep": false
+    },
+    {
+      "title": "Class HttpRoute.RequestMirrorPolicy (0.43.0) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-networkservices/latest/com.google.cloud.networkservices.v1.HttpRoute.RequestMirrorPolicy",
+      "description": "Specifies the policy on how requests ... the shadow service, the host/authority header is suffixed with -shadow. Mirroring is currently not supported for <strong>Cloud Run</strong> destinations....",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\"",
+        "site:docs.cloud.google.com \"Cloud Run\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 67,
+      "product_fit_score": -2,
+      "deterministic_score": 53,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 53,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 1,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 55,
+      "keep": false
+    },
+    {
+      "title": "Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/history",
+      "description": "Add <strong>Cloud Run</strong> Jobs support (#1574) (1dd64d0) deps: Update the Java code generator (gapic-generator-java) to 2.39.0 (#1587) (848418b) Update dependency com.google.cloud:sdk-platform-java-config to v3.29.0 (#1586) (edcaf8d) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 (#1569) (8eb0781) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.0 (#1560) (d52e623) Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 (#1563) (81aa3e6) deps: Update the Java code generator (gapic-generator-java) to 2.37.0 (#1553) (15b05fc) Update dependency com.g",
+      "rank": 5,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": -2,
+      "deterministic_score": 58,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 58,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 1,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 54,
+      "keep": false
+    },
+    {
+      "title": "Class GoogleCloudRun (0.4.0) | Python client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.types.GoogleCloudRun",
+      "description": "GoogleCloudRun represents the <strong>Cloud Run</strong> runtime.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/python/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "python_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": -2,
+      "deterministic_score": 51,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 51,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 1,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 48,
+      "keep": false
+    },
+    {
+      "title": "Package com.google.auth.oauth2 (1.42.1) | Java client libraries | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-auth-library/latest/com.google.auth.oauth2",
+      "description": "IdTokenCredentials provides a Google Issued OpenIdConnect token. Use an ID token to access services that require presenting an ID token for authentication such as Cloud Functions or <strong>Cloud Run</strong>.",
+      "rank": 6,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": -2,
+      "deterministic_score": 47,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 47,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 1,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 45,
+      "keep": false
+    },
+    {
+      "title": "Class OidcToken.Builder (2.78.0) | Java client library | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/com.google.cloud.scheduler.v1.OidcToken.Builder",
+      "description": "Contains information needed for generating an OpenID Connect token. This type of authorization can be used for many scenarios, including calling <strong>Cloud Run</strong>, or endpoints where you intend to validate the token yourself.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com/java/docs/reference \"Cloud Run\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": -2,
+      "deterministic_score": 37,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 37,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 1,
+        "coverage_value": 0,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 36,
+      "keep": false
+    },
+    {
+      "title": "Access control with IAM | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/concepts/iam",
+      "description": "This page provides supplemental information for using Identity and Access Management (IAM) roles to set access controls at a project level, to determine the level of access to your Google Cloud project and functions created using gcloud functions commands or the Cloud Functions v2 API. If you&#x27;ve created or deployed functions using Cloud Run, see Access control with IAM and Cloud Run roles for a detailed description of Cloud Run predefined roles, controlling access to individual services, making a service public, or configuring organization policy for the Cloud Run invoker IAM.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"access control\"",
+        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 67,
+      "product_fit_score": -76,
+      "deterministic_score": 23,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 23,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 30,
+      "keep": false
+    },
+    {
+      "title": "Cloud Functions client libraries | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/apis/libraries",
+      "description": "Start writing code for Cloud Functions in Node.js, Python, Go, Java, C#, Ruby, PHP.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"Java client libraries\""
+      ],
+      "intent_hits": [
+        "java_client"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": -76,
+      "deterministic_score": 29,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 29,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 30,
       "keep": false
     },
     {
@@ -3167,21 +3236,192 @@
       ],
       "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": -2,
-      "deterministic_score": 53,
+      "product_fit_score": -30,
+      "deterministic_score": 25,
       "api_score": {
         "classification": "supporting_page",
-        "score": 53,
-        "family_score": 0,
+        "score": 25,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
-        "product_match": 1,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
         "coverage_value": 0,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 50,
+      "final_score": 26,
+      "keep": false
+    },
+    {
+      "title": "Cloud Functions IAM Roles | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+      "description": "For Cloud Run functions, the default runtime service account is PROJECT_NUMBER-compute@developer.gserviceaccount.com. Display the Principals with access tab.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"access control\"",
+        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": -76,
+      "deterministic_score": 10,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 10,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 19,
+      "keep": false
+    },
+    {
+      "title": "Roles and permissions for Cloud Run targets | Eventarc Standard | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/eventarc/docs/roles-permissions",
+      "description": "This applies if you are routing events to an authenticated Cloud Run service. ... If you are creating a trigger for direct events from Cloud Storage, grant the Pub/Sub Publisher role. If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, grant the Service Account Token Creator role. For more information about granting IAM roles, see Manage access. You might also be able to get the required permissions through custom roles or other predefined roles.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"roles and permissions\""
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": -76,
+      "deterministic_score": 10,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 10,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 1,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 13,
+      "keep": false
+    },
+    {
+      "title": "Deploy a Cloud Run service, job, or worker pool | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/deploy/docs/run-targets",
+      "description": "This document describes how to deploy your applications, including Cloud Run services, Cloud Run jobs, and Cloud Run worker pools.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 67,
+      "product_fit_score": -76,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 10,
+      "keep": false
+    },
+    {
+      "title": "Authorize access with IAM | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+      "description": "To get the permission that you need to control access for a specific function or all functions in a project, ask your administrator to grant you the Cloud Functions Admin (roles/roles/cloudfunctions.admin) IAM role on the function or the project.",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"access control\"",
+        "site:docs.cloud.google.com \"Cloud Run\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": -76,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 10,
+      "keep": false
+    },
+    {
+      "title": "Cloud Run API reference | Cloud Service Mesh | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/service-mesh/docs/cloud-run-api-reference",
+      "description": "This page provides a reference for the APIs that are used to configure Cloud Service Mesh for Cloud Run workloads.",
+      "rank": 3,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"API reference\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": -76,
+      "deterministic_score": 2,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 2,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 7,
       "keep": false
     },
     {
@@ -3200,21 +3440,87 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": -2,
-      "deterministic_score": 41,
+      "product_fit_score": -30,
+      "deterministic_score": 0,
       "api_score": {
         "classification": "supporting_page",
-        "score": 41,
-        "family_score": 0,
+        "score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 2,
-        "product_match": 1,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
         "coverage_value": 1,
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 40,
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Functions overview | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/concepts/overview",
+      "description": "Learn how to deploy a Cloud Run function. If you have existing functions and need to use gcloud functions commands or the Cloud Functions v2 API for backward compatibility, see Deploy functions created with the v2 API.",
+      "rank": 8,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": -76,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 2,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Retry on error | Cloud Run functions | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/functions/docs/samples/functions-tips-retry",
+      "description": "To authenticate to Cloud Run functions, set up Application Default Credentials. For more information, see Set up authentication for a local development environment. // Package tips contains tips for writing Cloud Functions in Go. package tips import ( &quot;context&quot; &quot;errors&quot; &quot;log&quot; ) // PubSubMessage is the payload of a Pub/Sub event. // See the documentation for more details: // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage type PubSubMessage struct { Data []byte `json:&quot;data&quot;` } // RetryPubSub demonstrates how to toggle using retries.",
+      "rank": 1,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Cloud Run\" \"reference/rest\""
+      ],
+      "intent_hits": [
+        "api_reference"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": -76,
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 1,
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
       "keep": false
     }
   ]

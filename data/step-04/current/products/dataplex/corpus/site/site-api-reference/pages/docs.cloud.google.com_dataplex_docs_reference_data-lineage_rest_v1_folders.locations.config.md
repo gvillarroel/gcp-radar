@@ -1,6 +1,6 @@
 ---
-title: "REST Resource: folders.locations.config \_|\_ Dataplex Universal Catalog \_\
-  |\_ Google Cloud Documentation"
+title: "REST Resource: folders.locations.config \_|\_ Knowledge Catalog \_|\_ Google\
+  \ Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/reference/data-lineage/rest/v1/folders.locations.config
 knowledge_key: corpus
 source_id: site-api-reference
@@ -8,18 +8,19 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/reference/rest
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/reference/data-lineage/rest/v1/folders.locations.config
-  title: "REST Resource: folders.locations.config \_|\_ Dataplex Universal Catalog\
-    \ \_|\_ Google Cloud Documentation"
+  title: "REST Resource: folders.locations.config \_|\_ Knowledge Catalog \_|\_ Google\
+    \ Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Reference
 Send feedback
 REST Resource: folders.locations.config

@@ -10,271 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/kms/docs/reference/libraries
   title: "Cloud KMS client libraries \_|\_ Cloud Key Management Service \_|\_ Google\
     \ Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Cloud KMS client libraries | Cloud Key Management Service | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud KMS
-Start free
-Overview
-Guides
-Reference
-Samples
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Samples
-Resources
-Cross-product tools
-More
-Console
-Cloud KMS
-All APIs & references
-API client libraries
-PKCS #11 library
-Overview
-Use OpenSSL
-Apache TLS termination
-NGINX TLS offload
-Use pkcs11-tool
-Sign Windows artifacts with Jsign
-Windows CNG Provider
-Overview
-Signing Windows artifacts
-Permissions and roles
-Cloud EKM error reference
-Overview
-KMS REST reference
-Overview
-v1
-REST Resources
-folders
-Overview
-getAutokeyConfig
-getKajPolicyConfig
-updateAutokeyConfig
-updateKajPolicyConfig
-organizations
-Overview
-getKajPolicyConfig
-updateKajPolicyConfig
-projects
-Overview
-getAutokeyConfig
-getKajPolicyConfig
-showEffectiveAutokeyConfig
-showEffectiveKeyAccessJustificationsEnrollmentConfig
-showEffectiveKeyAccessJustificationsPolicyConfig
-updateAutokeyConfig
-updateKajPolicyConfig
-projects.locations
-Overview
-generateRandomBytes
-get
-getEkmConfig
-list
-updateEkmConfig
-projects.locations.ekmConfig
-Overview
-getIamPolicy
-setIamPolicy
-testIamPermissions
-projects.locations.ekmConnections
-Overview
-create
-get
-getIamPolicy
-list
-patch
-setIamPolicy
-testIamPermissions
-verifyConnectivity
-projects.locations.keyHandles
-Overview
-create
-get
-list
-projects.locations.keyRings
-Overview
-create
-get
-getIamPolicy
-list
-setIamPolicy
-testIamPermissions
-projects.locations.keyRings.cryptoKeys
-Overview
-create
-decrypt
-delete
-encrypt
-get
-getIamPolicy
-list
-patch
-setIamPolicy
-testIamPermissions
-updatePrimaryVersion
-projects.locations.keyRings.cryptoKeys.cryptoKeyVersions
-Overview
-asymmetricDecrypt
-asymmetricSign
-create
-decapsulate
-delete
-destroy
-get
-getPublicKey
-import
-list
-macSign
-macVerify
-patch
-rawDecrypt
-rawEncrypt
-restore
-projects.locations.keyRings.importJobs
-Overview
-create
-get
-getIamPolicy
-list
-setIamPolicy
-testIamPermissions
-projects.locations.operations
-Overview
-get
-projects.locations.retiredResources
-Overview
-get
-list
-projects.locations.singleTenantHsmInstances
-Overview
-create
-get
-list
-projects.locations.singleTenantHsmInstances.proposals
-Overview
-approve
-create
-delete
-execute
-get
-list
-Types
-AutokeyConfig
-CryptoKeyVersionAlgorithm
-CryptoKeyVersionView
-EkmConfig
-GetPolicyOptions
-KeyAccessJustificationsPolicyConfig
-KeyOperationAttestation
-Location
-Policy
-ProtectionLevel
-TestIamPermissionsResponse
-KMS Inventory REST reference
-Overview
-v1
-REST Resources
-organizations.protectedResources
-Overview
-search
-projects.cryptoKeys
-Overview
-list
-projects.locations.keyRings.cryptoKeys
-Overview
-getProtectedResourcesSummary
-KMS RPC reference
-Overview
-google.cloud.kms.v1
-google.cloud.location
-google.iam.v1
-google.longrunning
-google.rpc
-google.type
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Install the client library
-Set up authentication
-Use the client library Next steps
-Additional resources
 Home
 Documentation
 Security
 Cloud KMS
 Reference
-Was this helpful?
 Send feedback
 Cloud KMS client libraries
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Install the client library
-Set up authentication
-Use the client library Next steps
-Additional resources
 This page shows how to get started with the Cloud Client Libraries for the
 Cloud Key Management Service API. Client libraries make it easier to access
 Google Cloud APIs from a supported language. Although you can use
@@ -285,17 +35,19 @@ Read more about the Cloud Client Libraries
 and the older Google API Client Libraries in
 Client libraries explained .
 Install the client library
-C++ C# Go Java Node.js PHP Python Ruby
-More
+C++
 See Setting up a C++ development environment
 for details about this client library's requirements and install dependencies.
+C#
 Using PowerShell or the Visual Studio Package Manager Console:
 Install-Package "Google.Cloud.Kms.V1" -Version "2.0.0-beta03"
 Using the dotnet CLI:
 dotnet add package "Google.Cloud.Kms.V1" -Version "2.0.0-beta03"
 For more information, see Setting Up a C# Development Environment .
+Go
 go get "cloud.google.com/go/kms/apiv1"
 For more information, see Setting Up a Go Development Environment .
+Java
 If you are using Maven , add
 the following to your pom.xml file. For more information about
 BOMs, see The Google Cloud Platform Libraries BOM .
@@ -330,12 +82,16 @@ The plugins provide additional functionality, such as key management for service
 to each plugin's documentation for details.
 Note: Cloud Java client libraries do not currently support Android.
 For more information, see Setting Up a Java Development Environment .
+Node.js
 npm install "@google-cloud/kms"
 For more information, see Setting Up a Node.js Development Environment .
+PHP
 composer require "google/cloud-kms"
 For more information, see Using PHP on Google Cloud .
+Python
 pip install --upgrade "google-cloud-kms"
 For more information, see Setting Up a Python Development Environment .
+Ruby
 gem install "google-cloud-kms"
 For more information, see Setting Up a Ruby Development Environment .
 Set up authentication
@@ -366,8 +122,7 @@ A sign-in screen appears. After you sign in, your credentials are stored in the
 local credential file used by ADC .
 Use the client library
 The following example shows how to use the client library.
-C++ C# Go Java Node.js PHP Python Ruby
-More
+C++
 #include "google/cloud/kms/v1/key_management_client.h"
 #include "google/cloud/location.h"
 #include <iostream>
@@ -389,6 +144,7 @@ return 0 ;
 std :: cerr << "google::cloud::Status thrown: " << status << " \n " ;
 return 1 ;
 }
+C#
 using Google.Api.Gax.ResourceNames ;
 using Google.Cloud.Kms.V1 ;
 public class QuickstartSample
@@ -406,6 +162,7 @@ foreach ( KeyRing keyRing in client . ListKeyRings ( locationName ))
 }
 }
 }
+Go
 // Sample quickstart is a basic program that uses Cloud KMS.
 package main
 import (
@@ -446,6 +203,7 @@ log . Fatalf ( "Failed to list key rings: %v" , err )
 fmt . Printf ( "key ring: %s\n" , resp . Name )
 }
 }
+Java
 import com.google.cloud.kms.v1. KeyManagementServiceClient ;
 import com.google.cloud.kms.v1. KeyManagementServiceClient . ListKeyRingsPagedResponse ;
 import com.google.cloud.kms.v1. KeyRing ;
@@ -476,6 +234,7 @@ System . out . printf ( "%s%n" , keyRing . getName ());
 }
 }
 }
+Node.js
 //
 // TODO(developer): Uncomment these variables before running the sample.
 //
@@ -497,6 +256,7 @@ console . log ( keyRing . name );
 return keyRings ;
 }
 return listKeyRings ();
+PHP
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
 use Google\Cloud\Kms\V1\ListKeyRingsRequest;
 function quickstart(
@@ -518,6 +278,7 @@ printf('%s' . PHP_EOL, $keyRing->getName());
 }
 return $keyRings;
 }
+Python
 from google.cloud import kms
 from google.cloud import kms_v1
 def quickstart (
@@ -533,6 +294,7 @@ key_rings = client . list_key_rings ( request = { "parent" : location_name })
 for key_ring in key_rings :
 print ( key_ring . name )
 return key_rings
+Ruby
 # TODO(developer): uncomment these values before running the sample.
 # project_id = "my-project"
 # location_id = "us-east1"
@@ -554,8 +316,7 @@ Learn how to programmatically encrypt and decrypt data.
 Encrypting and decrypting data with a symmetric key
 Encrypting and decrypting data with an asymmetric key
 Additional resources
-C++ C# Go Java Node.js PHP Python Ruby
-More
+C++
 The following list contains links to more resources related to the
 client library for C++:
 API reference
@@ -563,6 +324,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+C#
 The following list contains links to more resources related to the
 client library for C#:
 API reference
@@ -570,6 +332,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+Go
 The following list contains links to more resources related to the
 client library for Go:
 API reference
@@ -577,6 +340,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+Java
 The following list contains links to more resources related to the
 client library for Java:
 API reference
@@ -584,6 +348,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+Node.js
 The following list contains links to more resources related to the
 client library for Node.js:
 API reference
@@ -591,6 +356,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+PHP
 The following list contains links to more resources related to the
 client library for PHP:
 API reference
@@ -598,6 +364,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+Python
 The following list contains links to more resources related to the
 client library for Python:
 API reference
@@ -605,6 +372,7 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
+Ruby
 The following list contains links to more resources related to the
 client library for Ruby:
 API reference
@@ -612,59 +380,8 @@ Client libraries best practices
 Issue tracker
 google-cloud-kms on Stack Overflow
 Source code
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-03 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-03 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

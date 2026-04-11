@@ -1,0 +1,104 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T19:30:14.855Z"
+product_name: "Vertex AI Search"
+product_slug: "vertex-ai-search"
+feature_name: "Expanded language support for grounding"
+feature_slug: "expanded-language-support-for-grounding"
+latest_feature_date: "2024-12-09"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding"
+  - "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+keywords:
+  - "expanded"
+  - "language"
+  - "for"
+  - "grounding"
+  - "vertex"
+  - "ai"
+  - "agent"
+  - "builder"
+---
+
+# Expanded language support for grounding
+
+Product: Vertex AI Search
+Coverage: LOW
+
+## Step 02 Summary
+
+Vertex AI Agent Builder grounding via the grounded generation API now supports more than 35 languages, available as GA with allowlist.
+
+## Extended Definition
+
+Vertex AI Agent Builder grounding via the grounded generation API now supports more than 35 languages, available as GA with allowlist.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding](https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding)
+- [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
+
+## Supporting Pages
+
+### "Vertex AI APIs for building search and RAG experiences \_|\_ Vertex AI Search\
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis](https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis)
+- Source ID: `site-api-reference`
+- Final score: 194
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- For more information, see Grounding with Google Search in the Generative AI on Vertex AI documentation.
+- For more information, see Grounding with Google Search in the Generative AI on Vertex AI documentation.
+- Vertex AI Search works as an out-of-the-box semantic & keyword search engine for RAG with the ability to process a variety of document types and with connectors to a variety of source systems including BigQuery and many third party systems.
+- Retrieval Choose the best retrieval method for your needs: Vertex AI Search: Vertex AI Search is a Google Search-quality information retrieval engine that can be a component of any generative AI application that uses your enterprise data.
+
+### Get answers and follow-ups \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/answer](https://docs.cloud.google.com/generative-ai-app-builder/docs/answer)
+- Source ID: `site-api-reference`
+- Final score: 176
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- SQL is a standard language that is used by many different database systems.", "groundingScore" 0.9 "groundingSupports": [ { "endIndex": "41", "sources": [ { "referenceId": "1" } ] "groundingScore": 0.9 "groundingCheckRequired": true }, { "startIndex": "42", "endIndex": "144", "sources": [ { "referenceId": "1" } ] "groundingScore": 0.8 "groundingCheckRequired": true }, { "startIndex": "267", "endIndex": "342", "sources": [ { "referenceId": "2" } ] "groundingScore": 0.6 "groundingCheckRequired": true } ], "references": [ { "chunkInfo": { "content": "There are a lot of Databases available in the market such as MS Access, Oracle and many others.For you to write programs that interact with these databases easily, there has to be a way where you could get information from all these databases using the same method.For this purpose SQL was developed.It is a kind of language (simple when compared to the likes of C or C++) which enables you to ask all your queries to a database without bothering about the exact type of database.When you use this Query the database engine would first find the table called people.Then it would find a column called firstname.Next it would compare all the values in that column with 'Reena'.Finally it would return all the details wherever it finds a match for the firstname.When you write a database program in VC++ or Java or any other language for that matter, you would make a database connection to your database and then you would query the database using SQL queries.When you query the database with any SQL query the database returns a recordset.A recordset is basically a set of records (all the entries that your query returns).This recordset is received in your program and all languages have a data structure which represents a recordset.", "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d993d922043374f5ef7ba297c158b106", "uri": "gs://my-bucket-123/documents/058dee0ec23a3e92f9bfd7cd29840e8f.txt" "structData": { "fields": [ { "key": "cdoc url" "value": { "stringValue": "058dee0ec23a3e92f9bfd7cd29840e8f" } }, { "key": "doc id" "value": { "stringValue": "d993d922043374f5ef7ba297c158b106" } } ] } } } }, { "chunkInfo": { "content": "The Structured Query Language (SQL) is a database management programming language.SQL is a tool for accessing databases, and more specifically, relational databases, and can be used with different database products.This chapter will prepare you to learn basic database management using this language.SQLite – To implement SQL as a library, you need SQLite.SQLite is intended to provide users and programs a way to store data using a SQL interface within the program.SQLite3 can be used to manipulate SQLite databases for major Linux distros.SQL is used to access relational databases.Each database contains more or less tables which in turn contain more or less rows and columns.Hereby a single row is seen as a separate object with features represented by the tables' columns.To access a table's data you first have to connect to its database.With the same table, the query SELECT FROM T WHERE C1 = 1 will result in all the elements of all the rows where the value of column C1 is '1' being shown.A WHERE clause specifies that a SQL statement should only affect rows that meet specified criteria.The criteria are expressed in the form of predicates.WHERE clauses are not mandatory clauses of SQL statements, but should be used to limit the number of rows affected by a SQL DML statement or returned by a query.", "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/3825eac51ef9e934bbc558faa42f4c71", "uri": "gs://my-bucket-123/documents/26f5872b0719790cb966a697bfa1ea27.txt" "structData": { "fields": [ { "key": "cdoc url" "value": { "stringValue": "26f5872b0719790cb966a697bfa1ea27" } }, { "key": "doc id" "value": { "stringValue": "3825eac51ef9e934bbc558faa42f4c71" } } ] } } } }, { "chunkInfo": { "content": "This chapter focuses on using Paradox as a client/server development tool.It does not talk about connecting; it is assumed you have already connected.If you are having trouble connecting to a particular SQL server, then refer to the Connection Guide for that particular server.This chapter does review what a user can do interactively with Paradox and how to use ObjectPAL with SQL servers.Structured Query Language (SQL) was developed to create a standard for accessing database information.The ANSI standard for SQL allows a user to become familiar with the commands needed to query many different types of data.After you learn ANSI SQL, you then can query many different databases.Is SQL a solid standard?Yes and no.Yes, the core ANSI SQL commands are solid and consistent from vendor to vendor.Every vendor, however, adds capability to its version of SQL.These improvements are expected because ANSI SQL does not go far enough to cover every feature of every high-end DBMS.The SQL standard is used by many companies for their high-end products.They include Oracle, Sybase, Microsoft SQL, Informix, and Interbase.Paradox also provides the capability to use standard ANSI SQL commands on local Paradox and dBASE tables.Although SQL by definition is a standard, various flavors are on the market.", "documentMetadata": { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/b3e88db8676b87b99af1e6ecc7d8757f", "uri": "gs://my-bucket-123/documents/073c21335d37d8d14982cb3437a721c0.txt" "structData": { "fields": [ { "key": "cdoc url" "value": { "stringValue": "073c21335d37d8d14982cb3437a721c0" } }, { "key": "doc id" "value": { "stringValue": "b3e88db8676b87b99af1e6ecc7d8757f" } } ] } } } } ], ... "steps": [ { "state": "SUCCEEDED", "description": "Rephrase the query and search.", "actions": [ { "searchAction": { "query": "What is SQL?" }, "observation": { "searchResults": [ { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d993d922043374f5ef7ba297c158b106", "uri": "gs://my-bucket-123/documents/058dee0ec23a3e92f9bfd7cd29840e8f.txt", "chunkInfo": [ { "content": "There are a lot of Databases available in the market such as MS Access, Oracle and many others.For you to write programs that interact with these databases easily, there has to be a way where you could get information from all these databases using the same method.For this purpose SQL was developed.It is a kind of language (simple when compared to the likes of C or C++) which enables you to ask all your queries to a database without bothering about the exact type of database.When you use this Query the database engine would first find the table called people.Then it would find a column called firstname.Next it would compare all the values in that column with 'Reena'.Finally it would return all the details wherever it finds a match for the firstname.When you write a database program in VC++ or Java or any other language for that matter, you would make a database connection to your database and then you would query the database using SQL queries.When you query the database with any SQL query the database returns a recordset.A recordset is basically a set of records (all the entries that your query returns).This recordset is received in your program and all languages have a data structure which represents a recordset." } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/3825eac51ef9e934bbc558faa42f4c71", "uri": "gs://my-bucket-123/documents/26f5872b0719790cb966a697bfa1ea27.txt", "chunkInfo": [ { "content": "The Structured Query Language (SQL) is a database management programming language.SQL is a tool for accessing databases, and more specifically, relational databases, and can be used with different database products.This chapter will prepare you to learn basic database management using this language.SQLite – To implement SQL as a library, you need SQLite.SQLite is intended to provide users and programs a way to store data using a SQL interface within the program.SQLite3 can be used to manipulate SQLite databases for major Linux distros.SQL is used to access relational databases.Each database contains more or less tables which in turn contain more or less rows and columns.Hereby a single row is seen as a separate object with features represented by the tables' columns.To access a table's data you first have to connect to its database.With the same table, the query SELECT FROM T WHERE C1 = 1 will result in all the elements of all the rows where the value of column C1 is '1' being shown.A WHERE clause specifies that a SQL statement should only affect rows that meet specified criteria.The criteria are expressed in the form of predicates.WHERE clauses are not mandatory clauses of SQL statements, but should be used to limit the number of rows affected by a SQL DML statement or returned by a query." } ] }, { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/b3e88db8676b87b99af1e6ecc7d8757f", "uri": "gs://my-bucket-123/documents/073c21335d37d8d14982cb3437a721c0.txt", "chunkInfo": [ { "content": "This chapter focuses on using Paradox as a client/server development tool.It does not talk about connecting; it is assumed you have already connected.If you are having trouble connecting to a particular SQL server, then refer to the Connection Guide for that particular server.This chapter does review what a user can do interactively with Paradox and how to use ObjectPAL with SQL servers.Structured Query Language (SQL) was developed to create a standard for accessing database information.The ANSI standard for SQL allows a user to become familiar with the commands needed to query many different types of data.After you learn ANSI SQL, you then can query many different databases.Is SQL a solid standard?Yes and no.Yes, the core ANSI SQL commands are solid and consistent from vendor to vendor.Every vendor, however, adds capability to its version of SQL.These improvements are expected because ANSI SQL does not go far enough to cover every feature of every high-end DBMS.The SQL standard is used by many companies for their high-end products.They include Oracle, Sybase, Microsoft SQL, Informix, and Interbase.Paradox also provides the capability to use standard ANSI SQL commands on local Paradox and dBASE tables.Although SQL by definition is a standard, various flavors are on the market." } ] }, ... { "document": "projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/3dd4014e41044c5dd6a0fe380847f369", "uri": "gs://my-bucket-123/documents/76245cb33a66f4fbd9030a2a11eea00d.txt", "chunkInfo": [ { "content": "SQL injection is a code injection technique that might destroy your database.You can read more here OWASP sql injection testing sheet.Description: SQL injection ( second order) SQL injection vulnerabilities arise when user- controllable data is incorporated sheet into database SQL queries in an unsafe manner.This sheet cheat wiki assumes you have a basic understanding of SQL injection, please go here for an introduction if you are unfamiliar.Bypass login page with sql SQL injection [ closed].Gone are the days when knowledge sheet of just sql SQL Injection or XSS could help you land a lucrative high- paying InfoSec job.There is many sheet differnet variations you would login have probably have to try to make this exploit work ( sql especially if it is sql a blind SQL exploit).SQL injection usually occurs when you ask a user for input, like their.ゲストブック/ コメントの例.Submit Text Post.Get an ad- free experience with special benefits, and directly support Reddit.get reddit premium.SQL Injection Cheat.Many web applications have an authentication system: a user provides a user name and password, the web application checks them and stores the corresponding user id in the session hash.Login # 1 Login # 2 Login # 3 Login # 4." } ] } ] } } ] } ] } } In this example, a support score (groundingScore) is returned for each citation.
+- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Return grounding support scores The following command shows how to return grounding support scores for answers and claims.
+- Query ( text = "What is Vertex AI Search?" ), session = None , # Optional: include previous session ID to continue a conversation query understanding spec = query understanding spec , answer generation spec = answer generation spec , user pseudo id = "user-pseudo-id" , # Optional: Add user pseudo-identifier for queries. ) Make the request response = client . answer query ( request ) Handle the response print ( response ) return response Set the answer language code The following command shows how to set the language code for answers.
+- For general information about grounding in Vertex AI, see Check grounding with RAG .
+
+### Check grounding with RAG \_|\_ Vertex AI Search \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding](https://docs.cloud.google.com/generative-ai-app-builder/docs/check-grounding)
+- Source ID: `site-api-reference`
+- Final score: 170
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- As part of your Retrieval Augmented Generation (RAG) experience in Vertex AI Search, you can check grounding to determine how grounded a piece of text (called an answer candidate ) is in a given set of reference texts (called facts ).
+- For example, if the claim text contains non-ASCII characters, the start and end positions vary when measured in characters (programming-language-dependent) and when measured in bytes (programming-language-independent).
+- Terms defined and explained Before you use the check grounding API, it helps to understand the inputs and outputs, and how to structure your grounding facts for best results.
+- Home Documentation AI and ML Vertex AI Search Send feedback Check grounding with RAG Stay organized with collections Save and categorize content based on your preferences.
+
+### "MCP Tools Reference: discoveryengine.googleapis.com \_|\_ Vertex AI Search\
+
+- URL: [https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search](https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search)
+- Source ID: `site-docs-reference-2`
+- Final score: 166
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- UserInfo.user agent is used to deduce device type for analytics. languageCode string The BCP-47 language code, such as "en-US" or "sr-Latn".
+- Supported types: application/pdf (PDF, only native PDFs are supported for now) text/html (HTML) text/plain (TXT) application/xml or text/xml (XML) application/json (JSON) application/vnd.openxmlformats-officedocument.wordprocessingml.document (DOCX) application/vnd.openxmlformats-officedocument.presentationml.presentation (PPTX) application/vnd.openxmlformats-officedocument.spreadsheetml.sheet (XLSX) application/vnd.ms-excel.sheet.macroenabled.12 (XLSM) The following types are supported only if layout parser is enabled in the data store: image/bmp (BMP) image/gif (GIF) image/jpeg (JPEG) image/png (PNG) image/tiff (TIFF) See https://www.iana.org/assignments/media-types/media-types.xhtml .
+- NaturalLanguageQueryUnderstandingInfo JSON representation { "extractedFilters" : string , "rewrittenQuery" : string , "classifiedIntents" : [ string ] , "structuredExtractedFilter" : { object ( StructuredExtractedFilter ) } } Fields extractedFilters string The filters that were extracted from the input query. rewrittenQuery string Rewritten input query minus the extracted filters. classifiedIntents[] string The classified intents from the input query. structuredExtractedFilter object ( StructuredExtractedFilter ) The filters that were extracted from the input query represented in a structured form.
+- SummarySpec JSON representation { "summaryResultCount" : integer , "includeCitations" : boolean , "ignoreAdversarialQuery" : boolean , "ignoreNonSummarySeekingQuery" : boolean , "ignoreLowRelevantContent" : boolean , "ignoreJailBreakingQuery" : boolean , "multimodalSpec" : { object ( MultiModalSpec ) } , "modelPromptSpec" : { object ( ModelPromptSpec ) } , "languageCode" : string , "modelSpec" : { object ( ModelSpec ) } , "useSemanticChunks" : boolean } Fields summaryResultCount integer The number of top results to generate the summary from.
+

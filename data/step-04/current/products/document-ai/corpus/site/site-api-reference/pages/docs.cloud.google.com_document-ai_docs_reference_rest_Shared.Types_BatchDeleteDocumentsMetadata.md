@@ -1,0 +1,74 @@
+---
+title: "BatchDeleteDocumentsMetadata \_|\_ Document AI \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/BatchDeleteDocumentsMetadata
+knowledge_key: corpus
+source_id: site-api-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/document-ai/docs/reference/rest
+source_metadata:
+  url: https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/BatchDeleteDocumentsMetadata
+  title: "BatchDeleteDocumentsMetadata \_|\_ Document AI \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+AI and ML
+Document AI
+Reference
+Send feedback
+BatchDeleteDocumentsMetadata
+Stay organized with collections
+Save and categorize content based on your preferences.
+JSON representation
+{
+"commonMetadata" : {
+object ( CommonOperationMetadata )
+} ,
+"individualBatchDeleteStatuses" : [
+{
+object ( IndividualBatchDeleteStatus )
+}
+] ,
+"totalDocumentCount" : integer ,
+"errorDocumentCount" : integer
+}
+Fields
+commonMetadata
+object ( CommonOperationMetadata )
+The basic metadata of the long-running operation.
+individualBatchDeleteStatuses[]
+object ( IndividualBatchDeleteStatus )
+The list of response details of each document.
+totalDocumentCount
+integer
+Total number of documents deleting from dataset.
+errorDocumentCount
+integer
+Total number of documents that failed to be deleted in storage.
+IndividualBatchDeleteStatus
+The status of each individual document in the batch delete process.
+JSON representation
+{
+"documentId" : {
+object ( DocumentId )
+} ,
+"status" : {
+object ( Status )
+}
+}
+Fields
+documentId
+object ( DocumentId )
+The document id of the document.
+status
+object ( Status )
+The status of deleting the document in storage.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

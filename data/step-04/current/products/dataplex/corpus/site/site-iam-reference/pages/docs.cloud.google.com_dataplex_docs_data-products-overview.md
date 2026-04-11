@@ -1,5 +1,5 @@
 ---
-title: "About data products \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "About data products \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/data-products-overview
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -7,18 +7,18 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/data-products-overview
-  title: "About data products \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "About data products \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 About data products
@@ -33,7 +33,7 @@ Pre-GA products and features are available "as is" and might have limited suppor
 For more information, see the
 launch stage descriptions .
 This document describes the architecture and key concepts of
-data products in Dataplex Universal Catalog.
+data products in Knowledge Catalog (formerly Dataplex Universal Catalog).
 A data product is a logical, curated collection of data assets, formally
 packaged to ensure it's discoverable, trusted, and accessible. The key
 capabilities of a data product include the following:
@@ -103,7 +103,7 @@ This lets them confidently generate insights to answer questions like,
 'What is the average order value for each traffic source?'—ultimately
 revealing which sources generate the highest value customers.
 Data product user flow
-The data product lifecycle in Dataplex Universal Catalog involves two key user
+The data product lifecycle in Knowledge Catalog involves two key user
 journeys: one for the data product owner (or producer) who creates and manages
 the data, and one for the data product consumer who discovers and uses it.
 Data product owner journey
@@ -133,7 +133,7 @@ This journey focuses on quickly finding trusted data and gaining the necessary
 permissions to use it.
 Discover: Find relevant, trusted data for a specific business problem. This
 involves the following actions:
-Use the Dataplex Universal Catalog Search with
+Use the Knowledge Catalog Search with
 keywords or natural language to find the packaged data product.
 Review the data product's overview, assets, contract, and other aspects to
 determine its fitness for use.
@@ -171,6 +171,6 @@ Learn how to request access for data products .
 Learn how to use VPC Service Controls with data products .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

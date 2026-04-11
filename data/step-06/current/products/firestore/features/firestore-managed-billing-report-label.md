@@ -1,0 +1,85 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:19.438Z"
+product_name: "Firestore"
+product_slug: "firestore"
+feature_name: "Firestore managed billing report label"
+feature_slug: "firestore-managed-billing-report-label"
+latest_feature_date: "2020-09-16"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html"
+  - "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore"
+  - "https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html"
+keywords:
+  - "firestore"
+  - "managed"
+  - "billing"
+  - "report"
+  - "label"
+  - "the"
+  - "goog"
+  - "firestoremanaged"
+---
+
+# Firestore managed billing report label
+
+Product: Firestore
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+The `goog-firestoremanaged` billing report label lets you view costs for Firestore import and export operations.
+
+## Extended Definition
+
+The `goog-firestoremanaged` billing report label lets you view costs for Firestore import and export operations.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore](https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore)
+- [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html)
+
+## Supporting Pages
+
+### google.cloud.firestore_v1.base_client — google-cloud-firestore documentation
+
+- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/base_client.html)
+- Source ID: `site-python-reference`
+- Final score: 168
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- google.cloud.firestore v1.base client — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/base client.html [docs]class BaseClient(ClientWithProject): &quot;&quot;&quot;Client for interacting with Google Cloud Firestore API. .. note:: Since the Cloud Firestore API requires the gRPC transport, no ` http` argument is accepted by this class.
+- Args: project (Optional[str]): The project which the client acts on behalf of.
+
+### Interface Firestore (3.36.0) | Java client libraries | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore](https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore)
+- Source ID: `site-java-reference`
+- Final score: 152
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Interface Firestore (3.36.0) Java client libraries Google Cloud Documentation Source URL: https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore.Firestore If it fails to commit after 5 attempts, the transaction will fail.
+- To unblock other clients, the Firestore backend automatically releases all locks after 60 seconds of inactivity and fails all transactions that last longer than 270 ...
+
+### google.cloud.firestore_v1.proto.query_pb2 — google-cloud-firestore documentation
+
+- URL: [https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html](https://googleapis.dev/python/firestore/latest/_modules/google/cloud/firestore_v1/proto/query_pb2.html)
+- Source ID: `site-python-reference`
+- Final score: 151
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- google.cloud.firestore v1.proto.query pb2 — google-cloud-firestore documentation Source URL: https://googleapis.dev/python/firestore/latest/ modules/google/cloud/firestore v1/proto/query pb2.html source: google/cloud/firestore v1/proto/query.proto &quot;&quot;&quot;Generated protocol buffer code.&quot;&quot;&quot; from google.protobuf import descriptor as descriptor from google.protobuf import message as message from google.protobuf import reflection as reflection from google.protobuf import symbol database ...
+

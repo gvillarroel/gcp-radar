@@ -1,0 +1,65 @@
+version: 1
+name: corpus
+created_at: '2026-04-10T00:34:52+00:00'
+updated_at: '2026-04-11T20:52:26+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/unified-maintenance/docs
+  created_at: '2026-04-11T20:06:01+00:00'
+  updated_at: '2026-04-11T20:49:17+00:00'
+  update_command: know sync site https://docs.cloud.google.com/unified-maintenance/docs
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/unified-maintenance/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-11T20:49:17+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api
+  created_at: '2026-04-11T20:48:47+00:00'
+  updated_at: '2026-04-11T20:50:15+00:00'
+  update_command: know sync site https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T20:50:15+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1
+  created_at: '2026-04-11T20:48:48+00:00'
+  updated_at: '2026-04-11T20:51:31+00:00'
+  update_command: know sync site https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T20:51:31+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/unified-maintenance/docs/audit-logging
+  created_at: '2026-04-11T20:48:48+00:00'
+  updated_at: '2026-04-11T20:52:26+00:00'
+  update_command: know sync site https://docs.cloud.google.com/unified-maintenance/docs/audit-logging
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/unified-maintenance/docs/audit-logging
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T20:52:26+00:00'

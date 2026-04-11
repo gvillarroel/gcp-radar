@@ -1,0 +1,47 @@
+---
+title: "LabelDescriptor \_|\_ Service Usage \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/service-usage/docs/reference/rest/Shared.Types/LabelDescriptor
+knowledge_key: corpus
+source_id: site-api-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/service-usage/docs/reference/rest
+source_metadata:
+  url: https://docs.cloud.google.com/service-usage/docs/reference/rest/Shared.Types/LabelDescriptor
+  title: "LabelDescriptor \_|\_ Service Usage \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Technology areas
+Service Usage
+Reference
+Send feedback
+LabelDescriptor
+Stay organized with collections
+Save and categorize content based on your preferences.
+JSON representation
+A description of a label.
+JSON representation
+{
+"key" : string ,
+"valueType" : enum ( ValueType ) ,
+"description" : string
+}
+Fields
+key
+string
+The label key.
+valueType
+enum ( ValueType )
+The type of data that can be assigned to the label.
+description
+string
+A human-readable description for the label.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-11-11 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-11-11 UTC."],[],[]]

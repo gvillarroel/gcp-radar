@@ -1,0 +1,734 @@
+---
+title: "Class AllocationPolicy.Disk.Builder (0.88.0) \_|\_ Java client libraries \_\
+  |\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder
+knowledge_key: corpus
+source_id: site-java-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/overview
+source_metadata:
+  url: https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder
+  title: "Class AllocationPolicy.Disk.Builder (0.88.0) \_|\_ Java client libraries\
+    \ \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Developer tools
+Java
+Client libraries
+Send feedback
+Class AllocationPolicy.Disk.Builder (0.88.0)
+Stay organized with collections
+Save and categorize content based on your preferences.
+0.88.0 (latest)
+0.87.0
+0.85.0
+0.83.0
+0.82.0
+0.81.0
+0.80.0
+0.78.0
+0.76.0
+0.75.0
+0.74.0
+0.73.0
+0.72.0
+0.70.0
+0.68.0
+0.67.0
+0.64.0
+0.63.0
+0.62.0
+0.60.0
+0.59.0
+0.58.0
+0.57.0
+0.56.0
+0.55.0
+0.54.0
+0.53.0
+0.52.0
+0.51.0
+0.49.0
+0.48.0
+0.47.0
+0.46.0
+0.45.0
+0.44.0
+0.43.0
+0.42.0
+0.41.0
+0.40.0
+0.39.0
+0.37.0
+0.36.0
+0.35.0
+0.34.0
+0.33.0
+0.32.0
+0.31.0
+0.30.0
+0.29.0
+0.28.0
+0.27.0
+0.24.0
+0.23.0
+0.22.0
+0.21.0
+0.20.0
+0.19.0
+0.18.0
+0.17.0
+0.16.0
+0.15.0
+0.14.0
+0.13.0
+0.12.0
+0.11.0
+0.10.0
+0.9.0
+0.8.0
+0.7.0
+0.6.0
+0.5.0
+0.4.0
+0.3.2
+0.2.2
+0.1.1
+public static final class AllocationPolicy . Disk . Builder extends GeneratedMessage . Builder<AllocationPolicy . Disk . Builder > implements AllocationPolicy . DiskOrBuilder
+A new persistent disk or a local ssd.
+A VM can only have one local SSD setting but multiple local SSD partitions.
+See https://cloud.google.com/compute/docs/disks#pdspecs and
+https://cloud.google.com/compute/docs/disks#localssds .
+Protobuf type google.cloud.batch.v1.AllocationPolicy.Disk
+Inheritance
+java.lang.Object >
+AbstractMessageLite.Builder<MessageType,BuilderType> >
+AbstractMessage.Builder<BuilderType> >
+GeneratedMessage.Builder >
+AllocationPolicy.Disk.Builder
+Implements
+AllocationPolicy.DiskOrBuilder
+Inherited Members
+AbstractMessage.Builder.findInitializationErrors()
+AbstractMessage.Builder.getInitializationErrorString()
+AbstractMessage.Builder.internalMergeFrom(AbstractMessageLite)
+AbstractMessage.Builder.mergeFrom(byte[])
+AbstractMessage.Builder.mergeFrom(byte[],ExtensionRegistryLite)
+AbstractMessage.Builder.mergeFrom(byte[],int,int)
+AbstractMessage.Builder.mergeFrom(byte[],int,int,ExtensionRegistryLite)
+AbstractMessage.Builder.mergeFrom(ByteString)
+AbstractMessage.Builder.mergeFrom(ByteString,ExtensionRegistryLite)
+AbstractMessage.Builder.mergeFrom(CodedInputStream)
+AbstractMessage.Builder.mergeFrom(CodedInputStream,ExtensionRegistryLite)
+AbstractMessage.Builder.mergeFrom(Message)
+AbstractMessage.Builder.mergeFrom(InputStream)
+AbstractMessage.Builder.mergeFrom(InputStream,ExtensionRegistryLite)
+AbstractMessage.Builder.newUninitializedMessageException(Message)
+AbstractMessage.Builder.toString()
+AbstractMessageLite.Builder.<T>addAll(Iterable<T>,Collection<? super T>)
+AbstractMessageLite.Builder.<T>addAll(Iterable<T>,List<? super T>)
+AbstractMessageLite.Builder.internalMergeFrom(MessageType)
+AbstractMessageLite.Builder.mergeDelimitedFrom(InputStream)
+AbstractMessageLite.Builder.mergeDelimitedFrom(InputStream,ExtensionRegistryLite)
+AbstractMessageLite.Builder.mergeFrom(MessageLite)
+AbstractMessageLite.Builder.newUninitializedMessageException(MessageLite)
+GeneratedMessage.Builder.addRepeatedField(Descriptors.FieldDescriptor,Object)
+GeneratedMessage.Builder.clear()
+GeneratedMessage.Builder.clearField(Descriptors.FieldDescriptor)
+GeneratedMessage.Builder.clearOneof(Descriptors.OneofDescriptor)
+GeneratedMessage.Builder.clone()
+GeneratedMessage.Builder.getAllFields()
+GeneratedMessage.Builder.getDescriptorForType()
+GeneratedMessage.Builder.getField(Descriptors.FieldDescriptor)
+GeneratedMessage.Builder.getFieldBuilder(Descriptors.FieldDescriptor)
+GeneratedMessage.Builder.getOneofFieldDescriptor(Descriptors.OneofDescriptor)
+GeneratedMessage.Builder.getParentForChildren()
+GeneratedMessage.Builder.getRepeatedField(Descriptors.FieldDescriptor,int)
+GeneratedMessage.Builder.getRepeatedFieldBuilder(Descriptors.FieldDescriptor,int)
+GeneratedMessage.Builder.getRepeatedFieldCount(Descriptors.FieldDescriptor)
+com.google.protobuf.GeneratedMessage.Builder.getUnknownFieldSetBuilder()
+GeneratedMessage.Builder.getUnknownFields()
+GeneratedMessage.Builder.hasField(Descriptors.FieldDescriptor)
+GeneratedMessage.Builder.hasOneof(Descriptors.OneofDescriptor)
+GeneratedMessage.Builder.internalGetFieldAccessorTable()
+GeneratedMessage.Builder.internalGetMapField(int)
+com.google.protobuf.GeneratedMessage.Builder.internalGetMapFieldReflection(int)
+GeneratedMessage.Builder.internalGetMutableMapField(int)
+com.google.protobuf.GeneratedMessage.Builder.internalGetMutableMapFieldReflection(int)
+GeneratedMessage.Builder.isClean()
+GeneratedMessage.Builder.isInitialized()
+GeneratedMessage.Builder.markClean()
+GeneratedMessage.Builder.mergeUnknownFields(UnknownFieldSet)
+com.google.protobuf.GeneratedMessage.Builder.mergeUnknownLengthDelimitedField(int,com.google.protobuf.ByteString)
+com.google.protobuf.GeneratedMessage.Builder.mergeUnknownVarintField(int,int)
+GeneratedMessage.Builder.newBuilderForField(Descriptors.FieldDescriptor)
+GeneratedMessage.Builder.onBuilt()
+GeneratedMessage.Builder.onChanged()
+com.google.protobuf.GeneratedMessage.Builder.parseUnknownField(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite,int)
+GeneratedMessage.Builder.setField(Descriptors.FieldDescriptor,Object)
+GeneratedMessage.Builder.setRepeatedField(Descriptors.FieldDescriptor,int,Object)
+com.google.protobuf.GeneratedMessage.Builder.setUnknownFieldSetBuilder(com.google.protobuf.UnknownFieldSet.Builder)
+GeneratedMessage.Builder.setUnknownFields(UnknownFieldSet)
+com.google.protobuf.GeneratedMessage.Builder.setUnknownFieldsProto3(com.google.protobuf.UnknownFieldSet)
+Object.equals(Object)
+Object.finalize()
+Object.getClass()
+Object.hashCode()
+Object.notify()
+Object.notifyAll()
+Object.wait()
+Object.wait(long)
+Object.wait(long,int)
+Static Methods
+getDescriptor()
+public static final Descriptors . Descriptor getDescriptor ()
+Returns
+Type
+Description
+Descriptor
+Methods
+build()
+public AllocationPolicy . Disk build ()
+Returns
+Type
+Description
+AllocationPolicy.Disk
+buildPartial()
+public AllocationPolicy . Disk buildPartial ()
+Returns
+Type
+Description
+AllocationPolicy.Disk
+clear()
+public AllocationPolicy . Disk . Builder clear ()
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+Overrides
+GeneratedMessage.Builder<BuilderType>.clear()
+clearDataSource()
+public AllocationPolicy . Disk . Builder clearDataSource ()
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+clearDiskInterface()
+public AllocationPolicy . Disk . Builder clearDiskInterface ()
+Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+If not indicated, "NVMe" will be the default one for local ssds.
+This field is ignored for persistent disks as the interface is chosen
+automatically. See
+https://cloud.google.com/compute/docs/disks/persistent-disks#choose_an_interface .
+string disk_interface = 6;
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+clearImage()
+public AllocationPolicy . Disk . Builder clearImage ()
+URL for a VM image to use as the data source for this disk.
+For example, the following are all valid URLs:
+Specify the image by its family name:
+projects/{project}/global/images/family/{image_family}
+Specify the image version:
+projects/{project}/global/images/{image_version}
+You can also use Batch customized image in short names.
+The following image values are supported for a boot disk:
+batch-debian : use Batch Debian images.
+batch-cos : use Batch Container-Optimized images.
+batch-hpc-rocky : use Batch HPC Rocky Linux images.
+string image = 4;
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+clearSizeGb()
+public AllocationPolicy . Disk . Builder clearSizeGb ()
+Disk size in GB.
+Non-Boot Disk :
+If the type specifies a persistent disk, this field
+is ignored if data_source is set as image or snapshot .
+If the type specifies a local SSD, this field should be a multiple of
+375 GB, otherwise, the final size will be the next greater multiple of
+375 GB.
+Boot Disk :
+Batch will calculate the boot disk size based on source
+image and task requirements if you do not speicify the size.
+If both this field and the boot_disk_mib field in task spec's
+compute_resource are defined, Batch will only honor this field.
+Also, this field should be no smaller than the source disk's
+size when the data_source is set as snapshot or image .
+For example, if you set an image as the data_source field and the
+image's default disk size 30 GB, you can only use this field to make the
+disk larger or equal to 30 GB.
+int64 size_gb = 2;
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+clearSnapshot()
+public AllocationPolicy . Disk . Builder clearSnapshot ()
+Name of a snapshot used as the data source.
+Snapshot is not supported as boot disk now.
+string snapshot = 5;
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+clearType()
+public AllocationPolicy . Disk . Builder clearType ()
+Disk type as shown in gcloud compute disk-types list .
+For example, local SSD uses type "local-ssd".
+Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+or "pd-standard". If not specified, "pd-standard" will be used as the
+default type for non-boot disks, "pd-balanced" will be used as the
+default type for boot disks.
+string type = 1;
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+getDataSourceCase()
+public AllocationPolicy . Disk . DataSourceCase getDataSourceCase ()
+Returns
+Type
+Description
+AllocationPolicy.Disk.DataSourceCase
+getDefaultInstanceForType()
+public AllocationPolicy . Disk getDefaultInstanceForType ()
+Returns
+Type
+Description
+AllocationPolicy.Disk
+getDescriptorForType()
+public Descriptors . Descriptor getDescriptorForType ()
+Returns
+Type
+Description
+Descriptor
+Overrides
+GeneratedMessage.Builder<BuilderType>.getDescriptorForType()
+getDiskInterface()
+public String getDiskInterface ()
+Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+If not indicated, "NVMe" will be the default one for local ssds.
+This field is ignored for persistent disks as the interface is chosen
+automatically. See
+https://cloud.google.com/compute/docs/disks/persistent-disks#choose_an_interface .
+string disk_interface = 6;
+Returns
+Type
+Description
+String
+The diskInterface.
+getDiskInterfaceBytes()
+public ByteString getDiskInterfaceBytes ()
+Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+If not indicated, "NVMe" will be the default one for local ssds.
+This field is ignored for persistent disks as the interface is chosen
+automatically. See
+https://cloud.google.com/compute/docs/disks/persistent-disks#choose_an_interface .
+string disk_interface = 6;
+Returns
+Type
+Description
+ByteString
+The bytes for diskInterface.
+getImage()
+public String getImage ()
+URL for a VM image to use as the data source for this disk.
+For example, the following are all valid URLs:
+Specify the image by its family name:
+projects/{project}/global/images/family/{image_family}
+Specify the image version:
+projects/{project}/global/images/{image_version}
+You can also use Batch customized image in short names.
+The following image values are supported for a boot disk:
+batch-debian : use Batch Debian images.
+batch-cos : use Batch Container-Optimized images.
+batch-hpc-rocky : use Batch HPC Rocky Linux images.
+string image = 4;
+Returns
+Type
+Description
+String
+The image.
+getImageBytes()
+public ByteString getImageBytes ()
+URL for a VM image to use as the data source for this disk.
+For example, the following are all valid URLs:
+Specify the image by its family name:
+projects/{project}/global/images/family/{image_family}
+Specify the image version:
+projects/{project}/global/images/{image_version}
+You can also use Batch customized image in short names.
+The following image values are supported for a boot disk:
+batch-debian : use Batch Debian images.
+batch-cos : use Batch Container-Optimized images.
+batch-hpc-rocky : use Batch HPC Rocky Linux images.
+string image = 4;
+Returns
+Type
+Description
+ByteString
+The bytes for image.
+getSizeGb()
+public long getSizeGb ()
+Disk size in GB.
+Non-Boot Disk :
+If the type specifies a persistent disk, this field
+is ignored if data_source is set as image or snapshot .
+If the type specifies a local SSD, this field should be a multiple of
+375 GB, otherwise, the final size will be the next greater multiple of
+375 GB.
+Boot Disk :
+Batch will calculate the boot disk size based on source
+image and task requirements if you do not speicify the size.
+If both this field and the boot_disk_mib field in task spec's
+compute_resource are defined, Batch will only honor this field.
+Also, this field should be no smaller than the source disk's
+size when the data_source is set as snapshot or image .
+For example, if you set an image as the data_source field and the
+image's default disk size 30 GB, you can only use this field to make the
+disk larger or equal to 30 GB.
+int64 size_gb = 2;
+Returns
+Type
+Description
+long
+The sizeGb.
+getSnapshot()
+public String getSnapshot ()
+Name of a snapshot used as the data source.
+Snapshot is not supported as boot disk now.
+string snapshot = 5;
+Returns
+Type
+Description
+String
+The snapshot.
+getSnapshotBytes()
+public ByteString getSnapshotBytes ()
+Name of a snapshot used as the data source.
+Snapshot is not supported as boot disk now.
+string snapshot = 5;
+Returns
+Type
+Description
+ByteString
+The bytes for snapshot.
+getType()
+public String getType ()
+Disk type as shown in gcloud compute disk-types list .
+For example, local SSD uses type "local-ssd".
+Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+or "pd-standard". If not specified, "pd-standard" will be used as the
+default type for non-boot disks, "pd-balanced" will be used as the
+default type for boot disks.
+string type = 1;
+Returns
+Type
+Description
+String
+The type.
+getTypeBytes()
+public ByteString getTypeBytes ()
+Disk type as shown in gcloud compute disk-types list .
+For example, local SSD uses type "local-ssd".
+Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+or "pd-standard". If not specified, "pd-standard" will be used as the
+default type for non-boot disks, "pd-balanced" will be used as the
+default type for boot disks.
+string type = 1;
+Returns
+Type
+Description
+ByteString
+The bytes for type.
+hasImage()
+public boolean hasImage ()
+URL for a VM image to use as the data source for this disk.
+For example, the following are all valid URLs:
+Specify the image by its family name:
+projects/{project}/global/images/family/{image_family}
+Specify the image version:
+projects/{project}/global/images/{image_version}
+You can also use Batch customized image in short names.
+The following image values are supported for a boot disk:
+batch-debian : use Batch Debian images.
+batch-cos : use Batch Container-Optimized images.
+batch-hpc-rocky : use Batch HPC Rocky Linux images.
+string image = 4;
+Returns
+Type
+Description
+boolean
+Whether the image field is set.
+hasSnapshot()
+public boolean hasSnapshot ()
+Name of a snapshot used as the data source.
+Snapshot is not supported as boot disk now.
+string snapshot = 5;
+Returns
+Type
+Description
+boolean
+Whether the snapshot field is set.
+internalGetFieldAccessorTable()
+protected GeneratedMessage . FieldAccessorTable internalGetFieldAccessorTable ()
+Returns
+Type
+Description
+FieldAccessorTable
+Overrides
+GeneratedMessage.Builder<BuilderType>.internalGetFieldAccessorTable()
+isInitialized()
+public final boolean isInitialized ()
+Returns
+Type
+Description
+boolean
+Overrides
+GeneratedMessage.Builder<BuilderType>.isInitialized()
+mergeFrom(AllocationPolicy.Disk other)
+public AllocationPolicy . Disk . Builder mergeFrom ( AllocationPolicy . Disk other )
+Parameter
+Name
+Description
+other
+AllocationPolicy.Disk
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry)
+public AllocationPolicy . Disk . Builder mergeFrom ( CodedInputStream input , ExtensionRegistryLite extensionRegistry )
+Parameters
+Name
+Description
+input
+CodedInputStream
+extensionRegistry
+ExtensionRegistryLite
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+Overrides
+AbstractMessage.Builder<BuilderType>.mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry)
+Exceptions
+Type
+Description
+IOException
+mergeFrom(Message other)
+public AllocationPolicy . Disk . Builder mergeFrom ( Message other )
+Parameter
+Name
+Description
+other
+Message
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+Overrides
+AbstractMessage.Builder<BuilderType>.mergeFrom(Message other)
+setDiskInterface(String value)
+public AllocationPolicy . Disk . Builder setDiskInterface ( String value )
+Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+If not indicated, "NVMe" will be the default one for local ssds.
+This field is ignored for persistent disks as the interface is chosen
+automatically. See
+https://cloud.google.com/compute/docs/disks/persistent-disks#choose_an_interface .
+string disk_interface = 6;
+Parameter
+Name
+Description
+value
+String The diskInterface to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setDiskInterfaceBytes(ByteString value)
+public AllocationPolicy . Disk . Builder setDiskInterfaceBytes ( ByteString value )
+Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+If not indicated, "NVMe" will be the default one for local ssds.
+This field is ignored for persistent disks as the interface is chosen
+automatically. See
+https://cloud.google.com/compute/docs/disks/persistent-disks#choose_an_interface .
+string disk_interface = 6;
+Parameter
+Name
+Description
+value
+ByteString The bytes for diskInterface to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setImage(String value)
+public AllocationPolicy . Disk . Builder setImage ( String value )
+URL for a VM image to use as the data source for this disk.
+For example, the following are all valid URLs:
+Specify the image by its family name:
+projects/{project}/global/images/family/{image_family}
+Specify the image version:
+projects/{project}/global/images/{image_version}
+You can also use Batch customized image in short names.
+The following image values are supported for a boot disk:
+batch-debian : use Batch Debian images.
+batch-cos : use Batch Container-Optimized images.
+batch-hpc-rocky : use Batch HPC Rocky Linux images.
+string image = 4;
+Parameter
+Name
+Description
+value
+String The image to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setImageBytes(ByteString value)
+public AllocationPolicy . Disk . Builder setImageBytes ( ByteString value )
+URL for a VM image to use as the data source for this disk.
+For example, the following are all valid URLs:
+Specify the image by its family name:
+projects/{project}/global/images/family/{image_family}
+Specify the image version:
+projects/{project}/global/images/{image_version}
+You can also use Batch customized image in short names.
+The following image values are supported for a boot disk:
+batch-debian : use Batch Debian images.
+batch-cos : use Batch Container-Optimized images.
+batch-hpc-rocky : use Batch HPC Rocky Linux images.
+string image = 4;
+Parameter
+Name
+Description
+value
+ByteString The bytes for image to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setSizeGb(long value)
+public AllocationPolicy . Disk . Builder setSizeGb ( long value )
+Disk size in GB.
+Non-Boot Disk :
+If the type specifies a persistent disk, this field
+is ignored if data_source is set as image or snapshot .
+If the type specifies a local SSD, this field should be a multiple of
+375 GB, otherwise, the final size will be the next greater multiple of
+375 GB.
+Boot Disk :
+Batch will calculate the boot disk size based on source
+image and task requirements if you do not speicify the size.
+If both this field and the boot_disk_mib field in task spec's
+compute_resource are defined, Batch will only honor this field.
+Also, this field should be no smaller than the source disk's
+size when the data_source is set as snapshot or image .
+For example, if you set an image as the data_source field and the
+image's default disk size 30 GB, you can only use this field to make the
+disk larger or equal to 30 GB.
+int64 size_gb = 2;
+Parameter
+Name
+Description
+value
+long The sizeGb to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setSnapshot(String value)
+public AllocationPolicy . Disk . Builder setSnapshot ( String value )
+Name of a snapshot used as the data source.
+Snapshot is not supported as boot disk now.
+string snapshot = 5;
+Parameter
+Name
+Description
+value
+String The snapshot to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setSnapshotBytes(ByteString value)
+public AllocationPolicy . Disk . Builder setSnapshotBytes ( ByteString value )
+Name of a snapshot used as the data source.
+Snapshot is not supported as boot disk now.
+string snapshot = 5;
+Parameter
+Name
+Description
+value
+ByteString The bytes for snapshot to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setType(String value)
+public AllocationPolicy . Disk . Builder setType ( String value )
+Disk type as shown in gcloud compute disk-types list .
+For example, local SSD uses type "local-ssd".
+Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+or "pd-standard". If not specified, "pd-standard" will be used as the
+default type for non-boot disks, "pd-balanced" will be used as the
+default type for boot disks.
+string type = 1;
+Parameter
+Name
+Description
+value
+String The type to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+setTypeBytes(ByteString value)
+public AllocationPolicy . Disk . Builder setTypeBytes ( ByteString value )
+Disk type as shown in gcloud compute disk-types list .
+For example, local SSD uses type "local-ssd".
+Persistent disks and boot disks use "pd-balanced", "pd-extreme", "pd-ssd"
+or "pd-standard". If not specified, "pd-standard" will be used as the
+default type for non-boot disks, "pd-balanced" will be used as the
+default type for boot disks.
+string type = 1;
+Parameter
+Name
+Description
+value
+ByteString The bytes for type to set.
+Returns
+Type
+Description
+AllocationPolicy.Disk.Builder
+This builder for chaining.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-03-29 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-29 UTC."],[],[]]

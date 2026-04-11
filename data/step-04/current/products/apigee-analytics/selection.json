@@ -1,15 +1,17 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T16:43:40.393Z",
+  "generated_at": "2026-04-10T14:44:54.907Z",
   "product_name": "Apigee Analytics",
   "product_slug": "apigee-analytics",
   "step03_ranking_path": "data/step-03/current/products/apigee-analytics/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference"
-    ]
+    ],
+    "feature_count": 10
   },
   "site_output_mode": "compact",
   "selected_source_count": 2,
@@ -23,6 +25,7 @@
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/export-data",
       "final_score": 100,
       "best_rank": 4,
+      "matched_feature_phrases": [],
       "max_depth": 1,
       "max_pages": 30
     },
@@ -34,6 +37,7 @@
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
       "max_pages": 20
     }

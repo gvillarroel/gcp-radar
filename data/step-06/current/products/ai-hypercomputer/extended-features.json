@@ -1,0 +1,1564 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:58:55.580Z",
+  "product_name": "AI Hypercomputer",
+  "product_slug": "ai-hypercomputer",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/ai-hypercomputer.md",
+    "step04_product_dir": "data/step-04/current/products/ai-hypercomputer"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 24,
+  "source_row_count": 19,
+  "feature_count": 21,
+  "covered_feature_count": 8,
+  "features_without_supporting_pages": 13,
+  "features": [
+    {
+      "latest_feature_date": "2026-03-02",
+      "feature_name": "Compact placement policies for standalone Flex-start VMs",
+      "deprecation_date": "",
+      "feature_summary": "Supports configuring compact placement policies for standalone Flex-start VMs to place them in adjacent or same blocks and reduce network latency.",
+      "keywords": [
+        "network latency reduction",
+        "compact placement policy",
+        "standalone Flex-start VM",
+        "adjacent block placement",
+        "same block placement",
+        "same-block placement",
+        "compact placement",
+        "Flex-start placement"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Compact placement policies for standalone Flex-start VMs let users control placement of those VMs so they can be colocated in adjacent blocks or in the same block. Applying this policy is intended to help minimize network latency for AI/ML workloads.",
+      "evidence_summary": "The AI Hypercomputer release notes confirm the feature became generally available on March 02, 2026 and define compact placement policies as colocating standalone Flex-start VMs in adjacent or same blocks to reduce latency.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1bb41add4ed63cc217aa0f72faae7944bcbd1312d404243a46f8d81e2ed11221",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+          "title": "\"Create an AI-optimized instance with A4 or A3 Ultra \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-iam-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "base_score": 48,
+          "matched_phrases": [
+            {
+              "phrase": "compact placement",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 53
+            },
+            {
+              "phrase": "compact placement policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 51
+            }
+          ]
+        },
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "standalone flex-start vm",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "compact placement",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "compact placement policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 24,
+          "final_score": 24,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "standalone flex-start vm",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "compact placement",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "compact placement policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Applying a compact placement policy gives you more control over VM placement and helps minimize network latency for AI/ML workloads.",
+            "March 02, 2026 Feature Generally available : You can apply compact placement policies to standalone Flex-start VMs.",
+            "These policies let you colocate your standalone Flex-start VMs in adjacent blocks or in the same block."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-09",
+      "feature_name": "Node health prediction for AI-optimized GKE clusters",
+      "deprecation_date": "",
+      "feature_summary": "Enables node health prediction in AI-optimized GKE clusters to avoid scheduling workloads on nodes likely to degrade within five hours.",
+      "keywords": [
+        "avoid scheduling degraded nodes",
+        "five-hour health window",
+        "node degradation prediction",
+        "node health prediction",
+        "node health forecast",
+        "predict node health",
+        "degradation predictor",
+        "AI-optimized GKE health"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Enables node health prediction in AI-optimized GKE clusters to avoid scheduling workloads on nodes likely to degrade within five hours.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-21",
+      "feature_name": "Future reservations",
+      "deprecation_date": "",
+      "feature_summary": "Allows requesting AI Hypercomputer capacity reservations to start on a specific future date up to one year ahead.",
+      "keywords": [
+        "up to one year ahead",
+        "capacity reservation start time",
+        "future-dated reservation",
+        "future start date",
+        "start date reservation",
+        "scheduled reservation",
+        "schedule reservation",
+        "future reservation"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Future reservations in AI Hypercomputer let users request capacity reservations to begin on a specific future date. The release notes state that this feature is generally available and supports a start date up to one year in the future, enabling advance scheduling of reserved capacity. Earlier rollout text also indicates a preview mode for calendar-based future reservations with up to 90 days.",
+      "evidence_summary": "The AI Hypercomputer release notes provide the primary evidence that future reservations are supported and describe both their GA behavior (up to one year ahead start date) and earlier preview behavior (calendar mode, up to 90 days).",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "future reservations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "296edb433554a92e6cbbd0d4a2210b0dd6754f1d67b5073b72c823eb4dfc06f7",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy",
+          "title": "Recommended configurations \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 26,
+          "final_score": 44,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The release notes explicitly describe future reservations starting on a specific date up to one year ahead, directly defining the feature.",
+          "matched_phrases": [
+            {
+              "phrase": "future reservations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "October 21, 2025 Feature Generally available : You can use future reservations in AI Hypercomputer to request to reserve capacity starting on a specific date up to one year in the future.",
+            "July 07, 2025 Feature Preview : You can use future reservations in calendar mode to obtain resources for up to 90 days."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "A4X machine type availability",
+      "deprecation_date": "",
+      "feature_summary": "Introduces the A4X machine type, an accelerator-optimized Arm-based VM using NVIDIA GB200 Grace Blackwell Superchips, available in AI Hypercomputer.",
+      "keywords": [
+        "Grace Blackwell Superchips",
+        "Arm-based A4X",
+        "A4X machine family",
+        "NVIDIA GB200",
+        "A4X instance",
+        "accelerator-optimized VM",
+        "A4X machine type",
+        "A4X VM"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces the A4X machine type, an accelerator-optimized Arm-based VM using NVIDIA GB200 Grace Blackwell Superchips, available in AI Hypercomputer.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "nvidia gb200",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "a4x machine type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "grace blackwell superchips",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "a4x vm",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "A4X reservation sub-block maintenance management",
+      "deprecation_date": "",
+      "feature_summary": "Adds maintenance lifecycle visibility and control for A4X reservation sub-blocks, including notifications and manual maintenance actions.",
+      "keywords": [
+        "sub-block maintenance state",
+        "manual maintenance action",
+        "maintenance lifecycle visibility",
+        "sub-block maintenance control",
+        "A4X reservation sub-block",
+        "A4X sub-block maintenance",
+        "maintenance notifications",
+        "A4X maintenance management"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds maintenance lifecycle visibility and control for A4X reservation sub-blocks, including notifications and manual maintenance actions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "A4X reservation topology management",
+      "deprecation_date": "",
+      "feature_summary": "Adds visibility and management of A4X reservation topology, including sub-block views.",
+      "keywords": [
+        "reservation topology view",
+        "A4X sub-block view",
+        "sub-block topology",
+        "topology map",
+        "A4X reservation topology",
+        "topology management",
+        "A4X topology"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds visibility and management of A4X reservation topology, including sub-block views.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "A4X VM monitoring metrics in Cloud Monitoring",
+      "deprecation_date": "",
+      "feature_summary": "Enables use of specific Cloud Monitoring metrics to monitor A4X VM GPU health and troubleshooting signals.",
+      "keywords": [
+        "Cloud Monitoring metrics",
+        "Cloud Monitoring A4X",
+        "A4X monitoring data",
+        "troubleshooting signals",
+        "GPU health metric",
+        "A4X VM metrics",
+        "A4X GPU health",
+        "A4X metrics"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Enables use of specific Cloud Monitoring metrics to monitor A4X VM GPU health and troubleshooting signals.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "Advance notice for reservation unplanned hardware maintenance",
+      "deprecation_date": "",
+      "feature_summary": "Provides at least seven days of advance notice for unplanned hardware maintenance affecting a reservation.",
+      "keywords": [
+        "7-day hardware notice",
+        "advance hardware alert",
+        "unplanned hardware maintenance",
+        "seven-day notice",
+        "reservation maintenance warning",
+        "advance notice",
+        "maintenance notification"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Provides at least seven days of advance notice for unplanned hardware maintenance affecting a reservation.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "unplanned hardware maintenance",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "advance notice",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "maintenance notification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "Reservation maintenance scheduling mode",
+      "deprecation_date": "",
+      "feature_summary": "Adds support for selecting grouped or independent maintenance scheduling when reserving capacity for VM creation.",
+      "keywords": [
+        "grouped vs independent",
+        "independent maintenance scheduling",
+        "grouped maintenance scheduling",
+        "maintenance mode setting",
+        "maintenance scheduling mode",
+        "reservation maintenance mode",
+        "maintenance mode"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds support for selecting grouped or independent maintenance scheduling when reserving capacity for VM creation.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-10",
+      "feature_name": "Reservation operational mode",
+      "deprecation_date": "",
+      "feature_summary": "Adds configuration of reservation operational mode to define VM behavior and control following host errors or faulty host reports.",
+      "keywords": [
+        "VM behavior on host error",
+        "host error handling",
+        "faulty host report",
+        "operational mode setting",
+        "fault handling mode",
+        "operational setting",
+        "reservation operational mode",
+        "fault mode"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Reservation operational mode in AI Hypercomputer is a setting for reserved VM capacity that defines how VMs behave after a host error or a faulty host report. It determines the level of visibility and control you have over the reservation’s infrastructure and supports proactive handling of workload disruptions when unplanned maintenance is triggered by such host issues. The release notes state this capability is generally available when reserving capacity for VM creation.",
+      "evidence_summary": "The release notes page explicitly defines the feature’s purpose, impact on VM behavior during host faults, and confirm it is generally available for VM reservation workflows.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "reservation operational mode",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "faulty host report",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 24,
+          "final_score": 24,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "reservation operational mode",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "faulty host report",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "A reservation operational mode defines how your VMs behave after a host error or faulty host report, and it determines your level of visibility and control over the reservation's infrastructure.",
+            "This feature helps you more proactively control disruptions to your workloads when unplanned maintenance is scheduled after a host error or faulty host report.",
+            "Feature Generally available : When you reserve capacity for creating VMs, you can specify the reservation operational mode for your reserved capacity.",
+            "For more information, see Reservation operational mode ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-07-18",
+      "feature_name": "Straggler detection for AI/ML workloads",
+      "deprecation_date": "",
+      "feature_summary": "Provides straggler detection metrics and logs to troubleshoot slow performance caused by non-crashing workload slowdowns.",
+      "keywords": [
+        "slow task troubleshooting",
+        "non-crashing slowdown",
+        "slow task detection",
+        "straggler detection",
+        "straggler analysis",
+        "AI/ML workload straggler",
+        "straggler logs",
+        "straggler metrics"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Provides straggler detection metrics and logs to troubleshoot slow performance caused by non-crashing workload slowdowns.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-07-10",
+      "feature_name": "Collective Communication Analyzer (CoMMA) management",
+      "deprecation_date": "",
+      "feature_summary": "Introduces management of CoMMA via enabling, disabling, and configuration of NCCL telemetry collection for large-scale GPU training optimization.",
+      "keywords": [
+        "Collective Communication Analyzer",
+        "collective communication tuning",
+        "NCCL telemetry collection",
+        "configure CoMMA",
+        "NCCL telemetry",
+        "disable CoMMA",
+        "enable CoMMA",
+        "GPU training optimization"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces management of CoMMA via enabling, disabling, and configuration of NCCL telemetry collection for large-scale GPU training optimization.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-07-07",
+      "feature_name": "Calendar mode future reservations",
+      "deprecation_date": "",
+      "feature_summary": "In preview, AI Hypercomputer supports creating future reservations in calendar mode up to 90 days ahead to reserve up to 80 GPU VMs and use that capacity for model training, fine-tuning, simulations, or inference.",
+      "keywords": [
+        "pre-provisioned reserved capacity",
+        "reserve capacity up to 90 days",
+        "future date reservation window",
+        "calendar mode reservations",
+        "calendar mode scheduling",
+        "calendar mode",
+        "future reservations",
+        "future reservation"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Calendar mode future reservation in AI Hypercomputer is a scheduling feature that lets users request reserved GPU capacity to start at a specific future date and time. In Feature Preview it supported reserving up to 80 GPU VMs for dates up to 90 days ahead, and it reached General Availability with support for future-date reservations up to one year ahead; it is recommended for fine-tuning and inferencing workloads.",
+      "evidence_summary": "The release notes provide lifecycle and capacity constraints (preview 90-day limit, GA one-year future reservations, up to 80 GPU VMs), while the recommendations page links calendar-mode future reservations to fine-tuning and inference usage.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "calendar mode",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "296edb433554a92e6cbbd0d4a2210b0dd6754f1d67b5073b72c823eb4dfc06f7",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy",
+          "title": "Recommended configurations \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "calendar mode",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 32,
+          "final_score": 40,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page includes general future-reservation capability in AI Hypercomputer, which is closely related to calendar-mode future reservations despite different stated limits.",
+          "matched_phrases": [
+            {
+              "phrase": "calendar mode",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "July 07, 2025 Feature Preview : You can use future reservations in calendar mode to obtain resources for up to 90 days.",
+            "October 21, 2025 Feature Generally available : You can use future reservations in AI Hypercomputer to request to reserve capacity starting on a specific date up to one year in the future.",
+            "By creating a request in calendar mode, you can reserve up to 80 GPU VMs for a future date and time."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy",
+          "title": "Recommended configurations \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "base_score": 24,
+          "final_score": 20,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page discusses recommended consumption types in general, but it does not explicitly cover calendar-mode reservation behavior, preview limits, or related operational constraints.",
+          "matched_phrases": [
+            {
+              "phrase": "calendar mode",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "future reservation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Workloads Recommendations Cluster deployment guide Machine type Orchestrator Fine-tuning large models A4X Max A4X A4 GKE Create an AI-optimized GKE cluster with default configuration Slurm Create an AI-optimized cluster based on a template Create an AI-optimized Slurm cluster Fine-tuning large models A3 Mega GKE Maximize GPU network bandwidth in Standard mode clusters Slurm Create an AI-optimized cluster based on a template Deploy an A3 Mega Slurm cluster for ML training Fine-tuning large models A3 High GKE Maximize GPU network bandwidth in Standard mode clusters Slurm Deploy an A3 High Slurm cluster Recommended consumption type For fine-tuning workloads we recommend using future reservation in calendar mode to provision resources.",
+            "Workloads Recommendations VM deployment guide Machine type Orchestrator Single-host frontier inference A4 A3 Ultra N/A Create an AI-optimized instance Single-host frontier inference A3 High N/A Create an A3 VM with GPUDirect-TCPX enabled Recommended consumption type For inferencing we recommend using either a long running reservation or future reservation in calendar mode."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-06-11",
+      "feature_name": "Managed instance group workload policies",
+      "deprecation_date": "",
+      "feature_summary": "AI Hypercomputer now supports workload policies on managed instance groups, including a high-throughput workload type optimized for high networking performance.",
+      "keywords": [
+        "workload placement on managed instance groups",
+        "managed instance group workload policies",
+        "managed instance groups",
+        "AI Hypercomputer MIG policy",
+        "high-throughput workload type",
+        "MIG workload policies",
+        "high networking performance workload",
+        "MIG policies"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "AI Hypercomputer now supports workload policies on managed instance groups, including a high-throughput workload type optimized for high networking performance.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-05-22",
+      "feature_name": "Reserved-host maintenance event management",
+      "deprecation_date": "",
+      "feature_summary": "You can now proactively manage upcoming host maintenance events on reserved capacity blocks, whether VMs are running or not, to reduce disruption and help maintain performance.",
+      "keywords": [
+        "maintenance controls for stopped VMs",
+        "reserved-host maintenance event",
+        "proactive maintenance handling",
+        "reserved capacity block maintenance",
+        "reserved-host maintenance",
+        "host maintenance for running VMs",
+        "maintenance event management",
+        "maintenance events"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "You can now proactively manage upcoming host maintenance events on reserved capacity blocks, whether VMs are running or not, to reduce disruption and help maintain performance.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-05-15",
+      "feature_name": "Flex-start consumption option",
+      "deprecation_date": "",
+      "feature_summary": "Flex-start lets users obtain secured-pool GPU capacity in advance for up to seven days, improving chances of acquiring high-demand resources.",
+      "keywords": [
+        "secure pool pre-booking",
+        "high-demand resource acquisition",
+        "Flex-start consumption option",
+        "secured-pool access",
+        "secured-pool capacity",
+        "up to seven days in advance",
+        "Flex-start",
+        "Flex start"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Flex-start is a consumption option in AI Hypercomputer that provisions capacity from a secured resource pool. The feature allows users to obtain resources up to seven days in advance, and release notes also mention GA support for compact placement policies for standalone Flex-start VMs.",
+      "evidence_summary": "The cited release notes explicitly describe Flex-start as secured-pool capacity and state that it can be used to obtain resources up to seven days ahead.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1bb41add4ed63cc217aa0f72faae7944bcbd1312d404243a46f8d81e2ed11221",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+          "title": "\"Create an AI-optimized instance with A4 or A3 Ultra \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-iam-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "flex-start",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "flex start",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "flex-start",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "flex-start consumption option",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 28,
+          "final_score": 24,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Only a compact placement policy for standalone Flex-start VMs is mentioned, not the secured-pool prebooking or up-to-seven-days consumption behavior.",
+          "matched_phrases": [
+            {
+              "phrase": "flex-start",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "flex-start consumption option",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "May 15, 2025 Feature Preview: You can use the Flex-start consumption option to obtain resources for up to seven days.",
+            "March 02, 2026 Feature Generally available : You can apply compact placement policies to standalone Flex-start VMs.",
+            "These policies let you colocate your standalone Flex-start VMs in adjacent blocks or in the same block.",
+            "Flex-start provisions capacity from a secured resource pool."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-03-18",
+      "feature_name": "A4 accelerator-optimized machine type",
+      "deprecation_date": "",
+      "feature_summary": "The A4 machine type is generally available with NVIDIA B200 GPUs, delivering up to 3x performance versus previous GPU machine types and is available in us-central1-b for AI and ML workloads.",
+      "keywords": [
+        "us-central1-b availability",
+        "A4 accelerator-optimized machine type",
+        "AI and ML workload on A4",
+        "NVIDIA B200 GPU",
+        "3x performance",
+        "A4 B200",
+        "A4 machine type",
+        "A4"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "The A4 accelerator-optimized machine type is a Google Cloud AI Hypercomputer VM machine type used for AI/ML workloads. In official AI Hypercomputer documentation, A4 VMs are shown in training/fine-tuning tutorials and include 8 NVIDIA B200 GPUs per VM (for example, \"a4-highgpu-8g\" instances in cluster examples). The A4 machine type is constrained in usage by documented platform and lifecycle rules, including restriction to the Emerald Rapids CPU platform and limits on reconfiguring instances to/from A4.",
+      "evidence_summary": "The cited pages confirm A4’s role as an AI/ML-oriented machine type with 8×NVIDIA B200 GPU-backed instances and document key operational constraints, but do not provide the claimed GA, 3x performance, or us-central1-b availability details in the provided excerpts.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/gemma3-finetune-a4-gke-cluster",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/train-qwen2-a4-slurm-cluster"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1bb41add4ed63cc217aa0f72faae7944bcbd1312d404243a46f8d81e2ed11221",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+          "title": "\"Create an AI-optimized instance with A4 or A3 Ultra \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-iam-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "base_score": 64,
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "a4 machine type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "e5df63caf17a195ed49a59a88dbc64b1c951ebbfe8a7b1db0a53827ea81e0240",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/gemma3-finetune-a4-gke-cluster",
+          "title": "\"Fine-tune Gemma 3 on an A4 GKE cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "base_score": 58,
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "4517c576192ce25dec774bdebae350a3cb3e6fbc650bf4b2e9350ab7c9f5c828",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/train-qwen2-a4-slurm-cluster",
+          "title": "\"Train Qwen2 on an A4 Slurm cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_train-qwen2-a4-slurm-cluster.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_train-qwen2-a4-slurm-cluster.md",
+          "base_score": 58,
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 26
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e5d5e777c64ffa2632854a4495c0962466874198ad58bada8050a56ec6a1053b",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/fsdp-llama4",
+          "title": "\"Use FSDP to fine-tune Llama 4 on an A4 Slurm cluster \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_fsdp-llama4.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_fsdp-llama4.md",
+          "base_score": 58,
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 38
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "bfebb0e2b3787a4476263831d08f6b702c959ec16c518e50515a5006f1bc52fd",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/fsdp-mixtral-8x7b",
+          "title": "\"Use FSDP to fine-tune Mixtral-8x7B on an A4 Slurm cluster \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_fsdp-mixtral-8x7b.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_fsdp-mixtral-8x7b.md",
+          "base_score": 48,
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 22
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 46,
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "a4 accelerator-optimized machine type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "3x performance",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "a4 machine type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+          "title": "\"Create an AI-optimized instance with A4 or A3 Ultra \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-iam-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "base_score": 64,
+          "final_score": 82,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is specifically about creating standalone VMs with A4 and provides detailed constraints for A4 usage, directly informing the feature definition.",
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "a4 machine type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "Limitations When you create a standalone A4 or A3 Ultra VM, the following limitations apply: A4 You don't receive sustained use discounts and flexible committed use discounts for instances that use an A4 machine type.",
+            "You can't attach Hyperdisk ML disks that were created before February 4, 2026 to A4 machine types.",
+            "You can't change the machine type of an instance to or from A4 machine type.",
+            "The A4 machine type is only available on the Emerald Rapids CPU platform ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/gemma3-finetune-a4-gke-cluster",
+          "title": "\"Fine-tune Gemma 3 on an A4 GKE cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "base_score": 58,
+          "final_score": 66,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The tutorial is specifically about running workloads on an A4 VM-based GKE cluster and references capacity reservation for A4, so it supports context for using the A4 machine type in AI/ML, though it does not define the GA/performance/region specifics.",
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "This cluster uses an A4 virtual machine (VM) instance which has 8 NVIDIA B200 GPUs.",
+            "Home Documentation Compute AI Hypercomputer Guides Send feedback Fine-tune Gemma 3 on an A4 GKE cluster Stay organized with collections Save and categorize content based on your preferences.",
+            "Job duration : the job should take approximately 10 minutes to complete on the specified A4 cluster.",
+            "Important: To complete this tutorial, you must have reserved the capacity to create an A4 VM."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/train-qwen2-a4-slurm-cluster",
+          "title": "\"Train Qwen2 on an A4 Slurm cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_train-qwen2-a4-slurm-cluster.md",
+          "base_score": 58,
+          "final_score": 58,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "a4",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 26
+            },
+            {
+              "phrase": "nvidia b200 gpu",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "The Slurm cluster uses two a4-highgpu-8g virtual machines (VMs), which each have 8 NVIDIA B200 GPUs.",
+            "You can now submit jobs with sbatch. ---\" To specify the configurations for your fine-tuning job, create the accelerate config.yaml file with the following content: Default configuration for a 2-node, 8-GPU-per-node (16 total GPUs) FSDP training job. compute environment : \"LOCAL MACHINE\" distributed type : \"FSDP\" downcast bf16 : \"no\" machine rank : 0 main training function : \"main\" mixed precision : \"bf16\" num machines : 2 num processes : 16 rdzv backend : \"static\" same network : true tpu env : [] use cpu : false To specify the tasks for the jobs to run on your Slurm cluster, create the submit.slurm file with the following content: #!/bin/bash #SBATCH --job-name=qwen2-pretrain-smollm-fineweb #SBATCH --nodes=2 #SBATCH --ntasks-per-node=8 # 8 tasks per node #SBATCH --gpus-per-task=1 # 1 GPU per task #SBATCH --partition=a4high #SBATCH --output=logs/slurm-%j.out #SBATCH --error=logs/slurm-%j.err set -e echo \"--- Slurm Job Started ---\" --- STAGE 1: Setup environment and pre-process data on each node's local SSD --- This command runs once per node. srun --ntasks = $SLURM NNODES --ntasks-per-node = 1 bash -c ' set -e echo \"Setting up local environment on $(hostname)...\" LOCAL VENV=\"/mnt/localssd/venv job ${SLURM JOB ID}\" LOCAL CACHE=\"/mnt/localssd/hf cache job ${SLURM JOB ID}\" PROCESSED DATA DIR=\"/mnt/localssd/processed data ${SLURM JOB ID}\" rsync -a --info=progress2 /./.venv/ ${LOCAL VENV}/ mkdir -p ${LOCAL CACHE} ${PROCESSED DATA DIR} echo \"Pre-processing data on $(hostname)...\" source ${LOCAL VENV}/bin/activate export HF HOME=${LOCAL CACHE} export HF DATASETS CACHE=${LOCAL CACHE} This runs the new preprocessing script.",
+            "Create an A4 Slurm cluster To create an A4 Slurm cluster, follow these steps: Go to the cluster-toolkit directory: cd cluster - toolkit If it's your first time using Cluster Toolkit, then build the gcluster binary: make Go to the examples/machine-learning/a4-highgpu-8g directory: cd examples/machine-learning/a4-highgpu-8g/ Open the a4high-slurm-deployment.yaml file, and then edit it as follows: terraform backend defaults : type : gcs configuration : bucket : BUCKET NAME vars : deployment name : a4-high project id : PROJECT ID region : REGION zone : ZONE a4h cluster size : 2 a4h reservation name : RESERVATION URL Replace the following: BUCKET NAME : the name of the Cloud Storage bucket that you created in the previous section.",
+            "You can download the saved model from the login node to your local machine by using the gcloud compute scp command, as shown in the following example: From your local machine LOGIN NODE NAME=\"your-login-node-name\" # e.g., a4high-login-001 PROJECT ID=\"your-gcp-project-id\" ZONE=\"your-cluster-zone\" # e.g., us-west4-a gcloud compute scp --project=\" $PROJECT ID \" --zone=\" $ZONE \" --tunnel-through-iap \\ \" ${ LOGIN NODE NAME } \": /qwen2-from-scratch-on-smollm-fineweb/ ./qwen2-trained-model/ --recurse After you download your model, you can do the following: Load the model for inference : Use the Hugging Face Transformers framework to load the qwen2-trained-model/ directory and perform inference with your newly trained Qwen2 model."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-03-18",
+      "feature_name": "A4 MaxText docker image",
+      "deprecation_date": "",
+      "feature_summary": "New MaxText Docker image support was added for workloads running on A4 GKE clusters deployed through Hypercompute Cluster.",
+      "keywords": [
+        "run MaxText on A4",
+        "A4 MaxText Docker image",
+        "MaxText workload image",
+        "MaxText image support",
+        "A4 MaxText",
+        "A4 GKE cluster",
+        "MaxText",
+        "Hypercompute Cluster"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "New MaxText Docker image support was added for workloads running on A4 GKE clusters deployed through Hypercompute Cluster.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 52,
+          "matched_phrases": [
+            {
+              "phrase": "hypercompute cluster",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "maxtext",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "a4 maxtext docker image",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "a4 maxtext",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "a4 gke cluster",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e5df63caf17a195ed49a59a88dbc64b1c951ebbfe8a7b1db0a53827ea81e0240",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/gemma3-finetune-a4-gke-cluster",
+          "title": "\"Fine-tune Gemma 3 on an A4 GKE cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "a4 gke cluster",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-18",
+      "feature_name": "A4 NeMo docker image",
+      "deprecation_date": "",
+      "feature_summary": "New NeMo Docker image support was added for workloads running on A4 GKE clusters created with Hypercompute Cluster.",
+      "keywords": [
+        "run NeMo on A4",
+        "A4 NeMo Docker image",
+        "NeMo workload image",
+        "NeMo image support",
+        "A4 NeMo",
+        "A4 GKE cluster",
+        "Hypercompute Cluster",
+        "NeMo"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "New NeMo Docker image support was added for workloads running on A4 GKE clusters created with Hypercompute Cluster.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 40,
+          "matched_phrases": [
+            {
+              "phrase": "hypercompute cluster",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "nemo",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "a4 gke cluster",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e5df63caf17a195ed49a59a88dbc64b1c951ebbfe8a7b1db0a53827ea81e0240",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/gemma3-finetune-a4-gke-cluster",
+          "title": "\"Fine-tune Gemma 3 on an A4 GKE cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_tutorials_gpu_gemma3-finetune-a4-gke-cluster.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "a4 gke cluster",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-12-31",
+      "feature_name": "A3 Ultra accelerator-optimized machine type",
+      "deprecation_date": "",
+      "feature_summary": "The A3 Ultra machine type is now generally available with NVIDIA H200 GPUs and Titanium ML networking for model training and serving, and is available in europe-west1-b.",
+      "keywords": [
+        "europe-west1-b availability",
+        "A3 Ultra accelerator-optimized machine type",
+        "model training and serving",
+        "A3 Ultra H200",
+        "Titanium ML networking",
+        "NVIDIA H200 GPU",
+        "A3 Ultra machine",
+        "A3 Ultra"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "A3 Ultra is an accelerator-optimized machine type in Google Cloud AI Hypercomputer that can be provisioned as an AI-optimized Compute Engine instance. AI Hypercomputer deployment and guidance materials list A3 Ultra among supported machine families for AI/ML workloads (including model pre-training/fine-tuning and frontier inference scenarios), and describe paths for creating standalone instances or deploying through cluster flows. The creation guidance also states that A3 Ultra instances do not receive sustained-use or flexible committed-use discounts.",
+      "evidence_summary": "These official AI Hypercomputer pages confirm A3 Ultra’s role as an accelerator-optimized machine type, the supported deployment methods, and workload recommendations that reference it for training and inference use cases.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-overview"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1bb41add4ed63cc217aa0f72faae7944bcbd1312d404243a46f8d81e2ed11221",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+          "title": "\"Create an AI-optimized instance with A4 or A3 Ultra \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-iam-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "base_score": 64,
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "a3 ultra machine",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            }
+          ]
+        },
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "a3 ultra machine",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "a3 ultra accelerator-optimized machine type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "model training and serving",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "617fd7c05805b505e9255d57a61b9e6ca9a8b1a3e543b83470581165f233b7f9",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-overview",
+          "title": "Deployment options overview \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_create_create-overview.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-overview.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "5fc036ca1323587bc3d615608b13522eef242137c55edb2b95e4ddeec340fa93",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/cluster-capabilities",
+          "title": "\"Cluster management capabilities \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_cluster-capabilities.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_cluster-capabilities.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        },
+        {
+          "page_id": "296edb433554a92e6cbbd0d4a2210b0dd6754f1d67b5073b72c823eb4dfc06f7",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy",
+          "title": "Recommended configurations \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-vm",
+          "title": "\"Create an AI-optimized instance with A4 or A3 Ultra \\_|\\_ AI Hypercomputer\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-iam-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-vm.md",
+          "base_score": 64,
+          "final_score": 82,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is specifically about creating standalone VMs with A3 Ultra and explicitly lists key behaviors and limits for that machine type, making it directly relevant to defining the feature.",
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 19
+            },
+            {
+              "phrase": "a3 ultra machine",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            }
+          ],
+          "evidence_snippets": [
+            "Overview Creating an instance with the A4 or A3 Ultra machine type includes the following steps: Create VPC networks Optional: Create a compact placement policy Create an instance Create VPC networks Tip: If you are setting up a quick test, you can skip this step and specify a single NIC --network-interface=nic-type=GVNIC instead.",
+            "To set up the network for A4 or A3 Ultra machine types, create three VPC networks for the following network interfaces: 2 regular VPC networks for the gVNIC network interfaces (NICs).",
+            "A3 Ultra You don't receive sustained use discounts and flexible committed use discounts for instances that use an A3 Ultra machine type.",
+            "This document describes the steps to create standalone virtual machine (VM) instances that use A4 or A3 Ultra machine types."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/choose-strategy",
+          "title": "Recommended configurations \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-reference/pages/docs.cloud.google.com_ai-hypercomputer_docs_choose-strategy.md",
+          "base_score": 24,
+          "final_score": 32,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page is a workload-based configuration guide that recommends accelerator choices, which can support selecting A3 Ultra for certain AI/ML workloads but does not provide the specific GA status, GPU model, or region details.",
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Resource Recommendation Model pre-training Machine family Use one of the following accelerator-optimized machine types: A4X Max, A4X, A4, A3 Ultra, A3 Mega, or A3 High Consumption type Use reservations Storage Use a Google Cloud managed service such as Google Cloud Managed Lustre or Cloud Storage FUSE Model fine-tuning Machine family Use A4X Max, A4X, A4, or A3 accelerator-optimized machine types Consumption type Use reservations Storage Use a Google Cloud managed service such as Google Cloud Managed Lustre or Cloud Storage FUSE Inference Machine family Use one of the following accelerator-optimized machine types: A4X Max, A4X, A4, A3 Ultra, A3 Mega, or A3 High Consumption type Use reservations Storage Use a Google Cloud managed service such as Google Cloud Managed Lustre or Cloud Storage FUSE HPC See the summary section of the best practices for running HPC workloads Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "Workloads Recommendations Cluster deployment guide Machine type Orchestrator Frontier model training Large model training A4X Max A4X A4 A3 Ultra GKE Create an AI-optimized GKE cluster with default configuration Slurm Create an AI-optimized cluster based on a template Create an AI-optimized Slurm cluster Frontier model training Large model training A3 Mega GKE Maximize GPU network bandwidth in Standard mode clusters Slurm Create an AI-optimized cluster based on a template Deploy an A3 Mega Slurm cluster for ML training Large model training A3 High GKE Maximize GPU network bandwidth in Standard mode clusters Slurm Deploy an A3 High Slurm cluster Recommended consumption type For a high level of assurance in obtaining large clusters of accelerators at minimum costs, we recommend using a reservation and requesting these reservation for a long duration.",
+            "Workloads Recommendations Cluster deployment guide Machine type Orchestrator Multi-host frontier inference A4X Max A4X A4 A3 Ultra GKE Create an AI-optimized GKE cluster with default configuration Slurm Create an AI-optimized cluster based on a template Create an AI-optimized Slurm cluster Multi-host frontier inference A3 Mega GKE Maximize GPU network bandwidth in Standard mode clusters Slurm Create an AI-optimized cluster based on a template Deploy an A3 Mega Slurm cluster for ML training Large model inference A3 High GKE Maximize GPU network bandwidth in Standard mode clusters Slurm Deploy an A3 High Slurm cluster Recommended accelerators (single host) The following table outlines the recommended accelerators to use when performing single-host frontier inference.",
+            "Workloads Recommendations VM deployment guide Machine type Orchestrator Single-host frontier inference A4 A3 Ultra N/A Create an AI-optimized instance Single-host frontier inference A3 High N/A Create an A3 VM with GPUDirect-TCPX enabled Recommended consumption type For inferencing we recommend using either a long running reservation or future reservation in calendar mode."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-overview",
+          "title": "Deployment options overview \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_create_create-overview.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "a3 ultra",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "To learn more, see the following: Create an AI-optimized instance Create A4X Max Create A4X Create A4 or A3 Ultra Create A3 Mega or A3 High Create AI-optimized instances in bulk Create A4X Max Create A4X Create A4 or A3 Ultra Create A3 Mega or A3 High Create an AI-optimized MIG Create A4X Max Create A4X Create A4 or A3 Ultra Create A3 Mega or A3 High Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "To run artificial intelligence (AI), machine learning (ML), or high performance computing (HPC) workloads, you can deploy AI-optimized Compute Engine instances and clusters that use A4X, A4, A3 Ultra, A3 Mega, and A3 High (8 GPUs) machines.",
+            "You can create A4X, A4, A3 Ultra, A3 Mega, and A3 High (8 GPUs) instances directly from Compute Engine, or through other services that run on Compute Engine instances like Cluster Toolkit or Google Kubernetes Engine.",
+            "Note: This guide only applies to the A4X, A4, A3 Ultra, A3 Mega, and A3 High (8 GPUs) machine types."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-12-31",
+      "feature_name": "Hypercompute Cluster preview",
+      "deprecation_date": "",
+      "feature_summary": "Hypercompute Cluster entered preview, enabling large-scale provisioning of A3 Ultra accelerator-optimized machines with optimized placement, networking, workload placement, and maintenance controls.",
+      "keywords": [
+        "workload placement controls",
+        "maintenance controls for clusters",
+        "A3 Ultra placement",
+        "optimized placement and networking",
+        "Hypercompute Cluster preview",
+        "HC cluster",
+        "Hypercompute Cluster",
+        "Hypercompute cluster"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Hypercompute Cluster is an AI Hypercomputer capability for provisioning capacity and creating VMs or clusters when using A4 and A3 Ultra machine types, with explicit support for requesting capacity via the cluster mechanism. The feature emphasizes optimized operational behavior, including dense resource co-location, ultra-low-latency networking, targeted workload placement, and advanced maintenance controls to reduce disruption, while the provided excerpts do not explicitly state that it is in preview.",
+      "evidence_summary": "The cited release notes confirm Hypercompute Cluster’s role in A3 Ultra/A4 capacity provisioning and detail its placement, networking, and maintenance-oriented features, but do not explicitly label the feature as preview in the provided text.",
+      "source_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "eccc185d4d94733af721d2c1ef94d3a814ca28772c79d5a0506da0b5b7160352",
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\ai-hypercomputer\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "relative_markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "hypercompute cluster",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/release-notes",
+          "title": "AI Hypercomputer release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/ai-hypercomputer/corpus/site/site-docs-root/pages/docs.cloud.google.com_ai-hypercomputer_docs_release-notes.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "hypercompute cluster",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "With features such as dense co-location of resources, ultra-low latency networking, targeted workload placement, and advanced maintenance controls to minimize workload disruptions, Hypercompute Cluster is built to deliver exceptional performance and resilience, so you can run your most demanding AI, ML, and HPC workloads with confidence.",
+            "A4 is available in the following region and zone: Council Bluffs, Iowa: us-central1-b When provisioning A4 machine types, you can use Hypercompute Cluster to request capacity and create VMs or clusters.",
+            "Software stack updates The following new Docker images are also released to support workloads running on your A4 GKE clusters that are deployed using Hypercompute Cluster .",
+            "Ghislain, Belgium, Europe - europe-west1-b When provisioning A3 Ultra machine types, you must use Hypercompute Cluster to request capacity and create VMs or clusters."
+          ]
+        }
+      ]
+    }
+  ]
+}

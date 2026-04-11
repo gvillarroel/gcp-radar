@@ -1,0 +1,56 @@
+---
+title: "Class CommonOperationMetadata (0.6.0) \_|\_ Python client libraries \_|\_\
+  \ Google Cloud Documentation"
+url: https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CommonOperationMetadata
+knowledge_key: corpus
+source_id: site-python-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest
+source_metadata:
+  url: https://docs.cloud.google.com/python/docs/reference/enterpriseknowledgegraph/latest/google.cloud.enterpriseknowledgegraph_v1.types.CommonOperationMetadata
+  title: "Class CommonOperationMetadata (0.6.0) \_|\_ Python client libraries \_|\_\
+    \ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Developer tools
+Python
+Client libraries
+Send feedback
+Class CommonOperationMetadata (0.6.0)
+Stay organized with collections
+Save and categorize content based on your preferences.
+0.6.0 (latest)
+0.5.0
+0.4.0
+0.3.17
+0.2.1
+0.1.0
+CommonOperationMetadata ( mapping = None , * , ignore_unknown_fields = False , ** kwargs )
+The common metadata for long running operations.
+Attributes
+Name
+Description
+state
+google.cloud.enterpriseknowledgegraph_v1.types.CommonOperationMetadata.State
+The state of the operation.
+create_time
+google.protobuf.timestamp_pb2.Timestamp
+The creation time of the operation.
+update_time
+google.protobuf.timestamp_pb2.Timestamp
+The last update time of the operation.
+Classes
+State
+State ( value )
+State of the longrunning operation.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-03-30 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-30 UTC."],[],[]]

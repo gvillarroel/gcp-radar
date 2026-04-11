@@ -1,6 +1,5 @@
 ---
-title: "Auto data quality overview \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-  \ Documentation"
+title: "Auto data quality overview \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,38 +7,38 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview
-  title: "Auto data quality overview \_|\_ Dataplex Universal Catalog \_|\_ Google\
-    \ Cloud Documentation"
+  title: "Auto data quality overview \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Auto data quality overview
 Stay organized with collections
 Save and categorize content based on your preferences.
-Dataplex Universal Catalog lets you define and measure the quality of the data in your
+Knowledge Catalog (formerly Dataplex Universal Catalog) lets you define and measure the quality of the data in your
 BigQuery tables. You can automate the data scanning, validate data
 against defined rules, and log alerts if your data doesn't meet quality
 requirements. Auto data quality lets you manage data quality rules and
 deployments as code, improving the integrity of data production pipelines.
-To scan data for anomalies, see Dataplex Universal Catalog data profile scan .
+To scan data for anomalies, see Knowledge Catalog data profile scan .
 The scan can generate data quality rules. You can also use predefined quality
 rules or build custom rules.
-Dataplex Universal Catalog provides monitoring, troubleshooting, and
+Knowledge Catalog provides monitoring, troubleshooting, and
 Cloud Logging alerting that's integrated with auto data quality.
 Conceptual model
-A data quality scan is a type of Dataplex Universal Catalog data
+A data quality scan is a type of Knowledge Catalog data
 scan that
 validates your data against a set of predefined rules. A data scan is a
-Dataplex Universal Catalog job that samples data from BigQuery and
+Knowledge Catalog job that samples data from BigQuery and
 Cloud Storage (through BigQuery external tables) and infers
 various types of metadata. To measure the
 quality of a table using auto data quality, you create a DataScan object of
@@ -56,11 +55,11 @@ Troubleshoot data quality failures
 Rule definition
 Data quality rules associated with a data quality scan define data
 expectations. You can create data quality rules in the following ways:
-Use recommendations from Dataplex Universal Catalog data profiling
+Use recommendations from Knowledge Catalog data profiling
 Use the predefined rules
 Create custom SQL rules
 Predefined rules
-Dataplex Universal Catalog supports the following categories of predefined rules:
+Knowledge Catalog supports the following categories of predefined rules:
 Row-level
 For row-level category rules, the expectation is applied
 against each data row. Each row independently passes or
@@ -165,7 +164,7 @@ Specify an expectation for every row by defining a SQL
 expression in a WHERE clause. The SQL expression should
 evaluate to true (pass) or false (fail)
 per row.
-Dataplex Universal Catalog computes the percentage of rows that pass
+Knowledge Catalog computes the percentage of rows that pass
 this expectation and compares this value against the passing threshold percentage
 to determine the success or failure of the rule.
 The expression can include a reference to another table, for example, to create
@@ -218,7 +217,7 @@ For SQL functions supported, see GoogleSQL reference .
 Dimensions
 Dimensions let you aggregate the results of multiple data quality rules for
 monitoring and alerting. You must associate every data quality rule with a
-dimension. Dataplex Universal Catalog provides the following dimensions:
+dimension. Knowledge Catalog provides the following dimensions:
 Freshness
 Freshness measures when the data was last updated. Having this information
 can help you determine whether the data is recent enough to be useful.
@@ -250,7 +249,7 @@ your organization's terminology. For example, instead of freshness, you might
 use timeliness.
 Typed input in rules
 All value parameters are passed as string values to the API.
-Dataplex Universal Catalog requires inputs to follow the
+Knowledge Catalog requires inputs to follow the
 BigQuery specified format .
 Binary-typed parameters can be passed as a base64-encoded string.
 Type
@@ -275,7 +274,7 @@ Data reference parameter
 When you create a custom SQL rule, you can refer to a data source table and all
 of its precondition filters by using the data reference parameter ${data()} in
 the rule, instead of explicitly mentioning the source table and its filters.
-Dataplex Universal Catalog interprets the parameter as a reference to the source
+Knowledge Catalog interprets the parameter as a reference to the source
 table and its filters. Examples of precondition filters include
 row filters ,
 sampling percents, and incremental filters.
@@ -290,7 +289,7 @@ If you use the data reference parameter, you can simplify the rule. Replace the
 mention of the table and its precondition filters with the ${data()}
 parameter:
 discount_pct IN (SELECT discount_pct FROM ${data()})
-Dataplex Universal Catalog interprets the ${data()} parameter as a
+Knowledge Catalog interprets the ${data()} parameter as a
 reference to the data source table with today's entries,
 my_project_id.dim_dataset.dim_currency WHERE transaction_timestamp >= current_date() .
 In this example, the data reference parameter refers only to the incremental
@@ -365,7 +364,29 @@ FROM ` example_project . example_dataset . table `
 Rule execution
 You can schedule data quality scans to run at a specific interval, or you can
 run a scan on demand.
-When you run a data quality scan, Dataplex Universal Catalog creates a job. As part
+Execution identity
+By default, Knowledge Catalog uses a centralized service agent ( service-PROJECT_NUMBER@gcp-sa-dataplex.iam.gserviceaccount.com ) to run data
+quality scans.
+You can override this default execution identity by specifying a custom service
+account or by using your own End-User Credentials (EUC). This provides several
+benefits:
+Principle of least privilege: Grant only the exact IAM permissions
+required for specific data quality tasks to a dedicated service account,
+minimizing overprovisioned access.
+Fine-grained access control: Scope permissions to specific resources,
+allowing integration with row-level and column-level access policies in
+BigQuery.
+Improved auditability: Assign custom service accounts or user credentials
+to specific scans, making tracking and logging of activities much clearer in
+audit logs.
+Billing unification: When you use a custom execution identity, the
+processing and storage charges are centralized directly under
+BigQuery (bypassing Knowledge Catalog Premium SKUs). This
+lets you take advantage of BigQuery enterprise discounts and slot
+commitments.
+For instructions on how to configure a custom execution identity, see
+Configure execution identity .
+When you run a data quality scan, Knowledge Catalog creates a job. As part
 of the specification of a data quality scan, you can specify the scope of a job
 to be one of the following:
 Full Table
@@ -387,7 +408,7 @@ to sample for running a data quality scan. Creating data quality scans on a
 smaller sample of data can reduce the run time and the cost relative to
 querying the entire dataset.
 Data quality scan results
-The results of your data quality scans are available in Dataplex Universal Catalog
+The results of your data quality scans are available in Knowledge Catalog
 and BigQuery.
 You can also review and analyze the scan results by using the following methods:
 Export results to BigQuery
@@ -395,21 +416,21 @@ You can export the scan results to a BigQuery table for further
 analysis. To customize reporting, you can connect the BigQuery
 table data to a Looker dashboard. You can build an aggregated report
 by using the same results table across multiple scans.
-Publish results as Dataplex Universal Catalog metadata
+Publish results as Knowledge Catalog metadata
 You can publish the data quality scan results as
-Dataplex Universal Catalog metadata. The latest results are saved to the
-Dataplex Universal Catalog entry that represents the source table, under the
+Knowledge Catalog metadata. The latest results are saved to the
+Knowledge Catalog entry that represents the source table, under the
 data-quality-scorecard system aspect type. You can view the results on the
-source table's BigQuery and Dataplex Universal Catalog pages in
+source table's BigQuery and Knowledge Catalog pages in
 the Google Cloud console, on the Data quality tab. You can also retrieve
 the results by using the API.
 Note: If an existing data quality scan published the results to the
-BigQuery and Dataplex Universal Catalog pages in the
+BigQuery and Knowledge Catalog pages in the
 Google Cloud console, and you instead want to publish future scan results as
-Dataplex Universal Catalog metadata, you must edit the scan to
+Knowledge Catalog metadata, you must edit the scan to
 re-enable publishing.
-For more information about Dataplex Universal Catalog metadata, see
-About metadata management in Dataplex Universal Catalog .
+For more information about Knowledge Catalog metadata, see
+About metadata management in Knowledge Catalog .
 Review data quality scores
 Each scan result provides data quality scores that indicate the percentage of
 rules that passed. The scores are reported at the overall job level, the column
@@ -453,7 +474,7 @@ The job finished
 You configure notification reports when you
 create a data quality scan .
 Troubleshoot data quality failures
-When a rule execution fails, Dataplex Universal Catalog
+When a rule execution fails, Knowledge Catalog
 provides a query to get the failed records. Run this query to see the records
 that didn't match your rule. For more information, see
 Troubleshoot a data quality failure .
@@ -467,7 +488,7 @@ Data quality scores that are reported at the column level are supported
 only in the API.
 Pricing
 For more information about pricing, see
-Dataplex Universal Catalog pricing .
+Knowledge Catalog pricing .
 What's next
 Learn how to use auto data quality .
 Learn how to manage your data quality rules as code .
@@ -480,6 +501,6 @@ Learn about data profiling .
 Learn how to use data profiling .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

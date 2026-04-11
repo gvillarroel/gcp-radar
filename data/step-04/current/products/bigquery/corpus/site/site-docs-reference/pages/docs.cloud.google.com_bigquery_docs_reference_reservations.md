@@ -1,0 +1,361 @@
+---
+title: "BigQuery Reservation API Client Libraries \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/reference/reservations
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/reference
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/reference/reservations
+  title: "BigQuery Reservation API Client Libraries \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Reference
+Send feedback
+BigQuery Reservation API Client Libraries
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page shows how to get started with the Cloud Client Libraries for the
+BigQuery Reservation API. Client libraries make it easier to access
+Google Cloud APIs from a supported language. Although you can use
+Google Cloud APIs directly by making raw requests to the server, client
+libraries provide simplifications that significantly reduce the amount of code
+you need to write.
+Read more about the Cloud Client Libraries
+and the older Google API Client Libraries in
+Client libraries explained .
+Install the client library
+C#
+Install-Package Google.Cloud.BigQuery.Reservation.V1 -Pre
+For more information, see Setting Up a C# Development Environment .
+Go
+go get cloud.google.com/go/bigquery
+For more information, see Setting Up a Go Development Environment .
+Java
+If you are using Maven , add
+the following to your pom.xml file. For more information about
+BOMs, see The Google Cloud Platform Libraries BOM .
+< dependencyManagement >
+< dependencies >
+< dependency >
+< groupId>com . google . cloud < / groupId >
+< artifactId>libraries - bom < / artifactId >
+< version>26 .79.0 < / version >
+< type>pom < / type >
+< scope>import < / scope >
+< / dependency >
+< / dependencies >
+< / dependencyManagement >
+< dependencies >
+< dependency >
+< groupId>com . google . cloud < / groupId >
+< artifactId>google - cloud - bigqueryreservation < / artifactId >
+< / dependency >
+< / dependencies >
+If you are using Gradle ,
+add the following to your dependencies:
+implementation ' com . google . cloud : google - cloud - bigqueryreservation : 2.89.0 '
+If you are using sbt , add
+the following to your dependencies:
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservation" % "2.89.0"
+If you're using Visual Studio Code or IntelliJ, you can add client libraries to your
+project using the following IDE plugins:
+Cloud Code for VS Code
+Cloud Code for IntelliJ
+The plugins provide additional functionality, such as key management for service accounts. Refer
+to each plugin's documentation for details.
+Note: Cloud Java client libraries do not currently support Android.
+For more information, see Setting Up a Java Development Environment .
+Node.js
+npm install @google-cloud/bigquery-reservation
+For more information, see Setting Up a Node.js Development Environment .
+PHP
+composer require google/cloud-bigquery-reservation
+For more information, see Using PHP on Google Cloud .
+Python
+pip install --upgrade google-cloud-bigquery-reservation
+For more information, see Setting Up a Python Development Environment .
+Ruby
+gem install google-cloud-bigquery-reservation
+For more information, see Setting Up a Ruby Development Environment .
+Set up authentication
+To authenticate calls to Google Cloud APIs, client libraries support
+Application Default Credentials (ADC) ;
+the libraries look for credentials in a set of defined locations and use those credentials
+to authenticate requests to the API. With ADC, you can make
+credentials available to your application in a variety of environments, such as local
+development or production, without needing to modify your application code.
+For production environments, the way you set up ADC depends on the service
+and context. For more information, see Set up Application Default Credentials .
+For a local development environment, you can set up ADC with the credentials
+that are associated with your Google Account:
+Install the Google Cloud CLI.
+After installation,
+initialize the Google Cloud CLI by running the following command:
+gcloud init
+If you're using an external identity provider (IdP), you must first
+sign in to the gcloud CLI with your federated identity .
+If you're using a local shell, then create local authentication credentials for your user
+account:
+gcloud auth application-default login
+You don't need to do this if you're using Cloud Shell.
+If an authentication error is returned, and you are using an external identity provider
+(IdP), confirm that you have
+signed in to the gcloud CLI with your federated identity .
+A sign-in screen appears. After you sign in, your credentials are stored in the
+local credential file used by ADC .
+Use the client library
+The following example demonstrates some basic interactions with the BigQuery Reservation API by enumerating resources, namely reservations and capacity
+commitments.
+Go
+// The bigquery_reservation_quickstart application demonstrates usage of the
+// BigQuery reservation API by enumerating some of the resources that can be
+// associated with a cloud project.
+package main
+import (
+"bytes"
+"context"
+"flag"
+"fmt"
+"log"
+reservation "cloud.google.com/go/bigquery/reservation/apiv1"
+"google.golang.org/api/iterator"
+reservationpb "google.golang.org/genproto/googleapis/cloud/bigquery/reservation/v1"
+)
+func main () {
+// Define two command line flags for controlling the behavior of this quickstart.
+var (
+projectID = flag . String ( "project_id" , "" , "Cloud Project ID, used for session creation." )
+location = flag . String ( "location" , "US" , "BigQuery location used for interactions." )
+)
+// Parse flags and do some minimal validation.
+flag . Parse ()
+if * projectID == "" {
+log . Fatal ( "empty --project_id specified, please provide a valid project ID" )
+}
+if * location == "" {
+log . Fatal ( "empty --location specified, please provide a valid location" )
+}
+ctx := context . Background ()
+bqResClient , err := reservation . NewClient ( ctx )
+if err != nil {
+log . Fatalf ( "NewClient: %v" , err )
+}
+defer bqResClient . Close ()
+s , err := reportCapacityCommitments ( ctx , bqResClient , * projectID , * location )
+if err != nil {
+log . Fatalf ( "printCapacityCommitments: %v" , err )
+}
+fmt . Println ( s )
+s , err = reportReservations ( ctx , bqResClient , * projectID , * location )
+if err != nil {
+log . Fatalf ( "printReservations: %v" , err )
+}
+fmt . Println ( s )
+}
+// printCapacityCommitments iterates through the capacity commitments and returns a byte buffer with details.
+func reportCapacityCommitments ( ctx context . Context , client * reservation . Client , projectID , location string ) ( string , error ) {
+var buf bytes . Buffer
+fmt . Fprintf ( & buf , "Capacity commitments in project %s in location %s:\n" , projectID , location )
+req := & reservationpb . ListCapacityCommitmentsRequest {
+Parent : fmt . Sprintf ( "projects/%s/locations/%s" , projectID , location ),
+}
+totalCommitments := 0
+it := client . ListCapacityCommitments ( ctx , req )
+for {
+commitment , err := it . Next ()
+if err == iterator . Done {
+break
+}
+if err != nil {
+return "" , err
+}
+fmt . Fprintf ( & buf , "\tCommitment %s in state %s\n" , commitment . GetName (), commitment . GetState (). String ())
+totalCommitments ++
+}
+fmt . Fprintf ( & buf , "\n%d commitments processed.\n" , totalCommitments )
+return buf . String (), nil
+}
+// printReservations iterates through reservations defined in an admin project.
+func reportReservations ( ctx context . Context , client * reservation . Client , projectID , location string ) ( string , error ) {
+var buf bytes . Buffer
+fmt . Fprintf ( & buf , "Reservations in project %s in location %s:\n" , projectID , location )
+req := & reservationpb . ListReservationsRequest {
+Parent : fmt . Sprintf ( "projects/%s/locations/%s" , projectID , location ),
+}
+totalReservations := 0
+it := client . ListReservations ( ctx , req )
+for {
+reservation , err := it . Next ()
+if err == iterator . Done {
+break
+}
+if err != nil {
+return "" , err
+}
+fmt . Fprintf ( & buf , "\tReservation %s has %d slot capacity.\n" , reservation . GetName (), reservation . GetSlotCapacity ())
+totalReservations ++
+}
+fmt . Fprintf ( & buf , "\n%d reservations processed.\n" , totalReservations )
+return buf . String (), nil
+}
+Java
+import com.google.cloud.bigquery.reservation.v1. ReservationServiceClient ;
+import java.io.IOException ;
+public class QuickstartSample {
+public static void main ( String ... args ) throws Exception {
+// TODO(developer): Replace these variables before running the sample.
+String projectId = "YOUR_PROJECT_ID" ;
+String location = "LOCATION" ;
+quickStartSample ( projectId , location );
+}
+public static void quickStartSample ( String projectId , String location ) throws IOException {
+try ( ReservationServiceClient client = ReservationServiceClient . create ()) {
+// list reservations in the project
+String parent = String . format ( "projects/%s/locations/%s" , projectId , location );
+client
+. listReservations ( parent )
+. iterateAll ()
+. forEach ( res - > System . out . println ( "Reservation resource name: " + res . getName ()));
+// list capacity commitments in the project
+client
+. listCapacityCommitments ( parent )
+. iterateAll ()
+. forEach (
+commitment - >
+System . out . println ( "Capacity commitment resource name: " + commitment . getName ()));
+}
+}
+}
+Node.js
+// Imports the Google Cloud client library
+const {
+ReservationServiceClient ,
+} = require ( ' @google-cloud/bigquery-reservation ' );
+// Creates a client
+const client = new ReservationServiceClient ();
+// project = 'my-project' // Project to list reservations for.
+// location = 'US' // BigQuery location.
+async function listReservations () {
+const [ reservations ] = await client . listReservations ({
+parent : `projects/ ${ project } /locations/ ${ location } ` ,
+});
+console . info ( `found ${ reservations . length } reservations` );
+console . info ( reservations );
+}
+async function listCapacityCommitments () {
+const [ commitments ] = await client . listCapacityCommitments ({
+parent : `projects/ ${ project } /locations/ ${ location } ` ,
+});
+console . info ( `found ${ commitments . length } commitments` );
+console . info ( commitments );
+}
+listReservations ();
+listCapacityCommitments ();
+Python
+import argparse
+from google.cloud import bigquery_reservation_v1
+def main (
+project_id : str = "your-project-id" , location : str = "US" , transport : str = "grpc"
+) - > None :
+# Constructs the client for interacting with the service.
+client = bigquery_reservation_v1 . ReservationServiceClient ( transport = transport )
+report_reservations ( client , project_id , location )
+def report_reservations (
+client : bigquery_reservation_v1 . ReservationServiceClient ,
+project_id : str ,
+location : str ,
+) - > None :
+"""Prints details and summary information about reservations defined within
+a given admin project and location.
+"""
+print ( "Reservations in project {} in location {} " . format ( project_id , location ))
+req = bigquery_reservation_v1 . ListReservationsRequest (
+parent = client . common_location_path ( project_id , location )
+)
+total_reservations = 0
+for reservation in client . list_reservations ( request = req ):
+print (
+f " \t Reservation { reservation . name } "
+f "has { reservation . slot_capacity } slot capacity."
+)
+total_reservations = total_reservations + 1
+print ( f " \n { total_reservations } reservations processed." )
+if __name__ == "__main__" :
+parser = argparse . ArgumentParser ()
+parser . add_argument ( "--project_id" , type = str )
+parser . add_argument ( "--location" , default = "US" , type = str )
+args = parser . parse_args ()
+main ( project_id = args . project_id , location = args . location )
+Additional resources
+C#
+The following list contains links to more resources related to the
+client library for C#:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+Go
+The following list contains links to more resources related to the
+client library for Go:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+Java
+The following list contains links to more resources related to the
+client library for Java:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+Node.js
+The following list contains links to more resources related to the
+client library for Node.js:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+PHP
+The following list contains links to more resources related to the
+client library for PHP:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+Python
+The following list contains links to more resources related to the
+client library for Python:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+Ruby
+The following list contains links to more resources related to the
+client library for Ruby:
+API reference
+Client libraries best practices
+Issue tracker
+google-bigquery on Stack Overflow
+Source code
+What's next?
+For more background and conceptual information about reservations, see Introduction to Reservations .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

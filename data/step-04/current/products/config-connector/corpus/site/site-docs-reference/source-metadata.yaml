@@ -1,9 +1,17 @@
-entrypoint: "https://docs.cloud.google.com/config-connector/docs/concepts/resources"
-source_id: "site-docs-reference"
-source_type: "site"
-compact_output: true
-content_origin: "bx_web_fallback"
-page_count: 3
-max_depth: 1
-max_pages: 0
-pages_index: "pages.json"
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+title: https://docs.cloud.google.com/config-connector/docs/concepts/resources
+last_synced_at: '2026-04-11T00:52:08+00:00'
+update_command: know sync site https://docs.cloud.google.com/config-connector/docs/concepts/resources
+  --key corpus --compact
+delete_command: know del --key corpus site-docs-reference
+config:
+  url: https://docs.cloud.google.com/config-connector/docs/concepts/resources
+  max_depth: 2
+  max_pages: 42
+  compact_output: true
+stats:
+  pages: 42
+  entrypoint: https://docs.cloud.google.com/config-connector/docs/concepts/resources
+  raw_dir: C:\Users\villa\dev\gcp-radar\data\step-04\current\products\config-connector\corpus\site\site-docs-reference

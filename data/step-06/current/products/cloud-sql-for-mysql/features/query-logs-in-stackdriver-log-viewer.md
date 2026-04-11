@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T00:24:12.985Z"
+product_name: "Cloud SQL for MySQL"
+product_slug: "cloud-sql-for-mysql"
+feature_name: "Query logs in Stackdriver Log Viewer"
+feature_slug: "query-logs-in-stackdriver-log-viewer"
+latest_feature_date: "2017-03-01"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups"
+  - "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+  - "https://docs.cloud.google.com/sql/docs/mysql/audit-logging"
+keywords:
+  - "query"
+  - "logs"
+  - "in"
+  - "stackdriver"
+  - "log"
+  - "viewer"
+  - "sql"
+  - "for"
+---
+
+# Query logs in Stackdriver Log Viewer
+
+Product: Cloud SQL for MySQL
+Coverage: LOW
+
+## Step 02 Summary
+
+Cloud SQL for MySQL makes general and slow query logs available through the Stackdriver Log Viewer.
+
+## Extended Definition
+
+Cloud SQL for MySQL makes general and slow query logs available through the Stackdriver Log Viewer.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups)
+- [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr)
+- [https://docs.cloud.google.com/sql/docs/mysql/audit-logging](https://docs.cloud.google.com/sql/docs/mysql/audit-logging)
+
+## Supporting Pages
+
+### "View audit logs for automated backups \_|\_ Cloud SQL for MySQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups)
+- Source ID: `site-iam-reference`
+- Final score: 260
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Click the metadata field. gcloud To filter for audit logs for automated backups of Cloud SQL instances, run the following query: gcloud logging read \ "logName=projects/ PROJECT NAME /logs/cloudaudit.googleapis.com%2Fsystem event AND protoPayload.methodName=cloudsql.instances.automatedBackup AND resource.type=cloudsql database" \ --project = PROJECT NAME Replace PROJECT NAME with your Google Cloud project's name.
+- Go to Logs Explorer To filter for audit logs for automated backups of Cloud SQL instances, run the following query: logName = "projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event" protoPayload.methodName = "cloudsql.instances.automatedBackup" resource.type = "cloudsql database" Replace PROJECT ID with your Google Cloud project's ID.
+- Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: "application/json; charset=utf-8" -InFile request.json ` -Uri "https://logging.googleapis.com/v2/entries:list" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { "entries": [ { "protoPayload": { "@type": "type.googleapis.com/google.cloud.audit.AuditLog", "status": { "message": "OK" }, "authenticationInfo": {}, "requestMetadata": { "requestAttributes": {}, "destinationAttributes": {} }, "serviceName": "cloudsql.googleapis.com", "methodName": "cloudsql.instances.automatedBackup", "resourceName": "projects/ PROJECT ID /instances/ INSTANCE NAME ", "metadata": { "windowStartTime": "2022-12-15T13:00:00Z", "message": "", "windowStatus": "STATUS SUCCEEDED", "@type": "type.googleapis.com/speckle.AutomatedBackupEventLog", "windowEndTime": "2022-12-15T17:00:00Z", "backupCompletionTime": "2022-12-15T14:11:57.347Z", "backupStartTime": "2022-12-15T14:11:16.631Z" } }, "insertId": " LOG ENTRY UNIQUE IDENTIFIER ", "resource": { "type": "cloudsql database", "labels": { "region": " REGION NAME ", "project id": " PROJECT ID ", "database id": " DATABASE ID " } }, "timestamp": "2022-12-15T14:11:57.391565Z", "severity": "INFO", "logName": "projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event", "receiveTimestamp": "2022-12-15T14:11:57.785814800Z" }, ], } For more information about LOG ENTRY UNIQUE IDENTIFIER for the insertId field, see LogEntry .
+- For more information about how to use the Google Cloud console to query for audit logs, see View logs .
+
+### "Perform point-in-time recovery (PITR) \_|\_ Cloud SQL for MySQL \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr](https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr)
+- Source ID: `site-iam-reference`
+- Final score: 234
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime" Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#getLatestRecoveryTime", "earliestRecoveryTime": "2023-06-10T17:23:59.648821586Z", "latestRecoveryTime": "2023-06-20T17:23:59.648821586Z" } Deleted instance Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE NAME : the name of the source instance for which you're querying for the latest recovery time SOURCE INSTANCE DELETION TIME : the time that the source instance was deleted HTTP method and URL: GET https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime" Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#getLatestRecoveryTime", "earliestRecoveryTime": "2023-06-10T17:23:59.648821586Z", "latestRecoveryTime": "2023-06-20T17:23:59.648821586Z" } Deleted instance Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE NAME : the name of the source instance for which you're querying for the latest recovery time SOURCE INSTANCE DELETION TIME : the time that the source instance was deleted HTTP method and URL: GET https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- Execute the following command: $cred = gcloud auth print-access-token $headers = @{ "Authorization" = "Bearer $cred" } Invoke-WebRequest -Method GET -Headers $headers -Uri "https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime" Select-Object -Expand Content You should receive a JSON response similar to the following: { "kind": "sql#getLatestRecoveryTime", "earliestRecoveryTime": "2023-06-10T17:23:59.648821586Z", "latestRecoveryTime": "2023-06-20T17:23:59.648821586Z" } REST v1beta4 Unavailable instance Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE NAME : the name of the instance for which you're querying for the latest recovery time HTTP method and URL: GET https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+- REST v1 Unavailable instance Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE NAME : the name of the instance for which you're querying for the latest recovery time HTTP method and URL: GET https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /getLatestRecoveryTime To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .
+
+### Cloud SQL for MySQL audit logging \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/sql/docs/mysql/audit-logging](https://docs.cloud.google.com/sql/docs/mysql/audit-logging)
+- Source ID: `site-docs-root`
+- Final score: 232
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Filter for this method : protoPayload.methodName="cloudsql.instances.query" reencrypt Method : cloudsql.instances.reencrypt Audit log type : Admin activity Permissions : cloudsql.instances.reencrypt - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.reencrypt" resetSslConfig Method : cloudsql.instances.resetSslConfig Audit log type : Admin activity Permissions : cloudsql.instances.resetSslConfig - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.resetSslConfig" restart Method : cloudsql.instances.restart Audit log type : Admin activity Permissions : cloudsql.instances.restart - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.restart" restoreBackup Method : cloudsql.instances.restoreBackup Audit log type : Admin activity Permissions : cloudsql.instances.restoreBackup - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.restoreBackup" rotateServerCa Method : cloudsql.instances.rotateServerCa Audit log type : Admin activity Permissions : cloudsql.instances.rotateServerCa - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.rotateServerCa" startReplica Method : cloudsql.instances.startReplica Audit log type : Admin activity Permissions : cloudsql.instances.startReplica - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.startReplica" stopReplica Method : cloudsql.instances.stopReplica Audit log type : Admin activity Permissions : cloudsql.instances.stopReplica - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.stopReplica" truncateLog Method : cloudsql.instances.truncateLog Audit log type : Admin activity Permissions : cloudsql.instances.truncateLog - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.truncateLog" update Method : cloudsql.instances.update Audit log type : Admin activity Permissions : cloudsql.instances.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.update" cloudsql.operations The following audit logs are associated with methods belonging to cloudsql.operations . get Method : cloudsql.operations.get Audit log type : Data access Permissions : cloudsql.instances.get - ADMIN READ Method is a long-running or streaming operation : No.
+- Permission type Methods ADMIN READ cloudsql.backupRuns.get cloudsql.backupRuns.list cloudsql.backups.list cloudsql.instances.get (LRO) cloudsql.instances.list cloudsql.instances.listServerCas cloudsql.operations.get cloudsql.operations.list cloudsql.sslCerts.get cloudsql.sslCerts.list ADMIN WRITE cloudsql.backupRuns.create (LRO) cloudsql.backupRuns.delete (LRO) cloudsql.backups.create (LRO) cloudsql.backups.delete (LRO) cloudsql.backups.update (LRO) cloudsql.instances.addServerCa (LRO) cloudsql.instances.clone (LRO) cloudsql.instances.connect cloudsql.instances.create (LRO) cloudsql.instances.delete (LRO) cloudsql.instances.demoteMaster (LRO) cloudsql.instances.failover (LRO) cloudsql.instances.migrate (LRO) cloudsql.instances.promoteReplica (LRO) cloudsql.instances.reencrypt (LRO) cloudsql.instances.resetSslConfig (LRO) cloudsql.instances.restart (LRO) cloudsql.instances.restoreBackup (LRO) cloudsql.instances.rotateServerCa (LRO) cloudsql.instances.startReplica (LRO) cloudsql.instances.stopReplica (LRO) cloudsql.instances.truncateLog (LRO) cloudsql.instances.update (LRO) cloudsql.sslCerts.create (LRO) cloudsql.sslCerts.delete (LRO) DATA READ cloudsql.databases.get cloudsql.databases.list cloudsql.instances.export (LRO) cloudsql.users.get cloudsql.users.list DATA WRITE cloudsql.databases.create (LRO) cloudsql.databases.delete (LRO) cloudsql.databases.update (LRO) cloudsql.instances.executeSql cloudsql.instances.import (LRO) cloudsql.instances.login cloudsql.users.create (LRO) cloudsql.users.delete (LRO) cloudsql.users.update (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud SQL. cloudsql.backupRuns The following audit logs are associated with methods belonging to cloudsql.backupRuns . create Method : cloudsql.backupRuns.create Audit log type : Admin activity Permissions : cloudsql.backupRuns.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.backupRuns.create" delete Method : cloudsql.backupRuns.delete Audit log type : Admin activity Permissions : cloudsql.backupRuns.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.backupRuns.delete" get Method : cloudsql.backupRuns.get Audit log type : Data access Permissions : cloudsql.backupRuns.get - ADMIN READ Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="cloudsql.databases.list" update Method : cloudsql.databases.update Audit log type : Data access Permissions : cloudsql.databases.update - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.databases.update" cloudsql.instances The following audit logs are associated with methods belonging to cloudsql.instances . addServerCa Method : cloudsql.instances.addServerCa Audit log type : Admin activity Permissions : cloudsql.instances.addServerCa - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.addServerCa" clone Method : cloudsql.instances.clone Audit log type : Admin activity Permissions : cloudsql.instances.clone - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.instances.clone" connect Method : cloudsql.instances.connect Audit log type : Admin activity Permissions : cloudsql.instances.connect - ADMIN WRITE Method is a long-running or streaming operation : No.
+- Filter for this method : protoPayload.methodName="cloudsql.backups.list" update Method : cloudsql.backups.update Audit log type : Admin activity Permissions : cloudsql.backupRuns.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.backups.update" cloudsql.databases The following audit logs are associated with methods belonging to cloudsql.databases . create Method : cloudsql.databases.create Audit log type : Data access Permissions : cloudsql.databases.create - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.databases.create" delete Method : cloudsql.databases.delete Audit log type : Data access Permissions : cloudsql.databases.delete - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName="cloudsql.databases.delete" get Method : cloudsql.databases.get Audit log type : Data access Permissions : cloudsql.databases.get - DATA READ Method is a long-running or streaming operation : No.
+

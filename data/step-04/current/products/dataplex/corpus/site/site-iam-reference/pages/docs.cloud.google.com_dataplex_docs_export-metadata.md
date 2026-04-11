@@ -1,5 +1,5 @@
 ---
-title: "Export metadata \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "Export metadata \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/export-metadata
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -7,28 +7,29 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/export-metadata
-  title: "Export metadata \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+  title: "Export metadata \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Export metadata
 Stay organized with collections
 Save and categorize content based on your preferences.
-This document explains how to export metadata from Dataplex Universal Catalog using a
+This document explains how to export metadata from Knowledge Catalog (formerly Dataplex Universal Catalog) using a
 metadata export job for use in external systems. You can export metadata to
 analyze it with tools such as BigQuery, programmatically process large
 volumes, or integrate it with custom applications.
 This guide assumes you are familiar with
-Dataplex Universal Catalog metadata concepts ,
+Knowledge Catalog metadata concepts ,
 including entry groups, entry types, and aspect types.
 Job scope
 The job scope defines the metadata to export. You must provide one of the
@@ -41,7 +42,7 @@ You can further restrict the scope by specifying the entry types or aspect types
 to include in the job. The job exports only the entries and aspects that belong
 to these entry types and aspect types.
 VPC Service Controls
-Dataplex Universal Catalog uses
+Knowledge Catalog uses
 VPC Service Controls to provide additional security
 for metadata export jobs. The project that the job belongs to determines the
 VPC Service Controls perimeter, as follows:
@@ -91,11 +92,11 @@ You might also be able to get
 these permissions
 with custom roles or
 other predefined roles .
-Required roles for the Dataplex Universal Catalog service account
+Required roles for the Knowledge Catalog service account
 To ensure that the
-Dataplex Universal Catalog service account
+Knowledge Catalog service account
 has the necessary permissions to access the Cloud Storage bucket, ask
-your administrator to grant the Dataplex Universal Catalog service account the
+your administrator to grant the Knowledge Catalog service account the
 following permissions on the bucket: storage.buckets.get ,
 storage.objects.get , and storage.objects.create .
 Configure Google Cloud resources
@@ -370,7 +371,7 @@ number of entries that were exported, use the
 metadataJobs.get method .
 Metadata export results
 The metadata export job exports a snapshot of your
-Dataplex Universal Catalog metadata at the time that the metadata job was
+Knowledge Catalog metadata at the time that the metadata job was
 created.
 Export file contents
 The contents of the output file follow the same format as the
@@ -378,7 +379,7 @@ metadata import file that is used
 for metadata import jobs. You can use the output file directly as the input for
 a metadata import job.
 Export file location
-Dataplex Universal Catalog saves the export result files to a
+Knowledge Catalog saves the export result files to a
 Cloud Storage bucket as objects.
 The object path for each output file is constructed by using the bucket
 name and custom prefix that you specified in the export job, followed by a
@@ -564,10 +565,10 @@ SELECT entry.entryType FROM `example-project.example-dataset.example-table` LIMI
 What's next
 Learn how to
 query BigQuery tables by using GoogleSQL syntax .
-Import metadata into Dataplex Universal Catalog by using a
+Import metadata into Knowledge Catalog by using a
 managed connectivity pipeline .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

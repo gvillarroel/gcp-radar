@@ -1,0 +1,91 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T11:41:51.889Z"
+product_name: "Drive API"
+product_slug: "drive-api"
+feature_name: "Google Drive event subscriptions"
+feature_slug: "google-drive-event-subscriptions"
+latest_feature_date: "2025-07-07"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://developers.google.com/workspace/drive/api/guides/events-overview"
+  - "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+  - "https://developers.google.com/workspace/drive/api/guides/about-labels"
+keywords:
+  - "drive"
+  - "event"
+  - "subscriptions"
+  - "events"
+  - "can"
+  - "now"
+  - "be"
+  - "subscribed"
+---
+
+# Google Drive event subscriptions
+
+Product: Drive API
+Coverage: LOW
+
+## Step 02 Summary
+
+Google Drive events can now be subscribed to for file movement, edits, trash changes, and access proposal activity.
+
+## Extended Definition
+
+Google Drive events can now be subscribed to for file movement, edits, trash changes, and access proposal activity.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://developers.google.com/workspace/drive/api/guides/events-overview](https://developers.google.com/workspace/drive/api/guides/events-overview)
+- [https://developers.google.com/workspace/drive/api/guides/handle-errors](https://developers.google.com/workspace/drive/api/guides/handle-errors)
+- [https://developers.google.com/workspace/drive/api/guides/about-labels](https://developers.google.com/workspace/drive/api/guides/about-labels)
+
+## Supporting Pages
+
+### Work with events from Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/events-overview](https://developers.google.com/workspace/drive/api/guides/events-overview)
+- Source ID: `site-docs-root`
+- Final score: 202
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Install needed dependencies $ npm install googleapis @google-cloud/local-auth axios To create a Drive subscription you use the Google Workspace Events API's subscriptions.create method to create a Subscription resource: // app.js const fs = require ( 'fs' ). promises ; const { authenticate } = require ( '@google-cloud/local-auth' ); const { google } = require ( 'googleapis' ); const axios = require ( 'axios' ); // Scopes for Google Drive API access. const SCOPES = [ ' SCOPES ' ]; / Authenticates the user running the script. @return {Promise<OAuth2Client>} The authorized client. / async function authorize () { const client = await authenticate ({ scopes : SCOPES , keyfilePath : 'credentials.json' , }); if ( client . credentials ) { const content = await fs . readFile ( 'credentials.json' ); const keys = JSON . parse ( content ); const { client id , client secret } = keys . installed keys . web ; const payload = JSON . stringify ({ type : 'authorized user' , client id , client secret , refresh token : client . credentials . refresh token , }); await fs . writeFile ( 'token.json' , payload ); return client ; } else { throw new Exception ( 'credentials.json did not have the Oauth client secret or it was not properly formatted' ); } } / Creates a subscription to Google Drive events. @param {OAuth2Client} authClient An authorized OAuth2 client. / async function createSubscription ( authClient ) { const url = 'https://workspaceevents.googleapis.com/v1/subscriptions' ; const data = { targetResource : ' TARGET RESOURCE ' , eventTypes : [ ' EVENT TYPES ' ], payload options : { include resource : { { '<var>RESOURCE DATA</var>' } } }, drive options : { include descendants : { { '<var>INCLUDE DESCENDANTS</var>' } } }, notification endpoint : { pubsub topic : ' TOPIC NAME ' } }; try { const { token } = await authClient . getAccessToken (); const response = await axios . post ( url , data , { headers : { 'Authorization' : Bearer ${ token } }}); console . log ( 'Subscription created:' , response . data ); } catch ( error ) { const message = error . response ? error . response . data : error . message ; console . error ( 'Error creating subscription:' , message ); } } authorize (). then ( createSubscription ). catch ( console . error ); Replace the following: SCOPES : One or more OAuth scopes that support each event type for the subscription.
+- This function processes different types of Drive events. @param {object} cloudEvent The CloudEvent object. @param {object} cloudEvent.data The data payload from the event source. / functions . cloudEvent ( 'helloFromDrive' , async ( cloudEvent ) = > { try { // Verify the Pub/Sub message exists if ( ! cloudEvent . data ! cloudEvent . data . message ) { console . warn ( "Event is missing the Pub/Sub message payload." ); return ; } // Extract the Pub/Sub message details const { message } = cloudEvent . data ; const { attributes , data } = message ; // The original Drive CloudEvent is reconstructed from the Pub/Sub message attributes const driveEvent = HTTP . toEvent ({ headers : attributes }); const { type } = driveEvent ; // The Drive event's payload is a base64 encoded JSON string const payload = JSON . parse ( Buffer . from ( data , "base64" ). toString ()); console . log ( Processing Drive event type: ${ type } ); // Use a switch statement to handle different event types switch ( type ) { case 'google.workspace.drive.file.v3.contentChanged' : console . log ( 'File Content Changed:' , payload ); break ; case 'google.workspace.drive.accessproposal.v3.created' : console . log ( 'Access Proposal Created:' , payload ); break ; default : console . log ( Received unhandled event type: ${ type } ); break ; } } catch ( error ) { console . error ( "An error occurred while processing the Drive event:" , error ); } }); Limitations When the includeDescendants boolean field in DriveOptions is true , Drive subscriptions on shared drives and folders always dispatch an event, even if the file that triggered the event is nested many layers below the folder used for the Drive subscription.
+- With the addition of Drive events in Google Workspace Events API, there's now a third method receive events: Subscribe to events using the Google Workspace Events API to receive events as they occur.
+- Before you create the function, update the package.json for the dependencies: { "dependencies" : { "@google-cloud/functions-framework" : "^3.0.0" , "cloudevents" : "^8.0.0" } } Next, create the source code for the function: const functions = require ( '@google-cloud/functions-framework' ); const { HTTP } = require ( "cloudevents" ); / A Cloud Function triggered by Pub/Sub messages containing Google Drive activity events.
+
+### Resolve errors \_|\_ Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/handle-errors](https://developers.google.com/workspace/drive/api/guides/handle-errors)
+- Source ID: `site-docs-root`
+- Final score: 128
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The following JSON sample is a representation of this error: { "error" : { "errors" : [ { "domain" : "global" , "reason" : "numChildrenInNonRootLimitExceeded" , "message" : "The limit for this folder's number of children (files and folders) has been exceeded." } ], "code" : 403 , "message" : "The limit for this folder's number of children (files and folders) has been exceeded." } } To fix this error, try any of the following: Inform the user that Drive prevents folders with more than 500,000 items.
+- The following JSON sample is a representation of this error: { "error" : { "errors" : [ { "domain" : "global" , "reason" : "fileOwnerNotMemberOfTeamDrive" , "message" : "Cannot move a file into a shared drive as a writer when the owner of the file is not a member of that shared drive." } ], "code" : 403 , "message" : "Cannot move a file into a shared drive as a writer when the owner of the file is not a member of that shared drive." } } To fix this error: Add the member to the shared drive with role=owner .
+- For more information, see Folder-depth limit . { "error" : { "errors" : [ { "domain" : "global" , "reason" : "teamDriveHierarchyTooDeep" , "message" : "The shared drive hierarchy depth will exceed the limit." } ], "code" : 403 , "message" : "The shared drive hierarchy depth will exceed the limit." } } To fix this error: Inform the user that shared drives prevents placing folders more than 100 levels deep.
+- You can also check user access levels in the metadata retrieved by the files.get method and display a read-only UI when permissions are missing. myDriveHierarchyDepthLimitExceeded A myDriveHierarchyDepthLimitExceeded error occurs when the limit for the number of nested folder levels has been exceeded.
+
+### Labels overview \_|\_ Google Drive \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/drive/api/guides/about-labels](https://developers.google.com/workspace/drive/api/guides/about-labels)
+- Source ID: `site-docs-root`
+- Final score: 124
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Selection and user fields can be set with multiple values if the field is configured with ListOptions in the Google Drive Labels API .
+- Drive labels can support business processes by attaching metadata to files and folders.
+- Drive users can assign labels and set label field values for files.
+- For example, you might create a badged label (a label with color-coded option values) titled "Sensitivity" with the values of "Top Secret," "Confidential," and "Public." Apply policy to items in Drive —Create labels to manage Drive content throughout its lifecycle and ensure it adheres to your organization's record keeping practices.
+

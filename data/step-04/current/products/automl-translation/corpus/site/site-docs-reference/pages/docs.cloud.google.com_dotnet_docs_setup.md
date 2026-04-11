@@ -1,0 +1,72 @@
+---
+title: "Setting up a .NET development environment \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/dotnet/docs/setup
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Translate.V3/latest/Google.Cloud.Translate.V3.TranslateDocumentRequest
+source_metadata:
+  url: https://docs.cloud.google.com/dotnet/docs/setup
+  title: "Setting up a .NET development environment \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Developer tools
+.NET
+Guides
+Send feedback
+Setting up a .NET development environment
+Stay organized with collections
+Save and categorize content based on your preferences.
+This tutorial shows how to prepare your local machine for
+developing .NET
+and .NET Framework
+apps that run on Google Cloud and call Google Cloud APIs.
+Install a development environment
+The recommended development environment for running the .NET tutorials and
+sample apps in this documentation is
+Visual Studio
+or
+Visual Studio Code .
+Create a Google Cloud project
+Create a Google Cloud project
+to run your apps. Google Cloud projects form the basis for creating,
+enabling, and using all Google Cloud services.
+Set up authentication
+Your .NET app must authenticate itself to use Google Cloud APIs. You use
+Application Default Credentials (ADC) ,
+which let you provide credentials for either local development or in a
+production environment.
+If you're using a local shell, then create local authentication credentials for your user
+account:
+gcloud auth application-default login
+You don't need to do this if you're using Cloud Shell.
+If an authentication error is returned, and you are using an external identity provider
+(IdP), confirm that you have
+signed in to the gcloud CLI with your federated identity .
+For more information, see
+Authenticate for using client libraries .
+For general information about authentication, see
+Authentication at Google .
+(Optional) Install SDKs
+Even though you can create and manage Google Cloud resources using your
+web browser using the Google Cloud console ,
+if you'd prefer to manage your Google Cloud resources from the
+command-line, you can consider installing the
+Google Cloud CLI .
+The gcloud CLI is a command-line interface for Google Cloud
+products and services.
+What's next
+Transcribe audio to text with Speech-to-Text API
+Deploy a .NET app to App Engine flexible environment
+Deploy a .NET Framework app to Compute Engine
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

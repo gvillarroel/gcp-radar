@@ -1,0 +1,65 @@
+version: 1
+name: corpus
+created_at: '2026-04-10T00:01:08+00:00'
+updated_at: '2026-04-11T13:04:36+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/vmware-engine/docs
+  created_at: '2026-04-11T12:58:00+00:00'
+  updated_at: '2026-04-11T12:59:15+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-11T12:59:15+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/vmware-engine/docs/overview
+  created_at: '2026-04-11T12:58:01+00:00'
+  updated_at: '2026-04-11T13:01:22+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/overview
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-11T13:01:22+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/vmware-engine/docs/create-private-cloud
+  created_at: '2026-04-11T12:58:01+00:00'
+  updated_at: '2026-04-11T13:02:58+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vmware-engine/docs/create-private-cloud
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/vmware-engine/docs/create-private-cloud
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-11T13:02:58+00:00'
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest
+  created_at: '2026-04-11T12:58:02+00:00'
+  updated_at: '2026-04-11T13:04:36+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-11T13:04:36+00:00'

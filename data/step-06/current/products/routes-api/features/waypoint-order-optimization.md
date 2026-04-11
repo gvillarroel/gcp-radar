@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T19:22:04.475Z"
+product_name: "Routes API"
+product_slug: "routes-api"
+feature_name: "Waypoint order optimization"
+feature_slug: "waypoint-order-optimization"
+latest_feature_date: "2023-06-29"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://developers.google.com/maps/documentation/routes/opt-way"
+  - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes"
+  - "https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint"
+keywords:
+  - "waypoint"
+  - "order"
+  - "optimization"
+  - "the"
+  - "routes"
+  - "api"
+  - "can"
+  - "optimize"
+---
+
+# Waypoint order optimization
+
+Product: Routes API
+Coverage: LOW
+
+## Step 02 Summary
+
+The Routes API can optimize the order of up to 25 intermediate waypoints when calculating a route.
+
+## Extended Definition
+
+The Routes API can optimize the order of up to 25 intermediate waypoints when calculating a route.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://developers.google.com/maps/documentation/routes/opt-way](https://developers.google.com/maps/documentation/routes/opt-way)
+- [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes)
+- [https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint](https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint)
+
+## Supporting Pages
+
+### "Optimize the order of stops on your route \_|\_ Routes API \_|\_ Google\
+
+- URL: [https://developers.google.com/maps/documentation/routes/opt-way](https://developers.google.com/maps/documentation/routes/opt-way)
+- Source ID: `site-docs-root`
+- Final score: 242
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Example This request asks for optimization for a route from Adelaide, South Australia, to each of South Australia's main wine regions, and then returning to Adelaide. curl - X POST - H 'co ntent - t ype : applica t io n /jso n ' - d ' { "origin" : { "address" : "Adelaide,SA" }, "destination" : { "address" : "Adelaide,SA" }, "intermediates" : [ { "address" : "Barossa+Valley,SA" }, { "address" : "Clare,SA" }, { "address" : "Coonawarra,SA" }, { "address" : "McLaren+Vale,SA" } ], "travelMode" : "DRIVE" , "optimizeWaypointOrder" : "true" } ' \ - H 'Co ntent - Type : applica t io n /jso n ' \ - H 'X - Goog - Api - Key : YOUR API KEY ' \ - H 'X - Goog - FieldMask : rou tes , geocodi n gResul ts .i nter media tes .i nter media te Waypoi nt Reques t I n dex' \ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The Routes API indexes the intermediate waypoints provided in the request, starting at 0.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],["The Routes API can optimize the order of stopover waypoints to create a more efficient route.
+- Page Summary outlined flag The Routes API's Compute Routes method can optimize the order of stops (waypoints) for greater efficiency by considering factors like travel time, distance, and turns.
+- For example: "optimizeWaypointOrder" : "true" , Specify the routes.optimizedIntermediateWaypointIndex field in the field mask: REST - H X - Goog - FieldMask : rou tes .op t imizedI nter media te Waypoi nt I n dex RPC const ( fieldMask = "routes.optimizedIntermediateWaypointIndex" ) Understand how waypoint order is optimized Here's how the Routes API optimizes the order of waypoints in a route: Automatically indexes the waypoints based on the order you provide them in the request, starting with 0.
+
+### Method: computeRoutes \_|\_ Routes API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes](https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes)
+- Source ID: `site-api-reference`
+- Final score: 208
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Request body The request body contains data with the following structure: JSON representation { "origin" : { object ( Waypoint ) } , "destination" : { object ( Waypoint ) } , "intermediates" : [ { object ( Waypoint ) } ] , "travelMode" : enum ( RouteTravelMode ) , "routingPreference" : enum ( RoutingPreference ) , "polylineQuality" : enum ( PolylineQuality ) , "polylineEncoding" : enum ( PolylineEncoding ) , "departureTime" : string , "arrivalTime" : string , "computeAlternativeRoutes" : boolean , "routeModifiers" : { object ( RouteModifiers ) } , "languageCode" : string , "regionCode" : string , "units" : enum ( Units ) , "optimizeWaypointOrder" : boolean , "requestedReferenceRoutes" : [ enum ( ReferenceRoute ) ] , "extraComputations" : [ enum ( ExtraComputation ) ] , "trafficModel" : enum ( TrafficModel ) , "transitPreferences" : { object ( TransitPreferences ) } } Fields origin object ( Waypoint ) Required.
+- Page Summary outlined flag The Compute Routes API calculates optimal routes between specified waypoints based on preferences like travel mode and route optimization.
+- Use ComputeRoutesResponse.Routes.optimized intermediate waypoint index to find the new ordering.
+- This polyline is the combined polyline of all legs . description string A description of the route. warnings[] string An array of warnings to show when displaying the route. viewport object ( Viewport ) The viewport bounding box of the polyline. travelAdvisory object ( RouteTravelAdvisory ) Additional information about the route. optimizedIntermediateWaypointIndex[] integer If you set optimizeWaypointOrder to true, this field contains the optimized ordering of intermediate waypoints.
+
+### Waypoint \_|\_ Routes API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint](https://developers.google.com/maps/documentation/routes/reference/rest/v2/Waypoint)
+- Source ID: `site-api-reference`
+- Final score: 168
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- If ComputeRoutesRequest.optimize waypoint order is set to true then this field cannot be set to true; otherwise, the request fails. vehicleStopover boolean Indicates that the waypoint is meant for vehicles to stop at, where the intention is to either pickup or drop-off.
+- A waypoint's location type can be specified via geographic coordinates (location), a place ID (placeId), or a human-readable address (address). via cannot be true for terminal waypoints or if optimize waypoint order is true.\n"]]
+- JSON representation { "via" : boolean , "vehicleStopover" : boolean , "sideOfRoad" : boolean , // Union field location type can be only one of the following: "location" : { object ( Location ) } , "placeId" : string , "address" : string , "navigationPointToken" : string // End of list of possible types for union field location type . } Fields via boolean Marks this waypoint as a milestone rather a stopping point.
+- Different ways to represent a location. location type can be only one of the following: location object ( Location ) A point specified using geographic coordinates, including an optional heading. placeId string The POI Place ID associated with the waypoint. address string Human readable address or a plus code.
+

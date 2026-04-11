@@ -1,22 +1,23 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T02:43:22.570Z",
+  "generated_at": "2026-04-11T21:28:17.169Z",
   "product_name": "BigQuery",
   "product_slug": "bigquery",
   "step03_ranking_path": "data/step-03/current/products/bigquery/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
-      "iam_reference",
-      "python_reference",
-      "java_reference"
-    ]
+      "api_reference",
+      "iam_reference"
+    ],
+    "feature_count": 1397
   },
   "site_output_mode": "compact",
-  "selected_source_count": 5,
-  "selected_sources_signature": "009668350eb3aaf664f383ef317effb515c256f500cb75652b8b8aa1de1d6490",
+  "selected_source_count": 11,
+  "selected_sources_signature": "73c31ece782cfc77f57f5311a92530a6a0ea1cb15468fd44b5955fb4055564b4",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -26,8 +27,33 @@
       "url": "https://docs.cloud.google.com/bigquery/docs",
       "final_score": 100,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 30
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 64
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "bigquery",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/bigquery/docs/introduction",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 64
+    },
+    {
+      "source_id": "site-docs-root-3",
+      "product_slug": "bigquery",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/bigquery/docs/introduction?csw=1",
+      "final_score": 90,
+      "best_rank": 3,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 64
     },
     {
       "source_id": "site-docs-reference",
@@ -35,10 +61,83 @@
       "family": "docs_reference",
       "classification": "product_reference",
       "url": "https://docs.cloud.google.com/bigquery/docs/reference",
-      "final_score": 97,
+      "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 54
+    },
+    {
+      "source_id": "site-docs-reference-2",
+      "product_slug": "bigquery",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://docs.cloud.google.com/bigquery/docs/release-notes",
+      "final_score": 95,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 54
+    },
+    {
+      "source_id": "site-docs-reference-3",
+      "product_slug": "bigquery",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/graph-intro",
+      "final_score": 95,
+      "best_rank": 4,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 54
+    },
+    {
+      "source_id": "site-docs-reference-4",
+      "product_slug": "bigquery",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+      "final_score": 90,
+      "best_rank": 2,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 54
+    },
+    {
+      "source_id": "site-docs-reference-5",
+      "product_slug": "bigquery",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://docs.cloud.google.com/bigquery/docs/reference/api-uploads",
+      "final_score": 90,
+      "best_rank": 6,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 54
+    },
+    {
+      "source_id": "site-api-reference",
+      "product_slug": "bigquery",
+      "family": "api_reference",
+      "classification": "api_reference",
+      "url": "https://docs.cloud.google.com/bigquery/docs/reference/rest",
+      "final_score": 90,
+      "best_rank": 5,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
+    },
+    {
+      "source_id": "site-api-reference-2",
+      "product_slug": "bigquery",
+      "family": "api_reference",
+      "classification": "api_reference",
+      "url": "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/ConnectionProperty",
+      "final_score": 90,
+      "best_rank": 2,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     },
     {
       "source_id": "site-iam-reference",
@@ -46,32 +145,11 @@
       "family": "iam_reference",
       "classification": "iam_reference",
       "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
-      "final_score": 97,
-      "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
-    },
-    {
-      "source_id": "site-python-reference",
-      "product_slug": "bigquery",
-      "family": "python_reference",
-      "classification": "python_reference",
-      "url": "https://docs.cloud.google.com/python/docs/reference/bigquery/latest",
       "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
-    },
-    {
-      "source_id": "site-java-reference",
-      "product_slug": "bigquery",
-      "family": "java_reference",
-      "classification": "java_reference",
-      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigquery/latest/overview",
-      "final_score": 95,
-      "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     }
   ],
   "corpus_paths": {

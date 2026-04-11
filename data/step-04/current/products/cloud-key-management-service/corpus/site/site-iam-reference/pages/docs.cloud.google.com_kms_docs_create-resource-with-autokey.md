@@ -10,216 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/kms/docs/create-resource-with-autokey
   title: "Create protected resources using Cloud KMS Autokey \_|\_ Cloud Key Management\
     \ Service \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Create protected resources using Cloud KMS Autokey | Cloud Key Management Service | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud KMS
-Start free
-Overview
-Guides
-Reference
-Samples
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Samples
-Resources
-Cross-product tools
-More
-Console
-Discover
-Product overview
-Protection levels
-Overview
-Cloud HSM overview
-Single-tenant Cloud HSM overview
-Cloud EKM overview
-Reference architectures for Cloud EKM
-CMEK overview
-Cloud KMS with Autokey
-Compatible services
-Cloud HSM for Google Workspace
-Locations
-Get started
-Cloud KMS resources
-Key purposes and algorithms
-Separation of duties
-Create and use encryption keys
-CMEK best practices
-Create and manage Single-tenant Cloud HSM instances
-Create keys
-Automate key creation
-Autokey overview
-Enable Autokey
-Create a resource with Autokey
-Create a key ring
-Create a key
-Import keys
-About key import
-Key wrapping
-Format a key for import
-Manually wrap a key for import
-Configure OpenSSL for manual key wrapping
-Wrap a key using OpenSSL
-Set up automatic key wrapping
-Import a key version
-Verify an imported key version
-Create external keys
-Set up Cloud EKM over the internet
-Create an EKM connection
-Create an external Key
-Control access
-Manage IAM roles
-Use Organization Policy Contraints
-Create custom organization policy constraints for Cloud KMS
-CMEK organization policies
-Control key destruction
-Secure data using keys
-Key APIs
-Use gRPC
-Access the API
-Sort and filter API list results
-Generate random bytes
-Use Cloud KMS keys in Google Cloud
-Encrypt and decrypt data
-Envelope encryption
-Additional authenticated data
-Asymmetric encryption
-Encrypt and decrypt data with a symmetric key
-Encrypt and decrypt data with a raw symmetric key
-Encrypt and decrypt data with an asymmetric key
-Verify end-to-end data integrity
-Encrypt application data
-Set up client-side encryption with Tink
-Onboard to Cloud HSM for Google Workspace
-Sign and validate data
-Digital signatures
-Create and validate signatures
-MAC signatures
-Create and validate MAC signatures
-Share secrets using key encapsulation mechanisms
-Key encapsulation mechanisms
-Encapsulate and decapsulate using KEMs
-Manage keys
-Resource consistency
-Key version states
-View keys and key details
-View keys by project
-View encryption metrics
-View key usage
-Get a Cloud KMS resource ID
-Retrieve a public key
-Attest a Cloud HSM key
-Label a key
-Create and manage tags
-Enable and disable a key version
-Destroy and restore a key version
-Delete Cloud KMS resources
-Rotate keys
-About key rotation
-Rotate a key
-Re-encrypt data
-Update external key reference
-Monitor
-Using Cloud Audit Logging
-Cloud KMS Inventory Service audit logging
-Monitor state changes
-Monitor and adjust quotas
-Use Cloud Monitoring
-Monitor EKM usage
-Troubleshoot
-Troubleshoot failed imports
-Troubleshoot EKM via VPC errors
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Before you begin
-Using Autokey with Compute Engine resources Create a protected Compute Engine resource
-Using Autokey with Cloud Storage resources Create a protected Cloud Storage resource
-Using Autokey with BigQuery resources Create a protected BigQuery resource
-Using Autokey with Secret Manager resources Create a protected Secret Manager resource
-Using Autokey with Dataflow resources
-Create-and-destroy patterns in Terraform
-What's next
 Home
 Documentation
 Security
 Cloud KMS
 Guides
-Was this helpful?
 Send feedback
 Create protected resources using Cloud KMS Autokey
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Before you begin
-Using Autokey with Compute Engine resources Create a protected Compute Engine resource
-Using Autokey with Cloud Storage resources Create a protected Cloud Storage resource
-Using Autokey with BigQuery resources Create a protected BigQuery resource
-Using Autokey with Secret Manager resources Create a protected Secret Manager resource
-Using Autokey with Dataflow resources
-Create-and-destroy patterns in Terraform
-What's next
 This page shows you how to create protected resources using keys created by
 Cloud KMS Autokey for encryption. For more information about
 Autokey, see Autokey overview .
@@ -252,8 +57,7 @@ use that key to encrypt the snapshot.
 For more information about using CMEK with snapshots, see Create a snapshot
 from a disk encrypted with CMEK .
 Create a protected Compute Engine resource
-Console Terraform API
-More
+Console
 To create a disk, complete the following steps:
 In the Google Cloud console, go to the Disks page.
 Go to Disks
@@ -265,6 +69,7 @@ successfully created and is ready for use.
 To finish creating the disk, click Create .
 You can follow a similar process to create protected VM instance, image,
 and machine image resources.
+Terraform
 The following Terraform sample creates a key handle and uses
 the returned key to protect a new persistent disk resource:
 resource "google_kms_key_handle" "my_key_handle" {
@@ -303,6 +108,7 @@ to recreate a KeyHandle produces an ALREADY_EXISTS error. To avoid this
 issue, you can import a previously-created KeyHandle . For more information,
 see Create and destroy patterns in Terraform on this
 page.
+API
 Request a new Cloud KMS key by creating a
 KeyHandle :
 curl -H "Content-Type: application/json" \
@@ -381,8 +187,7 @@ that key when creating the object.
 If you want to change the default key assigned to a bucket, you can use an
 existing CMEK, including keys created by Autokey.
 Create a protected Cloud Storage resource
-Console Terraform API
-More
+Console
 In the Google Cloud console, go to the Create a bucket page.
 Go to Create a bucket
 Follow the instructions to Create a new bucket
@@ -393,6 +198,7 @@ For Key type , select Cloud KMS with Autokey , and then click
 Request a new key . A message indicates when your key has been
 successfully created and is ready for use.
 To finish creating the bucket, click Create .
+Terraform
 The following Terraform sample creates a key handle and uses
 the returned key to protect a new storage bucket:
 resource "google_kms_key_handle" "my_key_handle" {
@@ -426,6 +232,7 @@ to recreate a KeyHandle produces an ALREADY_EXISTS error. To avoid this
 issue, you can import a previously-created KeyHandle . For more information,
 see Create and destroy patterns in Terraform on this
 page.
+API
 Request a new Cloud KMS key by creating a
 KeyHandle :
 curl -H "Content-Type: application/json" \
@@ -520,8 +327,7 @@ Set a project default key .
 For more information about using CMEK with BigQuery, see
 Customer-managed Cloud KMS keys .
 Create a protected BigQuery resource
-Console Terraform API
-More
+Console
 Before attempting to create a BigQuery dataset using
 Autokey, make sure you have the required permissions. For more
 information about creating datasets, see Create datasets .
@@ -534,6 +340,7 @@ For Key type , select Cloud KMS with Autokey , and then click
 Request a new key . A message indicates when your key has been
 successfully created and is ready for use.
 To finish creating the dataset, click Create dataset .
+Terraform
 The following Terraform sample creates a key handle and uses
 the returned key to protect a new dataset:
 resource "google_kms_key_handle" "my_key_handle" {
@@ -571,6 +378,7 @@ to recreate a KeyHandle produces an ALREADY_EXISTS error. To avoid this
 issue, you can import a previously-created KeyHandle . For more information,
 see Create and destroy patterns in Terraform on this
 page.
+API
 Request a new Cloud KMS key by creating a
 KeyHandle :
 curl -H "Content-Type: application/json" \
@@ -660,8 +468,7 @@ primary version of the key.
 Secret Manager is only compatible with Cloud KMS Autokey when
 creating resources using Terraform or the REST API.
 Create a protected Secret Manager resource
-Terraform API
-More
+Terraform
 The following Terraform sample creates a key handle and uses
 the returned key to protect a new secret with automatic replication:
 resource "google_kms_key_handle" "my_key_handle" {
@@ -699,6 +506,7 @@ to recreate a KeyHandle produces an ALREADY_EXISTS error. To avoid this
 issue, you can import a previously-created KeyHandle . For more information,
 see Create and destroy patterns in Terraform on this
 page.
+API
 Request a new Cloud KMS key by creating a
 KeyHandle :
 curl -H "Content-Type: application/json" \
@@ -778,7 +586,6 @@ to create a protected resource.
 Using Autokey with Dataflow resources
 Autokey can be used to create a single key for each Dataflow job.
 API
-More
 Request a new Cloud KMS key by creating a
 KeyHandle :
 curl -H "Content-Type: application/json" \
@@ -845,59 +652,8 @@ id = "projects/ RESOURCE_PROJECT_ID /locations/ LOCATION /keyHandles/ KEY_HANDLE
 What's next
 Learn more about when to use Autokey .
 Learn more about how Autokey works .
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

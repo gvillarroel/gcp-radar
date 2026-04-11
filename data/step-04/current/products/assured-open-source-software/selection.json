@@ -1,30 +1,46 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T06:00:08.139Z",
+  "generated_at": "2026-04-10T17:45:54.971Z",
   "product_name": "Assured Open Source Software",
   "product_slug": "assured-open-source-software",
   "step03_ranking_path": "data/step-03/current/products/assured-open-source-software/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
+      "docs_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 8
   },
   "site_output_mode": "compact",
-  "selected_source_count": 2,
-  "selected_sources_signature": "6b21bffe1e47b6132f4f6fa42b9b7649425246624beaca7782427ee783530892",
+  "selected_source_count": 3,
+  "selected_sources_signature": "04b05a5e976d69d43e020322076b40825565b01b9c41d90253ee48471db67e42",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
       "product_slug": "assured-open-source-software",
       "family": "docs_root",
       "classification": "product_root",
-      "url": "https://docs.cloud.google.com/assured-open-source-software/docs/overview",
+      "url": "https://docs.cloud.google.com/assured-open-source-software/docs",
       "final_score": 100,
       "best_rank": 2,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 30
+    },
+    {
+      "source_id": "site-docs-reference",
+      "product_slug": "assured-open-source-software",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://docs.cloud.google.com/assured-open-source-software/docs/download-go-packages",
+      "final_score": 100,
+      "best_rank": 2,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 20
     },
     {
       "source_id": "site-iam-reference",
@@ -32,10 +48,11 @@
       "family": "iam_reference",
       "classification": "iam_reference",
       "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/assuredoss",
-      "final_score": 97,
+      "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     }
   ],
   "corpus_paths": {

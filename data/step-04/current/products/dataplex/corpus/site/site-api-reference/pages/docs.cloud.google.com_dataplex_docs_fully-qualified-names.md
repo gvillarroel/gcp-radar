@@ -1,6 +1,5 @@
 ---
-title: "Fully qualified names \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-  \ Documentation"
+title: "Fully qualified names \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/fully-qualified-names
 knowledge_key: corpus
 source_id: site-api-reference
@@ -8,31 +7,31 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/reference/rest
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/fully-qualified-names
-  title: "Fully qualified names \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "Fully qualified names \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Reference
 Send feedback
 Fully qualified names
 Stay organized with collections
 Save and categorize content based on your preferences.
 Fully qualified names are globally unique, case-sensitive resource identifiers
-that you can use with Dataplex Universal Catalog to refer to Google Cloud
+that you can use with Knowledge Catalog (formerly Dataplex Universal Catalog) to refer to Google Cloud
 and non-Google Cloud resources.
 For example, fully qualified names are used for systems that support the
 automatic ingestion
 of metadata from Google Cloud. If you
 catalog your non-Google Cloud resources
-in Dataplex Universal Catalog, you can provide fully qualified names when you
+in Knowledge Catalog, you can provide fully qualified names when you
 create the custom entries that represent those third-party resources.
 Fully qualified names are composed of a prefix followed by
 segments delimited with dots. The maximum length is 4,000 characters.
@@ -100,14 +99,14 @@ Bucket
 gcs:{bucketName}
 Path
 gcs:{bucketName}.{virtualPath}
-Dataplex Universal Catalog
-Caution: The ingestion of Dataplex Universal Catalog entities under lakes and zones into
+Knowledge Catalog
+Caution: The ingestion of Knowledge Catalog entities under lakes and zones into
 Data Catalog (including those
-created as the output of Dataplex Universal Catalog Discovery) is
+created as the output of Knowledge Catalog Discovery) is
 deprecated and will stop functioning by
 September 30, 2025. External tables in BigQuery that are
 published by Discovery will be ingested into
-Dataplex Universal Catalog as entries.
+Knowledge Catalog as entries.
 Resource
 Format
 Lake
@@ -407,12 +406,12 @@ trino:{dns}.{catalogId}.{schemaId}.{tableId}
 Custom formats
 You can create a custom fully qualified name format by using the custom:
 prefix. Custom formats are not validated, and might not be compatible with
-Dataplex Universal Catalog features. To ease future migration,
+Knowledge Catalog features. To ease future migration,
 create custom formats that are similar to predefined formats.
 Resources that are referenced in OpenLineage messages with the namespace custom are
 interpreted as custom fully qualified names.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

@@ -1,0 +1,1153 @@
+---
+title: "Browse by dataset tags \_|\_ Earth Engine Data Catalog \_|\_ Google for Developers"
+url: https://developers.google.com/earth-engine/datasets/tags
+knowledge_key: corpus
+source_id: site-docs-root-3
+source_type: site
+entrypoint: https://developers.google.com/earth-engine/datasets/categories
+source_metadata:
+  url: https://developers.google.com/earth-engine/datasets/tags
+  title: "Browse by dataset tags \_|\_ Earth Engine Data Catalog \_|\_ Google for\
+    \ Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Earth Engine Data Catalog
+All Tags
+Send feedback
+Browse by dataset tags
+Stay organized with collections
+Save and categorize content based on your preferences.
+Page Summary
+outlined_flag
+The content provides a list of tags associated with datasets, along with the number of datasets available for each tag.
+The tags cover a wide range of environmental and geographical topics, including climate, landcover, water, vegetation, and more.
+Many tags are related to specific regions or organizations, such as Africa, NASA, and ESA.
+Some tags indicate the temporal resolution of the data, like 3-hourly, 8-day, daily, monthly, and yearly.
+The list serves as an index to explore datasets based on relevant keywords or themes.
+16-day
+10 datasets
+3-hourly
+4 datasets
+3dep
+3 datasets
+8-day
+18 datasets
+aai
+2 datasets
+abi
+20 datasets
+aboveground
+5 datasets
+accessibility
+6 datasets
+accumulation
+2 datasets
+aerosol
+10 datasets
+africa
+23 datasets
+agriculture
+36 datasets
+ahn
+5 datasets
+air-quality
+21 datasets
+airborne
+6 datasets
+albedo
+9 datasets
+alh
+2 datasets
+alos
+8 datasets
+alos2
+6 datasets
+aluminium
+4 datasets
+annual
+7 datasets
+antarctica
+4 datasets
+aod
+2 datasets
+aqua
+27 datasets
+aqueduct
+3 datasets
+arctic
+6 datasets
+area
+2 datasets
+asia
+2 datasets
+aspect
+15 datasets
+aster
+2 datasets
+atmosphere
+62 datasets
+atmospheric
+5 datasets
+australia
+6 datasets
+avhrr
+8 datasets
+backscatter
+2 datasets
+bai
+3 datasets
+basemaps
+3 datasets
+bathymetry
+2 datasets
+bedrock
+2 datasets
+berkeley
+2 datasets
+biodiversity
+12 datasets
+biology
+3 datasets
+biomass
+13 datasets
+bira
+4 datasets
+black-sky
+2 datasets
+blm
+3 datasets
+borders
+12 datasets
+boundaries
+6 datasets
+brazil
+6 datasets
+brdf
+6 datasets
+brightness
+5 datasets
+brightness-temperature
+2 datasets
+building
+4 datasets
+built
+5 datasets
+built-environment
+4 datasets
+built-up
+2 datasets
+builtup
+4 datasets
+burn
+5 datasets
+burnt
+2 datasets
+c2
+30 datasets
+cag
+4 datasets
+canada
+4 datasets
+canopy
+10 datasets
+carbon
+10 datasets
+carbon-monoxide
+2 datasets
+cdr
+13 datasets
+cds
+4 datasets
+census
+11 datasets
+cfmask
+10 datasets
+change-detection
+6 datasets
+chc
+3 datasets
+chg
+4 datasets
+chla
+3 datasets
+chlorophyll
+3 datasets
+chlorophyll-a
+4 datasets
+ciesin
+12 datasets
+city
+5 datasets
+classification
+4 datasets
+clay
+2 datasets
+climate
+129 datasets
+climate-change
+10 datasets
+cloud
+18 datasets
+cmip5
+3 datasets
+coastal
+4 datasets
+community-dataset
+3 datasets
+composition
+4 datasets
+conditioned
+3 datasets
+conservation
+10 datasets
+conservation-easements
+4 datasets
+conus
+10 datasets
+copernicus
+69 datasets
+countries
+8 datasets
+county
+4 datasets
+crop
+13 datasets
+crs
+3 datasets
+cryosphere
+12 datasets
+csiro
+2 datasets
+csp
+16 datasets
+currents
+4 datasets
+daily
+62 datasets
+day
+2 datasets
+daylight
+3 datasets
+deforestation
+12 datasets
+dem
+38 datasets
+demography
+4 datasets
+density
+2 datasets
+departments
+2 datasets
+designation
+4 datasets
+dewpoint
+3 datasets
+direction
+3 datasets
+disaster
+2 datasets
+districts
+2 datasets
+disturbance
+3 datasets
+dlr
+6 datasets
+dmsp
+3 datasets
+dnb
+5 datasets
+doi
+15 datasets
+dos
+2 datasets
+drainage
+5 datasets
+drought
+8 datasets
+dust
+2 datasets
+earth-big-data
+4 datasets
+ecmwf
+11 datasets
+ecoregions
+3 datasets
+ecosystem
+2 datasets
+ecosystems
+19 datasets
+edf
+10 datasets
+edf-methanesat-ee
+6 datasets
+eea
+2 datasets
+elevation
+56 datasets
+elevation-topography
+47 datasets
+emissions
+12 datasets
+emissivity
+16 datasets
+emit
+4 datasets
+envirometrix
+15 datasets
+eog
+7 datasets
+eosdis
+3 datasets
+epa
+2 datasets
+era5
+4 datasets
+era5-land
+4 datasets
+ergo
+15 datasets
+eroc
+6 datasets
+eros
+2 datasets
+esa
+34 datasets
+estonia
+4 datasets
+etm
+7 datasets
+eu
+29 datasets
+eudr
+8 datasets
+europe
+2 datasets
+evaporation
+10 datasets
+evapotranspiration
+25 datasets
+evi
+15 datasets
+falsecolor
+2 datasets
+fao
+23 datasets
+fapar
+3 datasets
+fdc
+8 datasets
+finland
+3 datasets
+fire
+50 datasets
+firms
+3 datasets
+fishing
+2 datasets
+flood
+7 datasets
+flow
+5 datasets
+flow-direction
+2 datasets
+flux
+5 datasets
+fmask
+10 datasets
+forcing
+4 datasets
+forecast
+23 datasets
+forest
+48 datasets
+forest-biomass
+51 datasets
+forest-code
+6 datasets
+forest-inventory-and-analysis
+3 datasets
+forest-type
+3 datasets
+forestdatapartnership
+5 datasets
+forma
+5 datasets
+formaldehyde
+4 datasets
+fpar
+3 datasets
+fragmentation
+2 datasets
+fsic-go
+2 datasets
+g-portal
+12 datasets
+ga
+4 datasets
+gap
+4 datasets
+gaul
+6 datasets
+gcom
+12 datasets
+gcom-c
+12 datasets
+gcp-public-data-weathernext
+3 datasets
+gddp
+2 datasets
+gedi
+16 datasets
+geophysical
+140 datasets
+geos
+4 datasets
+geoscience-australia
+3 datasets
+gfw
+7 datasets
+gfz
+3 datasets
+ghg
+12 datasets
+ghsl
+7 datasets
+gimp
+4 datasets
+glacier
+2 datasets
+glcf
+2 datasets
+gldas
+3 datasets
+glims
+2 datasets
+global
+144 datasets
+global-pasture-watch
+5 datasets
+globfire
+2 datasets
+gls
+4 datasets
+gmao
+4 datasets
+goes
+20 datasets
+goes-16
+5 datasets
+goes-17
+5 datasets
+goes-18
+5 datasets
+goes-19
+5 datasets
+goes-east
+10 datasets
+goes-r
+5 datasets
+goes-s
+5 datasets
+goes-t
+5 datasets
+goes-u
+5 datasets
+goes-west
+5 datasets
+google
+22 datasets
+gpm
+8 datasets
+gpp
+9 datasets
+gpw
+11 datasets
+grace
+5 datasets
+gravity
+5 datasets
+greenland
+4 datasets
+gridmet
+2 datasets
+gridmet-derived
+18 datasets
+gtac
+7 datasets
+hand
+2 datasets
+hcho
+2 datasets
+heat
+5 datasets
+height
+3 datasets
+highres
+8 datasets
+history
+3 datasets
+hotspot
+11 datasets
+hourly
+10 datasets
+human-modification
+2 datasets
+humidity
+11 datasets
+hurricane
+3 datasets
+hycom
+3 datasets
+hydroatlas
+10 datasets
+hydrography
+34 datasets
+hydrology
+40 datasets
+hydrosheds
+34 datasets
+hyperspectral
+4 datasets
+ice
+10 datasets
+idaho
+2 datasets
+imagery
+8 datasets
+imerg
+4 datasets
+infrared
+2 datasets
+infrastructure-boundaries
+30 datasets
+insitu
+4 datasets
+intertidal
+4 datasets
+ipcc
+6 datasets
+isda
+21 datasets
+iucn
+5 datasets
+jaxa
+29 datasets
+jpl
+11 datasets
+jrc
+19 datasets
+knmi
+9 datasets
+l1
+2 datasets
+l2
+2 datasets
+l3
+2 datasets
+l4
+4 datasets
+l5
+5 datasets
+l7
+4 datasets
+l8
+4 datasets
+l8sr
+2 datasets
+l9
+3 datasets
+l9sr
+2 datasets
+lai
+8 datasets
+lakes
+4 datasets
+lance
+3 datasets
+land
+28 datasets
+land-surface-temperature
+3 datasets
+landandcarbon
+3 datasets
+landcover
+52 datasets
+landfire
+22 datasets
+landforms
+15 datasets
+landsat
+72 datasets
+landsat-composite
+17 datasets
+landsat-derived
+46 datasets
+landscan
+2 datasets
+landscape-gradient
+2 datasets
+landuse
+21 datasets
+landuse-landcover
+38 datasets
+larse
+16 datasets
+lasrc
+10 datasets
+latvia
+2 datasets
+lc08
+2 datasets
+lc09
+2 datasets
+lc8
+4 datasets
+lc9
+3 datasets
+ldas
+5 datasets
+le07
+2 datasets
+le7
+3 datasets
+leaf-area-index
+3 datasets
+lidar
+15 datasets
+lights
+7 datasets
+lima
+3 datasets
+lm1
+2 datasets
+lm2
+2 datasets
+lm3
+2 datasets
+lm4
+2 datasets
+lm5
+2 datasets
+low-flying
+2 datasets
+lst
+37 datasets
+lt04
+2 datasets
+lt05
+2 datasets
+lt4
+2 datasets
+lt5
+2 datasets
+lucas
+4 datasets
+maca
+2 datasets
+maiac
+2 datasets
+malariaatlasproject
+21 datasets
+management
+5 datasets
+mangrove
+2 datasets
+map
+23 datasets
+mapbiomas-public
+3 datasets
+marine
+32 datasets
+mascon
+2 datasets
+mass
+7 datasets
+mcd64a1
+3 datasets
+mcmip
+12 datasets
+merced
+3 datasets
+merit
+3 datasets
+merra
+6 datasets
+metdata
+2 datasets
+methane
+13 datasets
+methaneair
+6 datasets
+methanesat
+10 datasets
+mod09q1
+3 datasets
+mod11a2
+4 datasets
+mod16a2
+2 datasets
+mod17
+4 datasets
+mod44w
+2 datasets
+modis
+71 datasets
+modis-derived
+3 datasets
+monitoring
+11 datasets
+monthly
+43 datasets
+mosaic
+3 datasets
+mpa
+4 datasets
+mrlc
+2 datasets
+msi
+3 datasets
+mss
+10 datasets
+mtbs
+2 datasets
+multispectral
+5 datasets
+murray
+4 datasets
+nasa
+180 datasets
+nature-conservancy
+15 datasets
+nature-trace
+3 datasets
+nbrt
+3 datasets
+ncep
+7 datasets
+ndvi
+18 datasets
+ndwi
+3 datasets
+neighborhood
+5 datasets
+neon
+6 datasets
+neon-prod-earthengine
+6 datasets
+nesdis
+20 datasets
+netherlands
+6 datasets
+nex
+4 datasets
+nhc
+2 datasets
+nicfi
+3 datasets
+night
+2 datasets
+nighttime
+8 datasets
+nir
+3 datasets
+nitrogen
+2 datasets
+nitrogen-dioxide
+5 datasets
+nlcd
+6 datasets
+nlcd-derived
+4 datasets
+no2
+2 datasets
+noaa
+68 datasets
+nopp
+3 datasets
+npp
+8 datasets
+nrg
+3 datasets
+nrt
+3 datasets
+nsidc
+5 datasets
+nws
+3 datasets
+o3
+3 datasets
+ocean
+37 datasets
+ocean-color
+3 datasets
+oceandata
+3 datasets
+oceans
+49 datasets
+oisst
+2 datasets
+oli-tirs
+5 datasets
+ols
+3 datasets
+onset-greenness
+2 datasets
+open-buildings
+2 datasets
+openet
+14 datasets
+opengeohub
+15 datasets
+openlandmap
+15 datasets
+opera
+2 datasets
+optical
+2 datasets
+oregonstate
+3 datasets
+organic-soils
+2 datasets
+ornl
+2 datasets
+orthophoto
+2 datasets
+orthophotos
+16 datasets
+osb
+3 datasets
+ospo
+20 datasets
+ownership
+4 datasets
+ozone
+7 datasets
+palm
+2 datasets
+palmer
+3 datasets
+palsar
+4 datasets
+palsar2
+6 datasets
+pansharpened
+2 datasets
+par
+3 datasets
+pasture
+3 datasets
+pdsi
+2 datasets
+pgc
+5 datasets
+ph
+2 datasets
+phenology
+2 datasets
+photosynthesis
+9 datasets
+planet
+5 datasets
+planet-nicfi
+3 datasets
+plant-productivity
+23 datasets
+plantation
+5 datasets
+polar
+5 datasets
+polarization
+5 datasets
+political
+2 datasets
+pollution
+22 datasets
+population
+46 datasets
+potential
+2 datasets
+pre-review
+6 datasets
+precipitation
+57 datasets
+pressure
+18 datasets
+primary-forest
+3 datasets
+prism
+3 datasets
+proba
+3 datasets
+probav
+3 datasets
+production
+4 datasets
+productivity
+9 datasets
+protected
+4 datasets
+protected-areas
+4 datasets
+provinces
+2 datasets
+psn
+5 datasets
+public-lands
+4 datasets
+publisher-dataset
+76 datasets
+radar
+9 datasets
+radiance
+32 datasets
+radiation
+18 datasets
+rainfall
+4 datasets
+range
+2 datasets
+rangeland
+6 datasets
+reanalysis
+12 datasets
+redcastle-resources
+6 datasets
+reflectance
+26 datasets
+rema
+3 datasets
+rgb
+13 datasets
+river-width
+2 datasets
+roads
+2 datasets
+rt
+2 datasets
+runoff
+6 datasets
+rural-area
+2 datasets
+s5p
+18 datasets
+sand
+2 datasets
+sar
+11 datasets
+sat-io
+3 datasets
+satellite-imagery
+134 datasets
+sdg
+7 datasets
+sea-salt
+3 datasets
+sea-surface-temperature
+3 datasets
+seasonal
+4 datasets
+sentinel
+26 datasets
+sentinel1-derived
+12 datasets
+sentinel2-derived
+14 datasets
+settlement
+5 datasets
+shortwave
+2 datasets
+skysat
+2 datasets
+slope
+15 datasets
+smap
+3 datasets
+smk
+2 datasets
+smoothed
+2 datasets
+snow
+14 datasets
+so2
+5 datasets
+so4
+3 datasets
+soil
+43 datasets
+soil-moisture
+10 datasets
+soil-temperature
+2 datasets
+soil-water
+4 datasets
+south-asia
+2 datasets
+southeast-asia
+2 datasets
+species
+2 datasets
+spot
+6 datasets
+sr
+34 datasets
+sron
+3 datasets
+srtm
+42 datasets
+sst
+9 datasets
+state
+2 datasets
+states
+4 datasets
+stressors
+2 datasets
+sulfur-dioxide
+2 datasets
+surface
+28 datasets
+surface-ground-water
+72 datasets
+surface-reflectance
+16 datasets
+surface-temperature
+20 datasets
+swir
+3 datasets
+t1
+12 datasets
+t2
+10 datasets
+table
+94 datasets
+tasseled-cap
+6 datasets
+tcb
+3 datasets
+tcw
+3 datasets
+tellus
+5 datasets
+temperature
+49 datasets
+tempo
+5 datasets
+tern
+2 datasets
+terra
+31 datasets
+thermal
+5 datasets
+tidal-flats
+3 datasets
+tier1
+12 datasets
+tier2
+10 datasets
+tiger
+11 datasets
+tm
+8 datasets
+toa
+14 datasets
+topography
+30 datasets
+tree-cover
+15 datasets
+trends
+3 datasets
+trmm
+2 datasets
+tropics
+3 datasets
+tropomi
+23 datasets
+tsinghua
+2 datasets
+ucsb
+7 datasets
+uhi
+6 datasets
+umd
+5 datasets
+umn
+5 datasets
+un
+6 datasets
+upstream-drainage-area
+2 datasets
+uq
+3 datasets
+urban
+20 datasets
+us
+20 datasets
+usda
+30 datasets
+usdos
+2 datasets
+usfs
+7 datasets
+usgs
+185 datasets
+uvai
+4 datasets
+vapor
+10 datasets
+vegetation
+74 datasets
+vegetation-indices
+38 datasets
+velocity
+2 datasets
+viirs
+23 datasets
+visible
+8 datasets
+vito
+3 datasets
+wapor
+13 datasets
+water
+88 datasets
+water-mask
+2 datasets
+water-vapor
+43 datasets
+watershed
+28 datasets
+wbd
+6 datasets
+wcmc
+5 datasets
+wdpa
+4 datasets
+weather
+54 datasets
+weathernext
+3 datasets
+white-sky
+2 datasets
+wildfire
+27 datasets
+wind
+24 datasets
+worldclim
+2 datasets
+worldpop
+3 datasets
+wri
+16 datasets
+wwf
+32 datasets
+yale
+6 datasets
+yearly
+11 datasets
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]

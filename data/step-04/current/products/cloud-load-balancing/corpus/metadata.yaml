@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-08T23:56:52+00:00'
-updated_at: '2026-04-09T01:43:39+00:00'
+updated_at: '2026-04-10T21:02:24+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -10,42 +10,42 @@ sources:
 - type: site
   id: site-docs-root
   title: https://docs.cloud.google.com/load-balancing/docs
-  created_at: '2026-04-08T23:56:53+00:00'
-  updated_at: '2026-04-09T00:48:19+00:00'
+  created_at: '2026-04-10T20:56:18+00:00'
+  updated_at: '2026-04-10T20:58:41+00:00'
   update_command: know sync site https://docs.cloud.google.com/load-balancing/docs
     --key corpus --compact
   delete_command: know del --key corpus site-docs-root
   config:
     url: https://docs.cloud.google.com/load-balancing/docs
-    max_depth: 1
-    max_pages: 0
+    max_depth: 2
+    max_pages: 42
     compact_output: true
-  last_synced_at: '2026-04-09T00:48:19+00:00'
+  last_synced_at: '2026-04-10T20:58:41+00:00'
 - type: site
   id: site-docs-reference
-  title: https://docs.cloud.google.com/load-balancing/docs/reference/network-security/rest
-  created_at: '2026-04-09T00:57:26+00:00'
-  updated_at: '2026-04-09T01:06:24+00:00'
-  update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/reference/network-security/rest
-    --key corpus --compact
+  title: https://docs.cloud.google.com/vpc/docs/apis
+  created_at: '2026-04-10T20:56:19+00:00'
+  updated_at: '2026-04-10T21:00:27+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vpc/docs/apis --key
+    corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
-    url: https://docs.cloud.google.com/load-balancing/docs/reference/network-security/rest
-    max_depth: 1
-    max_pages: 0
+    url: https://docs.cloud.google.com/vpc/docs/apis
+    max_depth: 2
+    max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-09T01:06:24+00:00'
+  last_synced_at: '2026-04-10T21:00:27+00:00'
 - type: site
   id: site-iam-reference
-  title: https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions
-  created_at: '2026-04-09T01:06:28+00:00'
-  updated_at: '2026-04-09T01:43:39+00:00'
-  update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions
+  title: https://docs.cloud.google.com/load-balancing/docs/access-control
+  created_at: '2026-04-10T20:56:20+00:00'
+  updated_at: '2026-04-10T21:02:24+00:00'
+  update_command: know sync site https://docs.cloud.google.com/load-balancing/docs/access-control
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
-    url: https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions
-    max_depth: 1
-    max_pages: 0
+    url: https://docs.cloud.google.com/load-balancing/docs/access-control
+    max_depth: 2
+    max_pages: 32
     compact_output: true
-  last_synced_at: '2026-04-09T01:43:39+00:00'
+  last_synced_at: '2026-04-10T21:02:24+00:00'

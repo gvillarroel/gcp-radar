@@ -1,0 +1,65 @@
+---
+title: ".NET client libraries \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.ApiHub.V1/latest
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.Translate.V3/latest/Google.Cloud.Translate.V3.TranslateDocumentRequest
+source_metadata:
+  url: https://docs.cloud.google.com/dotnet/docs/reference/Google.Cloud.ApiHub.V1/latest
+  title: ".NET client libraries \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Developer tools
+.NET
+Client libraries
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Version latest keyboard_arrow_down
+1.2.0 (latest)
+1.1.0
+1.0.0
+Google.Cloud.ApiHub.V1
+Google.Cloud.ApiHub.V1 is a.NET client library for the API hub API .
+Note:
+This documentation is for version 1.2.0 of the library.
+Some samples may not work with other versions.
+Installation
+Install the Google.Cloud.ApiHub.V1 package from NuGet. Add it to
+your project in the normal way (for example by right-clicking on the
+project in Visual Studio and choosing "Manage NuGet Packages...").
+Authentication
+When running on Google Cloud, no action needs to be taken to authenticate.
+Otherwise, the simplest way of authenticating your API calls is to
+set up Application Default Credentials.
+The credentials will automatically be used to authenticate. See
+Set up Application Default Credentials for more details.
+Getting started
+All operations are performed through the following client classes:
+ApiHubClient
+ApiHubCollectClient
+ApiHubCurateClient
+ApiHubDependenciesClient
+ApiHubDiscoveryClient
+ApiHubPluginClient
+HostProjectRegistrationServiceClient
+LintingServiceClient
+ProvisioningClient
+RuntimeProjectAttachmentServiceClient
+Create a client instance by calling the static Create or CreateAsync methods. Alternatively,
+use the builder class associated with each client class (e.g. ApiHubClientBuilder for ApiHubClient)
+as an easy way of specifying custom credentials, settings, or a custom endpoint. Clients are thread-safe,
+and we recommend using a single instance across your entire application unless you have a particular need
+to configure multiple client objects separately.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-03-09 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-09 UTC."],[],[]]

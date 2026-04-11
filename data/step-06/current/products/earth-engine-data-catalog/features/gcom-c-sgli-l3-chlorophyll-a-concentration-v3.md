@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T12:40:58.639Z"
+product_name: "Earth Engine Data Catalog"
+product_slug: "earth-engine-data-catalog"
+feature_name: "GCOM-C/SGLI L3 Chlorophyll-a Concentration v3"
+feature_slug: "gcom-c-sgli-l3-chlorophyll-a-concentration-v3"
+latest_feature_date: "2021-12-14"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://developers.google.com/earth-engine/datasets/tags/oceans"
+  - "https://developers.google.com/earth-engine/datasets/catalog"
+  - "https://developers.google.com/earth-engine/datasets/tags/climate"
+keywords:
+  - "gcom"
+  - "sgli"
+  - "l3"
+  - "chlorophyll"
+  - "concentration"
+  - "v3"
+  - "provides"
+  - "level"
+---
+
+# GCOM-C/SGLI L3 Chlorophyll-a Concentration v3
+
+Product: Earth Engine Data Catalog
+Coverage: LOW
+
+## Step 02 Summary
+
+Provides GCOM-C/SGLI Level 3 chlorophyll-a concentration data.
+
+## Extended Definition
+
+Provides GCOM-C/SGLI Level 3 chlorophyll-a concentration data.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://developers.google.com/earth-engine/datasets/tags/oceans](https://developers.google.com/earth-engine/datasets/tags/oceans)
+- [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
+
+## Supporting Pages
+
+### "Datasets tagged oceans in Earth Engine \_|\_ Earth Engine Data Catalog \_\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/oceans](https://developers.google.com/earth-engine/datasets/tags/oceans)
+- Source ID: `site-docs-root-3`
+- Final score: 170
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate the mechanism behind fluctuations in radiation budget and … chla chlorophyll-a g-portal gcom gcom-c jaxa GCOM-C/SGLI L3 Chlorophyll-a Concentration (V3) This product is the concentration of the photosynthetic pigment (chlorophyll-a) in phytoplankton in the sea surface layer.
+- JAXA's GCOM-C/SGLI provides L3 Chlorophyll-a Concentration and Sea Surface Temperature data for long-term ocean observation.
+- Remote-sensing reflectance (or Rrs) is defined as the ratio of water-leaving radiance to downwelling irradiance and serves as the main input to algorithms used to … chlorophyll-a copernicus daily marine oceans GCOM-C/SGLI L3 Chlorophyll-a Concentration (V1) This product is the concentration of the photosynthetic pigment (chlorophyll-a) in phytoplankton in the sea surface layer.
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate … chla chlorophyll-a g-portal gcom gcom-c jaxa GCOM-C/SGLI L3 Chlorophyll-a Concentration (V2) This product is the concentration of the photosynthetic pigment (chlorophyll-a) in phytoplankton in the sea surface layer.
+
+### Earth Engine Data Catalog \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog](https://developers.google.com/earth-engine/datasets/catalog)
+- Source ID: `site-docs-root`
+- Final score: 170
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate the mechanism behind fluctuations in radiation budget and … chla chlorophyll-a g-portal gcom gcom-c jaxa GCOM-C/SGLI L3 Chlorophyll-a Concentration (V3) This product is the concentration of the photosynthetic pigment (chlorophyll-a) in phytoplankton in the sea surface layer.
+- The FPP dataset provides an … agriculture fao forest global plant-productivity population GCOM-C/SGLI L3 Chlorophyll-a Concentration (V1) This product is the concentration of the photosynthetic pigment (chlorophyll-a) in phytoplankton in the sea surface layer.
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate … chla chlorophyll-a g-portal gcom gcom-c jaxa GCOM-C/SGLI L3 Chlorophyll-a Concentration (V2) This product is the concentration of the photosynthetic pigment (chlorophyll-a) in phytoplankton in the sea surface layer.
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate the mechanism behind fluctuations in radiation budget and carbon cycle needed to make accurate projections regarding … climate g-portal gcom gcom-c jaxa land GCOM-C/SGLI L3 Land Surface Temperature (V3) This product is the temperature of terrestrial land surface.
+
+### "Datasets tagged climate in Earth Engine \_|\_ Earth Engine Data Catalog\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
+- Source ID: `site-docs-root`
+- Final score: 146
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate the mechanism behind fluctuations in radiation budget and carbon cycle needed to make accurate projections regarding … climate g-portal gcom gcom-c jaxa land GCOM-C/SGLI L3 Land Surface Temperature (V3) This product is the temperature of terrestrial land surface.
+- GCOM-C conducts long-term and continuous global observation and data collection to elucidate the mechanism behind fluctuations in radiation budget and carbon cycle needed to make accurate projections regarding future … climate g-portal gcom gcom-c jaxa ocean GCOM-C/SGLI L3 Sea Surface Temperature (V3) This product is the temperature of sea surface.
+- Total emissions for the survey … atmosphere climate edf emissions ghg methane MethaneAIR L4 Point Sources V1.1.0 This dataset provides data for high-emitting methane point source detections (kg/hr) over 13 oil and gas or coal extraction areas from Colorado, New Mexico, and Texas in the west to Pennsylvania, Ohio, and West Virginia in the east, plus three urban areas (New York City, … atmosphere climate edf edf-methanesat-ee emissions ghg MethaneAIR L4 Point Sources v1 This dataset provides data for high-emitting methane point source detections (kg/hr) over 13 oil and gas or coal extraction areas from Colorado, New Mexico, and Texas in the west to Pennsylvania, Ohio, and West Virginia in the east, plus three urban areas (New York City, … atmosphere climate edf emissions ghg methane MethaneSAT L3 Concentration Public Preview V1.0.0 This early "Public Preview" dataset provides geospatial data for the column-averaged dry-air mole fraction of methane in the atmosphere, "XCH4", retrieved from measurements by the MethaneSAT imaging spectrometer.
+- XCH4 is defined as the total column amount (number of molecules) of methane ("CH4") divided by the total amount … atmosphere climate edf edf-methanesat-ee emissions ghg MethaneAIR L3 Concentration v1 This dataset provides geospatial data for the total column dry air mole fraction of methane in the atmosphere, "XCH4", as observed by the MethaneAIR imaging spectrometer.
+

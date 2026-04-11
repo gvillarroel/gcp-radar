@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:45.024Z"
+product_name: "Memorystore for Valkey"
+product_slug: "memorystore-for-valkey"
+feature_name: "and 4-shard instance shapes"
+feature_slug: "and-4-shard-instance-shapes"
+latest_feature_date: "2024-09-19"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "and"
+  - "shard"
+  - "instance"
+  - "shapes"
+  - "memorystore"
+  - "for"
+  - "valkey"
+  - "supports"
+---
+
+# and 4-shard instance shapes
+
+Product: Memorystore for Valkey
+Coverage: NONE
+
+## Step 02 Summary
+
+Memorystore for Valkey supports instance shapes with 1, 2, or 4 shards in Preview.
+
+## Extended Definition
+
+Memorystore for Valkey supports instance shapes with 1, 2, or 4 shards in Preview.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

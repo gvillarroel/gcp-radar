@@ -1,0 +1,1641 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T20:07:37.547Z",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_count": 228,
+  "uncovered_feature_count": 101,
+  "uncovered_features": [
+    {
+      "latest_feature_date": "2026-03-20",
+      "feature_name": "AlloyDB node-level metrics",
+      "feature_summary": "AlloyDB now exposes node-level metrics in Cloud Console and Metrics Explorer for troubleshooting read pool performance and identifying regression-causing nodes.",
+      "keywords": [
+        "node-level troubleshooting",
+        "Metrics Explorer",
+        "node-level monitoring",
+        "Cloud Console metrics",
+        "node-level metrics",
+        "read pool performance",
+        "per-node metrics",
+        "node metrics"
+      ]
+    },
+    {
+      "latest_feature_date": "2026-02-19",
+      "feature_name": "AlloyDB integration with Database Center",
+      "feature_summary": "AlloyDB now integrates with Cloud Database Center to show prioritized health risks and provide one-click guidance to diagnostics and remediation.",
+      "keywords": [
+        "health risk signals in AlloyDB",
+        "prioritized health risks",
+        "one-click diagnostics guidance",
+        "one-click remediation guidance",
+        "DB Center integration",
+        "Database Center integration for AlloyDB",
+        "Cloud Database Center integration",
+        "AlloyDB Database Center"
+      ]
+    },
+    {
+      "latest_feature_date": "2026-02-17",
+      "feature_name": "AlloyDB AI function call array batching",
+      "feature_summary": "AlloyDB now supports bulk AI function calls using array-based processing instead of row-by-row execution.",
+      "keywords": [
+        "vectorized function call mode",
+        "bulk AI function invocation",
+        "AI function call batching",
+        "row-by-row execution replacement",
+        "array-based AI function calls",
+        "AI function array processing",
+        "batch AI calls",
+        "array function calls"
+      ]
+    },
+    {
+      "latest_feature_date": "2026-02-17",
+      "feature_name": "AlloyDB performance snapshot read pool node support",
+      "feature_summary": "AlloyDB performance snapshot and reports now include observability for read pool instance nodes.",
+      "keywords": [
+        "snapshot reporting for read pool nodes",
+        "performance report includes read pool",
+        "read pool node observability",
+        "read pool observability",
+        "performance snapshot read pool nodes",
+        "read pool instance node visibility",
+        "read pool snapshot support"
+      ]
+    },
+    {
+      "latest_feature_date": "2026-02-05",
+      "feature_name": "AlloyDB virtual columns for expressions",
+      "feature_summary": "The columnar engine now supports virtual columns for expressions, caching repeated expression results to improve analytic performance.",
+      "keywords": [
+        "analytic expression materialization",
+        "cached expression results",
+        "expression-based virtual columns",
+        "virtual columns for expressions",
+        "expression virtual column",
+        "expr virtual columns",
+        "columnar engine virtual columns"
+      ]
+    },
+    {
+      "latest_feature_date": "2026-01-20",
+      "feature_name": "AlloyDB Bangkok region availability",
+      "feature_summary": "AlloyDB cluster instances can now be created in the Bangkok region (asia-southeast3).",
+      "keywords": [
+        "new region launch asia-southeast3",
+        "AlloyDB in asia-southeast3",
+        "asia-southeast3",
+        "ASIA-SOUTHEAST3",
+        "create AlloyDB cluster in Bangkok",
+        "Bangkok region availability",
+        "Bangkok region"
+      ]
+    },
+    {
+      "latest_feature_date": "2026-01-19",
+      "feature_name": "AlloyDB Z3 machine series support",
+      "feature_summary": "AlloyDB now supports the Z3 machine series for storage-intensive workloads with larger compute and memory capacities.",
+      "keywords": [
+        "storage-intensive workloads",
+        "larger compute and memory",
+        "Z3 machine series",
+        "Z3 machine type",
+        "AlloyDB Z3 support",
+        "Z3 series",
+        "Z3 instances"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-11",
+      "feature_name": "AlloyDB C4 machine series support",
+      "feature_summary": "AlloyDB now supports the C4 machine series with larger vCPU and RAM options for very demanding workloads.",
+      "keywords": [
+        "higher vCPU and RAM options",
+        "very demanding workloads",
+        "C4 machine series",
+        "C4 machine type",
+        "AlloyDB C4 support",
+        "C4 series",
+        "C4 instances"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-08",
+      "feature_name": "AlloyDB Studio Gemini query error fixing",
+      "feature_summary": "AlloyDB Studio now supports using Gemini in the query editor to help fix query errors.",
+      "keywords": [
+        "query error fixing",
+        "fix query errors",
+        "query diagnostics with Gemini",
+        "AI-powered query fixes",
+        "Gemini query assistant",
+        "AlloyDB Studio query editor",
+        "Gemini in AlloyDB Studio",
+        "Studio Gemini"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-05",
+      "feature_name": "AlloyDB query plan management",
+      "feature_summary": "AlloyDB query plan management adds plan monitoring, capture, and enforcement so only approved query plans are used to prevent regressions.",
+      "keywords": [
+        "query plan regression prevention",
+        "approved query plans",
+        "plan governance",
+        "plan baselines",
+        "query plan capture",
+        "query plan enforcement",
+        "query plan monitoring",
+        "query plan management"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-11-20",
+      "feature_name": "AlloyDB read pool horizontal autoscaling",
+      "feature_summary": "AlloyDB now supports horizontal autoscaling for read pool instances.",
+      "keywords": [
+        "read pool horizontal autoscaling",
+        "scale read pools",
+        "horizontal scaling",
+        "read pool node count",
+        "read pool autoscaling",
+        "read pool instance scaling"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-11-11",
+      "feature_name": "Parallel SELECT execution for INSERT INTO ... SELECT",
+      "feature_summary": "AlloyDB now supports parallel execution for the SELECT phase of INSERT INTO ... SELECT queries to improve performance on partitioned and complex workloads.",
+      "keywords": [
+        "insert-select parallel processing",
+        "parallel SELECT phase",
+        "partitioned workload parallelism",
+        "parallel insert-select",
+        "parallel SELECT execution",
+        "parallel SELECT",
+        "INSERT INTO ... SELECT"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-27",
+      "feature_name": "AlloyDB Authorized Networks without CIDR restrictions",
+      "feature_summary": "AlloyDB now allows configuring Authorized Networks for Public IP without CIDR-range restrictions, with governance through custom organization policies.",
+      "keywords": [
+        "Authorized Networks without CIDR",
+        "CIDR-less authorized networks",
+        "CIDR-range restrictions",
+        "no-CIDR authorized networks",
+        "public IP governance",
+        "public IP authorized networks",
+        "custom organization policy"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-23",
+      "feature_name": "AlloyDB time-series forecasting",
+      "feature_summary": "AlloyDB now supports time-series forecasting on historical data, including TimesFM models, to predict future trends.",
+      "keywords": [
+        "future trend prediction",
+        "historical data forecasting",
+        "time series forecast",
+        "TimesFM model",
+        "time-series forecasting",
+        "TimesFM",
+        "forecasting queries"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-09-30",
+      "feature_name": "Cache-aware query planning in AlloyDB for PostgreSQL",
+      "feature_summary": "AlloyDB for PostgreSQL adds the alloydb.enable_cache_aware_costing setting to enable cache-aware query planning and improve index-scan performance while reducing I/O costs.",
+      "keywords": [
+        "alloydb.enable_cache_aware_costing",
+        "cache aware cost setting",
+        "cache-aware query planning",
+        "cache-aware costing",
+        "cache-aware planner",
+        "I/O cost reduction",
+        "query planner setting",
+        "index-scan performance"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-09-22",
+      "feature_name": "AlloyDB available memory metric with OS page cache",
+      "feature_summary": "AlloyDB's available memory metric now includes usable OS page cache memory, improving accuracy and potentially lowering reported available memory values, especially on PostgreSQL 17+.",
+      "keywords": [
+        "usable page cache memory",
+        "page cache memory metric",
+        "OS page cache",
+        "reported available memory",
+        "PostgreSQL 17+ memory metric",
+        "available memory metric",
+        "memory available metric"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-09-22",
+      "feature_name": "AlloyDB PostgreSQL 17 compatibility",
+      "feature_summary": "AlloyDB now supports creating clusters with general availability PostgreSQL 17 server compatibility; AlloyDB adds Preview support for creating clusters with PostgreSQL 17 compatibility.",
+      "keywords": [
+        "GA PostgreSQL 17 clusters",
+        "create clusters with PostgreSQL 17",
+        "PostgreSQL 17 server compatibility",
+        "PostgreSQL v17",
+        "PG17",
+        "PostgreSQL 17 compatibility",
+        "PostgreSQL 17 preview"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-09-02",
+      "feature_name": "Custom organization constraints for AlloyDB resources",
+      "feature_summary": "You can create organization policies with custom constraints for AlloyDB backups, clusters, and instance fields.",
+      "keywords": [
+        "org policy constraint",
+        "AlloyDB instance field constraints",
+        "custom org constraints",
+        "organization policy custom constraints",
+        "Org Policy for AlloyDB",
+        "AlloyDB custom constraints",
+        "customConstraint",
+        "AlloyDB backup constraints"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-08-20",
+      "feature_name": "Saved SQL scripts in AlloyDB Studio",
+      "feature_summary": "AlloyDB Studio now supports creating and managing saved SQL scripts for users to store reusable SQL in the database environment.",
+      "keywords": [
+        "AlloyDB Studio saved SQL scripts",
+        "manage saved scripts",
+        "reusable SQL statements",
+        "SQL script library",
+        "saved SQL script",
+        "script repository",
+        "script library",
+        "saved scripts"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-07-14",
+      "feature_name": "Configurable AlloyDB instance IP address range",
+      "feature_summary": "AlloyDB now allows users to create an instance with a specific IP address range and override range allocations during cluster creation.",
+      "keywords": [
+        "override IP allocation",
+        "CIDR override",
+        "cluster creation networking",
+        "instance IP address range",
+        "range override",
+        "custom instance IP range",
+        "secondary IP range",
+        "custom IP range"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-06-02",
+      "feature_name": "Private Service Connect cluster creation in AlloyDB",
+      "feature_summary": "AlloyDB enables creating clusters with Private Service Connect through the Google Cloud console.",
+      "keywords": [
+        "Cloud Console create PSC cluster",
+        "enable PSC on AlloyDB cluster",
+        "PSC-enabled cluster",
+        "create cluster with Private Service Connect",
+        "PSC cluster setup",
+        "create PSC cluster",
+        "Private Service Connect cluster creation"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-05-29",
+      "feature_name": "AlloyDB instance start/stop/restart controls",
+      "feature_summary": "AlloyDB now supports starting, stopping, and restarting primary and read pool instances via the Google Cloud console and Cloud CLI.",
+      "keywords": [
+        "start/stop/restart",
+        "gcloud alloydb instances start",
+        "gcloud alloydb instances stop",
+        "instance lifecycle controls",
+        "primary instance lifecycle",
+        "start AlloyDB instance",
+        "stop AlloyDB instance",
+        "read pool instance controls"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-05-07",
+      "feature_name": "Deny maintenance periods for AlloyDB clusters",
+      "feature_summary": "AlloyDB adds the ability to configure deny-maintenance periods on clusters running the latest version.",
+      "keywords": [
+        "maintenance period exclusions",
+        "prevent scheduled maintenance",
+        "deny maintenance windows",
+        "deny maintenance period",
+        "cluster maintenance settings",
+        "maintenance exclusion",
+        "deny maintenance",
+        "maintenance configuration"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-05-07",
+      "feature_name": "Migration from Cloud SQL for PostgreSQL to AlloyDB",
+      "feature_summary": "AlloyDB supports migration from Cloud SQL for PostgreSQL using Cloud SQL backups and the Google Cloud CLI.",
+      "keywords": [
+        "AlloyDB migration workflow",
+        "Cloud SQL backup import",
+        "Cloud SQL for PostgreSQL migration",
+        "AlloyDB migration from Cloud SQL",
+        "Cloud SQL-to-AlloyDB migration",
+        "Cloud SQL migration to AlloyDB",
+        "Cloud SQL backup migration",
+        "backup-based migration"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB backup plans recommender",
+      "feature_summary": "AlloyDB backup plans recommender is generally available.",
+      "keywords": [
+        "recommendation action plan",
+        "AlloyDB backup plan recommendations",
+        "backup plan recommendation",
+        "backup plan recommender",
+        "backup plans recommender",
+        "recommender backup plans",
+        "Backup Plans Recommender",
+        "Cloud Console recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB backup retention recommender",
+      "feature_summary": "AlloyDB backup retention recommender is generally available.",
+      "keywords": [
+        "retention period recommendation",
+        "backup retention recommendation",
+        "AlloyDB retention recommendation",
+        "retention setting recommender",
+        "backup retention recommender",
+        "Backup Retention Recommender",
+        "retention recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB cluster storage quota recommender",
+      "feature_summary": "AlloyDB cluster storage quota recommender is generally available.",
+      "keywords": [
+        "cluster storage utilization recommendation",
+        "quota optimization recommendation",
+        "storage quota recommendations",
+        "cluster storage quota recommender",
+        "AlloyDB storage quota recommender",
+        "Storage Quota Recommender",
+        "cluster storage recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB database auditing recommender",
+      "feature_summary": "AlloyDB database auditing recommender is generally available.",
+      "keywords": [
+        "database audit log recommendation",
+        "security audit recommendation",
+        "audit configuration recommendation",
+        "AlloyDB auditing recommendation",
+        "database auditing recommender",
+        "database audit recommender",
+        "Auditing Recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB high availability recommender",
+      "feature_summary": "AlloyDB high availability recommender is generally available.",
+      "keywords": [
+        "failure domain recommendation",
+        "high availability architecture recommendation",
+        "AlloyDB high availability recommendation",
+        "high availability recommendation",
+        "HA recommendation",
+        "high availability recommender",
+        "HA Recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB password policy recommender",
+      "feature_summary": "AlloyDB password policy recommender is generally available.",
+      "keywords": [
+        "credential hardening recommendation",
+        "database user password recommendation",
+        "AlloyDB password policy recommendation",
+        "password policy recommendation",
+        "password policy check",
+        "password policy recommender",
+        "Password Policy Recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB SSL/TLS encryption enforcement recommender",
+      "feature_summary": "AlloyDB SSL/TLS encryption enforcement recommender is generally available.",
+      "keywords": [
+        "TLS encryption enforcement recommendation",
+        "SSL/TLS encryption enforcement recommender",
+        "encrypted connection recommendation",
+        "SSL enforcement recommendation",
+        "TLS Enforcement Recommender",
+        "AlloyDB TLS guidance",
+        "SSL Enforcement Recommender"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "AlloyDB underprovisioned instances optimizer",
+      "feature_summary": "AlloyDB underprovisioned instances optimization recommender is generally available.",
+      "keywords": [
+        "underprovisioned instances recommendation",
+        "underprovisioned instances optimizer",
+        "Underprovisioned Instances Optimizer",
+        "instance sizing recommendation",
+        "instance size optimization",
+        "underprovisioned optimizer",
+        "AlloyDB underprovisioned instances"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-04-09",
+      "feature_name": "AlloyDB AI-assisted troubleshooting",
+      "feature_summary": "AlloyDB AI-assisted troubleshooting helps resolve complex performance issues like slow queries and high load and is available in Preview.",
+      "keywords": [
+        "performance issue investigation",
+        "slow query diagnostics",
+        "high load diagnostics",
+        "AI troubleshooting assistant",
+        "AI-assisted troubleshooting",
+        "AI Troubleshooter",
+        "AlloyDB AI troubleshooting"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-03-17",
+      "feature_name": "AlloyDB mandatory tagging with organization policies",
+      "feature_summary": "AlloyDB can enforce mandatory tags on cluster and backup resources via custom organization policies in Preview.",
+      "keywords": [
+        "org policy constraint",
+        "mandatory tagging",
+        "mandatory labels",
+        "required labels",
+        "required resource tags",
+        "org policy enforcement",
+        "backup resource tagging",
+        "cluster resource tagging"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-03-12",
+      "feature_name": "Automatic CMEK creation with Cloud KMS Autokey for AlloyDB",
+      "feature_summary": "AlloyDB now supports automatically creating customer-managed encryption keys for AlloyDB resources using Cloud KMS Autokey.",
+      "keywords": [
+        "customer-managed key generation",
+        "Cloud KMS Autokey",
+        "Autokey integration",
+        "CMEK automation",
+        "automatic key creation",
+        "CMEK provisioning",
+        "Autokey",
+        "auto-created CMEK"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-03-04",
+      "feature_name": "AlloyDB for PostgreSQL availability in europe-north2",
+      "feature_summary": "AlloyDB for PostgreSQL was added as a supported region in europe-north2 (Stockholm).",
+      "keywords": [
+        "europe north 2",
+        "europe-north2",
+        "eu-north2",
+        "new region launch",
+        "regional availability",
+        "Stockholm region",
+        "supported region"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-02-21",
+      "feature_name": "AlloyDB API-based data import for clusters",
+      "feature_summary": "You can import data into AlloyDB for PostgreSQL clusters through an API, with capabilities to cancel and check the status of imports.",
+      "keywords": [
+        "check import status",
+        "cluster import operation",
+        "import request",
+        "import jobs",
+        "API-based data import",
+        "cancel import",
+        "import data API",
+        "data import API"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-02-21",
+      "feature_name": "In-place major version upgrades to PostgreSQL 16",
+      "feature_summary": "AlloyDB clusters can now perform in-place major upgrades from PostgreSQL 14 or 15 to PostgreSQL 16.",
+      "keywords": [
+        "PG14 to PostgreSQL 16",
+        "PG15 to PostgreSQL 16",
+        "PG16 upgrade",
+        "in-place major upgrade",
+        "major PG upgrade",
+        "upgrade to PostgreSQL 16",
+        "PostgreSQL 16 migration",
+        "major version support"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-12-18",
+      "feature_name": "AlloyDB API-based data export from clusters",
+      "feature_summary": "You can export data from AlloyDB clusters via API, including the ability to cancel an export operation.",
+      "keywords": [
+        "export job status",
+        "cancel export operation",
+        "cluster export operation",
+        "export request",
+        "export data from cluster",
+        "export operations",
+        "AlloyDB API export",
+        "export API"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-10-10",
+      "feature_name": "AlloyDB read pool node restart",
+      "feature_summary": "AlloyDB now supports restarting one or more nodes in a read pool.",
+      "keywords": [
+        "read pool restart operation",
+        "restart one or more nodes",
+        "node restart in read pool",
+        "read pool node restart",
+        "restart read node",
+        "alloydb read pool nodes",
+        "read pool maintenance"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-09-17",
+      "feature_name": "Predefined CMEK organization policy for AlloyDB",
+      "feature_summary": "AlloyDB now supports applying the predefined CMEK organization policy to AlloyDB clusters and backups.",
+      "keywords": [
+        "customer-managed encryption keys",
+        "predefined CMEK organization policy",
+        "organization policy for clusters and backups",
+        "predefined key policy",
+        "AlloyDB CCK",
+        "AlloyDB CMEK policy",
+        "CMEK enforcement"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-09-16",
+      "feature_name": "GKE Autopilot to AlloyDB connection setup guidance",
+      "feature_summary": "A tutorial was added to show how to connect applications running on Google Kubernetes Engine Autopilot to AlloyDB instances.",
+      "keywords": [
+        "application connectivity from GKE",
+        "GKE-to-DB connection",
+        "connect GKE Autopilot",
+        "GKE Autopilot to AlloyDB",
+        "Autopilot tutorial",
+        "Autopilot-to-AlloyDB",
+        "AlloyDB connection setup"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-08-29",
+      "feature_name": "BigQuery query federation for AlloyDB",
+      "feature_summary": "BigQuery can run queries directly against data stored in AlloyDB databases through query federation.",
+      "keywords": [
+        "BigQuery external connection",
+        "BigQuery query federation",
+        "AlloyDB data source",
+        "federated queries",
+        "BigQuery federation",
+        "federated query",
+        "query AlloyDB from BigQuery",
+        "cross-engine query"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-08-16",
+      "feature_name": "AlloyDB Omni Kubernetes Operator load balancer annotation support",
+      "feature_summary": "The AlloyDB Omni Kubernetes Operator supports configuring load balancers by using Kubernetes annotations.",
+      "keywords": [
+        "annotation-based load balancing",
+        "load balancer annotation",
+        "LB annotation configuration",
+        "LB annotations",
+        "Kubernetes annotation",
+        "service annotations",
+        "AlloyDB Omni Operator"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-08-14",
+      "feature_name": "AlloyDB Omni database pod scheduling for balanced node distribution",
+      "feature_summary": "The AlloyDB Omni Kubernetes Operator can schedule new database Pods across nodes to balance cluster distribution and optimize performance.",
+      "keywords": [
+        "balanced node distribution",
+        "database pod scheduling",
+        "pod scheduling",
+        "alloydb pods across nodes",
+        "AlloyDB Omni scheduling",
+        "pod distribution",
+        "new database Pods"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-07-16",
+      "feature_name": "Cross-region backup location support",
+      "feature_summary": "AlloyDB now supports storing backups in cross-region backup locations.",
+      "keywords": [
+        "cross-regional backup",
+        "cross-region backup location",
+        "backup location support",
+        "cross-region backup storage",
+        "backup location",
+        "cross-region backups",
+        "AlloyDB backup region",
+        "backup region"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-07-10",
+      "feature_name": "Cloud Billing export queries by resource-level tags and names",
+      "feature_summary": "AlloyDB can query exported Cloud Billing data using resource-level tags and resource names.",
+      "keywords": [
+        "tag-aware billing queries",
+        "AlloyDB billing exports",
+        "billing query filters",
+        "resource-level tagging",
+        "billing export query",
+        "Cloud Billing export",
+        "billing export",
+        "resource names"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-07-09",
+      "feature_name": "Zero-data-loss switchover in cross-region replication",
+      "feature_summary": "AlloyDB supports zero-data-loss switchover in cross-region replication configurations for disaster recovery testing or migration.",
+      "keywords": [
+        "zero-data-loss switchover",
+        "switchover testing",
+        "ZDL switchover",
+        "disaster recovery switchover",
+        "zero data loss",
+        "zero-data-loss",
+        "cross-region switchover",
+        "cross-region migration"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-22",
+      "feature_name": "BigQuery and AlloyDB query federation",
+      "feature_summary": "BigQuery can now query data stored in AlloyDB through query federation.",
+      "keywords": [
+        "external table from AlloyDB",
+        "BQ federation",
+        "BigQuery query federation",
+        "AlloyDB federated query",
+        "BigQuery connection to AlloyDB",
+        "federated query",
+        "query AlloyDB from BigQuery",
+        "AlloyDB federation"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-10",
+      "feature_name": "AlloyDB Omni Docker environment variable compatibility",
+      "feature_summary": "The AlloyDB Omni simplified installation method now supports all environment variables from the official PostgreSQL Docker image.",
+      "keywords": [
+        "PostgreSQL Docker image env vars",
+        "docker-compose env support",
+        "AlloyDB Omni Docker environment variables",
+        "alloydb-omni env vars",
+        "PostgreSQL env vars",
+        "supported environment variables",
+        "Docker variable compatibility",
+        "Docker env"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-07",
+      "feature_name": "AlloyDB Omni sidecar containers",
+      "feature_summary": "AlloyDB Omni Kubernetes Operator now supports adding sidecar containers to a database cluster.",
+      "keywords": [
+        "add sidecar container",
+        "AlloyDB Omni sidecar containers",
+        "cluster sidecar specification",
+        "Kubernetes Operator sidecar",
+        "pod sidecar",
+        "sidecar for AlloyDB Omni",
+        "operator sidecar",
+        "cluster sidecar"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-06",
+      "feature_name": "AlloyDB local database user password policies",
+      "feature_summary": "Password policies can now be configured for AlloyDB local database users.",
+      "keywords": [
+        "password expiration rule",
+        "local user passwords",
+        "local database user password policy",
+        "per-user password settings",
+        "configure password complexity",
+        "user password rules",
+        "AlloyDB local users",
+        "password policy configuration"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-01",
+      "feature_name": "AlloyDB maintenance event email notifications",
+      "feature_summary": "Users can opt in to receive email notifications for upcoming AlloyDB maintenance events.",
+      "keywords": [
+        "maintenance event email notifications",
+        "email notification for maintenance",
+        "maintenance notification settings",
+        "maintenance email alerts",
+        "opt-in notifications",
+        "event notification",
+        "upcoming maintenance events",
+        "maintenance alerts"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-09",
+      "feature_name": "Active query monitoring",
+      "feature_summary": "AlloyDB now supports monitoring active queries to troubleshoot running database activity.",
+      "keywords": [
+        "troubleshoot long-running queries",
+        "active query diagnostics",
+        "monitor active queries",
+        "query monitor",
+        "query activity view",
+        "running query monitoring",
+        "active query monitoring",
+        "active query view"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-09",
+      "feature_name": "AlloyDB Omni natural language query",
+      "feature_summary": "AlloyDB Omni supports querying the database using natural language.",
+      "keywords": [
+        "Ask in English",
+        "plain-language query",
+        "natural language interface",
+        "AlloyDB Omni natural language query",
+        "NLQ",
+        "natural language to SQL",
+        "natural language SQL",
+        "text-to-SQL"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-09",
+      "feature_name": "Query Insights recommendations",
+      "feature_summary": "AlloyDB provides additional database insight recommendations through Query Insights.",
+      "keywords": [
+        "database insight recommendations",
+        "Insight recommendations",
+        "recommendation cards",
+        "query performance recommendations",
+        "Query Insights recommendations",
+        "Query Insights advisory",
+        "performance recommendations"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Cross-cluster physical replication in AlloyDB Omni",
+      "feature_summary": "AlloyDB Omni supports physical replication between primary and secondary clusters on separate Kubernetes clusters.",
+      "keywords": [
+        "physical DR replication",
+        "cross-cluster physical replication",
+        "physical replication",
+        "separate Kubernetes clusters",
+        "primary and secondary clusters",
+        "cross-cluster setup",
+        "cross-cluster replication"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Expanded AlloyDB Omni metrics visibility",
+      "feature_summary": "AlloyDB Omni now exposes a broader set of database and system metrics.",
+      "keywords": [
+        "broader metrics set",
+        "database metrics exposure",
+        "expanded metrics visibility",
+        "expanded visibility",
+        "system metrics view",
+        "metrics visibility",
+        "AlloyDB Omni metrics"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Failover connection compatibility in AlloyDB Omni HA",
+      "feature_summary": "High-availability failover in AlloyDB Omni no longer requires connection parameter changes.",
+      "keywords": [
+        "failover without parameter changes",
+        "no connection parameter changes",
+        "failover connection compatibility",
+        "high availability failover",
+        "failover compatibility",
+        "HA failover",
+        "AlloyDB Omni HA"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Logical replication configuration in AlloyDB Omni",
+      "feature_summary": "Users can enable and configure logical replication in AlloyDB Omni.",
+      "keywords": [
+        "logical replications setup",
+        "WAL-based logical replication",
+        "logical replication slots",
+        "publication and subscription",
+        "configure logical replication",
+        "logical replication in AlloyDB Omni",
+        "Omni logical replication",
+        "logical replication"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Multiple standby replicas for AlloyDB Omni HA clusters",
+      "feature_summary": "AlloyDB Omni high-availability clusters can include more than one standby replica.",
+      "keywords": [
+        "standby replica count",
+        "additional standby node",
+        "Omni HA cluster topology",
+        "multiple standbys",
+        "multiple standby replicas",
+        "multi-standby",
+        "HA standby replica",
+        "high-availability cluster"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Pod node affinity controls for AlloyDB Omni",
+      "feature_summary": "AlloyDB Omni can restrict pods to run only on specific Kubernetes nodes.",
+      "keywords": [
+        "pod affinity rules",
+        "assign pods to nodes",
+        "pod node affinity",
+        "node affinity controls",
+        "node placement policy",
+        "pod affinity",
+        "node affinity",
+        "node selector"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Point-in-time recovery for AlloyDB Omni backups",
+      "feature_summary": "AlloyDB Omni backups now support point-in-time recovery (PITR).",
+      "keywords": [
+        "restore to timestamp",
+        "PITR restore",
+        "restore to specific time",
+        "timepoint recovery",
+        "point-in-time recovery",
+        "backup recovery point",
+        "PITR",
+        "time-based recovery"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-08",
+      "feature_name": "Read-only HA standby replicas in AlloyDB Omni",
+      "feature_summary": "AlloyDB Omni allows an HA standby replica to be used as a read-only instance.",
+      "keywords": [
+        "read-only replica role",
+        "read-only HA standby replica",
+        "read-only standby replica",
+        "readable standby",
+        "read-only replica instance",
+        "read-only standby",
+        "HA standby"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-02",
+      "feature_name": "AlloyDB Studio generally available",
+      "feature_summary": "AlloyDB Studio is now generally available.",
+      "keywords": [
+        "GA status",
+        "AlloyDB Studio GA",
+        "AlloyDB Studio generally available",
+        "Studio GA",
+        "Studio generally available",
+        "general availability"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-03-13",
+      "feature_name": "Scheduled backups on AlloyDB secondary clusters",
+      "feature_summary": "AlloyDB supports scheduled backups on secondary clusters and automatically copies primary backup plans when a secondary cluster is created.",
+      "keywords": [
+        "automatic backup plan copy",
+        "scheduled backups",
+        "backup plan copy",
+        "secondary backup schedule",
+        "primary backup plan",
+        "secondary cluster backups",
+        "backup schedule",
+        "secondary cluster backup"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-03-12",
+      "feature_name": "AlloyDB Language Connectors GA",
+      "feature_summary": "AlloyDB Language Connectors are now generally available with automated mTLS and IAM-based authorization, including automated IAM authentication.",
+      "keywords": [
+        "language connector",
+        "Language Connectors GA",
+        "IAM-based authorization",
+        "automated IAM authentication",
+        "Studio language connectors",
+        "automated mTLS",
+        "AlloyDB Language Connectors",
+        "Language Connectors"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-02-29",
+      "feature_name": "AlloyDB Omni PostgreSQL compatibility level 15.5",
+      "feature_summary": "AlloyDB Omni updated its core PostgreSQL compatibility to version 15.5.",
+      "keywords": [
+        "compat level 15.5",
+        "PostgreSQL compatibility level",
+        "PostgreSQL engine version 15.5",
+        "compatibility level 15.5",
+        "PostgreSQL 15.5 compatibility",
+        "AlloyDB Omni compatibility",
+        "PostgreSQL version 15.5",
+        "AlloyDB Omni PostgreSQL"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-02-29",
+      "feature_name": "Automated failover for AlloyDB Omni HA Kubernetes clusters",
+      "feature_summary": "AlloyDB Omni now offers automated failover for highly available Kubernetes-based clusters in preview.",
+      "keywords": [
+        "automated cluster failover",
+        "AlloyDB Omni high availability",
+        "failover for Kubernetes",
+        "automated failover",
+        "HA Kubernetes clusters",
+        "cluster failover",
+        "HA failover",
+        "AlloyDB Omni HA"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-02-29",
+      "feature_name": "Configurable TCP port for AlloyDB Omni installation",
+      "feature_summary": "AlloyDB Omni installation via command-line can now specify the instance TCP port.",
+      "keywords": [
+        "configurable TCP port",
+        "instance TCP port",
+        "port parameter",
+        "TCP port",
+        "port setting",
+        "set database port",
+        "CLI install",
+        "--port"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-02-28",
+      "feature_name": "Google Cloud tags on AlloyDB resources",
+      "feature_summary": "AlloyDB now supports Google Cloud tags on cluster and backup resources to support granular IAM permissions.",
+      "keywords": [
+        "resource tag policy",
+        "tag-based IAM",
+        "GCP tags",
+        "resource-level tags",
+        "backup resource tags",
+        "resource tags",
+        "AlloyDB cluster tags",
+        "Google Cloud tags"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-02-20",
+      "feature_name": "Expanded AlloyDB node capacity",
+      "feature_summary": "AlloyDB instances can now be configured with up to 128 vCPUs and 864 GB RAM per node.",
+      "keywords": [
+        "864 GB RAM",
+        "per-node limits",
+        "vCPU cap",
+        "RAM cap",
+        "instance vCPU quota",
+        "128 vCPUs",
+        "node limit",
+        "AlloyDB node resources"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-01-24",
+      "feature_name": "AlloyDB events timeline region support",
+      "feature_summary": "AlloyDB now generally supports Cloud regions in its events timeline functionality.",
+      "keywords": [
+        "regional events timeline",
+        "timeline region coverage",
+        "events timeline regions",
+        "AlloyDB events timeline",
+        "events timeline",
+        "Events Timeline",
+        "timeline regions",
+        "AlloyDB timeline"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-01-22",
+      "feature_name": "Cross-project restoration",
+      "feature_summary": "AlloyDB supports restoring a cluster to a new cluster in a different Google Cloud project.",
+      "keywords": [
+        "restore to a new cluster in different project",
+        "restore cluster to another project",
+        "alloydb restore target project",
+        "cross-project cluster restore",
+        "AlloyDB cross-project restore",
+        "project-to-project restore",
+        "cross-project restoration"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-12-20",
+      "feature_name": "AlloyDB Omni 15.4.0 availability",
+      "feature_summary": "AlloyDB Omni version 15.4.0 is now available.",
+      "keywords": [
+        "supported AlloyDB Omni version 15.4.0",
+        "AlloyDB Omni release 15.4.0",
+        "v15.4.0",
+        "AlloyDB Omni 15.4.0 availability",
+        "AlloyDB Omni version 15.4.0",
+        "AlloyDB Omni 15.4.0",
+        "Omni 15.4.0"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-12-20",
+      "feature_name": "PostgreSQL 15.4 in AlloyDB Omni",
+      "feature_summary": "AlloyDB Omni now runs PostgreSQL version 15.4.",
+      "keywords": [
+        "AlloyDB Omni supported PostgreSQL version",
+        "AlloyDB Omni Postgres 15.4",
+        "AlloyDB Omni PostgreSQL 15.4",
+        "PostgreSQL version 15.4",
+        "Postgres 15.4",
+        "PG 15.4",
+        "PostgreSQL 15.4"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-12-14",
+      "feature_name": "64TiB per-cluster storage support",
+      "feature_summary": "AlloyDB now supports up to 64 TiB of storage per cluster in selected regions.",
+      "keywords": [
+        "selected regions 64TiB",
+        "cluster storage limit 64 TiB",
+        "64TiB storage per cluster",
+        "AlloyDB storage up to 64 TiB",
+        "64 TiB per-cluster storage",
+        "64TB",
+        "64 TiB"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-11-28",
+      "feature_name": "AlloyDB columnar engine array column support",
+      "feature_summary": "The AlloyDB columnar engine now supports columns of the array data type.",
+      "keywords": [
+        "columnar engine array columns",
+        "columnar array columns",
+        "columnar engine ARRAY support",
+        "support for ARRAY columns",
+        "array data type support",
+        "ARRAY support",
+        "AlloyDB columnar engine"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-11-15",
+      "feature_name": "OAuth 2.0 access token scoping for AlloyDB",
+      "feature_summary": "AlloyDB now allows restricting an OAuth 2.0 access token to be valid only for AlloyDB authentication.",
+      "keywords": [
+        "OAuth token audience restriction",
+        "OAuth 2.0 access token scoping",
+        "restrict OAuth token to AlloyDB",
+        "scoped OAuth access token",
+        "AlloyDB OAuth token scope",
+        "OAuth token scope",
+        "token audience",
+        "token scoping"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-11-08",
+      "feature_name": "oracle_fdw extension support in AlloyDB",
+      "feature_summary": "The oracle_fdw extension is now supported by AlloyDB to provide foreign data wrapper access to Oracle databases.",
+      "keywords": [
+        "Oracle foreign data wrapper",
+        "foreign tables to Oracle",
+        "foreign data wrapper extension",
+        "CREATE EXTENSION oracle_fdw",
+        "oracle_fdw extension",
+        "FDW Oracle access",
+        "Oracle FDW",
+        "oracle_fdw"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-15",
+      "feature_name": "Low-downtime maintenance for HA primary instances",
+      "feature_summary": "Maintenance operations on highly available primary instances now complete with under one second of downtime for most workloads.",
+      "keywords": [
+        "under one second downtime",
+        "low-downtime maintenance",
+        "low downtime",
+        "maintenance operation",
+        "HA primary instance maintenance",
+        "HA primary maintenance",
+        "high availability primary"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-13",
+      "feature_name": "Cloud External Key Manager support for AlloyDB encryption keys",
+      "feature_summary": "AlloyDB supports using and managing data-encryption keys stored outside Google Cloud via Cloud External Key Manager.",
+      "keywords": [
+        "Cloud External Key Manager integration",
+        "Cloud External Key Manager",
+        "external key store",
+        "customer-managed encryption keys",
+        "AlloyDB EKM",
+        "Cloud EKM",
+        "data encryption key",
+        "AlloyDB encryption keys"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-08-29",
+      "feature_name": "AlloyDB Omni command-line interface",
+      "feature_summary": "AlloyDB Omni includes a command-line interface to simplify installation and maintenance.",
+      "keywords": [
+        "AlloyDB Omni command-line interface",
+        "install AlloyDB Omni CLI",
+        "AlloyDB Omni command-line",
+        "AlloyDB Omni command line",
+        "CLI installation",
+        "AlloyDB Omni CLI",
+        "Omni CLI"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-08-29",
+      "feature_name": "AlloyDB Omni PostgreSQL 15 compatibility",
+      "feature_summary": "AlloyDB Omni 15.2.0 includes compatibility with PostgreSQL server version 15.",
+      "keywords": [
+        "PG15",
+        "compatibility with PostgreSQL",
+        "PostgreSQL server version",
+        "PostgreSQL version 15",
+        "Postgres 15",
+        "AlloyDB Omni 15.2.0",
+        "alloydb-omni-15.2.0",
+        "PostgreSQL 15"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-08-16",
+      "feature_name": "AlloyDB high-capacity node machine type",
+      "feature_summary": "AlloyDB instance machine-type configuration now includes an option of 96 vCPUs and 768 GB of RAM per node.",
+      "keywords": [
+        "96-core node",
+        "768 GB RAM",
+        "alloydb instance size",
+        "96 vCPUs",
+        "large node type",
+        "high-memory node",
+        "high-capacity node",
+        "node machine type"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-07-28",
+      "feature_name": "Cloud Asset Inventory support for AlloyDB",
+      "feature_summary": "Cloud Asset Inventory support for AlloyDB is generally available.",
+      "keywords": [
+        "resource asset inventory",
+        "AlloyDB Cloud Asset Inventory",
+        "Cloud Asset Inventory",
+        "asset feed",
+        "CAI integration",
+        "Cloud Asset API",
+        "AlloyDB CAI",
+        "CAI"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-07-18",
+      "feature_name": "AlloyDB data residency",
+      "feature_summary": "AlloyDB support for Data Residency is generally available.",
+      "keywords": [
+        "residency location",
+        "data residency controls",
+        "residency GA",
+        "residency controls",
+        "residency policy",
+        "data residency support",
+        "Data Residency"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-07-18",
+      "feature_name": "AlloyDB resource location policies",
+      "feature_summary": "AlloyDB now supports setting resource location policies to constrain where new in-scope resources can be created.",
+      "keywords": [
+        "resource location constraint",
+        "resource location control",
+        "allowed locations",
+        "placement policy",
+        "resource location policies",
+        "location policy",
+        "in-scope resources"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-06-30",
+      "feature_name": "AlloyDB fault injection",
+      "feature_summary": "AlloyDB introduced fault injection to simulate active-node outages and validate automatic standby failover via high availability.",
+      "keywords": [
+        "fault injection test",
+        "node failure simulation",
+        "simulate node failure",
+        "HA fault injection",
+        "fault injection",
+        "standby failover validation",
+        "active-node outage",
+        "high availability failover"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-06-12",
+      "feature_name": "AlloyDB cluster storage quota management",
+      "feature_summary": "Users can manage AlloyDB cluster storage quotas through the Quotas page.",
+      "keywords": [
+        "storage quota settings",
+        "storage quota management",
+        "cluster storage quotas",
+        "manage storage quota",
+        "cluster quota page",
+        "Quotas page",
+        "quota configuration",
+        "AlloyDB quotas"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-06-12",
+      "feature_name": "AlloyDB quota increase requests",
+      "feature_summary": "AlloyDB supports submitting quota increase requests through the AlloyDB quotas page.",
+      "keywords": [
+        "submit quota request",
+        "quota change request",
+        "limit increase request",
+        "quota increase request",
+        "request quota increase",
+        "increase storage quota",
+        "AlloyDB quotas page",
+        "quota increase"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-17",
+      "feature_name": "AlloyDB FORCE_APPLY update policy",
+      "feature_summary": "The FORCE_APPLY update policy became available in preview to apply AlloyDB database flag updates faster, typically within 1 to 2 minutes.",
+      "keywords": [
+        "FORCE_APPLY update policy",
+        "FORCE_APPLY mode",
+        "faster flag updates",
+        "apply database flags",
+        "database flag updates",
+        "preview update policy",
+        "FORCE_APPLY",
+        "force apply"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-11",
+      "feature_name": "AlloyDB cluster storage limit increase",
+      "feature_summary": "AlloyDB increased the maximum storage capacity per cluster to 32 TiB.",
+      "keywords": [
+        "32 TiB limit",
+        "maximum storage per cluster",
+        "cluster storage cap",
+        "storage quota increase",
+        "32 TiB",
+        "storage cap",
+        "storage capacity per cluster",
+        "cluster storage limit"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-10",
+      "feature_name": "AlloyDB columnar engine JSON and JSONB support",
+      "feature_summary": "The AlloyDB columnar engine added support for columns with json and jsonb data types.",
+      "keywords": [
+        "JSON/JSONB",
+        "columnar engine supports JSONB",
+        "columnar engine JSONB support",
+        "columnar engine JSON support",
+        "JSON data type support",
+        "columnar JSON support",
+        "JSONB support",
+        "AlloyDB columnar data types"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-04-24",
+      "feature_name": "AlloyDB read pool node health metrics",
+      "feature_summary": "Three read pool node health metrics were introduced in preview to help monitor and troubleshoot read pool node activity.",
+      "keywords": [
+        "monitor read pool nodes",
+        "read pool node health metrics",
+        "read pool node activity",
+        "troubleshoot read pool",
+        "preview health metrics",
+        "read pool monitoring",
+        "read node health",
+        "read pool metrics"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-03-29",
+      "feature_name": "AlloyDB Omni preview availability",
+      "feature_summary": "AlloyDB Omni became available in preview as a downloadable, containerized AlloyDB PostgreSQL edition.",
+      "keywords": [
+        "containerized PostgreSQL edition",
+        "downloadable AlloyDB Omni",
+        "containerized AlloyDB",
+        "AlloyDB Omni container",
+        "AlloyDB Omni availability",
+        "AlloyDB Omni preview",
+        "Omni preview"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-03-06",
+      "feature_name": "Cloud client libraries for AlloyDB Admin API",
+      "feature_summary": "Cloud client libraries for the AlloyDB Admin API entered preview with support for C++, C#, Go, and Java.",
+      "keywords": [
+        "Cloud client libraries for AlloyDB Admin API",
+        "AlloyDB Admin API client libraries",
+        "Java client for AlloyDB Admin API",
+        "Go client for AlloyDB Admin API",
+        "AlloyDB client SDK",
+        "C++ client for AlloyDB Admin API",
+        "C# client for AlloyDB Admin API",
+        "AlloyDB Admin API libraries"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-15",
+      "feature_name": "AlloyDB as Datastream Source",
+      "feature_summary": "Datastream support for AlloyDB enables AlloyDB clusters to be used as PostgreSQL sources for change data capture and replication workflows.",
+      "keywords": [
+        "Datastream source connector",
+        "Datastream source for PostgreSQL",
+        "AlloyDB as Datastream source",
+        "AlloyDB source for Datastream",
+        "AlloyDB Datastream connector",
+        "CDC source",
+        "change data capture",
+        "replication from AlloyDB"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-15",
+      "feature_name": "Database Migration Service Support for AlloyDB",
+      "feature_summary": "Google Cloud Database Migration Service can migrate existing PostgreSQL data and workloads into AlloyDB clusters.",
+      "keywords": [
+        "AlloyDB migration source",
+        "AlloyDB migration target",
+        "Migrate PostgreSQL to AlloyDB",
+        "DMS support for AlloyDB",
+        "PostgreSQL workload migration",
+        "Database Migration Service for AlloyDB",
+        "AlloyDB DMS",
+        "AlloyDB migration"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-08-24",
+      "feature_name": "AlloyDB Primary and Standby VM Zone Visibility",
+      "feature_summary": "Users can view which availability zones host active and standby virtual machines for a primary AlloyDB instance.",
+      "keywords": [
+        "primary and standby VM zones",
+        "standby VM zone",
+        "primary and standby placement",
+        "active VM zone",
+        "primary-standby zones",
+        "zone visibility"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-05-31",
+      "feature_name": "VPC Service Controls for AlloyDB",
+      "feature_summary": "AlloyDB is available with VPC Service Controls, helping reduce the risk of data exfiltration through perimeter-based protection.",
+      "keywords": [
+        "data exfiltration protection",
+        "perimeter-based protection",
+        "AlloyDB VPC-SC",
+        "AlloyDB VPC SC",
+        "VPC Service Controls for AlloyDB",
+        "AlloyDB perimeter access",
+        "VPC-SC",
+        "service perimeter"
+      ]
+    }
+  ],
+  "top_missing_tokens": [
+    {
+      "token": "alloydb",
+      "count": 100
+    },
+    {
+      "token": "now",
+      "count": 46
+    },
+    {
+      "token": "for",
+      "count": 39
+    },
+    {
+      "token": "and",
+      "count": 38
+    },
+    {
+      "token": "to",
+      "count": 36
+    },
+    {
+      "token": "supports",
+      "count": 32
+    },
+    {
+      "token": "in",
+      "count": 31
+    },
+    {
+      "token": "the",
+      "count": 29
+    },
+    {
+      "token": "can",
+      "count": 21
+    },
+    {
+      "token": "omni",
+      "count": 21
+    },
+    {
+      "token": "available",
+      "count": 20
+    },
+    {
+      "token": "support",
+      "count": 19
+    },
+    {
+      "token": "with",
+      "count": 19
+    },
+    {
+      "token": "is",
+      "count": 16
+    },
+    {
+      "token": "data",
+      "count": 15
+    },
+    {
+      "token": "cloud",
+      "count": 14
+    },
+    {
+      "token": "cluster",
+      "count": 14
+    },
+    {
+      "token": "clusters",
+      "count": 14
+    },
+    {
+      "token": "postgresql",
+      "count": 14
+    },
+    {
+      "token": "generally",
+      "count": 13
+    },
+    {
+      "token": "database",
+      "count": 12
+    },
+    {
+      "token": "on",
+      "count": 11
+    },
+    {
+      "token": "availability",
+      "count": 10
+    },
+    {
+      "token": "node",
+      "count": 9
+    },
+    {
+      "token": "of",
+      "count": 9
+    },
+    {
+      "token": "query",
+      "count": 9
+    },
+    {
+      "token": "through",
+      "count": 9
+    },
+    {
+      "token": "google",
+      "count": 8
+    },
+    {
+      "token": "instance",
+      "count": 8
+    },
+    {
+      "token": "preview",
+      "count": 8
+    },
+    {
+      "token": "recommender",
+      "count": 8
+    },
+    {
+      "token": "using",
+      "count": 8
+    },
+    {
+      "token": "be",
+      "count": 7
+    },
+    {
+      "token": "instances",
+      "count": 7
+    },
+    {
+      "token": "kubernetes",
+      "count": 7
+    },
+    {
+      "token": "performance",
+      "count": 7
+    },
+    {
+      "token": "read",
+      "count": 7
+    },
+    {
+      "token": "users",
+      "count": 7
+    },
+    {
+      "token": "an",
+      "count": 6
+    },
+    {
+      "token": "backup",
+      "count": 6
+    }
+  ]
+}

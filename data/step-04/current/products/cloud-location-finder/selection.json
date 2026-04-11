@@ -1,21 +1,23 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T06:22:39.731Z",
+  "generated_at": "2026-04-10T21:06:31.243Z",
   "product_name": "Cloud Location Finder",
   "product_slug": "cloud-location-finder",
   "step03_ranking_path": "data/step-03/current/products/cloud-location-finder/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "api_reference",
       "iam_reference",
       "python_reference"
-    ]
+    ],
+    "feature_count": 5
   },
   "site_output_mode": "compact",
   "selected_source_count": 4,
-  "selected_sources_signature": "d7cced0a166f0ff978e217808c4a3ec39c2e8db788ef5b4869df7342a91417b1",
+  "selected_sources_signature": "61b7997390ce21eb9f680dadad19bd31954bad659aca687f8ce56164cdf7d55d",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -25,8 +27,9 @@
       "url": "https://docs.cloud.google.com/location-finder/docs",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 30
     },
     {
       "source_id": "site-api-reference",
@@ -36,8 +39,9 @@
       "url": "https://docs.cloud.google.com/location-finder/docs/reference/rest",
       "final_score": 100,
       "best_rank": 4,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     },
     {
       "source_id": "site-iam-reference",
@@ -47,8 +51,9 @@
       "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudlocationfinder",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     },
     {
       "source_id": "site-python-reference",
@@ -58,8 +63,9 @@
       "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-locationfinder/latest",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     }
   ],
   "corpus_paths": {

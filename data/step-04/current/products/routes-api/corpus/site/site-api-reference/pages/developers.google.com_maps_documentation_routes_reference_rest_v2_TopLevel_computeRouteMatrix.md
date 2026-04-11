@@ -1,0 +1,270 @@
+---
+title: "Method: computeRouteMatrix \_|\_ Routes API \_|\_ Google for Developers"
+url: https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix
+knowledge_key: corpus
+source_id: site-api-reference
+source_type: site
+entrypoint: https://developers.google.com/maps/documentation/routes/reference/rest
+source_metadata:
+  url: https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix
+  title: "Method: computeRouteMatrix \_|\_ Routes API \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Products
+Google Maps Platform
+Documentation
+Web Services
+Routes API
+Reference
+Send feedback
+Method: computeRouteMatrix
+Stay organized with collections
+Save and categorize content based on your preferences.
+Page Summary
+outlined_flag
+Takes a list of origins and destinations, returning route information for each pair.
+Requires specifying a response field mask for efficient data retrieval.
+Supports various travel modes, routing preferences, and departure/arrival times.
+May use fallback mode with different computation if preferred route is unavailable.
+Includes route distance, duration, traffic conditions, and optional toll information.
+HTTP request
+Request body
+JSON representation
+Response body
+JSON representation
+RouteMatrixOrigin
+JSON representation
+RouteMatrixDestination
+JSON representation
+ExtraComputation
+RouteMatrixElementCondition
+LocalizedValues
+JSON representation
+Takes in a list of origins and destinations and returns a stream containing route information for each combination of origin and destination.
+NOTE: This method requires that you specify a response field mask in the input. You can provide the response field mask by using the URL parameter $fields or fields , or by using the HTTP/gRPC header X-Goog-FieldMask (see the available URL parameters and headers ). The value is a comma separated list of field paths. See this detailed documentation about how to construct the field paths .
+For example, in this method:
+Field mask of all available fields (for manual inspection): X-Goog-FieldMask: *
+Field mask of route durations, distances, element status, condition, and element indices (an example production setup): X-Goog-FieldMask:
+originIndex,destinationIndex,status,condition,distanceMeters,duration
+It is critical that you include status in your field mask as otherwise all messages will appear to be OK. Google discourages the use of the wildcard ( * ) response field mask, because:
+Selecting only the fields that you need helps our server save computation cycles, allowing us to return the result to you with a lower latency.
+Selecting only the fields that you need in your production job ensures stable latency performance. We might add more response fields in the future, and those new fields might require extra computation time. If you select all fields, or if you select all fields at the top level, then you might experience performance degradation because any new field we add will be automatically included in the response.
+Selecting only the fields that you need results in a smaller response size, and thus higher network throughput.
+HTTP request
+POST https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix
+The URL uses gRPC Transcoding syntax.
+Request body
+The request body contains data with the following structure:
+JSON representation
+{
+"origins" : [
+{
+object ( RouteMatrixOrigin )
+}
+] ,
+"destinations" : [
+{
+object ( RouteMatrixDestination )
+}
+] ,
+"travelMode" : enum ( RouteTravelMode ) ,
+"routingPreference" : enum ( RoutingPreference ) ,
+"departureTime" : string ,
+"arrivalTime" : string ,
+"languageCode" : string ,
+"regionCode" : string ,
+"units" : enum ( Units ) ,
+"extraComputations" : [
+enum ( ExtraComputation )
+] ,
+"trafficModel" : enum ( TrafficModel ) ,
+"transitPreferences" : {
+object ( TransitPreferences )
+}
+}
+Fields
+origins[]
+object ( RouteMatrixOrigin )
+Required. Array of origins, which determines the rows of the response matrix. Several size restrictions apply to the cardinality of origins and destinations:
+The sum of the number of origins + the number of destinations specified as either placeId or address must be no greater than 50.
+The product of number of origins × number of destinations must be no greater than 625 in any case.
+The product of the number of origins × number of destinations must be no greater than 100 if routingPreference is set to TRAFFIC_AWARE_OPTIMAL .
+The product of the number of origins × number of destinations must be no greater than 100 if travelMode is set to TRANSIT .
+destinations[]
+object ( RouteMatrixDestination )
+Required. Array of destinations, which determines the columns of the response matrix.
+travelMode
+enum ( RouteTravelMode )
+Optional. Specifies the mode of transportation.
+routingPreference
+enum ( RoutingPreference )
+Optional. Specifies how to compute the route. The server attempts to use the selected routing preference to compute the route. If the routing preference results in an error or an extra long latency, an error is returned. You can specify this option only when the travelMode is DRIVE or TWO_WHEELER , otherwise the request fails.
+departureTime
+string ( Timestamp format)
+Optional. The departure time. If you don't set this value, then this value defaults to the time that you made the request. NOTE: You can only specify a departureTime in the past when RouteTravelMode is set to TRANSIT .
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+arrivalTime
+string ( Timestamp format)
+Optional. The arrival time. NOTE: Can only be set when RouteTravelMode is set to TRANSIT . You can specify either departureTime or arrivalTime , but not both.
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+languageCode
+string
+Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see Unicode Locale Identifier . See Language Support for the list of supported languages. When you don't provide this value, the display language is inferred from the location of the first origin.
+regionCode
+string
+Optional. The region code, specified as a ccTLD ("top-level domain") two-character value. For more information see Country code top-level domains .
+units
+enum ( Units )
+Optional. Specifies the units of measure for the display fields.
+extraComputations[]
+enum ( ExtraComputation )
+Optional. A list of extra computations which may be used to complete the request. Note: These extra computations may return extra fields on the response. These extra fields must also be specified in the field mask to be returned in the response.
+trafficModel
+enum ( TrafficModel )
+Optional. Specifies the assumptions to use when calculating time in traffic. This setting affects the value returned in the duration field in the RouteMatrixElement which contains the predicted time in traffic based on historical averages. TrafficModel is only available for requests that have set RoutingPreference to TRAFFIC_AWARE_OPTIMAL and RouteTravelMode to DRIVE . Defaults to BEST_GUESS if traffic is requested and TrafficModel is not specified.
+transitPreferences
+object ( TransitPreferences )
+Optional. Specifies preferences that influence the route returned for TRANSIT routes. NOTE: You can only specify a transitPreferences when RouteTravelMode is set to TRANSIT .
+Response body
+Contains route information computed for an origin/destination pair in the v2.computeRouteMatrix API. This proto can be streamed to the client.
+If successful, the response body contains data with the following structure:
+JSON representation
+{
+"status" : {
+object ( Status )
+} ,
+"condition" : enum ( RouteMatrixElementCondition ) ,
+"distanceMeters" : integer ,
+"duration" : string ,
+"staticDuration" : string ,
+"travelAdvisory" : {
+object ( RouteTravelAdvisory )
+} ,
+"fallbackInfo" : {
+object ( FallbackInfo )
+} ,
+"localizedValues" : {
+object ( LocalizedValues )
+} ,
+"originIndex" : integer ,
+"destinationIndex" : integer
+}
+Fields
+status
+object ( Status )
+Error status code for this element.
+condition
+enum ( RouteMatrixElementCondition )
+Indicates whether the route was found or not. Independent of status.
+distanceMeters
+integer
+The travel distance of the route, in meters.
+duration
+string ( Duration format)
+The length of time needed to navigate the route. If you set the routingPreference to TRAFFIC_UNAWARE , then this value is the same as staticDuration . If you set the routingPreference to either TRAFFIC_AWARE or TRAFFIC_AWARE_OPTIMAL , then this value is calculated taking traffic conditions into account.
+A duration in seconds with up to nine fractional digits, ending with ' s '. Example: "3.5s" .
+staticDuration
+string ( Duration format)
+The duration of traveling through the route without taking traffic conditions into consideration.
+A duration in seconds with up to nine fractional digits, ending with ' s '. Example: "3.5s" .
+travelAdvisory
+object ( RouteTravelAdvisory )
+Additional information about the route. For example: restriction information and toll information
+fallbackInfo
+object ( FallbackInfo )
+In some cases when the server is not able to compute the route with the given preferences for this particular origin/destination pair, it may fall back to using a different mode of computation. When fallback mode is used, this field contains detailed information about the fallback response. Otherwise this field is unset.
+localizedValues
+object ( LocalizedValues )
+Text representations of properties of the RouteMatrixElement .
+originIndex
+integer
+Zero-based index of the origin in the request.
+destinationIndex
+integer
+Zero-based index of the destination in the request.
+RouteMatrixOrigin
+A single origin for ComputeRouteMatrixRequest
+JSON representation
+{
+"waypoint" : {
+object ( Waypoint )
+} ,
+"routeModifiers" : {
+object ( RouteModifiers )
+}
+}
+Fields
+waypoint
+object ( Waypoint )
+Required. Origin waypoint
+routeModifiers
+object ( RouteModifiers )
+Optional. Modifiers for every route that takes this as the origin
+RouteMatrixDestination
+A single destination for ComputeRouteMatrixRequest
+JSON representation
+{
+"waypoint" : {
+object ( Waypoint )
+}
+}
+Fields
+waypoint
+object ( Waypoint )
+Required. Destination waypoint
+ExtraComputation
+Extra computations to perform while completing the request.
+Enums
+EXTRA_COMPUTATION_UNSPECIFIED
+Not used. Requests containing this value will fail.
+TOLLS
+Toll information for the matrix element(s).
+RouteMatrixElementCondition
+The condition of the route being returned.
+Enums
+ROUTE_MATRIX_ELEMENT_CONDITION_UNSPECIFIED
+Only used when the status of the element is not OK.
+ROUTE_EXISTS
+A route was found, and the corresponding information was filled out for the element.
+ROUTE_NOT_FOUND
+No route could be found. Fields containing route information, such as distanceMeters or duration , will not be filled out in the element.
+LocalizedValues
+Text representations of certain properties.
+JSON representation
+{
+"distance" : {
+object ( LocalizedText )
+} ,
+"duration" : {
+object ( LocalizedText )
+} ,
+"staticDuration" : {
+object ( LocalizedText )
+} ,
+"transitFare" : {
+object ( LocalizedText )
+}
+}
+Fields
+distance
+object ( LocalizedText )
+Travel distance represented in text form.
+duration
+object ( LocalizedText )
+Duration represented in text form taking traffic conditions into consideration. Note: If traffic information was not requested, this value is the same value as staticDuration.
+staticDuration
+object ( LocalizedText )
+Duration represented in text form without taking traffic conditions into consideration.
+transitFare
+object ( LocalizedText )
+Transit fare represented in text form.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-21 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-10-21 UTC."],[],["This API computes route information for combinations of origins and destinations. It accepts lists of `origins` and `destinations` in the request body, with restrictions on their cardinality. The API supports various travel modes, routing preferences, departure/arrival times, and traffic models. It returns a stream of route details in the response body, including `status`, `condition`, `distanceMeters`, `duration`, and localized values. The API also uses a field mask to limit the amount of information in the response.\n"]]

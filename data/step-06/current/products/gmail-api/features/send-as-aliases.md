@@ -1,0 +1,108 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T18:48:08.237Z"
+product_name: "Gmail API"
+product_slug: "gmail-api"
+feature_name: "Send-as aliases"
+feature_slug: "send-as-aliases"
+latest_feature_date: "2016-07-01"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings"
+  - "https://developers.google.com/workspace/gmail/api/guides/sending"
+  - "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings"
+  - "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
+keywords:
+  - "send"
+  - "as"
+  - "aliases"
+  - "new"
+  - "endpoints"
+  - "are"
+  - "available"
+  - "for"
+---
+
+# Send-as aliases
+
+Product: Gmail API
+Coverage: LOW
+
+## Step 02 Summary
+
+New endpoints are available for managing send-as aliases in mail settings.
+
+## Extended Definition
+
+New endpoints are available for managing send-as aliases in mail settings.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings)
+- [https://developers.google.com/workspace/gmail/api/guides/sending](https://developers.google.com/workspace/gmail/api/guides/sending)
+- [https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings](https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings)
+- [https://developers.google.com/workspace/gmail/api/guides/smime_certs](https://developers.google.com/workspace/gmail/api/guides/smime_certs)
+
+## Supporting Pages
+
+### Manage aliases and signatures with the Gmail API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings)
+- Source ID: `site-docs-root`
+- Final score: 182
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Builder ( new NetHttpTransport (), GsonFactory . getDefaultInstance (), requestInitializer ) . setApplicationName ( "Gmail samples" ) . build (); try { SendAs primaryAlias = null ; ListSendAsResponse aliases = service . users (). settings (). sendAs (). list ( "me" ). execute (); for ( SendAs alias : aliases . getSendAs ()) { if ( alias . getIsPrimary ()) { primaryAlias = alias ; break ; } } // Updating a new signature SendAs aliasSettings = new SendAs (). setSignature ( "Automated Signature" ); SendAs result = service . users (). settings (). sendAs (). patch ( "me" , primaryAlias . getSendAsEmail (), aliasSettings ) . execute (); //Prints the updated signature System . out . println ( "Updated signature - " + result . getSignature ()); return result . getSignature (); } catch ( GoogleJsonResponseException e ) { // TODO(developer) - handle error appropriately GoogleJsonError error = e . getDetails (); if ( error . getCode () == 403 ) { System . err . println ( "Unable to update signature: " + e . getDetails ()); } else { throw e ; } } return null ; } } Python gmail/snippet/settings snippets/update signature.py View on GitHub import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def update signature (): """Create and update signature in gmail.
+- TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. """ creds , = google . auth . default () try : create gmail api client service = build ( "gmail" , "v1" , credentials = creds ) primary alias = None pylint: disable=E1101 aliases = service . users () . settings () . sendAs () . list ( userId = "me" ) . execute () for alias in aliases . get ( "sendAs" ): if alias . get ( "isPrimary" ): primary alias = alias break send as configuration = { "displayName" : primary alias . get ( "sendAsEmail" ), "signature" : "Automated Signature" , } pylint: disable=E1101 result = ( service . users () . settings () . sendAs () . patch ( userId = "me" , sendAsEmail = primary alias . get ( "sendAsEmail" ), body = send as configuration , ) . execute () ) print ( f 'Updated signature for: { result . get ( "displayName" ) } ' ) except HttpError as error : print ( f "An error occurred: { error } " ) result = None return result . get ( "signature" ) if name == " main " : update signature () Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- For information about how to create , list , get , update , or delete aliases, see the settings.SendAs resource.
+- SMTP settings Aliases for external addresses should send mail through a remote SMTP mail sending agent (MSA).
+
+### Create and send email messages \_|\_ Gmail \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/api/guides/sending](https://developers.google.com/workspace/gmail/api/guides/sending)
+- Source ID: `site-docs-root`
+- Final score: 144
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- TO , new InternetAddress ( toEmailAddress )); email . setSubject ( subject ); email . setText ( bodyText ); return email ; } } Next, encode the MimeMessage , instantiate a messages object, and set the base64URL encoded message string as the value of the raw property. gmail/snippets/src/main/java/CreateMessage.java View on GitHub import com.google.api.services.gmail.model.Message ; import java.io.ByteArrayOutputStream ; import java.io.IOException ; import javax.mail.MessagingException ; import javax.mail.internet.MimeMessage ; import org.apache.commons.codec.binary.Base64 ; / Class to demonstrate the use of Gmail Create Message API / public class CreateMessage { / Create a message from an email. @param emailContent Email to be set to raw of message @return a message containing a base64url encoded email @throws IOException - if service account credentials file not found. @throws MessagingException - if a wrongly formatted address is encountered. / public static Message createMessageWithEmail ( MimeMessage emailContent ) throws MessagingException , IOException { ByteArrayOutputStream buffer = new ByteArrayOutputStream (); emailContent . writeTo ( buffer ); byte [] bytes = buffer . toByteArray (); String encodedEmail = Base64 . encodeBase64URLSafeString ( bytes ); Message message = new Message (); message . setRaw ( encodedEmail ); return message ; } } Python The following code sample shows how to create a MIME message, encode it to a base64URL string, and assign it to the raw field of the messages resource: gmail/snippet/send mail/create draft.py View on GitHub import base64 from email.message import EmailMessage import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def gmail create draft (): """Create and insert a draft email.
+- TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. """ creds , = google . auth . default () try : service = build ( "gmail" , "v1" , credentials = creds ) message = EmailMessage () message . set content ( "This is automated draft mail" ) message [ "To" ] = "gduser1@workspacesamples.dev" message [ "From" ] = "gduser2@workspacesamples.dev" message [ "Subject" ] = "Automated draft" encoded message encoded message = base64 . urlsafe b64encode ( message . as bytes ()) . decode () create message = { "raw" : encoded message } pylint: disable=E1101 send message = ( service . users () . messages () . send ( userId = "me" , body = create message ) . execute () ) print ( f 'Message Id: { send message [ "id" ] } ' ) except HttpError as error : print ( f "An error occurred: { error } " ) send message = None return send message if name == " main " : gmail send message () cURL curl --request POST \ 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send' \ --header 'Authorization: Bearer ACCESS TOKEN ' \ --header 'Accept: application/json' \ --header 'Content-Type: application/json' \ --data '{"raw":" MESSAGE "}' Replace the following: ACCESS TOKEN : the access token that grants access to the API.
+- The following code sample shows how to create the email message, including the headers: gmail/snippets/src/main/java/CreateEmail.java View on GitHub import java.util.Properties ; import javax.mail.MessagingException ; import javax.mail.Session ; import javax.mail.internet.InternetAddress ; import javax.mail.internet.MimeMessage ; / Class to demonstrate the use of Gmail Create Email API / public class CreateEmail { / Create a MimeMessage using the parameters provided. @param toEmailAddress email address of the receiver @param fromEmailAddress email address of the sender, the mailbox account @param subject subject of the email @param bodyText body text of the email @return the MimeMessage to be used to send email @throws MessagingException - if a wrongly formatted address is encountered. / public static MimeMessage createEmail ( String toEmailAddress , String fromEmailAddress , String subject , String bodyText ) throws MessagingException { Properties props = new Properties (); Session session = Session . getDefaultInstance ( props , null ); MimeMessage email = new MimeMessage ( session ); email . setFrom ( new InternetAddress ( fromEmailAddress )); email . addRecipient ( javax . mail .
+- TO , new InternetAddress ( toEmailAddress )); email . setSubject ( messageSubject ); MimeBodyPart mimeBodyPart = new MimeBodyPart (); mimeBodyPart . setContent ( bodyText , "text/plain" ); Multipart multipart = new MimeMultipart (); multipart . addBodyPart ( mimeBodyPart ); mimeBodyPart = new MimeBodyPart (); DataSource source = new FileDataSource ( file ); mimeBodyPart . setDataHandler ( new DataHandler ( source )); mimeBodyPart . setFileName ( file . getName ()); multipart . addBodyPart ( mimeBodyPart ); email . setContent ( multipart ); // Encode and wrap the MIME message into a gmail message ByteArrayOutputStream buffer = new ByteArrayOutputStream (); email . writeTo ( buffer ); byte [] rawMessageBytes = buffer . toByteArray (); String encodedEmail = Base64 . encodeBase64URLSafeString ( rawMessageBytes ); Message message = new Message (); message . setRaw ( encodedEmail ); try { // Create the draft message Draft draft = new Draft (); draft . setMessage ( message ); draft = service . users (). drafts (). create ( "me" , draft ). execute (); System . out . println ( "Draft id: " + draft . getId ()); System . out . println ( draft . toPrettyString ()); return draft ; } catch ( GoogleJsonResponseException e ) { // TODO(developer) - handle error appropriately GoogleJsonError error = e . getDetails (); if ( error . getCode () == 403 ) { System . err . println ( "Unable to create draft: " + e . getDetails ()); } else { throw e ; } } return null ; } } Python Similar to the create messages example, this example also handles encoding the message to base64URL and assigning it to the raw field of the messages resource. gmail/snippet/send mail/create draft with attachment.py View on GitHub import base64 import mimetypes import os from email.message import EmailMessage from email.mime.audio import MIMEAudio from email.mime.base import MIMEBase from email.mime.image import MIMEImage from email.mime.text import MIMEText import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def gmail create draft with attachment (): """Create and insert a draft email with attachment.
+
+### Migrate from the Email Settings API \_|\_ Gmail \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings](https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings)
+- Source ID: `site-docs-root`
+- Final score: 144
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Old setting New setting name displayName address sendAsEmail replyTo replyToAddress makeDefault isDefault Manage web clips Web Clip settings are not available in the Gmail API.
+- Old setting New setting Notes from criteria.from to criteria.to subject criteria.subject hasTheWord criteria.query doesNotHaveTheWord criteria.negatedQuery hasAttachment criteria.hasAttachment shouldArchive action.removeLabelIds Use INBOX as the label ID shouldMarkAsRead action.removeLabelIds Use UNREAD as the label ID shouldStar action.addLabelIds Use STARRED as the label ID label action.addLabelIds Use the ID of the label to add forwardTo action.forward shouldTrash action.addLabelIds Use TRASH as the label ID neverSpam action.removeLabelIds Use SPAM as the label ID Other changes: If adding a user label doesn't already exist, it must be explicitly created using the labels.create method.
+- If either of the delegator or delegate users are disabled (for example, suspended in Google Workspace) this method fails with an HTTP 4XX error instead of an HTTP 500 error. settings.delegates.delete This method can now be used to delete delegates with any VerificationStatus , rather than just delegates which are accepted or expired . settings.delegates.get This is a new method, which might be preferable over the settings.delegates.list method depending on need.
+- Old setting New setting Notes enable accessWindow Disabled when set to disabled enableFor accessWindow ALL MAIL is now allMail MAIL FROM NOW ON is now fromNowOn action disposition KEEP is now leaveInInbox ARCHIVE is now archive DELETE is now trash MARK READ is now markRead Manage IMAP settings To manage IMAP access in the Gmail API, use the settings resource.
+
+### Manage S/MIME certificates with the Gmail API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/gmail/api/guides/smime_certs](https://developers.google.com/workspace/gmail/api/guides/smime_certs)
+- Source ID: `site-docs-root`
+- Final score: 142
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. """ if not send as email : send as email = user id creds , = google . auth . default () try : create gmail api client service = build ( "gmail" , "v1" , credentials = creds ) pylint: disable=maybe-no-member results = ( service . users () . settings () . sendAs () . smimeInfo () . list ( userId = user id , sendAsEmail = send as email ) . execute () ) except HttpError as error : print ( f "An error occurred during list: { error } " ) return None default cert id = None best cert id = ( None , datetime . datetime . fromtimestamp ( 0 )) if not expire dt : expire dt = datetime . datetime . now () if results and "smimeInfo" in results : for smime info in results [ "smimeInfo" ]: cert id = smime info [ "id" ] is default cert = smime info [ "isDefault" ] if is default cert : default cert id = cert id exp = datetime . datetime . fromtimestamp ( smime info [ "expiration" ] / 1000 ) if exp > expire dt : if exp > best cert id [ 1 ]: best cert id = ( cert id , exp ) else : if is default cert : default cert id = None if not default cert id : default id = best cert id [ 0 ] if not default id and cert filename : create smime info . create smime info ( cert filename = cert filename , cert password = cert password ) results = insert smime info . insert smime info () if results : default id = results [ "id" ] if default id : try : pylint: disable=maybe-no-member service . users () . settings () . sendAs () . smimeInfo () . setDefault ( userId = user id , sendAsEmail = send as email , id = default id ) . execute () return default id except HttpError as error : print ( f "An error occurred during setDefault: { error } " ) else : return default cert id return None if name == " main " : update smime cert ( user id = "xyz" , send as email = None , cert filename = "xyz" , cert password = "xyz" , expire dt = None , ) Related topics Manage aliases and signatures with the Gmail API Choose Gmail API scopes Turn on hosted S/MIME for message encryption Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. """ creds , = google . auth . default () try : create gmail api client service = build ( "gmail" , "v1" , credentials = creds ) user id = "gduser1@workspacesamples.dev" smime info = create smime info . create smime info ( cert filename = "xyz" , cert password = "xyz" ) send as email = None if not send as email : send as email = user id pylint: disable=maybe-no-member results = ( service . users () . settings () . sendAs () . smimeInfo () . insert ( userId = user id , sendAsEmail = send as email , body = smime info ) . execute () ) print ( f 'Inserted certificate; id: { results [ "id" ] } ' ) except HttpError as error : print ( f "An error occurred: { error } " ) results = None return results if name == " main " : insert smime info () Manage multiple users' certificates These code samples show how to manage certificates for multiple users in an organization in one batch call: Insert certificates from a CSV file The following is a sample CSV file that lists user IDs and the path to each user's certificate: $ cat certificates.csv user1@example.com,/path/to/user1 cert.p12,cert password 1 user2@example.com,/path/to/user2 cert.p12,cert password 2 user3@example.com,/path/to/user3 cert.p12,cert password 3 Java You can use the CreateSmimeInfo and InsertSmimeInfo samples to upload the certificates for the users specified in a CSV file: gmail/snippets/src/main/java/InsertCertFromCsv.java View on GitHub import com.google.api.services.gmail.model.SmimeInfo ; import java.io.File ; import org.apache.commons.csv.CSVFormat ; import org.apache.commons.csv.CSVParser ; import org.apache.commons.csv.CSVRecord ; / Class to demonstrate the use of Gmail Insert Certificate from CSV File / public class InsertCertFromCsv { / Upload S/MIME certificates based on the contents of a CSV file. <p>Each row of the CSV file should contain a user ID, path to the certificate, and the certificate password. @param csvFilename Name of the CSV file. / public static void insertCertFromCsv ( String csvFilename ) { try { File csvFile = new File ( csvFilename ); CSVParser parser = CSVParser . parse ( csvFile , java . nio . charset .
+- Code samples The following code samples show how to use the Gmail API to manage S/MIME certificates for an organization with multiple users: Create an smimeInfo resource for an S/MIME certificate This code sample shows how to read a certificate from a file, encode it to a Base64URL string, and assign it to the pkcs12 field on the settings.sendAs.smimeInfo resource: Java gmail/snippets/src/main/java/CreateSmimeInfo.java View on GitHub import com.google.api.services.gmail.model.SmimeInfo ; import java.io.File ; import java.io.FileInputStream ; import java.io.IOException ; import java.io.InputStream ; import java.util.Base64 ; / Class to demonstrate the use of Gmail Create SmimeInfo API / public class CreateSmimeInfo { / Create an SmimeInfo resource for a certificate from file. @param filename Name of the file containing the S/MIME certificate. @param password Password for the certificate file, or null if the file is not password-protected. @return An SmimeInfo object with the specified certificate. / public static SmimeInfo createSmimeInfo ( String filename , String password ) { SmimeInfo smimeInfo = null ; InputStream in = null ; try { File file = new File ( filename ); in = new FileInputStream ( file ); byte [] fileContent = new byte [ ( int ) file . length () ] ; in . read ( fileContent ); smimeInfo = new SmimeInfo (); smimeInfo . setPkcs12 ( Base64 . getUrlEncoder (). encodeToString ( fileContent )); if ( password != null && password . length () > 0 ) { smimeInfo . setEncryptedKeyPassword ( password ); } } catch ( Exception e ) { System . out . printf ( "An error occured while reading the certificate file: %s\n" , e ); } finally { try { if ( in != null ) { in . close (); } } catch ( IOException ioe ) { System . out . printf ( "An error occured while closing the input stream: %s\n" , ioe ); } } return smimeInfo ; } } Python gmail/snippet/smime snippets/create smime info.py View on GitHub import base64 def create smime info ( cert filename , cert password ): """Create an smimeInfo resource for a certificate from file.
+- Builder ( new NetHttpTransport (), GsonFactory . getDefaultInstance (), requestInitializer ) . setApplicationName ( "Gmail samples" ) . build (); if ( sendAsEmail == null ) { sendAsEmail = userId ; } try { SmimeInfo results = service . users (). settings (). sendAs (). smimeInfo () . insert ( userId , sendAsEmail , smimeInfo ) . execute (); System . out . printf ( "Inserted certificate, id: %s\n" , results . getId ()); return results ; } catch ( IOException e ) { System . err . printf ( "An error occured: %s" , e ); } return null ; } } Python gmail/snippet/smime snippets/insert smime info.py View on GitHub import create smime info import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def insert smime info (): """Upload an S/MIME certificate for the user.
+

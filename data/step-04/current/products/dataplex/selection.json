@@ -1,11 +1,12 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T15:56:41.574Z",
+  "generated_at": "2026-04-11T01:53:11.947Z",
   "product_name": "Dataplex",
   "product_slug": "dataplex",
   "step03_ranking_path": "data/step-03/current/products/dataplex/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
@@ -13,11 +14,12 @@
       "iam_reference",
       "python_reference",
       "java_reference"
-    ]
+    ],
+    "feature_count": 54
   },
   "site_output_mode": "compact",
-  "selected_source_count": 6,
-  "selected_sources_signature": "2f148dd104977cd4ec9d08b76c1ab6e6605373b02b03db694a940628d0c3ca72",
+  "selected_source_count": 7,
+  "selected_sources_signature": "3cf48d697422c558dbd93dc23cbd634a3359948a1efe3eb4a8789fae32ad039e",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -27,19 +29,33 @@
       "url": "https://docs.cloud.google.com/dataplex/docs",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "dataplex",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/dataplex/docs/introduction",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
     },
     {
       "source_id": "site-docs-reference",
       "product_slug": "dataplex",
       "family": "docs_reference",
       "classification": "product_reference",
-      "url": "https://docs.cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1",
+      "url": "https://docs.cloud.google.com/dataplex/docs/reference",
       "final_score": 90,
-      "best_rank": 5,
+      "best_rank": 4,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-api-reference",
@@ -48,9 +64,10 @@
       "classification": "api_reference",
       "url": "https://docs.cloud.google.com/dataplex/docs/reference/rest",
       "final_score": 90,
-      "best_rank": 6,
+      "best_rank": 5,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-iam-reference",
@@ -60,8 +77,9 @@
       "url": "https://docs.cloud.google.com/dataplex/docs/iam-and-access-control",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-python-reference",
@@ -71,8 +89,9 @@
       "url": "https://docs.cloud.google.com/python/docs/reference/dataplex/latest",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-java-reference",
@@ -82,8 +101,9 @@
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/overview",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     }
   ],
   "corpus_paths": {

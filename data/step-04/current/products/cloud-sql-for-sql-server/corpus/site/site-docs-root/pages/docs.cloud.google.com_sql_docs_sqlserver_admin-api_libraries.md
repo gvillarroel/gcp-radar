@@ -1,0 +1,186 @@
+---
+title: "Client libraries and sample code for Cloud SQL \_|\_ Cloud SQL for SQL Server\
+  \ \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/libraries
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/sql/docs/sqlserver
+source_metadata:
+  url: https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/libraries
+  title: "Client libraries and sample code for Cloud SQL \_|\_ Cloud SQL for SQL Server\
+    \ \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Databases
+Cloud SQL
+SQL Server
+Reference
+Send feedback
+Client libraries and sample code for Cloud SQL
+Stay organized with collections
+Save and categorize content based on your preferences.
+MySQL
+| PostgreSQL
+| SQL Server
+The Cloud SQL Admin API is built on HTTP and JSON, so any standard HTTP client can
+send requests to it and parse the responses. However, instead of creating HTTP
+requests and parsing responses manually, you may want to use the Google APIs
+client libraries. The client libraries provide better language integration,
+improved security, and support for making calls that require user authorization.
+Client libraries can use
+Application Default Credentials
+to easily authenticate with Google APIs and send requests to those APIs. With
+Application Default Credentials, you can test your application locally and
+deploy it without changing the underlying code. For more information, see
+Authenticate for using client libraries .
+Application Default Credentials are part of the client libraries you can use to
+access Cloud SQL. Default credentials identify your application with either a
+user credential or a default service account. When working with a library, it's
+typical to choose credentials based on the type of environment where
+you run code. For example, in a development environment, you can authenticate
+with the gcloud auth command and the client libraries will use those
+credentials. For more information about environments, see
+Authentication overview in the Google Cloud Platform Auth Guide .
+Access the service
+Depending on the Cloud SQL Admin API client library you use, you may need to
+configure how the library discovers the default service path. For client
+libraries that use the Google APIs Discovery Service, use the API name
+sqladmin to build a client. This includes libraries for Python and JavaScript.
+The following code snippets show how to create a client and list
+Cloud SQL instances in a project.
+C++
+For the C++ Client Library ,
+follow Setting up a C++ development environment to install the
+library.
+#include "google/cloud/sql/v1/sql_instances_client.h"
+#include "google/cloud/project.h"
+#include <iostream>
+int main ( int argc , char * argv []) try {
+if ( argc != 2 ) {
+std :: cerr << "Usage: " << argv [ 0 ] << " project-id \n " ;
+return 1 ;
+}
+namespace sql = :: google :: cloud :: sql_v1 ;
+auto client = sql :: SqlInstancesServiceClient (
+sql :: MakeSqlInstancesServiceConnectionRest ());
+google :: cloud :: sql :: v1 :: SqlInstancesListRequest request ;
+request . set_project ( argv [ 1 ]);
+for ( auto database : client . List ( request )) {
+if ( ! database ) throw std :: move ( database ). status ();
+std :: cout << database - > DebugString () << " \n " ;
+}
+return 0 ;
+} catch ( google :: cloud :: Status const & status ) {
+std :: cerr << "google::cloud::Status thrown: " << status << " \n " ;
+return 1 ;
+}
+Java
+For the Client Library for Java ,
+you can optionally specify the service path directly.
+// Set up global SQLAdmin instance.
+client = new SQLAdmin.Builder(httpTransport, JSON_FACTORY, credential)
+.setServicePath(" sql/v1beta4/ ")
+.setApplicationName(APPLICATION_NAME).build();
+InstancesListResponse resp = client.instances().list("PROJECT_ID").execute();
+List<DatabaseInstance> list = resp.getItems();
+for (DatabaseInstance d : list) {
+System.out.println(d.getName());
+}
+Go
+For the Client Library for Go ,
+import the sqladmin package.
+func ListInstances ( projectId string ) ([] * sqladmin . DatabaseInstance , error ) {
+ctx := context . Background ()
+// Create an http.Client that uses Application Default Credentials.
+hc , err := google . DefaultClient ( ctx , sqladmin . SqlserviceAdminScope )
+if err != nil {
+return nil , err
+}
+// Create the Google Cloud SQL service.
+service , err := sqladmin . New ( hc )
+if err != nil {
+return nil , err
+}
+// List instances for the project ID.
+instances , err := service . Instances . List ( projectId ). Do ()
+if err != nil {
+return nil , err
+}
+return instances . Items , nil
+}
+Java
+For the Client Library for Java ,
+you can optionally specify the service path directly.
+// Set up global SQLAdmin instance.
+client = new SQLAdmin.Builder(httpTransport, JSON_FACTORY, credential)
+.setApplicationName(APPLICATION_NAME).build();
+InstancesListResponse resp = client.instances().list("PROJECT_ID").execute();
+List<DatabaseInstance> list = resp.getItems();
+for (DatabaseInstance d : list) {
+System.out.println(d.getName());
+}
+JavaScript
+For the Client Library for JavaScript ,
+specify sqladmin to build a client.
+gapi.client.load(' sqladmin ', 'v1beta4', function() { console.log('loaded');});
+gapi.client.sql.instances.list({'project': PROJECT_ID}).execute(showResult);
+function showResult(result) {
+// Process the result.
+};
+Python
+For the Client Library for Python ,
+specify sqladmin to build a client.
+from googleapiclient import discovery
+# Construct the service object for the interacting with the Cloud SQL Admin API.
+service = discovery.build(' sqladmin ', 'v1beta4', http=http)
+req = service.instances().list(project="PROJECT_ID")
+resp = req.execute()
+print(json.dumps(resp, indent=2))
+The service object queries the discovery document and uses the correct
+service path, in this case, "sql/v1beta4/projects/".
+If you are looking for code samples that show how applications can connect to
+Cloud SQL, see the Connecting overview page.
+Libraries and sample code
+Language
+Documentation
+C++
+Google API Client Library
+Dart
+Google API Client Library
+Go
+Google API Client Library
+Sample code: Cloud SQL Auth Proxy
+Java
+Google API Client Library
+Google Client Developer's Guide
+Sample code: Cloud SQL Java Connector
+JavaScript
+Google API Client Library
+.NET
+Google API Client Library
+Google Client Developer's Guide
+Node.js
+Google API Client Library
+Objective-C
+Google API Client Library
+PHP
+Google API Client Library
+Python
+Google API Client Library
+Google Client Developer's Guide
+Cloud SQL Python Connector
+Sample code: MySQL, PostgreSQL, SQL Server
+Ruby
+Google API Client Library
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

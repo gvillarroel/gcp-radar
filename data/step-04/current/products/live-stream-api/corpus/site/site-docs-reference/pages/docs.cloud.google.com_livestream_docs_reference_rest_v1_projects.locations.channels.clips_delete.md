@@ -1,0 +1,67 @@
+---
+title: "Method: projects.locations.channels.clips.delete \_|\_ Live Stream API \_\
+  |\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels.clips/delete
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/livestream/docs/apis
+source_metadata:
+  url: https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels.clips/delete
+  title: "Method: projects.locations.channels.clips.delete \_|\_ Live Stream API \_\
+    |\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+AI and ML
+Live Stream API
+Reference
+Send feedback
+Method: projects.locations.channels.clips.delete
+Stay organized with collections
+Save and categorize content based on your preferences.
+HTTP request
+Path parameters
+Query parameters
+Request body
+Response body
+Authorization scopes
+IAM Permissions
+Deletes the specified clip job resource. This method only deletes the clip job and does not delete the VOD clip stored in Cloud Storage.
+HTTP request
+DELETE https://livestream.googleapis.com/v1/{name=projects/*/locations/*/channels/*/clips/*}
+The URL uses gRPC Transcoding syntax.
+Path parameters
+Parameters
+name
+string
+Required. The name of the clip resource, in the form of: projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId} .
+Query parameters
+Parameters
+requestId
+string
+Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request.
+For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments.
+The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000) .
+Request body
+The request body must be empty.
+Response body
+If successful, the response body contains an instance of Operation .
+Authorization scopes
+Requires the following OAuth scope:
+https://www.googleapis.com/auth/cloud-platform
+For more information, see the Authentication Overview .
+IAM Permissions
+Requires the following IAM permission on the name resource:
+livestream.clips.delete
+For more information, see the IAM documentation .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-07-23 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-07-23 UTC."],[],[]]

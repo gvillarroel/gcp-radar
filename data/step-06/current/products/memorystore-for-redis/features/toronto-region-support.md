@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:44.360Z"
+product_name: "Memorystore for Redis"
+product_slug: "memorystore-for-redis"
+feature_name: "Toronto region support"
+feature_slug: "toronto-region-support"
+latest_feature_date: "2021-08-03"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "toronto"
+  - "region"
+  - "memorystore"
+  - "for"
+  - "redis"
+  - "is"
+  - "available"
+  - "in"
+---
+
+# Toronto region support
+
+Product: Memorystore for Redis
+Coverage: NONE
+
+## Step 02 Summary
+
+Memorystore for Redis is available in the Toronto region (northamerica-northeast2).
+
+## Extended Definition
+
+Memorystore for Redis is available in the Toronto region (northamerica-northeast2).
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

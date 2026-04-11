@@ -1,5 +1,5 @@
 ---
-title: "Search for resources in Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "Search for resources in Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/search-assets
 knowledge_key: corpus
 source_id: site-docs-root
@@ -7,34 +7,35 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/search-assets
-  title: "Search for resources in Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+  title: "Search for resources in Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
-Search for resources in Dataplex Universal Catalog
+Search for resources in Knowledge Catalog
 Stay organized with collections
 Save and categorize content based on your preferences.
-Dataplex Universal Catalog helps you find and manage data assets across
+Knowledge Catalog (formerly Dataplex Universal Catalog) provides a powerful search feature that lets you find and manage data assets across
 your organization through a unified discovery experience.
-Dataplex Universal Catalog uses AI-powered natural language search, allowing you
+Knowledge Catalog uses AI-powered natural language search, allowing you
 to ask questions in plain language to find the data you need.
-Dataplex Universal Catalog offers two search modes:
+Knowledge Catalog offers two search modes:
 Keyword search lets you find resources using specific keywords, filters, and a
 defined syntax.
 Natural language search leverages AI to support semantic search queries. It
 lets you find resources using everyday language, eliminating the need for
 complex syntax.
 Use cases
-The Dataplex Universal Catalog search feature offers the following
+The Knowledge Catalog search feature offers the following
 experiences for various organizations and stakeholders:
 Self-service data discovery: Empower analytics and data science teams
 to quickly find, understand, and trust relevant data for BI dashboards,
@@ -51,7 +52,7 @@ Cloud SQL, Cloud Storage, or on-premises systems. This allows
 healthcare organizations to create a unified view of patient data for better
 clinical insights.
 How it works
-Dataplex Universal Catalog automatically indexes metadata from
+Knowledge Catalog automatically indexes metadata from
 integrated Google Cloud data sources such as BigQuery and
 Cloud SQL, and provides connectors to ingest metadata from other systems,
 creating a comprehensive, organization-wide catalog. Think of it like a smart
@@ -62,13 +63,13 @@ AI-powered search that surfaces most relevant files, tables, and datasets by
 understanding your intent. This feature provides comprehensive technical details
 and business context to ensure you find exactly what you need.
 Search scope
-The search results in Dataplex Universal Catalog respect permissions that
+The search results in Knowledge Catalog respect permissions that
 you have over the corresponding resources in source systems.
 For example, if you have BigQuery metadata read access to an
-object, that object appears in your Dataplex Universal Catalog search
+object, that object appears in your Knowledge Catalog search
 results. If you have access to a BigQuery table but not to the
 dataset containing that table, the table still shows up as expected in the
-Dataplex Universal Catalog search.
+Knowledge Catalog search.
 By default, search is scoped to your organization. Results include only
 resources from the same organization as the project you're searching in.
 The search results include only those resources that belong to the same VPC Service Controls
@@ -112,12 +113,12 @@ serviceName : bigquery.googleapis.com
 resources :
 - projects/ INGRESS_PROJECT_ID
 For more information about the Identity and Access Management roles that you need to use
-Dataplex Universal Catalog search,
-see Dataplex Universal Catalog IAM roles .
+Knowledge Catalog search,
+see Knowledge Catalog IAM roles .
 Note: Permissions propagation to search might be delayed if the change affects
 a large number of resources or principals.
 Isolate search results by environment using VPC Service Controls
-To isolate Dataplex Universal Catalog search results between environments
+To isolate Knowledge Catalog search results between environments
 like development, test, and production,
 configure separate VPC Service Controls perimeters
 for each environment. Assign both the projects that contain the data assets and the projects that are used
@@ -125,10 +126,10 @@ for performing searches to the corresponding environment's perimeter.
 Searches that are performed from a project within a specific perimeter will
 only return results for assets that are also located within that same perimeter.
 Recall limitations in search
-Dataplex Universal Catalog search queries don't guarantee full recall.
+Knowledge Catalog search queries don't guarantee full recall.
 Results that match your query mightn't be returned. Additionally, returned
 (and not returned) results can vary if you repeat search queries.
-To query all Dataplex Universal Catalog metadata, you can export the
+To query all Knowledge Catalog metadata, you can export the
 metadata to Cloud Storage and then query it from BigQuery.
 For more information, see Export metadata .
 Filters
@@ -148,7 +149,7 @@ tables.
 Keyword search filters
 For keyword search, filters are grouped into the following sections:
 Systems such as BigQuery, Cloud SQL, and others. The
-Dataplex Universal Catalog system contains custom entries.
+Knowledge Catalog system contains custom entries.
 Aspects (tags) list all aspects available to you.
 Project lists all projects available to you.
 Type aliases describe resource types, such as databases, datasets,
@@ -174,7 +175,7 @@ Scope : search across the organization (default), the current project,
 or only for starred resources. For more information, see the
 Search scope section of this document.
 Systems : the Google Cloud service that the resource belongs to,
-such as BigQuery. The Dataplex Universal Catalog system
+such as BigQuery. The Knowledge Catalog system
 contains entry groups .
 Projects : the projects to search in.
 Type : the resource type, such as BigQuery connection,
@@ -185,7 +186,7 @@ Select locations : the locations to search in.
 Select datasets : the search results are limited to BigQuery
 resources that belong to the selected BigQuery datasets.
 In the Type to filter field, enter the name of the dataset.
-Aspect types : the Dataplex Universal Catalog
+Aspect types : the Knowledge Catalog
 aspect types that
 are associated with the resource that you're searching for. To filter by
 aspect values, click Filter on annotation values , and then select the
@@ -209,8 +210,8 @@ on the project that is used for search: Dataplex Catalog Admin,
 Dataplex Catalog Editor, or Dataplex Catalog Viewer. Permissions on search
 results are checked independently of the selected project.
 Required roles for accessing search results
-The search results in Dataplex Universal Catalog are scoped according to
-your role. To search for an asset in Dataplex Universal Catalog, you must
+The search results in Knowledge Catalog are scoped according to
+your role. To search for an asset in Knowledge Catalog, you must
 have permissions to access the corresponding resource in the source system.
 For more information, see the Search scope section
 of this document.
@@ -242,13 +243,13 @@ Enable the API
 Search for resources
 Console
 To search for resources, follow these steps:
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 If your search platform is set to Data Catalog , in the
-Choose search platform menu, select Dataplex Universal Catalog .
-Selecting Dataplex Universal Catalog lets you search the
-Dataplex Universal Catalog metadata storage. Selecting
+Choose search platform menu, select Knowledge Catalog .
+Selecting Knowledge Catalog lets you search the
+Knowledge Catalog metadata storage. Selecting
 Data Catalog lets you search your Data Catalog
 repository, if you're an existing Data Catalog user.
 To use keyword search, follow these steps:
@@ -274,7 +275,7 @@ operators to combine search expressions. The AND , OR , and NOT
 operators aren't case-sensitive.
 For example, NOT column:term lists all columns except those that
 match the specified term. For a list of keywords and other terms you
-can use in a Dataplex Universal Catalog search expression, see
+can use in a Knowledge Catalog search expression, see
 Search syntax .
 To use natural language search, follow these steps:
 Click Try natural language search .
@@ -297,12 +298,12 @@ gcloud dataplex entries search command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax ;
@@ -368,12 +369,12 @@ string nextPageToken = singlePage . NextPageToken ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -420,12 +421,12 @@ _ = it . Response .( * dataplexpb . SearchEntriesResponse )
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -462,12 +463,12 @@ for ( SearchEntriesResult element : catalogServiceClient . searchEntries ( reque
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -494,12 +495,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -534,8 +535,8 @@ To search for resources, use the
 searchEntries method .
 View details of an entry
 Console
-Use Dataplex Universal Catalog search to view the details of an entry.
-Search for an entry in Dataplex Universal Catalog.
+Use Knowledge Catalog search to view the details of an entry.
+Search for an entry in Knowledge Catalog.
 In the search results, click the entry for which you want to view the
 details.
 The entry details page opens. The page includes the following sections:
@@ -552,12 +553,12 @@ gcloud dataplex entries lookup command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -591,12 +592,12 @@ Entry response = catalogServiceClient . LookupEntry ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -631,12 +632,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -672,12 +673,12 @@ Entry response = catalogServiceClient . lookupEntry ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -703,12 +704,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -751,12 +752,12 @@ example, "How many tables are in dataset X?").
 Public resources are outside the scope of natural language search.
 Aspects attached to entry links are outside the scope of natural language search.
 What's next
-Understand search syntax for Dataplex Universal Catalog .
-Learn more about metadata management in Dataplex Universal Catalog .
+Understand search syntax for Knowledge Catalog .
+Learn more about metadata management in Knowledge Catalog .
 Learn how to enrich entries and entry links with metadata using aspects .
 Learn how to manage entries and ingest custom sources .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

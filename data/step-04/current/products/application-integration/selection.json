@@ -1,43 +1,59 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T05:49:42.594Z",
+  "generated_at": "2026-04-10T16:29:44.667Z",
   "product_name": "Application Integration",
   "product_slug": "application-integration",
   "step03_ranking_path": "data/step-03/current/products/application-integration/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
       "api_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 85
   },
   "site_output_mode": "compact",
-  "selected_source_count": 4,
-  "selected_sources_signature": "0fe242a77033ffd10db2fcf995012ebb25e773bf3b4de84254411b7169e9b449",
+  "selected_source_count": 5,
+  "selected_sources_signature": "a9fbcd338594a7528b31a3c44ff8650fc8bc2551620926a6e0e39b14de80f7be",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
       "product_slug": "application-integration",
       "family": "docs_root",
       "classification": "product_root",
-      "url": "https://docs.cloud.google.com/application-integration/docs/overview",
+      "url": "https://docs.cloud.google.com/application-integration/docs",
       "final_score": 100,
       "best_rank": 2,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "application-integration",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/application-integration/docs/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
     },
     {
       "source_id": "site-docs-reference",
       "product_slug": "application-integration",
       "family": "docs_reference",
       "classification": "product_reference",
-      "url": "https://docs.cloud.google.com/application-integration/docs/reference/rest",
-      "final_score": 93,
+      "url": "https://docs.cloud.google.com/application-integration/docs/apis",
+      "final_score": 90,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-api-reference",
@@ -45,10 +61,11 @@
       "family": "api_reference",
       "classification": "api_reference",
       "url": "https://docs.cloud.google.com/application-integration/docs/reference/rest",
-      "final_score": 93,
+      "final_score": 90,
       "best_rank": 6,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-iam-reference",
@@ -58,8 +75,9 @@
       "url": "https://docs.cloud.google.com/application-integration/docs/access-control",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     }
   ],
   "corpus_paths": {

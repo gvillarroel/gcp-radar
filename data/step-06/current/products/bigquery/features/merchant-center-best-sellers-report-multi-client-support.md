@@ -1,15 +1,15 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:04.771Z"
+generated_at: "2026-04-10T13:25:38.416Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Merchant Center best sellers report multi-client support"
 feature_slug: "merchant-center-best-sellers-report-multi-client-support"
 latest_feature_date: "2025-06-16"
 deprecation_date: ""
-coverage_status: "NONE"
+coverage_status: "HIGH"
 source_links:
-  - ""
+  - "https://docs.cloud.google.com/bigquery/docs/release-notes"
 keywords:
   - "BestSellersEntityProductMapping table"
   - "Merchant Center best sellers report"
@@ -24,7 +24,7 @@ keywords:
 # Merchant Center best sellers report multi-client support
 
 Product: BigQuery
-Coverage: NONE
+Coverage: HIGH
 
 ## Step 02 Summary
 
@@ -32,13 +32,27 @@ The Merchant Center best sellers report in BigQuery now supports multi-client ac
 
 ## Extended Definition
 
-The Merchant Center best sellers report in BigQuery now supports multi-client accounts using aggregator_id and a consolidated BestSellersEntityProductMapping table.
+The Merchant Center best sellers report feature in BigQuery supports multi-client account (MCA) reporting. In this mode, the BestSellersEntityProductMapping table maps best-selling entities to products in sub-accounts’ inventory, and MCA queries can use the aggregator_id field.
+
+## Evidence Summary
+
+The BigQuery release notes confirm MCA support for the Merchant Center best sellers report, explain the role of BestSellersEntityProductMapping, and note that aggregator_id is used for MCA queries.
 
 ## Source Links
 
-No supporting official source links were selected.
+- [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
 
 ## Supporting Pages
 
-No supporting pages passed the Step 06 ranking thresholds.
+### BigQuery release notes \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/bigquery/docs/release-notes](https://docs.cloud.google.com/bigquery/docs/release-notes)
+- Source ID: `site-docs-root`
+- Final score: 24
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The BestSellersEntityProductMapping table maps the best-selling entities to the products in the sub-accounts' inventory.
+- Feature The Merchant Center best sellers report supports multi-client accounts (MCAs).
+- If you have an MCA, you can use the aggregator id to query the tables.
 

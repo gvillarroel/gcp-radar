@@ -1,22 +1,24 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T15:33:15.879Z",
+  "generated_at": "2026-04-11T01:39:18.071Z",
   "product_name": "Dataform",
   "product_slug": "dataform",
   "step03_ranking_path": "data/step-03/current/products/dataform/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "api_reference",
       "iam_reference",
       "python_reference",
       "java_reference"
-    ]
+    ],
+    "feature_count": 51
   },
   "site_output_mode": "compact",
-  "selected_source_count": 5,
-  "selected_sources_signature": "0f7662e9e562412aa186962893c6b6bd3e3f34880616491eaed5df0222aa4648",
+  "selected_source_count": 6,
+  "selected_sources_signature": "8cff21191fb5135fe7472a4ed90b679e076ebe73f5cb7b118f2cc588710bb8a3",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -26,8 +28,21 @@
       "url": "https://docs.cloud.google.com/dataform/docs",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 30
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "dataform",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/dataform/docs/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
     },
     {
       "source_id": "site-api-reference",
@@ -37,8 +52,9 @@
       "url": "https://docs.cloud.google.com/dataform/reference/rest",
       "final_score": 90,
       "best_rank": 4,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 20
+      "max_pages": 26
     },
     {
       "source_id": "site-iam-reference",
@@ -48,8 +64,9 @@
       "url": "https://docs.cloud.google.com/dataform/docs/access-control",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 20
+      "max_pages": 26
     },
     {
       "source_id": "site-python-reference",
@@ -59,8 +76,9 @@
       "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 20
+      "max_pages": 26
     },
     {
       "source_id": "site-java-reference",
@@ -70,8 +88,9 @@
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/overview",
       "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 20
+      "max_pages": 26
     }
   ],
   "corpus_paths": {

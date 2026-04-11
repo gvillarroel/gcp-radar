@@ -1,6 +1,6 @@
 ---
-title: "Track data lineage for a BigQuery table \_|\_ Dataplex Universal Catalog \_\
-  |\_ Google Cloud Documentation"
+title: "Track data lineage for a BigQuery table \_|\_ Knowledge Catalog \_|\_ Google\
+  \ Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,18 +8,19 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart
-  title: "Track data lineage for a BigQuery table \_|\_ Dataplex Universal Catalog\
-    \ \_|\_ Google Cloud Documentation"
+  title: "Track data lineage for a BigQuery table \_|\_ Knowledge Catalog \_|\_ Google\
+    \ Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Stay organized with collections
@@ -109,7 +110,7 @@ you need to view lineage visualization graphs,
 ask your administrator to grant you the
 following IAM roles:
 Dataplex Catalog Viewer ( roles/dataplex.catalogViewer )
-on the Dataplex Universal Catalog resource project
+on the Knowledge Catalog (formerly Dataplex Universal Catalog) resource project
 Data Lineage Viewer ( roles/datalineage.viewer )
 on the project where you use BigQuery
 BigQuery Data Viewer ( roles/bigquery.dataViewer )
@@ -183,11 +184,11 @@ Click play_circle Run . This step
 creates a combined table, called total_green_trips_22_21 .
 In the Query results pane, click Go to table . This step displays
 the combined table.
-View the lineage graph in Dataplex Universal Catalog
-In the Google Cloud console, go to the Dataplex Universal Catalog Search page.
+View the lineage graph in Knowledge Catalog
+In the Google Cloud console, go to the Knowledge Catalog Search page.
 Go to Search
 If your search platform is set to Data Catalog , in the
-Choose search platform menu, select Dataplex Universal Catalog .
+Choose search platform menu, select Knowledge Catalog .
 In the Search box, enter total_green_trips_22_21 and click Search .
 From the results list, click total_green_trips_22_21 . This step displays
 the BigQuery table Details tab.
@@ -240,9 +241,9 @@ Learn how to run BigQuery
 queries .
 Learn how to
 use data lineage .
-Learn about Dataplex Universal Catalog pricing .
+Learn about Knowledge Catalog pricing .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

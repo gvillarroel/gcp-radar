@@ -1,6 +1,6 @@
 ---
-title: "Manage aspects and enrich metadata \_|\_ Dataplex Universal Catalog \_|\_\
-  \ Google Cloud Documentation"
+title: "Manage aspects and enrich metadata \_|\_ Knowledge Catalog \_|\_ Google Cloud\
+  \ Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,18 +8,19 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/enrich-entries-metadata
-  title: "Manage aspects and enrich metadata \_|\_ Dataplex Universal Catalog \_|\_\
-    \ Google Cloud Documentation"
+  title: "Manage aspects and enrich metadata \_|\_ Knowledge Catalog \_|\_ Google\
+    \ Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Manage aspects and enrich metadata
@@ -29,10 +30,10 @@ Metadata is crucial for organizing and understanding your data assets and relati
 example, regulated industries need to protect personally identifiable
 information (PII) such as names, addresses, and government issued ID numbers. This
 data can occur in numerous instances across distributed data systems.
-Dataplex Universal Catalog can help you to quickly discover and catalog your distributed
+Knowledge Catalog (formerly Dataplex Universal Catalog) can help you to quickly discover and catalog your distributed
 data assets. You can then classify data as being PII.
 By enriching data entries and entry links with meaningful context, you can make your data more
-discoverable and useful. Dataplex Universal Catalog enables context through:
+discoverable and useful. Knowledge Catalog enables context through:
 Aspect type: A JSON template defining related data. For example, for
 compliance information, you might have PII classification and GDPR
 compliance.
@@ -42,8 +43,8 @@ entire table, an individual table column, or an entry link (with restrictions ).
 Once you've classified data, you can apply data quality or access policies to
 the data.
 For more information, see About metadata management in
-Dataplex Universal Catalog .
-Tip: If this is your first time working with Dataplex Universal Catalog metadata,
+Knowledge Catalog .
+Tip: If this is your first time working with Knowledge Catalog metadata,
 consider following the quickstart: Add metadata to a BigQuery
 table .
 Aspects
@@ -76,7 +77,7 @@ Required aspects : aspects which are mandatory upon creation of an entry or entr
 Such aspects are defined by the entry type or entry link type. All resources
 belonging to a specific type must always have all of the required aspects that
 are defined by that type.
-Dataplex Universal Catalog manages the required aspects (for example, schema)
+Knowledge Catalog manages the required aspects (for example, schema)
 for system
 entries .
 Note the following:
@@ -108,7 +109,7 @@ Aspect types are reusable resources that provide templates for aspects.
 Categories of aspect types
 Aspect types are categorized into custom and system aspect types.
 Custom aspect types
-Aspect types that you create in Dataplex Universal Catalog are called custom aspect
+Aspect types that you create in Knowledge Catalog are called custom aspect
 types.
 Note: Custom aspect types apply to entries but not to entry links.
 Custom aspect types can be global or regional. You can create custom aspect
@@ -134,7 +135,7 @@ separate aspect type definitions in each region.
 For more information, see Project and location
 constraints .
 System aspect types
-Aspect types that Dataplex Universal Catalog provides, uses, and manages are called
+Aspect types that Knowledge Catalog provides, uses, and manages are called
 system aspect types. System aspect types are always global, therefore they can
 be used in any region. System aspect types are stored in a Google-managed
 project with project number 655216118709 . For example,
@@ -144,10 +145,10 @@ IAM permissions. For more information, see
 IAM permissions for system aspect types, entry types, and entry link types .
 System aspect types are further categorized into reusable and restricted. The
 following table describes the categories of system aspect types, and the list of
-aspect types that Dataplex Universal Catalog provides for each of the categories:
+aspect types that Knowledge Catalog provides for each of the categories:
 Category of system aspect type
 Description
-Aspect types that Dataplex Universal Catalog provides
+Aspect types that Knowledge Catalog provides
 Reusable system aspect type
 You can use these aspect types to create or modify aspects.
 contacts
@@ -160,7 +161,7 @@ schema-join
 storage
 usage
 Restricted system aspect type
-Dataplex Universal Catalog manages these aspect types.
+Knowledge Catalog manages these aspect types.
 You can read aspects under these aspect types, but can't create or edit
 aspects under these aspect types.
 Including but not limited to:
@@ -184,9 +185,9 @@ To get the permissions that
 you need to create and manage aspect types and aspects,
 ask your administrator to grant you the
 following IAM roles on the resource:
-Full set of permissions on metadata resources in Dataplex Universal Catalog, including aspect types and data aspects:
+Full set of permissions on metadata resources in Knowledge Catalog, including aspect types and data aspects:
 Dataplex Catalog Admin ( roles/dataplex.catalogAdmin )
-Create and manage metadata resources in Dataplex Universal Catalog, including aspect types and data aspects:
+Create and manage metadata resources in Knowledge Catalog, including aspect types and data aspects:
 Dataplex Catalog Editor ( roles/dataplex.catalogEditor )
 Full set of permissions on custom aspect types (except for permissions to use aspect types to create or edit entries):
 Dataplex Aspect Type Owner ( roles/dataplex.aspectTypeOwner )
@@ -201,16 +202,16 @@ You might also be able to get
 the required permissions through custom
 roles or other predefined
 roles .
-For more information, see Dataplex Universal Catalog IAM
+For more information, see Knowledge Catalog IAM
 roles .
 Enable the API
-Enable the Dataplex API in your Dataplex Universal Catalog project. If you are using a new Google Cloud project or a project in which the BigQuery API is enabled, the Dataplex API is enabled by default.
+Enable the Dataplex API in your Knowledge Catalog project. If you are using a new Google Cloud project or a project in which the BigQuery API is enabled, the Dataplex API is enabled by default.
 Enable the
 API
 Create a custom aspect type
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Aspect types & tag templates > Custom tab.
 Click Create aspect type .
 In the Create aspect type window, enter the following:
@@ -314,12 +315,12 @@ create command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax.ResourceNames ;
@@ -368,12 +369,12 @@ AspectType retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -412,12 +413,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. AspectType ;
@@ -449,12 +450,12 @@ AspectType response = catalogServiceClient . createAspectTypeAsync ( request ). 
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -486,12 +487,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -567,7 +568,7 @@ that was associated with the original table isn't applied to the new table. If
 you want the metadata to persist, you can create a BigQuery
 view for the table and add the metadata to the view.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 If your search platform is set to Data Catalog , in the
@@ -598,12 +599,12 @@ command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -640,12 +641,12 @@ Aspects .
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -682,12 +683,12 @@ Entry .
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. Aspect ;
@@ -757,12 +758,12 @@ return client . updateEntry ( entry , updateMask );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 from google.cloud import dataplex_v1
@@ -818,12 +819,12 @@ print ( f "Successfully updated entry: { updated_entry . name } " )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1033,7 +1034,8 @@ The fields include the following:
 sourceDataInfo (record): Information about the source data scanned to
 generate the profile.
 scope (enum): The scope of the profile ( PREVIEW , SAMPLED , or
-ALL ).
+ALL ). The PREVIEW value corresponds to results from a
+Lightweight profiling scan .
 scannedRows (int): The number of rows scanned.
 samplingPercentage (double): The sampling percentage used.
 fields (map): A map of column names to their data profiles, including
@@ -1187,7 +1189,7 @@ You can edit the optional aspects for both custom entries and system entries.
 You can edit the required aspects only for custom entries.
 For first-party (1P) system entries, such as BigQuery tables, you can update aspects using the modifyEntry API. This lets you use the source system's metadata update permissions (for example, BigQueryData Editor).
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 If your search platform is set to Data Catalog , in the
@@ -1208,12 +1210,12 @@ command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1248,12 +1250,12 @@ Entry response = catalogServiceClient . UpdateEntry ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1288,12 +1290,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1327,12 +1329,12 @@ Entry response = catalogServiceClient . updateEntry ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1359,12 +1361,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1398,7 +1400,7 @@ Delete an aspect
 Note: You can delete the optional aspects for an entry, but not the required
 aspects.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 If your search platform is set to Data Catalog , in the
@@ -1417,12 +1419,12 @@ command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1457,12 +1459,12 @@ Entry response = catalogServiceClient . UpdateEntry ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1497,12 +1499,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1536,12 +1538,12 @@ Entry response = catalogServiceClient . updateEntry ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1568,12 +1570,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1619,15 +1621,15 @@ aspect types.
 Note: You can't edit, delete, or modify permissions for system aspect types.
 View the list of available aspect types and tag templates
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types
 page.
-Go to Catalog
+Go to Metadata types
 Click the Aspect types & tag templates tab.
-This page lists all the available Dataplex Universal Catalog aspect types and
+This page lists all the available Knowledge Catalog aspect types and
 Data Catalog tag templates.
 To view custom aspect types and tag templates, click the
 Custom tab. In the Custom tab, the Catalog source column
-displays where the resource resides—Dataplex Universal Catalog or
+displays where the resource resides—Knowledge Catalog or
 Data Catalog.
 To view system aspect types, click the System tab.
 For more information about custom and system aspect types, see the
@@ -1637,7 +1639,7 @@ Optional: To view the list of aspect types and tag templates in your
 selected project, click the Custom tab, and then click the
 Show from all projects toggle to the off position.
 The Show from all projects toggle is on by default, and the list
-includes Dataplex Universal Catalog resources from your selected organization
+includes Knowledge Catalog resources from your selected organization
 and Data Catalog resources from all the organizations that you can
 access.
 Note: If the Show from all projects toggle is on, you can't edit or
@@ -1650,12 +1652,12 @@ command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax ;
@@ -1719,12 +1721,12 @@ string nextPageToken = singlePage . NextPageToken ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1771,12 +1773,12 @@ _ = it . Response .( * dataplexpb . ListAspectTypesResponse )
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. AspectType ;
@@ -1811,12 +1813,12 @@ for ( AspectType element : catalogServiceClient . listAspectTypes ( request ). i
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1842,12 +1844,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1883,11 +1885,11 @@ aspectTypes.list
 method.
 View details of an aspect type or tag template
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types
 page.
-Go to Catalog
+Go to Metadata types
 Click the Aspect types & tag templates tab.
-To view the details of a Dataplex Universal Catalog aspect type, click the
+To view the details of a Knowledge Catalog aspect type, click the
 aspect type. The aspect type details page opens, where you can access
 details, such as display name, aspect type ID, description, project ID,
 location, labels, creation date, and last modified date.
@@ -1908,12 +1910,12 @@ describe command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1943,12 +1945,12 @@ AspectType response = catalogServiceClient . GetAspectType ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1983,12 +1985,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. AspectType ;
@@ -2017,12 +2019,12 @@ AspectType response = catalogServiceClient . getAspectType ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2047,12 +2049,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2088,9 +2090,9 @@ custom aspect type. You can't delete an existing field in a template.
 You can't update the aspect type ID and location after you create the aspect
 type.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types
 page.
-Go to Catalog
+Go to Metadata types
 Click the Aspect types & tag templates tab.
 Click the aspect type that you want to update.
 On the Aspect type details page, click Edit .
@@ -2110,12 +2112,12 @@ update command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2163,12 +2165,12 @@ AspectType retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2207,12 +2209,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. AspectType ;
@@ -2243,12 +2245,12 @@ AspectType response = catalogServiceClient . updateAspectTypeAsync ( request ). 
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2278,12 +2280,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2324,9 +2326,9 @@ Delete a custom aspect type
 Caution: Deleting a custom aspect type deletes all aspects related to that
 aspect type across all entries.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types
 page.
-Go to Catalog
+Go to Metadata types
 Click the Aspect types & tag templates tab.
 Click the aspect type that you want to delete.
 On the Aspect type details page, click Delete . Confirm when
@@ -2337,12 +2339,12 @@ delete command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2389,12 +2391,12 @@ Empty retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2431,12 +2433,12 @@ if err != nil {
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. AspectTypeName ;
@@ -2466,12 +2468,12 @@ catalogServiceClient . deleteAspectTypeAsync ( request ). get ();
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2498,12 +2500,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2541,16 +2543,16 @@ To delete an existing custom aspect type, use the
 aspectTypes.delete
 method.
 What's next
-Learn how to search for resources in Dataplex Universal Catalog .
+Learn how to search for resources in Knowledge Catalog .
 Learn how to manage entries and ingest custom sources .
-Learn how to import metadata into Dataplex Universal Catalog .
-Learn more about metadata management in Dataplex Universal Catalog .
-Learn more about transitioning from Data Catalog to Dataplex Universal Catalog .
-Follow the codelab: Foundational governance with Dataplex Universal Catalog .
-Follow the codelab: Build the data foundation with Dataplex Universal Catalog metadata .
+Learn how to import metadata into Knowledge Catalog .
+Learn more about metadata management in Knowledge Catalog .
+Learn more about transitioning from Data Catalog to Knowledge Catalog .
+Follow the codelab: Foundational governance with Knowledge Catalog .
+Follow the codelab: Build the data foundation with Knowledge Catalog metadata .
 Follow the codelab: Deploy an enterprise governance-aware agent with MCP and Cloud Run .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

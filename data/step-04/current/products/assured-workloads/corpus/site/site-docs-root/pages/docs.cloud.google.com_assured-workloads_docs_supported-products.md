@@ -1,13 +1,7823 @@
 ---
-title: "Supported products by control package | Assured Workloads | Google Cloud Documentation"
-url: "https://docs.cloud.google.com/assured-workloads/docs/supported-products"
-knowledge_key: "corpus"
-source_id: "site-docs-root"
-source_type: "site"
-content_origin: "bx_web_fallback"
+title: "Supported products by control package \_|\_ Assured Workloads \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/assured-workloads/docs/supported-products
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/assured-workloads/docs
+source_metadata:
+  url: https://docs.cloud.google.com/assured-workloads/docs/supported-products
+  title: "Supported products by control package \_|\_ Assured Workloads \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
-# Supported products by control package | Assured Workloads | Google Cloud Documentation
 
-Source URL: https://docs.cloud.google.com/assured-workloads/docs/supported-products
-
-The following table is a listing of products and services that are supported by Assured Workloads. If a service is not listed for a given control package, that service is unsupported and has not met all regional, regulatory, or sovereign controls required for the control package.
+The names for some Assured Workloads control packages have changed. For information about the name change, see Control package renaming notice .
+Home
+Documentation
+Security
+Assured Workloads
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Supported products by control package
+The following table is a listing of products and services that are supported by
+Assured Workloads. If a service is not listed for a given control
+package, that service is unsupported and has not met all regional, regulatory,
+or sovereign controls required for the control package. Unsupported products are
+not recommended for use by Assured Workloads customers without due
+diligence and waivers from your regulatory agencies or divisions. Unauthorized
+products may share an API service endpoint with authorized products, making them
+available to all users.
+For more information about Assured Workloads, see
+Assured Workloads overview .
+Note: A resource usage restriction
+organization policy may be enabled in your Assured Workloads folder to
+prevent non-compliant service usage by restricting available resource types.
+Show All
+Data Boundary for CJIS
+Data Boundary for FedRAMP Moderate
+Data Boundary for FedRAMP High
+US Data Boundary for Healthcare and Life Sciences
+US Data Boundary for Healthcare and Life Sciences with Support
+Data Boundary for IL2
+Data Boundary for IL4
+Data Boundary for IL5
+Data Boundary for ITAR
+Data Boundary for IRS 1075
+Australia Data Boundary
+Australia Data Boundary and Support
+Brazil Data Boundary
+Data Boundary for Canada Protected B
+Canada Data Boundary
+Canada Data Boundary and Support
+Chile Data Boundary
+EU Data Boundary
+EU Data Boundary and Support
+EU Data Boundary with Access Justifications
+Hong Kong Data Boundary
+India Data Boundary
+Indonesia Data Boundary
+Israel Data Boundary
+Israel Data Boundary and Support
+Japan Data Boundary
+Qatar Data Boundary
+Singapore Data Boundary
+South Africa Data Boundary
+South Korea Data Boundary
+Kingdom of Saudi Arabia Data Boundary with Access Justifications
+Switzerland Data Boundary
+Taiwan Data Boundary
+UK Data Boundary
+US Data Boundary
+US Data Boundary and Support
+Show all control packages
+Control package
+Supported products
+API services
+Data Boundary for Criminal Justice Information Systems (CJIS)
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Identity
+cloudidentity.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Data Security Posture Management
+N/A
+Database Center
+databasecenter.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Gemini Enterprise
+[8]
+discoveryengine.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Admin console
+N/A
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Key Access Justifications
+cloudekm.googleapis.com
+cloudkms.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center Premium
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Vertex AI Workbench
+notebooks.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Workforce Identity Federation
+iam.googleapis.com
+sts.googleapis.com
+Data Boundary for FedRAMP High
+AI Platform
+aiplatform.googleapis.com
+Vertex AI Neural Architecture Search
+ml.googleapis.com
+AI Platform Training and Prediction API
+aiplatform.googleapis.com
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Config Management
+anthosconfigmanagement.googleapis.com
+Apigee
+apigee.googleapis.com
+App Engine
+appengine.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Analysis
+containeranalysis.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Assured Open Source Software (Assured OSS)
+assuredoss.googleapis.com
+Assured Workloads
+assuredworkloads.googleapis.com
+AutoML Natural Language
+automl.googleapis.com
+AutoML Tables
+automl.googleapis.com
+AutoML Translation
+automl.googleapis.com
+AutoML Video Intelligence
+videointelligence.googleapis.com
+AutoML Vision
+vision.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+Batch
+batch.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Care Studio (Cloud Healthcare Search)
+healthcare.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Chrome Enterprise Premium
+beyondcorp.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Billing API
+[1]
+billingbudgets.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud CDN
+compute.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Google Cloud console
+N/A
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud Deployment Manager
+deploymentmanager.googleapis.com
+Cloud Endpoints
+endpoints.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud Run functions
+cloudfunctions.googleapis.com
+Cloud Run functions for Firebase
+cloudfunctions.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Healthcare API
+healthcare.googleapis.com
+Cloud Identity
+cloudidentity.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Intrusion Detection System
+servicenetworking.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Life Sciences
+lifesciences.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Natural Language API
+automl.googleapis.com
+Cloud Next Generation Firewall Essentials
+compute.googleapis.com
+networksecurity.googleapis.com
+Cloud Next Generation Firewall Standard
+compute.googleapis.com
+networksecurity.googleapis.com
+Cloud Profiler
+cloudprofiler.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Knative serving
+N/A
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Scheduler
+cloudscheduler.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+Cloud Shell
+[10]
+cloudshell.googleapis.com
+Cloud Source Repositories
+sourcerepo.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Storage for Firebase
+firebasestorage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud Trace
+cloudtrace.googleapis.com
+Cloud Translation
+translation.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Container Registry
+containeranalysis.googleapis.com
+containerregistry.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Data Catalog
+datacatalog.googleapis.com
+Looker Studio
+datastudio.googleapis.com
+Database Migration Service
+datamigration.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+[9]
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Datastore
+datastore.googleapis.com
+Datastream
+datastream.googleapis.com
+Dialogflow
+dialogflow.googleapis.com
+Document AI
+documentai.googleapis.com
+Earth Engine
+earthengine.googleapis.com
+earthengine-highvolume.googleapis.com
+Error Reporting
+clouderrorreporting.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Authentication
+N/A
+Firebase Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+Google Cloud SDK
+N/A
+Google Cloud Marketplace
+N/A
+Google Cloud app
+N/A
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+N/A
+Google Admin console
+N/A
+Identity Platform
+identitytoolkit.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Integration Connectors
+connectors.googleapis.com
+Key Access Justifications
+cloudekm.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Network Intelligence Center
+networkmanagement.googleapis.com
+Network Service Tiers
+compute.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+reCAPTCHA
+recaptchaenterprise.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Secure Web Proxy
+networkservices.googleapis.com
+networksecurity.googleapis.com
+Security Command Center
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Service Directory
+servicedirectory.googleapis.com
+Service Infrastructure
+serviceconsumermanagement.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Talent Solution
+jobs.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Forecasting
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Vector Search
+aiplatform.googleapis.com
+Vertex AI Workbench
+aiplatform.googleapis.com
+Vertex AI batch prediction
+aiplatform.googleapis.com
+Vertex ML Metadata
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Structured Data
+aiplatform.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Video Intelligence API
+videointelligence.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Workflows
+workflows.googleapis.com
+Workforce Identity Federation
+iam.googleapis.com
+Data Boundary for FedRAMP Moderate
+AI Platform
+aiplatform.googleapis.com
+Vertex AI Neural Architecture Search
+ml.googleapis.com
+AI Platform Training and Prediction API
+aiplatform.googleapis.com
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Apigee
+apigee.googleapis.com
+App Engine
+appengine.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Analysis
+containeranalysis.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Assured Open Source Software (Assured OSS)
+assuredoss.googleapis.com
+Assured Workloads
+assuredworkloads.googleapis.com
+AutoML Natural Language
+automl.googleapis.com
+AutoML Tables
+automl.googleapis.com
+AutoML Translation
+automl.googleapis.com
+AutoML Video Intelligence
+videointelligence.googleapis.com
+AutoML Vision
+vision.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+Batch
+batch.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Care Studio (Cloud Healthcare Search)
+healthcare.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Chrome Enterprise Premium
+beyondcorp.googleapis.com
+Cloud AI Notebooks
+aiplatform.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Billing API
+[1]
+billingbudgets.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud CDN
+compute.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud Deployment Manager
+deploymentmanager.googleapis.com
+Cloud Endpoints
+endpoints.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud Run functions
+cloudfunctions.googleapis.com
+Cloud Run functions for Firebase
+cloudfunctions.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Healthcare API
+healthcare.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Intrusion Detection System
+ids.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Life Sciences
+lifesciences.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Natural Language API
+automl.googleapis.com
+Cloud Next Generation Firewall Essentials
+compute.googleapis.com
+networksecurity.googleapis.com
+Cloud Next Generation Firewall Standard
+compute.googleapis.com
+networksecurity.googleapis.com
+Cloud Profiler
+cloudprofiler.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+Cloud Shell
+cloudshell.googleapis.com
+Cloud Source Repositories
+sourcerepo.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Storage for Firebase
+firebasestorage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud Trace
+cloudtrace.googleapis.com
+Cloud Translation
+translation.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Management
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Container Registry
+containeranalysis.googleapis.com
+containerregistry.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Data Catalog
+datacatalog.googleapis.com
+Looker Studio
+datastudio.googleapis.com
+Database Migration Service
+datamigration.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+[9]
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Datastore
+datastore.googleapis.com
+Datastream
+datastream.googleapis.com
+Dialogflow
+dialogflow.googleapis.com
+Document AI
+documentai.googleapis.com
+Earth Engine
+earthengine.googleapis.com
+earthengine-highvolume.googleapis.com
+Error Reporting
+clouderrorreporting.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Game Servers
+gameservices.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+Google Cloud SDK
+N/A
+Google Cloud Marketplace
+N/A
+Google Cloud App
+N/A
+Google Cloud console
+N/A
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+N/A
+Identity Platform
+identitytoolkit.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Integration Connectors
+connectors.googleapis.com
+IoT Core
+cloudiot.googleapis.com
+Key Access Justifications
+cloudekm.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Network Intelligence Center
+networkmanagement.googleapis.com
+Network Service Tiers
+compute.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+reCAPTCHA
+recaptchaenterprise.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Secure Web Proxy
+networkservices.googleapis.com
+networksecurity.googleapis.com
+Security Command Center
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Talent Solution
+jobs.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Vector Search
+aiplatform.googleapis.com
+Vertex AI batch prediction
+aiplatform.googleapis.com
+Vertex ML Metadata
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Structured Data
+aiplatform.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Video Intelligence API
+videointelligence.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Workflows
+workflows.googleapis.com
+Workforce Identity Federation
+iam.googleapis.com
+US Data Boundary for Healthcare and Life Sciences
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Apigee
+apigee.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+aiplatform.googleapis.com
+Backup and DR Service
+backupdr.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Healthcare API
+healthcare.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+networkservices.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Compute Engine
+compute.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+policytroubleshooter.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Key Access Justifications
+cloudekm.googleapis.com
+cloudkms.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center Premium
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Vertex AI Workbench
+notebooks.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+US Data Boundary for Healthcare and Life Sciences with Support
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Apigee
+apigee.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup and DR Service
+backupdr.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Healthcare API
+healthcare.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+networkservices.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Compute Engine
+compute.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+policytroubleshooter.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Key Access Justifications
+cloudekm.googleapis.com
+cloudkms.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center Premium
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Vertex AI Workbench
+notebooks.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Data Boundary for Impact Level 2 (IL2)
+Access Context Manager
+accesscontextmanager.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Config Management
+anthosconfigmanagement.googleapis.com
+Apigee
+apigee.googleapis.com
+App Engine
+appengine.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Analysis
+containeranalysis.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Assured Open Source Software (Assured OSS)
+assuredoss.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Billing API
+[1]
+billingbudgets.googleapis.com
+cloudbilling.googleapis.com
+Cloud Build
+[7]
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud Run functions
+cloudfunctions.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Identity
+cloudidentity.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Intrusion Detection System
+ids.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Next Generation Firewall Essentials
+compute.googleapis.com
+networksecurity.googleapis.com
+Cloud Next Generation Firewall Standard
+compute.googleapis.com
+networksecurity.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud Translation
+translation.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect
+connectgateway.googleapis.com
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Marketplace
+N/A
+Google Cloud App
+N/A
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+N/A
+Google Admin console
+N/A
+Identity and Access Management (IAM)
+iam.googleapis.com
+policytroubleshooter.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Integration Connectors
+connectors.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Network Intelligence Center
+networkmanagement.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Secure Web Proxy
+networkservices.googleapis.com
+networksecurity.googleapis.com
+Security Command Center
+containerthreatdetection.googleapis.com
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Service Directory
+servicedirectory.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Vector Search
+aiplatform.googleapis.com
+Vertex AI Workbench
+aiplatform.googleapis.com
+notebooks.googleapis.com
+Vertex AI batch prediction
+aiplatform.googleapis.com
+Vertex ML Metadata
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Structured Data
+aiplatform.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Video Intelligence API
+videointelligence.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Workload Identity Federation
+iam.googleapis.com
+sts.googleapis.com
+Data Boundary for Impact Level 4 (IL4)
+Access Context Manager
+accesscontextmanager.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Cloud Build
+[7]
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Identity
+cloudidentity.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Logging
+logging.googleapis.com
+monitoring.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect Agent
+connectgateway.googleapis.com
+gkeconnect.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Gemini Enterprise
+[8]
+discoveryengine.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Google Admin console
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+policytroubleshooter.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Spanner
+[3]
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+servicenetworking.googleapis.com
+Data Boundary for Impact Level 5 (IL5)
+Access Context Manager
+accesscontextmanager.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Cloud Build
+[7]
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Identity
+cloudidentity.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+us-vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect Agent
+gkeconnect.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc.googleapis.com
+dataproc-control.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Google Admin console
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Spanner
+[3]
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Data Boundary for International Traffic in Arms Regulations (ITAR)
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+networkservices.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Compute Engine
+compute.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub (fleets)
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Jurisdictional Google Cloud console
+N/A
+Key Access Justifications
+cloudekm.googleapis.com
+cloudkms.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+Not available
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center Premium
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Service Directory
+servicedirectory.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Data Boundary for IRS Publication 1075
+AI Protection
+securitycenter.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Application Integration
+integrations.googleapis.com
+Artifact Analysis
+containeranalysis.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+aiplatform.googleapis.com
+Backup and DR Service
+backupdr.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+BigQuery Data Transfer Service
+[2]
+bigquerydatatransfer.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Google Cloud console
+N/A
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud Run functions
+cloudfunctions.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Healthcare API
+healthcare.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Scheduler
+cloudscheduler.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud TPU
+tpu.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Data Security Posture Management
+securitycenter.googleapis.com
+Database Center
+databasecenter.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Authentication
+N/A
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Gemini Enterprise
+[8]
+discoveryengine.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Integration Connectors
+connectors.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Jurisdictional Google Cloud console
+N/A
+Key Access Justifications
+cloudekm.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Memorystore for Redis Cluster
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center Premium
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Vertex AI Tuning
+aiplatform.googleapis.com
+Vertex AI Workbench
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Workforce Identity Federation
+iam.googleapis.com
+sts.googleapis.com
+Australia Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud Run functions
+cloudfunctions.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Australia Data Boundary and Support
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Brazil Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Canada Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Canada Data Boundary and Support
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Data Boundary for Canada Protected B
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Apigee Hybrid
+apigee.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud Run functions
+cloudfunctions.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+networkservices.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+External passthrough Network Load Balancer
+compute.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Internal passthrough Network Load Balancer
+compute.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Regional external Application Load Balancer
+compute.googleapis.com
+Regional external proxy Network Load Balancer
+compute.googleapis.com
+Regional internal Application Load Balancer
+compute.googleapis.com
+Regional internal proxy Network Load Balancer
+compute.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Service Directory
+servicedirectory.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Chile Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+EU Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Data Security Posture Management
+N/A
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Gemini Enterprise
+discoveryengine.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+EU Data Boundary and Support
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Data Security Posture Management
+N/A
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Gemini Enterprise
+discoveryengine.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+EU Data Boundary with Access Justifications
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+networkservices.google.com
+Cloud Storage
+storage.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect
+gkeconnect.googleapis.com
+connectgateway.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+policytroubleshooter.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Hong Kong Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+India Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Indonesia Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Israel Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Israel Data Boundary and Support
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Japan Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Qatar Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Singapore Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+South Africa Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+South Korea Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Kingdom of Saudi Arabia (KSA) Data Boundary with Access Justifications
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshconfig.googleapis.com
+trafficdirector.googleapis.com
+networkservices.google.com
+networksecurity.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compute Engine
+compute.googleapis.com
+Connect
+gkeconnect.googleapis.com
+connectgateway.googleapis.com
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+Google Cloud console
+N/A
+Google Kubernetes Engine
+container.googleapis.com
+containersecurity.googleapis.com
+Identity and Access Management (IAM)
+iam.googleapis.com
+policytroubleshooter.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Service Directory
+servicedirectory.googleapis.com
+Spanner
+spanner.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+servicenetworking.googleapis.com
+Switzerland Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Taiwan Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+UK Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+US Data Boundary
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Data Security Posture Management
+N/A
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Gemini Enterprise
+discoveryengine.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+US Data Boundary and Support
+Access Approval
+accessapproval.googleapis.com
+Access Context Manager
+accesscontextmanager.googleapis.com
+Access Transparency
+accessapproval.googleapis.com
+Agent Assist
+dialogflow.googleapis.com
+AlloyDB for PostgreSQL
+alloydb.googleapis.com
+Cloud Service Mesh
+mesh.googleapis.com
+meshca.googleapis.com
+meshconfig.googleapis.com
+Apigee
+apigee.googleapis.com
+App Hub
+apphub.googleapis.com
+Artifact Registry
+artifactregistry.googleapis.com
+AutoML Tables
+automl.googleapis.com
+Backup for GKE
+gkebackup.googleapis.com
+BigQuery
+[2]
+bigquery.googleapis.com
+bigqueryconnection.googleapis.com
+bigquerydatapolicy.googleapis.com
+bigquerydatatransfer.googleapis.com
+bigquerymigration.googleapis.com
+bigqueryreservation.googleapis.com
+bigquerystorage.googleapis.com
+Bigtable
+bigtable.googleapis.com
+bigtableadmin.googleapis.com
+Binary Authorization
+binaryauthorization.googleapis.com
+Certificate Authority Service
+privateca.googleapis.com
+Certificate Manager
+certificatemanager.googleapis.com
+Cloud Asset Inventory
+cloudasset.googleapis.com
+Cloud Build
+cloudbuild.googleapis.com
+Cloud Composer
+composer.googleapis.com
+Cloud Domains
+domains.googleapis.com
+Cloud DNS
+dns.googleapis.com
+Cloud Data Fusion
+datafusion.googleapis.com
+Cloud Deploy
+clouddeploy.googleapis.com
+Cloud External Key Manager (Cloud EKM)
+cloudkms.googleapis.com
+Cloud HSM
+cloudkms.googleapis.com
+Cloud Interconnect
+compute.googleapis.com
+Cloud Key Management Service (Cloud KMS)
+cloudkms.googleapis.com
+Cloud Load Balancing
+compute.googleapis.com
+Cloud Logging
+logging.googleapis.com
+Cloud Monitoring
+[6]
+monitoring.googleapis.com
+Cloud NAT
+compute.googleapis.com
+Cloud OS Login API
+oslogin.googleapis.com
+Cloud Router
+compute.googleapis.com
+Cloud Run
+[5]
+run.googleapis.com
+Cloud Run functions
+run.googleapis.com
+Cloud SQL
+sqladmin.googleapis.com
+Cloud SQL for PostgreSQL
+sqladmin.googleapis.com
+Cloud Storage
+storage.googleapis.com
+Cloud Tasks
+cloudtasks.googleapis.com
+Cloud VPN
+compute.googleapis.com
+Cloud Vision API
+vision.googleapis.com
+Cloud Workstations
+workstations.googleapis.com
+Compliance Manager
+cloudsecuritycompliance.googleapis.com
+Compute Engine
+compute.googleapis.com
+Config Sync
+anthosconfigmanagement.googleapis.com
+Connect
+gkeconnect.googleapis.com
+Dialogflow CX
+dialogflow.googleapis.com
+Customer Experience Insights
+contactcenterinsights.googleapis.com
+Sensitive Data Protection
+dlp.googleapis.com
+Database Center
+Not applicable
+Dataflow
+dataflow.googleapis.com
+datapipelines.googleapis.com
+Dataform
+dataform.googleapis.com
+Dataplex Universal Catalog
+dataplex.googleapis.com
+datalineage.googleapis.com
+Managed Service for Apache Spark
+dataproc-control.googleapis.com
+dataproc.googleapis.com
+Data Security Posture Management
+N/A
+Document AI
+documentai.googleapis.com
+Essential Contacts
+essentialcontacts.googleapis.com
+Eventarc
+eventarc.googleapis.com
+Filestore
+file.googleapis.com
+Firebase Security Rules
+firebaserules.googleapis.com
+Firestore
+firestore.googleapis.com
+GKE Hub
+gkehub.googleapis.com
+GKE Identity Service
+anthosidentityservice.googleapis.com
+GKE Image streaming
+containerfilesystem.googleapis.com
+Generative AI on Vertex AI
+aiplatform.googleapis.com
+Gemini Enterprise
+discoveryengine.googleapis.com
+Google Cloud Armor
+[4]
+compute.googleapis.com
+networksecurity.googleapis.com
+Google Cloud Managed Service for Apache Kafka
+managedkafka.googleapis.com
+Google Cloud NetApp Volumes
+netapp.googleapis.com
+Google Kubernetes Engine (GKE)
+container.googleapis.com
+containersecurity.googleapis.com
+Google Security Operations SIEM
+chronicle.googleapis.com
+chronicleservicemanager.googleapis.com
+Google Security Operations SOAR
+Not applicable
+Identity and Access Management (IAM)
+iam.googleapis.com
+Identity-Aware Proxy (IAP)
+iap.googleapis.com
+Infrastructure Manager
+config.googleapis.com
+Looker (Google Cloud core)
+looker.googleapis.com
+Memorystore for Redis
+redis.googleapis.com
+Model Armor
+modelarmor.googleapis.com
+Network Connectivity Center
+networkconnectivity.googleapis.com
+Organization Policy Service
+orgpolicy.googleapis.com
+Persistent Disk
+compute.googleapis.com
+Personalized Service Health
+servicehealth.googleapis.com
+Pub/Sub
+pubsub.googleapis.com
+Resource Manager
+cloudresourcemanager.googleapis.com
+Secret Manager
+secretmanager.googleapis.com
+Secure Source Manager
+securesourcemanager.googleapis.com
+Security Command Center
+securitycenter.googleapis.com
+securitycentermanagement.googleapis.com
+securityposture.googleapis.com
+websecurityscanner.googleapis.com
+Serverless VPC Access
+vpcaccess.googleapis.com
+Spanner
+spanner.googleapis.com
+Speech-to-Text
+speech.googleapis.com
+Storage Transfer Service
+storagetransfer.googleapis.com
+Text-to-Speech
+texttospeech.googleapis.com
+Cloud Service Mesh
+trafficdirector.googleapis.com
+VM Manager
+osconfig.googleapis.com
+VPC Service Controls
+accesscontextmanager.googleapis.com
+Vertex AI Batch prediction
+aiplatform.googleapis.com
+Vertex AI Model Monitoring
+aiplatform.googleapis.com
+Vertex AI Model Registry
+aiplatform.googleapis.com
+Vertex AI Online prediction
+aiplatform.googleapis.com
+Vertex AI Pipelines
+aiplatform.googleapis.com
+Vertex AI Search
+discoveryengine.googleapis.com
+Vertex AI Training
+aiplatform.googleapis.com
+Virtual Private Cloud (VPC)
+compute.googleapis.com
+Web Risk
+webrisk.googleapis.com
+Footnotes
+1. Cloud Billing Support cases are not in scope for FedRAMP Moderate or
+Assured Workloads; only tech support cases for Cloud Billing or
+the Cloud Billing API are in scope.
+2. BigQuery is supported, but it isn't automatically enabled when you create a new
+Assured Workloads folder due to an internal configuration process. This process normally
+finishes in ten minutes, but can take much longer in some circumstances. To check whether the
+process is finished and to enable BigQuery, complete the following steps:
+In the Google Cloud console, go to the Assured Workloads page.
+Go to Assured Workloads
+Select your new Assured Workloads folder from the list.
+On the Folder Details page in the Allowed services section, click
+Review Available Updates .
+In the Allowed services pane, review the services to be added to the
+Resource Usage Restriction
+organization policy for the folder. If BigQuery services are listed, click
+Allow Services to add them.
+If BigQuery services are not listed, wait for the internal process to complete. If the
+services are not listed within 12 hours of folder creation, contact
+Cloud Customer Care .
+After the enablement process is completed, you can use BigQuery in your
+Assured Workloads folder.
+Gemini in BigQuery is not supported by Assured Workloads.
+3. Spanner Vertex AI integration is not
+supported.
+4. See Google Cloud Armor compliance for supported
+configurations.
+5. Unless otherwise noted, the following Cloud Run features
+aren't supported:
+Cloud Trace integration
+Cloud Run functions
+Eventarc triggers
+6. Cloud Monitoring's
+Synthetic monitoring and
+Uptime checks features are not supported in
+Assured Workloads.
+7. It is your responsibility not to use the following Cloud Build features
+because they are not compliant with Data Boundary for IL5:
+Generate and validate build provenance
+Build repositories from GitHub Enterprise in a private network
+8. Gemini Enterprise includes support for the Web Grounding for
+Enterprise feature. If you're a Department of Defense (DoD) user, send an
+email to fedramp@google.com to request a copy of the
+Gemini Enterprise IL5 Implementation Guide.
+9. The following Dataplex Universal Catalog features are not supported:
+Lakes, zones, and tasks
+10. Cloud Shell doesn't meet NIST SP 800-53 Control SA-9(5) data residency
+requirements for FedRAMP High workloads. If you choose to use
+Cloud Shell for FedRAMP High workloads, you are also choosing to accept
+the associated risks under the Assured Workloads
+shared responsibility model .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-09 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],[]]

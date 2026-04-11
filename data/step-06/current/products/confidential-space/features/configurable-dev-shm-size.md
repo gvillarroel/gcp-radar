@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:02.347Z"
+product_name: "Confidential Space"
+product_slug: "confidential-space"
+feature_name: "Configurable /dev/shm size"
+feature_slug: "configurable-dev-shm-size"
+latest_feature_date: "2024-10-21"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "configurable"
+  - "dev"
+  - "shm"
+  - "size"
+  - "confidential"
+  - "space"
+  - "workloads"
+  - "can"
+---
+
+# Configurable /dev/shm size
+
+Product: Confidential Space
+Coverage: NONE
+
+## Step 02 Summary
+
+Confidential Space workloads can configure the size of /dev/shm.
+
+## Extended Definition
+
+Confidential Space workloads can configure the size of /dev/shm.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

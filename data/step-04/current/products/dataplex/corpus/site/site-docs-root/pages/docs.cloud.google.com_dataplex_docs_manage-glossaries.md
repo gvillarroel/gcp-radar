@@ -1,6 +1,5 @@
 ---
-title: "Manage a business glossary \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-  \ Documentation"
+title: "Manage a business glossary \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/manage-glossaries
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,35 +7,35 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/manage-glossaries
-  title: "Manage a business glossary \_|\_ Dataplex Universal Catalog \_|\_ Google\
-    \ Cloud Documentation"
+  title: "Manage a business glossary \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Manage a business glossary
 Stay organized with collections
 Save and categorize content based on your preferences.
 This document describes how to create and manage a
-Dataplex Universal Catalog business glossary in Dataplex Universal Catalog. Use a business
+business glossaries in Knowledge Catalog (formerly Dataplex Universal Catalog). Use a business
 glossary to establish a standardized vocabulary for your data assets, which
 reduces ambiguity and improves data discovery and governance across your
 organization.
-Dataplex Universal Catalog business glossary use cases
-By creating a common language for data using Dataplex Universal Catalog business glossary,
+Knowledge Catalog business glossary use cases
+By creating a common language for data using Knowledge Catalog business glossary,
 you can achieve the following:
 Define a clear hierarchy of business categories and terms.
 Link concepts using synonyms and show relationships between terms.
 Search for data resources based on business concepts, not just technical names.
-Dataplex Universal Catalog business glossary helps streamline data discovery and reduce
+Knowledge Catalog business glossary helps streamline data discovery and reduce
 ambiguity, resulting in better governance, more accurate analysis, and faster
 insights.
 Elements of a business glossary
@@ -91,7 +90,7 @@ A related term is a relationship that indicates that two terms are associated
 with each other, but have different meanings. For example, you can create a
 related term to link the terms "revenue" and "profit."
 Limitations
-Dataplex Universal Catalog business glossary isn't supported for Assured Workload projects.
+Knowledge Catalog business glossary isn't supported for Assured Workload projects.
 Business glossaries are housed within projects and locations; the
 limitations for projects and locations
 apply to glossaries.
@@ -130,26 +129,26 @@ dataplex.glossaryTerms.update
 dataplex.glossaryTerms.delete
 Create, lookup, and delete synonym term-to-term links in your project:
 dataplex.entryLinks.create
-on the Dataplex Universal Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
+on the Knowledge Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
 dataplex.entryGroups.useSynonymEntryLink
-on the Dataplex Universal Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
+on the Knowledge Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
 dataplex.glossaryTerms.use
 on the glossaries whose terms need to be associated.
 dataplex.glossaryTerms.get
-on the term whose synonym links you are looking up. Dataplex Universal Catalog redacts synonym terms in the response if you lack the dataplex.glossaryTerms.get permission for those terms.
+on the term whose synonym links you are looking up. Knowledge Catalog redacts synonym terms in the response if you lack the dataplex.glossaryTerms.get permission for those terms.
 dataplex.entryLinks.delete
-on the Dataplex Universal Catalog entry group in the project in which the link is present.
+on the Knowledge Catalog entry group in the project in which the link is present.
 Create, lookup, and delete related term-to-term links in your project:
 dataplex.entryLinks.create
-on the Dataplex Universal Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
+on the Knowledge Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
 dataplex.entryGroups.useRelatedEntryLink
-on the Dataplex Universal Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
+on the Knowledge Catalog entry group in the project in which either of the glossary terms is present. The link is created in the entry group for which the permission is given.
 dataplex.entries.link
-on the Dataplex Universal Catalog entry group in projects in which entries corresponding to glossary terms are present.
+on the Knowledge Catalog entry group in projects in which entries corresponding to glossary terms are present.
 dataplex.glossaryTerms.get
-on the term whose related links you are looking up. Dataplex Universal Catalog redacts related terms in the response if you lack the dataplex.glossaryTerms.get permission for those terms.
+on the term whose related links you are looking up. Knowledge Catalog redacts related terms in the response if you lack the dataplex.glossaryTerms.get permission for those terms.
 dataplex.entryLinks.delete
-on the Dataplex Universal Catalog entry group in the project in which the link is present.
+on the Knowledge Catalog entry group in the project in which the link is present.
 Create, lookup, and delete links between terms and data assets or columns in your project:
 dataplex.entryLinks.create
 on the system entry group corresponding to data assets or columns in the project. The link is created in the project for which the permission is given.
@@ -160,7 +159,7 @@ on the system entry group corresponding to data assets or columns in the project
 dataplex.glossaryTerms.use
 on the glossary whose term needs to be associated.
 Source system read permission (for example, bigquery.tables.get or dataplex.glossaryTerms.get )
-on the entry whose links you are looking up. Dataplex Universal Catalog redacts data assets in the response if you lack the source system read permission for those assets.
+on the entry whose links you are looking up. Knowledge Catalog redacts data assets in the response if you lack the source system read permission for those assets.
 dataplex.entryLinks.delete
 on the system entry group in which the link is present.
 You might also be able to get
@@ -168,13 +167,13 @@ these permissions
 with custom roles or
 other predefined roles .
 For more information, see
-Dataplex Universal Catalog IAM roles .
+Knowledge Catalog IAM roles .
 Create and manage business glossaries
 The following sections describe how to create, view, edit, and delete a business
 glossary.
 Create a business glossary
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Click Create business glossary .
@@ -185,7 +184,7 @@ Click Create . The glossary is created under the current project.
 Optional: Add a short description in Description (up to 1024 characters)
 or a long description in Overview (up to 120 KB).
 REST
-When you create a glossary, Dataplex Universal Catalog creates an entry to represent the glossary.
+When you create a glossary, Knowledge Catalog creates an entry to represent the glossary.
 Create the glossary.
 alias gcurl = 'curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
 gcurl -X POST https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID /glossaries?glossary_id = GLOSSARY_ID --data @-
@@ -234,7 +233,7 @@ Replace OVERVIEW with plaintext or HTML to
 describe your glossary category or term.
 View the available glossaries
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 The My glossaries pane displays all the organization's glossaries
@@ -246,7 +245,7 @@ gcurl -X GET https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/
 Edit a glossary
 You can edit the name and description of a glossary.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Click the glossary that you want to edit.
@@ -266,7 +265,7 @@ Before you can delete a glossary, you first need to
 delete all the categories and terms in
 the glossary.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Click the glossary that you want to delete.
@@ -280,7 +279,7 @@ categories.
 Create a category under a glossary
 A business glossary can have a maximum of 200 categories.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Select the glossary in which you want to create a category, and then click
@@ -290,7 +289,7 @@ Click Create .
 Optional: Add a short description in Description (up to 1024 characters)
 or a long description in Overview (up to 120 KB).
 REST
-When you create a category, Dataplex Universal Catalog creates an entry to represent the category.
+When you create a category, Knowledge Catalog creates an entry to represent the category.
 Create the category.
 alias gcurl = 'curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
 gcurl -X POST https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID /glossaries/ GLOSSARY_ID /categories?category_id = CATEGORY_ID --data @-
@@ -367,7 +366,7 @@ Create a nested category
 A business glossary can have a maximum of three nested category levels,
 excluding the root glossary level.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary in which you want to create a category.
@@ -390,7 +389,7 @@ Replace PARENT_CATEGORY_ID with the ID of the parent
 category.
 View the categories that belong to a glossary
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 To view the categories in a glossary, expand the glossary.
@@ -402,7 +401,7 @@ Edit a category
 You can edit the name, description, and contacts for a category. For nested
 categories, you can also edit the parent category.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary and click the category you want to edit.
@@ -419,7 +418,7 @@ gcurl -X PATCH https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /location
 EOF
 Delete a category
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary and click the category that you want to delete.
@@ -433,7 +432,7 @@ terms.
 Create a term under a business glossary
 A business glossary can have a maximum of 5,000 terms.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 To create a term at the glossary level, select the glossary where you
@@ -446,7 +445,7 @@ Optional: To add contacts, click Edit , and then provide a list of
 email addresses for the data stewards, data owners, or data domain owners.
 Then click Save .
 REST
-When you create a term, Dataplex Universal Catalog creates an entry to represent the term.
+When you create a term, Knowledge Catalog creates an entry to represent the term.
 Create the term.
 alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
 gcurl -X POST https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID /glossaries/ GLOSSARY_ID /terms?term_id= TERM_ID --data @- TERM_DISPLAY_NAME ",
@@ -513,7 +512,7 @@ gcurl -X PATCH https://dataplex.googleapis.com/v1/projects/ PROJECT_NUMBER /loca
 EOF
 Create a term under a category
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 To create a term in a category, select the category where you want to
@@ -526,7 +525,7 @@ Optional: To add contacts, click Edit , and then provide a list of
 email addresses for the data stewards, data owners, or data domain owners.
 Then click Save .
 REST
-When you create a term, Dataplex Universal Catalog creates an entry to represent the term.
+When you create a term, Knowledge Catalog creates an entry to represent the term.
 Create a term.
 alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
 gcurl -X POST https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID /glossaries/ GLOSSARY_ID /terms?term_id= TERM_ID --data @- TERM_DISPLAY_NAME ",
@@ -594,7 +593,7 @@ EOF
 Add an aspect to a term
 You can add aspects to terms to provide additional context or metadata.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Glossaries page.
 Go to Glossaries
 Expand the glossary and click the term that you want to add an aspect to.
@@ -631,7 +630,7 @@ ASPECT_LOCATION_ID : the location of the aspect type.
 ASPECT_TYPE_ID : the ID of the aspect type.
 View the terms in a glossary or category
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 To view the terms in a glossary, expand the glossary. To view terms in a
@@ -642,7 +641,7 @@ alias gcurl = 'curl -H "Authorization: Bearer $(gcloud auth print-access-token)"
 gcurl -X GET https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID /glossaries/ GLOSSARY_ID /terms
 View the details of a term
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 To view the list of terms in a glossary, expand the glossary.
@@ -654,12 +653,12 @@ gcurl -X GET https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/
 Edit a term
 You can edit the name, description, overview, contacts, and parent for a term.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Add an aspect to a term
 You can add aspects to terms to provide additional context or metadata.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Glossaries page.
 Go to Glossaries
 Expand the glossary and click the term that you want to add an aspect to.
@@ -708,7 +707,7 @@ gcurl -X PATCH https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /location
 EOF
 Delete a term
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary and click the term that you want to delete.
@@ -723,7 +722,7 @@ Term relationships are bi-directional. For example, when you link profit
 as a synonym of earnings , earnings also becomes a synonym of profit .
 Create synonym links between terms
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary and click the term that you want to create links with.
@@ -767,11 +766,11 @@ contains the second term. If both terms are in the same glossary, then this
 value is the same as the glossary ID for the first term.
 TERM2_ID : the ID of the second term.
 ENTRY_LINK_ID : an ID for the link between the two
-terms. Each term is represented as a Dataplex Universal Catalog entry.
+terms. Each term is represented as a Knowledge Catalog entry.
 The entry link is the relationship between synonym terms.
 Create related links between terms
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary and click the term that you want to create links with.
@@ -816,7 +815,7 @@ contains the second term. If both terms are in the same glossary, then this
 value is the same as the glossary ID for the first term.
 TERM2_ID : the ID of the second term.
 ENTRY_LINK_ID : an ID for the link between the two
-terms. Each term is represented as a Dataplex Universal Catalog entry.
+terms. Each term is represented as a Knowledge Catalog entry.
 The entry link is the relationship between related terms.
 Lookup synonym links for a term
 REST
@@ -858,7 +857,7 @@ PAGE_TOKEN with the value of the page token you
 received from the earlier lookupEntryLinks response.
 Remove links between synonyms and related terms
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 Expand the glossary and click the term whose synonyms or related terms you
@@ -882,7 +881,7 @@ You can attach terms to data assets or data asset columns. For example, you
 can attach terms to a BigQuery dataset.
 Attach terms to a data asset
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 Search for the data asset (such as a dataset, file, or table) that you
@@ -919,12 +918,12 @@ asset being linked to
 ENTRY_GROUP_ID : the entry group of the data asset
 being linked to
 ENTRY_LINK_ID : an ID for the link between the term
-and the Dataplex Universal Catalog entry that represents the data asset.
+and the Knowledge Catalog entry that represents the data asset.
 TERM_PROJECT_NUMBER : the project number for the term
 being linked.
 Attach terms to a column in an entry schema
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 Search for the data asset (such as a dataset, file, or table) that has a
@@ -960,7 +959,7 @@ asset being linked to
 ENTRY_GROUP_ID : the entry group of the data asset
 being linked to
 ENTRY_LINK_ID : an ID for the link between the term
-and the Dataplex Universal Catalog entry that represents the data
+and the Knowledge Catalog entry that represents the data
 asset
 TERM_PROJECT_NUMBER : the project number for the
 term being linked
@@ -1009,7 +1008,7 @@ PAGE_TOKEN with the value of the page token you
 received from the earlier lookupEntryLinks response.
 Remove terms from a data asset
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 Search for the data asset (such as a dataset, file, or table) that you
@@ -1027,7 +1026,7 @@ Find glossaries, terms, and linked data assets
 Console
 To navigate across your business glossary content, use the glossary and terms
 tree on the Glossaries page.
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries page.
+In the Google Cloud console, go to the Knowledge Catalog Glossaries page.
 Go to Glossaries
 On the Glossaries page, use the filter bar to find categories. The
 following filters are available:
@@ -1049,7 +1048,7 @@ To find glossaries, terms, and linked data assets by using the REST API, you
 need to sign up for Preview .
 Search for data assets linked to terms
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Glossaries
+In the Google Cloud console, go to the Knowledge Catalog Glossaries
 page.
 Go to Glossaries
 On the Glossaries page, use the filter bar to enter a free-form text
@@ -1058,14 +1057,14 @@ glossary, category, and term names.
 Click a matched term.
 On the Term details page, see the linked terms (synonyms and related
 terms) and linked entries (data assets) to this term.
-If you want to see the details for an entry in Dataplex Universal Catalog,
+If you want to see the details for an entry in Knowledge Catalog,
 click the entry.
 REST
 To find glossaries, terms, and linked data assets by using the REST API, you
 need to sign up for Preview .
 Import glossaries and links between terms and terms or data assets
 To import glossaries and links from another cataloging tool or to update
-your glossaries in Dataplex Universal Catalog, you can bulk import glossaries,
+your glossaries in Knowledge Catalog, you can bulk import glossaries,
 categories, terms, links between terms, links between terms and data assets, or
 columns, using the REST API.
 Create the target glossary.
@@ -1116,8 +1115,8 @@ gcurl https:// DATAPLEX_API /metadataJobs?metadata_job_id = JOB_ID -d " $( cat<<
 }
 EOF
 ) "
-Replace DATAPLEX_API with the Dataplex Universal Catalog
-API endpoint of the format
+Replace DATAPLEX_API with the Dataplex API
+endpoint of the format
 dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID .
 Optional: Get the status of the operation.
 gcurl https://dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID /operations/operation- OPERATION_ID
@@ -1181,17 +1180,17 @@ EOF
 ) "
 Replace DATAPLEX_API with dataplex.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION_ID .
 Pricing
-Starting in July 2026, Dataplex Universal Catalog business glossary will be billed
+Starting in July 2026, Knowledge Catalog business glossary will be billed
 the same as the metadata storage pricing. See
-Dataplex Universal Catalog metadata storage pricing .
+Knowledge Catalog metadata storage pricing .
 What's next
 If you're using the preview version of business glossary for
 Data Catalog, see
-Transition to business glossary on Dataplex Universal Catalog .
+Transition to business glossary on Knowledge Catalog .
 Follow a
-codelab: Foundational governance with Dataplex Universal Catalog .
+codelab: Foundational governance with Knowledge Catalog .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

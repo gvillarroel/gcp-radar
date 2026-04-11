@@ -8,340 +8,23 @@ entrypoint: https://docs.cloud.google.com/identity/docs
 source_metadata:
   url: https://docs.cloud.google.com/identity/docs/reference/rest
   title: "Cloud Identity API \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Cloud Identity API | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud Identity
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-Cloud Identity
-All APIs & references
-REST reference
-Overview
-v1
-REST Resources
-customers.userinvitations
-Overview
-cancel
-get
-isInvitableUser
-list
-send
-devices
-Overview
-cancelWipe
-create
-delete
-get
-list
-wipe
-devices.deviceUsers
-Overview
-approve
-block
-cancelWipe
-delete
-get
-list
-lookup
-wipe
-devices.deviceUsers.clientStates
-Overview
-get
-list
-patch
-groups
-Overview
-create
-delete
-get
-getSecuritySettings
-list
-lookup
-patch
-search
-updateSecuritySettings
-groups.memberships
-Overview
-checkTransitiveMembership
-create
-delete
-get
-getMembershipGraph
-list
-lookup
-modifyMembershipRoles
-searchDirectGroups
-searchTransitiveGroups
-searchTransitiveMemberships
-inboundOidcSsoProfiles
-Overview
-create
-delete
-get
-list
-patch
-inboundSamlSsoProfiles
-Overview
-create
-delete
-get
-list
-patch
-inboundSamlSsoProfiles.idpCredentials
-Overview
-add
-delete
-get
-list
-inboundSsoAssignments
-Overview
-create
-delete
-get
-list
-patch
-policies
-Overview
-get
-list
-Types
-EntityKey
-RelationType
-SecuritySettings
-TransitiveMembershipRole
-View
-v1beta1
-REST Resources
-customers.userinvitations
-Overview
-cancel
-get
-isInvitableUser
-list
-send
-devices
-Overview
-cancelWipe
-create
-delete
-get
-list
-wipe
-devices.deviceUsers
-Overview
-approve
-block
-cancelWipe
-delete
-get
-list
-lookup
-wipe
-devices.deviceUsers.clientStates
-Overview
-get
-patch
-groups
-Overview
-create
-delete
-get
-getSecuritySettings
-list
-lookup
-patch
-search
-updateSecuritySettings
-groups.memberships
-Overview
-checkTransitiveMembership
-create
-delete
-get
-getMembershipGraph
-list
-lookup
-modifyMembershipRoles
-searchDirectGroups
-searchTransitiveGroups
-searchTransitiveMemberships
-inboundOidcSsoProfiles
-Overview
-create
-delete
-get
-list
-patch
-inboundSamlSsoProfiles
-Overview
-create
-delete
-get
-list
-patch
-inboundSamlSsoProfiles.idpCredentials
-Overview
-add
-delete
-get
-list
-inboundSsoAssignments
-Overview
-create
-delete
-get
-list
-patch
-orgUnits.memberships
-Overview
-list
-move
-policies
-Overview
-create
-delete
-get
-list
-patch
-Types
-EntityKey
-RelationType
-SecuritySettings
-TransitiveMembershipRole
-Shared types
-Types
-Operation
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Service: cloudidentity.googleapis.com Discovery document
-Service endpoint
-REST Resource: v1beta1.customers.userinvitations
-REST Resource: v1beta1.devices
-REST Resource: v1beta1.devices.deviceUsers
-REST Resource: v1beta1.devices.deviceUsers.clientStates
-REST Resource: v1beta1.groups
-REST Resource: v1beta1.groups.memberships
-REST Resource: v1beta1.inboundOidcSsoProfiles
-REST Resource: v1beta1.inboundSamlSsoProfiles
-REST Resource: v1beta1.inboundSamlSsoProfiles.idpCredentials
-REST Resource: v1beta1.inboundSsoAssignments
-REST Resource: v1beta1.orgUnits.memberships
-REST Resource: v1beta1.policies
-REST Resource: v1.customers.userinvitations
-REST Resource: v1.devices
-REST Resource: v1.devices.deviceUsers
-REST Resource: v1.devices.deviceUsers.clientStates
-REST Resource: v1.groups
-REST Resource: v1.groups.memberships
-REST Resource: v1.inboundOidcSsoProfiles
-REST Resource: v1.inboundSamlSsoProfiles
-REST Resource: v1.inboundSamlSsoProfiles.idpCredentials
-REST Resource: v1.inboundSsoAssignments
-REST Resource: v1.policies
 Home
 Documentation
 Access and resource management
 Cloud Identity
 Reference
-Was this helpful?
 Send feedback
 Cloud Identity API
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Service: cloudidentity.googleapis.com Discovery document
-Service endpoint
-REST Resource: v1beta1.customers.userinvitations
-REST Resource: v1beta1.devices
-REST Resource: v1beta1.devices.deviceUsers
-REST Resource: v1beta1.devices.deviceUsers.clientStates
-REST Resource: v1beta1.groups
-REST Resource: v1beta1.groups.memberships
-REST Resource: v1beta1.inboundOidcSsoProfiles
-REST Resource: v1beta1.inboundSamlSsoProfiles
-REST Resource: v1beta1.inboundSamlSsoProfiles.idpCredentials
-REST Resource: v1beta1.inboundSsoAssignments
-REST Resource: v1beta1.orgUnits.memberships
-REST Resource: v1beta1.policies
-REST Resource: v1.customers.userinvitations
-REST Resource: v1.devices
-REST Resource: v1.devices.deviceUsers
-REST Resource: v1.devices.deviceUsers.clientStates
-REST Resource: v1.groups
-REST Resource: v1.groups.memberships
-REST Resource: v1.inboundOidcSsoProfiles
-REST Resource: v1.inboundSamlSsoProfiles
-REST Resource: v1.inboundSamlSsoProfiles.idpCredentials
-REST Resource: v1.inboundSsoAssignments
-REST Resource: v1.policies
 API for provisioning and managing identity resources.
-Service: cloudidentity. googleapis. com
+Service: cloudidentity.googleapis.com
 To call this service, we recommend that you use the Google-provided client libraries . If your application needs to use your own libraries to call this service, use the following information when you make the API requests.
 Discovery document
 A Discovery Document is a machine-readable specification for describing and consuming REST APIs. It is used to build client libraries, IDE plugins, and other tools that interact with Google APIs. One service may provide multiple discovery documents. This service provides the following discovery documents:
@@ -350,27 +33,27 @@ https://cloudidentity.googleapis.com/$discovery/rest?version=v1beta1
 Service endpoint
 A service endpoint is a base URL that specifies the network address of an API service. One service might have multiple service endpoints. This service has the following service endpoint and all URIs below are relative to this service endpoint:
 https://cloudidentity.googleapis.com
-REST Resource: v1beta1. customers. userinvitations
+REST Resource: v1beta1.customers.userinvitations
 Methods
 cancel
-POST / v1beta1/ {name=customers/ */ userinvitations/ *}:cancel
-Cancels a User Invitation that was already sent.
+POST /v1beta1/{name=customers/*/userinvitations/*}:cancel
+Cancels a UserInvitation that was already sent.
 get
-GET / v1beta1/ {name=customers/ */ userinvitations/ *}
-Retrieves a User Invitation resource.
-is Invitable User
-GET / v1beta1/ {name=customers/ */ userinvitations/ *}:is Invitable User
-Verifies whether a user account is eligible to receive a User Invitation (is an unmanaged account).
+GET /v1beta1/{name=customers/*/userinvitations/*}
+Retrieves a UserInvitation resource.
+isInvitableUser
+GET /v1beta1/{name=customers/*/userinvitations/*}:isInvitableUser
+Verifies whether a user account is eligible to receive a UserInvitation (is an unmanaged account).
 list
-GET / v1beta1/ {parent=customers/ *}/ userinvitations
-Retrieves a list of User Invitation resources.
+GET /v1beta1/{parent=customers/*}/userinvitations
+Retrieves a list of UserInvitation resources.
 send
-POST / v1beta1/ {name=customers/ */ userinvitations/ *}:send
-Sends a User Invitation to email.
-REST Resource: v1beta1. devices
+POST /v1beta1/{name=customers/*/userinvitations/*}:send
+Sends a UserInvitation to email.
+REST Resource: v1beta1.devices
 Methods
-cancel Wipe
-POST / v1beta1/ {name=devices/ *}:cancel Wipe
+cancelWipe
+POST /v1beta1/{name=devices/*}:cancelWipe
 Cancels an unfinished device wipe.
 create
 POST /v1beta1/devices
@@ -788,54 +471,8 @@ Get a policy.
 list
 GET /v1/policies
 List policies.
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
 Last updated 2025-12-16 UTC.
 Need to tell us more?
 [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-12-16 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español – América Latina
-Français
-Português – Brasil
-中文 – 简体
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial

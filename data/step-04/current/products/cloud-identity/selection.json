@@ -1,20 +1,22 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T22:49:37.248Z",
+  "generated_at": "2026-04-10T20:44:38.015Z",
   "product_name": "Cloud Identity",
   "product_slug": "cloud-identity",
   "step03_ranking_path": "data/step-03/current/products/cloud-identity/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "api_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 2
   },
   "site_output_mode": "compact",
   "selected_source_count": 3,
-  "selected_sources_signature": "473aaabb5f2ec4996a7e3b5d4e1cc74d4b2e7e0fb1158c1db4f130f62e31b605",
+  "selected_sources_signature": "fbb5070c3192e919327d4bffb8900afa0957a16e91bf72292b2efa35eb9ed40b",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -24,8 +26,9 @@
       "url": "https://docs.cloud.google.com/identity/docs",
       "final_score": 100,
       "best_rank": 2,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 30
     },
     {
       "source_id": "site-api-reference",
@@ -35,8 +38,9 @@
       "url": "https://docs.cloud.google.com/identity/docs/reference/rest",
       "final_score": 90,
       "best_rank": 7,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     },
     {
       "source_id": "site-iam-reference",
@@ -46,8 +50,9 @@
       "url": "https://docs.cloud.google.com/iam/docs/google-identities",
       "final_score": 100,
       "best_rank": 4,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     }
   ],
   "corpus_paths": {

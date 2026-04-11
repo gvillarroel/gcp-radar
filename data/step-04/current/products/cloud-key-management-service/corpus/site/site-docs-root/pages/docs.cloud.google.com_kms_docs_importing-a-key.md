@@ -10,224 +10,21 @@ source_metadata:
   url: https://docs.cloud.google.com/kms/docs/importing-a-key
   title: "Import a key version into Cloud KMS \_|\_ Cloud Key Management Service \_\
     |\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Import a key version into Cloud KMS | Cloud Key Management Service | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud KMS
-Start free
-Overview
-Guides
-Reference
-Samples
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Samples
-Resources
-Cross-product tools
-More
-Console
-Discover
-Product overview
-Protection levels
-Overview
-Cloud HSM overview
-Single-tenant Cloud HSM overview
-Cloud EKM overview
-Reference architectures for Cloud EKM
-CMEK overview
-Cloud KMS with Autokey
-Compatible services
-Cloud HSM for Google Workspace
-Locations
-Get started
-Cloud KMS resources
-Key purposes and algorithms
-Separation of duties
-Create and use encryption keys
-CMEK best practices
-Create and manage Single-tenant Cloud HSM instances
-Create keys
-Automate key creation
-Autokey overview
-Enable Autokey
-Create a resource with Autokey
-Create a key ring
-Create a key
-Import keys
-About key import
-Key wrapping
-Format a key for import
-Manually wrap a key for import
-Configure OpenSSL for manual key wrapping
-Wrap a key using OpenSSL
-Set up automatic key wrapping
-Import a key version
-Verify an imported key version
-Create external keys
-Set up Cloud EKM over the internet
-Create an EKM connection
-Create an external Key
-Control access
-Manage IAM roles
-Use Organization Policy Contraints
-Create custom organization policy constraints for Cloud KMS
-CMEK organization policies
-Control key destruction
-Secure data using keys
-Key APIs
-Use gRPC
-Access the API
-Sort and filter API list results
-Generate random bytes
-Use Cloud KMS keys in Google Cloud
-Encrypt and decrypt data
-Envelope encryption
-Additional authenticated data
-Asymmetric encryption
-Encrypt and decrypt data with a symmetric key
-Encrypt and decrypt data with a raw symmetric key
-Encrypt and decrypt data with an asymmetric key
-Verify end-to-end data integrity
-Encrypt application data
-Set up client-side encryption with Tink
-Onboard to Cloud HSM for Google Workspace
-Sign and validate data
-Digital signatures
-Create and validate signatures
-MAC signatures
-Create and validate MAC signatures
-Share secrets using key encapsulation mechanisms
-Key encapsulation mechanisms
-Encapsulate and decapsulate using KEMs
-Manage keys
-Resource consistency
-Key version states
-View keys and key details
-View keys by project
-View encryption metrics
-View key usage
-Get a Cloud KMS resource ID
-Retrieve a public key
-Attest a Cloud HSM key
-Label a key
-Create and manage tags
-Enable and disable a key version
-Destroy and restore a key version
-Delete Cloud KMS resources
-Rotate keys
-About key rotation
-Rotate a key
-Re-encrypt data
-Update external key reference
-Monitor
-Using Cloud Audit Logging
-Cloud KMS Inventory Service audit logging
-Monitor state changes
-Monitor and adjust quotas
-Use Cloud Monitoring
-Monitor EKM usage
-Troubleshoot
-Troubleshoot failed imports
-Troubleshoot EKM via VPC errors
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Before you begin Preparing the project
-Preparing the local system
-Preparing the key
-Create the target key and key ring
-Create the import job Checking the state of the import job
-Preventing modification of import jobs
-Import the key Automatically wrapping and importing a key
-Importing a manually-wrapped key
-Check the state of the imported key version
-Re-import a previously destroyed key Restrictions
-Re-importing a destroyed key
-What's next
 Home
 Documentation
 Security
 Cloud KMS
 Guides
-Was this helpful?
 Send feedback
 Import a key version into Cloud KMS
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Before you begin Preparing the project
-Preparing the local system
-Preparing the key
-Create the target key and key ring
-Create the import job Checking the state of the import job
-Preventing modification of import jobs
-Import the key Automatically wrapping and importing a key
-Importing a manually-wrapped key
-Check the state of the imported key version
-Re-import a previously destroyed key Restrictions
-Re-importing a destroyed key
-What's next
 This guide shows you how to import a cryptographic key
 into Cloud HSM or Cloud Key Management Service as a new key version.
 For more details about importing keys, including limitations and
@@ -242,9 +39,11 @@ Identity and Access Management (IAM) permissions to import a key.
 Before you can import a key, you need to prepare the project, the local system,
 and the key itself.
 Preparing the project
-Start by creating a Google Cloud account. With this account, you get $300 in free credits,
-plus free usage of over 20 products, up to monthly limits.
-Create an account
+Sign in to your Google Cloud account. If you're new to
+Google Cloud,
+create an account to evaluate how our products perform in
+real-world scenarios. New customers also get $300 in free credits to
+run, test, and deploy workloads.
 In the Google Cloud console, on the project selector page,
 select or create a Google Cloud project.
 Roles required to select or create a project
@@ -370,8 +169,7 @@ be created or imported in some locations . After a key is
 created, it cannot be moved to a different key ring or location.
 Follow these steps to create an empty key on a new key ring using the
 Google Cloud CLI or the Google Cloud console.
-Console gcloud Go Java Node.js Python API
-More
+Console
 In the Google Cloud console, go to the
 Key Management page.
 Go to Key Management
@@ -399,6 +197,7 @@ If you enable automatic rotation, new key versions will be generated in
 Cloud KMS, and the imported key version will no longer
 be the default key version after a rotation.
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 Create the target key ring. Choose a location that is compatible with the
@@ -434,6 +233,7 @@ To create a Single-tenant Cloud HSM key, add the --cryptoKeyBackend
 flag to this command and add the resource identifier of the
 Single-tenant Cloud HSM instance where you want to import the key:
 --crypto-key-backend = "projects/ INSTANCE_PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE_NAME "
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -477,6 +277,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CreateCryptoKeyRequest ;
@@ -529,6 +330,7 @@ System . out . printf ( "Created crypto key %s%n" , createdKey . getName ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -565,6 +367,7 @@ console . log ( `Created key for import: ${ key . name } ` );
 return key ;
 }
 return createKeyForImport ();
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -606,6 +409,7 @@ request = {
 }
 )
 print ( f "Created hsm key: { created_key . name } " )
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -652,8 +456,7 @@ imported. The key's algorithm is specified during the
 import request .
 You can create an import job using the gcloud CLI, the
 Google Cloud console, or the Cloud Key Management Service API.
-Console gcloud Go Java Node.js Python API
-More
+Console
 Go to the Key Management page in the Google Cloud console.
 Go to the Key Management page
 Click the name of the target key ring.
@@ -665,6 +468,7 @@ In the Name field, enter the name for your import job.
 From the Import method dropdown, set the import method to either
 3072 bit RSA or 4096 bit RSA .
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 Use a command like the following to create an import job.
@@ -682,6 +486,7 @@ rsa-oaep-3072-sha256-aes-256
 rsa-oaep-4096-sha256-aes-256
 rsa-oaep-3072-sha256
 rsa-oaep-4096-sha256
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -723,6 +528,7 @@ return fmt . Errorf ( "failed to create import job: %w" , err )
 fmt . Fprintf ( w , "Created import job: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. ImportJob ;
@@ -766,6 +572,7 @@ System . out . printf ( "Created import job %s%n" , createdImportJob . getName (
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -794,6 +601,7 @@ console . log ( `Created import job: ${ importJob . name } ` );
 return importJob ;
 }
 return createImportJob ();
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -829,6 +637,7 @@ import_job = client . create_import_job (
 }
 )
 print ( f "Created import job: { import_job . name } " )
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -852,14 +661,14 @@ An import job expires after three days. If the import job is expired, you must
 create a new one.
 You can check the status of an import job using the Google Cloud CLI, the
 Google Cloud console, or the Cloud Key Management Service API.
-Console gcloud Go Java Node.js Python API
-More
+Console
 Go to the Key Management page in the Google Cloud console.
 Go to the Key Management page
 Click the name of the key ring that contains your import job.
 Click the Import Jobs tab at the top of the page.
 The state will be visible under Status next to your import job's
 name.
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 When an import job is active, you can use it to import keys. This may
@@ -871,6 +680,7 @@ gcloud kms import-jobs describe IMPORT_JOB \
 --format="value(state)"
 The output is similar to the following:
 state: ACTIVE
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -900,6 +710,7 @@ return fmt . Errorf ( "failed to get import job: %w" , err )
 fmt . Fprintf ( w , "Current state of import job %q: %s\n" , result . Name , result . State )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. ImportJob ;
@@ -933,6 +744,7 @@ System . out . printf (
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -963,6 +775,7 @@ console . log (
 return importJob ;
 }
 return checkStateImportJob ();
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -986,6 +799,7 @@ project_id , location_id , key_ring_id , import_job_id
 # Retrieve the state from an existing import job.
 import_job = client . get_import_job ( name = import_job_name )
 print ( f "Current state of import job { import_job . name } : { import_job . state } " )
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1059,8 +873,7 @@ downloaded. When importing a large number of keys, this prevents the public key
 from being downloaded during each import. For example, you could write a script
 that downloaded the public key once, then provided its location when importing
 each key.
-Console gcloud Go Java Node.js Python API
-More
+Console
 Open the Key Management page in the
 Google Cloud console.
 Click the name of the key ring that contains your import job. The target
@@ -1073,6 +886,7 @@ If you are importing an asymmetric key, select the algorithm from the
 Algorithm dropdown. Your Import key version page should look
 similar to:
 Click Import .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 Use a command like the following.
@@ -1085,6 +899,7 @@ gcloud kms keys versions import \
 --wrapped-key-file PATH_TO_WRAPPED_KEY
 For more information, see the output of the
 gcloud kms keys versions import --help command.
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -1173,6 +988,7 @@ return fmt . Errorf ( "failed to import crypto key version: %w" , err )
 fmt . Fprintf ( w , "Created crypto key version: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKeyName ;
@@ -1266,6 +1082,7 @@ System . out . printf ( "Imported: %s%n" , version . getName ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1318,6 +1135,7 @@ console . log ( `Imported key version: ${ version . name } ` );
 return version ;
 }
 return wrapAndImportKey ();
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 import os
@@ -1392,6 +1210,7 @@ client . import_crypto_key_version (
 }
 )
 print ( f "Imported: { import_job . name } " )
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1417,14 +1236,14 @@ state is ENABLED , the key version has been imported successfully. If the
 import fails, the status is IMPORT_FAILED .
 You can check the status of an import request using the Google Cloud CLI, the
 Google Cloud console, or the Cloud Key Management Service API.
-Console gcloud Go Java Node.js Python API
-More
+Console
 Open the Key Management page in the
 Google Cloud console.
 Click the name of the key ring that contains your import job.
 Click the Import Jobs tab at the top of the page.
 The state will be visible under Status next to your import job's
 name.
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 Use the versions list command to check the state. Use the same
@@ -1434,6 +1253,7 @@ gcloud kms keys versions list \
 --keyring KEY_RING \
 --location LOCATION \
 --key KEY_NAME
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -1463,6 +1283,7 @@ return fmt . Errorf ( "failed to get crypto key version: %w" , err )
 fmt . Fprintf ( w , "Current state of crypto key version %q: %s\n" , result . Name , result . State )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKeyVersion ;
@@ -1503,6 +1324,7 @@ System . out . printf (
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1535,6 +1357,7 @@ console . log (
 return keyVersion ;
 }
 return checkStateCryptoKeyVersion ();
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -1558,6 +1381,7 @@ project_id , location_id , key_ring_id , import_job_id
 # Retrieve the state from an existing import job.
 import_job = client . get_import_job ( name = import_job_name )
 print ( f "Current state of import job { import_job . name } : { import_job . state } " )
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1598,8 +1422,7 @@ Create an ImportJob for re-import by following the steps in
 Create the import job . You may use either an existing
 ImportJob or a new ImportJob as long as the protection level matches the
 original protection level.
-Console gcloud API
-More
+Console
 Go to the Key Management page in the Google Cloud console.
 Go to the Key Management page
 Click the name of the key ring that contains the key whose key version you will re-import.
@@ -1610,6 +1433,7 @@ Select your import job from the Select import job dropdown.
 In the Upload the wrapped key selector, select the key that you have
 already wrapped . This key must match the original key material.
 Click Re-Import .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 Re-import the key version using the original key material.
@@ -1621,6 +1445,7 @@ gcloud kms keys versions import \
 --algorithm ALGORITHM \
 --import-job IMPORT_JOB \
 --target-key-file PATH_TO_KEY \
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1650,59 +1475,8 @@ Set up automatic key wrapping
 Next
 Verify an imported key version
 arrow_forward
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

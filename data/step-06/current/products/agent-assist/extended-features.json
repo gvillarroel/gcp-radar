@@ -1,0 +1,2427 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:58:55.424Z",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/agent-assist.md",
+    "step04_product_dir": "data/step-04/current/products/agent-assist"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 50,
+  "source_row_count": 39,
+  "feature_count": 37,
+  "covered_feature_count": 16,
+  "features_without_supporting_pages": 21,
+  "features": [
+    {
+      "latest_feature_date": "2026-03-23",
+      "feature_name": "Gemini Enterprise for Customer Experience AI Coach",
+      "deprecation_date": "",
+      "feature_summary": "Adds Gemini Enterprise for Customer Experience tooling for AI Coach, enabling virtual agents to connect to external systems to retrieve, update, format, or analyze information.",
+      "keywords": [
+        "retrieve external system information",
+        "Gemini Enterprise for Customer Experience",
+        "format tool response",
+        "AI Coach tool usage",
+        "analyze information with AI Coach",
+        "Customer Experience AI Coach",
+        "Gemini CX AI Coach",
+        "update external systems"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds Gemini Enterprise for Customer Experience tooling for AI Coach, enabling virtual agents to connect to external systems to retrieve, update, format, or analyze information.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-12-22",
+      "feature_name": "Nice CXOne Voice for Salesforce UI Connector",
+      "deprecation_date": "",
+      "feature_summary": "Introduces a UI connector that integrates Agent Assist with NICE CXOne Voice for Salesforce to provide agent suggestions on the voice channel.",
+      "keywords": [
+        "Nice CXOne Voice for Salesforce",
+        "NICE CXOne Voice connector",
+        "AI Assist suggestions on voice channel",
+        "NICE CXOne integration",
+        "voice channel agent suggestions",
+        "NICE CXOne",
+        "CXOne Voice",
+        "Salesforce UI connector"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces a UI connector that integrates Agent Assist with NICE CXOne Voice for Salesforce to provide agent suggestions on the voice channel.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-29",
+      "feature_name": "Summarization with custom sections",
+      "deprecation_date": "",
+      "feature_summary": "Delivers Summarization with custom sections version 5.0 as generally available in all Agent Assist regions; Summarization with custom sections in version 4.0 is generally available in Agent Assist, using Gemini 2.0 Flash to generate concise situation and action summaries.",
+      "keywords": [
+        "custom summary sections",
+        "situation summary",
+        "action summary",
+        "Gemini 2.0 Flash summarization",
+        "Summarization with custom sections",
+        "customized summarization",
+        "sectioned summaries",
+        "custom sections 5.0"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Summarization with custom sections is a configurable Agent Assist suggestion category for human-agent conversation profiles. To use this feature, the conversation profile setup requires creating a summarization generator. The provided evidence does not confirm version-specific (e.g., 4.0/5.0), GA, or region-availability details.",
+      "evidence_summary": "The cited documentation page indicates that summarization with custom sections is selectable as a human-agent suggestion type in a conversation profile and that enabling it requires creating a summarization generator.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "9efc71dc9e447af5a1c77bdb050130007ef3c322fd052302778f7289246e8bf3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "summarization with custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 22,
+          "final_score": 40,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page directly explains how to enable this feature through conversation profile settings and documents required prerequisites such as creating a summarization generator.",
+          "matched_phrases": [
+            {
+              "phrase": "summarization with custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Optional: Depending on which feature you're using, follow the steps in one of the following pages: Summarization with custom sections Generative knowledge assist Verify the conversation profile in the Agent Assist simulator .",
+            "If it's a human agent, you can also configure the category of suggestions to appear: summarization with custom sections or (proactive) generative knowledge assist.",
+            "To implement summarization with custom sections, you must create a summarization generator ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-20",
+      "feature_name": "Summarization Automatic Evaluation",
+      "deprecation_date": "",
+      "feature_summary": "Introduces automatic evaluation for AI-generated summaries, assessing accuracy, completeness, and adherence; Adds preview support for automatic evaluation of AI-generated summaries using accuracy, completeness, and adherence metrics.",
+      "keywords": [
+        "preview automatic summary evaluation",
+        "automatic summary evaluation",
+        "summary completeness metric",
+        "summary adherence metric",
+        "summary accuracy metric",
+        "summary quality scoring",
+        "automatic evaluation for summaries",
+        "Summarization Automatic Evaluation"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Summarization automatic evaluation in Agent Assist is a feature that automatically evaluates the quality of summaries. It uses three named metrics to do so: accuracy, completeness, and adherence.",
+      "evidence_summary": "The cited Agent Assist guide states that the autoevaluation feature assesses summary quality and explicitly defines the three evaluation metrics used.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1a3a6b9c2d9f29f61cf69b086336f8eab78f5b2cb9faa3f5b1e91595b59fe3b7",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+          "title": "\"User guide: Summarization automatic evaluation \\_|\\_ Agent Assist \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "summarization automatic evaluation",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+          "title": "\"User guide: Summarization automatic evaluation \\_|\\_ Agent Assist \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "base_score": 32,
+          "final_score": 50,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "It is explicitly a user guide for summarization autoevaluation and details the three metrics, setup flow, costs, and output artifacts for evaluation runs.",
+          "matched_phrases": [
+            {
+              "phrase": "summarization automatic evaluation",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Home Documentation AI and ML Agent Assist Guides Send feedback User guide: Summarization automatic evaluation Stay organized with collections Save and categorize content based on your preferences.",
+            "Summarization automatic evaluation (autoevaluation) assesses the quality of summaries based on three metrics: accuracy, completeness, and adherence."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-09",
+      "feature_name": "AI Coach",
+      "deprecation_date": "",
+      "feature_summary": "Makes AI Coach generally available to automatically suggest responses to agents during customer service conversations in all Agent Assist languages and regions.",
+      "keywords": [
+        "automatic response suggestions",
+        "agent response assistant",
+        "agent response draft",
+        "customer service conversations",
+        "AI response coach",
+        "AI Coach generally available",
+        "AI Coach suggestions",
+        "AIC"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "AI Coach is an Agent Assist feature that uses a large language model (LLM) to suggest how a contact center agent should respond during customer service conversations. It generates suggested agent responses by combining customer conversation context with written instructions, conversation transcript data, and API data, and returns applicable instructions with response suggestions.",
+      "evidence_summary": "The cited pages together describe AI Coach’s core behavior (LLM-based response suggestions in customer service conversations) and the inputs required to produce those suggestions, with one page listing it as an Agent Assist feature.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
+        "https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "fd17b4f4522f73190f56aa317b6cd755ac1fa149672da016a3734e3d3c3ef938",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
+          "title": "AI coach overview \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_ai-coach-overview.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_ai-coach-overview.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "ai coach",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "customer service conversations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "4b030e1f49200f4e737dd7e278d3dbf49de3e0c6c0039de5b49b2ea31b2729f3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices",
+          "title": "AI coach: Best practices \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_ai-coach-best-practices.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_ai-coach-best-practices.md",
+          "base_score": 48,
+          "matched_phrases": [
+            {
+              "phrase": "ai coach",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 48
+            },
+            {
+              "phrase": "ai coach suggestions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "082c531908d5c516f915d5c2e373ba6983b93c73a3024754f22686df2171924f",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/features",
+          "title": "Features \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_features.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_features.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "customer service conversations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ai coach",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-overview",
+          "title": "AI coach overview \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_ai-coach-overview.md",
+          "base_score": 50,
+          "final_score": 50,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "ai coach",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "customer service conversations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Use a large language model (LLM) to make suggestions for how a contact center agent should respond during customer service conversations."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/ai-coach-best-practices",
+          "title": "AI coach: Best practices \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_ai-coach-best-practices.md",
+          "base_score": 48,
+          "final_score": 48,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "ai coach",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 48
+            },
+            {
+              "phrase": "ai coach suggestions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "To optimize AI coach suggestions, you must provide the following information: A set of written instructions A conversation transcript Data from the API In return, AI coach provides applicable instructions and suggested agent responses."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/features",
+          "title": "Features \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_features.md",
+          "base_score": 20,
+          "final_score": 28,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page explicitly lists AI Coach as a feature and describes its behavior as making suggestions to help agents during customer service conversations, which supports identifying and understanding the feature.",
+          "matched_phrases": [
+            {
+              "phrase": "customer service conversations",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ai coach",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Summarization with custom sections Automatically summarize your customer service conversations.",
+            "AI coach Make suggestions for how your agent responds during customer service conversations."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-09",
+      "feature_name": "Document and Safety Filters",
+      "deprecation_date": "",
+      "feature_summary": "Adds support for applying document and safety filters as new Agent Assist capabilities.",
+      "keywords": [
+        "Document and Safety Filters",
+        "document filtering policy",
+        "content safety filter",
+        "Agent Assist safety controls",
+        "document filters",
+        "document filter",
+        "content filters",
+        "safety filters"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds support for applying document and safety filters as new Agent Assist capabilities.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-09",
+      "feature_name": "Integration Connectors",
+      "deprecation_date": "",
+      "feature_summary": "Adds generally available Integration Connectors tooling to support external integrations for Agent Assist.",
+      "keywords": [
+        "third-party integrations",
+        "Agent Assist Integration Connectors",
+        "Integration Connectors",
+        "agent assist connectors",
+        "integration runtime",
+        "integration toolkit",
+        "external integration connector",
+        "connectors"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Integration Connectors in Agent Assist include custom UI module connectors that let developers integrate Agent Assist UI modules into agent desktops that are not directly supported by Agent Assist. They are implemented using custom events: callers dispatch events with payloads and add listeners for events, enabling a connector to trigger actions (such as analysis requests) and handle responses or UI selections.",
+      "evidence_summary": "The cited Agent Assist documentation provides event-based implementation details for custom UI module connectors, including how to dispatch and subscribe to custom events and how those connectors are used to integrate Agent Assist modules into unsupported desktops.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "5aed84d4529eb4e914a8befc777096664ecf2e76e5ac59bc96f782b4ee4a140a",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+          "title": "\"Custom events and custom UI module connectors \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_custom-events.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_custom-events.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "connectors",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+          "title": "\"Custom events and custom UI module connectors \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_custom-events.md",
+          "base_score": 44,
+          "final_score": 62,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "It explicitly covers creating and using custom UI module connectors to integrate Agent Assist modules into unsupported agent desktops, which is central to connector-based integrations.",
+          "matched_phrases": [
+            {
+              "phrase": "connectors",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "To manually dispatch a custom event, use the following syntax: dispatchAgentAssistEvent ( 'event name' , { detail : event payload , }); The following example shows how to dispatch the analyze-content-received event: if (newMessageFromHumanAgent) { dispatchAgentAssistEvent('analyze-content-received', { detail: { participantRole: 'HUMAN AGENT', request: { textInput: {text: newMessageFromHumanAgent}, messageSendTime: new Date().toISOString() } } }); } After a you dispatch a custom event, you will see the following in the UI module connector service: this . api . analyzeContent (...) . then ( function ( response ) { dispatchAgentAssistEvent('analyze-content-response-received', { detail : { response : response } } ); } ); And you will see the following in the module: addAgentAssistEventListener('analyze-content-response-received', function (event) { // Use the AnalyzeContent response to render suggestions in the UI. }); To manually subscribe to a custom event, use the following syntax: addAgentAssistEventListener ( 'event name' , function ( event ) { // event . detail contains the event payload . }); The following example shows a custom event subscription: addAgentAssistEventListener('smart-reply-selected', function (event) { var chipContent = event.details; // Populate the agent chat box with the selected Smart Reply chip. }); Custom UI module connectors You can also use custom events to create your own custom UI module connectors, which allow you to integrate the UI modules into an agent desktop that isn't supported by Agent Assist.",
+            "Home Documentation AI and ML Agent Assist Guides Send feedback Custom events and custom UI module connectors Stay organized with collections Save and categorize content based on your preferences.",
+            "Once you have created a custom UI module connector, return to the UI module implementation documentation for details about configuring your connectors and implementing the modules.",
+            "For more information about implementing modules and connectors, see the implementation documentation ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-09",
+      "feature_name": "Knowledge Assist Troubleshooting",
+      "deprecation_date": "",
+      "feature_summary": "Adds troubleshooting support for knowledge assist features in Agent Assist.",
+      "keywords": [
+        "Knowledge Assist issue resolution",
+        "Knowledge Assist support workflows",
+        "Knowledge Assist Troubleshooting",
+        "troubleshoot Knowledge Assist",
+        "Knowledge Assist diagnostics",
+        "Knowledge Assist errors",
+        "Knowledge Assist support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds troubleshooting support for knowledge assist features in Agent Assist.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-09",
+      "feature_name": "OpenAPI Tools",
+      "deprecation_date": "",
+      "feature_summary": "Adds generally available OpenAPI tooling in Agent Assist for integrating external APIs and data sources.",
+      "keywords": [
+        "OpenAPI specification integration",
+        "external data sources",
+        "API integration tools",
+        "Agent Assist API tooling",
+        "integrating external APIs",
+        "OpenAPI Tools",
+        "OpenAPI tooling",
+        "OpenAPI connector"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds generally available OpenAPI tooling in Agent Assist for integrating external APIs and data sources.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-09",
+      "feature_name": "Pub/Sub Notifications for Empty Suggestions",
+      "deprecation_date": "",
+      "feature_summary": "Adds Pub/Sub notification support when Agent Assist suggestions are empty.",
+      "keywords": [
+        "Pub/Sub notifications for empty suggestions",
+        "Pub/Sub topic for empty suggestions",
+        "empty suggestion notification",
+        "empty suggestion Pub/Sub",
+        "empty suggestion events",
+        "suggestion empty event",
+        "zero suggestion alert",
+        "empty suggestions notification"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds Pub/Sub notification support when Agent Assist suggestions are empty.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-01",
+      "feature_name": "Smart Compose",
+      "deprecation_date": "October 2025",
+      "feature_summary": "Marks Smart Compose as no longer in use and scheduled for permanent removal; deprecated on October 2025.",
+      "keywords": [
+        "Smart Compose no longer in use",
+        "Smart Compose deprecation",
+        "Smart Compose retirement",
+        "Smart Compose sunset",
+        "Smart Compose permanent removal",
+        "deprecated October 2025",
+        "Smart Compose removal",
+        "Smart Compose"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Marks Smart Compose as no longer in use and scheduled for permanent removal; deprecated on October 2025.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-23",
+      "feature_name": "BiDiStreamingAnalyzeContent API",
+      "deprecation_date": "",
+      "feature_summary": "Introduces the bidirectional streaming API for next-generation audio and multimodal experiences, returning transcripts or human agent suggestions.",
+      "keywords": [
+        "next-generation audio streaming",
+        "bidirectional streaming AnalyzeContent",
+        "BiDi Streaming AnalyzeContent",
+        "multimodal streaming content",
+        "transcript streaming results",
+        "Streaming AnalyzeContent API",
+        "human agent suggestions stream",
+        "BiDiStreamingAnalyzeContent API"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "BiDiStreamingAnalyzeContent is the bidirectional streaming AnalyzeContent API used in Agent Assist and Conversational Agents for next-generation audio and multimodal experiences. It streams conversation audio to the backend and returns `BidiStreamingAnalyzeContentResponse` messages, including recognition/transcription results and processed conversation outputs such as human agent suggestions.",
+      "evidence_summary": "The cited Google Cloud page defines BiDiStreamingAnalyzeContent as the primary next-generation streaming API for audio/multimodal scenarios and explicitly states that stream responses include transcription results and human-agent recommendation content.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b3b5ad43f8b60c79133b06599a1b771fe618804453b23191d2dcbe965fbfa24c",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+          "title": "Bidirectional API \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_bidi-stream-api.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_bidi-stream-api.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "bidistreaminganalyzecontent api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "bidi streaming analyzecontent",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/bidi-stream-api",
+          "title": "Bidirectional API \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_bidi-stream-api.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "bidistreaminganalyzecontent api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "bidi streaming analyzecontent",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "BidiStreamingAnalyzeContentResponse ): \"\"\"Call Bidi Streaming Analyze Content \"\"\" if response . recognition result : print ( f \"Recognition result: { response . recognition result . transcript } \" , ) def audio request iterator ( audio ): \"\"\"Iterate the request for bidi streaming analyze content \"\"\" total audio length = len ( audio ) print ( f \"total audio length { total audio length } \" ) array = [] for i in range ( 0 , total audio length , POINT ONE SECOND IN BYTES ): chunk = audio [ i : i + POINT ONE SECOND IN BYTES ] array . append ( chunk ) if not chunk : break return array def python client handler (): \"\"\"Downloads audios from the google cloud storage bucket and stream to the Bidi streaming AnalyzeContent site. \"\"\" print ( \"Start streaming\" ) conversation = conversation management . create conversation ( project id = PROJECT ID , conversation profile id = CONVERSATION PROFILE ID STAGING ) conversation id = conversation . name . split ( \"conversations/\" )[ 1 ] . rstrip () human agent = human agent = participant management . create participant ( project id = PROJECT ID , conversation id = conversation id , role = \"HUMAN AGENT\" ) end user = end user = participant management . create participant ( project id = PROJECT ID , conversation id = conversation id , role = \"END USER\" ) end user requests = [] agent request = [] download blob ( BUCKET NAME , FOLDER PTAH FOR CUSTOMER AUDIO , end user requests ) download blob ( BUCKET NAME , FOLDER PTAH FOR AGENT AUDIO , agent request ) participant bidi streaming analyze content ( human agent , agent request ) participant bidi streaming analyze content ( end user , end user requests ) conversation management . complete conversation ( PROJECT ID , conversation id ) Enable for telephony SipRec integration You can enable telephony SipRec integration to use BidiStreamingAnalyzeContent for audio processing.",
+            "The BiDiStreamingAnalyzeContent API is the primary API for next-generation audio and multi-modal experiences in both Conversational Agents and Agent Assist.",
+            "Streaming guide To use the BiDiStreamingAnalyzeContent API at conversation runtime, follow these guidelines."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-08-21",
+      "feature_name": "Article Suggestion",
+      "deprecation_date": "April 1, 2026",
+      "feature_summary": "Deprecates the Article suggestion feature, stops new conversation profile creation, and schedules permanent removal; deprecated on April 1, 2026.",
+      "keywords": [
+        "deprecation of Article Suggestion",
+        "article suggestion deprecation",
+        "stops new conversation profile creation",
+        "Article Suggestion feature",
+        "Article Suggestion",
+        "deprecated on April 1, 2026",
+        "Article suggestions",
+        "permanent removal"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Article Suggestion is a feature of Google Cloud Agent Assist that analyzes an ongoing conversation between a human agent and an end-user and returns suggested documents for the agent. The feature appears as part of `analyzeContent` responses via human-agent and end-user suggestion results, where article suggestions are returned with details such as answer titles and answer records. The documentation snippet includes a caution that Article Suggestion is deprecated on April 1, 2026, but does not provide explicit evidence in the provided excerpts about when new conversation profile creation stops or when permanent removal occurs.",
+      "evidence_summary": "The Article Suggestion page defines the feature’s conversational document-suggestion behavior and states the April 1, 2026 deprecation date, while the FAQ page shows related API usage and conversation-profile configuration that references ARTICLE_SUGGESTION.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+        "https://docs.cloud.google.com/agent-assist/docs/faq"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1cdc2c364cffbc03c1cc9bd3347de38dbd5aa9541ebf845798ce5c2ca180e5e3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+          "title": "Article Suggestion \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_article-suggestion.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_article-suggestion.md",
+          "base_score": 52,
+          "matched_phrases": [
+            {
+              "phrase": "article suggestion",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "article suggestion feature",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "deprecated on april 1 2026",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "2649f89777887bab58347ae737bd05cce92e71953911aea4ef8d225fb0ca5eb5",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+          "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_faq.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_faq.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "article suggestion",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            },
+            {
+              "phrase": "deprecated on april 1 2026",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "83ed62748d37b1e6505e7878edc96ffb41a210780be6a30557e52531f7fd5bbb",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+          "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "article suggestion",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "ad02176788b4af06f354cbf2594542c3ac66bb58852efaac98dbb974e5ec3227",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/data",
+          "title": "Upload data \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_data.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_data.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "article suggestion",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "article suggestion feature",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+          "title": "Article Suggestion \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_article-suggestion.md",
+          "base_score": 52,
+          "final_score": 70,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is a dedicated Agent Assist Article Suggestion document that describes its behavior, API implementation flow, conversation profile and knowledge base requirements, and includes the deprecation and removal timeline.",
+          "matched_phrases": [
+            {
+              "phrase": "article suggestion",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 25
+            },
+            {
+              "phrase": "article suggestion feature",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "deprecated on april 1 2026",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "The Agent Assist Article Suggestion feature follows a conversation between a human agent and an end-user and provides the human agent with relevant document suggestions.",
+            "Caution: Article suggestion will be deprecated on April 1, 2026.",
+            "ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { \"text\" : text , \"language code\" : \"en-US\" } response = client . analyze content ( participant = participant path , text input = text input ) print ( \"AnalyzeContent Response:\" ) print ( f \"Reply Text: { response . reply text } \" ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) return response Add a message from the end-user and get suggestions In response to the human agent, the end-user says \"I want to return my order.\" This time, the API response contains a suggested document with its associated confidence score.",
+            "ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { \"text\" : text , \"language code\" : \"en-US\" } response = client . analyze content ( participant = participant path , text input = text input ) print ( \"AnalyzeContent Response:\" ) print ( f \"Reply Text: { response . reply text } \" ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) return response Complete the conversation When the conversation ends, use the API to complete the conversation."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+          "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_faq.md",
+          "base_score": 30,
+          "final_score": 26,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Article Suggestion appears only as a related design-time testing concept within FAQ Assist guidance, without a dedicated definition or lifecycle details for that feature.",
+          "matched_phrases": [
+            {
+              "phrase": "article suggestion",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            },
+            {
+              "phrase": "deprecated on april 1 2026",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { \"text\" : text , \"language code\" : \"en-US\" } response = client . analyze content ( participant = participant path , text input = text input ) print ( \"AnalyzeContent Response:\" ) print ( f \"Reply Text: { response . reply text } \" ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) return response Add a message from the end-user and get suggestions In response to the agent, the end-user asks \"How do I sign up?\".",
+            "ParticipantsClient () participant path = client . participant path ( project id , conversation id , participant id ) text input = { \"text\" : text , \"language code\" : \"en-US\" } response = client . analyze content ( participant = participant path , text input = text input ) print ( \"AnalyzeContent Response:\" ) print ( f \"Reply Text: { response . reply text } \" ) for suggestion result in response . human agent suggestion results : if suggestion result . error is not None : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) for suggestion result in response . end user suggestion results : if suggestion result . error : print ( f \"Error: { suggestion result . error . message } \" ) if suggestion result . suggest articles response : for answer in suggestion result . suggest articles response . article answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest faq answers response : for answer in suggestion result . suggest faq answers response . faq answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer record } \" ) if suggestion result . suggest smart replies response : for ( answer ) in suggestion result . suggest smart replies response . smart reply answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer record } \" ) return response Complete the conversation When the conversation ends, use the API to complete the conversation.",
+            "For more information, see Set up authentication for a local development environment . def create conversation profile article faq ( project id , display name , article suggestion knowledge base id = None , faq knowledge base id = None , ): \"\"\"Creates a conversation profile with given values Args: project id: The GCP project linked with the conversation profile. display name: The display name for the conversation profile to be created. article suggestion knowledge base id: knowledge base id for article suggestion. faq knowledge base id: knowledge base id for faq.\"\"\" client = dialogflow .",
+            "KnowledgeBasesClient . knowledge base path ( project id , article suggestion knowledge base id ) feature config = { \"suggestion feature\" : { \"type \" : \"ARTICLE SUGGESTION\" }, \"suggestion trigger settings\" : { \"no small talk\" : True , \"only end user\" : True , }, \"query config\" : { \"knowledge base query source\" : { \"knowledge bases\" : [ as kb path ]}, \"max results\" : 3 , }, } conversation profile [ \"human agent assistant config\" ][ \"human agent suggestion config\" ][ \"feature configs\" ] . append ( feature config ) if faq knowledge base id is not None : faq kb path = dialogflow ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-08-21",
+      "feature_name": "FAQ Assist",
+      "deprecation_date": "April 1, 2026",
+      "feature_summary": "Deprecates FAQ Assist, stops new conversation profile creation, and schedules permanent removal; deprecated on April 1, 2026.",
+      "keywords": [
+        "deprecation of FAQ Assist",
+        "stops new conversation profile creation",
+        "FAQ Assist deprecation",
+        "deprecated on April 1, 2026",
+        "FAQ feature",
+        "FAQ Assist",
+        "FAQ assist",
+        "permanent removal"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "FAQ Assist is an Agent Assist feature that suggests relevant FAQ answers to human agents during a conversation with an end-user. The page states that the feature can be implemented via its API to provide these suggestions at runtime. It also includes a caution that FAQ Assist will be deprecated on April 1, 2026.",
+      "evidence_summary": "The official FAQ Assist documentation page defines the feature’s purpose and API-based usage and provides the deprecation date.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/faq"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "2649f89777887bab58347ae737bd05cce92e71953911aea4ef8d225fb0ca5eb5",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+          "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_faq.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_faq.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "faq assist",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "deprecated on april 1 2026",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "ad02176788b4af06f354cbf2594542c3ac66bb58852efaac98dbb974e5ec3227",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/data",
+          "title": "Upload data \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_data.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_data.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "faq assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+          "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_faq.md",
+          "base_score": 44,
+          "final_score": 62,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "This page is centered on FAQ Assist, explains how it works, and explicitly includes pre-GA terms, deprecation notice, and the April 1, 2026 removal timeline.",
+          "matched_phrases": [
+            {
+              "phrase": "faq assist",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "deprecated on april 1 2026",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Caution: FAQ assist will be deprecated on April 1, 2026.",
+            "Home Documentation AI and ML Agent Assist Guides Send feedback FAQ assist Stay organized with collections Save and categorize content based on your preferences.",
+            "This document walks you through the process of using the API to implement FAQ Assist and get suggestions from this feature during runtime.",
+            "FAQ Assist suggests relevant FAQ answers to human agents during a conversation with an end-user."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-07-28",
+      "feature_name": "Twilio UI Module v3",
+      "deprecation_date": "",
+      "feature_summary": "Adds the Twilio UI module version 3 for Agent Assist, providing an upgraded Twilio integration.",
+      "keywords": [
+        "Twilio UI module rollout",
+        "Twilio UI module v3",
+        "Twilio module v3",
+        "UI Module v3",
+        "upgraded Twilio integration",
+        "UI module version 3",
+        "Twilio UI module"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds the Twilio UI module version 3 for Agent Assist, providing an upgraded Twilio integration.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-04-25",
+      "feature_name": "UI Modules Container",
+      "deprecation_date": "",
+      "feature_summary": "UI Modules Container V2 introduces a reactive interface with dynamic panels and a unified suggestions feed for greater accessibility to high-impact suggestions and key tools.",
+      "keywords": [
+        "unified suggestions feed",
+        "high-impact suggestions",
+        "UI Modules Container V2",
+        "reactive interface",
+        "key tools panel",
+        "dynamic panels",
+        "UI Modules Container"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "UI Modules Container V2 introduces a reactive interface with dynamic panels and a unified suggestions feed for greater accessibility to high-impact suggestions and key tools.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-04-11",
+      "feature_name": "Salesforce UI Connector",
+      "deprecation_date": "",
+      "feature_summary": "The Salesforce UI Connector enables Agent Assist voice conversation integration; The Salesforce UI Connector enables Agent Assist chat conversation integration.",
+      "keywords": [
+        "Salesforce chat integration",
+        "Salesforce voice integration",
+        "chat conversation integration",
+        "voice conversation integration",
+        "Salesforce UI Connector",
+        "Salesforce UI connector",
+        "Salesforce connector"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Salesforce UI Connector enables Agent Assist voice conversation integration; The Salesforce UI Connector enables Agent Assist chat conversation integration.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-19",
+      "feature_name": "Build your own Gen AI Assist",
+      "deprecation_date": "",
+      "feature_summary": "Build your own Gen AI Assist is in preview, available in all Customer Engagement Suite regions and supporting Gemini foundation model access and trigger events based on agent and customer messages.",
+      "keywords": [
+        "customer message trigger events",
+        "agent message trigger events",
+        "Gemini foundation model access",
+        "Customer Engagement Suite regions",
+        "Build your own Gen AI Assist",
+        "Build your own AI Assist",
+        "BYO Gen AI Assist",
+        "custom gen AI assist"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Build your own Gen AI Assist is in preview, available in all Customer Engagement Suite regions and supporting Gemini foundation model access and trigger events based on agent and customer messages.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-19",
+      "feature_name": "Build your own Gen AI Assist Vertex extensions",
+      "deprecation_date": "",
+      "feature_summary": "Vertex extensions for Build your own Gen AI Assist allow BYOA to access remote APIs through Vertex LLM extensions in preview.",
+      "keywords": [
+        "Build your own Gen AI Assist Vertex",
+        "LLM extension for BYOA",
+        "BYOA Vertex extensions",
+        "Vertex LLM extensions",
+        "remote API access",
+        "Vertex extensions",
+        "Vertex extension",
+        "BYOA Vertex"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Build your own Gen AI Assist Vertex extensions is a BYOA feature that allows Agent Assist to use a custom Vertex AI extension to access a remote API you define. The feature is configured by creating your own Vertex AI extension for the desired API and then specifying that extension resource in the BYOA Extension field, with required access to Agent Assist, Vertex AI, and Cloud Storage for the API spec.",
+      "evidence_summary": "The cited Agent Assist user guide states the required setup for this feature: access prerequisites, creation of a custom Vertex AI extension for a target API, and selecting that Vertex extension resource in the BYOA Extension field.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/byoa-extension"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b34fd08d0796e8f8378433275bffa1bcdae5a5f3b17d101500c66460e5ddb01c",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/byoa-extension",
+          "title": "\"User guide: Build your own GenAI assist extension \\_|\\_ Agent Assist \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_byoa-extension.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_byoa-extension.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "vertex extension",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/byoa-extension",
+          "title": "\"User guide: Build your own GenAI assist extension \\_|\\_ Agent Assist \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_byoa-extension.md",
+          "base_score": 18,
+          "final_score": 36,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is explicitly about creating and using Vertex AI Extensions as tools for a Build-your-own GenAI Assist (BYOA) workflow, directly describing this feature's behavior and setup.",
+          "matched_phrases": [
+            {
+              "phrase": "vertex extension",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Prerequisites To use a Vertex AI Extensions tool, you must have access to the following: Agent Assist console Vertex AI for Vertex extension APIs Cloud Storage for the API spec Create a Vertex AI extension You must set up your own Vertex AI extension which calls the API you want to use.",
+            "In the Extension field, add the Vertex extension resource."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-01-28",
+      "feature_name": "Customer Managed Encryption Key (CMEK)",
+      "deprecation_date": "",
+      "feature_summary": "Customer Managed Encryption Keys in Agent Assist are generally available and enable customers to control encryption key management details, audit logs, and key lifecycles.",
+      "keywords": [
+        "audit logs for key usage",
+        "customer managed encryption keys",
+        "Customer Managed Encryption Key",
+        "encryption key management",
+        "customer managed key",
+        "key lifecycle",
+        "CMEK"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Customer Managed Encryption Keys (CMEK) in Agent Assist allow customers to use a Cloud KMS CryptoKey to encrypt and decrypt Agent Assist data in a specific location. To use CMEK, customers grant the CCAI CMEK service account the Cloud KMS CryptoKey Encrypter/Decrypter role for the key, configure the key via InitializeEncryptionSpec (with matching key ring/location and key ID), and can verify the configuration with GetEncryptionSpec.",
+      "evidence_summary": "The cited Agent Assist documentation page describes how to configure and verify CMEK for Agent Assist using IAM bindings, location-matched KMS keys, and encryption-spec APIs.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "fba265cff9f77202bfed65241ed2115f08a55fa48e08c7fc846b89864afe9b46",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/cmek",
+          "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_cmek.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_cmek.md",
+          "base_score": 58,
+          "matched_phrases": [
+            {
+              "phrase": "cmek",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 17
+            },
+            {
+              "phrase": "key lifecycle",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/cmek",
+          "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_cmek.md",
+          "base_score": 58,
+          "final_score": 58,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "cmek",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 17
+            },
+            {
+              "phrase": "key lifecycle",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "It won't be returned in the create response, but will have the following format: service- PROJECT NUMBER @gcp-sa-ccai-cmek.iam.gserviceaccount.com Grant the CCAI CMEK Service account the Cloud KMS CryptoKey Encrypter/Decrypter role to ensure that the service has permissions to encrypt and decrypt with your key. gcloud kms keys add-iam-policy-binding KMS KEY ID \\ --project = PROJECT ID \\ --location = LOCATION ID \\ --keyring = KMS KEY RING \\ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-ccai-cmek.iam.gserviceaccount.com \\ --role = roles/cloudkms.cryptoKeyEncrypterDecrypter Configure a key for an Agent Assist location Use InitializeEncryptionSpec API to configure the key.",
+            "KMS KEY RING : The key ring your KMS key was created in. (The location in the key ring, like projects/ PROJECT ID /locations/ LOCATION ID /keyRings/ KMS KEY RING , must match the location where you're enabling CMEK.) KMS KEY ID : The name of your KMS key that will be used to encrypt and decrypt Agent Assist data in the selected location.",
+            "For example: curl -X GET \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ \"https:// LOCATION ID -dialogflow.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION ID /operations/ OPERATION ID \" Check CMEK Settings Use GetEncryptionSpec API to check the encryption key configured for a location.",
+            "Home Documentation AI and ML Agent Assist Guides Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-12-18",
+      "feature_name": "Pub/Sub intermediate transcription",
+      "deprecation_date": "",
+      "feature_summary": "Pub/Sub intermediate transcription is available in preview to show interim transcripts in the Agent Assist UI and provide additional audio-integration information.",
+      "keywords": [
+        "Pub/Sub intermediate transcription",
+        "interim transcript in UI",
+        "intermediate transcript",
+        "interim transcription preview",
+        "intermediate transcription",
+        "interim transcription",
+        "interim transcripts",
+        "audio integration data"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Pub/Sub intermediate transcription is available in preview to show interim transcripts in the Agent Assist UI and provide additional audio-integration information.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "e39491565467908818f9fc96250256260ef260c9666c55ffbaee9db92448b356",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+          "title": "\"Integrate backend modules with your system \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_backend-module-install.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_backend-module-install.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "intermediate transcript",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-12-16",
+      "feature_name": "Genesys Cloud UI Connector",
+      "deprecation_date": "",
+      "feature_summary": "The native Genesys Cloud UI Connector enables Agent Assist integration with voice conversations.",
+      "keywords": [
+        "native Genesys Cloud connector",
+        "Genesys Cloud voice conversation",
+        "Genesys Cloud UI Connector",
+        "Genesys Cloud connector",
+        "voice conversation integration",
+        "Genesys connector"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The native Genesys Cloud UI Connector enables Agent Assist integration with voice conversations.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-10-23",
+      "feature_name": "Proactive generative knowledge assist",
+      "deprecation_date": "",
+      "feature_summary": "Proactive Generative Knowledge Assist includes additional functions and expanded language support; Agent Assist introduces Proactive generative knowledge assist as GA, which automatically surfaces likely agent questions and answers.",
+      "keywords": [
+        "agent-facing suggested answers",
+        "proactive generative knowledge assist GA",
+        "auto-generated knowledge suggestions",
+        "likely question surfacing",
+        "Proactive Generative Knowledge Assist",
+        "proactive knowledge assist",
+        "expanded language support",
+        "PGKA"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Proactive generative knowledge assist is an Agent Assist capability that can be configured in a conversation profile to automatically provide generative knowledge suggestions during live conversations, including proactive search-query suggestions based on the current conversation context and answer. Enabling it requires a flow-based or playbook-based data store agent, can be configured via conversation-profile suggestion settings (such as KNOWLEDGE ASSIST/KNOWLEDGE SEARCH), and returns supporting metadata and suggestion feedback fields for both answered and proactively suggested responses.",
+      "evidence_summary": "The cited pages define configuration prerequisites, runtime behavior, and API-based behavior for proactive generative knowledge assist, but do not provide complete product-announcement details such as GA status, exact launch date, or language coverage.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "83ed62748d37b1e6505e7878edc96ffb41a210780be6a30557e52531f7fd5bbb",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+          "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "proactive generative knowledge assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            }
+          ]
+        },
+        {
+          "page_id": "9efc71dc9e447af5a1c77bdb050130007ef3c322fd052302778f7289246e8bf3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "proactive generative knowledge assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+          "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "base_score": 30,
+          "final_score": 48,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "It explicitly defines proactive generative knowledge assist, including how it follows live conversations and proactively suggests queries based on context.",
+          "matched_phrases": [
+            {
+              "phrase": "proactive generative knowledge assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            }
+          ],
+          "evidence_snippets": [
+            "Answer agent questions The following is an example JSON request for sending feedback about answering agent questions. { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION ID /answerRecords/ ANSWER RECORD ID \" , \"answerFeedback\" : { \"displayed\" : true \"clicked\" : true \"correctnessLevel\" : \"FULLY CORRECT\" \"agentAssistantDetailFeedback\" : { \"knowledgeSearchFeedback\" : { \"answerCopied\" : true \"clickedUris\" : [ \"url 1\" , \"url 2\" , \"url 3\" , ] } } } } Proactively suggest Q&A The following is an example JSON request for sending feedback about proactive suggestions. { \"name\" : \"projects/PROJECT ID/locations/LOCATION ID/answerRecords/ANSWER RECORD ID\" , \"answerFeedback\" : { \"displayed\" : true \"clicked\" : true \"correctnessLevel\" : \"FULLY CORRECT\" \"agentAssistantDetailFeedback\" : { \"knowledgeAssistFeedback\" : { \"answerCopied\" : true \"clickedUris\" : [ \"url 1\" , \"url 2\" , \"url 3\" , ] } } } } Metadata If you configure metadata for a knowledge document, both generative knowledge assist and proactive generative knowledge assist will return the document's metadata along with the response.",
+            "Before using any of the request data, make the following replacements: PROJECT ID : your project ID LOCATION ID : the ID for your location AGENT ID : your flow-based or playbook-based data store agent ID from the previous step The following is a JSON example: { \"displayName\" : \"my-conversation-profile-display-name\" , \"humanAgentAssistantConfig\" : { \"humanAgentSuggestionConfig\" : { \"featureConfigs\" : [ { \"suggestionFeature\" : { \"type\" : \"KNOWLEDGE SEARCH\" }, \"queryConfig\" : { \"dialogflowQuerySource\" : { \"humanAgentSideConfig\" : { \"agent\" : \"projects/ PROJECT ID /locations/ LOCATION ID /agents/ AGENT ID \" } } }, \"disableAgentQueryLogging\" : false , \"enableConversationAugmentedQuery\" : false , } ] } } } When you create a conversation profile in the Agent Assist console, Agent Assist automatically enables both generative knowledge assist and proactive generative knowledge assist.",
+            "Before using any of the request data, make the following replacements: PROJECT ID : your project ID LOCATION ID : the ID for your location AGENT ID : your flow-based or playbook-based data store agent ID from the previous step The following is a JSON example: { \"displayName\" : \"my-conversation-profile-display-name\" , \"humanAgentAssistantConfig\" : { \"humanAgentSuggestionConfig\" : { \"featureConfigs\" : [ { \"suggestionFeature\" : { \"type\" : \"KNOWLEDGE ASSIST\" }, \"queryConfig\" : { \"dialogflowQuerySource\" : { \"agent\" : \"projects/ PROJECT ID /locations/ LOCATION ID /agents/ AGENT ID \" } }, \"enableQuerySuggestionWhenNoAnswer\" : false , } ] } } } Step 2: Handle conversations at runtime Proactive generative knowledge assist processes conversations at runtime to proactively provide search query suggestions based on the current conversation context and the answer.",
+            "You can also use the following configurations as part of your SearchKnowledge request: querySource : Set this field to indicate whether an agent typed the query or proactive generative knowledge assist automatically suggested it. exactSearch : Set this field to indicate whether to search the exact input query without query rewrite. endUserMetadata : Set this field to include additional information about the end user that improves the generated answer."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 22,
+          "final_score": 40,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page identifies proactive generative knowledge assist as a conversation profile suggestion type and specifies required setup (data store agent type) and API-based implementation for runtime use.",
+          "matched_phrases": [
+            {
+              "phrase": "proactive generative knowledge assist",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "For instructions on how to send API calls, see the Agent Assist how-to guides Before you begin To implement (proactive) generative knowledge assist, you must create a flow-based data store agent or playbook-based data store agent .",
+            "If it's a human agent, you can also configure the category of suggestions to appear: summarization with custom sections or (proactive) generative knowledge assist.",
+            "For (proactive) generative knowledge assist feature you can use the Application programming interface (API) method as well."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-10-02",
+      "feature_name": "Twilio Flex UI Connector",
+      "deprecation_date": "",
+      "feature_summary": "The native Twilio Flex UI Connector enables Agent Assist integration with voice conversations.",
+      "keywords": [
+        "native Twilio Flex connector",
+        "Twilio Flex UI Connector",
+        "Twilio Flex connector",
+        "Twilio Flex integration",
+        "voice conversation integration",
+        "Flex UI connector"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The native Twilio Flex UI Connector enables Agent Assist integration with voice conversations.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-10-01",
+      "feature_name": "Live transcription adaptation",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist adds Live transcription adaptation to give higher recognition priority to selected phrases and improve transcription quality.",
+      "keywords": [
+        "transcript adaptation settings",
+        "speech recognition adaptation",
+        "live transcription adaptation",
+        "custom phrase priority",
+        "transcription quality tuning",
+        "phrase adaptation",
+        "phrase boosting",
+        "transcription adaptation"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Agent Assist adds Live transcription adaptation to give higher recognition priority to selected phrases and improve transcription quality.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-06-12",
+      "feature_name": "Agent Assist integration backend authentication customization",
+      "deprecation_date": "",
+      "feature_summary": "The Agent Assist integration backend repository now supports authentication customization and agent authentication via Twilio, Genesys Cloud, and Salesforce providers.",
+      "keywords": [
+        "Salesforce authentication provider",
+        "backend auth customization",
+        "custom auth for integration backend",
+        "Twilio authentication provider",
+        "authentication customization",
+        "integration backend authentication",
+        "Genesys Cloud authentication",
+        "agent authentication"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Agent Assist integration backend repository now supports authentication customization and agent authentication via Twilio, Genesys Cloud, and Salesforce providers.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-06-03",
+      "feature_name": "Genesys Cloud native UI connector",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist now provides a native UI Connector for Genesys Cloud to enable chat conversation integration.",
+      "keywords": [
+        "Genesys Cloud native UI connector",
+        "native Genesys UI connector",
+        "Genesys Cloud connector",
+        "Genesys Cloud integration",
+        "chat conversation integration",
+        "native UI connector",
+        "Genesys connector"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The Genesys Cloud native UI connector for Agent Assist is an integration workflow that connects Agent Assist to Genesys Cloud for conversation handling. Based on the available evidence, it is implemented by deploying a backend server for the UI module to call the Dialogflow API, then configuring authentication and required Google Cloud components (including Cloud Run, Pub/Sub, and Memorystore for Redis). The page also indicates this setup requires Google Cloud CLI prerequisites and that the integration has associated Cloud Run cost.",
+      "evidence_summary": "The cited Agent Assist docs page documents the Genesys Cloud integration steps, required services, and deployment prerequisites, but provides only partial direct wording about a dedicated \"native UI connector\" feature.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "ba4b2032a42858ec4c667acc8ded50e88075b3c7ea846848ef32dfb421c8e286",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app",
+          "title": "\"Deploy the Genesys Cloud application server \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "genesys cloud integration",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app",
+          "title": "\"Deploy the Genesys Cloud application server \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "base_score": 22,
+          "final_score": 30,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "It provides end-to-end Genesys Cloud integration setup steps (widget, OAuth, Cloud Run app server), which is useful context for the connector integration though not explicitly labeled as a native UI connector feature.",
+          "matched_phrases": [
+            {
+              "phrase": "genesys cloud integration",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Objectives Genesys Cloud integration involves the following processes: Deploy the backend server for the UI module to call the Dialogflow API, register an authentication token, and setup cloud Pub/Sub and Memorystore for Redis.",
+            "Run the following command: gcloud run services delete agent-assist-modules-application-server Price disclaimer If you use Genesys Cloud integration, there is a cost associated with the underlying Cloud Run service.",
+            "Before you begin You must complete the following actions before starting the Genesys Cloud integration: Install the Google Cloud CLI , if you haven't already configured it."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-06-03",
+      "feature_name": "Twilio Flex native UI connector",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist now provides a native UI Connector for Twilio Flex to enable chat conversation integration.",
+      "keywords": [
+        "Twilio Flex native UI connector",
+        "Twilio Flex connector",
+        "Twilio Flex integration",
+        "Twilio native UI connector",
+        "chat conversation integration",
+        "Flex connector",
+        "native UI integration"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Agent Assist now provides a native UI Connector for Twilio Flex to enable chat conversation integration.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-05-30",
+      "feature_name": "Summarization with custom sections V2.1",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist offers Summarization with custom sections version 2.1 as a GA feature.",
+      "keywords": [
+        "post-call summary sections",
+        "custom section templates",
+        "summarization with custom sections",
+        "custom sections summarization",
+        "custom sections",
+        "Summarization V2.1",
+        "Summarization v2.1",
+        "summarization GA"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Summarization with custom sections in Agent Assist is a feature that automatically summarizes customer service conversations and can be selected as a human-agent suggestion category in an Agent Assist conversation profile. To implement it, the conversation profile flow requires you to create a summarization generator associated with the profile configuration. Evidence for version 2.1 and GA status is not shown in the provided excerpts, so that status cannot be confirmed from these sources alone.",
+      "evidence_summary": "The feature is identified in official docs as a custom-sections summarization option for customer service, and the conversation-profile documentation explains that it is configured per profile for human agents and requires a summarization generator.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "9efc71dc9e447af5a1c77bdb050130007ef3c322fd052302778f7289246e8bf3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "summarization with custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "082c531908d5c516f915d5c2e373ba6983b93c73a3024754f22686df2171924f",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/features",
+          "title": "Features \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_features.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_features.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "summarization with custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 34,
+          "final_score": 30,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page mentions Summarization with custom sections and its prerequisites, but it does not provide any information about version 2.1 or its release/lifecycle details.",
+          "matched_phrases": [
+            {
+              "phrase": "summarization with custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Optional: Depending on which feature you're using, follow the steps in one of the following pages: Summarization with custom sections Generative knowledge assist Verify the conversation profile in the Agent Assist simulator .",
+            "If it's a human agent, you can also configure the category of suggestions to appear: summarization with custom sections or (proactive) generative knowledge assist.",
+            "To implement summarization with custom sections, you must create a summarization generator ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/features",
+          "title": "Features \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_features.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page includes Summarization with custom sections with a brief functional description, but it does not provide version or GA lifecycle details requested by the feature summary.",
+          "matched_phrases": [
+            {
+              "phrase": "summarization with custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "custom sections",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Summarization with custom sections Automatically summarize your customer service conversations."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-11-30",
+      "feature_name": "Smart Reply language support",
+      "deprecation_date": "",
+      "feature_summary": "Smart Reply support is expanded to include French (Canada) in addition to English (United States).",
+      "keywords": [
+        "Smart Reply fr-ca",
+        "additional Smart Reply language",
+        "Smart Reply locales",
+        "Smart Reply locale",
+        "Smart Reply language support",
+        "fr-CA support",
+        "French (Canada)"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Smart Reply support is expanded to include French (Canada) in addition to English (United States).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-11-15",
+      "feature_name": "Agent Assist console",
+      "deprecation_date": "",
+      "feature_summary": "The Agent Assist console has reached GA and now includes built-in workflow tutorials, sample datasets, and demo models.",
+      "keywords": [
+        "built-in workflow tutorials",
+        "sample datasets",
+        "demo models",
+        "AA console",
+        "Agent Assist UI console",
+        "Agent Assist console",
+        "console GA"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "The Agent Assist console is a Google Cloud UI used to create and manage Agent Assist conversation profiles and to test suggestion capabilities (such as Article Suggestion and generative knowledge assist) during design-time and model-testing workflows. It supports tutorial-driven setup and allows users to perform console-based actions or simulator/UI testing in place of direct API calls, while runtime usage still requires calling the Agent Assist API directly.",
+      "evidence_summary": "These pages describe the Agent Assist console as a design-time interface for creating conversation profiles, following tutorials, and testing suggestion features, with runtime behavior routed to direct API calls.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+        "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "83ed62748d37b1e6505e7878edc96ffb41a210780be6a30557e52531f7fd5bbb",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+          "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "b34fd08d0796e8f8378433275bffa1bcdae5a5f3b17d101500c66460e5ddb01c",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/byoa-extension",
+          "title": "\"User guide: Build your own GenAI assist extension \\_|\\_ Agent Assist \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_byoa-extension.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_byoa-extension.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        },
+        {
+          "page_id": "1a3a6b9c2d9f29f61cf69b086336f8eab78f5b2cb9faa3f5b1e91595b59fe3b7",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+          "title": "\"User guide: Summarization automatic evaluation \\_|\\_ Agent Assist \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "9efc71dc9e447af5a1c77bdb050130007ef3c322fd052302778f7289246e8bf3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "1cdc2c364cffbc03c1cc9bd3347de38dbd5aa9541ebf845798ce5c2ca180e5e3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+          "title": "Article Suggestion \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_article-suggestion.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_article-suggestion.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "2649f89777887bab58347ae737bd05cce92e71953911aea4ef8d225fb0ca5eb5",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/faq",
+          "title": "FAQ assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_faq.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_faq.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 28,
+          "final_score": 46,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "This page explicitly describes creating conversation profiles in the Agent Assist console, using console tutorials, and notes that the console is only for design-time/model testing while runtime requires API calls.",
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Create a conversation profile Use the following resources to create a conversation profile: Agent Assist console Application programming interface (API) We recommend that you use the console tutorials first, as follows.",
+            "To create a conversation profile, you can click the Conversation Profile tab in the Agent Assist console or you can use the console tutorials.",
+            "Note: You can only use the Agent Assist console during design-time and model testing phases.",
+            "Navigate to the Agent Assist console."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/article-suggestion",
+          "title": "Article Suggestion \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_article-suggestion.md",
+          "base_score": 24,
+          "final_score": 32,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page references the Agent Assist Console as an option for design-time testing and setup, which is relevant context but not a detailed definition of the console feature itself.",
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "You have the option of using the Agent Assist Console to test your Article Suggestion results during design-time, but you must call the API directly during runtime.",
+            "You can also perform these actions using the Agent Assist Console if you would prefer not to call the API directly.",
+            "You can also perform these actions using the Agent Assist Console if you would prefer not to call the API directly.",
+            "See the tutorials section for details about testing feature performance using the Agent Assist Console."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+          "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "base_score": 30,
+          "final_score": 26,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page mentions creating a conversation profile through the Agent Assist console, but does not describe console-specific GA capabilities like built-in tutorials or demo models.",
+          "matched_phrases": [
+            {
+              "phrase": "agent assist console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "Before using any of the request data, make the following replacements: PROJECT ID : your project ID LOCATION ID : the ID for your location AGENT ID : your flow-based or playbook-based data store agent ID from the previous step The following is a JSON example: { \"displayName\" : \"my-conversation-profile-display-name\" , \"humanAgentAssistantConfig\" : { \"humanAgentSuggestionConfig\" : { \"featureConfigs\" : [ { \"suggestionFeature\" : { \"type\" : \"KNOWLEDGE SEARCH\" }, \"queryConfig\" : { \"dialogflowQuerySource\" : { \"humanAgentSideConfig\" : { \"agent\" : \"projects/ PROJECT ID /locations/ LOCATION ID /agents/ AGENT ID \" } } }, \"disableAgentQueryLogging\" : false , \"enableConversationAugmentedQuery\" : false , } ] } } } When you create a conversation profile in the Agent Assist console, Agent Assist automatically enables both generative knowledge assist and proactive generative knowledge assist.",
+            "Step 1: Create a conversation profile We recommend that you create a conversation profile using the Agent Assist console , but you can also use the API.",
+            "You can manually submit the suggested query to the SearchKnowledge API and automatically submit in the Agent Assist console simulator and UI modules.",
+            "Step 1: Create a conversation profile Create a conversation profile using the Agent Assist console or the API."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-11-15",
+      "feature_name": "Backend modules",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist launches backend modules as a GA feature, providing out-of-the-box infrastructure for faster integration with agent systems.",
+      "keywords": [
+        "out-of-the-box integration infrastructure",
+        "integration backend module",
+        "backend module support",
+        "agent system integration",
+        "integration backend modules",
+        "backend modules GA",
+        "backend modules"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Backend modules are an out-of-the-box Agent Assist integration option that provides infrastructure for integrating Agent Assist with your system, including handling large volumes of feature-related messages and interacting with the agent desktop UI. They are implemented via a defined set of backend module components and required Google services (including Cloud Pub/Sub topics, a Cloud Pub/Sub interceptor, Memorystore for Redis, and a UI connector), and are supported by installation and concepts documentation for setup.",
+      "evidence_summary": "The pages show backend modules as an integration method for Agent Assist and describe their purpose and required components, but do not provide explicit evidence for GA status or the exact 2022-11-15 feature launch date.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-basics"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "e39491565467908818f9fc96250256260ef260c9666c55ffbaee9db92448b356",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+          "title": "\"Integrate backend modules with your system \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_backend-module-install.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_backend-module-install.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "backend modules",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "007823b80c820c33627b87c475dd2338bc9c621cae41d4bf45fb625ca2c58e4d",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/backend-basics",
+          "title": "Agent Assist backend modules basics \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_backend-basics.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_backend-basics.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "backend modules",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+          "title": "\"Integrate backend modules with your system \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_backend-module-install.md",
+          "base_score": 44,
+          "final_score": 62,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is a dedicated integration guide for Agent Assist backend modules, including deployment, prerequisites, and required IAM roles.",
+          "matched_phrases": [
+            {
+              "phrase": "backend modules",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Home Documentation AI and ML Agent Assist Guides Send feedback Integrate backend modules with your system Stay organized with collections Save and categorize content based on your preferences.",
+            "Backend modules provide an infrastructure to process large volumes of feature-related messages and interact with the agent desktop UI.",
+            "For more information about background modules concepts and structure, see the backend modules basics documentation.",
+            "This tutorial walks you through the process of integrating backend modules with your agent system."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/backend-basics",
+          "title": "Agent Assist backend modules basics \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_backend-basics.md",
+          "base_score": 44,
+          "final_score": 44,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "backend modules",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "Backend modules structure Backend module components Backend modules require the following Google products to integrate Agent Assist into your system: Cloud Pub/Sub Cloud Pub/Sub interceptor Memorystore for Redis UI connector Cloud Pub/Sub Cloud Pub/Sub topics are configured in conversation profiles .",
+            "Agent Assist prices and quotas Pub/Sub prices and quotas Memorystore prices and quotas Cloud Run prices and quotas What's next See the backend modules installation guide for more information about getting started with this integration method.",
+            "Home Documentation AI and ML Agent Assist Guides Send feedback Agent Assist backend modules basics Stay organized with collections Save and categorize content based on your preferences.",
+            "Agent Assist now offers backend modules , an out-of-the-box option for integrating Agent Assist into your system."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-11-15",
+      "feature_name": "CCAI Transcription",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist now supports CCAI Transcription as a GA feature for converting streaming audio into real-time text transcripts.",
+      "keywords": [
+        "real-time transcript generation",
+        "contact center AI transcription",
+        "Contact Center AI transcription",
+        "real-time transcripts",
+        "streaming audio transcripts",
+        "CCAI Transcription",
+        "CCAI transcription"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Agent Assist now supports CCAI Transcription as a GA feature for converting streaming audio into real-time text transcripts.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-11-15",
+      "feature_name": "Voice data sentiment analysis",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist adds private preview support for sentiment analysis of voice-call data.",
+      "keywords": [
+        "call sentiment analysis",
+        "voice data sentiment analysis",
+        "conversation sentiment analysis",
+        "audio sentiment scoring",
+        "private preview sentiment",
+        "voice-call sentiment",
+        "voice sentiment"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Agent Assist adds private preview support for sentiment analysis of voice-call data.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-01",
+      "feature_name": "Regionalized data residency",
+      "deprecation_date": "",
+      "feature_summary": "Regionalized data residency lets Agent Assist users confine conversation data at rest to a specified geographic region.",
+      "keywords": [
+        "geographic region confinement",
+        "region-specific storage",
+        "conversation data at rest",
+        "regionalized data residency",
+        "data residency controls",
+        "regional residency",
+        "data residency"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Regionalized data residency lets Agent Assist users confine conversation data at rest to a specified geographic region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-01",
+      "feature_name": "Summarization",
+      "deprecation_date": "",
+      "feature_summary": "Agent Assist summarization automatically generates summaries for agents after each conversation ends.",
+      "keywords": [
+        "summary after conversation ends",
+        "automatic summary generation",
+        "post-call summary",
+        "post-conversation summary",
+        "agent-facing summary",
+        "summary generation",
+        "conversation summarization"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Agent Assist Summarization is the feature for automatically generating conversation summaries, with a documented setting to generate new summaries for all conversations or disable summary generation. The conversation data format used by Agent Assist includes a \"conversation summarization suggestion\" annotation with text sections such as \"Situation,\" \"Action,\" and \"Outcome,\" which indicates structured summary content produced for a conversation. Coverage is based on available snippets, so behavior details beyond these points are not fully evidenced here.",
+      "evidence_summary": "The cited pages show that Agent Assist supports configurable summary generation and define the conversation data fields used for summarization suggestions with structured sections.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+        "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "1a3a6b9c2d9f29f61cf69b086336f8eab78f5b2cb9faa3f5b1e91595b59fe3b7",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+          "title": "\"User guide: Summarization automatic evaluation \\_|\\_ Agent Assist \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "base_score": 62,
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 24
+            },
+            {
+              "phrase": "summary generation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "74f8dce24562c4069e2f5b6ecf197fa85554d1023db8a3b49d99e66205f1f2e1",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+          "title": "Upload conversation data \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-data-format.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-data-format.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "conversation summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "3e8832aaa887948727473b4db926d671ebc4c187239e17d3903533e79b0baaaf",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/feedback",
+          "title": "Send feedback to Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_feedback.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_feedback.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        },
+        {
+          "page_id": "c633a0687ec72a26010c001b0975ec9ea33a27241398ebea09e68505c4621985",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-dataset",
+          "title": "Create a conversation dataset \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-dataset.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-dataset.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "9efc71dc9e447af5a1c77bdb050130007ef3c322fd052302778f7289246e8bf3",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-profile",
+          "title": "Create a conversation profile \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-profile.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "ba4b2032a42858ec4c667acc8ded50e88075b3c7ea846848ef32dfb421c8e286",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app",
+          "title": "\"Deploy the Genesys Cloud application server \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "conversation summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/summarization-autoeval-guide",
+          "title": "\"User guide: Summarization automatic evaluation \\_|\\_ Agent Assist \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_summarization-autoeval-guide.md",
+          "base_score": 62,
+          "final_score": 58,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page discusses summarization generators and their section definitions, but its primary focus is evaluating summary quality rather than describing how summaries are generated during conversations.",
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 24
+            },
+            {
+              "phrase": "summary generation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "You pay the summary generation cost Generate new summaries for all conversations.",
+            "You pay the summary generation cost Don't generate summaries."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/conversation-data-format",
+          "title": "Upload conversation data \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_conversation-data-format.md",
+          "base_score": 34,
+          "final_score": 34,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "conversation summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "You have a nice day\", \"role\": \"AGENT\" } ], \"conversation info\": { \"annotations\": [ { \"annotation\": { \"conversation summarization suggestion\": { \"text sections\": [ { \"key\": \"Situation\", \"value\": \"Customer was unable to login to account\" }, { \"key\": \"Action\", \"value\": \"Agent sent an email with password reset instructions\" }, { \"key\": \"Outcome\", \"value\": \"Problem was resolved\" } ] } } } ] } } Conversation transcript data Text conversation data must be supplied in JSON-formatted files, where each file contains data for a single conversation."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/feedback",
+          "title": "Send feedback to Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_feedback.md",
+          "base_score": 28,
+          "final_score": 28,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "summarization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ],
+          "evidence_snippets": []
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-12",
+      "feature_name": "UI Modules",
+      "deprecation_date": "",
+      "feature_summary": "UI Modules provide ready-made components for integrating Agent Assist capabilities into agent user interfaces.",
+      "keywords": [
+        "agent desktop UI modules",
+        "Agent Assist module integration",
+        "prebuilt UI modules",
+        "agent UI module",
+        "UI module",
+        "Agent Assist UI modules",
+        "UI modules",
+        "Agent Assist UI"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "UI Modules in Agent Assist are embeddable UI components that connect to Agent Assist via UI module connectors and event messages. Agents can integrate them into agent desktops through prebuilt connectors, or implement a custom connector when a desktop is unsupported, using custom events to send requests (for example, analyze-content-received) and receive responses (for example, analyze-content-response-received or smart-reply-selected). The feature also requires a deployed Agent Assist UI modules backend/application server (for example, in Cloud Run) to render the modules.",
+      "evidence_summary": "The first page documents event-driven and custom UI module connector integration behavior, while the second shows how to deploy the Agent Assist UI modules backend needed to render modules.",
+      "source_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "5aed84d4529eb4e914a8befc777096664ecf2e76e5ac59bc96f782b4ee4a140a",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+          "title": "\"Custom events and custom UI module connectors \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_agent-assist_docs_custom-events.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_custom-events.md",
+          "base_score": 76,
+          "matched_phrases": [
+            {
+              "phrase": "ui module",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 24
+            },
+            {
+              "phrase": "ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "agent assist ui",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "agent assist ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "ba4b2032a42858ec4c667acc8ded50e88075b3c7ea846848ef32dfb421c8e286",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app",
+          "title": "\"Deploy the Genesys Cloud application server \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "base_score": 46,
+          "matched_phrases": [
+            {
+              "phrase": "ui module",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "agent assist ui",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "agent assist ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "83ed62748d37b1e6505e7878edc96ffb41a210780be6a30557e52531f7fd5bbb",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+          "title": "Generative knowledge assist \\_|\\_ Agent Assist \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_generative-knowledge-assist.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ui module",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "2a38fd1b8df80e12c2af8fb5474105ac8f781f55aef7b5ca110ff0ed21dbdbd5",
+          "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-chat",
+          "title": "\"Configuration for chat integration \\_|\\_ Agent Assist \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\agent-assist\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_agent-assist_docs_genesys-cloud-chat.md",
+          "relative_markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_genesys-cloud-chat.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "ui module",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+          "title": "\"Custom events and custom UI module connectors \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-reference/pages/docs.cloud.google.com_agent-assist_docs_custom-events.md",
+          "base_score": 76,
+          "final_score": 94,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is directly about Agent Assist UI module behavior, stating that all communication happens through custom events and showing how to dispatch and handle UI module events.",
+          "matched_phrases": [
+            {
+              "phrase": "ui module",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 24
+            },
+            {
+              "phrase": "ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "agent assist ui",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "agent assist ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "If you're integrating Agent Assist UI modules into any agent desktop without a prebuilt UI module connector, you will need to write a custom one.",
+            "To manually dispatch a custom event, use the following syntax: dispatchAgentAssistEvent ( 'event name' , { detail : event payload , }); The following example shows how to dispatch the analyze-content-received event: if (newMessageFromHumanAgent) { dispatchAgentAssistEvent('analyze-content-received', { detail: { participantRole: 'HUMAN AGENT', request: { textInput: {text: newMessageFromHumanAgent}, messageSendTime: new Date().toISOString() } } }); } After a you dispatch a custom event, you will see the following in the UI module connector service: this . api . analyzeContent (...) . then ( function ( response ) { dispatchAgentAssistEvent('analyze-content-response-received', { detail : { response : response } } ); } ); And you will see the following in the module: addAgentAssistEventListener('analyze-content-response-received', function (event) { // Use the AnalyzeContent response to render suggestions in the UI. }); To manually subscribe to a custom event, use the following syntax: addAgentAssistEventListener ( 'event name' , function ( event ) { // event . detail contains the event payload . }); The following example shows a custom event subscription: addAgentAssistEventListener('smart-reply-selected', function (event) { var chipContent = event.details; // Populate the agent chat box with the selected Smart Reply chip. }); Custom UI module connectors You can also use custom events to create your own custom UI module connectors, which allow you to integrate the UI modules into an agent desktop that isn't supported by Agent Assist.",
+            "For example: const connector = new UiModulesConnector (); const config = {}; // ...other UI module connector config options config . uiModuleEventOptions = { namespace : this . recordId } const containerElement = document . createElement ( \"agent-assist-ui-modules-v2\" ); // ...other UI modules HTML attributes containerEl . setAttribute ( \"namespace\" , this . recordId ); Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "For example, when an Agent Assist suggestion is received, a UI module connector service will dispatch an analyze-content-received event to the UI modules, and the modules are subscribed to such events."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/agent-assist/docs/genesys-cloud-app",
+          "title": "\"Deploy the Genesys Cloud application server \\_|\\_ Agent Assist \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/agent-assist/corpus/site/site-docs-root/pages/docs.cloud.google.com_agent-assist_docs_genesys-cloud-app.md",
+          "base_score": 46,
+          "final_score": 64,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is specifically about deploying and configuring the Genesys Cloud UI module/server used to render Agent Assist suggestions in the Genesys Cloud interface.",
+          "matched_phrases": [
+            {
+              "phrase": "ui module",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "agent assist ui",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "agent assist ui modules",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Deploy an Agent Assist UI modules backend .",
+            "Deploy the Genesys Cloud application server for rendering the Agent Assist UI module in Cloud Run .",
+            "Run the deployment command with updated environment variables. gcloud run deploy $ AA MODULE APPLICATION SERVER --source ./ --service-account=$ ui module service account --memory 1Gi --platform managed --region us-central1 --allow-unauthenticated --set-env-vars ^ ^OAUTH CLIENT ID=$ OAUTH CLIENT ID GENESYS CLOUD REGION=$ GENESYS CLOUD REGION GENESYS CLOUD ENVIRONMENT=$ GENESYS CLOUD ENVIRONMENT CONVERSATION PROFILE=$ CONVERSATION PROFILE FEATURES=$ FEATURES PROJECT ID=$ PROJECT ID APPLICATION SERVER URL='' PROXY SERVER=$ PROXY SERVER APPLICATION SERVER URL=$ APPLICATION SERVER URL The Genesys Cloud application server must be deployed to a Google Cloud hosting service.",
+            "Replace PROJECT-ID with your agent's Google Cloud project ID, UI MODULE SERVICE ACCOUNT with your service account client email, and set the REGION for Cloud Run . gcloud run deploy $ AA MODULE APPLICATION SERVER --source ./ --service-account=$ ui module service account --memory 1Gi --platform managed --region us-central1 --allow-unauthenticated Click Enter to accept the default service name."
+          ]
+        }
+      ]
+    }
+  ]
+}

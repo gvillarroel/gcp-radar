@@ -1,0 +1,2976 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:58:55.353Z",
+  "product_name": "Anthos clusters on AWS",
+  "product_slug": "anthos-clusters-on-aws",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/anthos-clusters-on-aws.md",
+    "step04_product_dir": "data/step-04/current/products/anthos-clusters-on-aws"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 58,
+  "source_row_count": 36,
+  "feature_count": 51,
+  "covered_feature_count": 18,
+  "features_without_supporting_pages": 33,
+  "features": [
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "admin-groups flag in create and update APIs",
+      "deprecation_date": "",
+      "feature_summary": "The create and update APIs now support an admin-groups flag to designate cluster administrator groups without manual RBAC policy application.",
+      "keywords": [
+        "manual RBAC policy application",
+        "admin-groups flag",
+        "cluster administrator groups",
+        "cluster admin groups",
+        "CreateCluster API",
+        "UpdateCluster API",
+        "admin-groups",
+        "admin groups"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The create and update APIs now support an admin-groups flag to designate cluster administrator groups without manual RBAC policy application.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "AWS Spot instance node pools",
+      "deprecation_date": "",
+      "feature_summary": "AWS Spot instance node pools are supported as a GA feature for Anthos clusters.",
+      "keywords": [
+        "node pool provisioned by Spot",
+        "EC2 Spot instances",
+        "spot capacity",
+        "spot nodepool",
+        "Spot instance node pools",
+        "node pool availability",
+        "spot node pool",
+        "Spot pools"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In Anthos clusters on AWS, the AWS node pool API supports creating node pools that are provisioned with Amazon EC2 Spot instances. The API exposes a Spot configuration for a node pool, where you specify a list of instance types (`spotConfig.instanceTypes`) that can be used when creating a Spot node pool.",
+      "evidence_summary": "The cited REST reference confirms that the Anthos `awsNodePools` resource includes configuration for provisioning EC2 Spot instances and allows defining instance types for Spot node pool creation.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "spot instance node pools",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "aws spot instance node pools",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ec2 spot instances",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "spot node pool",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "b344efed6de656e75961bea5d8a68620bcb1302ec9f995e50404db2ebf833a95",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "ec2 spot instances",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "spot node pool",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page includes a `SpotConfig` representation in the AwsNodePool schema, indicating API-level support for Spot-based node pool configuration.",
+          "matched_phrases": [
+            {
+              "phrase": "ec2 spot instances",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "spot node pool",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Configuration for provisioning EC2 Spot instances When specified, the node pool will provision Spot instances from the set of spotConfig.instance types.",
+            "A list of instance types for creating spot node pool."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "Binary Authorization integration",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS add Binary Authorization support to enforce trusted image signing and signature validation at deploy time.",
+      "keywords": [
+        "deploy-time enforcement",
+        "Binary Authorization",
+        "signature validation",
+        "Binauthz integration",
+        "policy attestation",
+        "binary-authz",
+        "image signature",
+        "image signing"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "On Anthos clusters on AWS, Binary Authorization performs deploy-time verification of container images by retrieving the image's digital signature from the registry and validating it against registered public keys and policy rules. The system denies container deployment when signature verification fails or any policy criterion is unmet, and allows deployment only when all checks pass.",
+      "evidence_summary": "The cited security overview explains the deploy-time decision flow for Binary Authorization, including signature retrieval, public-key-based verification, and policy-based allow/deny outcomes.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "f969bcb8c14bf09d61e58b24ea34d972d731778ce6c450268196de1d524b17c0",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security",
+          "title": "Security overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_security.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_security.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "binary authorization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "binary authorization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "signature validation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "5db2215e6cf0b6d39ae74aae623c6fcfafab72d7ff960cd7d6e3c36aeb7b6bee",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached",
+          "title": "GKE attached clusters documentation \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_attached.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_attached.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "binary authorization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security",
+          "title": "Security overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_security.md",
+          "base_score": 32,
+          "final_score": 28,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page is a general security overview and does not describe Binary Authorization, but it broadly discusses workload and container security responsibilities.",
+          "matched_phrases": [
+            {
+              "phrase": "binary authorization",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ],
+          "evidence_snippets": [
+            "If the digital signature can't be successfully verified using the public key and the image data, or if the image doesn't meet other criteria defined in the policy, the Binary Authorization system denies the container deployment.",
+            "If the digital signature can be successfully verified using the public key and the image data, and the image meets all other criteria defined in the policy, the Binary Authorization system allows the container to be deployed.",
+            "When a request to deploy a container is made, the Binary Authorization system retrieves the digital signature attached to the image in the registry.",
+            "The public key is then registered with the Binary Authorization system so that the system can use the public key for signature verification."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "ignore_errors query parameter for delete API",
+      "deprecation_date": "",
+      "feature_summary": "A new ignore_errors=true query option allows forced deletion of clusters or node pools when IAM roles or resources are missing.",
+      "keywords": [
+        "ignore_errors=true",
+        "orphaned resources",
+        "query parameter",
+        "forced deletion",
+        "force delete",
+        "ignore_errors",
+        "ignore-errors",
+        "delete node pool"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In Anthos GKE on AWS, the `ignore_errors=true` delete query option allows a forced DELETE of clusters or node pools when deletion would otherwise fail due to missing IAM roles or prior manual resource removal. It is intended to let the delete request complete despite these error conditions, but the operation can leave orphaned resources in AWS that may require manual cleanup.",
+      "evidence_summary": "The release notes explicitly add a DELETE `ignore errors` option for forcefully removing clusters/node pools, while the API reference details delete-time behavior and cautions about orphaned resources (though it does not clearly enumerate `ignore_errors` in the shown snippet).",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/delete",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "ea4b5dd2f1fd7dade1e86ee84729f5f18e75ac3c32fe2c35428349646d950906",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/delete",
+          "title": "\"Method: projects.locations.awsClusters.awsNodePools.delete \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_delete.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_delete.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "query parameter",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "orphaned resources",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "ignore errors",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ignore errors true",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "orphaned resources",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "35676e4d1af8ac31fa841a0b61fab65ce93130eb0d9588c1c37fb9c783aa3065",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters/delete",
+          "title": "\"Method: projects.locations.attachedClusters.delete \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.attachedClusters_delete.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.attachedClusters_delete.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "query parameter",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "orphaned resources",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "cf974f421399804dcbb0b6e6343452c5ab901d83faae70b3010db4b86f608eb3",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/create",
+          "title": "\"Method: projects.locations.awsClusters.awsNodePools.create \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_create.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_create.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "query parameter",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "4fe7c1c984f048cd280d016224b1d919a30b3ec25520b5baef04cc5d58dce3bf",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/list",
+          "title": "\"Method: projects.locations.awsClusters.awsNodePools.list \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_list.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_list.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "query parameter",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "de9ac605194f4ecf15fa49d13faa8eb444e1fe1fdbead223f00d30bae277efed",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/patch",
+          "title": "\"Method: projects.locations.awsClusters.awsNodePools.patch \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_patch.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_patch.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "query parameter",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools/delete",
+          "title": "\"Method: projects.locations.awsClusters.awsNodePools.delete \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools_delete.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "query parameter",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "orphaned resources",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Query parameters Parameters validateOnly boolean If set, only validate the request, but do not actually delete the node pool. allowMissing boolean If set to true, and the AwsNodePool resource is not found, the request will succeed but no action will be taken on the server and a completed Operation will be returned.",
+            "HTTP request Path parameters Query parameters Request body Response body Authorization scopes IAM Permissions GKE-on-AWS is deprecated.",
+            "Using this parameter may result in orphaned resources in the node pool. etag string The current ETag of the AwsNodePool ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "ignore errors",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "ignore errors true",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "orphaned resources",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "By appending ?ignore errors=true to the DELETE request URL, users can now forcibly remove clusters or node pools.",
+            "Added an ignore errors option to the delete API to handle cases where accidentally deleted IAM roles or manual removal of resources prevent the deletion of clusters or node pools.",
+            "However, this approach might result in orphaned resources in AWS or Azure, requiring manual cleanup."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "Node auto repair",
+      "deprecation_date": "",
+      "feature_summary": "Node auto repair is added to continuously monitor node health in each node pool; Node auto repair is available in preview, enabling continuous monitoring of node health in node pools.",
+      "keywords": [
+        "automatic node health checks",
+        "unhealthy node replacement",
+        "node self-repair",
+        "node pool auto repair",
+        "Node auto repair",
+        "node auto-repair",
+        "node health monitoring",
+        "auto-repair"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Node auto repair is added to continuously monitor node health in each node pool; Node auto repair is available in preview, enabling continuous monitoring of node health in node pools.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "Node pool metrics collection components",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS now collect node-pool metrics for additional components including gke-metrics-agent, cilium-agent, cilium-operator, coredns, fluentbit-gke, kubelet, and konnectivity-agent.",
+      "keywords": [
+        "konnectivity-agent",
+        "cilium-operator",
+        "cilium-agent",
+        "gke-metrics-agent",
+        "node-pool telemetry",
+        "fluentbit-gke",
+        "coredns",
+        "metrics components"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "This feature is described as node-pool telemetry collection for additional Anthos on AWS components, but the provided source only directly confirms one relevant component. In the cited GKE on AWS documentation, CoreDNS is confirmed to run in-cluster as a Deployment in the kube-system namespace and to serve DNS for the cluster. There is no explicit evidence in the provided excerpt that the full set of components (gke-metrics-agent, cilium-agent, cilium-operator, fluentbit-gke, kubelet, or konnectivity-agent) are part of metric collection.",
+      "evidence_summary": "The cited page supports only the CoreDNS deployment and DNS-role details for GKE on AWS, which partially overlaps with the named component list but does not verify the broader node-pool metrics-collection scope.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/service-discovery-dns"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 46,
+          "matched_phrases": [
+            {
+              "phrase": "gke-metrics-agent",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "fluentbit-gke",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "coredns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "konnectivity-agent",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "cilium-operator",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "cilium-agent",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "657352309e16cd14a5b21676c3bd1a566696bce750e0423fa4ac5ef597a8e4b2",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/service-discovery-dns",
+          "title": "Service discovery and DNS overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_service-discovery-dns.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_service-discovery-dns.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "coredns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "ddfd2d846ceca74d4fbd4fd4b36d8af3a609a0df06c2434ab5b0a4a6dbcd5845",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cluster-autoscaler",
+          "title": "About cluster autoscaler \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "konnectivity-agent",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "coredns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/service-discovery-dns",
+          "title": "Service discovery and DNS overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_service-discovery-dns.md",
+          "base_score": 32,
+          "final_score": 32,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "coredns",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "If the cache can't resolve the DNS request, the cache forwards the request to either: CoreDNS for an internal name— for example foo.bar.svc.cluster.local The Amazon DNS server , for an external name— for example example.net What's next Read about AWS DNS support for your VPC .",
+            "The CoreDNS deployment has a Service that groups the CoreDNS Pods and gives them a single IP address.",
+            "CoreDNS runs as a redundant, scaled Deployment in the kube-system namespace.",
+            "CoreDNS GKE on AWS uses CoreDNS to resolve DNS names within clusters."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "Surge updates for node pool updates",
+      "deprecation_date": "",
+      "feature_summary": "Anthos on AWS introduces surge updates to control the speed and disruption of node pool updates.",
+      "keywords": [
+        "surge update strategy",
+        "node pool update settings",
+        "update disruption control",
+        "max surge",
+        "node pool surge",
+        "surge updates",
+        "maxUnavailable",
+        "maxSurge"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Surge updates for node pool updates in Anthos clusters on AWS let you control how node replacements are performed during an update by using `maxSurge` (temporary extra nodes created beyond current pool size) and `maxUnavailable` (pods/nodes allowed to be unavailable), which together determine update parallelism. This strategy is used to balance update speed and workload disruption, with documented preset combinations for different disruption/speed tradeoffs, and clusters on node pool API minor version 1.27+ default to `maxSurge = 1` and `maxUnavailable = 0` unless configured otherwise.",
+      "evidence_summary": "The about page describes the surge update behavior, presets, and disruption tradeoffs, while the REST reference defines `maxSurge`/`maxUnavailable` semantics, defaults, and that their sum drives update parallelism.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "80931bb5c0b9165cfe69a11b6f172327424940b37bd53eb4b0df337eb9a8cfb1",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+          "title": "About surge updates \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_about-surge-updates.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_about-surge-updates.md",
+          "base_score": 72,
+          "matched_phrases": [
+            {
+              "phrase": "surge updates",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "maxunavailable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "maxsurge",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "b344efed6de656e75961bea5d8a68620bcb1302ec9f995e50404db2ebf833a95",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "maxunavailable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "maxsurge",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+          "title": "About surge updates \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_about-surge-updates.md",
+          "base_score": 72,
+          "final_score": 90,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is a dedicated overview of surge updates in GKE on AWS, detailing their behavior and how they control node pool update speed and disruption.",
+          "matched_phrases": [
+            {
+              "phrase": "surge updates",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 20
+            },
+            {
+              "phrase": "maxunavailable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "maxsurge",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "The following table shows three example settings, and highlights their impact on the speed of the update and the potential disruption to your workloads: Name Description Configuration Balanced setting (default) Balanced, slower but least disruptive. maxSurge=1, maxUnavailable=0 Rapid updates without extra resources Fast, no surge resources, most disruptive. maxSurge=0, maxUnavailable=20 Rapid updates that are less disruptive Fast, most surge resources and less disruptive. maxSurge=20, maxUnavailable=0 Each of the settings in the table is described in the following sections.",
+            "The cluster autoscaler plays a more important role in surge updates than in standard rolling updates, which is why it figures prominently in the following list of actions GKE on AWS takes during a surge update: Creation of new autoscaling group : GKE on AWS provisions new nodes with the modifications specified by the update command, and assigns these new nodes to a new AWS autoscaling group (ASG).",
+            "Although the configurations of PDBs may vary, if you create a PDB with maxUnavailable equal to 1 for one or more workloads running on the node pool, then only one Pod of those workloads can be evicted at a time, limiting the parallelism of the entire update.",
+            "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE on AWS Guides Send feedback About surge updates Stay organized with collections Save and categorize content based on your preferences."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 50,
+          "final_score": 58,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page defines an AwsNodePool resource with an `updateSettings` field and references `SurgeSettings`, which are directly related to node pool update behavior.",
+          "matched_phrases": [
+            {
+              "phrase": "maxunavailable",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "maxsurge",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "For clusters with minor version 1.27 and later, a default surgeSettings configuration with maxSurge = 1 and maxUnavailable = 0 is used.",
+            "3. (maxSurge + maxUnavailable) determines the level of parallelism (i.e., the number of nodes being updated at the same time).",
+            "JSON representation { \"maxSurge\" : integer , \"maxUnavailable\" : integer } Fields maxSurge integer Optional.",
+            "1. maxSurge controls the number of additional nodes that can be created beyond the current size of the node pool temporarily for the time of the update to increase the number of available nodes."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "VolumeSnapshot v1beta1 API removal",
+      "deprecation_date": "2023-09-06",
+      "feature_summary": "The VolumeSnapshot, VolumeSnapshotContents, and VolumeSnapshotClass Kubernetes v1beta1 APIs are no longer available in the upgraded snapshot controller and webhook stack; deprecated on 2023-09-06.",
+      "keywords": [
+        "CSI snapshot APIs",
+        "snapshot webhook",
+        "snapshot controller",
+        "v1beta1 deprecation",
+        "snapshot v1beta1",
+        "VolumeSnapshotContents",
+        "VolumeSnapshotClass",
+        "API removed"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "In the GKE on AWS release notes, the Kubernetes CSI snapshot APIs `VolumeSnapshot`, `VolumeSnapshotContents`, and `VolumeSnapshotClass` at version `v1beta1` are stated as no longer available. The notes also state that in a future 1.23 release, the `v1beta1` snapshot APIs will no longer be served, indicating deprecation and removal of that API version.",
+      "evidence_summary": "The release notes page is the source for the feature change, explicitly listing the `v1beta1` VolumeSnapshot API types as removed and confirming they will no longer be served in the 1.23 release track.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "snapshot v1beta1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "volumesnapshotcontents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "volumesnapshotclass",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "db5e8b902d975a097c64bff7ed27fdb20b201c5440c44eaeb41c2bca8049cd25",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+          "title": "Storage overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_storage.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_storage.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "volumesnapshotclass",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "snapshot v1beta1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "volumesnapshotcontents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "volumesnapshotclass",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Specifically, the VolumeSnapshot , VolumeSnapshotContents , and VolumeSnapshotClass v1beta1 APIs are no longer available.",
+            "In a future release of 1.23 VolumeSnapshot v1beta1 APIs will no longer be served."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "cgroup v2 default control groups",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS now use cgroupv2 as the default control group configuration.",
+      "keywords": [
+        "container runtime cgroup",
+        "cgroup v2",
+        "Linux control groups",
+        "kernel control group",
+        "control groups v2",
+        "default cgroups",
+        "cgroupv2",
+        "cgroup2"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "As of the May 4, 2023 GKE on AWS update, Anthos clusters on AWS use cgroupv2 as their default control group configuration. This default applies to clusters launched with the listed versions 1.24.11-gke.1000, 1.25.7-gke.1000, and 1.26.2-gke.1001 in that release. The release notes also tie this change to an updated Ubuntu 22.04 image, which by default uses cgroupv2.",
+      "evidence_summary": "The cited release notes explicitly state that Anthos on AWS now defaults to cgroupv2 and document the versioned release context plus Ubuntu 22.04’s default cgroupv2 behavior.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "cgroupv2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "cgroupv2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "May 04, 2023 Announcement You can now launch clusters with the following Kubernetes versions: 1.24.11-gke.1000 1.25.7-gke.1000 1.26.2-gke.1001 Feature Updated OS image to Ubuntu 22.04. cgroupv2 is now used as the default control group configuration.",
+            "If they do, they must be updated to use cgroupv2 .",
+            "Ubuntu 22.04 uses cgroupv2 by default."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Control plane metrics export",
+      "deprecation_date": "",
+      "feature_summary": "Monitoring is improved by exporting metrics for control-plane components.",
+      "keywords": [
+        "component metrics export",
+        "control plane observability",
+        "control-plane telemetry",
+        "metrics endpoint",
+        "CP metrics",
+        "control plane monitoring",
+        "control plane metrics",
+        "control-plane metrics"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Monitoring is improved by exporting metrics for control-plane components.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "etcd v3.4.21 for new clusters",
+      "deprecation_date": "",
+      "feature_summary": "Newly created clusters on Anthos for AWS now default to etcd v3.4.21.",
+      "keywords": [
+        "cluster state store",
+        "etcd v3.4.21",
+        "etcd upgrade",
+        "default etcd version",
+        "etcd version default",
+        "new cluster etcd",
+        "etcd 3.4.21",
+        "default etcd"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "In Anthos clusters on AWS (GKE on AWS), the release noted that newly-created clusters now default to etcd version 3.4.21. This means the default cluster state store version for new cluster provisioning is set to v3.4.21, which was done for improved stability.",
+      "evidence_summary": "The cited GKE on AWS release notes explicitly state that newly-created clusters now use default etcd v3.4.21 for improved stability.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "etcd v3.4.21",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "default etcd version",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "default etcd",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "etcd v3.4.21",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "default etcd version",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "default etcd",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Changed default etcd version to v3.4.21 on new clusters for improved stability.",
+            "Newly-created clusters now use etcd v3.4.21 for improved stability."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Kubelet graceful node shutdown",
+      "deprecation_date": "",
+      "feature_summary": "Kubelet graceful node shutdown is enabled so non-system Pods terminate within 15 seconds and critical Pods have an additional 15 seconds to terminate gracefully.",
+      "keywords": [
+        "critical Pod grace period",
+        "15-second shutdown window",
+        "pod termination timeout",
+        "non-system Pods",
+        "kubelet graceful node shutdown",
+        "kubelet shutdown behavior",
+        "graceful node shutdown",
+        "graceful shutdown"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Kubelet graceful node shutdown in GKE on AWS is a kubelet-managed process that starts when the node receives shutdown-related events such as user-commanded shutdowns, instance termination, scheduled maintenance, or cluster scale-down. In this mode, the defaults are `ShutdownGracePeriod: 30s` and `ShutdownGracePeriodCriticalPods: 15s`, and the documentation states these settings give non-system Pods 15 seconds to terminate gracefully before force-stop. The feature does not activate when the shutdown command does not trigger the systemd inhibitor lock mechanism required by kubelet.",
+      "evidence_summary": "The cited page documents the shutdown event triggers, required systemd dependency, and default graceful-shutdown timing values for kubelet behavior on GKE on AWS.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/graceful-node-shutdown"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "cb0f1ddb19c67bfc93738a2fecbc3f2eadbec217c0c41d47c9f78f7ab6a6e369",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/graceful-node-shutdown",
+          "title": "Graceful node shutdown in GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_graceful-node-shutdown.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_graceful-node-shutdown.md",
+          "base_score": 52,
+          "matched_phrases": [
+            {
+              "phrase": "graceful node shutdown",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "non-system pods",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/graceful-node-shutdown",
+          "title": "Graceful node shutdown in GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_graceful-node-shutdown.md",
+          "base_score": 52,
+          "final_score": 70,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page directly documents how GKE on AWS handles graceful node shutdown, including kubelet behavior, Pod termination order, and default grace periods.",
+          "matched_phrases": [
+            {
+              "phrase": "graceful node shutdown",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "non-system pods",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Triggers and limitations Events that trigger graceful node shutdown include planned events such as the following: User-commanded shutdowns Termination of instances Scheduled maintenance Scaling down a cluster In these scenarios, the kubelet detects the node shutdown event and initiates the graceful node shutdown process.",
+            "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE on AWS Guides Send feedback Graceful node shutdown in GKE on AWS Stay organized with collections Save and categorize content based on your preferences.",
+            "The following default settings are used: ShutdownGracePeriod : 30 seconds ShutdownGracePeriodCriticalPods : 15 seconds These settings give non-system Pods 15 seconds to gracefully terminate before they are forcibly stopped.",
+            "In contrast, graceful node shutdown can't be activated when the shutdown command doesn't trigger the systemd inhibitor lock mechanism that the kubelet component relies on."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Kubernetes resource metadata export to Google Cloud",
+      "deprecation_date": "",
+      "feature_summary": "Kubernetes resource metadata can be sent to Google Cloud Platform for improved UI and cluster metrics, requiring the Config Monitoring for Ops API.",
+      "keywords": [
+        "Google Cloud UI metrics enrichment",
+        "Config Monitoring for Ops API",
+        "resource metadata sync",
+        "resource metadata export",
+        "cluster metadata visibility",
+        "metadata export to Google Cloud",
+        "metadata sync",
+        "Kubernetes metadata export"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Kubernetes resource metadata can be sent to Google Cloud Platform for improved UI and cluster metrics, requiring the Config Monitoring for Ops API.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Per-node-pool subnet security group ingress",
+      "deprecation_date": "",
+      "feature_summary": "Control-plane ingress is restricted to node-pool subnet IP ranges on TCP 443 and 8123 instead of VPC-wide rules.",
+      "keywords": [
+        "VPC-wide ingress rule removal",
+        "per-node-pool subnet ingress",
+        "TCP 443 and 8123",
+        "security group ingress rules",
+        "control-plane ingress restriction",
+        "restricted control-plane ingress",
+        "node-pool subnet ingress",
+        "node pool subnet CIDR"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Control-plane ingress is restricted to node-pool subnet IP ranges on TCP 443 and 8123 instead of VPC-wide rules.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Ubuntu 22.04 OS image",
+      "deprecation_date": "",
+      "feature_summary": "Anthos on AWS node pools can use Ubuntu 22.04 as the default OS image.",
+      "keywords": [
+        "Linux OS image",
+        "Ubuntu Jammy",
+        "Ubuntu 22.04",
+        "node pool OS image",
+        "Ubuntu image support",
+        "22.04 LTS",
+        "Ubuntu22.04",
+        "default node image"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos on AWS node pools can use Ubuntu 22.04 as the default OS image.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "ubuntu 22.04",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-04-05",
+      "feature_name": "Supported Kubernetes versions",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS now support launching with Kubernetes versions 1.23.16-gke.2800, 1.24.10-gke.1200, and 1.25.6-gke.1600; Anthos clusters on AWS now support launching with Kubernetes versions 1.23.16-gke.200, 1.24.9-gke.2000, and 1.25.5-gke.2000.",
+      "keywords": [
+        "Kubernetes 1.24.10-gke.1200",
+        "Kubernetes 1.23.16-gke.2800",
+        "Kubernetes 1.23.16-gke.200",
+        "Kubernetes 1.25.6-gke.1600",
+        "Kubernetes 1.25.5-gke.2000",
+        "Kubernetes 1.24.9-gke.2000",
+        "supported K8s versions",
+        "version list"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos clusters on AWS now support launching with Kubernetes versions 1.23.16-gke.2800, 1.24.10-gke.1200, and 1.25.6-gke.1600; Anthos clusters on AWS now support launching with Kubernetes versions 1.23.16-gke.200, 1.24.9-gke.2000, and 1.25.5-gke.2000.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-02-01",
+      "feature_name": "containerd runtime upgrade",
+      "deprecation_date": "",
+      "feature_summary": "The containerd container runtime is upgraded to version 1.6.12.",
+      "keywords": [
+        "container runtime upgrade",
+        "runtime component update",
+        "containerd runtime",
+        "CRI runtime",
+        "node runtime version",
+        "containerd 1.6.12",
+        "containerd 1.6"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The containerd container runtime is upgraded to version 1.6.12.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-02-01",
+      "feature_name": "Storage driver upgrades",
+      "deprecation_date": "",
+      "feature_summary": "Storage drivers were upgraded in Anthos clusters on AWS.",
+      "keywords": [
+        "storage driver upgrade",
+        "storage plugin update",
+        "storage driver update",
+        "driver version upgrade",
+        "CSI driver version",
+        "storage drivers",
+        "CSI updates"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "In Anthos clusters on AWS (GKE on AWS), storage drivers are provisioned through specific volume drivers, including CSI drivers, and the EBS CSI Driver version is tied to the Kubernetes version used by the cluster. This means driver version changes are coupled to cluster Kubernetes versioning rather than documented as standalone, manual driver-specific upgrades.",
+      "evidence_summary": "The cited storage overview page confirms the available volume drivers for GKE on AWS and explicitly states that the EBS CSI Driver version is linked to the Kubernetes version.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "db5e8b902d975a097c64bff7ed27fdb20b201c5440c44eaeb41c2bca8049cd25",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+          "title": "Storage overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_storage.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_storage.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "csi driver version",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "storage drivers",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+          "title": "Storage overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_storage.md",
+          "base_score": 20,
+          "final_score": 38,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page explains that the EBS CSI driver is tied to the GKE on AWS Kubernetes version and is automatically updated when the cluster version is upgraded, directly describing the storage driver upgrade behavior.",
+          "matched_phrases": [
+            {
+              "phrase": "csi driver version",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "storage drivers",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Specific storage drivers The following volume drivers can be used with GKE on AWS.",
+            "The EBS CSI Driver version is tied to a GKE on AWS Kubernetes version."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Amazon EFS dynamic provisioning on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Amazon EFS dynamic provisioning is available in GA for Anthos on AWS clusters running Kubernetes 1.25 or later.",
+      "keywords": [
+        "Amazon EFS dynamic provisioning",
+        "EFS CSI driver",
+        "EFS storage on AWS",
+        "EFS dynamic provisioning",
+        "EFS CSI",
+        "efs-csi",
+        "GA dynamic provisioning",
+        "Kubernetes 1.25 or later"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Amazon EFS dynamic provisioning on Anthos on AWS is a storage feature that enables dynamic provisioning of AWS Elastic File System (EFS) volumes via the AWS EFS CSI driver. In Anthos clusters on AWS, it is in preview for Kubernetes 1.24+ and is documented as generally available for clusters running Kubernetes 1.25 or later.",
+      "evidence_summary": "The Anthos on AWS release notes explicitly track the feature progression of EFS dynamic provisioning from preview in Kubernetes 1.24+ to GA in Kubernetes 1.25+.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "efs dynamic provisioning",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "efs csi driver",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "efs csi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 24,
+          "final_score": 24,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "efs dynamic provisioning",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "efs csi driver",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "efs csi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Fixed an issue with AWS EFS CSI driver where EFS hostnames can't be resolved when AWS VPC is configured to use a custom DNS server.",
+            "Feature In Kubernetes version 1.24 and later, Anthos clusters on AWS supports EFS dynamic provisioning in preview mode.",
+            "Feature Elastic File System (EFS) dynamic provisioning is now available in GA for clusters at version 1.25 or later."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Cloud Monitoring control plane metrics ingestion for Anthos clusters on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Google Cloud Monitoring now ingests control-plane metrics from kube-apiserver, kube-scheduler, kube-controller-manager, and etcd as a preview feature.",
+      "keywords": [
+        "control-plane metrics ingestion",
+        "kube-controller-manager metrics",
+        "Cloud Monitoring control plane metrics",
+        "kube-apiserver metrics",
+        "kube-scheduler metrics",
+        "preview control plane metrics",
+        "control-plane metrics preview",
+        "monitoring control-plane"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Google Cloud Monitoring now ingests control-plane metrics from kube-apiserver, kube-scheduler, kube-controller-manager, and etcd as a preview feature.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "CloudWatch metrics collection for AWS node pool auto scaling groups",
+      "deprecation_date": "",
+      "feature_summary": "CloudWatch metrics collection can now be enabled and updated for AWS node pool auto-scaling groups.",
+      "keywords": [
+        "enable CloudWatch collection",
+        "AWS node pool auto scaling group",
+        "update ASG metrics",
+        "CloudWatch ASG",
+        "CloudWatch metrics collection",
+        "ASG metrics collection",
+        "node pool ASG metrics"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "For Anthos clusters on AWS, this feature is the node-pool setting that configures CloudWatch metrics collection on the AWS Auto Scaling group associated with the node pool. The official reference describes this specifically as configuration related to CloudWatch metrics collection on the Auto Scaling group, indicating integration is managed through node pool ASG configuration rather than as a separate product-level service. Evidence on explicit enable/disable flow and update mechanics is limited in the provided excerpt.",
+      "evidence_summary": "The cited GKE Multi-Cloud REST resource page includes node-pool fields for AWS that explicitly relate to CloudWatch metrics collection configuration on the AWS Auto Scaling Group.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b344efed6de656e75961bea5d8a68620bcb1302ec9f995e50404db2ebf833a95",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "cloudwatch metrics collection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The AwsNodePool API includes an `AwsAutoscalingGroupMetricsCollection` representation, which is relevant to configuring and reading ASG metrics collection settings.",
+          "matched_phrases": [
+            {
+              "phrase": "cloudwatch metrics collection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Configuration related to CloudWatch metrics collection on the Auto Scaling group of the node pool.",
+            "Configuration related to CloudWatch metrics collection in an AWS Auto Scaling group."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Dynamic AWS node pool security group updates",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS now support dynamically updating AWS node pool security groups with the required EC2 permissions.",
+      "keywords": [
+        "dynamic SG modification",
+        "dynamic node pool security group updates",
+        "required EC2 permissions",
+        "dynamic SG updates",
+        "node-pool SG updates",
+        "security group updates",
+        "AWS node pool"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In Anthos clusters on AWS, the feature enables operators to dynamically update the security groups associated with an AWS node pool. Google Cloud’s GKE on AWS release notes state: “You can now dynamically update AWS node pool security groups,” indicating post-provisioning security group changes are supported for node pools. The provided excerpt does not provide the detailed IAM/EC2 permission prerequisites.",
+      "evidence_summary": "The release notes page explicitly confirms the availability of dynamic node-pool security group updates on GKE/Anthos for AWS but does not include the required EC2 permission details.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "aws node pool",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "b344efed6de656e75961bea5d8a68620bcb1302ec9f995e50404db2ebf833a95",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "aws node pool",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 30,
+          "final_score": 30,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "aws node pool",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "You can access these features through the API now: Dynamically updating AWS node pool tags Enable and update CloudWatch metrics collection on AWS node pools Feature Administrators can grant AWS cluster access to all members of a Google Group by granting the required RBAC permission to the group.",
+            "Feature You can now enable and update CloudWatch metrics collection on AWS node pool's auto scaling group.",
+            "Feature You can now dynamically update AWS node pool security groups.",
+            "Feature You can now dynamically updating AWS node pool tags."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Dynamic AWS node pool tag updates",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS now support dynamically updating AWS node pool tags via required autoscaling and EC2 permissions.",
+      "keywords": [
+        "required autoscaling permissions",
+        "dynamic tag synchronization",
+        "autoscaling tag updates",
+        "required EC2 permissions",
+        "dynamic node pool tag updates",
+        "node-pool tag updates",
+        "node pool tags"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos clusters on AWS now support dynamically updating AWS node pool tags via required autoscaling and EC2 permissions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "node pool tags",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "gke-token-manager",
+      "deprecation_date": "",
+      "feature_summary": "A new gke-token-manager component was added to generate tokens for control-plane components.",
+      "keywords": [
+        "control-plane token generation",
+        "control-plane component tokens",
+        "token manager component",
+        "generate tokens",
+        "gke-token-manager",
+        "GKE token manager",
+        "token-manager"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "A new gke-token-manager component was added to generate tokens for control-plane components.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "gke-token-manager",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "generate tokens",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "token-manager",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Google Group-based RBAC access for Anthos clusters on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Administrators can grant AWS cluster access to all members of a Google Group by assigning the required RBAC permission to that group.",
+      "keywords": [
+        "Google Group permission mapping",
+        "group-based RBAC access",
+        "RoleBinding for Google Group",
+        "GCP Group RBAC",
+        "cluster access for Google Group",
+        "Anthos on AWS RBAC group",
+        "Google Group access",
+        "Google Group RBAC"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Administrators can grant AWS cluster access to all members of a Google Group by assigning the required RBAC permission to that group.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Kubernetes 1.22 support removal",
+      "deprecation_date": "2022-12-15",
+      "feature_summary": "Kubernetes 1.22 versions are no longer supported for Anthos clusters on AWS; deprecated on 2022-12-15.",
+      "keywords": [
+        "Kubernetes 1.22 end-of-life",
+        "K8s 1.22 removal",
+        "version support policy",
+        "1.22 support dropped",
+        "deprecated on 2022-12-15",
+        "supported Kubernetes versions",
+        "Kubernetes 1.22 deprecated",
+        "Anthos on AWS 1.22"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Kubernetes 1.22 versions are no longer supported for Anthos clusters on AWS; deprecated on 2022-12-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Kubernetes v1.25 API deprecations",
+      "deprecation_date": "2022-12-15",
+      "feature_summary": "Kubernetes 1.25 in Anthos clusters on AWS deprecates several Kubernetes APIs; deprecated on 2022-12-15.",
+      "keywords": [
+        "K8s 1.25 API changes",
+        "API deprecation list",
+        "v1.25 API deprecations",
+        "Anthos on AWS 1.25 API changes",
+        "API removals in 1.25",
+        "Kubernetes 1.25 migration",
+        "deprecated APIs in Kubernetes 1.25"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Kubernetes 1.25 in Anthos clusters on AWS deprecates several Kubernetes APIs; deprecated on 2022-12-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Managed Service for Prometheus workload metrics ingest to Cloud Monarch",
+      "deprecation_date": "",
+      "feature_summary": "Workload metrics can be uploaded to Cloud Monarch using managed collection in Google Managed Service for Prometheus, with this capability upgraded to GA.",
+      "keywords": [
+        "MSP Monarch ingest",
+        "workload metrics ingest",
+        "Prometheus-to-Monarch",
+        "Managed Service for Prometheus",
+        "metrics ingestion GA",
+        "Prometheus ingest",
+        "managed metrics collection",
+        "Cloud Monarch"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Workload metrics can be uploaded to Cloud Monarch using managed collection in Google Managed Service for Prometheus, with this capability upgraded to GA.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Arm node pools in Anthos clusters on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Creating Arm architecture node pools is now available as a preview feature in Anthos clusters on AWS.",
+      "keywords": [
+        "Anthos AWS ARM architecture",
+        "create ARM node pool",
+        "arm architecture",
+        "ARM64 nodes",
+        "arm64 node pool",
+        "ARM node pools",
+        "ARM preview"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Creating Arm architecture node pools is now available as a preview feature in Anthos clusters on AWS.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "624b780135c091c19a9b23dd888454c7158de4d9e474c2db6c9460f1fe40c9da",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting",
+          "title": "Troubleshoot common issues \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_troubleshooting.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_troubleshooting.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "arm architecture",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Cloud Console management for Anthos clusters on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS can now be updated, upgraded, and deleted through the Google Cloud console.",
+      "keywords": [
+        "console-based cluster lifecycle",
+        "update Anthos clusters in console",
+        "upgrade cluster in console",
+        "Anthos AWS management UI",
+        "UI cluster operations",
+        "in-console lifecycle",
+        "console management",
+        "delete Anthos cluster"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos clusters on AWS can now be updated, upgraded, and deleted through the Google Cloud console.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Cloud Monitoring support for Windows node pools in Anthos on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS now support Cloud Monitoring for Windows node pools starting in Kubernetes version 1.24 and later.",
+      "keywords": [
+        "Cloud Monitoring for Windows node pools",
+        "Kubernetes 1.24+ Windows monitoring",
+        "Windows workload metrics",
+        "Windows node pool monitoring",
+        "Windows node metrics",
+        "Anthos on AWS Cloud Monitoring",
+        "Windows monitoring"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos clusters on AWS now support Cloud Monitoring for Windows node pools starting in Kubernetes version 1.24 and later.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Control plane tag updates on Kubernetes 1.24+ clusters",
+      "deprecation_date": "",
+      "feature_summary": "Anthos Clusters on AWS now supports updating control plane tags for Kubernetes clusters running version 1.24 or later.",
+      "keywords": [
+        "cp tag update",
+        "Kubernetes 1.24+ tag update",
+        "update control plane tags",
+        "control plane tag patch",
+        "control-plane tagging",
+        "cluster control plane metadata",
+        "control plane tags"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos Clusters on AWS now supports updating control plane tags for Kubernetes clusters running version 1.24 or later.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "EFS dynamic provisioning on Anthos clusters on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Anthos clusters on AWS in Kubernetes 1.24+ now support dynamic EFS provisioning in preview mode.",
+      "keywords": [
+        "dynamic storage provisioning",
+        "EFS dynamic provisioning",
+        "EFS storage",
+        "Amazon EFS",
+        "EFS CSI",
+        "Kubernetes 1.24+ EFS",
+        "preview EFS support",
+        "dynamic EFS"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "In Anthos clusters on AWS, EFS dynamic provisioning refers to support for dynamic provisioning of Amazon Elastic File System (EFS) storage through the Kubernetes storage flow on the cluster. The release notes state this feature is available in preview for Kubernetes 1.24+ and is available in general availability (GA) for clusters running Kubernetes 1.25+.",
+      "evidence_summary": "The cited release notes page explicitly document version-gated rollout of EFS dynamic provisioning on Anthos clusters on AWS: preview in Kubernetes 1.24+ and GA in Kubernetes 1.25+.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "efs dynamic provisioning",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "efs csi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "efs dynamic provisioning",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "efs csi",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Fixed an issue with AWS EFS CSI driver where EFS hostnames can't be resolved when AWS VPC is configured to use a custom DNS server.",
+            "Feature In Kubernetes version 1.24 and later, Anthos clusters on AWS supports EFS dynamic provisioning in preview mode.",
+            "Feature Elastic File System (EFS) dynamic provisioning is now available in GA for clusters at version 1.25 or later."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Google Cloud Managed Service for Prometheus availability",
+      "deprecation_date": "",
+      "feature_summary": "Google Cloud Managed Service for Prometheus became available as an invite-only private preview on Anthos clusters on AWS for managed Prometheus-based monitoring and alerting.",
+      "keywords": [
+        "invite-only private preview",
+        "invite-only MSP",
+        "managed Prometheus availability",
+        "MSP private preview",
+        "Managed Service for Prometheus",
+        "prometheus alerting",
+        "prometheus-based monitoring",
+        "Anthos on AWS observability"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Google Cloud Managed Service for Prometheus became available as an invite-only private preview on Anthos clusters on AWS for managed Prometheus-based monitoring and alerting.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "managed service for prometheus",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "IMDS emulator for legacy workloads on Anthos clusters on AWS",
+      "deprecation_date": "",
+      "feature_summary": "Legacy workloads that do not support Workload Identity can now access IMDS data using the IMDS emulator.",
+      "keywords": [
+        "legacy workload metadata access",
+        "Workload Identity exclusion",
+        "metadata endpoint emulator",
+        "instance metadata service emulator",
+        "IMDS emulation",
+        "IMDS fallback",
+        "IMDS emulator"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "The IMDS emulator feature on Anthos clusters on AWS provides an instance metadata service (IMDS) emulator for workloads that cannot use Workload Identity directly, allowing those legacy workloads to access IMDS data. The official release notes indicate this capability was added and also document a startup-failure issue that was present (and fixed) on clusters at version 1.24.3-gke.2200. If support for Workload Identity is unavailable, this feature serves as a compatibility path via IMDS emulation.",
+      "evidence_summary": "The release notes explicitly state the IMDS emulator is for legacy workloads lacking Workload Identity support and mention a version-specific startup failure fix for the emulator.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "imds emulator",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 24,
+          "final_score": 24,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "imds emulator",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "Feature If you have legacy workloads that don't support Workload Identity directly, you can now use the IMDS emulator to access IMDS data.",
+            "Fixed On clusters at version 1.24.3-gke.2200, the IMDS emulator fails to start.",
+            "Add an instance metadata server (IMDS) emulator.",
+            "To learn more, see Enable the IMDS emulator ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Kubernetes 1.21 support in Anthos clusters on AWS",
+      "deprecation_date": "2022-09-29",
+      "feature_summary": "Anthos Clusters on AWS no longer supports Kubernetes 1.21 versions; deprecated on 2022-09-29.",
+      "keywords": [
+        "deprecated on 2022-09-29",
+        "K8s 1.21 removal",
+        "v1.21 deprecation",
+        "1.21 support removed",
+        "unsupported 1.21",
+        "Kubernetes 1.21 deprecated",
+        "Anthos on AWS 1.21"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos Clusters on AWS no longer supports Kubernetes 1.21 versions; deprecated on 2022-09-29.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-08-04",
+      "feature_name": "Additional supported Kubernetes patch versions",
+      "deprecation_date": "",
+      "feature_summary": "The service added support to launch clusters using Kubernetes versions 1.23.8-gke.1700, 1.22.12-gke.200, and 1.21.14-gke.2100.",
+      "keywords": [
+        "supported cluster patch level",
+        "1.21.14-gke.2100",
+        "supported patch releases",
+        "patch release support",
+        "supported Kubernetes patch versions",
+        "1.23.8-gke.1700",
+        "patch versions",
+        "1.22.12-gke.200"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "For Anthos clusters on AWS, this feature corresponds to a documented release-note update stating that clusters can be launched using additional Kubernetes patch versions. In the August 4, 2022 release entry, support to launch clusters with patch versions 1.23.8-gke.1700, 1.22.12-gke.200, and 1.21.14-gke.2100 was added.",
+      "evidence_summary": "The official GKE on AWS release notes explicitly list a feature dated Aug 4, 2022 adding those three Kubernetes patch versions to the supported cluster launch versions.",
+      "source_links": [
+        "https://cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "1.21.14-gke.2100",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "1.23.8-gke.1700",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "patch versions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "1.22.12-gke.200",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "1.21.14-gke.2100",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "1.23.8-gke.1700",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "patch versions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "1.22.12-gke.200",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Security This release fixes the following vulnerabilities: CVE-2022-34903 CVE-2021-4209 CVE-2022-29900 CVE-2022-29901 CVE-2022-2385 CVE-2022-1462 CVE-2022-1882 CVE-2022-21505 CVE-2022-2585 CVE-2022-23816 CVE-2022-2509 CVE-2022-2586 CVE-2022-2588 CVE-2022-26373 CVE-2022-36879 CVE-2022-36946 August 29, 2022 Security This release fixes the following vulnerabilities: CVE-2022-29901 CVE-2022-28693 CVE-2022-29900 CVE-2022-23825 CVE-2022-34903 CVE-2022-32208 CVE-2022-32206 CVE-2022-2097 CVE-2022-31030 CVE-2021-4209 Announcement You can now launch clusters with the following Kubernetes versions: 1.21.14-gke.2900 1.22.12-gke.1100 1.23.9-gke.800 August 04, 2022 Feature You can now launch clusters with the following Kubernetes versions: 1.23.8-gke.1700 1.22.12-gke.200 1.21.14-gke.2100 Security This release fixes the following vulnerabilities: CVE-2016-10228 .",
+            "This issue is resolved in the new Kubernetes patch versions 1.23.9-gke.2200 and 1.24.3-gke.2200."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "CIS benchmark support for Kubernetes 1.23",
+      "deprecation_date": "",
+      "feature_summary": "CIS benchmarks became available for Kubernetes 1.23 clusters in Anthos clusters on AWS.",
+      "keywords": [
+        "CIS compliance benchmark",
+        "CIS hardening checks",
+        "Center for Internet Security",
+        "cluster CIS profile",
+        "CIS benchmark",
+        "security benchmark support",
+        "Kubernetes 1.23 CIS",
+        "CIS"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Anthos clusters on AWS (GKE on AWS) include CIS benchmark support for cluster security auditing, based on the Center for Internet Security recommendations. The AWS CIS benchmarks documentation shows versioned benchmark usage and gives `kube-bench node --benchmark cis-1.23` as an example, indicating that the CIS 1.23 benchmark profile is supported for these clusters.",
+      "evidence_summary": "The cited page explicitly documents CIS benchmark usage for GKE on AWS and includes an explicit `cis-1.23` benchmark example.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "e0c8dbdbacb9ff473949338d20396dd79c627d7aa073a8340d3ecf6697df6f77",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+          "title": "CIS benchmarks \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "base_score": 84,
+          "matched_phrases": [
+            {
+              "phrase": "cis",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 16
+            },
+            {
+              "phrase": "cis benchmark",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "center for internet security",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "ddfd2d846ceca74d4fbd4fd4b36d8af3a609a0df06c2434ab5b0a4a6dbcd5845",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cluster-autoscaler",
+          "title": "About cluster autoscaler \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "cis",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "f969bcb8c14bf09d61e58b24ea34d972d731778ce6c450268196de1d524b17c0",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security",
+          "title": "Security overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_security.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_security.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "cis benchmark",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "cis",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+          "title": "CIS benchmarks \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "base_score": 84,
+          "final_score": 92,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page is specifically about CIS Kubernetes benchmarks for GKE on AWS and explicitly states benchmark version mappings (including CIS version 1.23), but it does not directly claim support for Kubernetes 1.23 clusters.",
+          "matched_phrases": [
+            {
+              "phrase": "cis",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 16
+            },
+            {
+              "phrase": "cis benchmark",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "center for internet security",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Using the CIS Benchmarks The Center for Internet Security (CIS) releases benchmarks for best practice security recommendations.",
+            "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE on AWS Guides Send feedback CIS benchmarks Stay organized with collections Save and categorize content based on your preferences.",
+            "How to audit Benchmarks Specific instructions for auditing each recommendation are available as part of the relevant CIS Benchmark.",
+            "Make sure to specify the appropriate version, for example, kube-bench node --benchmark cis-1.23 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Cloud Audit Logs for clusters",
+      "deprecation_date": "",
+      "feature_summary": "Cluster Cloud Audit Logs became available and enabled by default for Kubernetes 1.23 and higher clusters.",
+      "keywords": [
+        "cluster-level audit logging",
+        "audit logging enabled by default",
+        "audit log integration",
+        "control plane audit logs",
+        "Cloud Audit Logging",
+        "cluster audit logs",
+        "Cloud Audit Logs",
+        "Kubernetes 1.23 and higher"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Cluster Cloud Audit Logs became available and enabled by default for Kubernetes 1.23 and higher clusters.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "e0c8dbdbacb9ff473949338d20396dd79c627d7aa073a8340d3ecf6697df6f77",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+          "title": "CIS benchmarks \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "cloud audit logging",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "cloud audit logs",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Disable profiling endpoint by default",
+      "deprecation_date": "",
+      "feature_summary": "In Kubernetes 1.23.7-gke.1300, the profiling endpoint (/debug/pprof) is disabled by default in kube-scheduler and kube-controller-manager.",
+      "keywords": [
+        "disable profiling endpoint",
+        "pprof disabled by default",
+        "profiling endpoint",
+        "/debug/pprof",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "pprof",
+        "1.23.7-gke.1300"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "In Kubernetes 1.23.7-gke.1300, the profiling endpoint (/debug/pprof) is disabled by default in kube-scheduler and kube-controller-manager.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 42,
+          "matched_phrases": [
+            {
+              "phrase": "kube-scheduler",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "1.23.7-gke.1300",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "disable profiling endpoint",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "profiling endpoint",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "/debug/pprof",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "kube-controller-manager",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Instance Metadata Service emulator",
+      "deprecation_date": "",
+      "feature_summary": "Kubernetes 1.23.7-gke.1300 added an Instance Metadata Service (IMDS) emulator.",
+      "keywords": [
+        "Instance Metadata Service emulator",
+        "metadata service emulation",
+        "Instance Metadata Service",
+        "metadata service emulator",
+        "IMDS emulator",
+        "1.23.7-gke.1300",
+        "IMDS"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Kubernetes 1.23.7-gke.1300 added an Instance Metadata Service (IMDS) emulator.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "imds",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "imds emulator",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "1.23.7-gke.1300",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Kubernetes 1.23 cluster launch support",
+      "deprecation_date": "",
+      "feature_summary": "Anthos on AWS added the ability to launch Kubernetes 1.23 clusters.",
+      "keywords": [
+        "create clusters with Kubernetes 1.23",
+        "cluster launch version 1.23",
+        "launch Kubernetes 1.23 clusters",
+        "cluster provisioning 1.23",
+        "supported Kubernetes 1.23",
+        "Kubernetes v1.23",
+        "1.23 cluster support",
+        "1.23.x support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos on AWS added the ability to launch Kubernetes 1.23 clusters.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Strong cryptographic ciphers for control plane components",
+      "deprecation_date": "",
+      "feature_summary": "Kubernetes 1.23.7-gke.1300 updated kube-apiserver and kubelet to use only strong cryptographic ciphers.",
+      "keywords": [
+        "strong cryptographic ciphers",
+        "strong ciphers",
+        "cipher suites",
+        "cipher configuration",
+        "control plane TLS",
+        "kube-apiserver",
+        "1.23.7-gke.1300",
+        "kubelet"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Kubernetes 1.23.7-gke.1300 updated kube-apiserver and kubelet to use only strong cryptographic ciphers.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "kubelet",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "kube-apiserver",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "1.23.7-gke.1300",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "strong cryptographic ciphers",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e0c8dbdbacb9ff473949338d20396dd79c627d7aa073a8340d3ecf6697df6f77",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+          "title": "CIS benchmarks \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cis-benchmarks.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "kubelet",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "strong cryptographic ciphers",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "b344efed6de656e75961bea5d8a68620bcb1302ec9f995e50404db2ebf833a95",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "kubelet",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "cb0f1ddb19c67bfc93738a2fecbc3f2eadbec217c0c41d47c9f78f7ab6a6e369",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/graceful-node-shutdown",
+          "title": "Graceful node shutdown in GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_graceful-node-shutdown.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_graceful-node-shutdown.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "kubelet",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "VolumeSnapshot v1beta1 API deprecation",
+      "deprecation_date": "2022-07-13",
+      "feature_summary": "A future 1.23 release is slated to stop serving VolumeSnapshot v1beta1 APIs, with migration to VolumeSnapshot v1 recommended; deprecated on 2022-07-13.",
+      "keywords": [
+        "migrate from v1beta1 to v1",
+        "snapshot API deprecation",
+        "snapshot API migration",
+        "deprecated on 2022-07-13",
+        "deprecated VolumeSnapshot v1beta1 API",
+        "VolumeSnapshot v1beta1",
+        "VolumeSnapshot v1",
+        "v1beta1"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "A future 1.23 release is slated to stop serving VolumeSnapshot v1beta1 APIs, with migration to VolumeSnapshot v1 recommended; deprecated on 2022-07-13.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "v1beta1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "volumesnapshot v1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "volumesnapshot v1beta1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Asynchronous boot error visibility in long-running operations",
+      "deprecation_date": "",
+      "feature_summary": "Most common asynchronous cluster and nodepool boot errors can now be viewed in the long-running operation error field.",
+      "keywords": [
+        "long-running operation error field",
+        "LRO error details",
+        "async boot error",
+        "asynchronous boot errors",
+        "nodepool boot errors",
+        "cluster create operation",
+        "cluster boot errors",
+        "LRO errors"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Most common asynchronous cluster and nodepool boot errors can now be viewed in the long-running operation error field.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Autoscaler minimum node count",
+      "deprecation_date": "",
+      "feature_summary": "The autoscaler now supports setting the minimum node count to zero.",
+      "keywords": [
+        "autoscaler minimum node count",
+        "minimum node count 0",
+        "scale-to-zero",
+        "scale to zero",
+        "minimum nodes",
+        "node pool autoscaling",
+        "cluster autoscaler",
+        "minNodeCount"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "In GKE on AWS, the cluster autoscaler feature supports scaling node pools from zero nodes, which means a node pool can effectively have a minimum node count of zero on supported versions of the platform. The feature is version-gated: the docs specify minimum version levels required for this behavior (for example, 1.29+ and later 1.28/1.27 patch levels as listed). During autoscaling operations such as surge updates, node provisioning by the autoscaler is constrained by the configured minimum and maximum node settings (min-nodes/max-nodes).",
+      "evidence_summary": "These pages confirm zero-node scale-up support for the GKE on AWS cluster autoscaler and show that autoscaler activity is bounded by min-nodes/max-nodes limits.",
+      "source_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "ddfd2d846ceca74d4fbd4fd4b36d8af3a609a0df06c2434ab5b0a4a6dbcd5845",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cluster-autoscaler",
+          "title": "About cluster autoscaler \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "base_score": 42,
+          "matched_phrases": [
+            {
+              "phrase": "cluster autoscaler",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 32
+            }
+          ]
+        },
+        {
+          "page_id": "80931bb5c0b9165cfe69a11b6f172327424940b37bd53eb4b0df337eb9a8cfb1",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+          "title": "About surge updates \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_about-surge-updates.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_about-surge-updates.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "cluster autoscaler",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "b344efed6de656e75961bea5d8a68620bcb1302ec9f995e50404db2ebf833a95",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.awsNodePools",
+          "title": "\"REST Resource: projects.locations.awsClusters.awsNodePools \\_|\\_ GKE Multi-Cloud\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-api-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_reference_rest_v1_projects.locations.awsClusters.awsNodePools.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "minnodecount",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "cluster autoscaler",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cluster-autoscaler",
+          "title": "About cluster autoscaler \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_cluster-autoscaler.md",
+          "base_score": 42,
+          "final_score": 50,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page explains that the cluster autoscaler is configured by setting minimum and maximum node pool size values and scales node counts automatically, which is directly related to minimum node count behavior.",
+          "matched_phrases": [
+            {
+              "phrase": "cluster autoscaler",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 32
+            }
+          ],
+          "evidence_snippets": [
+            "Scale up from zero nodes Starting with the following GKE on AWS versions, the cluster autoscaler supports scaling up node pools from zero nodes: Version 1.29 and later Versions of 1.28 from 1.28.8-gke.800 and later Versions of 1.27 from 1.27.12-gke.800 and later If you're using an earlier version, you need to upgrade your cluster to one of these versions to use this feature.",
+            "When configuring taints on your node pools, be aware that AWS Auto Scaling groups have a limitation: if you apply multiple taints with the same key but different value-effect combinations, only the last applied taint with the duplicated key is considered by the cluster autoscaler.",
+            "Official Kubernetes Cluster Autoscaler documentation Operating criteria The cluster autoscaler makes the following assumptions when resizing a node pool: All replicated Pod objects can be restarted on some other node, possibly causing a brief disruption.",
+            "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE on AWS Guides Send feedback About cluster autoscaler Stay organized with collections Save and categorize content based on your preferences."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+          "title": "About surge updates \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-iam-reference/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_concepts_about-surge-updates.md",
+          "base_score": 24,
+          "final_score": 20,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page briefly mentions the autoscaler running during rolling updates and scaling up for capacity, but it does not describe minimum node count behavior or zero-node configuration.",
+          "matched_phrases": [
+            {
+              "phrase": "cluster autoscaler",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "The cluster autoscaler plays a more important role in surge updates than in standard rolling updates, which is why it figures prominently in the following list of actions GKE on AWS takes during a surge update: Creation of new autoscaling group : GKE on AWS provisions new nodes with the modifications specified by the update command, and assigns these new nodes to a new AWS autoscaling group (ASG).",
+            "Otherwise, the cluster autoscaler, which remains active during a standard rolling update, starts a scale up and provisions additional nodes to ensure that there's enough capacity to schedule the evicted Pods.",
+            "The cluster autoscaler might launch more nodes in the new ASG if it detects that Pods are unable to be scheduled but it stays within the limits defined by min-nodes and max-nodes .",
+            "Cluster autoscaler behavior : As the surge update begins, the cluster autoscaler is activated for the new autoscaling group."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Custom logging parameters on cluster creation",
+      "deprecation_date": "",
+      "feature_summary": "New Kubernetes 1.22 clusters can now be configured with custom logging parameters at creation time.",
+      "keywords": [
+        "logging parameters at creation",
+        "custom logging parameters",
+        "custom logging config",
+        "cluster creation logging",
+        "cluster logging settings",
+        "custom logs",
+        "logging configuration",
+        "1.22 cluster logging"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "New Kubernetes 1.22 clusters can now be configured with custom logging parameters at creation time.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Dedicated host node pools (preview)",
+      "deprecation_date": "",
+      "feature_summary": "Anthos on AWS added a preview capability to configure nodes to run on dedicated hosts.",
+      "keywords": [
+        "dedicated host mode",
+        "host-backed nodes",
+        "node pools on dedicated hosts",
+        "dedicated host node pools",
+        "dedicated host pools",
+        "dedicated hosts",
+        "dedicated host",
+        "preview feature"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Anthos on AWS added a preview capability to configure nodes to run on dedicated hosts.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "99b2e8d1d125430675a54e368baeb37221a4ce8921394c9919e2ba2037407c07",
+          "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/release-notes",
+          "title": "GKE on AWS release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\anthos-clusters-on-aws\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "relative_markdown_path": "products/anthos-clusters-on-aws/corpus/site/site-docs-root/pages/docs.cloud.google.com_kubernetes-engine_multi-cloud_docs_aws_release-notes.md",
+          "base_score": 38,
+          "matched_phrases": [
+            {
+              "phrase": "preview feature",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "dedicated hosts",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "dedicated host",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Expanded cluster and node pool configuration updates",
+      "deprecation_date": "",
+      "feature_summary": "Cluster updates now support more configuration fields, including control plane security group IDs, proxy settings, node pool SSH settings, root volume, and encryption settings.",
+      "keywords": [
+        "node pool root volume settings",
+        "expand cluster update options",
+        "encryption settings update",
+        "cluster update configuration fields",
+        "root volume update",
+        "proxy settings in cluster updates",
+        "node pool SSH settings",
+        "cluster update fields"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Cluster updates now support more configuration fields, including control plane security group IDs, proxy settings, node pool SSH settings, root volume, and encryption settings.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Kubernetes 1.22 deprecated v1beta1 API removals",
+      "deprecation_date": "2022-04-13",
+      "feature_summary": "Kubernetes 1.22 removes support for several deprecated v1beta1 APIs and requires workloads to migrate to stable v1 APIs; deprecated on 2022-04-13.",
+      "keywords": [
+        "release note v1beta1 deprecations",
+        "unsupported v1beta1 API objects",
+        "K8s 1.22 API removals",
+        "migrate workloads to v1 APIs",
+        "Kubernetes API version compatibility",
+        "deprecated API versions removed",
+        "Kubernetes 1.22 v1beta1 API removal",
+        "remove v1beta1 APIs"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Kubernetes 1.22 removes support for several deprecated v1beta1 APIs and requires workloads to migrate to stable v1 APIs; deprecated on 2022-04-13.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Windows node pool image type preview",
+      "deprecation_date": "",
+      "feature_summary": "A preview feature allows selecting Windows as the node pool image type when creating node pools on Kubernetes 1.22.8.",
+      "keywords": [
+        "create node pool with Windows image",
+        "Windows node pool image type",
+        "Windows nodes in node pools",
+        "node pool image type preview",
+        "Windows image type",
+        "1.22.8 Windows nodes",
+        "node pool OS image",
+        "preview for Windows node pools"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "A preview feature allows selecting Windows as the node pool image type when creating node pools on Kubernetes 1.22.8.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    }
+  ]
+}

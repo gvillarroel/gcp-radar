@@ -10,346 +10,12 @@ source_metadata:
   url: https://docs.cloud.google.com/load-balancing/docs/features
   title: "Load balancer feature comparison \_|\_ Cloud Load Balancing \_|\_ Google\
     \ Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Load balancer feature comparison | Cloud Load Balancing | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-עברית
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Load Balancing
-Start free
-Overview
-Guides
-Reference
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Resources
-Cross-product tools
-More
-Console
-Discover
-Cloud Load Balancing overview
-Choose a load balancer
-Cloud Load Balancing resource model
-Load balancer feature comparison
-Get started
-Roles and permissions
-IAM Conditions for forwarding rules
-Organization policy constraints
-Overview
-Use custom constraints
-Application Load Balancer (HTTP/HTTPS)
-Overview
-External load balancer
-Architecture overview
-Request distribution overview
-Set up global load balancer
-Managed VM instance group backend
-Cloud Storage (backend buckets)
-External backend (internet NEG)
-Cloud Run, App Engine, or Cloud Run functions backends (serverless NEG)
-On-premises or other cloud backends (zonal and hybrid NEG)
-Add capabilities
-Traffic management overview
-Set up traffic management
-Set up HTTP-to-HTTPS redirect
-Set up a load balancer with Shared VPC
-Set up load balancer with cross-project backend service and backend bucket
-Create custom headers in backend services
-Custom error response
-Overview
-Configure custom error responses
-Set up global load balancer (classic)
-Terraform examples
-Managed VM instance group backend
-Cloud Storage (backend buckets)
-External backend (internet NEG)
-Cloud Run, App Engine, or Cloud Functions backends (serverless NEG)
-On-premises or other cloud backends (zonal and hybrid NEG)
-Migrate resources
-Overview
-Migrate to global external Application Load Balancer
-Roll back to classic Application Load Balancer
-Add capabilities
-Traffic management overview
-Create custom headers in backend services
-Set up custom header and query parameter-based routing
-Set up URL redirect
-Set up HTTP-to-HTTPS redirect
-Set up URL rewrite
-Set up regional load balancer
-Managed VM instance group backend
-Cloud Storage (backend buckets)
-Cloud Run backends (serverless NEG)
-On-premises or other cloud backends (zonal and hybrid NEG)
-External backend (internet NEG)
-Add capabilities
-Traffic management overview
-Set up traffic management
-Set up high availability
-Set up HTTP-to-HTTPS redirect
-Set up a load balancer with backend service using Shared VPC
-Set up a load balancer with backend buckets using Shared VPC
-Create custom headers in URL maps
-Fail over to regional load balancers
-Monitor and troubleshoot
-Overview
-Global load balancers
-Regional load balancers
-Troubleshooting
-Best practices
-Explore tutorials
-Request routing to a multi-region external HTTPS load balancer
-Faster web performance and improved web protection for load balancing
-Deliver HTTP and HTTPS content over the same published domain
-Optimize application latency with load balancing
-Application capacity optimizations with global load balancing
-Capacity management with load balancing
-Internal load balancer
-Architecture overview
-Set up cross-region load balancer
-Managed VM instance group backend
-Cloud Storage (backend buckets)
-On-premises or other cloud backends (zonal and hybrid NEG)
-Cloud Run backends (serverless NEG)
-Set up regional load balancer
-Terraform examples
-VM instance group backends
-Cloud Run backends (serverless NEG)
-Cloud Storage (backend buckets)
-On-premises or other cloud backends (zonal and hybrid NEG)
-External backend (internet NEG)
-Add capabilities
-Traffic management
-Overview
-Set up traffic management
-Set up HTTP-to-HTTPS redirect
-Create custom headers in URL maps
-Set up regional internal load balancer with backend service using Shared VPC
-Set up cross-region load balancer with backend buckets using Shared VPC
-Set up a regional internal Application Load Balancer with backend buckets using Shared VPC
-Service Directory registration
-Load balancing and connected networks
-Monitor and troubleshoot
-View logs and metrics
-Troubleshooting
-Convert load balancer to IPv6
-Use custom metrics
-Load testing backends
-Proxy Network Load Balancer (TCP/SSL proxy)
-Overview
-External load balancer
-Architecture overview
-Set up global load balancer
-Global SSL proxy with VM instance group backends
-Global TCP proxy with VM instance group backends
-Set up global load balancer (classic)
-Terraform examples
-Global SSL proxy with VM instance group backends
-Global TCP proxy with VM instance group backends
-Set up regional load balancer
-VM instance group backends
-Zonal NEG backends
-Hybrid connectivity (hybrid NEGs)
-External backend (internet NEG)
-Internal load balancer
-Architecture overview
-Set up cross-region load balancer
-Managed VM instance group backends
-On-premises or other cloud backends (zonal and hybrid NEG)
-Set up regional load balancer
-Managed VM instance group backends
-Zonal NEG backends
-Hybrid connectivity (hybrid NEGs)
-External backend (internet NEG)
-Add capabilities
-Load balancing and connected networks
-Monitor and troubleshoot
-View logs and metrics
-Convert load balancer to IPv6
-Passthrough Network Load Balancer (TCP/UDP)
-Overview
-External load balancer
-Backend service-based architecture
-Traffic distribution concepts
-Target pool-based architecture
-Set up load balancer
-VM instance group backends (TCP/UDP only)
-VM instance group backends (multiple protocols)
-Zonal NEG backends
-Target pool-based load balancer
-Add capabilities
-Configure failover
-Configure weighted load balancing
-Migrate from target pools to backend services
-Service Directory registration
-Explore tutorials
-Use UDP with network load balancers
-Monitor and troubleshoot
-View logs and metrics
-Troubleshooting
-Internal load balancer
-Architecture overview
-Traffic distribution concepts
-Set up load balancer
-Terraform examples
-VM instance group backends
-VM instance group backend for multiple protocols
-Zonal NEG backends
-Add capabilities
-Configure failover
-Zonal affinity
-Load balancers as next hops
-Overview
-Set up load balancing for third-party appliances
-Forwarding rules that use a common IP address
-Service Directory registration
-Load balancing and connected networks
-Explore tutorials
-Set up load balancer as next hop (with tags)
-Deploy a hub-and-spoke network
-Set up a load balancer with internal IPv6-only backends
-Monitor and troubleshoot
-View logs and metrics
-Troubleshooting
-Protocol forwarding
-Overview
-Set up protocol forwarding
-Switch between a target instance and a backend service
-Secure
-SSL certificates
-Overview
-Use self-managed SSL certificates
-Use Google-managed SSL certificates
-Encryption to the backends
-Troubleshooting
-SSL policies
-Overview
-Use SSL policies
-Mutual TLS
-Frontend mTLS
-Overview
-Set up frontend mTLS with user-provided certificates
-Set up frontend mTLS with a private CA
-Backend mTLS
-Overview
-Set up backend authenticated TLS
-Set up backend mTLS
-Backend mTLS with managed workload identity
-Overview
-Set up backend mTLS using managed workload identity
-Authorization policies
-Overview
-Set up policies for Application Load Balancers
-Customize load balancer
-Advanced load balancing optimizations
-Backend buckets
-Backend services
-Connection draining
-Firewall rules
-Forwarding rules
-Health checks
-Overview
-Use health checks
-Internal DNS names
-IPv6
-Network endpoint groups
-Overview
-Hybrid connectivity NEGs
-Internet NEGs
-Serverless NEGs
-Zonal NEGs
-Overview
-Set up zonal NEGs
-Proxy-only subnets
-Tags
-Target pools
-Target proxies
-URL maps
-Overview
-Use URL maps
-Operate and maintain
-Audit logging information
-Health check logging information
-Clean up a load balancer setup
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Type of load balancer
-Protocols from the clients to the load balancer
-Protocols from the load balancer to the backends
-Backends
-Health checks
-IP addresses
-Network topologies
-Failover and availability
-Monitoring
-Logging
-Session affinity
-Load balancing methods
-Routing and traffic management
-Autoscaling and autohealing
-Security Google Cloud Armor protection for external load balancers
-Cross-product integrations
-What's next
 Home
 Documentation
 Networking
@@ -359,24 +25,6 @@ Send feedback
 Load balancer feature comparison
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Type of load balancer
-Protocols from the clients to the load balancer
-Protocols from the load balancer to the backends
-Backends
-Health checks
-IP addresses
-Network topologies
-Failover and availability
-Monitoring
-Logging
-Session affinity
-Load balancing methods
-Routing and traffic management
-Autoscaling and autohealing
-Security Google Cloud Armor protection for external load balancers
-Cross-product integrations
-What's next
 This page gives you a comparative overview of the load balancing features
 offered by Cloud Load Balancing. If you haven't already done so, begin by
 reading the following:
@@ -548,6 +196,33 @@ classic mode)
 info
 info
 Cloud Storage in backend buckets
+External endpoints in internet NEGs
+(Only regional mode)
+( Global , regional , and
+classic modes)
+(Only regional mode)
+(Only regional mode)
+Multiple backend services and a URL map
+Virtual machine backends on Compute Engine
+Self-managed Kubernetes and GKE
+Zonal NEGs
+GCE_VM_IP_PORT endpoints
+GCE_VM_IP_PORT endpoints
+GCE_VM_IP_PORT endpoints
+GCE_VM_IP_PORT endpoints
+GCE_VM_IP endpoints
+GCE_VM_IP endpoints
+Private Service Connect NEGs
+(Only global and regional mode)
+(Only global and regional mode)
+Private external endpoints in hybrid NEG backends
+info
+info
+info
+info
+Serverless backends
+info
+info
 Dual-stack
 (IPV4 and IPv6) backends
 info
@@ -556,37 +231,10 @@ info
 (Only global and regional modes)
 info
 info
-External endpoints in internet NEGs
-(Only regional mode)
-( Global , regional , and
-classic modes)
-(Only regional mode)
-(Only regional mode)
 IPv6-only
 backends
 info
 info
-Multiple backend services and a URL map
-Private external endpoints in hybrid NEG backends
-info
-info
-info
-info
-Private Service Connect NEGs
-(Only global and regional mode)
-(Only global and regional mode)
-Self-managed Kubernetes and GKE
-Serverless backends
-info
-info
-Virtual machine backends on Compute Engine
-Zonal NEGs
-GCE_VM_IP_PORT endpoints
-GCE_VM_IP_PORT endpoints
-GCE_VM_IP_PORT endpoints
-GCE_VM_IP_PORT endpoints
-GCE_VM_IP endpoints
-GCE_VM_IP endpoints
 Health checks
 For links to reference information, see Health
 checks .
@@ -603,21 +251,13 @@ Internal
 External
 Internal
 External
-Configurable expected response string
-1
-Configurable health checks
-Configurable request path (HTTP, HTTPS, HTTP/2)
-Configurable request string or path (TCP or SSL)
-Distributed Envoy health checks
-(Only regional mode)
-(Only regional mode)
-gRPC health checks (with TLS)
-2
-2
-2
-2
-1
 gRPC health checks (without TLS)
+2
+2
+2
+2
+1
+gRPC health checks (with TLS)
 2
 2
 2
@@ -627,17 +267,25 @@ HTTP health checks
 3
 (Only classic and regional mode)
 1
-HTTP/2 health checks
-(Only classic and regional mode)
-1
 HTTPS health checks
 3
+(Only classic and regional mode)
+1
+HTTP/2 health checks
 (Only classic and regional mode)
 1
 SSL health checks
 1
 TCP health checks
 1
+Configurable health checks
+Configurable request path (HTTP, HTTPS, HTTP/2)
+Configurable request string or path (TCP or SSL)
+Configurable expected response string
+1
+Distributed Envoy health checks
+(Only regional mode)
+(Only regional mode)
 1 This table documents health checks used by backend
 service-based regional external passthrough Network Load Balancers. Target pool-based load balancers support only
 legacy
@@ -861,20 +509,20 @@ info
 info
 info
 info
-Connection count metrics
-info
-info
-HTTP request count metrics
-info
-info
 Packet count metrics
+info
+info
+Round trip time (RTT) metrics
 info
 info
 Request latency metrics
 info
 info
 info
-Round trip time (RTT) metrics
+Connection count metrics
+info
+info
+HTTP request count metrics
 info
 info
 Logging
@@ -999,10 +647,6 @@ Internal
 External
 Internal
 External
-Balancing mode: backend utilization
-(instance group backends only)
-1
-1
 Balancing mode: connection
 Balancing mode: custom metrics
 1
@@ -1013,11 +657,8 @@ Balancing mode: in-flight ( Preview )
 Balancing mode: rate (requests per second)
 1
 1
-Circuit breaking
-1
-(Only regional mode)
-(Only regional mode)
-Configurable maximum capacity per backend instance group or NEG
+Balancing mode: backend utilization
+(instance group backends only)
 1
 1
 Load balancing locality policy
@@ -1028,6 +669,13 @@ info
 info
 (Only global and regional modes)
 info
+Configurable maximum capacity per backend instance group or NEG
+1
+1
+Circuit breaking
+1
+(Only regional mode)
+(Only regional mode)
 Prefers region closest to client on the internet 2
 (Only global and classic 3 modes)
 (Only global and classic 3 modes)
@@ -1065,33 +713,26 @@ Internal
 External
 Internal
 External
+HTTP or Layer 7 request routing
+info
+info
+Fault injection
+info
+(Only global and regional modes)
 Configurable timeouts
 info
 info
 info
 info
-Connection tracking policy
-info
-info 1
-Custom error responses
-(Only
-global mode)
-Custom request and response headers
-(configured on the backend service)
-(Only global
-and regional modes)
-Fault injection
-info
-(Only global and regional modes)
-HTTP or Layer 7 request routing
+Retries
 info
 info
-Outlier detection
-info
-(Only
-global
-and regional modes)
 Redirects
+info
+global
+classic
+regional
+URL rewrites
 info
 global
 classic
@@ -1100,13 +741,31 @@ Request and response header transformations
 (configured on the URL map)
 info
 (Only global and regional modes)
-Retries
+Traffic splitting
 info
+(Only global and regional modes)
+Traffic mirroring
+info 1
+(Only
+global and
+regional modes)
+(Only regional mode)
+Outlier detection
 info
+(Only
+global
+and regional modes)
 Retry failed requests
 info
 (Only global
 and regional modes)
+Custom request and response headers
+(configured on the backend service)
+(Only global
+and regional modes)
+Custom error responses
+(Only
+global mode)
 Service load balancing policy
 (Only
 cross-region mode)
@@ -1116,22 +775,11 @@ global mode)
 cross-region mode)
 (Only
 global mode)
+Connection tracking policy
+info
+info 1
 Source IP-based traffic steering
 info 2
-Traffic mirroring
-info 1
-(Only
-global and
-regional modes)
-(Only regional mode)
-Traffic splitting
-info
-(Only global and regional modes)
-URL rewrites
-info
-global
-classic
-regional
 1 This feature is not supported with load balancers that use
 serverless NEG backends.
 2 This feature is supported by
@@ -1278,57 +926,6 @@ Regional external passthrough Network Load Balancer overview
 Internal passthrough Network Load Balancer overview
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-06 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-06 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-עברית
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

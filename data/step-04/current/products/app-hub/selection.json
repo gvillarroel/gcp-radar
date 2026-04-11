@@ -1,54 +1,71 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T05:46:46.352Z",
+  "generated_at": "2026-04-10T16:21:43.509Z",
   "product_name": "App Hub",
   "product_slug": "app-hub",
   "step03_ranking_path": "data/step-03/current/products/app-hub/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
       "iam_reference",
       "java_reference"
-    ]
+    ],
+    "feature_count": 45
   },
   "site_output_mode": "compact",
-  "selected_source_count": 4,
-  "selected_sources_signature": "de7b0734a94f659a7b4bb213f501efedeb251a9be8f9507c423196ef7edcd35c",
+  "selected_source_count": 5,
+  "selected_sources_signature": "428819993d5a1bf114c73194f15849f5b2df2f9dc0fea06dd5e442fc843dc982",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
       "product_slug": "app-hub",
       "family": "docs_root",
       "classification": "product_root",
+      "url": "https://docs.cloud.google.com/app-hub/docs",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "app-hub",
+      "family": "docs_root",
+      "classification": "product_root",
       "url": "https://docs.cloud.google.com/app-hub/docs/overview",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 36
     },
     {
       "source_id": "site-docs-reference",
       "product_slug": "app-hub",
       "family": "docs_reference",
       "classification": "product_reference",
-      "url": "https://docs.cloud.google.com/app-hub/docs/reference",
+      "url": "https://docs.cloud.google.com/app-hub/docs/apis",
       "final_score": 100,
-      "best_rank": 3,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-iam-reference",
       "product_slug": "app-hub",
       "family": "iam_reference",
       "classification": "iam_reference",
-      "url": "https://docs.cloud.google.com/app-hub/docs/roles-permissions",
-      "final_score": 97,
+      "url": "https://docs.cloud.google.com/app-hub/docs/manage-applications",
+      "final_score": 95,
       "best_rank": 5,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-java-reference",
@@ -56,10 +73,11 @@
       "family": "java_reference",
       "classification": "java_reference",
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-apphub/latest/overview",
-      "final_score": 97,
+      "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     }
   ],
   "corpus_paths": {

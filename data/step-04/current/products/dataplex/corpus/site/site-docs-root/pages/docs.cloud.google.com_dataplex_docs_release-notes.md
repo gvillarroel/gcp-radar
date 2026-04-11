@@ -1,5 +1,5 @@
 ---
-title: "Dataplex Universal Catalog release notes \_|\_ Google Cloud Documentation"
+title: "Knowledge Catalog release notes \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/release-notes
 knowledge_key: corpus
 source_id: site-docs-root
@@ -7,23 +7,24 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/release-notes
-  title: "Dataplex Universal Catalog release notes \_|\_ Google Cloud Documentation"
+  title: "Knowledge Catalog release notes \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Resources
 Send feedback
-Dataplex Universal Catalog release notes
+Knowledge Catalog release notes
 Stay organized with collections
 Save and categorize content based on your preferences.
-This page documents production updates to Dataplex Universal Catalog. Check this page for
+This page documents production updates to Knowledge Catalog. Check this page for
 announcements about new or updated features, bug fixes, known issues, and
 deprecated functionality.
 You can see the latest product updates for all of Google Cloud on the
@@ -35,13 +36,35 @@ To get the latest product updates delivered to you, add the URL of this page to 
 feed
 reader , or add the
 feed URL directly.
+April 10, 2026
+Announcement
+Dataplex Universal Catalog is now called Knowledge Catalog. The API, client
+library, CLI, and Identity and Access Management (IAM) names remain unchanged.
+Feature
+The lightweight profiling mode for data profile scans is available in
+preview .
+The lightweight mode provides low-latency profile scans that return results in
+seconds, making it ideal for grounding AI agent responses and interactive data
+exploration. For more information, see Profiling modes .
+April 09, 2026
+Feature
+You can now specify a custom execution identity for data quality and
+data profile scans. By default, scans are executed using the Service
+Agent. You can now use a custom service account (Bring Your Own Service Account)
+or End-User Credentials (EUC). Using a custom execution identity lets you
+enforce the principle of least privilege, use fine-grained BigQuery access
+controls, and unify scan processing costs directly under BigQuery.
+For more information, see Configure execution identity for data quality scans and Configure execution identity for data profile scans .
 March 30, 2026
 Feature
-Automated cataloging of Looker (Google Cloud core) metadata as well as data lineage ingestion from BigQuery sources are now available in preview . For more information, see the Looker (Google Cloud core) documentation .
+Automated cataloging of Looker (Google Cloud core) metadata as well as data
+lineage ingestion from BigQuery sources are now available in
+preview . For more
+information, see the Looker (Google Cloud core) documentation .
 February 24, 2026
 Feature
-You can now save data profile aspects in Dataplex Universal Catalog up to 1 MB in size.
-For more information, see
+You can now save data profile aspects in Dataplex Universal Catalog up to 1 MB
+in size. For more information, see
 Quotas and limits .
 February 19, 2026
 Feature
@@ -363,6 +386,6 @@ Announcement
 Dataplex is generally available ( GA ). Dataplex is an intelligent data fabric that helps organizations to centrally manage, monitor, and govern their data across data lakes, data warehouses, and data marts with consistent controls, providing access to trusted data and powering analytics at scale.
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

@@ -1,0 +1,93 @@
+version: 1
+name: corpus
+created_at: '2026-04-10T00:09:29+00:00'
+updated_at: '2026-04-11T15:33:40+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/memorystore/docs/redis
+  created_at: '2026-04-11T15:23:06+00:00'
+  updated_at: '2026-04-11T15:25:07+00:00'
+  update_command: know sync site https://docs.cloud.google.com/memorystore/docs/redis
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/memorystore/docs/redis
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-11T15:25:07+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview
+  created_at: '2026-04-11T15:23:07+00:00'
+  updated_at: '2026-04-11T15:27:15+00:00'
+  update_command: know sync site https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-11T15:27:15+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/memorystore/docs/redis/apis
+  created_at: '2026-04-11T15:23:07+00:00'
+  updated_at: '2026-04-11T15:28:50+00:00'
+  update_command: know sync site https://docs.cloud.google.com/memorystore/docs/redis/apis
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/memorystore/docs/redis/apis
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-11T15:28:50+00:00'
+- type: site
+  id: site-api-reference
+  title: https://docs.cloud.google.com/memorystore/docs/redis/reference/rest
+  created_at: '2026-04-11T15:23:08+00:00'
+  updated_at: '2026-04-11T15:30:25+00:00'
+  update_command: know sync site https://docs.cloud.google.com/memorystore/docs/redis/reference/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://docs.cloud.google.com/memorystore/docs/redis/reference/rest
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-11T15:30:25+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/memorystore/docs/redis/access-control
+  created_at: '2026-04-11T15:23:08+00:00'
+  updated_at: '2026-04-11T15:31:59+00:00'
+  update_command: know sync site https://docs.cloud.google.com/memorystore/docs/redis/access-control
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/memorystore/docs/redis/access-control
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-11T15:31:59+00:00'
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/python/docs/reference/redis/latest
+  created_at: '2026-04-11T15:23:09+00:00'
+  updated_at: '2026-04-11T15:33:40+00:00'
+  update_command: know sync site https://docs.cloud.google.com/python/docs/reference/redis/latest
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/python/docs/reference/redis/latest
+    max_depth: 1
+    max_pages: 26
+    compact_output: true
+  last_synced_at: '2026-04-11T15:33:40+00:00'

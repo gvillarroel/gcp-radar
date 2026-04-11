@@ -1,0 +1,118 @@
+---
+title: "Enabling IAP for on-premises apps \_|\_ Identity-Aware Proxy \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/iap/docs
+source_metadata:
+  url: https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto
+  title: "Enabling IAP for on-premises apps \_|\_ Identity-Aware Proxy \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Security
+Identity-Aware Proxy
+Guides
+Send feedback
+Enabling IAP for on-premises apps
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page explains how to secure an HTTP or HTTPS based, on-premises app outside of
+Google Cloud with
+Identity-Aware Proxy (IAP) by deploying an
+IAP connector.
+For more information on how IAP secures on-premises apps and
+resources, see the
+IAP for on-premises apps overview .
+Before you begin
+Before you begin, you need the following:
+An HTTP or HTTPS based on-premises app.
+A Cloud Identity member granted the
+Owner role
+on your Google Cloud project.
+Note: IAM basic roles are highly
+permissive roles that give broad access to Google Cloud resources. We
+recommend that you avoid granting basic roles in a production environment. You
+can grant basic roles in a development or test environment.
+The Google APIs Service Agent granted with the owner role.
+A Google Cloud project with
+billing enabled .
+The external URL to use as the ingress point for traffic to
+Google Cloud. For example, hr.example.com .
+An SSL or TLS certificate for the DNS hostname that is used as the ingress
+point for traffic to Google Cloud. An existing self-managed or
+Google-managed
+certificate can be used. If you don't have a certificate, create one using
+Let's Encrypt .
+If VPC Service Controls is enabled, a VPC network with an
+egress policy
+on the cp action for the VM service account to the gce-mesh bucket in
+project 278958399328 . The policy grants the VPC network permission to retrieve the
+Envoy binary file from the gce-mesh bucket.
+The permission is granted by default, if VPC Service Controls is not enabled.
+Disable an external IP by completing the following steps:
+Enable Private Google Access on the VPC subnet that is used for the IAP connector. For more information, see Private Google Access .
+Verify that the firewall configuration of the VPC network lets the VMs access IP addresses of Google APIs and services. By default, this access is granted, but users can change it explicitly. For information on how to find the IP range, see IP addresses for default domains .
+Deploy a connector for an on-premises app
+Go to the IAP page.
+Go to IAP
+To begin setting up your connector deployment for an on-premises app, click Connect new application and select Connect via on-prem connector .
+To ensure that the required APIs are enabled, click Enable APIs and continue in the right-side panel.
+Select the configuration details and click Next :
+Choose whether the deployment should use a Google-managed certificate or one
+managed by you.
+Select the network and subnet for the deployment (or choose
+to create a new one).
+Complete the following details for the on-premises app you want to add:
+Enter the external URL of requests coming to Google Cloud. This URL is
+where traffic enters the environment.
+Enter a name for the app, which will also serve as the name for a new
+backend service behind the load
+balancer.
+Select the region.
+Provide the on-premises endpoint type and its details:
+Fully qualified domain name (FQDN): The domain where the connector should forward the traffic.
+IP address: One or more zones where the IAP connector should be
+deployed (for example, us-central1-a ). For each zone, specify the IPv4 address of
+the internal destination for the on-premises app to which
+IAP routes traffic after a user is authorized and
+authenticated.
+Note: If your on-premises endpoint is an IP address, consider using a hybrid connectivity network endpoint group directly with a load balancer instead of using the IAP on-premises connector.
+Select the protocol used by the on-premises endpoint.
+Enter the port number used by the on-premises endpoint, such as 443 for HTTPS or 80 for HTTP.
+To save the details for that app, click Done . You can also
+define additional on-premises apps for the deployment.
+To begin deployment of the apps you've defined, click Submit .
+After the deployment is complete, your on-premises connector apps appear in the
+Applications table and you can enable IAP.
+If you choose to let Google auto-generate and manage the certificates, it might
+take a few minutes for the certificates to provision. You can check the status
+at the Cloud Load Balancing detail page. For more information about the
+status, see
+troubleshooting page .
+Manage a connector for an on-premises app
+To add more apps to your deployment, click
+Connect new application and then Connect via on-prem connector .
+To delete the on-premises connector by deleting the entire
+deployment, do the following:
+Go to the Deployment Manager page.
+Go to Deployment Manager
+In the list of deployments, select the checkbox next to the
+"on-prem-app-deployment" deployment.
+On the top of the page, click Delete .
+To delete individual apps, click the delete button in the
+Applications tab.
+The on-premises connector must contains at least one app. To remove all apps, delete the entire deployment.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

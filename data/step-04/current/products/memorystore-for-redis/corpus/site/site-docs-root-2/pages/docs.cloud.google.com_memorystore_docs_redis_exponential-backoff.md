@@ -1,0 +1,80 @@
+---
+title: "Exponential backoff \_|\_ Memorystore for Redis \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/memorystore/docs/redis/exponential-backoff
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview
+source_metadata:
+  url: https://docs.cloud.google.com/memorystore/docs/redis/exponential-backoff
+  title: "Exponential backoff \_|\_ Memorystore for Redis \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Databases
+Memorystore
+Memorystore for Redis
+Guides
+Send feedback
+Exponential backoff
+Stay organized with collections
+Save and categorize content based on your preferences.
+Exponential backoff is a standard error handling
+strategy for network applications in which a client periodically retries a
+failed request with increasing delays between requests. Clients should use
+exponential backoff for all requests to Memorystore for Redis that return
+HTTP 5xx and 429 response code errors.
+Understanding how exponential backoff works is important if you are:
+Building client applications that use the Memorystore for Redis REST API
+directly.
+Accessing Memorystore for Redis through a client library .
+Note that some client libraries, such as the Memorystore for Redis Client Library for Node.js ,
+have built-in exponential backoff.
+If you are using the Google Cloud console , the console sends
+requests to Memorystore for Redis on your behalf and handles any necessary
+backoff.
+Example algorithm
+An exponential backoff algorithm retries requests exponentially,
+increasing the waiting time between retries up to a maximum backoff time. An
+example is:
+Make a request to Memorystore for Redis.
+If the request fails, wait 1 + random_number_milliseconds seconds and retry
+the request.
+If the request fails, wait 2 + random_number_milliseconds seconds and retry
+the request.
+If the request fails, wait 4 + random_number_milliseconds seconds and retry
+the request.
+And so on, up to a maximum_backoff time.
+Continue waiting and retrying up to some maximum number of retries, but
+do not increase the wait period between retries.
+where:
+The wait time is min(((2^ n )+ random_number_milliseconds ), maximum_backoff ),
+with n incremented by 1 for each iteration (request).
+random_number_milliseconds is a random number of milliseconds less than or
+equal to 1000. This helps to avoid cases where many clients get synchronized by
+some situation and all retry at once, sending requests in synchronized
+waves. The value of random_number_milliseconds should be recalculated after
+each retry request.
+maximum_backoff is typically 32 or 64 seconds. The appropriate value
+depends on the use case.
+It's okay to continue retrying once you reach the maximum_backoff time.
+Retries after this point do not need to continue increasing backoff time. For
+example, if a client uses an maximum_backoff time of 64 seconds, then after
+reaching this value, the client can retry every 64 seconds. At some point,
+clients should be prevented from retrying infinitely.
+The maximum backoff and maximum number of retries that a client uses
+depends on the use case and network conditions. For example, mobile
+clients of an application may need to retry more times and for longer intervals
+when compared to desktop clients of the same application.
+If the retry requests fail after you exceed the maximum number of retries, then
+report or log an error using one of the methods listed in Get support .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

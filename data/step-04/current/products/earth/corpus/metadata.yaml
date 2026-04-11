@@ -1,0 +1,65 @@
+version: 1
+name: corpus
+created_at: '2026-04-11T09:41:32+00:00'
+updated_at: '2026-04-11T09:45:59+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://developers.google.com/earth-engine
+  created_at: '2026-04-11T09:41:32+00:00'
+  updated_at: '2026-04-11T09:42:17+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine --key
+    corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://developers.google.com/earth-engine
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-11T09:42:17+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://developers.google.com/earth-engine/apidocs
+  created_at: '2026-04-11T09:41:33+00:00'
+  updated_at: '2026-04-11T09:43:30+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/apidocs
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://developers.google.com/earth-engine/apidocs
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T09:43:30+00:00'
+- type: site
+  id: site-api-reference
+  title: https://developers.google.com/earth-engine/reference/rest
+  created_at: '2026-04-11T09:41:33+00:00'
+  updated_at: '2026-04-11T09:44:44+00:00'
+  update_command: know sync site https://developers.google.com/earth-engine/reference/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://developers.google.com/earth-engine/reference/rest
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T09:44:44+00:00'
+- type: site
+  id: site-iam-reference
+  title: https://docs.cloud.google.com/iam/docs/roles-permissions/earth
+  created_at: '2026-04-11T09:41:34+00:00'
+  updated_at: '2026-04-11T09:45:59+00:00'
+  update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/earth
+    --key corpus --compact
+  delete_command: know del --key corpus site-iam-reference
+  config:
+    url: https://docs.cloud.google.com/iam/docs/roles-permissions/earth
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T09:45:59+00:00'

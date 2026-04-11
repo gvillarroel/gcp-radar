@@ -1,0 +1,67 @@
+---
+title: "Analyze the impact of data changes on workflows \_|\_ Knowledge Catalog \_\
+  |\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/dataplex/docs/introduction
+source_metadata:
+  url: https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis
+  title: "Analyze the impact of data changes on workflows \_|\_ Knowledge Catalog\
+    \ \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
+Home
+Documentation
+Data analytics
+Knowledge Catalog
+Guides
+Send feedback
+Analyze the impact of data changes on workflows
+Stay organized with collections
+Save and categorize content based on your preferences.
+In this scenario, you maintain a database that stores records about how various services provided by a healthcare provider are used. To make the data easier to use, you browse the tables to identify potential changes. Before you implement the changes, you identify if any improvements affect existing workflows and if additional adjustments are necessary.
+In this tutorial, use data lineage to identify how data transformations affect downstream resources and the workflows the resources are part of.
+Get started
+To complete the use case, first set up the environment and run the data transformations. Use the prerequisites and setup page to connect a remote repository to Dataform. This repository contains the code necessary to set up the dataset and transform the data.
+After you finish the environment setup, use BigQuery and Lineage Explorer to track data transformations and the effect they have on the workflows.
+Analyze data transformations with Lineage Explorer
+After you prepare the dataset, analyze the impact of the data transformation using the BigQuery Lineage tab.
+Verify data integrity
+In this example, examine the medicare_participation_indicator column that indicates whether a physician or supplier agrees to provide services for Medicare. The lineage graph shows how data transformations between the derived tables result in column data type changes:
+In Google Cloud console, go to the BigQuery page.
+Use the search field to find the physicians_and_other_supplier_2012_original table.
+Click the Lineage tab.
+In the Lineage Explorer pane, do the following:
+In the Column Level Lineage section, select the medicare_participation_indicator column name from the list.
+In the Direction section, select the Downstream direction.
+Click Apply .
+Expand the lineage path until you reach vertex_ai_model_final_features .
+Analyze the path changes between the supplier_stg3 table and the supplier_transform1 table:
+Lineage tracking visualization for medicare_participation_indicator column
+Exact Copy path marking indicates that the column is passing through unchanged.
+Other path marking indicates a transformation. In this path, the data type String is treated like Boolean .
+The path shows that the column data types change, which might require adjustments in the workflows that use these tables.
+Identify redundant columns
+This example examines the nppes_credentials column that lists National Provider Identifiers the practitioners hold in the National Plan and Provider Enumeration System (NPPES):
+In Google Cloud console, go to the BigQuery page.
+Use the search field to find the physicians_and_other_supplier_2012_original table.
+Click the Lineage tab.
+In the Lineage Explorer pane, do the following:
+In the Column Level Lineage section, select the nppes_credentials column name from the list.
+In the Direction section, select the Downstream direction.
+Click Apply .
+Expand the path to check if downstream lineage exists leading to vertex_ai_model_final_features .
+No lineage means that this column might not be relevant in this particular workflow, and can even be deleted.
+For more information on visualizing data with data lineage graph, see Lineage graph view .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-09 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],[]]

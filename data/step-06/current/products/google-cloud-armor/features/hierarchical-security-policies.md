@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:23.944Z"
+product_name: "Google Cloud Armor"
+product_slug: "google-cloud-armor"
+feature_name: "Hierarchical security policies"
+feature_slug: "hierarchical-security-policies"
+latest_feature_date: "2025-10-15"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "hierarchical"
+  - "security"
+  - "policies"
+  - "that"
+  - "provide"
+  - "centralized"
+  - "control"
+  - "consistency"
+---
+
+# Hierarchical security policies
+
+Product: Google Cloud Armor
+Coverage: NONE
+
+## Step 02 Summary
+
+Security policies that provide centralized control, consistency, operational efficiency, and delegated policy management; Security policies that provide centralized control, consistency, operational efficiency, and delegated policy management.
+
+## Extended Definition
+
+Security policies that provide centralized control, consistency, operational efficiency, and delegated policy management; Security policies that provide centralized control, consistency, operational efficiency, and delegated policy management.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

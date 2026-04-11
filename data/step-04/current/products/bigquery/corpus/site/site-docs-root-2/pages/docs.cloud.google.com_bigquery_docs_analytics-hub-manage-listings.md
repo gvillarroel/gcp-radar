@@ -1,0 +1,803 @@
+---
+title: "Manage listings \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/introduction
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings
+  title: "Manage listings \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Manage listings
+This document describes how to manage listings in BigQuery sharing
+(formerly Analytics Hub). As a BigQuery sharing publisher, you can do the following:
+Create listings in a data exchange for which you have publishing access.
+Update, delete, share, and view usage metrics for listings.
+Manage different BigQuery sharing roles for your listings, such as
+listing administrators, subscribers, and viewers.
+View all subscribers who subscribed to your listing.
+Monitor usage
+of your listings.
+Remove subscribers from your listing.
+A listing is a reference to a shared dataset that a publisher lists in a
+data exchange .
+A listing can be of the following two types based on the
+Identity and Access Management (IAM) policy that's set for the listing and the type of
+data exchange that contains the listing:
+Public listing. A public listing can be
+discovered
+and
+subscribed to
+by
+Google Cloud users ( allAuthenticatedUsers ) .
+Listings in a public data exchange are public listings. These listings can be
+references to a free public dataset or a commercial dataset . If the
+listing is of a commercial dataset, BigQuery sharing subscribers can
+either request access to the listing directly from the data provider, or they
+can browse and purchase
+Google Cloud Marketplace-integrated commercial listings .
+Private listing. A private listing is shared directly with individuals or
+groups. For example, a private listing can reference marketing metrics dataset that you share with other internal teams within your organization. Even though you can
+allow Google Cloud users ( allAuthenticatedUsers )
+to subscribe to your listings, the listing will remain private and won't
+show as a public listing on the BigQuery sharing page .
+To share such listings with users, share the listing's URL with them. To make
+a private listing discoverable,
+make your exchange public .
+Note: Both requesting access and Cloud Marketplace-integrated flows are
+supported on a single BigQuery sharing listing. This means that you
+can create a Cloud Marketplace-integrated listing from an existing
+(offline) commercial listing, without any disruptions to existing subscriptions.
+Before you begin
+To get started with BigQuery sharing (formerly Analytics Hub), you need to
+enable the Analytics Hub API inside your Google Cloud project.
+To enable the Analytics Hub API, you need the following
+Identity and Access Management (IAM) permissions:
+serviceUsage.services.get
+serviceUsage.services.list
+serviceUsage.services.enable
+The following predefined IAM role includes the
+permissions that you need to enable the Analytics Hub API:
+Service Usage Admin ( roles/serviceusage.serviceUsageAdmin )
+To enable the Analytics Hub API, select one of the following options:
+Console
+Go to the Analytics Hub API page and enable the Analytics Hub API for
+your Google Cloud project.
+Enable the Analytics Hub API
+gcloud
+Run the gcloud services enable
+command:
+gcloud services enable analyticshub.googleapis.com
+Required roles
+To manage listings and subscriptions, you must have one of the following
+BigQuery sharing Identity and Access Management (IAM) roles:
+Analytics Hub Publisher role
+( roles/analyticshub.publisher ), which lets you
+create, update, delete, and set IAM policies on your listings.
+Analytics Hub Listing Admin role
+( roles/analyticshub.listingAdmin ), which lets you
+update, delete, and set IAM policies on your listings.
+Analytics Hub Admin role
+( roles/analyticshub.admin ), which lets you
+create, update, delete, and set IAM policies on all listings in
+your data exchange.
+For more information, see
+BigQuery sharing IAM roles .
+To learn how to grant these roles to other users, see
+Create a listing administrator .
+To create listings or to update replica regions for a listing,
+you must have the bigquery.datasets.get
+and bigquery.datasets.update permissions for the datasets where you want
+to create or update listings. The following
+BigQuery predefined roles
+contain the bigquery.datasets.update permission:
+BigQuery Data Owner
+( roles/bigquery.dataOwner )
+BigQuery Admin
+( roles/bigquery.admin )
+To view all data exchanges across projects in an organization that you have
+access to, you must have the resourcemanager.organizations.get permission.
+There are no
+BigQuery predefined roles
+that contain this permission, so you would need to use an
+IAM custom role .
+View data exchanges
+To view the list of data exchanges in your organization that you have access to,
+see
+View data exchanges .
+If the data exchange is in another organization, then the
+BigQuery sharing administrator must
+share a link to that data exchange
+with you.
+Create a listing
+A listing is a reference to a
+shared dataset
+that a BigQuery sharing publisher lists in a data exchange.
+Caution: We recommend that you don't add your shared datasets in a
+Google Cloud project with a VPC Service Controls perimeter. If you do so, then you
+must add the appropriate
+ingress and egress rules .
+To create a listing, follow these steps:
+Console
+Go to the Sharing (Analytics Hub) page.
+Go to Sharing (Analytics Hub)
+A page appears that lists all data exchanges that you can access.
+Click the data exchange name in which you want to create the listing.
+Click add_box
+Create listing .
+In the Configure data section, in the Resource type menu, select
+BigQuery dataset or Pub/Sub Topic .
+If you select BigQuery dataset , then do the following:
+In the Shared dataset menu, select an existing dataset, or
+click Create a dataset to create a new dataset. Select the
+dataset that you want to list in the data exchange. The dataset must be in the same region as the data exchange. You cannot update this field after the listing is created. The source dataset name and the
+ID of the project that contains the dataset are returned when BigQuery sharing subscribers
+view the metadata of their linked dataset .
+Optional: To let subscribers
+share a SQL stored procedure within a listing ,
+select Allow stored procedure sharing
+( Preview ).
+Expand the Region data availability menu
+( Preview )
+to make the shared dataset available in additional regions. The
+menu displays the regions where dataset replicas exist with the
+Ready to use label. Before configuring the listing for multiple
+regions, verify you've enabled
+cross-region dataset replication
+on the shared dataset, as you can select only regions where
+cross-region dataset replication is enabled. All other regions are
+labeled as Unavailable . If no additional region is selected, the
+listing uses the shared dataset primary region by default, which is
+labeled as Provider primary .
+In Data Egress controls , select the appropriate data egress
+option.
+To apply data egress restrictions on your shared dataset, but not
+on query results of your shared dataset, select
+Disable copy and export of shared data .
+To apply data egress restrictions on your shared dataset and query
+results of your shared dataset, select
+Disable copy and export of query results , which will
+automatically set Disable copy and export of shared data as well.
+To apply data API copy and export egress restrictions on your shared
+dataset, select Disable copy and export of tables through APIs ,
+which will automatically set Disable copy and export of shared data as well.
+For more information about data egress controls, including
+restrictions, see
+Data egress options (BigQuery shared datasets only) .
+If you select Pub/Sub Topic , then in the Shared topic menu, you
+can select an existing Pub/Sub topic, or click Create a topic
+to create a new topic.
+In the Listing details section, in Display name , enter the name of the listing.
+Enter the following optional details:
+Category : select up to two categories that best represent your
+listing. BigQuery sharing subscribers can
+filter listings
+based on these categories.
+Data affinity : regions used by the BigQuery sharing publisher
+for publishing the data if you're using a Pub/Sub topic. This
+information is useful for BigQuery sharing subscribers to minimize
+or avoid Pub/Sub network egress costs by reading the data from
+the same region. For more information about egress costs, see
+Data transfer costs .
+Icon : an icon for your listing. PNG and JPEG file formats are
+supported. Icons must have a file size of less than 512 KiB and
+dimensions of no more than 512 x 512 pixels.
+Description : a brief description about your listing. Subscribers can
+search for listings
+based on the description.
+Public Discoverability : enable public discoverability of your
+listing in the BigQuery sharing catalog. If you enable this option,
+grant allUsers or allAuthenticatedUsers the
+Analytics Hub Viewer role
+( roles/analyticshub.viewer ). For more information, see
+Grant the role for a listing .
+If the exchange is already
+public ,
+listing permissions are already inherited and no further action is
+required.
+Publicly discoverable exchanges can't have private listings due to
+permission inheritance, but private exchanges can have public listings.
+For public listings to be created, the project the data listing is in
+must have an associated organization and billing account. If you're
+creating a
+Cloud Marketplace-integrated commercial listing ,
+we recommend making your listing publicly discoverable.
+Subscriber Email Logging : turn on logging of the
+principal identifiers
+of all users running jobs and queries on linked datasets. When you enable
+this option, all future subscriptions for this listing have subscriber
+email logging turned on. The logged data is available in the
+job_principal_subject field of the
+INFORMATION_SCHEMA.SHARED_DATASET_USAGE view .
+Note: Once you enable and save email logging, this setting cannot be
+edited. To disable email logging, delete the listing and recreate
+it without clicking the Subscriber Email Logging toggle.
+Documentation > Markdown : additional information such as
+links to any relevant documentation and any additional information that
+can help BigQuery sharing subscribers to use your topic.
+On the Listing contact information section, enter the following
+optional details:
+Primary contact : enter an email ID or a URL of the primary contact
+for the listing.
+Request access contact : enter an email ID or URL of the intake form
+for BigQuery sharing subscribers to contact you.
+Provider : expand the Provider section and specify details in the
+following fields:
+Provider name : the name of the topic provider.
+Provider primary contact : an email ID or a URL of the topic
+provider's primary contact.
+Subscribers can filter listings based on the data providers.
+Publisher : expand the Publisher section and specify details in
+the following fields:
+Publisher name : the name of the BigQuery sharing
+publisher who's creating the listing.
+Publisher primary contact : an email ID or a URL of the topic
+publisher's primary contact.
+Review the Listing preview section.
+Click Publish .
+API
+Use the
+projects.locations.dataExchanges.listings.create method .
+POST https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE_ID /listings?listingId= LISTING_ID
+Replace the following:
+PROJECT_ID : the project ID that contains the data
+exchange in which you want to create the listing.
+LOCATION : the location for your data exchange. For
+more information about locations that
+support BigQuery sharing, see
+Supported regions .
+DATAEXCHANGE_ID : the data exchange ID.
+LISTING_ID : the listing ID.
+In the body of the request, provide the
+listing details .
+To create a listing for multiple regions
+( Preview ),
+specify the additional regions in the bigqueryDataset.replicaLocations
+field in the request body. Before configuring the listing for multiple
+regions, verify you've enabled
+cross-region dataset replication
+on the shared dataset. You can select only regions where cross-region dataset
+replication is enabled. If this optional field is not included, the listing
+is created using the shared dataset's primary region.
+If the request is successful, the response body contains details of the
+listing. If you enable subscriber email logging with
+the logLinkedDatasetQueryUserEmail field, the listing response
+contains log_linked_dataset_query_user_email: true . The logged data
+is available in the job_principal_subject field of the
+INFORMATION_SCHEMA.SHARED_DATASET_USAGE view .
+For more information about the tasks that you can perform on listings using
+APIs, see projects.locations.dataExchanges.listings methods .
+Create a listing from a dataset
+You can also create a listing from a dataset by doing the following:
+In the Google Cloud console, go to the BigQuery page.
+Go to BigQuery
+Click a dataset to view its details.
+Click person_add
+Sharing > Publish as listing .
+The Create listing dialog opens.
+Select a data exchange to publish this listing in. The data exchange must be
+in the same region as the dataset. For more information about creating a
+data exchange, see
+create an exchange and set permissions .
+In the Shared dataset menu, select an existing dataset, or click
+Create a dataset to create a new dataset. Select the dataset that
+you want to list in the data exchange. The dataset must be in the same
+region as the data exchange. You cannot update this field after the
+listing is created.
+The source dataset name and the ID of the project that contains the
+dataset are returned when BigQuery sharing subscribers
+view the metadata of their linked dataset .
+Optional: To let subscribers
+share a SQL stored procedure within a listing ,
+select Allow stored procedure sharing
+( Preview ).
+Expand the Region data availability menu
+( Preview )
+to make the shared dataset available in additional regions. The menu displays
+the regions where dataset replicas exist with the Ready to use
+label. Before configuring the listing for multiple regions, verify
+you've enabled
+cross-region dataset replication
+on the shared dataset, as you can select only regions where
+cross-region dataset replication is enabled. All other regions are
+labeled as Unavailable . If no additional region is selected, the
+listing uses the shared dataset region by default, which is labeled
+as Provider primary .
+In Data Egress controls , select the appropriate data egress option.
+To apply data egress restrictions on your shared dataset, but not on
+your query results of your shared dataset, select Disable copy and
+export of shared data .
+To apply data egress restrictions on your shared dataset and query results
+of your shared dataset, select Disable copy and export of query results ,
+which will automatically set Disable copy and export of shared data as well.
+To apply data API copy and export egress restrictions on your shared
+dataset, select Disable copy and export of tables through APIs , which
+will automatically set Disable copy and export of shared data as well.
+For more information about data egress controls, including restrictions, see
+Data egress options (BigQuery shared datasets only) .
+In the Listing details section, in Display name , enter the name of the listing.
+Enter the following optional details:
+Category : select up to two categories that best represent your
+listing. BigQuery sharing subscribers can
+filter listings
+based on these categories.
+Data affinity : region(s) used by the BigQuery sharing publisher
+for publishing the data. This information is useful for
+BigQuery sharing subscribers to minimize or avoid Pub/Sub
+network egress costs by reading the data from the same region. For more
+information about egress costs, see
+Data transfer costs .
+Icon : an icon for your listing. PNG and JPEG file formats are
+supported. Icons must have a file size of less than 512 KiB and
+dimensions of no more than 512 x 512 pixels.
+Description : a brief description about your listing.
+BigQuery sharing subscribers can
+search for listings
+based on the description.
+Public Discoverability : enable public discoverability of your listing
+in the BigQuery sharing catalog. If you enable this option, grant
+allUsers or allAuthenticatedUsers the
+Analytics Hub Viewer role
+( roles/analyticshub.viewer ). For more information, see
+Grant the role for a listing .
+If the exchange is already
+public ,
+listing permissions are already inherited and no further action is required.
+Publicly discoverable exchanges can't have private listings due to
+permission inheritance, but private exchanges can have public listings. For
+public listings to be created, the project the data listing is in must have
+an associated organization and billing account. If you're creating a
+Cloud Marketplace-integrated commercial listing ,
+we recommend making your listing publicly discoverable.
+Subscriber Email Logging : turn on logging of the
+principal identifiers of subscribers
+running jobs and queries on this listing's linked dataset for all future
+subscriptions. When you enable this option, only newly created
+subscriptions log the principal identifiers. The logged data is available
+in the job_principal_subject field of the
+INFORMATION_SCHEMA.SHARED_DATASET_USAGE view .
+Note: Once you enable and save email logging, this setting cannot be
+edited. To disable email logging, delete the listing and recreate
+it without clicking the Subscriber Email Logging toggle.
+Documentation > Markdown : additional information such as
+links to any relevant documentation and any additional information that can
+help subscribers to use your topic.
+On the Listing contact information section, enter the following optional
+details:
+Primary contact : enter an email ID or a URL of the primary contact for
+the listing.
+Request access contact : enter an email ID or URL of the intake form
+for subscribers to contact you.
+Provider : expand the Provider section and specify details in the
+following fields:
+Provider name : the name of the topic provider.
+Provider primary contact : an email ID or a URL of the topic
+provider's primary contact.
+Subscribers can filter listings based on the data providers.
+Publisher : expand the Publisher section and specify details in
+the following fields:
+Publisher name : the name of the BigQuery sharing publisher
+who's creating the listing.
+Publisher primary contact : an email ID or a URL of the topic
+publisher's primary contact.
+Review the Listing preview section.
+Click Publish .
+Share a SQL stored procedure within a listing
+Preview
+This product or feature is
+subject to the "Pre-GA Offerings Terms" in the General Service Terms section
+of the Service Specific
+Terms .
+Pre-GA products and features are available "as is" and might have limited support.
+For more information, see the
+launch stage descriptions .
+Note: To request support or provide feedback for this feature, contact
+bq-data-sharing-feedback@google.com .
+You can share
+SQL stored procedures
+when creating listings with BigQuery datasets. Since stored
+procedures can create, drop, and manipulate tables, as well as invoke
+other stored procedures, additional authorization is needed.
+Subscriber authorization
+After subscribing to a listing, the linked stored procedures might not be
+executed directly. To ensure that the linked stored procedures can be accessed,
+the subscriber must communicate to the provider with the linked dataset name so that
+the provider authorizes the linked stored procedure on the provider resources .
+In addition, the subscriber must
+authorize the linked shared stored procedure and attach an IAM role
+to the resources that they own in order to read from and write to those
+resources.
+Provider authorization
+When a provider creates a listing with a stored procedure, they need to let the
+subscriber read from and write to their tables through the linked stored
+procedure. To ensure this, do the following:
+For non-read operations, the provider must
+authorize the linked shared stored procedure and
+attach an IAM role
+to any of the provider's resources that are accessed by the linked stored
+procedure.
+For read operations, the provider can authorize either the linked shared stored
+procedure (in the subscriber's linked dataset) or their original shared stored
+procedure (in the provider's dataset) and
+attach an IAM role
+to any of the provider's resources that are accessed by the linked stored
+procedure.
+Give users access to a listing
+If you want to give users access to a private listing, you must set
+IAM policy for an individual or a group for that listing. For a
+commercial listing, your
+data exchange must be public .
+Listings in a public data exchange appear in BigQuery sharing for all
+Google Cloud users ( allAuthenticatedUsers ) .
+To enable users to browse and request access to commercial listings, you must
+grant users the
+Analytics Hub Viewer role
+( roles/analyticshub.viewer ). To enable users to subscribe to commercial
+listings, you must explicitly grant users the
+Analytics Hub Subscriber role
+( roles/analyticshub.subscriber ). For
+Cloud Marketplace-integrated commercial listings ,
+the Analytics Hub Subscriber role is automatically provisioned
+based on the Cloud Marketplace orders.
+If you want to make your listing accessible to everyone, including people who
+don't use Google Cloud, you must grant allUsers the Analytics Hub Viewer role
+( roles/analyticshub.viewer ).
+To give users access to view or subscribe to your listing, follow these steps:
+Console
+Go to the Sharing (Analytics Hub) page.
+Go to Sharing (Analytics Hub)
+Click the data exchange name that contains the listing.
+Click the listing for which you want to add subscribers.
+Click person Set permissions .
+To add principals, click person_add
+Add principal .
+In the New principals field, add the following details based on the
+type of listing:
+For a private listing, enter email IDs of the identity to whom you want
+to grant access.
+For a public listing, add allAuthenticatedUsers .
+For a public listing discoverable to everyone, including non-Google Cloud
+users, add allUsers .
+For Select a role , hold the pointer over Analytics Hub , and then
+based on the type of listing, select one of the following roles:
+For a commercial listing (including Cloud Marketplace-integrated
+listings), select the Analytics Hub Viewer role. This role lets users
+view the listing and request access .
+For a private or non-commercial public listing, select the
+Analytics Hub Subscriber role. This role lets users
+subscribe to your listing .
+For Cloud Marketplace-integrated listings, the
+Analytics Hub Subscriber role ( roles/analyticshub.subscriber )
+doesn't need to be granted, as subscriptions are automatically governed
+and managed based on the Cloud Marketplace order.
+Note: After you grant licenses to users to access
+non-Cloud Marketplace-integrated commercial listings, you can
+either create a private listing for those users, or grant those users the
+Analytics Hub Subscriber ( roles/analyticshub.subscriber ) role for your commercial listing.
+For more information, see the
+Analytics Hub Subscriber and Viewer roles .
+Click Save .
+API
+Read the existing policy with the listing getIamPolicy method by using
+the
+projects.locations.dataExchanges.listings.getIamPolicy method .
+POST https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /locations/ LOCATION /dataExchanges/ DATAEXCHANGE_ID /listings/ LISTING_ID :getIamPolicy
+Replace the following:
+PROJECT_ID : the project ID—for example,
+my-project-1 .
+LOCATION : the location of the data exchange
+that contains the listing.
+DATAEXCHANGE_ID : the data exchange ID.
+LISTING_ID : the listing ID.
+Sharing returns the current policy in the response.
+To add or remove members and their associated roles, edit the policy with
+a text editor. Use the following format to add members:
+user:test-user@gmail.com
+group:admins@example.com
+serviceAccount:test123@example.domain.com
+domain:example.domain.com
+For example, to grant the roles/analyticshub.subscriber role to
+group:subscribers@example.com , add the following binding to the policy:
+{
+"members": [
+"group:subscribers@example.com"
+],
+"role":"roles/analyticshub.subscriber"
+}
+Write the updated policy by using the
+projects.locations.dataExchanges.listings.setIamPolicy method .
+In the body of the request, provide the updated IAM policy
+from the previous step.
+POST https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE_ID /listings/ LISTING_ID :setIamPolicy
+In the body of the request, provide the listing details. If the request
+is successful, then the response body contains details of the listing.
+For more information about the tasks that you can perform on listings using
+APIs, see projects.locations.dataExchanges.listings methods .
+Note: After you grant licenses to users to access your commercial listing, you
+can either
+create a private listing
+for those users or grant those users the
+Analytics Hub Subscriber role
+( roles/analyticshub.subscriber ) for your commercial listing.
+Create a non-authenticated URL for public listing
+To create a non-authenticated BigQuery sharing listing URL that is
+viewable to even non-Google Cloud users, do the following:
+Go to the Sharing (Analytics Hub) page.
+Go to Sharing (Analytics Hub)
+A page appears that lists all data exchanges that you can access.
+Click the data exchange name that contains the listing.
+Click the display name to view the listing details. The listing must have
+public discoverability
+enabled.
+Click Copy public link to generate an unauthenticated listing URL. Ensure
+that this listing grants allUsers the
+Analytics Hub Viewer role ( roles/analyticshub.viewer ).
+Create a listing administrator
+To let users manage listings, you must create listing administrators. To
+create listing administrators, you need to grant users the
+Analytics Hub Publisher or the Analytics Hub Listing Admin IAM role
+at the listing level. For more information about how to grant these roles for a
+listing, see
+Grant the role for a listing .
+View all subscriptions
+To view all the current subscriptions to your listing, select one of the
+following options:
+Console
+Go to the Sharing (Analytics Hub) page.
+Go to Sharing (Analytics Hub)
+Click the data exchange name that contains the listing for which you want
+to manage the subscriptions.
+Click the listing for which you want to list all subscribers.
+To view all subscribers of your listing, click Manage subscriptions .
+Optional: You can filter results by subscriber details.
+Alternatively, if you have access to the
+shared dataset ,
+you can follow these steps to list subscribers:
+Go to the BigQuery page.
+Go to BigQuery
+In the left pane, click explore
+Explorer :
+If you don't see the left pane, click last_page Expand left pane to open the pane.
+In the Explorer pane, expand your project name, click Datasets , and
+then click the name of the shared dataset.
+In the person_add Sharing list,
+select Manage subscriptions .
+SQL
+The following example uses the
+INFORMATION_SCHEMA.SCHEMATA_LINKS view
+to list all the linked datasets linked to a shared dataset in myproject
+that are in the us region:
+SELECT * FROM `myproject`.`region-us`.INFORMATION_SCHEMA.SCHEMATA_LINKS;
+The output is similar to the following. Some columns are omitted to simplify
+the output.
++----------------+-------------+----------------------------+------------------------------+--------------------+--------------------------------+
+| catalog_name | schema_name | linked_schema_catalog_name | linked_schema_catalog_number | linked_schema_name | linked_schema_org_display_name |
++----------------+-------------+----------------------------+------------------------------+--------------------+--------------------------------+
+| myproject | myschema1 | subscriptionproject1 | 974999999291 | subscriptionld1 | subscriptionorg |
+| myproject | myschema2 | subscriptionproject2 | 974999999292 | subscriptionld2 | subscriptionorg |
+| myproject | myschema3 | subscriptionproject3 | 974999999293 | subscriptionld3 | subscriptionorg |
++----------------+-------------+----------------------------+------------------------------+--------------------+--------------------------------+
+For a listing with multiple regions
+( Preview ),
+you can view the subscriptions across different regions by replacing the us
+region with the intended replica location. For example, to view the linked
+datasets linked to a shared dataset in myproject that are in the eu region,
+use the following query:
+SELECT * FROM `myproject`.`region-eu`.INFORMATION_SCHEMA.SCHEMATA_LINKS;
+API
+Use the projects.locations.dataExchanges.listings.listSubscriptions method .
+GET https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE_ID /listings/ LISTING_ID :listSubscriptions
+Replace the following:
+PROJECT_ID : the project ID of the listing that you
+want to subscribe to.
+LOCATION : the location for the listing that you
+want to subscribe to.
+DATAEXCHANGE_ID : the data exchange ID that contains
+the listing that you want to subscribe to.
+LISTING_ID : the ID of the listing that you want to
+subscribe to.
+Remove a subscription
+When you remove a subscription created before July 25, 2023 from your listings,
+the
+linked dataset
+gets unlinked from the
+shared dataset .
+Subscribers can still see the datasets in their projects but they are no longer
+linked with the shared dataset.
+Note: Revoking
+Cloud Marketplace-integrated commercial subscriptions
+might impact your customers and violate the
+Cloud Marketplace Terms of Service .
+To remove a subscription created before July 25, 2023 from your listings, follow
+these steps:
+To list all subscribers of a listing, follow the Google Cloud console
+instructions in View all subscriptions .
+To remove a subscriber from a listing, click
+delete Delete . If you want to remove
+all subscriptions, click Remove all subscriptions .
+In the Remove subscription? dialog, enter remove to confirm.
+Click Remove .
+To remove subscriptions created after July 25, 2023, follow these steps:
+Console
+To list all subscribers of a listing, follow the Google Cloud console
+instructions in View all subscriptions .
+Click the Subscriptions tab.
+To remove a subscriber from a listing, select the Subscription(s) you would
+like to remove and click
+delete Remove Subscriptions .
+In the Remove subscription? dialog, enter remove to confirm.
+Click Remove .
+API
+Use the projects.locations.subscriptions.revoke method .
+POST https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /location/ LOCATION /subscriptions/ SUBSCRIPTION_ID :revoke
+Replace the following:
+PROJECT_ID : the project ID of the subscription that
+you want to remove.
+LOCATION : the location of the subscription that you
+want to remove.
+SUBSCRIPTION : the ID of the
+subscription
+that you want to remove.
+Update a listing
+To update a listing, follow these steps:
+Console
+Go to the Sharing (Analytics Hub) page.
+Go to Sharing (Analytics Hub)
+Click the data exchange name that contains the listing.
+Click the listing that you want to update.
+Click mode_edit Edit listing .
+Modify values in the fields. You can modify all values except the shared
+dataset of the listing.
+Optional:
+If you enable public discoverability, grant the
+Analytics Hub Viewer role ( roles/analyticshub.viewer )
+to allUsers or allAuthenticatedUsers . For more information, see
+Grant the role for a listing
+If you disable public discoverability, remove the Analytics Hub Viewer
+role ( roles/analyticshub.viewer ) from allUsers and
+allAuthenticatedUsers . Public exchanges can't have private listings,
+but private exchanges can have public listings.
+If you enable and save subscriber email logging, this setting cannot
+be edited. To disable email logging, delete the listing and recreate
+it without clicking the Subscriber email logging toggle.
+Add or remove regions from the listing
+( Preview ).
+Before adding multiple regions, verify you've enabled
+cross-region dataset replication
+on the shared dataset. When removing regions, delete the shared dataset
+replica in that region first.
+Preview the listing.
+To save changes, click Save . To avoid discrepancies with
+Cloud Marketplace-integrated listings, a notification appears that
+prompts an update to the Cloud Marketplace data product listing.
+Note: Updating the Cloud Marketplace data product listing requires
+review and approval by the Marketplace Operations Team.
+API
+Use the
+projects.locations.dataExchanges.listings.patch method .
+PATCH https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE_ID /listings/ LISTING_ID ?updateMask= UPDATEMASK
+Replace UPDATEMASK with the list of fields that you
+want to update. To update multiple values, use a comma-separated list. For
+example, to update the display name and primary contact for a data exchange,
+enter displayName,primaryContact .
+In the body of the request, specify updated values for the following fields:
+displayName
+description
+primaryContact
+documentation
+icon
+categories[]
+discoveryType
+logLinkedDatasetQueryUserEmail
+bigqueryDataset.replicaLocations
+For details on these fields, see
+Resource: Listing .
+When updating the replica regions for your listing, ensure that you specify
+all applicable regions. Before updating the listing, verify you've enabled
+cross-region dataset replication
+on the shared dataset. You can add only regions
+( Preview )
+where the shared dataset is replicated. To remove a region, delete the shared
+dataset replica for the region before removing it from the listing. You can
+also convert pre-existing listings to listings for multiple regions.
+For more information about the tasks that you can perform on listings using
+APIs, see projects.locations.dataExchanges.listings methods .
+Delete a listing
+When you delete a listing, subscribers can no longer
+view the listing .
+Deleting a listing also
+deletes all the linked datasets
+and removes all the subscriptions from your subscribers' projects. If a dataset
+remains linked, remove the dataset manually by clicking
+person_add
+Sharing > Manage Subscription .
+The Subscriptions page opens, where you can remove a specific subscriber
+dataset or all subscriber datasets at once.
+You can't delete
+Cloud Marketplace-integrated listings
+with active commercial subscriptions.
+Revoke all commercial subscriptions
+before you delete the listing.
+Caution: Be aware that revoking Cloud Marketplace-integrated commercial
+subscriptions might impact your customers and violate the
+Cloud Marketplace Terms of Service .
+Deleting a listing for multiple regions
+( Preview )
+doesn't delete the shared dataset replicas. After deleting the listing for
+multiple regions, subscribers can no longer view the listing or query the linked
+datasets. If the shared dataset replicas aren't referenced in other listings,
+you can
+choose to delete them .
+Before deleting a listing for multiple regions
+( Preview ),
+ensure there are no active subscriptions associated with it. If active
+subscriptions exist, you must first revoke them using the
+projects.locations.subscriptions.revoke method .
+After all the active subscriptions are removed, you can proceed with deleting the
+listing for multiple regions.
+Caution: If you delete a listing, you cannot undo it.
+To delete a listing, follow these steps:
+Console
+Go to the Sharing (Analytics Hub) page.
+Go to Sharing (Analytics Hub)
+Click the data exchange name that contains the listing.
+Click the listing that you want to delete.
+Click delete Delete .
+In the Delete listing? dialog, confirm deletion by typing delete .
+Click Delete .
+API
+Use the
+projects.locations.dataExchanges.listings.delete method .
+DELETE https://analyticshub.googleapis.com/v1/projects/ PROJECT_ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE_ID /listings/ LISTING_ID
+For more information about the tasks that you can perform on listings using
+APIs, see projects.locations.dataExchanges.listings methods .
+Display a listing in the featured section
+To increase visibility and awareness of your listing in the
+BigQuery sharing catalog, listings can be displayed in the
+Featured section. Featured listings are governed by the Google Cloud
+Partner Advantage Agreement.
+Partners that are interested in their listings being in the Featured section
+of the BigQuery sharing catalog must meet the following criteria:
+Shared data must reside in BigQuery.
+They must be enrolled in the
+Partner Advantage Program
+with the Build designation.
+The listing must be created and have
+public discoverability
+enabled.
+To request your listing to be in the Featured section, complete and submit the
+intake form .
+To request that your listing be removed from the section, submit the same
+intake form .
+What's next
+Read about
+BigQuery sharing architecture .
+Learn how to
+view and subscribe to listings .
+Learn about
+BigQuery sharing IAM roles .
+Learn about
+creating datasets .
+Learn about
+BigQuery sharing audit logging .
+Learn how to
+monitor listings .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

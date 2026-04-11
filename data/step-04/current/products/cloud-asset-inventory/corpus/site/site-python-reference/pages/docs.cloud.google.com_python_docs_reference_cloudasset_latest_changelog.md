@@ -1,0 +1,510 @@
+---
+title: "Python client libraries \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/changelog
+knowledge_key: corpus
+source_id: site-python-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/python/docs/reference/cloudasset/latest
+source_metadata:
+  url: https://docs.cloud.google.com/python/docs/reference/cloudasset/latest/changelog
+  title: "Python client libraries \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Developer tools
+Python
+Client libraries
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Version latest keyboard_arrow_down
+4.2.0 (latest)
+4.1.0
+4.0.0
+3.30.1
+3.29.2
+3.28.0
+3.27.1
+3.26.4
+3.25.1
+3.24.3
+3.23.0
+3.22.0
+3.21.0
+3.20.1
+3.19.1
+3.18.1
+3.17.1
+3.16.0
+3.15.0
+3.14.2
+3.13.1
+3.12.0
+3.11.0
+3.10.0
+3.9.1
+3.8.1
+3.7.1
+3.6.1
+3.5.0
+3.4.0
+3.3.0
+3.2.1
+3.1.0
+2.2.2
+2.1.0
+2.0.0
+1.3.2
+1.2.0
+1.1.0
+1.0.0
+0.10.0
+0.9.0
+0.8.0
+0.7.0
+0.6.0
+0.5.0
+0.4.1
+0.3.0
+Changelog
+PyPI History
+4.2.0 (2026-01-08)
+Features
+auto-enable mTLS when supported certificates are detected ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 )
+check Python and dependency versions in generated GAPICs ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 )
+4.1.0 (2025-10-16)
+Features
+Add support for Python 3.14 ( 98ee71abc0f97c88239b50bf0e0827df19630def )
+Bug Fixes
+Deprecate credentials_file argument ( 98ee71abc0f97c88239b50bf0e0827df19630def )
+4.0.0 (2025-10-07)
+Bug Fixes
+remove google.cloud.asset_v1p4beta1 (#14571) Remove google.cloud.asset_v1p4beta1 which doesn’t exist in
+https://github.com/googleapis/googleapis/tree/master/google/cloud/asset ( 521e7d7dd1d9978f0db19f0125a05e50050d077b )
+3.30.1 (2025-05-08)
+Documentation
+fix typos in documentation ( deb14f3 )
+3.30.0 (2025-04-24)
+Features
+A new field enrichments is added to message .google.cloud.asset.v1.ResourceSearchResult ( b464b68 )
+A new message AssetEnrichment is added ( b464b68 )
+A new message ResourceOwners is added ( b464b68 )
+A new value GOVERN_TAGS is added to enum MethodType ( b464b68 )
+A new value REMOVE_GRANT is added to enum MethodType ( b464b68 )
+Documentation
+A comment for field attached_resource in message .google.cloud.asset.v1.EffectiveTagDetails is changed ( b464b68 )
+A comment for field consolidated_policy in message .google.cloud.asset.v1.AnalyzeOrgPoliciesResponse is changed ( b464b68 )
+A comment for field policy_bundle in message .google.cloud.asset.v1.AnalyzeOrgPoliciesResponse is changed ( b464b68 )
+A comment for field policy_bundle in message .google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse is changed ( b464b68 )
+A comment for field policy_bundle in message .google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse is changed ( b464b68 )
+A comment for field service_account_impersonation_analysis in message .google.cloud.asset.v1.AnalyzeIamPolicyResponse is changed ( b464b68 )
+3.29.2 (2025-03-15)
+Bug Fixes
+[Many APIs] Allow Protobuf 6.x ( 3a85796 )
+remove setup.cfg configuration for creating universal wheels ( #13659 ) ( 59bfd42 )
+3.29.1 (2025-02-18)
+Bug Fixes
+deps: Require grpc-google-iam-v1>=0.14.0 ( 4571dff )
+3.29.0 (2025-02-12)
+Features
+Add REST Interceptors which support reading metadata ( b1c3ce8 )
+Add support for reading selective GAPIC generation methods from service YAML ( b1c3ce8 )
+3.28.0 (2024-12-12)
+Features
+Add support for opt-in debug logging ( b1dfc55 )
+Bug Fixes
+Fix typing issue with gRPC metadata when key ends in -bin ( b1dfc55 )
+3.27.1 (2024-10-31)
+Bug Fixes
+disable universe-domain validation ( 85c7512 )
+3.27.0 (2024-10-24)
+Features
+Add support for Python 3.13 ( #13200 ) ( 19dc048 )
+3.26.4 (2024-09-16)
+Documentation
+[google-cloud-asset] Comments are clarified for certain fields in messages QueryAssetsResponse and ResourceSearchResult ( #13076 ) ( 35b2c45 )
+3.26.3 (2024-07-30)
+Bug Fixes
+Retry and timeout values do not propagate in requests during pagination ( 6e83a37 )
+3.26.2 (2024-07-08)
+Bug Fixes
+Allow Protobuf 5.x ( #12863 ) ( 3e6e423 )
+3.26.1 (2024-04-24)
+Documentation
+fix required permissions for resources.searchAll and iamPolicies.searchAll ( bbc49a5 )
+3.26.0 (2024-03-28)
+Features
+add tag key id support ( 2c17f60 )
+Documentation
+add tagKeyIds example for ResourceSearchResult.tags ( 2c17f60 )
+3.25.1 (2024-03-22)
+Documentation
+[google-cloud-asset] Minor comment updates ( #12477 ) ( e6374ef )
+3.25.0 (2024-03-07)
+Features
+Add asset_type field to GovernedIamPolicy and GovernedResource ( ff71d1a )
+Add effective_tags field to GovernedResource ( ff71d1a )
+Add field condition_evaluation to AnalyzerOrgPolicy.Rule ( ff71d1a )
+Add fields project , folders and organization to OrgPolicyResult ( ff71d1a )
+Add fields project , folders , organization and effective_tags to GovernedContainer ( ff71d1a )
+Documentation
+Update comment for rpc AnalyzeOrgPolicyGovernedAssets to include additional canned constraints ( ff71d1a )
+3.24.3 (2024-03-05)
+Bug Fixes
+deps: Exclude google-auth 2.24.0 and 2.25.0 ( #12381 ) ( 48ae8ab )
+3.24.2 (2024-02-22)
+Bug Fixes
+deps: [Many APIs] Require google-api-core&gt;=1.34.1 ( #12303 ) ( fbb80c3 )
+fix ValueError in test__validate_universe_domain ( e6cd222 )
+Documentation
+[google-cloud-asset] updated comments ( e6cd222 )
+3.24.1 (2024-02-06)
+Bug Fixes
+Add google-auth as a direct dependency ( 780c5f1 )
+Add staticmethod decorator to _get_client_cert_source and _get_api_endpoint ( 780c5f1 )
+Resolve AttributeError ‘Credentials’ object has no attribute ‘universe_domain’ ( 780c5f1 )
+3.24.0 (2024-02-01)
+Features
+Allow users to explicitly configure universe domain ( a0392ee )
+3.23.0 (2024-01-04)
+Features
+Added new resource references to fields in AnalyzeMoveRequest ( 599e175 )
+Documentation
+Updated comments ( 599e175 )
+3.22.0 (2023-12-12)
+Features
+added Asset.access_policy, access_level, service_perimeter, org_policy ( 0fc00b8 )
+added messages ExportAssetsResponse, BatchGetAssetsHistoryResponse ( 0fc00b8 )
+added resource definitions to some messages ( 0fc00b8 )
+Documentation
+updated comments ( 0fc00b8 )
+3.21.0 (2023-12-07)
+Features
+Add support for python 3.12 ( ea6cfc2 )
+Introduce compatibility with native namespace packages ( ea6cfc2 )
+Bug Fixes
+Require proto-plus >= 1.22.3 ( ea6cfc2 )
+Use retry_async instead of retry in async client ( ea6cfc2 )
+3.20.1 (2023-11-15)
+Bug Fixes
+drop pkg_resources ( #12015 ) ( 7e9cd0c )
+3.20.0 (2023-10-16)
+Features
+Add support for directly attached and effective tags ( 7e2b606 )
+Documentation
+Clarify comments for tags and effective tags ( 7e2b606 )
+Minor formatting ( #586 ) ( 6374962 )
+3.19.1 (2023-07-04)
+Bug Fixes
+Add async context manager return types ( #571 ) ( 4bdad82 )
+3.19.0 (2023-04-01)
+Features
+Add support for AnalyzeOrgPolicies API ( 00dcd06 )
+Add support for AnalyzeOrgPolicyGovernedAssets API ( 00dcd06 )
+Add support for AnalyzeOrgPolicyGovernedContainers API ( 00dcd06 )
+3.18.1 (2023-03-24)
+Documentation
+Fix formatting of request arg in docstring ( #558 ) ( 21e3a6d )
+3.18.0 (2023-02-19)
+Features
+Enable “rest” transport in Python for services supporting numeric enums ( #549 ) ( e6bd01b )
+3.17.1 (2023-01-20)
+Bug Fixes
+Add context manager return types ( e5e63a9 )
+Documentation
+Add documentation for enums ( e5e63a9 )
+3.17.0 (2023-01-14)
+Features
+Policy Analyzer for Organization Policy is publicly available ( ff8f92a )
+Documentation
+Brand and typo fixes ( ff8f92a )
+3.16.0 (2023-01-10)
+Features
+Add support for python 3.11 ( #528 ) ( 8d59164 )
+3.15.0 (2023-01-07)
+Features
+Add a new searchable field kmsKeys ( #506 ) ( 07dd6cc )
+Add support for google.cloud.asset.__version__ ( 6bad165 )
+Add typing to proto.Message based class attributes ( 6bad165 )
+Bug Fixes
+Add dict typing for client_options ( 6bad165 )
+Deprecate searchable field kmsKey ( 07dd6cc )
+deps: Allow protobuf 3.19.5 ( #508 ) ( 818abbb )
+deps: Require google-api-core >=1.34.0, >=2.11.0 ( 6bad165 )
+Drop usage of pkg_resources ( 6bad165 )
+Fix timeout default values ( 6bad165 )
+Documentation
+samples: Snippetgen handling of repeated enum field ( 6bad165 )
+samples: Snippetgen should call await on the operation coroutine before calling result ( 6bad165 )
+Small change for documentation ( 6bad165 )
+3.14.1 (2022-09-29)
+Bug Fixes
+deps: Require protobuf >= 3.20.2 ( #502 ) ( 4509ad5 )
+3.14.0 (2022-09-20)
+Features
+Add client library support for AssetService v1 SavedQuery APIs ( #496 ) ( 1d1103e )
+3.13.1 (2022-08-29)
+Documentation
+samples: add batch_get_effective_iam_policies sample code ( #480 ) ( b171684 )
+3.13.0 (2022-08-17)
+Features
+Add client library support for AssetService v1 BatchGetEffectiveIamPolicies API ( #474 ) ( 28fdf20 )
+3.12.0 (2022-08-12)
+Features
+Release of query system ( #467 ) ( 5517102 )
+Bug Fixes
+deps: allow protobuf < 5.0.0 ( #469 ) ( 7d4a11f )
+deps: require proto-plus >= 1.22.0 ( 7d4a11f )
+3.11.0 (2022-08-09)
+Features
+Add client library support for AssetService v1 BatchGetEffectiveIamPolicies API ( #462 ) ( 30a184b )
+3.10.0 (2022-07-18)
+Features
+add audience parameter ( 996c4e8 )
+Bug Fixes
+deps: require google-api-core>=1.32.0,>=2.8.0 ( #447 ) ( 996c4e8 )
+require python 3.7+ ( #450 ) ( 2086ef9 )
+3.9.1 (2022-06-03)
+Bug Fixes
+deps: require protobuf <4.0.0dev ( #432 ) ( 8c28318 )
+Documentation
+fix changelog header to consistent size ( #434 ) ( 68d237e )
+3.9.0 (2022-05-19)
+Features
+Add SavedQuery CURD support ( #425 ) ( b3e5650 )
+3.8.1 (2022-03-05)
+Bug Fixes
+deps: require google-api-core>=1.31.5, >=2.3.2 ( #379 ) ( 6ed1b9d )
+deps: require proto-plus>=1.15.0 ( 6ed1b9d )
+3.8.0 (2022-02-26)
+Features
+add api key support ( #361 ) ( 6d03a57 )
+Bug Fixes
+resolve DuplicateCredentialArgs error when using credentials_file ( e5a9160 )
+Documentation
+add autogenerated code snippets ( 8e6877d )
+3.7.1 (2021-11-02)
+Bug Fixes
+deps: drop packaging dependency ( 3f3e552 )
+deps: require google-api-core >= 1.28.0 ( 3f3e552 )
+fix extras_require typo in setup.py ( 3f3e552 )
+Documentation
+list oneofs in docstring ( 3f3e552 )
+3.7.0 (2021-10-12)
+Features
+add context manager support in client ( #314 ) ( 659db45 )
+3.6.1 (2021-09-30)
+Bug Fixes
+improper types in pagers generation ( fa08cbf )
+3.6.0 (2021-09-24)
+Bug Fixes
+add ‘dict’ annotation type to ‘request’ ( 79a5a8a )
+Documentation
+add relationship samples ( #293 ) ( 473e133 )
+3.5.0 (2021-09-03)
+Features
+add inventory_path ( #283 ) ( fbb47e6 )
+v1: Add content type Relationship to support relationship search ( 038febe )
+v1: add relationships ( #281 ) ( 038febe )
+3.4.0 (2021-08-17)
+Features
+Release of relationships in v1, Add content type Relationship to support relationship export ( #262 ) ( 93c92c1 )
+3.3.0 (2021-07-28)
+Features
+Add AnalyzeMove API ( a242adc )
+Add AttachedResource field for ResourceSearchResult ( a242adc )
+Add read_mask field for SearchAllResourcesRequest ( a242adc )
+Add VersionedResource field for ResourceSearchResult ( a242adc )
+Change metadata field for the AnalyzeIamPolicyLongrunning ( #245 ) ( a242adc )
+Bug Fixes
+enable self signed jwt for grpc ( #244 ) ( a15e185 )
+Documentation
+add Samples section to CONTRIBUTING.rst ( #235 ) ( 0d00e75 )
+3.2.1 (2021-07-21)
+Bug Fixes
+deps: pin ‘google-{api,cloud}-core’, ‘google-auth’ to allow 2.x versions ( #234 ) ( 0687c84 )
+3.2.0 (2021-07-12)
+Features
+add always_use_jwt_access ( 0a14f25 )
+add new searchable fields (memberTypes, roles, project, folders and organization) in SearchAllIamPolicies ( 0a14f25 )
+new request fields (assetTypes and orderBy) in SearchAllIamPolicies ( 0a14f25 )
+new response fields (assetType, folders and organization) in SearchAllIamPolicies ( 0a14f25 )
+Bug Fixes
+disable always_use_jwt_access ( 0a14f25 )
+disable always_use_jwt_access ( #217 ) ( 0a14f25 )
+Documentation
+omit mention of Python 2.7 in ‘CONTRIBUTING.rst’ ( #1127 ) ( #205 ) ( b9db51a ), closes #1126
+3.1.0 (2021-06-07)
+Features
+add from_service_account_info ( 34278bf )
+add Cloud Asset List API, add access time as condition context in request and evaluation value in response for Cloud Asset AnalyzeIamPolicy API, add more info (folders, organizations, kms_key, create_time, update_time, state, parent_full_resource_name, parent_asset_type) in response for Cloud Asset SearchAllResources API ( #196 ) ( 69ecd23 )
+support self-signed JWT flow for service accounts ( d0b9b21 )
+Bug Fixes
+add async client to %name_%version/init.py ( d0b9b21 )
+remove v1beta1 ( #127 ) ( dab2d53 )
+use correct retry deadlines ( #164 ) ( 34278bf )
+Documentation
+python: fix intersphinx link for google-auth ( #119 ) ( e455c9e )
+2.2.0 (2020-11-19)
+Features
+add AnalyzeIamPolicy and ExportIamPolicyAnalysis; support OSInventory; add common resource helper methods; expose client transport ( #113 ) ( 3bf4c0a )
+Documentation
+remove note on editable installs ( #99 ) ( cf6072a )
+2.1.0 (2020-09-25)
+Features
+add support for per type and partition export ( #86 ) ( cd26192 )
+Bug Fixes
+sample: mark a test with flaky ( #81 ) ( aa153dc ), closes #75
+2.0.0 (2020-08-05)
+⚠ BREAKING CHANGES
+move to microgenerator (#58)
+Features
+asset: Add sample code for two new RPCs. ([#4080](https://www.github.com/googleapis/python-asset/issues/4080)) ( 3e935de )
+add sample code for ListAssets v1p5beta1 ([#4251](https://www.github.com/googleapis/python-asset/issues/4251)) ( 187807f ), closes #4250
+move to microgenerator ( #58 ) ( 3219b64 )
+Bug Fixes
+limit asset types to avoid exceeding quota ( 00b43e8 )
+1.3.0 (2020-06-25)
+Features
+generate v1p5beta1 ( #47 ) ( 207eff4 )
+Bug Fixes
+update default retry configs ( #51 ) ( 58f5d58 )
+1.2.0 (2020-06-23)
+Features
+v1: add support for condition in Feed ( #44 ) ( 467ab58 )
+1.1.0 (2020-06-10)
+Features
+add search_all_resources and search_all_iam_policies (via synth) ( #32 ) ( 24a0827 ), closes #541
+1.0.0 (2020-06-10)
+Features
+release to GA ( #17 ) ( 731e350 )
+0.10.0 (2020-05-08)
+Features
+add orgpolicy and accesscontextmanager (via synth) ( #26 ) ( c9d818e )
+0.9.0 (2020-03-17)
+Features
+add v1p4beta1 ( #16 ) ( b5771c3 )
+0.8.0 (2020-03-07)
+Features
+remove search resources and search iam policies support in v1p1beta1; remove export assets and batch get assets history from v1p2beta1 (via synth) ( #12 ) ( 15b60a3 )
+Bug Fixes
+asset: correct asset synthfile ( #10355 ) ( 32d9374 )
+0.7.0
+01-29-2020 10:53 PST
+New Features
+Add v1p1beta1, promote library to beta. ( #10202 )
+Undeprecate resource name helper methods, add 2.7 deprecation warning (via synth). ( #10036 )
+0.6.0
+12-12-2019 10:46 PST
+New Features
+Add real time feed support to v1 (via synth). ( #9930 )
+Deprecate resource name helper methods (via synth). ( #9827 )
+Documentation
+Change spacing in docs templates (via synth). ( #9736 )
+Add Python 2 sunset banner to documentation. ( #9036 )
+Internal / Testing Changes
+Normalize VPCSC configuration in systests. ( #9614 )
+0.5.0
+10-29-2019 14:26 PDT
+New Features
+Add bigquery_destination to OutputConfig ; make content_type optional argument to BatchGetAssetsHistoryRequest ; add uri_prefix to GcsDestination ; add ORG_POLICY and ACCESS_POLICY content type enums ( #9555 )
+Documentation
+Remove compatability badges from READMEs. ( #9035 )
+Internal / Testing Changes
+Fix intersphinx reference to requests ( #9294 )
+Remove CI for gh-pages; use googleapis.dev for api_core refs ( #9085 )
+0.4.1
+08-12-2019 13:44 PDT
+Documentation
+Fix links to googleapis.dev ( #8998 )
+0.4.0
+08-01-2019 14:24 PDT
+New Features
+Generate asset v1p2beta1. ( #8888 )
+Internal / Testing Changes
+Update intersphinx mapping for requests. ( #8805 )
+0.3.0
+07-22-2019 17:42 PDT
+Implementation Changes
+Allow kwargs to be passed to create_channel (via synth). ( #8382 )
+Add nox session docs, add routing header to method metadata (via synth). ( #7919 )
+Remove classifier for Python 3.4 for end-of-life. ( #7535 )
+New Features
+Add ‘client_options’ support (via synth). ( #8498 )
+Dependencies
+Bump minimum version for google-api-core to 1.14.0. ( #8709 )
+Update pin for ‘grpc-google-iam-v1’ to 0.12.3+. ( #8647 )
+Documentation
+Link to googleapis.dev documentation in READMEs. ( #8705 )
+Add compatibility check badges to READMEs. ( #8288 )
+Internal / Testing Changes
+Update vpcsc test settings. ( #8627 )
+Pin black version (via synth) ( #8572 )
+Add VPCSC tests. ( #8613 )
+All: Add docs job to publish to googleapis.dev. ( #8464 )
+Add disclaimer to auto-generated template files (via synth). ( #8306 )
+Suppress checking ‘cov-fail-under’ in nox default session (via synth). ( #8232 )
+Fix coverage in ‘types.py’. ( #8144 )
+Blacken noxfile.py, setup.py (via synth). ( #8114 )
+Declare encoding as utf-8 in pb2 files (via synth). ( #8343 )
+Add empty lines (via synth). ( #8047 )
+0.2.0
+03-19-2019 12:17 PDT
+Implementation Changes
+Rename ‘GcsDestination.uri’ -> ‘object_uri’, docstring changes . ( #7202 )
+Protoc-generated serialization update.. ( #7073 )
+New Features
+Generate v1. ( #7513 )
+Documentation
+Fix broken links to Cloud Asset API ( #7524 )
+Updated client library documentation URLs. ( #7307 )
+Update copyright headers
+Pick up stub docstring fix in GAPIC generator. #6963 )
+Internal / Testing Changes
+Add protos as an artifact to library ( #7205 )
+Add support for including protos in synth ( #7114 )
+0.1.2
+12-17-2018 16:15 PST
+Implementation Changes
+Use moved iam.policy now at google.api_core.iam.policy ( #6741 )
+Pick up enum fixes in the GAPIC generator. ( #6607 )
+Pick up fixes in GAPIC generator. ( #6489 )
+Fix client_info bug, update docstrings. ( #6403 )
+Synth docstring changes generated from updated protos ( #6349 )
+Generated cloud asset client files are under asset- version
+New Features
+Dependencies
+Add ‘mock’ to unit test dependencies for autogen libs. ( #6402 )
+Bump minimum api_core version for all GAPIC libs to 1.4.1. ( #6391 )
+Avoid broken ‘google-common-apis 1.5.4’ release. ( #6355 )
+Documentation
+Document Python 2 deprecation ( #6910 )
+Fix docs build. ( #6351 )
+Normalize use of support level badges ( #6159 )
+Internal / Testing Changes
+Add templating to asset synth.py ( #6606 )
+Add synth metadata. ( #6560 )
+Update noxfile.
+Blacken all gen’d libs ( #6792 )
+Omit local deps ( #6701 )
+Run black at end of synth.py ( #6698 )
+Unblack gapic and protos.
+Run Black on Generated libraries ( #6666 )
+Add templates for flake8, coveragerc, noxfile, and black. ( #6642 )
+Add / fix badges for PyPI / versions. ( #6158 )
+Use new Nox ( #6175 )
+0.1.1
+Packaging
+Release as google-cloud-asset , rather than google-cloud-cloudasset ( #5998 )
+0.1.0
+Initial release.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-03-09 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-09 UTC."],[],[]]

@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:28:14+00:00'
-updated_at: '2026-04-08T05:49:43+00:00'
+updated_at: '2026-04-10T16:39:19+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -9,14 +9,57 @@ commands:
 sources:
 - type: site
   id: site-docs-root
-  title: https://docs.cloud.google.com/error-reporting/docs
-  created_at: '2026-04-08T05:49:43+00:00'
-  updated_at: '2026-04-08T05:49:43+00:00'
-  update_command: know sync site https://docs.cloud.google.com/error-reporting/docs
-    --key corpus --compact
+  title: https://developers.google.com/apps-script
+  created_at: '2026-04-10T16:29:39+00:00'
+  updated_at: '2026-04-10T16:32:28+00:00'
+  update_command: know sync site https://developers.google.com/apps-script --key corpus
+    --compact
   delete_command: know del --key corpus site-docs-root
   config:
-    url: https://docs.cloud.google.com/error-reporting/docs
-    max_depth: 1
-    max_pages: 0
+    url: https://developers.google.com/apps-script
+    max_depth: 2
+    max_pages: 52
     compact_output: true
+  last_synced_at: '2026-04-10T16:32:28+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://developers.google.com/apps-script/overview
+  created_at: '2026-04-10T16:29:39+00:00'
+  updated_at: '2026-04-10T16:35:16+00:00'
+  update_command: know sync site https://developers.google.com/apps-script/overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://developers.google.com/apps-script/overview
+    max_depth: 2
+    max_pages: 52
+    compact_output: true
+  last_synced_at: '2026-04-10T16:35:16+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://developers.google.com/apps-script/reference
+  created_at: '2026-04-10T16:29:40+00:00'
+  updated_at: '2026-04-10T16:37:39+00:00'
+  update_command: know sync site https://developers.google.com/apps-script/reference
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://developers.google.com/apps-script/reference
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-10T16:37:39+00:00'
+- type: site
+  id: site-api-reference
+  title: https://developers.google.com/apps-script/api/reference/rest
+  created_at: '2026-04-10T16:29:40+00:00'
+  updated_at: '2026-04-10T16:39:19+00:00'
+  update_command: know sync site https://developers.google.com/apps-script/api/reference/rest
+    --key corpus --compact
+  delete_command: know del --key corpus site-api-reference
+  config:
+    url: https://developers.google.com/apps-script/api/reference/rest
+    max_depth: 2
+    max_pages: 42
+    compact_output: true
+  last_synced_at: '2026-04-10T16:39:19+00:00'

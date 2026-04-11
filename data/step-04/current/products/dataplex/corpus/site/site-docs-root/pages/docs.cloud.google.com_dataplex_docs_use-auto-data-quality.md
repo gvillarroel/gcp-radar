@@ -1,6 +1,5 @@
 ---
-title: "Use auto data quality \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-  \ Documentation"
+title: "Use auto data quality \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,26 +7,26 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality
-  title: "Use auto data quality \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "Use auto data quality \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Use auto data quality
 Stay organized with collections
 Save and categorize content based on your preferences.
-This document describes how to use Dataplex Universal Catalog data quality scans to
-measure, monitor, and manage the quality of your data. Data quality scans
-help you automate the process of validating your data for completeness,
+This document describes how to use Knowledge Catalog (formerly Dataplex Universal Catalog) data quality
+scans to measure, monitor, and manage the quality of your data. Data quality
+scans help you automate the process of validating your data for completeness,
 validity, and consistency.
 With data quality scans, you can define rules to check for missing values,
 ensure values match a regular expression or belong to a set, verify uniqueness,
@@ -48,12 +47,12 @@ role ( roles/serviceusage.serviceUsageAdmin ), which
 contains the serviceusage.services.enable permission. Learn how to grant
 roles .
 Enable the API
-Optional: If you want Dataplex Universal Catalog to generate recommendations for
+Optional: If you want Knowledge Catalog to generate recommendations for
 data quality rules based on the results of a data profile scan,
 create and run the data profile scan .
 Required roles and permissions
 This section describes the IAM roles and permissions needed to
-use Dataplex Universal Catalog data quality scans.
+use Knowledge Catalog data quality scans.
 User roles and permissions
 To get the permissions that
 you need to run and manage data quality scans,
@@ -64,7 +63,7 @@ BigQuery Job User ( roles/bigquery.jobUser )
 on the project to run scan jobs
 BigQuery Data Viewer ( roles/bigquery.dataViewer )
 on the BigQuery table to be scanned
-Publish data quality scan results to Dataplex Universal Catalog:
+Publish data quality scan results to Knowledge Catalog:
 BigQuery Data Editor ( roles/bigquery.dataEditor )
 on the scanned table
 Dataplex Catalog Editor ( roles/dataplex.catalogEditor )
@@ -93,7 +92,7 @@ bigquery.tables.get
 on the BigQuery table to be scanned
 bigquery.tables.getData
 on the BigQuery table to be scanned
-Publish data quality scan results to Dataplex Universal Catalog:
+Publish data quality scan results to Knowledge Catalog:
 bigquery.tables.update
 on the scanned table
 dataplex.entryGroups.useDataQualityScorecardAspect
@@ -130,29 +129,29 @@ with custom roles or
 other predefined roles .
 If you need to access columns protected by BigQuery column-level
 access policies, then you also need permissions for those columns.
-Note: Dataplex Universal Catalog doesn't create a BigQuery job in
+Note: Knowledge Catalog doesn't create a BigQuery job in
 your project for data quality scans. However, you need the
 bigquery.jobs.create permission to create a DryRun job to
 check for permissions for the table.
-Dataplex Universal Catalog service account roles and permissions
+Knowledge Catalog service account roles and permissions
 If you haven't created any data quality or data profile scans or you
-don't have a Dataplex Universal Catalog lake in this project, create a
+don't have a Knowledge Catalog lake in this project, create a
 service identifier by running:
 gcloud beta services identity create --service=dataplex.googleapis.com .
-This command returns a Dataplex Universal Catalog service identifier if it exists.
-To ensure that the Dataplex Universal Catalog service account of the project containing the data quality scan has the necessary
+This command returns a Knowledge Catalog service identifier if it exists.
+To ensure that the Knowledge Catalog service account of the project containing the data quality scan has the necessary
 permissions to read data from various sources and export results,
 ask your administrator to grant the
-following IAM roles to the Dataplex Universal Catalog service account of the project containing the data quality scan:
+following IAM roles to the Knowledge Catalog service account of the project containing the data quality scan:
 Important: You must grant these roles
-to the Dataplex Universal Catalog service account of the project containing the data quality scan, not to your user account. Failure to grant the roles to the correct principal might result in permission errors.
+to the Knowledge Catalog service account of the project containing the data quality scan, not to your user account. Failure to grant the roles to the correct principal might result in permission errors.
 Read BigQuery table data:
 BigQuery Data Viewer ( roles/bigquery.dataViewer )
 on BigQuery tables to be scanned and any other tables referenced in rules
 Export scan results to a BigQuery table:
 BigQuery Data Editor ( roles/bigquery.dataEditor )
 on the results dataset and table
-Scan BigQuery data organized in a Dataplex Universal Catalog lake:
+Scan BigQuery data organized in a Knowledge Catalog lake:
 Dataplex Metadata Reader ( roles/dataplex.metadataReader )
 on Dataplex resources
 Dataplex Viewer ( roles/dataplex.viewer )
@@ -184,7 +183,7 @@ bigquery.tables.update
 on results dataset and table
 bigquery.tables.updateData
 on results dataset and table
-Scan BigQuery data organized in a Dataplex Universal Catalog lake:
+Scan BigQuery data organized in a Knowledge Catalog lake:
 dataplex.lakes.list
 on Dataplex resources
 dataplex.lakes.get
@@ -204,15 +203,15 @@ storage.buckets.get
 on the Cloud Storage bucket
 storage.objects.get
 on the Cloud Storage bucket
-Your administrator might also be able to give the Dataplex Universal Catalog service account of the project containing the data quality scan
+Your administrator might also be able to give the Knowledge Catalog service account of the project containing the data quality scan
 these permissions
 with custom roles or
 other predefined roles .
 If you need to access columns protected by BigQuery column-level
-access policies, then assign the Dataplex Universal Catalog service account
+access policies, then assign the Knowledge Catalog service account
 permissions for those columns.
 If a table has BigQuery row-level access policies enabled, then you
-can only scan rows visible to the Dataplex Universal Catalog service account. Note
+can only scan rows visible to the Knowledge Catalog service account. Note
 that the individual user's access privileges are not evaluated for row-level
 policies.
 Define data quality rules
@@ -248,7 +247,7 @@ Discount percentage. This value must be between 0 and 100.
 Define data quality rules using built-in rule types
 The following example rules are based on built-in rule types. You can create
 rules based on built-in rule types using the Google Cloud console or the API.
-Dataplex Universal Catalog might recommend some of these rules.
+Knowledge Catalog might recommend some of these rules.
 Column name
 Rule Type
 Suggested dimension
@@ -274,13 +273,13 @@ Threshold: 100%
 Define data quality rules using custom SQL rules
 To build custom SQL rules, use the following framework:
 When you create a rule that evaluates one row at a time, create an expression
-that generates the number of successful rows when Dataplex Universal Catalog
+that generates the number of successful rows when Knowledge Catalog
 evaluates the query SELECT COUNTIF( CUSTOM_SQL_EXPRESSION ) FROM TABLE .
-Dataplex Universal Catalog checks the number of successful rows against the
+Knowledge Catalog checks the number of successful rows against the
 threshold.
 When you create a rule that evaluates across the rows or uses a table
 condition, create an expression that returns success or failure when
-Dataplex Universal Catalog evaluates the query
+Knowledge Catalog evaluates the query
 SELECT IF( CUSTOM_SQL_EXPRESSION ) FROM TABLE .
 When you create a rule that evaluates the invalid state of a dataset, provide
 a statement that returns invalid rows. If any rows are returned, the rule
@@ -494,9 +493,77 @@ scoreThreshold : 50
 jobFailureTrigger : {}
 jobEndTrigger : {}
 catalogPublishingEnabled : true
+Configure execution identity
+By default, data quality scans run using the Knowledge Catalog service
+account. You can override this to use a custom service account or your own
+End-User Credentials (EUC).
+Using a custom execution identity changes how you are billed for the scan. When
+you specify a custom execution identity, the compute and storage costs
+associated with the scan are billed directly to your BigQuery
+project, bypassing the standard Knowledge Catalog Premium SKUs.
+Required permissions for custom execution identities
+To configure a custom service account or use end-user credentials, you must have
+the following additional IAM permissions:
+To use a custom service account , you need:
+The iam.serviceAccounts.actAs permission granted for the project that
+contains the service account (for example, roles/iam.serviceAccountUser ).
+Your project's Service Agent
+( service-PROJECT_NUMBER@gcp-sa-dataplex.iam.gserviceaccount.com ) needs the
+iam.serviceAccounts.getAccessToken permission on the custom service
+account (for example, by having the roles/iam.serviceAccountTokenCreator
+role).
+The custom service account needs bigquery.tables.getData on the table
+to scan, bigquery.jobs.insert in the scan project, and
+bigquery.dataEditor on the export dataset (if using export).
+To use End-User Credentials , you need:
+bigquery.tables.getData on the table to scan.
+bigquery.jobs.insert in the scan project.
+bigquery.dataEditor on the export dataset (if using export).
+Console
+To configure the execution identity in the Google Cloud console, select
+the identity when you create your data quality
+scan .
+In the Execution Identity section, select one of the
+following:
+Dataplex Service Agent : The default behavior.
+Specific Service Account : Enter the email address
+of the service account you want to use.
+User Credentials : Use your own credentials to run
+the scan.
+Google Cloud CLI
+To use a custom service account, add the execution_identity
+JSON object with the service account email to your creation payload, or pass
+it with flags.
+For example, using the REST API through curl using a JSON payload:
+"execution_identity" : {
+"service_account" : {
+"email" : "YOUR_SERVICE_ACCOUNT_EMAIL"
+}
+}
+To use End-User Credentials, specify the user_credential
+object instead:
+"execution_identity" : {
+"user_credential" : {}
+}
+API
+To use a custom service account, add the executionIdentity
+object to your DataScan resource definition during the
+create request.
+"executionIdentity" : {
+"serviceAccount" : {
+"email" : "YOUR_SERVICE_ACCOUNT_EMAIL"
+}
+}
+To use End-User Credentials, specify the userCredential object
+instead:
+"executionIdentity" : {
+"userCredential" : {}
+}
+Note: The execution identity is immutable. You can only set it when you create a
+scan. You cannot change it by updating an existing scan.
 Create a data quality scan
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click Create data quality scan .
@@ -511,8 +578,8 @@ Only standard BigQuery tables are
 supported.
 For tables in multi-region datasets, choose a region where to create
 the data scan.
-To browse the tables organized within Dataplex Universal Catalog lakes,
-click Browse within Dataplex Lakes .
+To browse the tables organized within Knowledge Catalog lakes,
+click Browse within Knowledge Catalog Lakes .
 In the Scope field, choose Incremental or Entire data .
 If you choose Incremental : In the Timestamp column field,
 select a column of type DATE or TIMESTAMP from your
@@ -533,11 +600,11 @@ datasets, choose a lower sampling percentage. For example, for a
 the data quality scan samples between 1-10 TB of data. For
 incremental data scans, the data quality scan applies sampling to the
 latest increment.
-To publish the data quality scan results as Dataplex Universal Catalog
+To publish the data quality scan results as Knowledge Catalog
 metadata, select the
-Publish results to Dataplex Catalog checkbox.
+Publish results to Knowledge Catalog checkbox.
 You can view the latest scan results on the Data quality tab in the
-BigQuery and Dataplex Universal Catalog pages for the source
+BigQuery and Knowledge Catalog pages for the source
 table. To enable users to access the published scan results, see the
 Grant access to data quality scan results section
 of this document.
@@ -636,7 +703,7 @@ In the BigQuery table field, specify the table to store the data
 quality scan results. If you're using an existing table, make sure
 that it is compatible with the
 export table schema .
-If the specified table doesn't exist, Dataplex Universal Catalog creates
+If the specified table doesn't exist, Knowledge Catalog creates
 it for you.
 Note: You can use the same results table for multiple data quality
 scans.
@@ -660,13 +727,13 @@ Run now .
 gcloud
 To create a data quality scan, use the
 gcloud dataplex datascans create data-quality command .
-If the source data is organized in a Dataplex Universal Catalog lake, include the
+If the source data is organized in a Knowledge Catalog lake, include the
 --data-source-entity flag:
 gcloud dataplex datascans create data-quality DATASCAN \
 --location = LOCATION \
 --data-quality-spec-file = DATA_QUALITY_SPEC_FILE \
 --data-source-entity = DATA_SOURCE_ENTITY
-If the source data isn't organized in a Dataplex Universal Catalog lake, include
+If the source data isn't organized in a Knowledge Catalog lake, include
 the --data-source-resource flag:
 gcloud dataplex datascans create data-quality DATASCAN \
 --location = LOCATION \
@@ -685,7 +752,7 @@ and post-scan actions like exporting to BigQuery or sending
 email notification reports. See the
 documentation for JSON representation
 and the example YAML representation .
-DATA_SOURCE_ENTITY : The Dataplex Universal Catalog
+DATA_SOURCE_ENTITY : The Knowledge Catalog
 entity that contains the data for the data quality scan. For example,
 projects/test-project/locations/test-location/lakes/test-lake/zones/test-zone/entities/test-entity .
 DATA_SOURCE_RESOURCE : The name of the resource
@@ -694,12 +761,12 @@ that contains the data for the data quality scan. For example,
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax.ResourceNames ;
@@ -748,12 +815,12 @@ DataScan retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -792,12 +859,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CreateDataScanRequest ;
@@ -829,12 +896,12 @@ DataScan response = dataScanServiceClient . createDataScanAsync ( request ). get
 Node.js
 Node.js
 Before trying this sample, follow the Node.js setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Node.js API
+Knowledge Catalog Node.js API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 // Copyright 2026 Google LLC
@@ -913,12 +980,12 @@ main (... process . argv . slice ( 2 ));
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -949,12 +1016,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1277,7 +1344,7 @@ For the field resultsTable , use the format:
 //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} .
 Use a BigQuery standard table.
 If the table doesn't exist when the scan is created or updated,
-Dataplex Universal Catalog creates the table for you.
+Knowledge Catalog creates the table for you.
 By default, the table is partitioned on the job_start_time column daily.
 If you want the table to be partitioned in other configurations or if
 you don't want the partition, then recreate the table with the required
@@ -1295,7 +1362,7 @@ To reduce costs, set an expiration on the partition based on your use case.
 For more information, see how to set the partition expiration .
 Run a data quality scan
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the data quality scan to run.
@@ -1312,12 +1379,12 @@ DATASCAN : The name of the data quality scan.
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1347,12 +1414,12 @@ RunDataScanResponse response = dataScanServiceClient . RunDataScan ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1387,12 +1454,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. DataScanName ;
@@ -1421,12 +1488,12 @@ RunDataScanResponse response = dataScanServiceClient . runDataScan ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1451,12 +1518,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1489,7 +1556,7 @@ Note: Run isn't supported for data quality scans that are on a one-time
 schedule.
 View the data quality scan results
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the name of a data quality scan.
@@ -1505,7 +1572,7 @@ job logs, click the Jobs history tab. Then, click a job ID.
 Note: If you exported the scan results to a BigQuery table,
 then you can also access the scan results from the table. The data quality
 scores are available if you published the scan results as
-Dataplex Universal Catalog metadata.
+Knowledge Catalog metadata.
 gcloud
 To view the results of a data quality scan job, use the
 gcloud dataplex datascans jobs describe command :
@@ -1523,12 +1590,12 @@ belongs to.
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1559,12 +1626,12 @@ DataScan response = dataScanServiceClient . GetDataScan ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1599,12 +1666,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. DataScan ;
@@ -1633,12 +1700,12 @@ DataScan response = dataScanServiceClient . getDataScan ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1663,12 +1730,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1698,11 +1765,11 @@ REST
 To view the results of a data quality scan, use the
 dataScans.get method .
 View published results
-If the data quality scan results are published as Dataplex Universal Catalog
+If the data quality scan results are published as Knowledge Catalog
 metadata, then you can see the latest scan results
-on the BigQuery and Dataplex Universal Catalog pages in the
+on the BigQuery and Knowledge Catalog pages in the
 Google Cloud console, on the source table's Data quality tab.
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 Search for and then select the table.
@@ -1711,10 +1778,10 @@ The latest published results are displayed.
 Note: Published results might not be available if a scan is running for the first
 time.
 View historical scan results
-Dataplex Universal Catalog saves the data quality scan history of the last 300
+Knowledge Catalog saves the data quality scan history of the last 300
 jobs or for the past year, whichever occurs first.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the name of a data quality scan.
@@ -1738,12 +1805,12 @@ historical jobs for.
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax ;
@@ -1805,12 +1872,12 @@ string nextPageToken = singlePage . NextPageToken ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1857,12 +1924,12 @@ _ = it . Response .( * dataplexpb . ListDataScanJobsResponse )
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. DataScanJob ;
@@ -1896,12 +1963,12 @@ for ( DataScanJob element : dataScanServiceClient . listDataScanJobs ( request )
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1927,12 +1994,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1967,7 +2034,7 @@ To view historical data quality scan jobs, use the
 dataScans.jobs.list method .
 Grant access to data quality scan results
 To enable the users in your organization to view the scan results, do the following:
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the data quality scan you want to share the results of.
@@ -2023,14 +2090,14 @@ AND resource.labels.datascan_id="a0-test-dec6-dq-3"
 AND jsonPayload.dataQuality.dimensionPassed.UNIQUENESS=false
 A sample query to set alerts on data quality failures for a table.
 Set alerts on data quality failures for a BigQuery table that
-isn't organized in a Dataplex Universal Catalog lake:
+isn't organized in a Knowledge Catalog lake:
 resource.type="dataplex.googleapis.com/DataScan"
 AND jsonPayload.dataSource="//bigquery.googleapis.com/projects/test-project/datasets/testdataset/table/chicago_taxi_trips"
 AND labels."dataplex.googleapis.com/data_scan_state"="SUCCEEDED"
 AND resource.labels.resource_container="projects/112233445566"
 AND NOT jsonPayload.dataQuality.passed=true
 Set alerts on data quality failures for a BigQuery table
-that's organized in a Dataplex Universal Catalog lake:
+that's organized in a Knowledge Catalog lake:
 resource.type="dataplex.googleapis.com/DataScan"
 AND jsonPayload.dataSource="projects/test-project/datasets/testdataset/table/chicago_taxi_trips"
 AND labels."dataplex.googleapis.com/data_scan_state"="SUCCEEDED"
@@ -2053,13 +2120,13 @@ resource.type="dataplex.googleapis.com/DataScan"
 AND jsonPayload.column="CInteger"
 AND jsonPayload.result="FAILED"
 Troubleshoot a data quality failure
-For each job with row-level rules that fail, Dataplex Universal Catalog provides
+For each job with row-level rules that fail, Knowledge Catalog provides
 a query to get the failed records. Run this query to see the records that did
 not match your rule.
 Note: The query returns all of the columns of the table, not just the failed
 column.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the name of the data quality scan whose records you want to troubleshoot.
@@ -2078,7 +2145,7 @@ dataScans.get method .
 In the response object, the failingRowsQuery field shows the query.
 Run the query in BigQuery
 to see the records that caused the job to fail.
-Dataplex Universal Catalog also runs the debug query, provided it was included
+Knowledge Catalog also runs the debug query, provided it was included
 during the rule creation. The debug query results are included in each rule's
 output. This feature is in Preview .
 Console
@@ -2092,18 +2159,18 @@ In the response object, the debugQueriesResultSets field shows the
 results of the debug queries.
 Manage data quality scans for a specific table
 The steps in this document show how to manage data profile scans across your
-project by using the Dataplex Universal Catalog Data profiling & quality page
+project by using the Knowledge Catalog Data profiling & quality page
 in the Google Cloud console.
 You can also create and manage data profile scans when working with a
-specific table. In the Google Cloud console, on the Dataplex Universal Catalog
+specific table. In the Google Cloud console, on the Knowledge Catalog
 page for the table, use the Data quality tab. Do the following:
-In the Google Cloud console, go to the Dataplex Universal Catalog Search
+In the Google Cloud console, go to the Knowledge Catalog Search
 page.
 Go to Search
 Search for and then select the table.
 Click the Data quality tab.
 Depending on whether the table has a data quality scan whose results are
-published as Dataplex Universal Catalog metadata, you can work with the table's
+published as Knowledge Catalog metadata, you can work with the table's
 data quality scans in the following ways:
 Data quality scan results are published : the latest scan results are
 displayed on the page.
@@ -2142,12 +2209,12 @@ Update a data quality scan
 You can edit various settings for an existing data quality scan, such as the
 display name, filters, schedule, and data quality rules.
 Note: If an existing data quality scan publishes the results to the
-BigQuery and Dataplex Universal Catalog pages in the
+BigQuery and Knowledge Catalog pages in the
 Google Cloud console, and you instead want to publish future scan results as
-Dataplex Universal Catalog metadata, you must edit the scan and re-enable publishing.
+Knowledge Catalog metadata, you must edit the scan and re-enable publishing.
 You might need additional permissions to enable catalog publishing.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the name of a data quality scan.
@@ -2176,12 +2243,12 @@ YAML representations.
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2229,12 +2296,12 @@ DataScan retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2273,12 +2340,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. DataScan ;
@@ -2309,12 +2376,12 @@ DataScan response = dataScanServiceClient . updateDataScanAsync ( request ). get
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2343,12 +2410,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2389,7 +2456,7 @@ schedule.
 Delete a data quality scan
 Console
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog
+In the Google Cloud console, go to the Knowledge Catalog
 Data profiling & quality page.
 Go to Data profiling & quality
 Click the scan you want to delete.
@@ -2409,12 +2476,12 @@ quality scan was created.
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2461,12 +2528,12 @@ Empty retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2503,12 +2570,12 @@ if err != nil {
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. DataScanName ;
@@ -2538,12 +2605,12 @@ dataScanServiceClient . deleteDataScanAsync ( request ). get ();
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2570,12 +2637,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2623,6 +2690,6 @@ Learn about data profiling .
 Learn how to use data profiling .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

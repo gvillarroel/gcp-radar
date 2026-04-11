@@ -1,11 +1,12 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T15:34:50.091Z",
+  "generated_at": "2026-04-11T01:29:09.871Z",
   "product_name": "Dataflow",
   "product_slug": "dataflow",
   "step03_ranking_path": "data/step-03/current/products/dataflow/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
@@ -13,11 +14,12 @@
       "iam_reference",
       "python_reference",
       "java_reference"
-    ]
+    ],
+    "feature_count": 212
   },
   "site_output_mode": "compact",
-  "selected_source_count": 6,
-  "selected_sources_signature": "fed2aa96aec89604de375f7c9ecb722c86ea540ace625009f6b4f4713517476a",
+  "selected_source_count": 7,
+  "selected_sources_signature": "73d2ea946fdf8a79e0ffa0988dbaf37a3eba2ad1a6a629f0c19298ba89e8e437",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -27,8 +29,21 @@
       "url": "https://docs.cloud.google.com/dataflow/docs",
       "final_score": 100,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 30
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "dataflow",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/dataflow/docs/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     },
     {
       "source_id": "site-docs-reference",
@@ -38,8 +53,9 @@
       "url": "https://docs.cloud.google.com/dataflow/docs/apis",
       "final_score": 90,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-api-reference",
@@ -49,8 +65,9 @@
       "url": "https://docs.cloud.google.com/dataflow/docs/reference/rest",
       "final_score": 90,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-iam-reference",
@@ -60,8 +77,9 @@
       "url": "https://docs.cloud.google.com/dataflow/docs/concepts/access-control",
       "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-python-reference",
@@ -71,8 +89,9 @@
       "url": "https://docs.cloud.google.com/python/docs/reference/dataflow/latest",
       "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-java-reference",
@@ -82,8 +101,9 @@
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview",
       "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     }
   ],
   "corpus_paths": {

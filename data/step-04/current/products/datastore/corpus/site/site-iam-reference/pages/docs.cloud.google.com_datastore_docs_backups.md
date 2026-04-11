@@ -1,0 +1,389 @@
+---
+title: "Back up and restore data \_|\_ Datastore \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/datastore/docs/backups
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/datastore/docs/access/iam
+source_metadata:
+  url: https://docs.cloud.google.com/datastore/docs/backups
+  title: "Back up and restore data \_|\_ Datastore \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Databases
+Datastore
+Guides
+Send feedback
+Back up and restore data
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page describes how to use the Datastore mode scheduled backups
+feature. Use backups to protect your data from application-level data
+corruption or from accidental data deletion.
+Backups let you configure backup schedules to take daily or weekly
+backups of the specified database. You can then use these backups to restore
+data to a new database.
+About backups
+A backup is a consistent copy of the database at a point in time.
+The backup contains all data and index configurations at that point
+in time.
+A backup does not contain database time to live policies.
+A backup resides in the same location as the source database.
+Backups have a configurable retention period and are stored until the retention
+period expires or until you delete the backup. Deleting the source database does
+not automatically delete related backups.
+Firestore stores metadata related to backups and backup
+schedules related to a database. Firestore retains this metadata
+until all backups for the database expire or are deleted.
+Creating or retaining backups does not affect the performance of reads or
+writes in your live database.
+Costs
+When you use backups, you're charged for the following:
+The amount of storage used by each backup.
+For a restore operation, you're charged based on the size of the backup.
+For more details and exact rates, see the Pricing page.
+Before you begin
+Make sure that billing is enabled for your Google Cloud project.
+Learn how to check if billing is enabled on a project .
+Required roles
+To get the permissions that you need to manage backups and backup schedules,
+ask your administrator to grant you one or more of the following Identity and Access Management
+roles:
+roles/datastore.owner : Full access to the Firestore database
+roles/datastore.backupsAdmin : Read and write access to backups
+roles/datastore.backupsViewer : Read access to backups
+roles/datastore.backupSchedulesAdmin : Read and write access to backup schedules
+roles/datastore.backupSchedulesViewer : Read access to backup schedules
+roles/datastore.restoreAdmin : Permissions to initiate restore operations
+Create and manage backup schedules
+The following examples demonstrate how to set up a backup schedule. For each
+database, you can configure up to one daily backup schedule and up to one weekly
+backup schedule. You cannot configure multiple weekly backups schedules for
+different days of the week.
+You cannot configure the exact time of day of the backup. Backups are taken at
+different times each day. For weekly backup
+schedules, you can configure the day of the week to take a backup.
+Create a backup schedule
+Use one of the following tools to create a backup schedule.
+Create a daily backup schedule
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+Click Edit to edit disaster recovery settings.
+Select the Daily checkbox, set the retention period, and then click Save .
+gcloud
+To create a backup schedule for a database, use the
+gcloud firestore backups schedules create command.
+To create a daily backup schedule, set the --recurrence flag to daily :
+gcloud firestore backups schedules create \
+--database=' DATABASE_ID ' \
+--recurrence=daily \
+--retention= RETENTION_PERIOD
+Replace the following:
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+RETENTION_PERIOD : Set this to a value up to 14 weeks ( 14w ).
+Terraform
+To create a daily backup schedule, create a google_firestore_backup_schedule resource.
+resource "google_firestore_backup_schedule" "daily-backup" {
+project = PROJECT_ID
+database = DATABASE_ID
+retention = RETENTION_PERIOD_SECONDS
+daily_recurrence {}
+}
+Replace the following:
+PROJECT_ID : The ID of the project.
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+You can also use a resource reference to a
+Terraform resource of type google_firestore_database .
+RETENTION_PERIOD_SECONDS : Set this to a value in seconds, followed by "s". The maximum value is 8467200s (14 weeks).
+Create a weekly backup schedule
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+Click Edit to edit disaster recovery settings.
+Select the Weekly checkbox, select a backup day, set the retention period, and then click Save .
+gcloud
+To create a weekly backup schedule, set the --recurrence flag to weekly :
+gcloud firestore backups schedules create \
+--database=' DATABASE_ID ' \
+--recurrence=weekly \
+--retention= RETENTION_PERIOD \
+--day-of-week= DAY
+Replace the following:
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+RETENTION_PERIOD : Set this to a value up to 14 weeks ( 14w ).
+DAY : The day of the week to take the backup. Set to
+one of the following:
+SUN for Sunday
+MON for Monday
+TUE for Tuesday
+WED for Wednesday
+THU for Thursday
+FRI for Friday
+SAT for Saturday
+Terraform
+To create a weekly backup schedule, create a google_firestore_backup_schedule resource.
+resource "google_firestore_backup_schedule" "weekly-backup" {
+project = PROJECT_ID
+database = DATABASE_ID
+retention = RETENTION_PERIOD_SECONDS
+weekly_recurrence {
+day = DAY
+}
+}
+Replace the following:
+PROJECT_ID : The ID of the project.
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+You can also use a resource reference to a
+Terraform resource of type google_firestore_database .
+RETENTION_PERIOD_SECONDS : Set this to a value in seconds, followed by "s". The maximum value is 8467200s (14 weeks).
+DAY : The day of the week to take the backup. Set to
+one of the following:
+SUNDAY for Sunday
+MONDAY for Monday
+TUESDAY for Tuesday
+WEDNESDAY for Wednesday
+THURSDAY for Thursday
+FRIDAY for Friday
+SATURDAY for Saturday
+List backup schedules
+To list all backup schedules for a database, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+The Disaster recovery page opens. This page describes backup schedules
+and lists available backups.
+gcloud
+Use the gcloud firestore backups schedules list command.
+gcloud firestore backups schedules list \
+--database=' DATABASE_ID '
+Replace DATABASE_ID with the ID of the database. Use
+'(default)' for the default database.
+Describe backup schedule
+To retrieve information about a backup schedule, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+The Disaster recovery page opens. This page describes backup schedules
+and lists available backups.
+gcloud
+Use the
+gcloud firestore backups schedules describe command:
+gcloud firestore backups schedules describe \
+--database=' DATABASE_ID ' \
+--backup-schedule= BACKUP_SCHEDULE_ID
+Replace the following:
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+BACKUP_SCHEDULE_ID : The ID of a backup schedule. You
+can view the ID of each backup schedule when you
+list all backup schedules .
+Update a backup schedule
+To update the retention period of a backup schedule, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings .
+Click Edit to edit disaster recovery settings.
+Edit the backup schedule settings and then click Save .
+gcloud
+Use the gcloud firestore backups schedules update command:
+gcloud firestore backups schedules update \
+--database=' DATABASE_ID ' \
+--backup-schedule= BACKUP_SCHEDULE_ID \
+--retention= RETENTION_PERIOD
+Replace the following:
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+BACKUP_SCHEDULE_ID : The ID of a backup schedule. You
+can view the ID of each backup schedule when you
+list all backup schedules .
+RETENTION_PERIOD : Set this to a value up to 14 weeks ( 14w ).
+You can update the retention period of a backup schedule, but you cannot update its recurrence. If you need a backup schedule with a different recurrence, delete the old backup schedule if it is no longer required and create a new backup schedule with the preferred recurrence.
+Delete a backup schedule
+To delete a backup schedule, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+Click Edit to edit disaster recovery settings.
+Edit the backup schedule settings and then click Save .
+gcloud
+Use the gcloud firestore backups schedules delete command:
+gcloud firestore backups schedules delete \
+--database=' DATABASE_ID ' \
+--backup-schedule= BACKUP_SCHEDULE_ID
+Replace the following:
+DATABASE_ID : The ID of the database to back up. Set to
+'(default)' for the default database.
+BACKUP_SCHEDULE_ID : The ID of a backup schedule. You
+can view the ID of each backup schedule when you
+list all backup schedules .
+Note that deleting a backup schedule won't delete backups already created by
+this schedule. You can wait for them to expire after their retention period, or
+to manually delete a backup, see delete backup .
+Manage backups
+List backups
+To list available backups, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+Click Edit to edit disaster recovery settings.
+Edit the backup schedule settings and then click Save .
+gcloud
+Use the gcloud firestore backups list command:
+gcloud firestore backups list \
+--format="table(name, database, state)"
+The --format="table(name, database, state)" flag formats the output into a
+more readable format.
+To list only the backups from a specific location, use the --location flag:
+gcloud firestore backups list \
+--location= LOCATION \
+--format="table(name, database, state)"
+Replace LOCATION with the name of a Datastore mode
+location.
+Describe a backup
+To view details about a backup, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+The Disaster recovery page opens. This page describes backup schedules
+and lists available backups.
+gcloud
+Use the gcloud firestore backups describe command:
+gcloud firestore backups describe \
+--location= LOCATION \
+--backup= BACKUP_ID
+Replace the following:
+LOCATION : The location of the database.
+BACKUP_ID : The ID of a backup. You
+can view the ID of each backup when you list all backups .
+Delete backup
+To delete a backup, use one of the following methods.
+Warning: You cannot recover a deleted backup.
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+The Disaster recovery page opens. This page describes backup schedules
+and lists available backups.
+In the Backups table, find the row for a backup and in the Actions
+column, click View more ( more_vert ).
+Click Delete .
+Confirm the action using the text field and click Delete .
+gcloud
+Use the gcloud firestore backups delete command:
+gcloud firestore backups delete \
+--location= LOCATION \
+--backup= BACKUP_ID
+Replace the following:
+LOCATION : The location of the database.
+BACKUP_ID : The ID of a backup. You
+can view the ID of each backup when you list all backups .
+Note: Firestore stores metadata related to backups and backup
+schedules related to a database. Firestore retains this metadata
+until all backups for the database expire or are deleted.
+Restore data from a database backup
+A restore operation writes the data from a backup to a new Datastore mode
+database.
+To begin a restore operation, use one of the following methods:
+Google Cloud console
+In the Google Cloud console, go to the Databases page.
+Go to Databases
+In the list of databases, find the row for the database. In the
+Scheduled backups column click either View backups or
+Edit settings , depending on whether a backup schedule exists.
+The Disaster recovery page opens. This page describes backup schedules
+and lists available backups.
+In the Backups table, find the row for a backup and in the Actions
+column, click View more ( more_vert ). Click Restore with Cloud Shell .
+The Cloud Shell panel opens with a gcloud CLI command
+to restore from the selected backup. Replace ID_OF_NEW_DATABASE with
+an ID for the database and run the command.
+Running the command returns a response with more information about the
+operation. The database soon appears in your list of databases. The restore
+operation will take some time and must complete before the database is accessible.
+gcloud
+Use the gcloud firestore databases restore command:
+gcloud firestore databases restore \
+--source-backup=projects/ PROJECT_ID /locations/ LOCATION /backups/ BACKUP_ID \
+--destination-database=' DATABASE_ID \
+--tags=[ KEY = VALUE ]'
+Replace the following:
+PROJECT_ID : Your project ID.
+LOCATION : The location of the database backup and the
+location of the new database created for the restored data.
+BACKUP_ID : The ID of a backup.
+You can view the ID of each backup when you list all backups .
+DATABASE_ID : A database ID for the new
+database. You cannot use a database ID that is already in use.
+[ KEY = VALUE ]: A optional list of tags KEY=VALUE pairs to bind. For example:
+--tags=123/environment=production,123/costCenter=marketing
+--tags=tagKeys/333=tagValues/444
+The database mode will match that of the backup.
+The output will include metadata , name , and response components:
+metadata:
+'@type': type.googleapis.com/google.firestore.admin.v1.RestoreDatabaseMetadata
+backup: projects/ PROJECT_ID /locations/ LOCATION /backups/ BACKUP_ID
+database: projects/ PROJECT_ID /databases/ DATABASE_ID
+operationState: PROCESSING
+progressPercentage:
+completedWork: '20'
+estimatedWork: '100'
+startTime: '2023-12-06T14:20:17.398325Z'
+name: projects/ PROJECT_ID /databases/ DATABASE_ID /operations/operation_uuid
+response:
+'@type': type.googleapis.com/google.firestore.admin.v1.Database
+createTime: '2023-12-06T14:20:17.398325Z'
+name: projects/ PROJECT_ID /databases/ DATABASE_ID
+...
+The metadata field includes a progressPercentage component, detailing the estimated progress of the restore thus far, and an operationState specifying the overall state of the restore.
+To retrieve this information again, use gcloud firestore operations list :
+gcloud firestore operations list --database= DATABASE_ID
+or, using the name field from the output described above, with gcloud firestore operations describe :
+gcloud firestore operations describe OPERATION_NAME
+Limitations
+A restore operation does not restore App Engine search data or blob entities from a (default) database. This data is only valid for the (default) database, and it won't be useful if you restore from (default) to a database which does not support such data, so it is excluded from backups.
+What to do after restoring
+After you finish restoring, you should do the following:
+Verify that appropriate IAM controls are applied to your new database.
+If you previously used TTL policies, reapply them to the new database. TTL policies are not included in backups and are not automatically reapplied to restored databases.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

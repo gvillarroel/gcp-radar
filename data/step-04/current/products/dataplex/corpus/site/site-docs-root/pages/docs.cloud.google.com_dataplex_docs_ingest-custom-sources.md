@@ -1,6 +1,6 @@
 ---
-title: "Manage entries and ingest custom sources \_|\_ Dataplex Universal Catalog\
-  \ \_|\_ Google Cloud Documentation"
+title: "Manage entries and ingest custom sources \_|\_ Knowledge Catalog \_|\_ Google\
+  \ Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources
 knowledge_key: corpus
 source_id: site-docs-root
@@ -8,26 +8,27 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources
-  title: "Manage entries and ingest custom sources \_|\_ Dataplex Universal Catalog\
-    \ \_|\_ Google Cloud Documentation"
+  title: "Manage entries and ingest custom sources \_|\_ Knowledge Catalog \_|\_ Google\
+    \ Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Manage entries and ingest custom sources
 Stay organized with collections
 Save and categorize content based on your preferences.
 This document explains how to bring information about your unique, custom data
-sources into Dataplex Universal Catalog.
-Dataplex Universal Catalog serves as a central registry for all your
+sources into Knowledge Catalog (formerly Dataplex Universal Catalog).
+Knowledge Catalog serves as a central registry for all your
 data assets. To integrate a custom source, you need three key components:
 Entry group: This is a secured container that holds your custom data records.
 Think of it as a folder that defines access permissions and the geographic
@@ -51,9 +52,9 @@ an entry, you must provide values for all the aspect types defined by the
 entry type. You can't delete those aspects for an entry that are marked as
 required in the entry type.
 Categories of entries
-System entries : Dataplex Universal Catalog creates entries for Google Cloud
+System entries : Knowledge Catalog creates entries for Google Cloud
 resources, such as BigQuery datasets or tables. The entries that
-Dataplex Universal Catalog creates are called system entries. Dataplex Universal Catalog
+Knowledge Catalog creates are called system entries. Knowledge Catalog
 automatically keeps system entries up-to-date through continuous metadata
 synchronization from the supported Google Cloud systems.
 You can't modify the metadata that is populated automatically (called required
@@ -69,7 +70,7 @@ An entry group is a container for one or more entries. You can use entry groups
 to manage access control and regional location for the entries. Every entry
 group belongs to a project.
 Categories of entry groups
-System entry groups : for Google Cloud resources, Dataplex Universal Catalog
+System entry groups : for Google Cloud resources, Knowledge Catalog
 automatically creates entry groups for each system in every project and
 location where the resources are. For example, @bigquery is the system entry
 group for BigQuery.
@@ -86,14 +87,14 @@ same project as the entry type.
 Categories of entry types
 Custom entry types : Entry types that you create and manage. You can use
 these entry types to create custom entries.
-System entry types : Dataplex Universal Catalog provides these entry types
+System entry types : Knowledge Catalog provides these entry types
 by default. System entry types are further categorized into reusable and
 restricted.
 The following table describes the categories of system entry types, and the
-list of entry types that Dataplex Universal Catalog provides for each of the categories:
+list of entry types that Knowledge Catalog provides for each of the categories:
 Category of system entry type
 Description
-Entry types that Dataplex Universal Catalog provides
+Entry types that Knowledge Catalog provides
 Reusable system entry type
 You can use this entry type to create custom entries.
 generic
@@ -138,7 +139,7 @@ ask your administrator to grant you the
 following IAM roles on the resource:
 Full set of permissions on entries, entry groups, and entry types:
 Dataplex Catalog Admin ( roles/dataplex.catalogAdmin )
-Create and manage metadata resources in Dataplex Universal Catalog, including entries, entry groups, and entry types:
+Create and manage metadata resources in Knowledge Catalog, including entries, entry groups, and entry types:
 Dataplex Catalog Editor ( roles/dataplex.catalogEditor )
 Full access to entry-related operations:
 Dataplex Entry and EntryLink Owner ( roles/dataplex.entryOwner )
@@ -162,16 +163,16 @@ the entry type and the entry are in different projects, you must grant the
 Dataplex Entry Type User ( roles/dataplex.entryTypeUser ) IAM role on the
 project where the entry type is.
 For more information, see
-Dataplex Universal Catalog IAM roles .
+Knowledge Catalog IAM roles .
 Enable the API
-Enable the Dataplex API in your Dataplex Universal Catalog project. If you are using a new Google Cloud project or a project in which the BigQuery API is enabled, the Dataplex API is enabled by default.
+Enable the Dataplex API in your Knowledge Catalog project. If you are using a new Google Cloud project or a project in which the BigQuery API is enabled, the Dataplex API is enabled by default.
 Enable the API
 Create an entry group
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry groups > Custom tab.
-Click Create entry group (Dataplex Universal Catalog) .
+Click Create .
 In the Create entry group window, enter the following:
 Optional: In the Display name field, enter a display name for your
 entry group.
@@ -193,12 +194,12 @@ gcloud dataplex entry-groups create command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax.ResourceNames ;
@@ -247,12 +248,12 @@ EntryGroup retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -291,12 +292,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -328,12 +329,12 @@ EntryGroup response = catalogServiceClient . createEntryGroupAsync ( request ). 
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -361,12 +362,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -406,8 +407,8 @@ method.
 Create an entry type
 To ingest a new source, you must create an entry type.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry types > Custom tab.
 Click Create .
 In the Create entry type window, enter the following:
@@ -448,12 +449,12 @@ gcloud dataplex entry-types create command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax.ResourceNames ;
@@ -502,12 +503,12 @@ EntryType retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -546,12 +547,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -583,12 +584,12 @@ EntryType response = catalogServiceClient . createEntryTypeAsync ( request ). ge
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -616,12 +617,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -671,12 +672,12 @@ gcloud dataplex entries create command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -708,12 +709,12 @@ Entry response = catalogServiceClient . CreateEntry ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -748,12 +749,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -784,12 +785,12 @@ Entry response = catalogServiceClient . createEntry ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -818,12 +819,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -861,14 +862,14 @@ This section describes how to view the list of available entry groups, view
 details, update, and delete entry groups.
 View the list of available entry groups
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry groups tab.
-This page lists all the available Dataplex Universal Catalog
+This page lists all the available Knowledge Catalog
 and Data Catalog entry groups.
 To view custom entry groups, click the Custom tab. In the
 Custom tab, the Catalog source column displays where the resource
-resides—Dataplex Universal Catalog or Data Catalog.
+resides—Knowledge Catalog or Data Catalog.
 To view system entry groups, click the System tab.
 For more information about custom and system entry groups, see the
 categories of entry groups section of this
@@ -877,7 +878,7 @@ Optional: To view the list of entry groups in your selected project, click
 the Custom tab, and then click the Show from all projects toggle
 to the off position.
 The Show from all projects toggle is on by default, and the list
-includes Dataplex Universal Catalog resources from your selected
+includes Knowledge Catalog resources from your selected
 organization and Data Catalog resources from all the organizations
 that you can access.
 Note: If the Show from all projects toggle is on, you can't edit
@@ -890,12 +891,12 @@ gcloud dataplex entry-groups list command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax ;
@@ -959,12 +960,12 @@ string nextPageToken = singlePage . NextPageToken ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1011,12 +1012,12 @@ _ = it . Response .( * dataplexpb . ListEntryGroupsResponse )
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1051,12 +1052,12 @@ for ( EntryGroup element : catalogServiceClient . listEntryGroups ( request ). i
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1082,12 +1083,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1123,17 +1124,17 @@ entryGroups.list
 method.
 View details of an entry group
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry groups tab.
 Click the entry group for which you want to view the details.
 The entry group details page opens. You can access information such as
 display name, entry group ID, description, project ID, location, labels,
 creation date, and last modified date of the selected entry group.
 For a Data Catalog entry group, you can view the details in
-both the Data Catalog and Dataplex Universal Catalog web
+both the Data Catalog and Knowledge Catalog web
 interfaces. To do this, on the entry group details page, click
-Data Catalog or Dataplex Universal Catalog .
+Data Catalog or Knowledge Catalog .
 The Sample entries section displays 10 related entries created recently
 in the selected entry group.
 Optional: To view all the entries related to an entry group, in the Sample entries
@@ -1144,12 +1145,12 @@ gcloud dataplex entry-groups describe command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1179,12 +1180,12 @@ EntryGroup response = catalogServiceClient . GetEntryGroup ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1219,12 +1220,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1253,12 +1254,12 @@ EntryGroup response = catalogServiceClient . getEntryGroup ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1283,12 +1284,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1321,8 +1322,8 @@ method.
 Update an entry group
 You can update a custom entry group. System entry groups can't be modified.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry groups > Custom tab.
 Click the entry group that you want to update.
 On the Entry group details page, click Edit .
@@ -1334,12 +1335,12 @@ gcloud dataplex entry-groups update command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1387,12 +1388,12 @@ EntryGroup retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1431,12 +1432,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1467,12 +1468,12 @@ EntryGroup response = catalogServiceClient . updateEntryGroupAsync ( request ). 
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1497,12 +1498,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1542,8 +1543,8 @@ method.
 Delete an entry group
 You can delete a custom entry group. System entry groups can't be deleted.
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry groups > Custom tab.
 Click the entry group that you want to delete.
 On the Entry group details page, click Delete . Confirm when
@@ -1554,12 +1555,12 @@ gcloud dataplex entry-groups delete command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -1606,12 +1607,12 @@ Empty retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1648,12 +1649,12 @@ if err != nil {
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1683,12 +1684,12 @@ catalogServiceClient . deleteEntryGroupAsync ( request ). get ();
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1715,12 +1716,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -1762,8 +1763,8 @@ This section describes how to view the list of available entry groups, view
 details, update, and delete entry types.
 View the list of available entry types
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry types tab.
 To view custom entry types, click the Custom tab. To view system
 entry types, click the System tab. For more information about
@@ -1785,12 +1786,12 @@ gcloud dataplex entry-types list command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Api.Gax ;
@@ -1854,12 +1855,12 @@ string nextPageToken = singlePage . NextPageToken ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -1906,12 +1907,12 @@ _ = it . Response .( * dataplexpb . ListEntryTypesResponse )
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -1946,12 +1947,12 @@ for ( EntryType element : catalogServiceClient . listEntryTypes ( request ). ite
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -1977,12 +1978,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2018,8 +2019,8 @@ entryTypes.list
 method.
 View details of an entry type
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry types > Custom tab..
 Click the entry type for which you want to view the details.
 The entry type details page opens. You can access information such as
@@ -2037,12 +2038,12 @@ gcloud dataplex entry-types describe command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2072,12 +2073,12 @@ EntryType response = catalogServiceClient . GetEntryType ( request );
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2112,12 +2113,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -2146,12 +2147,12 @@ EntryType response = catalogServiceClient . getEntryType ( request );
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2176,12 +2177,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2213,8 +2214,8 @@ entryTypes.get
 method.
 Update an entry type
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry types > Custom tab.
 Click the entry type that you want to update.
 On the Entry type details page, click Edit .
@@ -2227,12 +2228,12 @@ gcloud dataplex entry-types update command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2280,12 +2281,12 @@ EntryType retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2324,12 +2325,12 @@ _ = resp
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -2360,12 +2361,12 @@ EntryType response = catalogServiceClient . updateEntryTypeAsync ( request ). ge
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2390,12 +2391,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2434,8 +2435,8 @@ entryTypes.patch
 method.
 Delete an entry type
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Catalog page.
-Go to Catalog
+In the Google Cloud console, go to the Knowledge Catalog Metadata types page.
+Go to Metadata types
 Click the Entry types > Custom tab.
 Click the entry type that you want to delete.
 On the Entry type details page, click Delete . Confirm when
@@ -2446,12 +2447,12 @@ gcloud dataplex entry-types delete command .
 C#
 C#
 Before trying this sample, follow the C# setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog C# API
+Knowledge Catalog C# API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 using Google.Cloud.Dataplex.V1 ;
@@ -2498,12 +2499,12 @@ Empty retrievedResult = retrievedResponse . Result ;
 Go
 Go
 Before trying this sample, follow the Go setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Go API
+Knowledge Catalog Go API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 package main
@@ -2540,12 +2541,12 @@ if err != nil {
 Java
 Java
 Before trying this sample, follow the Java setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Java API
+Knowledge Catalog Java API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 import com.google.cloud.dataplex.v1. CatalogServiceClient ;
@@ -2575,12 +2576,12 @@ catalogServiceClient . deleteEntryTypeAsync ( request ). get ();
 Python
 Python
 Before trying this sample, follow the Python setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Python API
+Knowledge Catalog Python API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 # This snippet has been automatically generated and should be regarded as a
@@ -2607,12 +2608,12 @@ print ( response )
 Ruby
 Ruby
 Before trying this sample, follow the Ruby setup instructions in the
-Dataplex Universal Catalog quickstart using
+Knowledge Catalog quickstart using
 client libraries .
 For more information, see the
-Dataplex Universal Catalog Ruby API
+Knowledge Catalog Ruby API
 reference documentation .
-To authenticate to Dataplex Universal Catalog, set up Application Default Credentials.
+To authenticate to Knowledge Catalog, set up Application Default Credentials.
 For more information, see
 Set up authentication for a local development environment .
 require "google/cloud/dataplex/v1"
@@ -2650,12 +2651,12 @@ To delete an entry type, use the
 entryTypes.delete
 method.
 What's next
-Learn how to search for resources in Dataplex Universal Catalog .
+Learn how to search for resources in Knowledge Catalog .
 Learn how to manage aspects and enrich metadata .
-Learn how to import metadata into Dataplex Universal Catalog .
-Learn more about metadata management in Dataplex Universal Catalog .
+Learn how to import metadata into Knowledge Catalog .
+Learn more about metadata management in Knowledge Catalog .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

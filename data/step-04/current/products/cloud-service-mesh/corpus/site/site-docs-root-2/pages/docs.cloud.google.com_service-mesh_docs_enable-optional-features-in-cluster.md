@@ -1,0 +1,312 @@
+---
+title: "Enable optional features on an in-cluster control plane \_|\_ Cloud Service\
+  \ Mesh \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/service-mesh/docs/overview
+source_metadata:
+  url: https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster
+  title: "Enable optional features on an in-cluster control plane \_|\_ Cloud Service\
+    \ Mesh \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Anthos Service Mesh and Traffic Director are now Cloud Service Mesh. For more information, see the Cloud Service Mesh overview .
+Home
+Documentation
+Networking
+Cloud Service Mesh
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Enable optional features on an in-cluster control plane
+This page describes how to enable optional features on Cloud Service Mesh
+with an in-cluster control plane.
+When you install in-cluster Cloud Service Mesh, the
+features that are enabled by default differ by platform .
+You can override the default configuration and enable an optional feature by
+including an overlay file when you install (or upgrade) Cloud Service Mesh. An
+overlay file is a YAML file containing an
+IstioOperator custom resource (CR)
+that you use to configure the control plane. Specify one feature per overlay file. You can layer on more overlays,
+and each overlay file overrides the configuration on the previous layers.
+Caution: Using asmcli install overwrites the existing control plane
+configuration. When you enable optional features to an existing installation,
+make sure to specify all files that you want to keep in the original
+configuration, as well as the overlay files for the features that you want to
+enable. We recommended that you store the overlay files that you use for
+installation in source control so that you can apply the same configurations to
+your control plane with upgrades or when enabling additional optional features.
+This ensures no downtime when enabling optional features.
+About the overlay files
+The overlay files on this page are in the
+anthos-service-mesh
+package in GitHub. These files contain common customizations to the default
+configuration. You can use these files as they are, or you can make additional
+changes to them as needed.
+When you install Cloud Service Mesh using asmcli script, you
+can specify one or more overlay files with the --option or the
+--custom_overlay options. If you don't need to make any changes to the
+files in the anthos-service-mesh repository, you can use --option , and
+the script fetches the file from GitHub for you. Otherwise, you can make
+changes to the overlay file, and then use the --custom_overlay option to
+pass it to the asmcli .
+Important: Don't specify more than one IstioOperator CR in an overlay file
+because istioctl install only applies the first CR that it finds in the file.
+Don't include multiple CRs in one overlay file
+Create separate overlay files for each CR
+How to enable optional features
+The following examples are simplified to show only using the custom overlays to
+enable optional features. Replace OTHER_FLAGS with the
+required installation flags .
+Important: The order of the files on the command line matters. Be sure to
+specify the configuration required for the default features first, and then the
+overlay files after that.
+The asmcli install command provides two ways to enable an optional feature. The
+method that you use depends on whether you need to make changes to the overlay
+file.
+Use --option when
+you don't need to make any changes to the overlay file. With --option ,
+asmcli fetches the file from the GitHub repository for you, so you must
+have an internet connection.
+./asmcli install \
+OTHER_FLAGS \
+--option OPTION_NAME
+Replace OPTION_NAME with the option you want to enable.
+Be sure to omit the .yaml extension and only include the name of the overlay
+file, such as iap-operator and attached-cluster .
+For a list of options refer to the
+anthos-service-mesh
+package.
+Use --custom_overlay when
+you need to customize the overlay file.
+./asmcli install \
+OTHER_FLAGS \
+--custom_overlay PATH_TO_FILE
+Replace PATH_TO_FILE with the path to the overlay
+file you want to use.
+YAML for optional features
+The following sections provide the YAML to enable optional and supported
+features.
+mTLS STRICT mode
+The global.mtls.enabled configuration was removed from the IstioOperator
+CR to avoid issues with upgrades and to provide a more flexible installation.
+To enable STRICT mTLS,
+configure a
+peer authentication policy instead.
+Distroless proxy image
+As a best practice, you should restrict the contents of a container runtime to only the necessary packages. This approach improves security and the signal-to-noise ratio of Common Vulnerabilities and Exposures (CVE) scanners.
+Istio provides proxy images based on distroless base images .
+The following configuration enables distroless images for the entire Cloud Service Mesh.
+An image type change requires each pod to restart and get re-injected to take effect.
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+meshConfig :
+defaultConfig :
+image :
+imageType : distroless
+The distroless image does not contain any binaries other than the proxy. It is therefore not possible to exec a shell or use curl , ping , or other debug utilities inside the container.
+If you run a curl command, you see the following error:
+error: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "<container-id>"
+OCI runtime exec failed: exec failed: unable to start container process: exec: "curl": executable file not found in $PATH: unknown
+If you run a shell command, you see the following error:
+error: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "<container-id>"
+OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "sh": executable file not found in $PATH: unknown
+If you need access to these tools for specific pods, you may override the imageType by using the following pod annotation.
+sidecar.istio.io/proxyImageType: debug
+After changing the image type of a deployment via the annotation, the deployment should be restarted.
+kubectl rollout restart deployment -n NAMESPACE DEPLOYMENT_NAME
+For most types of proxy debugging, istioctl proxy-cmd should be used which does not require a debug base image.
+Use a custom overlay for custom registry
+You can use a custom overlay for custom registries, such as if you need to
+install Cloud Service Mesh from a custom container registry. For example:
+apiVersion: install . istio . io / v1alpha1
+kind: IstioOperator
+spec:
+hub: { private_registry_url }
+The following is a list of images for Cloud Service Mesh that you need to mirror to
+the custom container registry:
+Install-cni - gke.gcr.io/asm/install-cni:1.28.5-asm.9
+Managed Data Plane - gke.gcr.io/asm/mdp:1.28.5-asm.9
+Pilot - gke.gcr.io/asm/pilot:1.28.5-asm.9
+Proxyv2 - gke.gcr.io/asm/proxyv2:1.28.5-asm.9
+Note: If you use a Canonical Service , then you
+also need to mirror the custom container registries
+gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1 and
+gke.gcr.io/asm/canonical-service-controller:1.10.3-asm.16 .
+Add images to a private registry
+To push Cloud Service Mesh images to a private registry, complete the following
+steps.
+Note: Use a client from which you can pull from gcr.io and push to your private
+registry.
+Pull the Cloud Service Mesh images:
+docker pull gke.gcr.io/asm/install-cni:1.28.5-asm.9
+docker pull gke.gcr.io/asm/pilot:1.28.5-asm.9
+docker pull gke.gcr.io/asm/proxyv2:1.28.5-asm.9
+Create a variable for your private registry URL:
+export PRIVATE_REGISTRY_URL= PRIVATE_REGISTRY_URL
+Replace PRIVATE_REGISTRY_URL with your private registry
+URL.
+Tag the images with your private registry URL:
+docker tag gke.gcr.io/asm/install-cni:1.28.5-asm.9 \
+${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/install-cni:1.28.5-asm.9
+docker tag gke.gcr.io/asm/mdp:1.28.5-asm.9 \
+${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/pilot:1.28.5-asm.9
+docker tag gke.gcr.io/asm/proxyv2:1.28.5-asm.9 \
+${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/proxyv2:1.28.5-asm.9
+Push the tagged images to your private registry:
+docker push ${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/install-cni:1.28.5-asm.9
+docker push ${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/pilot:1.28.5-asm.9
+docker push ${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/proxyv2:1.28.5-asm.9
+(Optional) If you use a
+canonical service , then add the
+canonical service images to your private registry.
+Pull the Cloud Service Mesh canonical service images:
+docker pull gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1
+docker pull gke.gcr.io/asm/canonical-service-controller:1.10.3-asm.16
+Tag the images with your private registry URL:
+docker tag gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1 \
+${PRIVATE_REGISTRY_URL}/gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1
+docker tag gke.gcr.io/asm/canonical-service-controller:1.10.3-asm.16 \
+${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/canonical-service-controller:1.10.3-asm.16
+Push the tagged images to your private registry:
+docker push ${PRIVATE_REGISTRY_URL}/gcr.io/kubebuilder/kube-rbac-proxy:v0.13.1
+docker push ${PRIVATE_REGISTRY_URL}/gke.gcr.io/asm/canonical-service-controller:1.10.3-asm.16
+If you can pull the tagged images from your private registry, then the procedure
+was successful.
+Increase termination drain duration
+By default Envoy will wait five seconds ( 5s ) for existing connections to complete when a pod is terminating.
+Pod terminationGracePeriodSeconds must be greater than terminationDrainDuration value.
+For more information see Global Mesh Options .
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+meshConfig :
+defaultConfig :
+terminationDrainDuration : 30s
+Enable Access logs
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+meshConfig :
+accessLogFile : "/dev/stdout"
+For more information, see
+Enable Envoy's access logging .
+Cloud Trace
+Cloud Trace is available with Cloud Service Mesh installations on the following
+platforms:
+GKE on Google Cloud
+GKE Enterprise clusters on-premises if you install with
+Cloud Service Mesh certificate authority
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+meshConfig :
+enableTracing : true
+values :
+global :
+proxy :
+tracer : stackdriver
+For more information, see Accessing traces .
+Egress via egress gateways
+We recommend that you install an injected gateway as described in
+Install and upgrade gateways .
+Injection, or auto-injection, refers to the use of
+mutating webhooks
+to modify Pod specifications at creation time. You use injection to add the
+Envoy proxy sidecar configuration for your mesh services or to configure the
+Envoy proxy of gateways.
+Istio Container Network Interface
+How you enable the Istio Container Network Interface (CNI) depends on
+the environment that Cloud Service Mesh is installed on.
+Enable a network policy .
+Choose the overlay file that matches your platform.
+Enable CNI on GKE
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+components :
+cni :
+enabled : true
+namespace : kube-system
+values :
+cni :
+cniBinDir : /home/kubernetes/bin
+excludeNamespaces :
+- istio-system
+- kube-system
+Enable CNI on-premises
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+components :
+cni :
+enabled : true
+namespace : kube-system
+values :
+cni :
+cniBinDir : /opt/cni/bin
+excludeNamespaces :
+- istio-system
+- kube-system
+- gke-system
+Enable Traffic logs for off-Google Cloud
+Installing Cloud Service Mesh with Istio CA outside of Google Cloud reports
+metrics to Prometheus by default. Use this option to enable reporting Traffic
+logs instead, or both Prometheus and Stackdriver, so you can use the
+Cloud Service Mesh dashboards.
+Only Stackdriver
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+values :
+telemetry :
+enabled : true
+v2 :
+enabled : true
+prometheus :
+enabled : false
+stackdriver :
+enabled : true
+Stackdriver and Prometheus
+---
+apiVersion : install.istio.io/v1alpha1
+kind : IstioOperator
+spec :
+values :
+telemetry :
+enabled : true
+v2 :
+enabled : true
+prometheus :
+enabled : true
+stackdriver :
+enabled : true
+Enable an internal load balancer
+We recommend that you install an
+injected gateway as described in
+Install and upgrade gateways to set up an internal
+load balancer on GKE. When configuring the gateway Service,
+you include the annotation: networking.gke.io/load-balancer-type: "Internal"
+External certificate management on the ingress gateway
+For information on enabling external certificate management on the ingress
+gateway using Envoy SDS, see
+Secure Gateways .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

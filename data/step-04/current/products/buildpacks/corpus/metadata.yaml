@@ -1,22 +1,37 @@
 version: 1
 name: corpus
 created_at: '2026-04-07T22:41:20+00:00'
-updated_at: '2026-04-07T22:41:21+00:00'
+updated_at: '2026-04-10T18:33:25+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
   export: know export --key corpus
 sources:
 - type: site
-  id: site-deploy-source-code
-  title: https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code?authuser=6
-  created_at: '2026-04-07T22:41:21+00:00'
-  updated_at: '2026-04-07T22:41:21+00:00'
-  update_command: know sync site https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code?authuser=6
-    --key corpus
-  delete_command: know del --key corpus site-deploy-source-code
+  id: site-docs-root
+  title: https://docs.cloud.google.com/docs/buildpacks
+  created_at: '2026-04-10T18:30:29+00:00'
+  updated_at: '2026-04-10T18:32:12+00:00'
+  update_command: know sync site https://docs.cloud.google.com/docs/buildpacks --key
+    corpus --compact
+  delete_command: know del --key corpus site-docs-root
   config:
-    url: https://docs.cloud.google.com/run/docs/workerpools/deploy-source-code?authuser=6
+    url: https://docs.cloud.google.com/docs/buildpacks
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-10T18:32:12+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/docs/buildpacks/build-application
+  created_at: '2026-04-10T18:30:30+00:00'
+  updated_at: '2026-04-10T18:33:25+00:00'
+  update_command: know sync site https://docs.cloud.google.com/docs/buildpacks/build-application
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/docs/buildpacks/build-application
     max_depth: 1
     max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-10T18:33:25+00:00'

@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:04.986Z"
+generated_at: "2026-04-10T13:25:38.583Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "INFORMATION_SCHEMA.WRITE_API_TIMELINE views"

@@ -1,0 +1,417 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T20:03:33.668Z",
+  "product_name": "Address Validation API",
+  "product_slug": "address-validation-api",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/address-validation-api.md",
+    "step04_product_dir": "data/step-04/current/products/address-validation-api"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 39,
+  "source_row_count": 3,
+  "feature_count": 4,
+  "covered_feature_count": 2,
+  "features_without_supporting_pages": 2,
+  "features": [
+    {
+      "latest_feature_date": "2025-06-18",
+      "feature_name": "Address Validation API verdict hasSpellCorrectedComponents field",
+      "deprecation_date": "",
+      "feature_summary": "The Address Validation API now includes a `hasSpellCorrectedComponents` field in the verdict to indicate whether address components were spell-corrected.",
+      "keywords": [
+        "component spell correction indicator",
+        "spell-corrected components flag",
+        "address component correction flag",
+        "spell corrected components",
+        "verdict.hasSpellCorrectedComponents",
+        "hasSpellCorrectedComponents field",
+        "hasSpellCorrectedComponents",
+        "spellCorrectedComponents"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "`hasSpellCorrectedComponents` is a boolean field in Address Validation API verdict data for the `validateAddress` response that indicates whether any address components were spell-corrected. When the field is `true`, at least one component had spelling correction; when `false`, no spell corrections were made. The field is used in validation-flow logic to decide when to ask users to confirm corrected addresses.",
+      "evidence_summary": "These pages define the field as a response boolean in validation results and explicitly state its truth meaning (`true` = spell corrections made, `false` = none), plus show how it is used in client-side validation branching.",
+      "source_links": [
+        "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "f91ef1c54e6554d431a27d225b542afdf7986c1fdf78ecb3a3e3a50ee25ae7a2",
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 46,
+          "matched_phrases": [
+            {
+              "phrase": "hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "spellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "hasspellcorrectedcomponents field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "verdict.hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "030e242f2c5f956c3a92edd2475fd699daa8f1f13373a0bc6c5714d9cacaa4ff",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "spellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "7a5e593b9206a0bf5c182d9a8cdcc1eb246cd5e9f39c0138883aca05ffb3b826",
+          "url": "https://developers.google.com/maps/documentation/address-validation/accept-address-example",
+          "title": "\"Accept address - examples \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation_address-validation_accept-address-example.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_accept-address-example.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "spellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 46,
+          "final_score": 42,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page mentions using address component changes as a signal but does not explicitly document a `hasSpellCorrectedComponents` verdict field.",
+          "matched_phrases": [
+            {
+              "phrase": "hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "spellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "hasspellcorrectedcomponents field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "verdict.hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.",
+            "Spell corrections When the hasSpellCorrectedComponents field is true , the API corrected the spelling of some misspelled components.",
+            "No spell corrections When the hasSpellCorrectedComponents field is false , you know that no spell corrections have been made."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "base_score": 26,
+          "final_score": 22,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page is the validateAddress API reference and mentions validation flags, but this excerpt does not explicitly name or describe `hasSpellCorrectedComponents`.",
+          "matched_phrases": [
+            {
+              "phrase": "hasspellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "spellcorrectedcomponents",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "JSON representation { \"inputGranularity\" : enum ( Granularity ) , \"validationGranularity\" : enum ( Granularity ) , \"geocodeGranularity\" : enum ( Granularity ) , \"addressComplete\" : boolean , \"hasUnconfirmedComponents\" : boolean , \"hasInferredComponents\" : boolean , \"hasReplacedComponents\" : boolean , \"possibleNextAction\" : enum ( PossibleNextAction ) , \"hasSpellCorrectedComponents\" : boolean } Fields inputGranularity enum ( Granularity ) The granularity of the input address.",
+            "See Build your validation logic for more details. hasSpellCorrectedComponents boolean At least one address component was spell-corrected, see google.maps.addressvalidation.v1.Address.address components for details."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-06-18",
+      "feature_name": "Address Validation API verdict possibleNextAction field",
+      "deprecation_date": "",
+      "feature_summary": "The Address Validation API now includes a `possibleNextAction` field in the verdict to indicate recommended next steps after receiving a validation response.",
+      "keywords": [
+        "next action recommendation",
+        "recommended next action",
+        "next action suggestion",
+        "possible_next_action",
+        "possible next action",
+        "post-validation action",
+        "verdict.possibleNextAction",
+        "possibleNextAction field"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "The `verdict.possibleNextAction` feature in Address Validation API exposes an enum (`PossibleNextAction`) in the validation verdict that indicates the recommended next step after a validation attempt, such as prompting to fix an address, add sub-premises, confirm it, or continue with the returned address. It is intended to be used by client-side validation logic to determine post-validation flow for end users. The API reference also labels this field as a Preview (pre-GA) feature.",
+      "evidence_summary": "The cited Pages define `verdict.possibleNextAction` as an enum-based action recommendation in the verdict, show sample decision logic that consumes it, and explicitly mark the feature as Preview in the API reference.",
+      "source_links": [
+        "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+        "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
+        "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "f91ef1c54e6554d431a27d225b542afdf7986c1fdf78ecb3a3e3a50ee25ae7a2",
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-docs-root\\pages\\developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "verdict.possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "possiblenextaction field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "f65177c3eef63bd3f11b1017e3ac32f9aef4063efbb763e12d9677fb62f4bfee",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
+          "title": "\"Package google.maps.addressvalidation.v1 \\_|\\_ Address Validation API \\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "possible next action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "verdict.possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "030e242f2c5f956c3a92edd2475fd699daa8f1f13373a0bc6c5714d9cacaa4ff",
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\address-validation-api\\corpus\\site\\site-api-reference\\pages\\developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "relative_markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "possible next action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/build-validation-logic",
+          "title": "\"Build your validation logic \\_|\\_ Address Validation API \\_|\\_ Google for\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/address-validation-api/corpus/site/site-docs-root/pages/developers.google.com_maps_documentation_address-validation_build-validation-logic.md",
+          "base_score": 34,
+          "final_score": 52,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page explicitly centers on using `verdict.possibleNextAction` to decide Fix, Confirm, or Accept handling logic in address validation workflows.",
+          "matched_phrases": [
+            {
+              "phrase": "verdict.possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "possiblenextaction field",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Customize your validation logic While you can use the results from the verdict.possibleNextAction field to determine how your system proceeds with the API response, you might also consider building custom logic, such as to handle business-specific needs.",
+            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX or verdict.validationGranularity == OTHER or verdict.validationGranularity == ROUTE) Prompt customer to fix their address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt customer to add a unit number. else if (verdict.possibleNextAction == CONFIRM or verdict.validationGranularity == PREMISE PROXIMITY or verdict.hasSpellCorrectedComponents or verdict.hasReplacedComponents or verdict.hasInferredComponents) Prompt customer to confirm their address. else Proceed with the returned address.",
+            "The following pseudocode illustrates a possible flow. if (verdict.possibleNextAction == FIX) Prompt the user to fix the address. else if (verdict.possibleNextAction == CONFIRM ADD SUBPREMISES) Prompt the user to add a unit number. else if (verdict.possibleNextAction == CONFIRM) Confirm with the user that the address is correct. else Continue with the address returned by the API.",
+            "For example, rather than use the logic described in the Key purpose section, you could use the following logic. if (verdict.possibleNextAction == FIX) Prompt customer to fix their address. else if (verdict.hasReplacedComponents) Prompt customer to confirm their address. else Proceed with the returned address."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rpc/google.maps.addressvalidation.v1",
+          "title": "\"Package google.maps.addressvalidation.v1 \\_|\\_ Address Validation API \\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rpc_google.maps.addressvalidation.v1.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "possible next action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "verdict.possiblenextaction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "See missing component types , unresolved tokens or unexpected fields for more details. has unconfirmed components bool At least one address component cannot be categorized or validated, see google.maps.addressvalidation.v1.Address.address components for details. has inferred components bool At least one address component was inferred (added) that wasn't in the input, see google.maps.addressvalidation.v1.Address.address components for details. has replaced components bool At least one address component was replaced, see google.maps.addressvalidation.v1.Address.address components for details. possible next action PossibleNextAction Preview: This feature is in Preview (pre-GA).",
+            "Possible next actions that could be taken, based on the API response.",
+            "Enums POSSIBLE NEXT ACTION UNSPECIFIED Default value.",
+            "Index AddressValidation (interface) Address (message) AddressComponent (message) AddressComponent.ConfirmationLevel (enum) AddressMetadata (message) ComponentName (message) Geocode (message) LanguageOptions (message) PlusCode (message) ProvideValidationFeedbackRequest (message) ProvideValidationFeedbackRequest.ValidationConclusion (enum) ProvideValidationFeedbackResponse (message) UspsAddress (message) UspsData (message) ValidateAddressRequest (message) ValidateAddressResponse (message) ValidationResult (message) Verdict (message) Verdict.Granularity (enum) Verdict.PossibleNextAction (enum) AddressValidation The service for validating addresses."
+          ]
+        },
+        {
+          "url": "https://developers.google.com/maps/documentation/address-validation/reference/rest/v1/TopLevel/validateAddress",
+          "title": "Method: validateAddress \\_|\\_ Address Validation API \\_|\\_ Google for Developers",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/address-validation-api/corpus/site/site-api-reference/pages/developers.google.com_maps_documentation_address-validation_reference_rest_v1_TopLevel_validateAddress.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page is the authoritative response schema reference and explicitly references `PossibleNextAction` as part of the validation result structures, supporting documentation for this feature.",
+          "matched_phrases": [
+            {
+              "phrase": "possible next action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Possible next actions that could be taken, based on the API response.",
+            "Enums POSSIBLE NEXT ACTION UNSPECIFIED Default value."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-02-21",
+      "feature_name": "Address Validation API session pricing with Autocomplete (New)",
+      "deprecation_date": "",
+      "feature_summary": "The Address Validation API now supports session-based pricing when used with the Autocomplete (New) API.",
+      "keywords": [
+        "Autocomplete New pricing",
+        "session-based pricing",
+        "session pricing model",
+        "session-based billing",
+        "per-session pricing",
+        "Address Validation session pricing",
+        "Autocomplete (New)",
+        "session pricing"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Address Validation API now supports session-based pricing when used with the Autocomplete (New) API.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-06-22",
+      "feature_name": "Address Validation API English address response format",
+      "deprecation_date": "",
+      "feature_summary": "The Address Validation API now supports returning validated addresses in English in API responses as a preview capability.",
+      "keywords": [
+        "English response format preview",
+        "address output language: English",
+        "return addresses in English",
+        "English address response format",
+        "English output format",
+        "validated address in English",
+        "English response preview",
+        "English-formatted address"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Address Validation API now supports returning validated addresses in English in API responses as a preview capability.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:04.784Z"
+product_name: "Cortex"
+product_slug: "cortex"
+feature_name: "Data Mesh"
+feature_slug: "data-mesh"
+latest_feature_date: "2025-12-17"
+deprecation_date: "2025-12-17"
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/cortex/docs/meridian"
+  - "https://docs.cloud.google.com/cortex/docs/resources"
+  - "https://docs.cloud.google.com/cortex/docs/deployment-step-one"
+keywords:
+  - "mesh"
+  - "provides"
+  - "metadata"
+  - "driven"
+  - "governance"
+  - "capabilities"
+  - "within"
+  - "cortex"
+---
+
+# Data Mesh
+
+Product: Cortex
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Data Mesh provides metadata-driven data governance capabilities within Cortex Framework for SAP deployments; deprecated on 2025-12-17.
+
+## Extended Definition
+
+Data Mesh provides metadata-driven data governance capabilities within Cortex Framework for SAP deployments; deprecated on 2025-12-17.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/cortex/docs/meridian](https://docs.cloud.google.com/cortex/docs/meridian)
+- [https://docs.cloud.google.com/cortex/docs/resources](https://docs.cloud.google.com/cortex/docs/resources)
+- [https://docs.cloud.google.com/cortex/docs/deployment-step-one](https://docs.cloud.google.com/cortex/docs/deployment-step-one)
+
+## Supporting Pages
+
+### Cortex for Meridian | Google Cloud Cortex Framework | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/cortex/docs/meridian](https://docs.cloud.google.com/cortex/docs/meridian)
+- Source ID: `site-docs-root`
+- Final score: 68
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Cortex for Meridian Google Cloud Cortex Framework Google Cloud Documentation Source URL: https://docs.cloud.google.com/cortex/docs/meridian Cortex Framework Data Foundation and Meridian are released separately.
+- The Cortex Framework release notes provide an overview of its releases and versions.
+
+### Resources | Google Cloud Cortex Framework | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/cortex/docs/resources](https://docs.cloud.google.com/cortex/docs/resources)
+- Source ID: `site-docs-root`
+- Final score: 54
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Resources Google Cloud Cortex Framework Google Cloud Documentation Source URL: https://docs.cloud.google.com/cortex/docs/resources Google Cloud Cortex Framework · Start free · Home · Documentation · Data analytics · Google Cloud Cortex Framework · Resources · Send feedback · Stay organized with collections Save and categorize content based on your preferences.
+- The following resources provide more information about external resources for Google Cloud Cortex Framework: Overview ·
+
+### Step 1: Establish workloads | Google Cloud Cortex Framework | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/cortex/docs/deployment-step-one](https://docs.cloud.google.com/cortex/docs/deployment-step-one)
+- Source ID: `site-docs-root`
+- Final score: 54
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Step 1: Establish workloads Google Cloud Cortex Framework Google Cloud Documentation Source URL: https://docs.cloud.google.com/cortex/docs/deployment-step-one This page guides you through the initial step of setting up your data foundation, the core of Cortex Framework.
+

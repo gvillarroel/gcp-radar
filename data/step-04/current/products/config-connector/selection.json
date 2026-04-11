@@ -1,20 +1,22 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T11:38:31.307Z",
+  "generated_at": "2026-04-11T00:54:43.357Z",
   "product_name": "Config Connector",
   "product_slug": "config-connector",
   "step03_ranking_path": "data/step-03/current/products/config-connector/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 859
   },
   "site_output_mode": "compact",
-  "selected_source_count": 3,
-  "selected_sources_signature": "df9a57744617d3d716b0e9ec6520b9dbc045782d77f0059c89f0d3c487773d96",
+  "selected_source_count": 4,
+  "selected_sources_signature": "747f4890d13ada88d478c6a76e0506ce5fa5794d73e1b58a0427b34b65498a0e",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -24,30 +26,45 @@
       "url": "https://docs.cloud.google.com/config-connector/docs",
       "final_score": 100,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 0
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 52
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "config-connector",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/config-connector/docs/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 52
     },
     {
       "source_id": "site-docs-reference",
       "product_slug": "config-connector",
       "family": "docs_reference",
       "classification": "product_reference",
-      "url": "https://docs.cloud.google.com/config-connector/docs/reference/overview",
+      "url": "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
       "final_score": 100,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 0
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     },
     {
       "source_id": "site-iam-reference",
       "product_slug": "config-connector",
       "family": "iam_reference",
       "classification": "iam_reference",
-      "url": "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions",
+      "url": "https://docs.cloud.google.com/config-connector/docs/concepts/installation-types",
       "final_score": 95,
       "best_rank": 5,
-      "max_depth": 1,
-      "max_pages": 0
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     }
   ],
   "corpus_paths": {

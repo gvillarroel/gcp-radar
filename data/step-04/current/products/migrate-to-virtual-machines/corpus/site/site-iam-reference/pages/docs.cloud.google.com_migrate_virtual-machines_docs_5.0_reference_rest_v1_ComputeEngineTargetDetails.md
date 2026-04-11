@@ -1,0 +1,148 @@
+---
+title: "ComputeEngineTargetDetails \_|\_ Migrate to Virtual Machines \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/rest/v1/ComputeEngineTargetDetails
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference
+source_metadata:
+  url: https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/rest/v1/ComputeEngineTargetDetails
+  title: "ComputeEngineTargetDetails \_|\_ Migrate to Virtual Machines \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Migration
+Migrate to Virtual Machines
+Reference
+Send feedback
+ComputeEngineTargetDetails
+Stay organized with collections
+Save and categorize content based on your preferences.
+JSON representation
+ComputeEngineTargetDetails is a collection of details for creating a VM in a target Compute Engine project.
+JSON representation
+{
+"vmName" : string ,
+"project" : string ,
+"zone" : string ,
+"machineTypeSeries" : string ,
+"machineType" : string ,
+"networkTags" : [
+string
+] ,
+"networkInterfaces" : [
+{
+object ( NetworkInterface )
+}
+] ,
+"serviceAccount" : string ,
+"diskType" : enum ( ComputeEngineDiskType ) ,
+"labels" : {
+string : string ,
+...
+} ,
+"licenseType" : enum ( ComputeEngineLicenseType ) ,
+"appliedLicense" : {
+object ( AppliedLicense )
+} ,
+"computeScheduling" : {
+object ( ComputeScheduling )
+} ,
+"secureBoot" : boolean ,
+"enableVtpm" : boolean ,
+"enableIntegrityMonitoring" : boolean ,
+"bootOption" : enum ( ComputeEngineBootOption ) ,
+"metadata" : {
+string : string ,
+...
+} ,
+"additionalLicenses" : [
+string
+] ,
+"hostname" : string ,
+"encryption" : {
+object ( Encryption )
+} ,
+"bootConversion" : enum ( BootConversion )
+}
+Fields
+vmName
+string
+The name of the VM to create.
+project
+string
+The Google Cloud target project ID or project name.
+zone
+string
+The zone in which to create the VM.
+machineTypeSeries
+string
+The machine type series to create the VM with.
+machineType
+string
+The machine type to create the VM with.
+networkTags[]
+string
+A list of network tags to associate with the VM.
+networkInterfaces[]
+object ( NetworkInterface )
+List of NICs connected to this VM.
+serviceAccount
+string
+The service account to associate the VM with.
+diskType
+enum ( ComputeEngineDiskType )
+The disk type to use in the VM.
+labels
+map (key: string, value: string)
+A map of labels to associate with the VM.
+An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" } .
+licenseType
+enum ( ComputeEngineLicenseType )
+The license type to use in OS adaptation.
+appliedLicense
+object ( AppliedLicense )
+The OS license returned from the adaptation module report.
+computeScheduling
+object ( ComputeScheduling )
+Compute instance scheduling information (if empty default is used).
+secureBoot
+boolean
+Defines whether the instance has Secure Boot enabled. This can be set to true only if the VM boot option is EFI.
+enableVtpm
+boolean
+Optional. Defines whether the instance has vTPM enabled.
+enableIntegrityMonitoring
+boolean
+Optional. Defines whether the instance has integrity monitoring enabled.
+bootOption
+enum ( ComputeEngineBootOption )
+The VM Boot Option, as set in the source VM.
+metadata
+map (key: string, value: string)
+The metadata key/value pairs to assign to the VM.
+An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" } .
+additionalLicenses[]
+string
+Additional licenses to assign to the VM.
+hostname
+string
+The hostname to assign to the VM.
+encryption
+object ( Encryption )
+Optional. The encryption to apply to the VM disks.
+bootConversion
+enum ( BootConversion )
+Optional. By default the virtual machine will keep its existing boot option. Setting this property will trigger an internal process which will convert the virtual machine from using the existing boot option to another.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-07-28 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-07-28 UTC."],[],[]]

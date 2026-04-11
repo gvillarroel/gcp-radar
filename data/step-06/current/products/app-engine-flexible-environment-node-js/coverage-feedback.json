@@ -1,0 +1,905 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T21:05:36.370Z",
+  "product_name": "App Engine flexible environment Node.js",
+  "product_slug": "app-engine-flexible-environment-node-js",
+  "feature_count": 71,
+  "uncovered_feature_count": 51,
+  "uncovered_features": [
+    {
+      "latest_feature_date": "2025-10-20",
+      "feature_name": "TLS 1.2+ with secure cipher suites support",
+      "feature_summary": "App Engine flexible environment made TLS 1.2 and later support generally available, including the corresponding secure cipher suites.",
+      "keywords": [
+        "secure cipher suites",
+        "minimum TLS version",
+        "App Engine flexible TLS settings",
+        "TLS protocol support",
+        "TLS 1.2 and later",
+        "TLS 1.2 and above",
+        "modern TLS",
+        "TLSv1.2+"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-08-07",
+      "feature_name": "TLS 1.1 and earlier support",
+      "feature_summary": "Support for TLS versions 1.1 and earlier was deprecated for App Engine flexible environment; deprecated on March 2025.",
+      "keywords": [
+        "deprecation timeline March 2025",
+        "TLS 1.1 and earlier in App Engine",
+        "TLS 1.1 support sunset",
+        "TLS 1.1 deprecation",
+        "pre-1.2 TLS",
+        "App Engine flexible legacy TLS",
+        "legacy TLS support",
+        "TLS 1.0 and 1.1 deprecated"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-11-19",
+      "feature_name": "Node.js 22 runtime support",
+      "feature_summary": "App Engine flexible environment made Node.js 22 generally available.",
+      "keywords": [
+        "runtime: nodejs22",
+        "Node.js 22 generally available",
+        "Node.js 22 GA",
+        "App Engine flexible Node.js 22",
+        "nodejs22",
+        "Node.js 22 runtime",
+        "Node.js 22",
+        "Node 22"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-07-30",
+      "feature_name": "App Engine Console runtime lifecycle stage filtering",
+      "feature_summary": "The App Engine Console now supports filtering versions by runtime lifecycle stage and displays warning icons for support and deprecation status.",
+      "keywords": [
+        "support status warning icon",
+        "deprecation status icon",
+        "version list filtering",
+        "lifecycle stage filter",
+        "App Engine console runtime filter",
+        "support/deprecation icon",
+        "filter by runtime lifecycle",
+        "runtime lifecycle filter"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-17",
+      "feature_name": "Node.js 22 runtime preview support",
+      "feature_summary": "Node.js 22 became available in Preview for App Engine flexible environment.",
+      "keywords": [
+        "runtime: nodejs22 preview",
+        "nodejs22 preview",
+        "App Engine flexible Node.js preview",
+        "Node.js 22 in Preview",
+        "Node.js 22 (Preview)",
+        "Node.js 22 preview",
+        "Node 22 Preview",
+        "preview runtime"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-06-01",
+      "feature_name": "Pnpm package manager support for Node.js runtimes",
+      "feature_summary": "App Engine flexible environment added support for using Pnpm to manage dependencies for Node.js 18 and Node.js 20 preview runtimes.",
+      "keywords": [
+        "manage dependencies with pnpm",
+        "pnpm package manager",
+        "Cloud Buildpacks pnpm",
+        "Node.js 20 runtime preview pnpm",
+        "pnpm install",
+        "Node.js 18 runtime pnpm",
+        "app.yaml pnpm",
+        "pnpm support"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-22",
+      "feature_name": "Node.js 20 runtime preview support",
+      "feature_summary": "Node.js 20 support entered Preview for App Engine flexible environment.",
+      "keywords": [
+        "runtime: nodejs20 preview",
+        "nodejs20 preview",
+        "preview runtime versions",
+        "Node.js 20 in Preview",
+        "Node.js 20 (Preview)",
+        "App Engine flexible runtime preview",
+        "Node.js 20 preview",
+        "Node 20 Preview"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-03-24",
+      "feature_name": "SSH access to internal-IP-only flexible instances",
+      "feature_summary": "App Engine flexible environment now allows SSH login to instances that use only internal IP addresses.",
+      "keywords": [
+        "SSH to internal-IP-only instances",
+        "internal IP only SSH",
+        "internal-only SSH",
+        "private instance SSH",
+        "private IP SSH",
+        "SSH for internal instances",
+        "App Engine flexible SSH access",
+        "gcloud app ssh"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-02-28",
+      "feature_name": "App Engine flexible environment Node.js 18 runtime",
+      "feature_summary": "The Node.js 18 runtime became available in preview for App Engine flexible environment on Ubuntu 22, using Google Cloud buildpacks and requiring app.yaml updates.",
+      "keywords": [
+        "Google Cloud buildpacks",
+        "App Engine flexible environment buildpacks",
+        "Ubuntu 22 Node.js 18",
+        "runtime: nodejs18 preview",
+        "app.yaml updates",
+        "nodejs18 preview",
+        "Node.js 18 runtime preview",
+        "Node.js 18 preview runtime"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-11-09",
+      "feature_name": "App Engine flexible environment internal IP mode",
+      "feature_summary": "App Engine flexible environment instances gained a configurable option to set IP mode to internal.",
+      "keywords": [
+        "internal-only network mode",
+        "no external IP mode",
+        "internal networking mode",
+        "private networking for instances",
+        "internal IP mode",
+        "App Engine flexible IP mode",
+        "INTERNAL mode",
+        "instance internal IP"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-05-23",
+      "feature_name": "App Engine flexible environment external ephemeral IP disabling",
+      "feature_summary": "App Engine Flex services gained the ability to disable external ephemeral IP addresses for instances.",
+      "keywords": [
+        "instances without public ephemeral IP",
+        "disable external ephemeral IP",
+        "ephemeral address off",
+        "external ephemeral IP addresses",
+        "disable external IP for instances",
+        "ephemeral IP off",
+        "external IP disabled",
+        "external IP disable"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-06-14",
+      "feature_name": "App Engine regional availability expansion",
+      "feature_summary": "App Engine became available in us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan); App Engine became available in region europe-central2 (Warsaw).",
+      "keywords": [
+        "new supported regions",
+        "available in europe-central2",
+        "available in us-west1",
+        "available in asia-southeast1",
+        "available in asia-east1",
+        "regional availability expansion",
+        "region expansion"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-07-08",
+      "feature_name": "App Engine support for external HTTP(S) load balancing via Serverless NEGs",
+      "feature_summary": "External HTTP(S) Load Balancing is now supported for App Engine through Serverless Network Endpoint Groups.",
+      "keywords": [
+        "App Engine with serverless network endpoint groups",
+        "Serverless Network Endpoint Group",
+        "external load balancer integration",
+        "external HTTP(S) Load Balancing",
+        "App Engine backend service for NEG",
+        "external HTTPS LB",
+        "App Engine + Serverless NEG",
+        "serverless NEGs"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-04-20",
+      "feature_name": "App Engine regional availability in us-west4",
+      "feature_summary": "App Engine is available in the us-west4 (Las Vegas, NV) region.",
+      "keywords": [
+        "Las Vegas region availability",
+        "Las Vegas region",
+        "us-west4 region support",
+        "App Engine in us-west4",
+        "available in us-west4",
+        "us-west4"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-03-13",
+      "feature_name": "App Engine regional availability in asia-northeast3",
+      "feature_summary": "App Engine is available in the asia-northeast3 (Seoul) region.",
+      "keywords": [
+        "asia-northeast3 region support",
+        "App Engine in asia-northeast3",
+        "available in asia-northeast3",
+        "Seoul region availability",
+        "asia-northeast3",
+        "Seoul region"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-03-06",
+      "feature_name": "App Engine regional availability in us-west3",
+      "feature_summary": "App Engine is available in the us-west3 (Salt Lake City, Utah) region.",
+      "keywords": [
+        "Salt Lake City region",
+        "us-west3 region support",
+        "App Engine in us-west3",
+        "available in us-west3",
+        "us-west3"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-02-11",
+      "feature_name": "App Engine region-based URL format",
+      "feature_summary": "App Engine now supports request URLs that include a region ID (for example, PROJECT_ID.REGION_ID.r.appspot.com).",
+      "keywords": [
+        "PROJECT_ID.REGION_ID.r.appspot.com",
+        "region-based URL format",
+        "region ID in App Engine hostname",
+        "app URL with region segment",
+        "region ID URL",
+        "regionalized default domain",
+        "regional hostname"
+      ]
+    },
+    {
+      "latest_feature_date": "2019-04-18",
+      "feature_name": "App Engine regional availability in asia-northeast2",
+      "feature_summary": "App Engine is available in the asia-northeast2 (Osaka, Japan) region.",
+      "keywords": [
+        "asia-northeast2 (Osaka)",
+        "Osaka, Japan",
+        "available in asia-northeast2",
+        "App Engine region list",
+        "asia-northeast2",
+        "Osaka region",
+        "App Engine regional availability"
+      ]
+    },
+    {
+      "latest_feature_date": "2019-04-15",
+      "feature_name": "App Engine regional availability in europe-west6",
+      "feature_summary": "App Engine is available in the europe-west6 (Zurich, Switzerland) region.",
+      "keywords": [
+        "europe-west6 (Zurich)",
+        "Zurich, Switzerland",
+        "available in europe-west6",
+        "europe-west6",
+        "Zurich region",
+        "App Engine regional availability",
+        "App Engine region expansion"
+      ]
+    },
+    {
+      "latest_feature_date": "2018-10-22",
+      "feature_name": "App Engine regional availability in asia-east2",
+      "feature_summary": "App Engine is available in the asia-east2 (Hong Kong) region.",
+      "keywords": [
+        "asia-east2 (Hong Kong)",
+        "Hong Kong, China",
+        "Hong Kong region",
+        "available in asia-east2",
+        "App Engine region list",
+        "asia-east2",
+        "App Engine regional availability"
+      ]
+    },
+    {
+      "latest_feature_date": "2018-07-10",
+      "feature_name": "App Engine regional availability in us-west2",
+      "feature_summary": "App Engine is available in the us-west2 (Los Angeles) region.",
+      "keywords": [
+        "us-west2 (Los Angeles)",
+        "Los Angeles region",
+        "available in us-west2",
+        "App Engine regional availability",
+        "App Engine region expansion",
+        "us-west2",
+        "L.A. region"
+      ]
+    },
+    {
+      "latest_feature_date": "2018-01-10",
+      "feature_name": "App Engine regional availability in northamerica-northeast1",
+      "feature_summary": "App Engine became available in the northamerica-northeast1 (Montreal, Canada) region.",
+      "keywords": [
+        "northamerica-northeast1 (Montreal)",
+        "available in northamerica-northeast1",
+        "Montreal, Canada",
+        "northamerica-northeast1",
+        "Montreal region",
+        "App Engine regional availability",
+        "App Engine region expansion"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-10-31",
+      "feature_name": "App Engine regional availability in asia-south1",
+      "feature_summary": "App Engine became available in the asia-south1 (Mumbai, India) region.",
+      "keywords": [
+        "asia-south1 (Mumbai)",
+        "Mumbai, India",
+        "available in asia-south1",
+        "App Engine region list",
+        "asia-south1",
+        "Mumbai region",
+        "App Engine regional availability"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-10-31",
+      "feature_name": "Default Node.js runtime version in App Engine flexible environment",
+      "feature_summary": "For unpinned applications, the App Engine Node.js runtime now defaults to the latest Node.js v8 LTS release.",
+      "keywords": [
+        "latest Node.js LTS",
+        "Node.js v8 LTS",
+        "v8 LTS",
+        "unpinned applications",
+        "default Node.js runtime version",
+        "default Node.js version",
+        "Node.js 8 LTS",
+        "App Engine flexible Node.js runtime"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-10-02",
+      "feature_name": "Automatic gzip response compression for App Engine flexible environment",
+      "feature_summary": "App Engine flexible environment began compressing all responses with gzip by default after redeploying an app, with no app.yaml changes required.",
+      "keywords": [
+        "automatic gzip compression",
+        "compress all responses",
+        "gzip enabled by default",
+        "response compression",
+        "gzip for responses",
+        "response gzip",
+        "App Engine flexible compression",
+        "default gzip"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-09-26",
+      "feature_name": "Per-second instance billing for App Engine flexible environment",
+      "feature_summary": "Flexible environment instance billing changed from per-minute to per-second increments, and minimum usage was reduced from 10 minutes to 1 minute.",
+      "keywords": [
+        "instance minute-to-second billing",
+        "1 minute minimum usage",
+        "per-second instance billing",
+        "instance billing granularity",
+        "second-based billing",
+        "per-second billing",
+        "billing by second",
+        "App Engine flexible billing"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-09-18",
+      "feature_name": "Legacy health checks",
+      "feature_summary": "Legacy health checks were deprecated and discontinued for App Engine after September 30, 2018; deprecated on 2018-09-30.",
+      "keywords": [
+        "legacy health check deprecation",
+        "legacy health checks discontinued",
+        "old health checks",
+        "legacy health checks",
+        "deprecated health checks",
+        "legacy checks deprecated",
+        "legacy checks"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-09-13",
+      "feature_name": "General availability of App Engine custom domain mapping APIs and CLI",
+      "feature_summary": "Gcloud and Admin API methods for custom domain mapping, including domains verify and apps.authorizedDomains.list, became generally available.",
+      "keywords": [
+        "apps.authorizedDomains.list",
+        "App Engine Admin API domain mapping",
+        "custom domain mappings API",
+        "domain mapping CLI",
+        "gcloud app domain-mappings",
+        "domains verify",
+        "custom domain API",
+        "custom domains API"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-09-13",
+      "feature_name": "Managed SSL certificate upgrade for existing custom domains",
+      "feature_summary": "Existing domain mappings and SSL certificates in App Engine can continue functioning, and users can upgrade to managed SSL certificates.",
+      "keywords": [
+        "legacy domain certificate upgrade",
+        "upgrade managed SSL certificate",
+        "existing custom domain certificate",
+        "in-place SSL upgrade",
+        "existing domain mapping SSL",
+        "managed certificate migration",
+        "managed SSL upgrade",
+        "cert migration"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-09-05",
+      "feature_name": "App Engine region expansion: southamerica-east1",
+      "feature_summary": "App Engine was made available in the southamerica-east1 region (Sao Paulo, Brazil).",
+      "keywords": [
+        "region availability southamerica-east1",
+        "Sao Paulo region",
+        "Sao Paulo",
+        "southamerica-east1 region",
+        "new supported region",
+        "southamerica-east1",
+        "App Engine flexible region"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-08-23",
+      "feature_name": "App Engine firewall (beta)",
+      "feature_summary": "App Engine introduced a beta release of the App Engine Firewall.",
+      "keywords": [
+        "App Engine firewall feature",
+        "AE Firewall beta",
+        "firewall beta release",
+        "App Engine Firewall beta",
+        "beta App Engine Firewall",
+        "firewall for App Engine",
+        "beta firewall"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-06-06",
+      "feature_name": "App Engine region expansion: europe-west2",
+      "feature_summary": "App Engine was made available in the europe-west2 region (London).",
+      "keywords": [
+        "europe-west2 (London)",
+        "App Engine region availability europe-west2",
+        "flexible environment location",
+        "London expansion",
+        "App Engine in europe-west2",
+        "London region",
+        "europe-west2 region"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-05-09",
+      "feature_name": "App Engine region expansion: us-east4",
+      "feature_summary": "App Engine was made available in the us-east4 region (North Virginia).",
+      "keywords": [
+        "us-east4 (N. Virginia)",
+        "North Virginia region",
+        "us-east4 launch",
+        "App Engine region availability us-east4",
+        "App Engine in us-east4",
+        "flexible environment location",
+        "us-east4 region"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-04-11",
+      "feature_name": "Task Queue API migration guidance to Cloud Tasks in flexible environment",
+      "feature_summary": "App Engine updated task queue guidance to direct flexible environment users from Task Queue API to Cloud Tasks and added instructions for verifying Task Queue API requests.",
+      "keywords": [
+        "verify Task Queue API requests",
+        "Task Queue API for flexible environment",
+        "Task Queue to Cloud Tasks",
+        "Task Queue API migration",
+        "Cloud Tasks migration guidance",
+        "flexible task queue migration",
+        "App Engine flexible queue migration",
+        "migrate to Cloud Tasks"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-28",
+      "feature_name": "App Engine flexible environment availability: europe-west",
+      "feature_summary": "The App Engine flexible environment became available in the europe-west region.",
+      "keywords": [
+        "europe-west flexible launch",
+        "supported regions",
+        "flexible environment in europe-west",
+        "Western Europe region",
+        "europe-west region",
+        "App Engine flexible environment availability",
+        "App Engine region support"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "App Engine flexible environment .NET Core runtime",
+      "feature_summary": "A .NET Core runtime was introduced for App Engine flexible environment in beta.",
+      "keywords": [
+        "ASP.NET Core on App Engine",
+        ".NET Core on flexible environment",
+        "Microsoft .NET on App Engine",
+        "App Engine flexible .NET Core",
+        "beta .NET Core",
+        ".NET Core runtime",
+        "flexible environment runtimes"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "App Engine flexible environment general availability",
+      "feature_summary": "App Engine flexible environment became generally available, allowing Node.js, Ruby, Python, Java, and Go applications to run on the platform with a 99.95% SLA.",
+      "keywords": [
+        "Node.js Ruby Python Java Go runtimes",
+        "99.95% SLA",
+        "flexible environment GA launch",
+        "App Engine flexible environment general availability",
+        "General availability release",
+        "GA for flexible environment",
+        "Flexible environment GA"
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "PHP 7 runtime for App Engine flexible environment",
+      "feature_summary": "The PHP 7 runtime for App Engine flexible environment entered Beta.",
+      "keywords": [
+        "PHP runtime on App Engine",
+        "App Engine flexible PHP 7",
+        "PHP 7 beta runtime",
+        "PHP 7 on App Engine",
+        "beta PHP 7",
+        "PHP 7 runtime",
+        "flexible environment runtime support"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-12-06",
+      "feature_name": "App Engine flexible environment `env: true` app.yaml configuration",
+      "feature_summary": "New flexible environment applications are required to use `env: true` in app.yaml instead of `vm: true`, with existing deployments temporarily allowed to keep `vm: true`.",
+      "keywords": [
+        "vm:true compatibility period",
+        "replace vm: true with env: true",
+        "require env: true",
+        "env:true rollout",
+        "existing vm: true deployments",
+        "app.yaml env: true",
+        "flexible environment app configuration"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "App Engine flexible environment `env:flex` selection",
+      "feature_summary": "The App Engine flexible environment selection in app.yaml uses `env:flex` rather than `vm:true`.",
+      "keywords": [
+        "vm:true replaced by env:flex",
+        "select flexible environment with env:flex",
+        "env:flex selector",
+        "flex setting in app.yaml",
+        "env:flex configuration",
+        "flexible environment setting",
+        "app.yaml env:flex"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "App Engine flexible environment availability in asia-northeast1",
+      "feature_summary": "The App Engine flexible environment became available in the Asia-Northeast1 region.",
+      "keywords": [
+        "App Engine flexible environment availability asia-northeast1",
+        "Tokyo launch",
+        "asia-northeast1 (Tokyo)",
+        "App Engine in asia-northeast1",
+        "Tokyo region",
+        "asia-northeast1 region",
+        "flexible environment region expansion"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "App Engine flexible environment custom machine types",
+      "feature_summary": "Custom machine types became available for App Engine flexible environment instances.",
+      "keywords": [
+        "Compute Engine custom machine types",
+        "custom machine type support",
+        "custom machine types",
+        "custom-machine-types",
+        "custom-machine-type",
+        "flex instance types",
+        "flexible environment instance sizing",
+        "App Engine flexible custom machine"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "App Engine flexible environment modern networking stack",
+      "feature_summary": "The App Engine flexible environment introduced a modern networking stack with increased throughput.",
+      "keywords": [
+        "modern networking stack",
+        "modern net stack",
+        "increased network throughput",
+        "App Engine flexible networking stack",
+        "throughput networking",
+        "new network stack",
+        "flexible environment network stack",
+        "network performance"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "App Engine flexible environment multi-zonal deployment",
+      "feature_summary": "Flexible environment deployments added support for multi-zonal deployment.",
+      "keywords": [
+        "deploy across multiple zones",
+        "multi-zone flex",
+        "App Engine flexible multi-zonal",
+        "multi-zonal deployment",
+        "multi-zone deployment",
+        "regional failover zones",
+        "multi-zonal",
+        "multi-zone"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "java-compat runtime",
+      "feature_summary": "The java-compat runtime was deprecated for App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "gae java-compat",
+        "java-compat runtime deprecated",
+        "App Engine flexible java-compat",
+        "deprecated java-compat",
+        "java-compat runtime",
+        "2016-11-15 deprecated",
+        "java compat"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "jetty9-compat runtime",
+      "feature_summary": "The jetty9-compat runtime was deprecated for App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "jetty9-compat runtime deprecated",
+        "App Engine flexible jetty9-compat",
+        "deprecated jetty9-compat",
+        "jetty9-compat runtime",
+        "jetty9 compat",
+        "jetty compat",
+        "2016-11-15 deprecated"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "legacy Go App Engine package on App Engine flexible environment",
+      "feature_summary": "The legacy Go App Engine package was deprecated for use in App Engine flexible environment, with migration recommended to the `cloud.google.com/go/...` packages; deprecated on 2016-11-15.",
+      "keywords": [
+        "google.golang.org/appengine import path",
+        "google.golang.org/appengine",
+        "migrate to cloud.google.com/go",
+        "legacy Go package deprecation",
+        "legacy go appengine package",
+        "cloud.google.com/go",
+        "legacy Go App Engine package",
+        "App Engine flexible Go migration"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "python-compat runtime",
+      "feature_summary": "The python-compat runtime was deprecated for App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "python-compat runtime deprecated",
+        "App Engine flexible python-compat",
+        "py-compat",
+        "deprecated python-compat",
+        "python-compat runtime",
+        "2016-11-15 deprecated",
+        "python compat"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "python27 runtime",
+      "feature_summary": "The python27 runtime was deprecated for App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "python27 runtime deprecated",
+        "deprecated python27",
+        "python27 runtime",
+        "App Engine flexible Python 2.7",
+        "2016-11-15 deprecated",
+        "py27",
+        "Python 2.7 runtime"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-05-02",
+      "feature_name": "App Engine flexible environment Ruby runtime",
+      "feature_summary": "The Ruby runtime became available for App Engine flexible environment.",
+      "keywords": [
+        "Ruby support in App Engine flexible",
+        "Ruby flex runtime",
+        "App Engine flexible Ruby runtime",
+        "Ruby runtime availability",
+        "Ruby on App Engine",
+        "runtime: ruby",
+        "Ruby runtime"
+      ]
+    },
+    {
+      "latest_feature_date": "2016-02-03",
+      "feature_name": "Cloud Build-based container image construction for Managed VMs deployments",
+      "feature_summary": "Managed VM deployments gained remote container image build options, including an alternative beta path using Cloud Build configurable via gcloud app deployment settings.",
+      "keywords": [
+        "remote container image build",
+        "Cloud Build-based container image",
+        "Managed VMs remote build",
+        "Cloud Build deployment option",
+        "gcloud app deploy settings",
+        "beta Cloud Build path",
+        "app deploy Cloud Build",
+        "remote build"
+      ]
+    }
+  ],
+  "top_missing_tokens": [
+    {
+      "token": "app",
+      "count": 51
+    },
+    {
+      "token": "engine",
+      "count": 50
+    },
+    {
+      "token": "environment",
+      "count": 30
+    },
+    {
+      "token": "flexible",
+      "count": 30
+    },
+    {
+      "token": "the",
+      "count": 30
+    },
+    {
+      "token": "for",
+      "count": 27
+    },
+    {
+      "token": "in",
+      "count": 24
+    },
+    {
+      "token": "available",
+      "count": 23
+    },
+    {
+      "token": "region",
+      "count": 16
+    },
+    {
+      "token": "availability",
+      "count": 14
+    },
+    {
+      "token": "runtime",
+      "count": 13
+    },
+    {
+      "token": "and",
+      "count": 12
+    },
+    {
+      "token": "became",
+      "count": 11
+    },
+    {
+      "token": "to",
+      "count": 11
+    },
+    {
+      "token": "was",
+      "count": 11
+    },
+    {
+      "token": "regional",
+      "count": 10
+    },
+    {
+      "token": "on",
+      "count": 9
+    },
+    {
+      "token": "support",
+      "count": 9
+    },
+    {
+      "token": "is",
+      "count": 8
+    },
+    {
+      "token": "deprecated",
+      "count": 7
+    },
+    {
+      "token": "js",
+      "count": 7
+    },
+    {
+      "token": "node",
+      "count": 7
+    },
+    {
+      "token": "asia",
+      "count": 6
+    },
+    {
+      "token": "with",
+      "count": 6
+    },
+    {
+      "token": "11",
+      "count": 5
+    },
+    {
+      "token": "15",
+      "count": 5
+    },
+    {
+      "token": "2016",
+      "count": 5
+    },
+    {
+      "token": "made",
+      "count": 5
+    },
+    {
+      "token": "now",
+      "count": 5
+    },
+    {
+      "token": "us",
+      "count": 5
+    },
+    {
+      "token": "beta",
+      "count": 4
+    },
+    {
+      "token": "cloud",
+      "count": 4
+    },
+    {
+      "token": "europe",
+      "count": 4
+    },
+    {
+      "token": "expansion",
+      "count": 4
+    },
+    {
+      "token": "generally",
+      "count": 4
+    },
+    {
+      "token": "instances",
+      "count": 4
+    },
+    {
+      "token": "preview",
+      "count": 4
+    },
+    {
+      "token": "yaml",
+      "count": 4
+    },
+    {
+      "token": "22",
+      "count": 3
+    },
+    {
+      "token": "added",
+      "count": 3
+    }
+  ]
+}

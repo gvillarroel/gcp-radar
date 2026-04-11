@@ -1,0 +1,146 @@
+---
+title: "Legacy SQL data types \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/bigquery/docs/data-types
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/bigquery/docs/reference
+source_metadata:
+  url: https://docs.cloud.google.com/bigquery/docs/data-types
+  title: "Legacy SQL data types \_|\_ BigQuery \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+BigQuery
+Reference
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Legacy SQL data types
+This document details the data types supported by BigQuery's
+legacy SQL query syntax. The preferred query syntax for BigQuery
+is GoogleSQL. For information on data types in GoogleSQL, see
+the GoogleSQL data types .
+Legacy SQL data types
+Your data can include the following data types:
+Data type
+Possible values
+STRING
+Variable-length character (UTF-8) data.
+BYTES
+Variable-length binary data.
+Imported BYTES data must be base64-encoded, except for Avro BYTES data,
+which BigQuery can read and convert.
+BYTES data read from a BigQuery table are base64-encoded,
+unless you export to Avro format, in which case the Avro bytes
+data type applies.
+INTEGER
+64-bit signed integer.
+If you are using the BigQuery API to load an integer outside the range
+of [-2 53 +1, 2 53 -1] (in most cases, this
+means larger than 9,007,199,254,740,991), into an integer
+(INT64) column, you must pass it as a string to avoid data corruption.
+This issue is caused by a limitation on integer size in JSON/ECMAScript.
+For more information, see
+the Numbers section of RFC 7159 .
+FLOAT
+Double-precision floating-point format.
+NUMERIC
+Legacy SQL has limited support for NUMERIC. For more information,
+see Exact numeric in legacy SQL .
+BIGNUMERIC
+Legacy SQL has limited support for BIGNUMERIC. For more information,
+see Exact numeric in legacy SQL .
+BOOLEAN
+CSV format: 1 or 0 , true or false , t or f , yes or no , or y or n (all case-insensitive).
+JSON format: true or false (case-insensitive).
+RECORD
+A collection of one or more other fields.
+TIMESTAMP
+You can describe TIMESTAMP data types as either UNIX timestamps or calendar datetimes. BigQuery stores TIMESTAMP data internally as a UNIX timestamp with microsecond precision.
+UNIX timestamps
+A positive or negative decimal number. A positive number specifies the number of seconds since the epoch (1970-01-01 00:00:00 UTC), and a negative number specifies the number of seconds before the epoch. Up to 6 decimal places (microsecond precision) are preserved.
+Date and time strings
+A date and time string in the format YYYY-MM-DD HH:MM:SS . The UTC and Z specifiers are supported.
+You can supply a timezone offset in your date and time strings, but
+BigQuery doesn't preserve the offset after converting the value to its
+internal format. If you need to preserve the original timezone data,
+store the timezone offset in a separate column. The leading zero is
+required when you specify a single-digit timezone offset.
+Date and time strings must be quoted when using JSON format.
+Examples
+The following examples show identical ways of describing specific dates, in both UNIX timestamp and date and time string formats.
+Event
+UNIX timestamp format
+Date/time string format
+Minor (M4.2) earthquake near Oklahoma City
+1408452095.220
+1408452095.220000
+2014-08-19 07:41:35.220 -05:00
+2014-08-19 12:41:35.220 UTC
+2014-08-19 12:41:35.220
+2014-08-19 12:41:35.220000
+2014-08-19T12:41:35.220Z
+Neil Armstrong sets foot on the moon
+-14182916
+1969-07-20 20:18:04
+1969-07-20 20:18:04 UTC
+1969-07-20T20:18:04
+Deadline for fixing Y10k bug
+253402300800
+2.53402300800e11
+10000-01-01 00:00
+DATE
+Legacy SQL has limited support for DATE. For more information,
+see Civil time in legacy SQL .
+TIME
+Legacy SQL has limited support for TIME. For more information,
+see Civil time in legacy SQL .
+DATETIME
+Legacy SQL has limited support for DATETIME. For more information,
+see Civil time in legacy SQL .
+Exact numeric in legacy SQL
+You can read NUMERIC or BIGNUMERIC values in non-modifying clauses such as
+SELECT list (with aliases) , GROUP BY keys , and pass-through fields in
+window functions, and so on. However, any computation over NUMERIC or
+BIGNUMERIC values, including comparisons, produces undefined results.
+The following cast and conversion functions are supported in legacy SQL:
+CAST(<numeric> AS STRING)
+CAST(<bignumeric> AS STRING)
+CAST(<string> AS NUMERIC)
+CAST(<string> AS BIGNUMERIC)
+Civil time in legacy SQL
+You can read civil time data types—DATE, TIME, and
+DATETIME—and process them with non-modifying operators such as
+SELECT list (with aliases) , GROUP BY keys , and pass-through fields in
+window functions, etc. However, any other computation over civil time values,
+including comparisons, produces undefined results.
+The following casts and conversion functions are supported in legacy SQL:
+CAST(<date> AS STRING)
+CAST(<time> AS STRING)
+CAST(<datetime> AS STRING)
+CAST(<string> AS DATE)
+CAST(<string> AS TIME)
+CAST(<string> AS DATETIME)
+In practice, legacy SQL interprets civil time values as integers, and operations
+on integers that you think are civil time values produce unexpected results.
+To compute values using civil time data types, consider
+GoogleSQL , which supports all SQL
+operations on the
+DATE ,
+DATETIME , and
+TIME data types.
+What's next
+To set a field's data type using the API, see schema.fields.type .
+For GoogleSQL data types, see data types .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-10 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

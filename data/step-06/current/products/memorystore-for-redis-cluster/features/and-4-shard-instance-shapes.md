@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:44.696Z"
+product_name: "Memorystore for Redis Cluster"
+product_slug: "memorystore-for-redis-cluster"
+feature_name: "and 4-shard instance shapes"
+feature_slug: "and-4-shard-instance-shapes"
+latest_feature_date: "2024-11-11"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "and"
+  - "shard"
+  - "instance"
+  - "shapes"
+  - "the"
+  - "supports"
+  - "instances"
+  - "with"
+---
+
+# and 4-shard instance shapes
+
+Product: Memorystore for Redis Cluster
+Coverage: NONE
+
+## Step 02 Summary
+
+The service supports instances with 1, 2, or 4 shards; The service supports instances with 1, 2, or 4 shards.
+
+## Extended Definition
+
+The service supports instances with 1, 2, or 4 shards; The service supports instances with 1, 2, or 4 shards.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

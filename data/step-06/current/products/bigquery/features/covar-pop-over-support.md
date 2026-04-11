@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:05.278Z"
+generated_at: "2026-04-10T13:25:38.891Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "COVAR_POP OVER support"

@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:34.377Z"
+product_name: "Google SecOps Marketplace"
+product_slug: "google-secops-marketplace"
+feature_name: "List Investigations predefined widget"
+feature_slug: "list-investigations-predefined-widget"
+latest_feature_date: "2026-03-18"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "list"
+  - "investigations"
+  - "predefined"
+  - "widget"
+  - "adds"
+  - "for"
+  - "the"
+  - "action"
+---
+
+# List Investigations predefined widget
+
+Product: Google SecOps Marketplace
+Coverage: NONE
+
+## Step 02 Summary
+
+Adds a predefined widget for the List Investigations action.
+
+## Extended Definition
+
+Adds a predefined widget for the List Investigations action.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

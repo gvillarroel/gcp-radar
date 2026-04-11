@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-09T08:32:40.560Z",
+  "generated_at": "2026-04-11T18:28:08.916Z",
   "product_name": "Tasks API",
   "product_slug": "tasks-api",
   "step02_source_path": "data/step-02/current/tasks-api.md",
@@ -8,6 +8,34 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 1,
+    "source_row_count": 1,
+    "top_phrases": [
+      "tasks api access to tasks assigned in google docs and google chat",
+      "the tasks api now supports getting editing and deleting tasks assigned from google docs documents or google chat spaces"
+    ],
+    "top_tokens": [
+      "access",
+      "and",
+      "api",
+      "assigned",
+      "chat",
+      "deleting",
+      "docs",
+      "documents",
+      "editing",
+      "from",
+      "getting",
+      "google",
+      "now",
+      "spaces",
+      "supports",
+      "tasks",
+      "the"
+    ],
+    "inventory_profile": "api_heavy"
+  },
   "dominant_doc_family": "tasks",
   "dominant_python_slug": "",
   "dominant_java_slug": "google-cloud-tasks",
@@ -57,15 +85,15 @@
           "rank": 5
         },
         {
-          "title": "Go quickstart | Google Tasks | Google for Developers",
-          "url": "https://developers.google.com/workspace/tasks/quickstart/go",
-          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Latest version of Go. Latest version of Git. A Google Cloud project. A Google account with Google Tasks ...",
-          "rank": 6
-        },
-        {
           "title": "Google Tasks API quotas and usage limits | Google for Developers",
           "url": "https://developers.google.com/workspace/tasks/limits",
           "description": "The Tasks API has a courtesy limit of 50,000 queries per day.",
+          "rank": 6
+        },
+        {
+          "title": "Go quickstart | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/quickstart/go",
+          "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Latest version of Go. Latest version of Git. A Google Cloud project. A Google account with Google Tasks ...",
           "rank": 7
         },
         {
@@ -134,6 +162,13 @@
     },
     {
       "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Tasks API\" \"tasks api access to tasks assigned in google docs and google chat\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Tasks API\" \"roles and permissions\"",
       "official_result_count": 0,
@@ -192,13 +227,13 @@
         {
           "title": "Cloud Tasks API v2 - Package cloud.google.com/go/cloudtasks/apiv2 (v1.13.7) | Go client libraries | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/cloudtasks/latest/apiv2",
-          "description": "Package cloudtasks is an auto-generated package for the Cloud Tasks API.",
+          "description": "If Cloud Tasks receives a successful response from the task’s target, then the task will be deleted; otherwise the task’s schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue’s RetryConfig.",
           "rank": 6
         },
         {
-          "title": "Cloud Tasks API Connector Overview | Workflows | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/cloudtasks/Overview",
-          "description": "Skip to main content · Console · English · Deutsch · Español – América Latina · Français · Português – Brasil · 中文 – 简体 · 日本語 · 한국어",
+          "title": "Executing asynchronous tasks | Cloud Run | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/run/docs/triggering/using-tasks",
+          "description": "The following examples create task requests that also include the creation of a header token. OIDC tokens are used in the examples. To use an OAuth token, replace the OIDC parameter with the language appropriate OAuth parameter in constructing the request. from typing import Optional from google.cloud import tasks_v2 def create_http_task_with_token( project: str, location: str, queue: str, url: str, payload: bytes, service_account_email: str, audience: Optional[str] = None, ) -&gt; tasks_v2.Task: &quot;&quot;&quot;Create an HTTP POST task with an OIDC token and an arbitrary payload.",
           "rank": 7
         },
         {
@@ -262,21 +297,21 @@
           "rank": 3
         },
         {
+          "title": "Tasks Service | Apps Script | Google for Developers",
+          "url": "https://developers.google.com/apps-script/advanced/tasks",
+          "description": "The following sample code uses version 1 of the API. This sample lists the task lists in your account. ... /** * Lists the titles and IDs of tasksList. * @see https://developers.google.com/tasks/reference/rest/v1/tasklists/list */ function listTaskLists() { try { // Returns all the authenticated user&#x27;s task lists.",
+          "rank": 4
+        },
+        {
           "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
           "url": "https://developers.google.com/api-client-library/dotnet/apis/tasks/v1",
           "description": "Google.Apis.Tasks.v1 · Google Tasks API v1 · Google.Apis.Testing.v1 · Cloud Testing API v1 · Google.Apis.Texttospeech.v1 · Cloud Text-to-Speech API v1 · Google.Apis.Texttospeech.v1beta1 · Cloud Text-to-Speech API v1beta1 · Google.Apis.ThreatIntelligenceService.v1beta ·",
-          "rank": 4
+          "rank": 5
         },
         {
           "title": "Tasks API Downloads | Google Tasks | Google for Developers",
           "url": "https://developers.google.com/workspace/tasks/downloads",
           "description": "Google Tasks · Reference · Send feedback · In the following tables, the first column shows each library&#x27;s stage of development (note that some are in early stages), and links to documentation for the library. The second column links to available samples for each library.",
-          "rank": 5
-        },
-        {
-          "title": "Google Tasks API release notes | Google for Developers",
-          "url": "https://developers.google.com/workspace/tasks/release-notes",
-          "description": "Generally Available: You can now get, edit, and delete tasks assigned from Google Docs documents or Chat spaces using the Tasks API. For more information, refer to the tasks reference documentation.",
           "rank": 6
         },
         {
@@ -286,12 +321,19 @@
           "rank": 7
         },
         {
-          "title": "JavaScript quickstart | Google Tasks | Google for Developers",
-          "url": "https://developers.google.com/tasks/quickstart/dotnet",
-          "description": "Tasks API reference documentation · google-api-javascript-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "title": "Google Tasks API release notes | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/release-notes",
+          "description": "Generally Available: You can now get, edit, and delete tasks assigned from Google Docs documents or Chat spaces using the Tasks API. For more information, refer to the tasks reference documentation.",
           "rank": 8
         }
       ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Tasks API\" \"the tasks api now supports getting editing and deleting tasks assigned from google docs documents or google chat spaces\"",
+      "official_result_count": 0,
+      "results": []
     },
     {
       "round": 2,
@@ -431,14 +473,56 @@
     {
       "round": 3,
       "intent": "canonical_docs",
-      "query": "site:developers.google.com/tasks/reference/rest/v1/tasks \"Google Tasks API\"",
-      "official_result_count": 1,
+      "query": "site:developers.google.com/workspace/tasks auth scopes",
+      "official_result_count": 8,
       "results": [
         {
-          "title": "REST Resource: tasks | Google for Developers",
-          "url": "https://developers.google.com/tasks/reference/rest/v1/tasks",
-          "description": "The Google Tasks API <strong>allows you to manage tasks, including creating, updating, deleting, and querying tasks</strong>.",
+          "title": "Choose Google Tasks API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/auth",
+          "description": "To define the level of access granted ... An authorization scope is <strong>an OAuth 2.0 URI string that contains the Google Workspace app name, what kind of data it accesses, and the level of access</strong>....",
           "rank": 1
+        },
+        {
+          "title": "Build Authorization Callback Handler | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/oauth-authorization-callback-handler",
+          "description": "They can be found in the APIs console. clientId=1234567890.apps.googleusercontent.com clientSecret=aBcDeFgHiJkLmNoPqRsTuVwXyZ # API scopes. Space separated. scopes=https://www.googleapis.com/auth/tasks · oauth.properties file · The OAuth 2.0 Client ID and Client secret identifies the application and allows the Tasks API to apply filters and quota rules that are defined for the application.",
+          "rank": 2
+        },
+        {
+          "title": "Troubleshoot authentication & authorization issues | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/troubleshoot-authentication-authorization",
+          "description": "This page describes some common issues that you might encounter involving authentication and authorization. If the OAuth consent screen displays the warning &quot;This app isn&#x27;t verified,&quot; your app is requesting scopes that provide access to sensitive user data. If your application uses sensitive ...",
+          "rank": 3
+        },
+        {
+          "title": "Method: tasklists.get | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasklists/get",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 4
+        },
+        {
+          "title": "Method: tasks.list | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasks/list",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 5
+        },
+        {
+          "title": "Use Tasks API on Android | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/oauth-and-tasks-on-android?csw=1",
+          "description": "You can also use the AUTH_TOKEN_TYPE alias View your tasks which is equivalent to the Tasks API read-only scope: oauth2:https://www.googleapis.com/auth/tasks.readonly.",
+          "rank": 6
+        },
+        {
+          "title": "Method: tasklists.list | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasklists/list",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 7
+        },
+        {
+          "title": "Method: tasks.get | Google Tasks | Google for Developers",
+          "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasks/get",
+          "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+          "rank": 8
         }
       ]
     },
@@ -500,15 +584,28 @@
     },
     {
       "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Tasks API\" \"tasks api access to tasks assigned in google docs and google chat\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
       "intent": "iam_permissions",
       "query": "site:docs.cloud.google.com \"Tasks API\" IAM roles permissions",
-      "official_result_count": 1,
+      "official_result_count": 2,
       "results": [
         {
           "title": "Access control with IAM | Cloud Tasks | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/tasks/docs/access-control",
           "description": "Enable the Cloud Tasks API. ... To enable APIs, you need the Service Usage Admin IAM role (roles/serviceusage.serviceUsageAdmin), which contains the <strong>serviceusage.services.enable permission</strong>.",
           "rank": 1
+        },
+        {
+          "title": "Authenticate to Cloud Tasks | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/tasks/docs/authentication",
+          "description": "If that is not feasible, or if you need to test the permissions assigned to a service account, you can use service account impersonation. You must have the iam.serviceAccounts.getAccessToken permission, which is included in the Service Account Token Creator (roles/iam.serviceAccountTokenCreator) IAM role.",
+          "rank": 2
         }
       ]
     },
@@ -632,9 +729,21 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "api_reference",
+        "classification": "product_reference",
         "score": 100,
         "family_score": 42,
         "family_preferred": true,
@@ -642,6 +751,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -656,8 +773,8 @@
       "query_hits": [
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Tasks API\" \"API reference\"",
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference",
+        "site:docs.cloud.google.com \"Tasks API\" \"API reference\""
       ],
       "intent_hits": [
         "product_docs",
@@ -671,6 +788,20 @@
       "best_rank": 3,
       "consistency_score": 100,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -680,7 +811,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -708,6 +849,19 @@
       "best_rank": 5,
       "consistency_score": 100,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -718,6 +872,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -745,6 +908,20 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -754,7 +931,17 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 2,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -784,6 +971,20 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 21,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "api",
+          "docs",
+          "from",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -794,6 +995,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "api",
+          "docs",
+          "from",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -821,6 +1032,19 @@
       "best_rank": 1,
       "consistency_score": 100,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 14,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "documents",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -831,6 +1055,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "documents",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -840,12 +1073,12 @@
     {
       "title": "Cloud Tasks API v2 - Package cloud.google.com/go/cloudtasks/apiv2 (v1.13.7) | Go client libraries | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/go/docs/reference/cloud.google.com/go/cloudtasks/latest/apiv2",
-      "description": "Package cloudtasks is an auto-generated package for the Cloud Tasks API.",
+      "description": "If Cloud Tasks receives a successful response from the task’s target, then the task will be deleted; otherwise the task’s schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue’s RetryConfig.",
       "rank": 6,
       "query_hits": [
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Tasks API\" \"access control\"",
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Tasks API\" \"access control\"",
         "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
       ],
       "intent_hits": [
@@ -860,6 +1093,19 @@
       "best_rank": 2,
       "consistency_score": 100,
       "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "from",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -869,7 +1115,16 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "from",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -877,68 +1132,39 @@
       "keep": false
     },
     {
-      "title": "Cloud Tasks API Connector Overview | Workflows | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/cloudtasks/Overview",
-      "description": "Skip to main content · Console · English · Deutsch · Español – América Latina · Français · Português – Brasil · 中文 – 简体 · 日本語 · 한국어",
-      "rank": 7,
+      "title": "Choose Google Tasks API scopes | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/auth",
+      "description": "This document contains <strong>Google Tasks API</strong>-specific authorization and authentication information.",
+      "rank": 8,
       "query_hits": [
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
+        "site:developers.google.com/workspace/tasks \"Google Tasks API\"",
+        "site:developers.google.com/workspace/tasks auth scopes"
       ],
       "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 100,
-      "product_fit_score": 74,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "REST Resource: tasks | Google for Developers",
-      "url": "https://developers.google.com/tasks/reference/rest/v1/tasks",
-      "description": "[[[&quot;Easy to understand&quot;,&quot;easyToUnderstand&quot;,&quot;thumb-up&quot;],[&quot;Solved my problem&quot;,&quot;solvedMyProblem&quot;,&quot;thumb-up&quot;],[&quot;Other&quot;,&quot;otherUp&quot;,&quot;thumb-up&quot;]],[[&quot;Missing the information I need&quot;,&quot;missingTheInformationINeed&quot;,&quot;thumb-down&quot;],[&quot;Too complicated / too many steps&quot;,&quot;tooComplicatedTooManySteps&quot;,&quot;thumb-down&quot;],[&quot;Out of date&quot;,&quot;outOfDate&quot;,&quot;thumb-down&quot;],[&quot;Samples / code issue&quot;,&quot;samplesCodeIssue&quot;,&quot;thumb-down&quot;],[&quot;Other&quot;,&quot;otherDown&quot;,&quot;thumb-down&quot;]],[&quot;Last updated 2025-03-12 UTC.&quot;],[],[&quot;The core content defines a \\&quot;Task\\&quot; resource with properties like `id`, `title`, `status`, `due`, and `completed`. Tasks can have `notes`, `links`, and be organized with a `parent` and `position`. Assigned tasks have `assignmentInfo`, detailing the source (`DOCUMENT` or `SPACE`) via `ContextType`. `DriveResourceInfo` and `SpaceInfo` provide further source details.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
-        "site:developers.google.com/tasks/reference/rest/v1/tasks \"Google Tasks API\"",
-        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference",
-        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs",
         "canonical_docs"
       ],
       "round_hits": [
         1,
-        3,
-        2
+        3
       ],
       "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 72,
+      "consistency_score": 67,
+      "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_reference",
+        "classification": "iam_reference",
         "score": 100,
         "family_score": 42,
         "family_preferred": true,
@@ -946,10 +1172,18 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": true,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
-      "final_score": 100,
+      "final_score": 95,
       "keep": true
     },
     {
@@ -973,6 +1207,18 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "product_root",
@@ -983,6 +1229,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": true,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1008,6 +1262,16 @@
       "best_rank": 7,
       "consistency_score": 67,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1018,6 +1282,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1043,6 +1313,18 @@
       "best_rank": 5,
       "consistency_score": 67,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "and",
+          "api",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1053,6 +1335,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "and",
+          "api",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1078,6 +1368,19 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "now",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1088,6 +1391,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "now",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1113,6 +1425,17 @@
       "best_rank": 4,
       "consistency_score": 67,
       "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1123,6 +1446,66 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 95,
+      "keep": false
+    },
+    {
+      "title": "Cloud Tasks API Connector Overview | Workflows | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/cloudtasks/Overview",
+      "description": "Skip to main content · Console · English · Deutsch · Español – América Latina · Français · Português – Brasil · 中文 – 简体 · 日本語 · 한국어",
+      "rank": 4,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud docs overview",
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud introduction reference"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 67,
+      "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1148,6 +1531,19 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": 24,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "and",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1158,6 +1554,15 @@
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "and",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1183,6 +1588,16 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": -16,
+      "feature_coverage": {
+        "score": 5,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "docs",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1192,7 +1607,13 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 0,
-        "coverage_value": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "docs",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1200,43 +1621,10 @@
       "keep": false
     },
     {
-      "title": "Choose Google Tasks API scopes | Google for Developers",
-      "url": "https://developers.google.com/workspace/tasks/auth",
-      "description": "This document contains <strong>Google Tasks API</strong>-specific authorization and authentication information.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com/workspace/tasks \"Google Tasks API\""
-      ],
-      "intent_hits": [
-        "canonical_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 172,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "iam_reference",
-        "score": 100,
-        "family_score": 42,
-        "family_preferred": true,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": true
-    },
-    {
       "title": "Tasks API Downloads | Google Tasks | Google for Developers",
       "url": "https://developers.google.com/workspace/tasks/downloads",
       "description": "Google Tasks · Reference · Send feedback · In the following tables, the first column shows each library&#x27;s stage of development (note that some are in early stages), and links to documentation for the library. The second column links to available samples for each library.",
-      "rank": 5,
+      "rank": 6,
       "query_hits": [
         "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
       ],
@@ -1246,9 +1634,21 @@
       "round_hits": [
         2
       ],
-      "best_rank": 5,
+      "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1259,6 +1659,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1269,7 +1677,7 @@
       "title": "Google Tasks API quotas and usage limits | Google for Developers",
       "url": "https://developers.google.com/workspace/tasks/limits",
       "description": "The Tasks API has a courtesy limit of 50,000 queries per day.",
-      "rank": 7,
+      "rank": 6,
       "query_hits": [
         "site:developers.google.com/workspace/tasks \"Google Tasks API\""
       ],
@@ -1279,9 +1687,21 @@
       "round_hits": [
         1
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1292,6 +1712,120 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Use Tasks API on Android | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/oauth-and-tasks-on-android?csw=1",
+      "description": "You can also use the AUTH_TOKEN_TYPE alias View your tasks which is equivalent to the Tasks API read-only scope: oauth2:https://www.googleapis.com/auth/tasks.readonly.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Build Authorization Callback Handler | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/oauth-authorization-callback-handler",
+      "description": "They can be found in the APIs console. clientId=1234567890.apps.googleusercontent.com clientSecret=aBcDeFgHiJkLmNoPqRsTuVwXyZ # API scopes. Space separated. scopes=https://www.googleapis.com/auth/tasks · oauth.properties file · The OAuth 2.0 Client ID and Client secret identifies the application and allows the Tasks API to apply filters and quota rules that are defined for the application.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1315,6 +1849,18 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1325,6 +1871,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1348,6 +1902,18 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1358,6 +1924,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1368,7 +1942,7 @@
       "title": "GitHub - googleapis/google-api-dotnet-client: Google APIs Client Library for .NET · GitHub",
       "url": "https://developers.google.com/api-client-library/dotnet/apis/tasks/v1",
       "description": "Google.Apis.Tasks.v1 · Google Tasks API v1 · Google.Apis.Testing.v1 · Cloud Testing API v1 · Google.Apis.Texttospeech.v1 · Cloud Text-to-Speech API v1 · Google.Apis.Texttospeech.v1beta1 · Cloud Text-to-Speech API v1beta1 · Google.Apis.ThreatIntelligenceService.v1beta ·",
-      "rank": 4,
+      "rank": 5,
       "query_hits": [
         "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
       ],
@@ -1378,9 +1952,19 @@
       "round_hits": [
         2
       ],
-      "best_rank": 4,
+      "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1391,6 +1975,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1414,6 +2004,18 @@
       "best_rank": 8,
       "consistency_score": 33,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1424,8 +2026,16 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1447,6 +2057,17 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1457,8 +2078,15 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
       "keep": false
@@ -1480,6 +2108,16 @@
       "best_rank": 6,
       "consistency_score": 33,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1490,6 +2128,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1513,6 +2157,16 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1523,39 +2177,12 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "JavaScript quickstart | Google Tasks | Google for Developers",
-      "url": "https://developers.google.com/tasks/quickstart/dotnet",
-      "description": "Tasks API reference documentation · google-api-javascript-client section of GitHub · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 102,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": -28,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1579,6 +2206,18 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1588,7 +2227,15 @@
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1612,6 +2259,18 @@
       "best_rank": 3,
       "consistency_score": 33,
       "product_fit_score": 94,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1622,6 +2281,14 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "docs",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1645,6 +2312,17 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": 94,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1655,6 +2333,13 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1678,6 +2363,17 @@
       "best_rank": 2,
       "consistency_score": 33,
       "product_fit_score": 94,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1688,6 +2384,66 @@
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Troubleshoot authentication & authorization issues | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/troubleshoot-authentication-authorization",
+      "description": "This page describes some common issues that you might encounter involving authentication and authorization. If the OAuth consent screen displays the warning &quot;This app isn&#x27;t verified,&quot; your app is requesting scopes that provide access to sensitive user data. If your application uses sensitive ...",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 72,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "and",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "and",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1711,6 +2467,18 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 30,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
@@ -1721,6 +2489,69 @@
         "parent_page_likelihood": 5,
         "product_match": 3,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Authenticate to Cloud Tasks | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/tasks/docs/authentication",
+      "description": "If that is not feasible, or if you need to test the permissions assigned to a service account, you can use service account impersonation. You must have the iam.serviceAccounts.getAccessToken permission, which is included in the Service Account Token Creator (roles/iam.serviceAccountTokenCreator) IAM role.",
+      "rank": 2,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Tasks API\" IAM roles permissions"
+      ],
+      "intent_hits": [
+        "iam_permissions"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 24,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "access",
+          "assigned",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "access",
+          "assigned",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1744,20 +2575,93 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 0,
-      "deterministic_score": 99,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
-        "score": 99,
+        "score": 100,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 1,
         "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 89,
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: tasklists.get | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasklists/get",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 80,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 80,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 73,
       "keep": false
     },
     {
@@ -1781,20 +2685,99 @@
       "best_rank": 3,
       "consistency_score": 67,
       "product_fit_score": 52,
-      "deterministic_score": 92,
+      "feature_coverage": {
+        "score": 24,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "assigned",
+          "chat",
+          "docs",
+          "documents",
+          "from",
+          "google"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 72,
       "api_score": {
         "classification": "irrelevant",
-        "score": 92,
+        "score": 72,
         "family_score": -78,
         "family_preferred": true,
         "family_forbidden": true,
-        "parent_page_likelihood": 5,
+        "parent_page_likelihood": 4,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "assigned",
+          "chat",
+          "docs",
+          "documents",
+          "from",
+          "google"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 88,
+      "final_score": 71,
+      "keep": false
+    },
+    {
+      "title": "Method: tasks.list | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasks/list",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 5,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 77,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 77,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 70,
       "keep": false
     },
     {
@@ -1814,20 +2797,254 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 52,
-      "deterministic_score": 95,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 76,
       "api_score": {
         "classification": "irrelevant",
-        "score": 95,
+        "score": 76,
         "family_score": -78,
         "family_preferred": true,
         "family_forbidden": true,
-        "parent_page_likelihood": 5,
+        "parent_page_likelihood": 4,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 86,
+      "final_score": 70,
+      "keep": false
+    },
+    {
+      "title": "Method: tasklists.list | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasklists/list",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 71,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 71,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 65,
+      "keep": false
+    },
+    {
+      "title": "Method: tasks.get | Google Tasks | Google for Developers",
+      "url": "https://developers.google.com/workspace/tasks/reference/rest/v1/tasks/get",
+      "description": "Requires one of the following OAuth scopes: https://www.googleapis.com/auth/tasks · https://www.googleapis.com/auth/tasks.readonly · For more information, see the Authorization guide. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/tasks auth scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 78,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 68,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 68,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 5,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 63,
+      "keep": false
+    },
+    {
+      "title": "Tasks Service | Apps Script | Google for Developers",
+      "url": "https://developers.google.com/apps-script/advanced/tasks",
+      "description": "The following sample code uses version 1 of the API. This sample lists the task lists in your account. ... /** * Lists the titles and IDs of tasksList. * @see https://developers.google.com/tasks/reference/rest/v1/tasklists/list */ function listTaskLists() { try { // Returns all the authenticated user&#x27;s task lists.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 8,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 64,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 64,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 3,
+        "product_match": 2,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 59,
+      "keep": false
+    },
+    {
+      "title": "Executing asynchronous tasks | Cloud Run | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/run/docs/triggering/using-tasks",
+      "description": "The following examples create task requests that also include the creation of a header token. OIDC tokens are used in the examples. To use an OAuth token, replace the OIDC parameter with the language appropriate OAuth parameter in constructing the request. from typing import Optional from google.cloud import tasks_v2 def create_http_task_with_token( project: str, location: str, queue: str, url: str, payload: bytes, service_account_email: str, audience: Optional[str] = None, ) -&gt; tasks_v2.Task: &quot;&quot;&quot;Create an HTTP POST task with an OIDC token and an arbitrary payload.",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Tasks API\" Google Cloud documentation"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": -26,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "docs",
+          "from",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 44,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 44,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 2,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "docs",
+          "from",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 42,
       "keep": false
     },
     {
@@ -1849,20 +3066,36 @@
       "best_rank": 1,
       "consistency_score": 67,
       "product_fit_score": -16,
-      "deterministic_score": 56,
+      "feature_coverage": {
+        "score": 5,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "docs",
+          "google",
+          "tasks"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 33,
       "api_score": {
         "classification": "supporting_page",
-        "score": 56,
+        "score": 33,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
+        "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "docs",
+          "google",
+          "tasks"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 58,
+      "final_score": 38,
       "keep": false
     },
     {
@@ -1882,20 +3115,95 @@
       "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": -26,
-      "deterministic_score": 26,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 38,
       "api_score": {
         "classification": "supporting_page",
-        "score": 26,
+        "score": 38,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 1,
+        "parent_page_likelihood": 2,
         "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 27,
+      "final_score": 37,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: tasks | Google for Developers",
+      "url": "https://developers.google.com/tasks/reference/rest/v1/tasks",
+      "description": "[[[&quot;Easy to understand&quot;,&quot;easyToUnderstand&quot;,&quot;thumb-up&quot;],[&quot;Solved my problem&quot;,&quot;solvedMyProblem&quot;,&quot;thumb-up&quot;],[&quot;Other&quot;,&quot;otherUp&quot;,&quot;thumb-up&quot;]],[[&quot;Missing the information I need&quot;,&quot;missingTheInformationINeed&quot;,&quot;thumb-down&quot;],[&quot;Too complicated / too many steps&quot;,&quot;tooComplicatedTooManySteps&quot;,&quot;thumb-down&quot;],[&quot;Out of date&quot;,&quot;outOfDate&quot;,&quot;thumb-down&quot;],[&quot;Samples / code issue&quot;,&quot;samplesCodeIssue&quot;,&quot;thumb-down&quot;],[&quot;Other&quot;,&quot;otherDown&quot;,&quot;thumb-down&quot;]],[&quot;Last updated 2025-03-12 UTC.&quot;],[],[&quot;The core content defines a \\&quot;Task\\&quot; resource with properties like `id`, `title`, `status`, `due`, and `completed`. Tasks can have `notes`, `links`, and be organized with a `parent` and `position`. Assigned tasks have `assignmentInfo`, detailing the source (`DOCUMENT` or `SPACE`) via `ContextType`. `DriveResourceInfo` and `SpaceInfo` provide further source details.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Tasks API\" official documentation OR site:developers.google.com \"tasks api\" official documentation",
+        "site:developers.google.com \"Tasks API\" reference OR site:developers.google.com \"tasks api\" reference",
+        "site:developers.google.com \"Tasks API\" overview OR site:developers.google.com \"tasks api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 2,
+      "consistency_score": 100,
+      "product_fit_score": -118,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "assigned",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "assigned",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 15,
       "keep": false
     },
     {
@@ -1915,27 +3223,47 @@
       "best_rank": 4,
       "consistency_score": 33,
       "product_fit_score": 0,
-      "deterministic_score": 5,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 4,
       "api_score": {
         "classification": "supporting_page",
-        "score": 5,
+        "score": 4,
         "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 0,
         "product_match": 1,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "docs",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 9,
+      "final_score": 8,
       "keep": false
     },
     {
       "title": "Go quickstart | Google Tasks | Google for Developers",
       "url": "https://developers.google.com/workspace/tasks/quickstart/go",
       "description": "This quickstart uses Google Workspace&#x27;s recommended API client libraries to handle some details of the authentication and authorization flow. Set up your environment. Set up the sample. Run the sample. Latest version of Go. Latest version of Git. A Google Cloud project. A Google account with Google Tasks ...",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com/workspace/tasks \"Google Tasks API\""
       ],
@@ -1945,9 +3273,21 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
       "product_fit_score": -42,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 0,
       "api_score": {
         "classification": "irrelevant",
@@ -1957,7 +3297,15 @@
         "family_forbidden": true,
         "parent_page_likelihood": 0,
         "product_match": 0,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -1981,6 +3329,18 @@
       "best_rank": 5,
       "consistency_score": 33,
       "product_fit_score": -42,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 0,
       "api_score": {
         "classification": "irrelevant",
@@ -1990,7 +3350,15 @@
         "family_forbidden": true,
         "parent_page_likelihood": 0,
         "product_match": 0,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "and",
+          "api",
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -2014,6 +3382,16 @@
       "best_rank": 1,
       "consistency_score": 33,
       "product_fit_score": -48,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "google",
+          "tasks",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 0,
       "api_score": {
         "classification": "irrelevant",
@@ -2023,7 +3401,13 @@
         "family_forbidden": true,
         "parent_page_likelihood": 0,
         "product_match": 0,
-        "coverage_value": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "google",
+          "tasks",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },

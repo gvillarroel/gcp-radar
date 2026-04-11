@@ -1,0 +1,199 @@
+---
+title: "Access control for projects with IAM \_|\_ Resource Manager \_|\_ Google Cloud\
+  \ Documentation"
+url: https://docs.cloud.google.com/resource-manager/docs/access-control-proj
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/resource-manager/docs/access-control-folders
+source_metadata:
+  url: https://docs.cloud.google.com/resource-manager/docs/access-control-proj
+  title: "Access control for projects with IAM \_|\_ Resource Manager \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Security
+Resource Manager
+Guides
+Send feedback
+Access control for projects with IAM
+Stay organized with collections
+Save and categorize content based on your preferences.
+Google Cloud offers Identity and Access Management (IAM) , which lets
+you give more granular access to specific Google Cloud resources and
+prevents unwanted access to other resources. IAM lets you adopt
+the
+security principle of least privilege ,
+so you grant only the necessary access to your resources.
+IAM lets you control who (users) has what access (roles)
+to which resources by setting allow policies. Allow policies grant specific
+roles to a user giving the user certain permissions.
+This page explains the IAM permissions and roles you can use to
+manage access to projects. For more information, see
+Manage access to projects, folders, and organizations .
+Note: You can also use deny policies to prevent principals from using specific
+IAM permissions. For more information, see Deny
+policies .
+Note: If you're getting started with Google Cloud, you can set up your resource
+hierarchy and grant initial access as part of the
+Google Cloud setup process .
+Permissions and roles
+To control access to resources, Google Cloud requires that accounts making API
+requests have appropriate IAM roles. IAM roles
+include permissions that let users perform specific actions on
+Google Cloud resources. For example, the resourcemanager.projects.delete
+permission lets a user delete a project.
+You don't directly give users permissions; instead, you grant them roles ,
+which have one or more permissions bundled within them. You grant these roles on
+a particular resource, but they also apply to all of that resource's descendants
+in the resource hierarchy .
+Permissions
+To manage projects, the caller must have a role that includes the following
+permissions. The role is granted on the organization resource or folder that contains the
+projects:
+Method
+Required permission(s)
+resourcemanager.projects.create
+resourcemanager.projects.create
+resourcemanager.projects.delete
+resourcemanager.projects.delete
+resourcemanager.projects.get
+resourcemanager.projects.get
+Granting this permission will also grant access to get the name of the billing
+account associated with the project through the Billing API method
+billing.projects.getBillingInfo
+.
+resourcemanager.projects.getIamPolicy
+resourcemanager.projects.getIamPolicy
+resourcemanager.projects.list
+resourcemanager.projects.list
+resourcemanager.projects.search
+resourcemanager.projects.get
+resourcemanager.projects.setIamPolicy
+resourcemanager.projects.setIamPolicy
+resourcemanager.projects.testIamPermissions
+Does not require any permission.
+resourcemanager.projects.undelete
+resourcemanager.projects.undelete
+resourcemanager.projects.patch
+To update a project's metadata, requires
+resourcemanager.projects.update permission. To update a project's
+parent and move the project into an organization resource, requires
+resourcemanager.projects.create permission on the
+organization resource.
+projects.move
+projects.move
+Using predefined roles
+IAM predefined roles let you manage the permissions available to
+users. For a full list of the roles that can be granted at the project level,
+see Understanding Roles .
+The following table lists the predefined roles you can use to grant access to a
+project. Each role includes a description of its purpose and the permissions it
+contains.
+Role
+Permissions
+Project Creator
+( roles/ resourcemanager.projectCreator )
+Provides access to create new projects. Once a user creates a project,
+they're automatically granted the owner role for that project.
+Lowest-level resources where you can grant this role:
+Folder
+resourcemanager. organizations. get
+resourcemanager. projects. create
+Project Deleter
+( roles/ resourcemanager.projectDeleter )
+Provides access to delete Google Cloud projects.
+Lowest-level resources where you can grant this role:
+Project
+resourcemanager. projects. delete
+Project Mover
+( roles/ resourcemanager.projectMover )
+Provides access to update and move projects.
+Lowest-level resources where you can grant this role:
+Project
+resourcemanager.projects.get
+resourcemanager.projects.move
+resourcemanager. projects. update
+Project IAM Admin
+( roles/ resourcemanager.projectIamAdmin )
+Provides permissions to administer allow policies on projects.
+Lowest-level resources where you can grant this role:
+Project
+iam.policybindings.*
+iam.policybindings.get
+iam.policybindings.list
+resourcemanager. projects. createPolicyBinding
+resourcemanager. projects. deletePolicyBinding
+resourcemanager.projects.get
+resourcemanager. projects. getIamPolicy
+resourcemanager. projects. searchPolicyBindings
+resourcemanager. projects. setIamPolicy
+resourcemanager. projects. updatePolicyBinding
+Browser
+( roles/ browser )
+Read access to browse the hierarchy for a project, including the folder, organization, and allow
+policy. This role doesn't include permission to view resources in the project.
+Lowest-level resources where you can grant this role:
+Project
+resourcemanager.folders.get
+resourcemanager.folders.list
+resourcemanager. organizations. get
+resourcemanager.projects.get
+resourcemanager. projects. getIamPolicy
+resourcemanager.projects.list
+Basic roles
+Use basic roles only when necessary. These roles are highly privileged and grant
+extensive permissions across all Google Cloud services. For more
+information about when to use basic roles, see Basic
+roles .
+Role
+Description
+Permissions
+roles/owner
+Full access to all resources.
+All permissions for all resources.
+roles/editor
+Edit access to most resources.
+Create and update access for most resources.
+roles/viewer
+Read access to most resources.
+Get and list access for most resources.
+Creating custom roles
+In addition to the predefined roles described in this topic, you can also create
+custom roles that are collections of
+permissions that you tailor to your needs. When creating a custom role for use
+with Resource Manager, be aware of the following points:
+List and get permissions, such as resourcemanager.projects.get/list ,
+should always be granted as a pair.
+When your custom role includes the folders.list and folders.get
+permissions, it should also include projects.list and projects.get .
+Be aware that the setIamPolicy permission for organization, folder, and
+project resources allows the user to grant all other permissions, and so should be assigned with care.
+Access control at the project level
+You can grant roles to users at the project level using the Google Cloud console ,
+the Cloud Resource Manager API, and the Google Cloud CLI. For instructions, see
+Granting, Changing, and Revoking Access .
+Default roles
+When you create a project, you receive the roles/owner role, which gives you
+full control over the project. You can change this default role in an allow
+policy.
+VPC Service Controls
+VPC Service Controls can provide additional security when using the
+Cloud Resource Manager API. To learn more
+about VPC Service Controls, see the
+VPC Service Controls overview .
+To learn about the current limitations in using Resource Manager with
+VPC Service Controls, see the
+supported products and limitations
+page.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

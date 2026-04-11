@@ -1,6 +1,6 @@
 ---
-title: "Develop a custom connector for metadata import \_|\_ Dataplex Universal Catalog\
-  \ \_|\_ Google Cloud Documentation"
+title: "Develop a custom connector for metadata import \_|\_ Knowledge Catalog \_\
+  |\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/develop-custom-connector
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -8,18 +8,19 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/develop-custom-connector
-  title: "Develop a custom connector for metadata import \_|\_ Dataplex Universal\
-    \ Catalog \_|\_ Google Cloud Documentation"
+  title: "Develop a custom connector for metadata import \_|\_ Knowledge Catalog \_\
+    |\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Develop a custom connector for metadata import
@@ -27,17 +28,17 @@ Stay organized with collections
 Save and categorize content based on your preferences.
 This document provides a reference template to build a custom connector for
 extracting metadata from third-party sources, such as MySQL, SQL Server, and
-Oracle. You can use this connector to import metadata into Dataplex Universal Catalog
+Oracle. You can use this connector to import metadata into Knowledge Catalog (formerly Dataplex Universal Catalog)
 through a managed connectivity pipeline .
 An example Python connector for Oracle Database Express Edition (XE) is included
 as a starting point. You can also develop connectors using Java, Scala, or R.
 How connectors work
 A connector extracts metadata from a third-party data source, transforms the
-metadata to Dataplex Universal Catalog ImportItem format, and generates
-metadata import files that can be imported by Dataplex Universal Catalog.
+metadata to Knowledge Catalog ImportItem format, and generates
+metadata import files that can be imported by Knowledge Catalog.
 The connector is a part of a managed connectivity pipeline. A managed
 connectivity pipeline is an orchestrated workflow that you use to import
-Dataplex Universal Catalog metadata. The managed connectivity pipeline
+Knowledge Catalog metadata. The managed connectivity pipeline
 runs the connector and performs other tasks in the import workflow, such as
 running a metadata import job and capturing logs.
 The managed connectivity pipeline runs the connector by using a
@@ -51,7 +52,7 @@ The connector has the following requirements:
 The connector must be an Artifact Registry image that can be run on
 Managed Service for Apache Spark.
 The connector must generate metadata files in a format that can be imported
-by a Dataplex Universal Catalog metadata import job (the metadataJobs.create
+by a Knowledge Catalog metadata import job (the metadataJobs.create
 API method). For detailed requirements, see
 Metadata import file .
 The connector must accept the following command-line arguments to receive
@@ -110,7 +111,7 @@ StructField ( "update_mask" , ArrayType ( StringType ()))
 Before you begin
 This guide assumes that you're familiar with Python and PySpark.
 Review the following information:
-Dataplex Universal Catalog metadata concepts
+Knowledge Catalog metadata concepts
 Documentation about metadata import jobs
 Do the following things. Create all resources in the same Google Cloud
 location.
@@ -197,7 +198,7 @@ Google Cloud project. For more information, see
 Managed Service for Apache Spark network configuration .
 Create a basic Python connector
 The example basic Python connector creates top-level entries for an
-Oracle data source by using the Dataplex Universal Catalog client library classes.
+Oracle data source by using the Knowledge Catalog client library classes.
 Then, you provide the values for the entry fields.
 The connector creates a metadata import file with the following entries:
 An instance entry, with entry type
@@ -469,7 +470,7 @@ Run the code locally.
 A metadata import file named output.jsonl is returned. The file has two
 lines, each representing an import item. The managed connectivity pipeline
 reads this file when running the metadata import job.
-Optional: Extend the previous example to use the Dataplex Universal Catalog
+Optional: Extend the previous example to use the Knowledge Catalog
 client library classes to create import items for tables, schemas, and views.
 You can also run the Python example on Managed Service for Apache Spark.
 We recommend that you create a connector that uses Spark (and runs
@@ -484,7 +485,7 @@ a local Spark cluster.
 For performance reasons, this example doesn't use predefined classes from the
 PySpark library. Instead, the example creates DataFrames, converts the
 DataFrames into JSON entries, and then writes the output into a metadata import
-file in JSON Lines format that can be imported into Dataplex Universal Catalog.
+file in JSON Lines format that can be imported into Knowledge Catalog.
 To build a connector using PySpark, do the following:
 Clone the
 cloud-dataplex repository .
@@ -870,7 +871,7 @@ The connector extracts metadata from the Oracle database, generates a
 metadata import file, and saves the metadata import file to a
 Cloud Storage bucket.
 To manually import the metadata in the metadata import file into
-Dataplex Universal Catalog, run a metadata job. Use the
+Knowledge Catalog, run a metadata job. Use the
 metadataJobs.create method .
 In the command line, add environment variables and create an alias for
 the curl command.
@@ -908,13 +909,13 @@ gcurl https:// ${ DATAPLEX_API } /metadataJobs?metadata_job_id = " JOB_ID " -d "
 EOF
 ) "
 The schema aspect type is a global aspect type that is defined by
-Dataplex Universal Catalog.
+Knowledge Catalog.
 Note that the format that you use for aspect type names when calling the
 API method is different from the format that you use in the connector
 code.
 Optional: Use Cloud Logging to view logs for the metadata job. For
 more information, see
-Monitor Dataplex Universal Catalog logs .
+Monitor Knowledge Catalog logs .
 Set up pipeline orchestration
 The previous sections showed how to build an example connector and run the
 connector manually.
@@ -1022,9 +1023,9 @@ Add more custom aspects that capture additional business and technical
 metadata from your source.
 Example metadata resources for an Oracle source
 The example connector extracts metadata from an Oracle database and maps the
-metadata to corresponding Dataplex Universal Catalog metadata resources.
+metadata to corresponding Knowledge Catalog metadata resources.
 Hierarchy considerations
-Every system in Dataplex Universal Catalog has a root entry that is the parent
+Every system in Knowledge Catalog has a root entry that is the parent
 entry for the system. Usually the root entry has an instance entry type.
 The following table shows the example hierarchy of entry types and aspect types
 for an Oracle system. For example, the oracle-database entry type is linked to
@@ -1050,7 +1051,7 @@ A view.
 oracle-view
 schema
 The schema aspect type is a global aspect type that is defined by
-Dataplex Universal Catalog. It contains a description of the fields in a table,
+Knowledge Catalog. It contains a description of the fields in a table,
 view, or other entity that has columns. The oracle-schema custom aspect type
 contains the name of the Oracle database schema.
 Note:
@@ -1152,9 +1153,9 @@ View
 example-project.us-central1.oracle-view
 What's next
 Import metadata using Workflows
-About metadata management in Dataplex Universal Catalog
+About metadata management in Knowledge Catalog
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

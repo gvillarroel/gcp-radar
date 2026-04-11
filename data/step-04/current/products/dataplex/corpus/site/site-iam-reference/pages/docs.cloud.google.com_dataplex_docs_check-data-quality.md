@@ -1,6 +1,5 @@
 ---
-title: "Use data quality tasks \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-  \ Documentation"
+title: "Use data quality tasks \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/check-data-quality
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -8,48 +7,48 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/check-data-quality
-  title: "Use data quality tasks \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "Use data quality tasks \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Use data quality tasks
 Stay organized with collections
 Save and categorize content based on your preferences.
-Caution: Dataplex Universal Catalog data quality tasks is a legacy offering based
+Caution: Knowledge Catalog (formerly Dataplex Universal Catalog) data quality tasks is a legacy offering based
 on open source software. We recommend that you start using the latest
 built-in Automatic data quality
 offering.
-This document shows you how to create Dataplex Universal Catalog data quality tasks
+This document shows you how to create Knowledge Catalog data quality tasks
 that let you schedule and run data quality checks for your built-in and
 external BigQuery tables.
 For more information, see
 Data quality tasks overview .
 Before you begin
-This document assumes that you have an existing Dataplex Universal Catalog lake to
+This document assumes that you have an existing Knowledge Catalog lake to
 create the data quality task in.
 Enable Google APIs and services
 Enable the Dataproc API.
 Enable the API
 Enable Private Google Access
 for your network and subnetwork. Enable Private Google Access on
-the network that you plan to use with Dataplex Universal Catalog data quality
+the network that you plan to use with Knowledge Catalog data quality
 tasks. If you don't specify a network or subnetwork when you create the
-Dataplex Universal Catalog data quality task, Dataplex Universal Catalog uses the
+Knowledge Catalog data quality task, Knowledge Catalog uses the
 default subnet. In that case, you need to enable
 Private Google Access on the default subnet.
 Create a specification file
-Dataplex Universal Catalog uses open source CloudDQ
-as the driver program. Dataplex Universal Catalog data quality check requirements
+Knowledge Catalog uses open source CloudDQ
+as the driver program. Knowledge Catalog data quality check requirements
 are defined within CloudDQ YAML specification files.
 As input to the data quality task, you can have a single YAML file or a single zip archive
 containing one or more YAML files. It's
@@ -100,7 +99,7 @@ in a single YAML file, as CloudDQ only parses the last node of each type within 
 Create a dataset to store the results
 To store the results, create a BigQuery dataset .
 The dataset must be in the same region as the tables that you run the data quality task on.
-Dataplex Universal Catalog uses this dataset, and it creates or reuses a table of your choice to
+Knowledge Catalog uses this dataset, and it creates or reuses a table of your choice to
 store the results.
 Create a service account
 Create a service account that has the following
@@ -126,8 +125,8 @@ The Dataproc Worker role
 The iam.serviceAccounts.actAs permission
 given to the user submitting the job.
 The Service account user role granted
-to the Dataplex Universal Catalog lake service account. You can
-view the Dataplex Universal Catalog lake service account in the Google Cloud console .
+to the Knowledge Catalog lake service account. You can
+view the Knowledge Catalog lake service account in the Google Cloud console .
 Use advanced settings
 These steps are optional:
 BigQuery runs data quality checks in the current project by default. You can
@@ -146,7 +145,7 @@ All the tables specified for a given data quality task must belong to the same G
 region.
 Schedule a data quality task
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Process page.
+In the Google Cloud console, go to the Knowledge Catalog Process page.
 Go to Process
 Click add_box Create task .
 On the Check Data Quality card, click Create task .
@@ -161,7 +160,7 @@ In the Select BigQuery dataset field, click Browse .
 Select the BigQuery dataset to store validation outcomes.
 Click Select .
 In the BigQuery table field, enter the name of the table to store the results.
-If the table doesn't exist, Dataplex Universal Catalog creates it for you. Don't use the name
+If the table doesn't exist, Knowledge Catalog creates it for you. Don't use the name
 dq_summary because it is reserved for internal processing tasks.
 In the Service account section, select a service account from the
 User service account menu.
@@ -171,20 +170,20 @@ quality task.
 Click Create .
 gcloud CLI
 The following is an example execution of a data quality task that uses the
-Dataplex Universal Catalog tasks gcloud CLI command:
+Knowledge Catalog tasks gcloud CLI command:
 export USER_CLOUDDQ_YAML_CONFIGS_GCS_PATH=" USER_CLOUDDQ_YAML_CONFIGS_GCS_PATH "
-# Google Cloud project where the Dataplex Universal Catalog task is created.
+# Google Cloud project where the Knowledge Catalog task is created.
 export GOOGLE_CLOUD_PROJECT=" GOOGLE_CLOUD_PROJECT "
-# Google Cloud region for the Dataplex Universal Catalog lake.
+# Google Cloud region for the Knowledge Catalog lake.
 export DATAPLEX_REGION_ID=" DATAPLEX_REGION_ID "
 # Public Cloud Storage bucket containing the prebuilt data quality executable artifact. There is one bucket for each Google Cloud region.
 export DATAPLEX_PUBLIC_GCS_BUCKET_NAME="dataplex-clouddq-artifacts-${DATAPLEX_REGION_ID}"
-# The Dataplex Universal Catalog lake where your task is created.
+# The Knowledge Catalog lake where your task is created.
 export DATAPLEX_LAKE_ID=" DATAPLEX_LAKE_ID "
 # The service account used for running the task. Ensure that this service account
 has sufficient IAM permissions on your project, including
 BigQuery Data Editor, BigQuery Job User,
-Dataplex Universal Catalog Editor, Managed Service for Apache Spark Worker, and Service
+Dataplex Editor, Managed Service for Apache Spark Worker, and Service
 Usage Consumer.
 export DATAPLEX_TASK_SERVICE_ACCOUNT=" DATAPLEX_TASK_SERVICE_ACCOUNT "
 # If you want to use a different dataset for storing the intermediate data quality summary results
@@ -214,10 +213,10 @@ configurations input for the data quality task. You can have a
 single YAML file in .yml or .yaml format or a zip archive
 containing multiple YAML files.
 GOOGLE_CLOUD_PROJECT
-The Google Cloud project where the Dataplex Universal Catalog task and
+The Google Cloud project where the Knowledge Catalog task and
 BigQuery jobs are created.
 DATAPLEX_REGION_ID
-The region of the Dataplex Universal Catalog lake where
+The region of the Knowledge Catalog lake where
 the data quality task is created.
 SERVICE_ACCOUNT
 The service account used for executing the task. Ensure this service
@@ -255,16 +254,16 @@ dq_summary because it is reserved for internal processing tasks.
 created in the dq_summary table in the last run are
 logged as JSON records to Cloud Logging and
 stdout .
-Note : By default the Dataplex Universal Catalog data quality task runs
+Note : By default the Knowledge Catalog data quality task runs
 in the Default network. You could change the network by using one of the
 arguments: --vpc-network-name or --vpc-sub-network-name . See how to
 set
 these arguments .
 API
 Replace the following:
-PROJECT_ID = "Your Dataplex Universal Catalog Project ID"
-REGION = "Your Dataplex Universal Catalog lake region"
-LAKE_ID = "Your Dataplex Universal Catalog lake ID"
+PROJECT_ID = "Your Knowledge Catalog Project ID"
+REGION = "Your Knowledge Catalog lake region"
+LAKE_ID = "Your Knowledge Catalog lake ID"
 SERVICE_ACC = "Your service account used for reading the data"
 DATAPLEX_TASK_ID = "Unique task ID for the data quality task"
 BUCKET_NAME = "Your Cloud Storage bucket name containing the CloudDQ configs or YAML specification"
@@ -293,7 +292,7 @@ f"gs://dataplex-clouddq-artifacts-us-central1/your-clouddq-configs.zip"
 },
 "description": "${DATAPLEX_TASK_DESCRIPTION}"
 }
-See also Sample Airflow DAG for Dataplex Universal Catalog data quality task .
+See also Sample Airflow DAG for Knowledge Catalog data quality task .
 Monitor a scheduled data quality task
 See how to monitor your task .
 View the results
@@ -306,13 +305,13 @@ run. The output in the summary table includes the following information:
 Column name
 Description
 dataplex_lake
-(string) ID of the Dataplex Universal Catalog lake containing the table
+(string) ID of the Knowledge Catalog lake containing the table
 being validated.
 dataplex_zone
-(string) ID of the Dataplex Universal Catalog zone containing the table
+(string) ID of the Knowledge Catalog zone containing the table
 being validated.
 dataplex_asset_id
-(string) ID of the Dataplex Universal Catalog asset containing the table
+(string) ID of the Knowledge Catalog asset containing the table
 being validated.
 execution_ts
 (timestamp) Timestamp of when the validation query was run.
@@ -356,7 +355,7 @@ by the data quality check to determine the high watermark for
 incremental validation. If FALSE , the respective record is
 ignored when establishing the high-watermark value. This information is useful when
 executing test data quality validations that should not advance the
-high watermark. Dataplex Universal Catalog populates this field with
+high watermark. Knowledge Catalog populates this field with
 TRUE by default, but the value can be overridden if the
 --progress_watermark argument has a value of FALSE .
 rows_validated
@@ -511,10 +510,10 @@ Replace the following:
 PROJECT_ID : your project ID.
 DATASET_ID : the dataset ID.
 Sample 2
-If the table to be checked is part of a Dataplex Universal Catalog lake, you can
+If the table to be checked is part of a Knowledge Catalog lake, you can
 specify the tables using lake or zone notation. This lets you aggregate
 your results by lake or zone. For example, you can generate a zone level score.
-To use this sample, create a Dataplex Universal Catalog lake with the lake ID
+To use this sample, create a Knowledge Catalog lake with the lake ID
 operations and the zone ID procurement . Then, add the table sales_orders
 as an asset to the zone.
 # This is a convenience section that allows you to shorten the entity_uri
@@ -583,7 +582,7 @@ rule_ids :
 Replace the following:
 PROJECT_ID : your project ID.
 REGION_ID : the region ID of the
-Dataplex Universal Catalog lake in which the table exists, such as
+Knowledge Catalog lake in which the table exists, such as
 us-central1 .
 Sample 3
 This example enhances Sample 2 by adding a custom SQL check to see if the ID values are unique.
@@ -884,9 +883,9 @@ What's next
 Refer to the CloudDQ YAML specification reference .
 For sample data quality rules, see Simple rules
 and Advanced rules .
-See Sample Airflow DAG for Dataplex Universal Catalog data quality task .
+See Sample Airflow DAG for Knowledge Catalog data quality task .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

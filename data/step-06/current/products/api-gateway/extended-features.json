@@ -1,0 +1,1431 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T20:04:48.085Z",
+  "product_name": "API Gateway",
+  "product_slug": "api-gateway",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/api-gateway.md",
+    "step04_product_dir": "data/step-04/current/products/api-gateway"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 89,
+  "source_row_count": 21,
+  "feature_count": 19,
+  "covered_feature_count": 7,
+  "features_without_supporting_pages": 12,
+  "features": [
+    {
+      "latest_feature_date": "2026-01-12",
+      "feature_name": "Apigee API Hub integration for API Gateway metadata publishing",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway can publish API metadata to Apigee API Hub to provide a unified API catalog, improved discovery, and centralized lifecycle governance across gateways.",
+      "keywords": [
+        "publish metadata to API Hub",
+        "centralized lifecycle governance",
+        "unified API catalog",
+        "API Hub integration",
+        "Apigee integration",
+        "Apigee API Hub",
+        "API Gateway metadata export",
+        "API metadata publishing"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Google Cloud API Gateway can be connected to Apigee API Hub to enable seamless publishing of API metadata from an API Gateway project into API Hub, providing centralized API management and discovery through a unified API catalog. The January 12, 2026 release notes describe this as a feature for centralizing API Gateway API management, and the February 2, 2026 update clarifies that the integration also supports VPC Service Controls on both API Gateway and Apigee API Hub instances.",
+      "evidence_summary": "The API Gateway release notes explicitly announce the feature’s introduction and an updated connectivity scenario, confirming metadata publishing to Apigee API Hub and its applicability to VPC Service Controls-enabled instances.",
+      "source_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "f14181cb379ecbf28ae96768ff54aa02a52c9e49caa59349dcfd84a6d89e0c20",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/release-notes",
+          "title": "API Gateway release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "apigee api hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "9fc24698bd914083be68fef2082044320c891133ce7a70d895a3fd7f071fbed2",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/api-hub-overview",
+          "title": "\"Centralize API management using API hub \\_|\\_ API Gateway \\_|\\_ Google Cloud\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_api-gateway_docs_api-hub-overview.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-iam-reference/pages/docs.cloud.google.com_api-gateway_docs_api-hub-overview.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "apigee api hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/release-notes",
+          "title": "API Gateway release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "base_score": 26,
+          "final_score": 44,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The release notes explicitly describe API Gateway connecting to Apigee API hub and publishing API metadata for centralized discovery and governance.",
+          "matched_phrases": [
+            {
+              "phrase": "apigee api hub",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "January 12, 2026 v1 Feature Centralize API Gateway API management using Apigee API hub Connect API Gateway to Apigee API hub to enable seamless publishing of API metadata from your API Gateway project to API hub.",
+            "February 02, 2026 v1 Change Connect API Gateway to Apigee API hub instances that use VPC Service Controls API Gateway can now be connected to Apigee API hub instances that use VPC Service Controls ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-11-12",
+      "feature_name": "OpenAPI 3.0.x specification support",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway now supports OpenAPI version 3.0.x specifications directly, including all patch versions, without requiring conversion to OpenAPI 2.0.",
+      "keywords": [
+        "no conversion to OpenAPI 2.0",
+        "API configuration import",
+        "OpenAPI patch versions",
+        "OpenAPI specification",
+        "OAS 3.0",
+        "OpenAPI 3.0 support",
+        "OpenAPI 3 support",
+        "OpenAPI 3.0.x"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Google Cloud API Gateway’s Java client defines API configuration via `ApiConfig`, which includes an `OpenApiDocument` field backed by an `ApiConfig.File` object containing the OpenAPI specification document for the API. The available documentation confirms API Gateway clients can submit and read an OpenAPI specification as part of API configuration creation/update, but it does not state which OpenAPI versions are accepted (for example, 3.0.x patch versions) or whether conversion to OpenAPI 2.0 is avoided.",
+      "evidence_summary": "The cited API Gateway Java client library reference pages verify the existence of OpenAPI specification document fields in `ApiConfig`, but they provide no explicit evidence about OpenAPI 3.0.x patch support or no-2.0-conversion behavior.",
+      "source_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.Builder",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "2f844bae910993da507d5623398b09c104bb8b7e3f1d0785da10ea627c8bd398",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.Builder",
+          "title": "\"Class ApiConfig.OpenApiDocument.Builder (2.88.0) \\_|\\_ Java client libraries\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.Builder.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.Builder.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        },
+        {
+          "page_id": "2fbc64ecbecbbd247060b2f3f74c59708850091b06ac96f2c04b060afb8d437f",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig",
+          "title": "\"Class ApiConfig (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "fb91d4e807af39cb3f3c28f4623e79eeaddefa9b2743af6a420443a92646363f",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.Builder",
+          "title": "\"Class ApiConfig.Builder (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.Builder.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.Builder.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 18
+            }
+          ]
+        },
+        {
+          "page_id": "125b24fcb634d22e1569a7e42c10f9a64a66236c18aaf83e782808b653cb7a0d",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument",
+          "title": "\"Class ApiConfig.OpenApiDocument (2.88.0) \\_|\\_ Java client libraries \\_\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "96a44c7c282f343744b9e533811c1215d0bf5d5a49840c8900f8cb35b7b183b2",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfigOrBuilder",
+          "title": "\"Interface ApiConfigOrBuilder (2.88.0) \\_|\\_ Java client libraries \\_|\\_\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfigOrBuilder.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfigOrBuilder.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "89a0ea20ea5fcb906732223cf39bbb39b4c1108463029caa72aac64a483d340d",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+          "title": "\"Quickstart: Secure traffic to a service with the Google Cloud console \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_secure-traffic-console.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-console.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.Builder",
+          "title": "\"Class ApiConfig.OpenApiDocument.Builder (2.88.0) \\_|\\_ Java client libraries\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.Builder.md",
+          "base_score": 30,
+          "final_score": 30,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ],
+          "evidence_snippets": [
+            "FileOrBuilder getDocumentOrBuilder () The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Returns Type Description ApiConfig.FileOrBuilder hasDocument() public boolean hasDocument () The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Returns Type Description boolean Whether the document field is set. internalGetFieldAccessorTable() protected GeneratedMessage .",
+            "Builder builderForValue ) The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Parameter Name Description builderForValue ApiConfig.File.Builder Returns Type Description ApiConfig.OpenApiDocument.Builder Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "File value ) The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Parameter Name Description value ApiConfig.File Returns Type Description ApiConfig.OpenApiDocument.Builder setDocument(ApiConfig.File.Builder builderForValue) public ApiConfig .",
+            "File value ) The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Parameter Name Description value ApiConfig.File Returns Type Description ApiConfig.OpenApiDocument.Builder mergeFrom(ApiConfig.OpenApiDocument other) public ApiConfig ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig",
+          "title": "\"Class ApiConfig (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "OpenAPI specification documents.",
+            "OpenAPI specification documents.",
+            "OpenAPI specification documents.",
+            "OpenAPI specification documents."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument",
+          "title": "\"Class ApiConfig.OpenApiDocument (2.88.0) \\_|\\_ Java client libraries \\_\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.OpenApiDocument.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "openapi specification",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "OpenApiDocument > getParserForType () Returns Type Description Parser < OpenApiDocument > Overrides GeneratedMessage.getParserForType() getSerializedSize() public int getSerializedSize () Returns Type Description int Overrides GeneratedMessage.getSerializedSize() hasDocument() public boolean hasDocument () The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Returns Type Description boolean Whether the document field is set. hashCode() public int hashCode () Returns Type Description int Overrides AbstractMessage.hashCode() internalGetFieldAccessorTable() protected GeneratedMessage .",
+            "FileOrBuilder getDocumentOrBuilder () The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Returns Type Description ApiConfig.FileOrBuilder getParserForType() public Parser<ApiConfig .",
+            "File getDocument () The OpenAPI Specification document file. .google.cloud.apigateway.v1.ApiConfig.File document = 1; Returns Type Description ApiConfig.File The document. getDocumentOrBuilder() public ApiConfig .",
+            "OpenApiDocumentOrBuilder An OpenAPI Specification Document describing an API."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-07-23",
+      "feature_name": "TLS 1.0 and TLS 1.1 deprecation in API Gateway",
+      "deprecation_date": "2025-07-23",
+      "feature_summary": "API Gateway is deprecating TLS 1.0 and 1.1 and enforces TLS 1.2+ for new security settings, with older protocol connections returning 400 errors; deprecated on 2025-07-23.",
+      "keywords": [
+        "400 response for old TLS",
+        "deprecated TLS protocol versions",
+        "TLS deprecation policy",
+        "TLS version enforcement",
+        "minimum TLS version",
+        "TLS 1.0 deprecation",
+        "TLS 1.1 deprecation",
+        "TLS 1.0/1.1 blocked"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "API Gateway is deprecating TLS 1.0 and 1.1 and enforces TLS 1.2+ for new security settings, with older protocol connections returning 400 errors; deprecated on 2025-07-23.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-06-09",
+      "feature_name": "Regional API Gateway quota increase",
+      "deprecation_date": "",
+      "feature_summary": "The maximum number of API Gateways that can be created per region has been increased to 50.",
+      "keywords": [
+        "maximum 50 API Gateways per region",
+        "gateway-per-region limit",
+        "regional gateway count",
+        "regional gateway limit",
+        "Regional quota",
+        "quota increase",
+        "service quotas",
+        "gateway quota"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The maximum number of API Gateways that can be created per region has been increased to 50.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-04-02",
+      "feature_name": "Data residency support for API Gateway data at rest",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway now supports data residency requirements for customer data stored at rest.",
+      "keywords": [
+        "compliance for data residency",
+        "residency region controls",
+        "data location control",
+        "data stored at rest",
+        "customer data residency",
+        "at-rest residency",
+        "data residency",
+        "data at rest"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "API Gateway now supports data residency requirements for customer data stored at rest.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "f14181cb379ecbf28ae96768ff54aa02a52c9e49caa59349dcfd84a6d89e0c20",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/release-notes",
+          "title": "API Gateway release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "data residency",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "data at rest",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-26",
+      "feature_name": "CMEK-compliant data-at-rest encryption for API Gateway",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway customer data at rest is now CMEK-compliant without requiring customer configuration changes.",
+      "keywords": [
+        "default at-rest encryption behavior",
+        "customer managed encryption keys",
+        "customer-managed key encryption",
+        "customer-managed keys for data",
+        "data at rest encryption",
+        "Cloud KMS keys",
+        "CMEK-compliant",
+        "CMEK support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "API Gateway customer data at rest is now CMEK-compliant without requiring customer configuration changes.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-25",
+      "feature_name": "Workforce Identity Federation support for API Gateway",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway now supports Workforce Identity Federation so workforce identities from external providers can authenticate and authorize access using IAM.",
+      "keywords": [
+        "IAM authorization via federation",
+        "Workforce Identity Federation",
+        "external identity provider",
+        "federated workforce access",
+        "federated authentication",
+        "workforce identities",
+        "identity federation",
+        "WIF configuration"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "API Gateway now supports Workforce Identity Federation so workforce identities from external providers can authenticate and authorize access using IAM.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "f14181cb379ecbf28ae96768ff54aa02a52c9e49caa59349dcfd84a6d89e0c20",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/release-notes",
+          "title": "API Gateway release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "identity federation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "workforce identity federation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "external identity provider",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2021-01-21",
+      "feature_name": "API Gateway availability in us-east1 region",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway was introduced in the us-east1 Google Cloud region.",
+      "keywords": [
+        "available in us-east1",
+        "us-east1 support",
+        "us-east1",
+        "regional availability",
+        "supported region",
+        "region launch",
+        "region availability",
+        "API Gateway region"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The provided API Gateway location schema includes a documented `locationId` field for location resources, with an example canonical location ID of `us-east1`. In the same context, location metadata can include a `cloud.googleapis.com/region` label whose example value is also `us-east1`, indicating Google documents API Gateway locations using this region identifier. This excerpt only shows `us-east1` as an example value, so it does not on its own confirm full regional launch or full availability coverage.",
+      "evidence_summary": "The cited page shows `us-east1` as an example `locationId`/region label value in API Gateway location data, but it does not explicitly state feature availability or launch timing for that region.",
+      "source_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest/Shared.Types/ListLocationsResponse"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b8d6afc2d192df732795cbe0be456919227b99d170ef83bad341a3133e601b81",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/reference/rest/Shared.Types/ListLocationsResponse",
+          "title": "ListLocationsResponse \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_api-gateway_docs_reference_rest_Shared.Types_ListLocationsResponse.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-api-reference/pages/docs.cloud.google.com_api-gateway_docs_reference_rest_Shared.Types_ListLocationsResponse.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "us-east1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/reference/rest/Shared.Types/ListLocationsResponse",
+          "title": "ListLocationsResponse \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-api-reference/pages/docs.cloud.google.com_api-gateway_docs_reference_rest_Shared.Types_ListLocationsResponse.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "us-east1",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "For example: \"projects/example-project/locations/us-east1\" locationId string The canonical id for this location.",
+            "For example: \"us-east1\" . displayName string The friendly name for this location, typically a nearby city name.",
+            "For example {\"cloud.googleapis.com/region\": \"us-east1\"} An object containing a list of \"key\": value pairs."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2021-01-21",
+      "feature_name": "Cloud Run gRPC backend support in API Gateway",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway now supports using Cloud Run backend services with gRPC.",
+      "keywords": [
+        "backend protocol support",
+        "Cloud Run backend",
+        "Cloud Run service",
+        "Cloud Run gRPC",
+        "gRPC integration",
+        "gRPC backend",
+        "grpc backend",
+        "Gateway to Cloud Run"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "API Gateway documentation includes tutorials for using API Gateway with a Cloud Run backend, including a Cloud Run gRPC backend service, indicating support for Cloud Run integration. These guides describe API Gateway as the control plane for managing and securing traffic to those Cloud Run services.",
+      "evidence_summary": "The linked API Gateway tutorials index provides evidence that Google Cloud documents API Gateway usage with Cloud Run backend services, including gRPC-based backends, through “Getting started” tutorials.",
+      "source_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/tutorials"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "fb91d4e807af39cb3f3c28f4623e79eeaddefa9b2743af6a420443a92646363f",
+          "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/com.google.cloud.apigateway.v1.ApiConfig.Builder",
+          "title": "\"Class ApiConfig.Builder (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+          "source_id": "site-java-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-java-reference\\pages\\docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.Builder.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-java-reference/pages/docs.cloud.google.com_java_docs_reference_google-cloud-api-gateway_latest_com.google.cloud.apigateway.v1.ApiConfig.Builder.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "cloud run service",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "d09b05f64dcf3e9d0c7a89e671e524518ed1801f1712e49e62aaa07ebc07318d",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/tutorials",
+          "title": "Tutorials \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_api-gateway_docs_tutorials.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-iam-reference/pages/docs.cloud.google.com_api-gateway_docs_tutorials.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "cloud run backend",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "cloud run grpc",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "grpc backend",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/tutorials",
+          "title": "Tutorials \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-iam-reference/pages/docs.cloud.google.com_api-gateway_docs_tutorials.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "cloud run backend",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "cloud run grpc",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "grpc backend",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Getting started with API Gateway and Cloud Run for gRPC Learn how to use API Gateway to manage and secure traffic to a Cloud Run gRPC backend service.",
+            "Getting started with API Gateway and Cloud Run Learn how to use API Gateway to manage and secure traffic to a Cloud Run backend service."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2021-01-21",
+      "feature_name": "gcloud CLI support for API Gateway",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway has been added to the gcloud command group so it can be managed through the Google Cloud CLI.",
+      "keywords": [
+        "Cloud SDK commands",
+        "manage gateways with gcloud",
+        "gcloud api-gateway commands",
+        "gcloud command group",
+        "Cloud SDK",
+        "Google Cloud CLI",
+        "gcloud API Gateway",
+        "gcloud api-gateway"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "API Gateway supports management through the Google Cloud CLI via the `gcloud api-gateway` command group. The provided documentation shows CLI workflows for creating, listing, describing, updating, and deleting gateway resources, including API resources, API configurations, and gateways, with related options such as label/display-name updates and project scoping.",
+      "evidence_summary": "These official API Gateway pages provide direct examples of `gcloud api-gateway` commands, confirming that API creation, API config operations, and gateway deployment/update tasks are performed through Google Cloud CLI.",
+      "source_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "ea74a35c7f81c76afcd4840c893ff3b6904a5193599c6999bc570a9a7a0ad04b",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/deploying-api",
+          "title": "Deploy an API to a gateway \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_deploying-api.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_deploying-api.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "a663ebac0d195ca63bc898d11b49723438b5ae83110a5708e41498c7a3716a93",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+          "title": "Create an API \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "base_score": 48,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        },
+        {
+          "page_id": "a2b71e95aa6de78941efa36b9c5b78ad7180a0a832c8f0483086a4ea267306f0",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+          "title": "Create an API config \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "base_score": 48,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "9bcd3a106be4d9b5f413926d2c8ebd11ef16f6f5d29d3ca98f69a198185e30ba",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+          "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_api-gateway_docs_secure-traffic-gcloud.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-api-reference/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-gcloud.md",
+          "base_score": 46,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "73d53509e7c1f47e53a3885f5978e82b990ec2c6ab9cce8cc263638bdce44eb5",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/configure-dev-env",
+          "title": "\"Configure the development environment \\_|\\_ API Gateway \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_configure-dev-env.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_configure-dev-env.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "fea553557164af7eb8b2d048d3a717add21db59200ab87043b059a7fbf90a800",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/authenticate-api-keys",
+          "title": "Use API Keys \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_api-gateway_docs_authenticate-api-keys.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-iam-reference/pages/docs.cloud.google.com_api-gateway_docs_authenticate-api-keys.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+          "title": "Create an API \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "base_score": 48,
+          "final_score": 66,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page explicitly documents creating APIs with `gcloud api-gateway apis create`, including command help, required parameters, and output, showing direct CLI support for API Gateway operations.",
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ],
+          "evidence_snippets": [
+            "Google Cloud CLI Determine the list of API Gateways associated with the API: gcloud api-gateway gateways list --filter='apiConfig:\"projects/ PROJECT ID /locations/global/apis/ API ID \"' Delete each API config associated with the API: gcloud api-gateway api-configs delete CONFIG ID --api= API ID Delete the API: gcloud api-gateway apis delete API ID What's next Create an API config Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "Google Cloud CLI Use the following gcloud options to update an existing API: --display-name --update-labels --clear-labels --remove-labels For example: gcloud api-gateway apis update API ID \\ --update-labels=a=1,b=2 Use the following command to view all update options: gcloud api-gateway apis update --help Delete an API Note: If you deployed an API config to a gateway, then deleting the API causes the gateway to stop serving traffic.",
+            "Go to API Gateway Google Cloud CLI gcloud api-gateway apis list This command returns output in the form: NAME DISPLAY NAME MANAGED SERVICE STATE projects/ PROJECT ID /locations/global/apis/ API ID API ID MANAGED SERVICE NAME .apigateway.",
+            "Google Cloud CLI To create an API, review the following sections: Steps to create an API Google Cloud CLI options Domain-scoped projects Steps to create an API Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT ID If your project ID contains a colon ( : ), see Domain-scoped projects for additional details about creating an API in your project."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+          "title": "Create an API config \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "base_score": 48,
+          "final_score": 66,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page provides concrete gcloud CLI instructions for creating API configs and notes CLI prerequisites, showing direct support for managing API Gateway via the Cloud CLI.",
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "Google Cloud CLI To list API configs for a specific project: gcloud api-gateway api-configs list This command returns the following: NAME DISPLAY NAME ROLLOUT ID STATE CREATE TIME projects/ PROJECT ID /locations/global/apis/ API ID /configs/ CONFIG ID CONFIG ID 2020-02-04r0 ACTIVE 2020-02-04T16:18:02.369859863Z To list API configs for a specific API in a project: gcloud api-gateway api-configs list --api= API ID Use the API and config IDs to obtain detailed information about the API config: gcloud api-gateway api-configs describe CONFIG ID \\ --api= API ID Update an API config You cannot modify an existing API config other than to update its labels and its display name.",
+            "Google Cloud CLI Use the following gcloud to update an existing API config: --display-name --update-labels --clear-labels --remove-labels For example: gcloud api-gateway api-configs update CONFIG ID \\ --api= API ID \\ --update-labels=a=1,b=2 Use the following command to view all update options: gcloud api-gateway api-configs update --help Delete an API config Warning: If you deployed the API config to a gateway, the API config may not be deleted until the gateway is no longer using that API config.",
+            "Google Cloud CLI Use the following gcloud CLIcommand to delete an existing API config: gcloud api-gateway api-configs delete CONFIG ID --api= API ID --project= PROJECT ID What's next Deploy an API to a gateway Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT ID View help for the api-configs create command: gcloud api-gateway api-configs create --help Run the following command to create the API config: gcloud api-gateway api-configs create CONFIG ID \\ --api= API ID --openapi-spec= API DEFINITION \\ --project= PROJECT ID --backend-auth-service-account= SERVICE ACCOUNT EMAIL where: CONFIG ID specifies the ID of the new API config."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+          "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-api-reference/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-gcloud.md",
+          "base_score": 46,
+          "final_score": 64,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is a quickstart that walks through deploying and securing an API using gcloud, directly confirming CLI-based management for API Gateway.",
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 17
+            },
+            {
+              "phrase": "google cloud cli",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "For example: gcloud api-gateway gateways create my-gateway \\ --api= my-api --api-config= my-config \\ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \\ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \\ --location= us-central1 This command returns the following: apiConfig : projects /my-project/locations/global/apis/my-api/configs/ my - config createTime : '2020-02-05T13:44:12.997862831Z' defaultHostname : my - gateway - a12bcd345e67f89g0h . uc . gateway . dev displayName : my - gateway name : projects /my-project/locations/us-central1/gateways/ my - gateway serviceAccount : email : 0000000000000 - compute @ developer.gserviceaccount.com state : ACTIVE updateTime : '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.",
+            "Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \\ --api= API ID --openapi-spec= NEW API DEFINITION \\ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \\ --api= my-api --openapi-spec= openapi2-functions.yaml \\ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \\ --api= API ID --api-config= NEW CONFIG ID \\ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \\ --api= my-api --api-config= my-config-key \\ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it.",
+            "After the API config is created, you can view its details by running this command: gcloud api-gateway api-configs describe CONFIG ID \\ --api= API ID For example: gcloud api-gateway api-configs describe my-config \\ --api= my-api The output shows your API config details, including name and state, as shown in the following example: createTime: '2020-02-07T18:17:01.839180746Z' displayName: my-config gatewayConfig: backendConfig: googleServiceAccount: 0000000000000-compute@developer.gserviceaccount.com name: projects/my-project/locations/global/apis/my-api/configs/my-config serviceRollout: rolloutId: 2020-02-07r0 state: ACTIVE updateTime: '2020-02-07T18:17:02.173778118Z' Create a gateway Now deploy the API config on a gateway.",
+            "See API ID requirements for API naming guidelines. gcloud api-gateway apis create API ID For example: gcloud api-gateway apis create my-api On successful completion, you can use the following command to view details about the new API: gcloud api-gateway apis describe API ID For example: gcloud api-gateway apis describe my-api This command returns the following: createTime: '2020-02-29T21:52:20.297426875Z' displayName: my-api managedService: my-api-123abc456def1.apigateway.my-project.cloud.goog name: projects/ my-project /locations/global/apis/ my-api state: ACTIVE updateTime: '2020-02-29T21:52:20.647923711Z' Copy the value of the managedService property."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2020-09-08",
+      "feature_name": "API Gateway API public availability",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway API became publicly visible so it can be viewed and enabled without allowlisting.",
+      "keywords": [
+        "no allowlist required",
+        "publicly visible API",
+        "public GA",
+        "public availability",
+        "without allowlisting",
+        "API enablement",
+        "API visibility"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "API Gateway API became publicly visible so it can be viewed and enabled without allowlisting.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-09-08",
+      "feature_name": "API Gateway default gateway hostname pattern",
+      "deprecation_date": "",
+      "feature_summary": "Newly created gateways now use the default hostname format with GATEWAY_ID and HASH; Newly created gateways now use the default hostname format with GATEWAY_ID and HASH.",
+      "keywords": [
+        "auto-generated hostname",
+        "new default hostname",
+        "host naming pattern",
+        "default host format",
+        "GATEWAY_ID and HASH",
+        "default gateway hostname",
+        "gateway host format",
+        "hostname pattern"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Newly created gateways now use the default hostname format with GATEWAY_ID and HASH; Newly created gateways now use the default hostname format with GATEWAY_ID and HASH.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-09-08",
+      "feature_name": "API Gateway gcloud beta command group",
+      "deprecation_date": "",
+      "feature_summary": "API Gateway was added to the gcloud beta command group for CLI access.",
+      "keywords": [
+        "gcloud CLI beta surface",
+        "gcloud beta command group",
+        "gcloud api-gateway command reference",
+        "beta api-gateway commands",
+        "beta api-gateway group",
+        "gcloud beta api-gateway",
+        "api-gateway command group"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "API Gateway was added to the gcloud beta command group for CLI access.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-09-08",
+      "feature_name": "Removal of deprecated fields in API Gateway Alpha API",
+      "deprecation_date": "",
+      "feature_summary": "Deprecated fields were removed from alpha versions of the API Gateway API.",
+      "keywords": [
+        "field deprecation cleanup",
+        "deprecated field deprecation",
+        "alpha API field removal",
+        "Alpha API schema change",
+        "deprecated fields removed",
+        "removed alpha fields",
+        "alpha schema cleanup",
+        "API Gateway Alpha API"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Deprecated fields were removed from alpha versions of the API Gateway API.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-07-01",
+      "feature_name": "API Gateway REST API reference update",
+      "deprecation_date": "",
+      "feature_summary": "The API Gateway REST API reference was updated to the latest Alpha version; The API Gateway REST API reference was updated to the latest Alpha version.",
+      "keywords": [
+        "reference documentation update",
+        "latest Alpha API reference",
+        "Alpha API reference page",
+        "API docs refresh",
+        "API Gateway REST API reference",
+        "API reference update",
+        "REST API reference",
+        "API Gateway API docs"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The API Gateway REST API reference was updated to the latest Alpha version; The API Gateway REST API reference was updated to the latest Alpha version.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "f14181cb379ecbf28ae96768ff54aa02a52c9e49caa59349dcfd84a6d89e0c20",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/release-notes",
+          "title": "API Gateway release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_release-notes.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "rest api reference",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-07-01",
+      "feature_name": "OpenAPI host property optional for API Gateway API configs",
+      "deprecation_date": "",
+      "feature_summary": "OpenAPI specifications for API Gateway API configs no longer require the host property.",
+      "keywords": [
+        "host property optional",
+        "optional host field",
+        "hostless OpenAPI API config",
+        "omit host in OpenAPI",
+        "api config OpenAPI spec",
+        "OpenAPI host property",
+        "api-configs from OpenAPI",
+        "hostless OpenAPI"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "OpenAPI specifications for API Gateway API configs no longer require the host property.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-04-01",
+      "feature_name": "API config metadata update in API Gateway gcloud CLI",
+      "deprecation_date": "",
+      "feature_summary": "The API Gateway gcloud CLI added the ability to update API config labels or display name.",
+      "keywords": [
+        "api-config display name",
+        "display-name flag",
+        "display name update",
+        "update-labels flag",
+        "gcloud api-gateway api-configs update",
+        "API config metadata update",
+        "api-config labels",
+        "API config labels"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The API Gateway gcloud CLI added the ability to update API config labels or display name.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "a2b71e95aa6de78941efa36b9c5b78ad7180a0a832c8f0483086a4ea267306f0",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+          "title": "Create an API config \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway api-configs update",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-04-01",
+      "feature_name": "API Gateway gcloud CLI API lifecycle management",
+      "deprecation_date": "",
+      "feature_summary": "The gcloud CLI gained support for creating, listing, updating, and deleting APIs.",
+      "keywords": [
+        "gcloud api-gateway apis create",
+        "gcloud api-gateway apis delete",
+        "gcloud api-gateway apis list",
+        "API CRUD commands",
+        "API lifecycle management",
+        "gcloud api-gateway apis update",
+        "API CRUD",
+        "API lifecycle CLI"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "API Gateway API lifecycle management via gcloud is the set of `gcloud api-gateway apis` commands used to create, list, update, and delete API resources. The official CLI examples show `apis create`, `apis list`, `apis update` (with options such as `--display-name` and label updates), and `apis delete`, and also show `apis describe` for inspecting an API.",
+      "evidence_summary": "The cited API Gateway pages provide direct gcloud command references for API creation, listing, updating, describing, and deletion, including the documented effect of deletion on traffic for gateways using deployed API configs.",
+      "source_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "a663ebac0d195ca63bc898d11b49723438b5ae83110a5708e41498c7a3716a93",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+          "title": "Create an API \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway apis create",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "gcloud api-gateway apis update",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "gcloud api-gateway apis delete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "gcloud api-gateway apis list",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "9bcd3a106be4d9b5f413926d2c8ebd11ef16f6f5d29d3ca98f69a198185e30ba",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+          "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_api-gateway_docs_secure-traffic-gcloud.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-api-reference/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-gcloud.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway apis create",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+          "title": "Create an API \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "base_score": 28,
+          "final_score": 36,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page provides CLI-based API creation and description behavior for `gcloud api-gateway apis`, but does not document full lifecycle coverage such as listing, updating, or deleting APIs.",
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway apis create",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "gcloud api-gateway apis update",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "gcloud api-gateway apis delete",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "gcloud api-gateway apis list",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Google Cloud CLI Determine the list of API Gateways associated with the API: gcloud api-gateway gateways list --filter='apiConfig:\"projects/ PROJECT ID /locations/global/apis/ API ID \"' Delete each API config associated with the API: gcloud api-gateway api-configs delete CONFIG ID --api= API ID Delete the API: gcloud api-gateway apis delete API ID What's next Create an API config Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "Google Cloud CLI Use the following gcloud options to update an existing API: --display-name --update-labels --clear-labels --remove-labels For example: gcloud api-gateway apis update API ID \\ --update-labels=a=1,b=2 Use the following command to view all update options: gcloud api-gateway apis update --help Delete an API Note: If you deployed an API config to a gateway, then deleting the API causes the gateway to stop serving traffic.",
+            "Go to API Gateway Google Cloud CLI gcloud api-gateway apis list This command returns output in the form: NAME DISPLAY NAME MANAGED SERVICE STATE projects/ PROJECT ID /locations/global/apis/ API ID API ID MANAGED SERVICE NAME .apigateway.",
+            "View help for the apis create command: gcloud api-gateway apis create --help Run the following command to create the API: gcloud api-gateway apis create API ID where: API ID specifies the ID of the new API."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+          "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-api-reference/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-gcloud.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "It includes commands for enabling services and creating/deploying an API via gcloud, but it does not focus on full CRUD API lifecycle coverage (list/update/delete).",
+          "matched_phrases": [
+            {
+              "phrase": "gcloud api-gateway apis create",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "See API ID requirements for API naming guidelines. gcloud api-gateway apis create API ID For example: gcloud api-gateway apis create my-api On successful completion, you can use the following command to view details about the new API: gcloud api-gateway apis describe API ID For example: gcloud api-gateway apis describe my-api This command returns the following: createTime: '2020-02-29T21:52:20.297426875Z' displayName: my-api managedService: my-api-123abc456def1.apigateway.my-project.cloud.goog name: projects/ my-project /locations/global/apis/ my-api state: ACTIVE updateTime: '2020-02-29T21:52:20.647923711Z' Copy the value of the managedService property."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2020-04-01",
+      "feature_name": "API Gateway web console development UI",
+      "deprecation_date": "",
+      "feature_summary": "Google Cloud Console gained a web UI for developing APIs on API Gateway.",
+      "keywords": [
+        "Cloud Console development page",
+        "console development interface",
+        "API Gateway console workflow",
+        "API Gateway web UI",
+        "API development UI",
+        "web UI",
+        "Google Cloud Console",
+        "Develop APIs"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "API Gateway provides a Google Cloud Console web interface as a dedicated way to interact with the API Gateway development environment, enabling users to build, deploy, and manage API resources through a graphical UI. In this console workflow, users can create and deploy API configurations, deploy or update gateways, and view API activity from the API Gateway page without relying only on CLI commands.",
+      "evidence_summary": "These pages describe a console-based API Gateway development path, explicitly referencing the Google Cloud Console as a web UI for API creation/deployment, gateway updates, and API activity monitoring.",
+      "source_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+        "https://docs.cloud.google.com/api-gateway/docs/deploying-api",
+        "https://docs.cloud.google.com/api-gateway/docs/about-dev-env"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "89a0ea20ea5fcb906732223cf39bbb39b4c1108463029caa72aac64a483d340d",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+          "title": "\"Quickstart: Secure traffic to a service with the Google Cloud console \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_secure-traffic-console.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-console.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "ccdfab70f3db6ed30be645aebd4e64b6de512660f925e3a0173a69be0f4f1ce8",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+          "title": "About the API Gateway development environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_api-gateway_docs_about-dev-env.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-iam-reference/pages/docs.cloud.google.com_api-gateway_docs_about-dev-env.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "f04ee108cb9acef9c3c7fa6e83484df43f6fe508204322aecefad830b8d92c92",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/authenticate-service-account",
+          "title": "Authentication between services \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_authenticate-service-account.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_authenticate-service-account.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "a663ebac0d195ca63bc898d11b49723438b5ae83110a5708e41498c7a3716a93",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api",
+          "title": "Create an API \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "a2b71e95aa6de78941efa36b9c5b78ad7180a0a832c8f0483086a4ea267306f0",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+          "title": "Create an API config \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_creating-api-config.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        },
+        {
+          "page_id": "ea74a35c7f81c76afcd4840c893ff3b6904a5193599c6999bc570a9a7a0ad04b",
+          "url": "https://docs.cloud.google.com/api-gateway/docs/deploying-api",
+          "title": "Deploy an API to a gateway \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\api-gateway\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_api-gateway_docs_deploying-api.md",
+          "relative_markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_deploying-api.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-console",
+          "title": "\"Quickstart: Secure traffic to a service with the Google Cloud console \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_secure-traffic-console.md",
+          "base_score": 44,
+          "final_score": 52,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page is a Google Cloud Console quickstart for deploying and configuring API Gateway, showing that API creation and backend wiring can be done through the web console.",
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "Create and deploy a new API config To create and deploy a new API config that secures API access using API keys: Enable your service: In the Google Cloud console, go to APIs & Services > Library .",
+            "Quickstart: Secure traffic to a service with the Google Cloud console This page shows you how to deploy an API on API Gateway to secure traffic to a backend service.",
+            "Follow the steps to deploy a new API to access a backend service on Cloud Run functions using the Google Cloud console.",
+            "Track API activity View the activity graphs for your API on the API Gateway page in the Google Cloud console."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/deploying-api",
+          "title": "Deploy an API to a gateway \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/api-gateway/corpus/site/site-docs-root/pages/docs.cloud.google.com_api-gateway_docs_deploying-api.md",
+          "base_score": 30,
+          "final_score": 48,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "It provides explicit Google Cloud Console steps and UI navigation for creating and deploying a gateway, which directly documents the web console-based workflow.",
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ],
+          "evidence_snippets": [
+            "Go to Gateways Google Cloud CLI To list gateways for a specific project: gcloud api-gateway gateways list This command returns output in the form: GATEWAY ID LOCATION DISPLAY NAME STATE CREATE TIME UPDATE TIME my-gateway us-central1 my-gateway ACTIVE 2021-01-07T00:04:19 2022-05-21T00:33:46 To list gateways for a specific project and region: gcloud api-gateway gateways list --location= GCP REGION Use a filter expression to list the gateways associated with a specific API: gcloud api-gateway gateways list \\ --filter=\"apiConfig:projects/ PROJECT ID /locations/global/apis/ API ID / \" \\ Or use this filter to list gateways for a specific API config: gcloud api-gateway gateways list \\ --filter=\"apiConfig:projects/ PROJECT ID /locations/global/apis/ API ID /configs/ CONFIG ID \" \\ --project= PROJECT ID Use the region, and gateway IDs to obtain detailed information about the gateway, including the identity of the API config deployed to the gateway: gcloud api-gateway gateways describe GATEWAY ID \\ --location= GCP REGION Update a gateway Update a gateway to: Deploy a different API config to the gateway Update the display name Update the labels Google Cloud console Refer the following steps to update the API Gateway details: In the Google Cloud console, go to the API Gateway page.",
+            "For example: https:// my-gateway - a12bcd345e67f89g0h . uc .gateway.dev Deploy an API to a gateway To deploy an API to a gateway: Google Cloud console In the Google Cloud console, go to the API Gateway page.",
+            "Note : When using the Google Cloud console, this step is completed when deploying the API, as described below.",
+            "Google Cloud console In the Google Cloud console, go to the API Gateway > Gateways page."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/api-gateway/docs/about-dev-env",
+          "title": "About the API Gateway development environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/api-gateway/corpus/site/site-iam-reference/pages/docs.cloud.google.com_api-gateway_docs_about-dev-env.md",
+          "base_score": 30,
+          "final_score": 30,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "google cloud console",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "About the API Gateway development environment API Gateway gives you three basic ways to interact with the services and resources necessary to build APIs: Google Cloud console Command-line interface ( gcloud ) Client libraries Google Cloud console The Google Cloud console provides a web-based, graphical user interface that you can use to manage your Google Cloud console(Google Cloud) projects and resources.",
+            "When you use the Google Cloud console, you create a new project, or choose an existing project, and use the resources that you create in the context of that project.",
+            "Built-in authorization for access to Google Cloud Console projects and resources.",
+            "You can access Cloud Shell from the Google Cloud console ."
+          ]
+        }
+      ]
+    }
+  ]
+}

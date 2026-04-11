@@ -1,0 +1,595 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:58:55.518Z",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_count": 40,
+  "uncovered_feature_count": 29,
+  "uncovered_features": [
+    {
+      "latest_feature_date": "2023-01-26",
+      "feature_name": "Containerd runtime version for Anthos clusters on AWS",
+      "feature_summary": "Anthos clusters on AWS now use containerd runtime version 1.6.12.",
+      "keywords": [
+        "node container runtime",
+        "container runtime version",
+        "containerd v1.6.12",
+        "containerd runtime",
+        "runtime component",
+        "containerd 1.6.12",
+        "node runtime",
+        "containerd version"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-01-26",
+      "feature_name": "Supported Kubernetes versions for cluster creation on Anthos clusters on AWS",
+      "feature_summary": "Support was added to launch clusters with Kubernetes versions 1.23.15-gke.2000, 1.24.9-gke.2100, and 1.25.5-gke.2100; Support was added to launch clusters with Kubernetes versions 1.23.13-gke.2000, 1.24.7-gke.2000, and 1.25.3-gke.1900.",
+      "keywords": [
+        "1.23.15-gke.2000",
+        "1.23.13-gke.2000",
+        "allowed K8s versions",
+        "supported Kubernetes patch versions",
+        "1.24.9-gke.2100",
+        "1.24.7-gke.2000",
+        "1.25.5-gke.2100",
+        "1.25.3-gke.1900"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-13",
+      "feature_name": "Kubernetes API compatibility for Anthos clusters on AWS",
+      "feature_summary": "Kubernetes version 1.25 in Anthos clusters on AWS is marked as deprecated due to deprecated APIs; deprecated on 2022-12-13.",
+      "keywords": [
+        "API compatibility check",
+        "Kubernetes 1.25 API compatibility",
+        "API deprecation 1.25",
+        "Kubernetes API compatibility",
+        "Kubernetes 1.25 deprecated APIs",
+        "Kubernetes API lifecycle",
+        "API compatibility",
+        "API deprecation"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-07",
+      "feature_name": "Supported Kubernetes versions for Anthos clusters on AWS",
+      "feature_summary": "Kubernetes 1.20 support was removed for Anthos clusters on AWS, and creation or maintenance of Kubernetes 1.19 clusters is no longer supported; Creation and maintenance of Kubernetes 1.18 clusters is no longer supported for Anthos clusters on AWS; deprecated on 2022-07-07.",
+      "keywords": [
+        "1.19 maintenance unsupported",
+        "1.18 maintenance unsupported",
+        "legacy version removal",
+        "Kubernetes 1.19 unsupported",
+        "Kubernetes 1.18 unsupported",
+        "Kubernetes 1.20 support removed",
+        "supported Kubernetes versions",
+        "version EOL"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-12-14",
+      "feature_name": "Kubernetes 1.18 support in Anthos clusters on AWS",
+      "feature_summary": "Support for Kubernetes 1.18 clusters on Anthos clusters on AWS is removed; deprecated on 2021-12-14.",
+      "keywords": [
+        "create 1.18 clusters blocked",
+        "1.18 deprecated on 2021-12-14",
+        "1.18 clusters no longer supported",
+        "Kubernetes 1.18 deprecation",
+        "Kubernetes 1.18 support removed",
+        "1.18 lifecycle",
+        "1.18 EOL"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-12-14",
+      "feature_name": "Launching Kubernetes 1.17 clusters on Anthos on AWS",
+      "feature_summary": "Creating new clusters with Kubernetes 1.17 on Anthos clusters on AWS is no longer allowed; deprecated on 2021-12-14.",
+      "keywords": [
+        "Kubernetes 1.17 launch blocked",
+        "Kubernetes 1.17 not allowed",
+        "1.17 cluster creation deprecation",
+        "creating new 1.17 clusters blocked",
+        "1.17 deprecated on 2021-12-14",
+        "no 1.17 cluster creation",
+        "new Kubernetes 1.17 clusters",
+        "1.17 EOL"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "Anthos Identity Service on Kubernetes 1.21+ clusters",
+      "feature_summary": "Anthos Identity Service is available for Anthos clusters on AWS running Kubernetes version 1.21 and above.",
+      "keywords": [
+        "Kubernetes 1.21 minimum version for AIS",
+        "Anthos Identity Service availability",
+        "Anthos AWS identity integration",
+        "Anthos Identity Service for Kubernetes 1.21+",
+        "AIS on Anthos on AWS",
+        "Anthos Identity Service",
+        "AIS"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "Configurable Cloud Storage bucket for Anthos AWS configuration data",
+      "feature_summary": "Anthos clusters on AWS can now use a specified Cloud Storage bucket to store configuration data.",
+      "keywords": [
+        "store cluster config in Cloud Storage",
+        "specify configuration data bucket",
+        "GCS bucket for Anthos AWS config",
+        "custom Cloud Storage bucket",
+        "gs:// configuration bucket",
+        "GCS configuration bucket",
+        "config bucket"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "Kubernetes Konnectivity support in Anthos Kubernetes 1.21 clusters",
+      "feature_summary": "Anthos Kubernetes 1.21 clusters now support the Kubernetes Konnectivity tool for control plane and node communication.",
+      "keywords": [
+        "control plane and node communication",
+        "Anthos AWS konnectivity component",
+        "Konnectivity in Anthos Kubernetes 1.21",
+        "k8s konnectivity",
+        "Kubernetes Konnectivity support",
+        "konnectivity service",
+        "Konnectivity"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "Launching Kubernetes 1.16 clusters on Anthos on AWS",
+      "feature_summary": "Creating new Kubernetes 1.16 clusters on Anthos clusters on AWS is no longer supported; deprecated on 2021-09-30.",
+      "keywords": [
+        "no longer support Kubernetes v1.16",
+        "v1.16 deprecation",
+        "Kubernetes 1.16 cluster creation removed",
+        "Kubernetes v1.16",
+        "deprecated Kubernetes 1.16 clusters",
+        "Anthos on AWS Kubernetes 1.16 support",
+        "deprecated on 2021-09-30"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "Launching Kubernetes 1.21 clusters on Anthos on AWS",
+      "feature_summary": "Anthos clusters on AWS now support launching clusters with Kubernetes version 1.21.",
+      "keywords": [
+        "supported k8s versions 1.21",
+        "create cluster version 1.21",
+        "kubernetes-version=1.21 flag",
+        "launch Kubernetes 1.21 clusters",
+        "k8s 1.21",
+        "Kubernetes version 1.21 support",
+        "Kubernetes 1.21"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "Node pools with AWS R5 instances on Anthos clusters",
+      "feature_summary": "Anthos clusters on AWS now support launching node pools backed by AWS R5 instance types.",
+      "keywords": [
+        "node pool machine type r5",
+        "create node pools with AWS R5",
+        "R5-backed nodes",
+        "R5-backed node pools",
+        "Anthos AWS node pool instances",
+        "R5 node pool",
+        "R5 node pools"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-09-30",
+      "feature_name": "OIDC configuration updates on running Anthos clusters",
+      "feature_summary": "Users can update the OIDC configuration on an Anthos cluster while it is running.",
+      "keywords": [
+        "OIDC issuer and client update",
+        "modify OIDC settings on running cluster",
+        "runtime OIDC edit",
+        "running cluster OIDC change",
+        "update OIDC configuration",
+        "patch OIDC configuration",
+        "OIDC update"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-07-01",
+      "feature_name": "Launching Kubernetes 1.20 clusters on Anthos on AWS",
+      "feature_summary": "Anthos clusters on AWS now support launching clusters with Kubernetes version 1.20.",
+      "keywords": [
+        "supported k8s versions 1.20",
+        "kubernetes-version=1.20 flag",
+        "launch Kubernetes 1.20 clusters",
+        "create cluster 1.20",
+        "k8s 1.20",
+        "Kubernetes version 1.20 support",
+        "Kubernetes 1.20"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-07-01",
+      "feature_name": "Running-cluster proxy settings modification",
+      "feature_summary": "Anthos clusters on AWS now allow modifying proxy settings on a running cluster.",
+      "keywords": [
+        "runtime proxy setting update",
+        "modify proxy settings on running cluster",
+        "existing cluster proxy change",
+        "patch proxy settings",
+        "update cluster proxy configuration",
+        "cluster proxy update",
+        "running cluster proxy"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-07-01",
+      "feature_name": "Security group updates for user clusters and node pools",
+      "feature_summary": "Anthos clusters on AWS supports updating security groups associated with user clusters and node pools.",
+      "keywords": [
+        "node pool security group",
+        "security group reconciliation",
+        "security group attachment",
+        "user cluster security group",
+        "security group updates",
+        "node pool SG",
+        "AWSNodePool securityGroup",
+        "AWSCluster securityGroup"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-07-01",
+      "feature_name": "Workload Identity for user clusters",
+      "feature_summary": "Workload Identity authentication to Google Cloud services is available for Anthos user clusters running Kubernetes 1.20 and above; Workload Identity in Anthos clusters on AWS user clusters is generally available.",
+      "keywords": [
+        "GCP authentication from user cluster",
+        "IAM service account binding",
+        "Kubernetes service account annotation",
+        "OIDC issuer",
+        "Workload Identity for user clusters",
+        "Google service account",
+        "Workload Identity configuration",
+        "GKE Workload Identity"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-03-31",
+      "feature_name": "gp3 Amazon EBS volume type support",
+      "feature_summary": "Anthos clusters on AWS supports gp3 EBS volume types and configuration of gp3 volumes for management service, AWSCluster, and AWSNodePools.",
+      "keywords": [
+        "Amazon EBS gp3",
+        "gp3 volume type",
+        "AWSNodePool gp3",
+        "AWSCluster gp3",
+        "gp3 EBS",
+        "EBS gp3",
+        "gp3 volumes",
+        "gp3 configuration"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-03-31",
+      "feature_name": "Kubernetes 1.19 support",
+      "feature_summary": "Anthos clusters on AWS supports Kubernetes version 1.19.",
+      "keywords": [
+        "control plane 1.19",
+        "1.19 supported release",
+        "k8s 1.19",
+        "v1.19",
+        "user cluster Kubernetes version",
+        "Kubernetes 1.19",
+        "version 1.19"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-03-31",
+      "feature_name": "User cluster log and metric export to Google Cloud observability",
+      "feature_summary": "Anthos clusters on AWS user clusters can export logs and metrics to Cloud Logging and Cloud Monitoring.",
+      "keywords": [
+        "log and metric pipeline",
+        "logs and metrics export",
+        "user cluster metric export",
+        "Cloud Operations integration",
+        "Cloud Monitoring export",
+        "Cloud Logging export",
+        "Cloud Ops export",
+        "observability export"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-02-03",
+      "feature_name": "AWS EFS log collection in snapshots",
+      "feature_summary": "Snapshot collection now includes AWS Elastic File System logs from user cluster nodes.",
+      "keywords": [
+        "EFS snapshot logging",
+        "EFS log collection",
+        "snapshot collection",
+        "EFS snapshot logs",
+        "EFS log snapshots",
+        "user cluster snapshots",
+        "AWS EFS logs",
+        "snapshot logs"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-12-17",
+      "feature_name": "AWS EFS mounting without driver installation",
+      "feature_summary": "Anthos clusters on AWS supports mounting AWS Elastic File System file systems without requiring driver installation.",
+      "keywords": [
+        "EFS persistent volume mount",
+        "EFS mount without driver",
+        "no driver installation required",
+        "mount AWS Elastic File System",
+        "EFS file system mount",
+        "driverless EFS mount",
+        "no-driver EFS",
+        "driverless EFS"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-12-17",
+      "feature_name": "Kubernetes 1.18 support",
+      "feature_summary": "Anthos clusters on AWS supports Kubernetes version 1.18, including CoreDNS 1.7.1 and Cluster Autoscaler 1.18.",
+      "keywords": [
+        "1.18 control plane",
+        "Cluster Autoscaler 1.18",
+        "k8s 1.18",
+        "v1.18",
+        "CoreDNS 1.7.1",
+        "Kubernetes 1.18",
+        "version 1.18"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-11-02",
+      "feature_name": "Private Google Access image provisioning",
+      "feature_summary": "Anthos clusters on AWS supports using Private Google Access to provision images for GKE on AWS environments.",
+      "keywords": [
+        "image pull with private networking",
+        "private Google access image download",
+        "image provisioning with private access",
+        "private image provisioning",
+        "PGA image provisioning",
+        "Private Google Access (PGA)",
+        "Private Google Access",
+        "PGA"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-10-02",
+      "feature_name": "GKE on AWS Installation Preflight API Checks",
+      "feature_summary": "Additional preflight validation checks were introduced to enforce that required Google Cloud APIs are enabled during installation and upgrade.",
+      "keywords": [
+        "install-time validation",
+        "upgrade preflight checks",
+        "Installation preflight checks",
+        "preflight API checks",
+        "API enablement check",
+        "required Google Cloud APIs",
+        "preflight validation",
+        "preflight checks"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-10-02",
+      "feature_name": "GKE on AWS Service Account-based Installation and Upgrade Access",
+      "feature_summary": "Installation and upgrade of Anthos GKE on AWS can be performed with any authenticated Google Cloud service account without requiring allowlist access.",
+      "keywords": [
+        "service account install path",
+        "authenticated Google Cloud service account",
+        "service-account-based upgrade",
+        "service account upgrade path",
+        "service-account-based installation",
+        "allowlist-free installation",
+        "upgrade with service account",
+        "installation with service account"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-10-02",
+      "feature_name": "GKE on AWS Workload Identity",
+      "feature_summary": "Workload Identity enables binding Kubernetes service accounts to AWS IAM accounts and assigning per-workload IAM roles for fine-grained, least-privilege access.",
+      "keywords": [
+        "per-workload IAM roles",
+        "per-workload IAM role",
+        "KSA-IAM mapping",
+        "Kubernetes service account binding",
+        "least-privilege access",
+        "Workload Identity integration",
+        "federated workload identity",
+        "KSA to AWS IAM"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-10-02",
+      "feature_name": "HTTP/HTTPS Proxy Support for GKE on AWS Management Traffic",
+      "feature_summary": "Traffic between the GKE on AWS management service and Connect can now be routed through an HTTP/HTTPS proxy.",
+      "keywords": [
+        "route traffic through proxy",
+        "HTTP proxy for management traffic",
+        "HTTP/HTTPS proxy",
+        "management-plane proxy",
+        "management service endpoint",
+        "management service traffic",
+        "management traffic",
+        "proxy routing"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-04-02",
+      "feature_name": "Anthos GKE on AWS Initial Beta Release",
+      "feature_summary": "Anthos GKE on AWS was made available as an initial beta release.",
+      "keywords": [
+        "initial beta release",
+        "beta availability",
+        "release status",
+        "initial beta",
+        "beta launch",
+        "Anthos GKE on AWS launch",
+        "GKE on AWS beta",
+        "GKE on AWS Beta"
+      ]
+    }
+  ],
+  "top_missing_tokens": [
+    {
+      "token": "aws",
+      "count": 27
+    },
+    {
+      "token": "on",
+      "count": 27
+    },
+    {
+      "token": "anthos",
+      "count": 25
+    },
+    {
+      "token": "clusters",
+      "count": 23
+    },
+    {
+      "token": "for",
+      "count": 14
+    },
+    {
+      "token": "kubernetes",
+      "count": 14
+    },
+    {
+      "token": "and",
+      "count": 13
+    },
+    {
+      "token": "support",
+      "count": 11
+    },
+    {
+      "token": "now",
+      "count": 9
+    },
+    {
+      "token": "is",
+      "count": 8
+    },
+    {
+      "token": "to",
+      "count": 8
+    },
+    {
+      "token": "gke",
+      "count": 7
+    },
+    {
+      "token": "version",
+      "count": 7
+    },
+    {
+      "token": "with",
+      "count": 7
+    },
+    {
+      "token": "cluster",
+      "count": 6
+    },
+    {
+      "token": "supports",
+      "count": 6
+    },
+    {
+      "token": "can",
+      "count": 5
+    },
+    {
+      "token": "cloud",
+      "count": 5
+    },
+    {
+      "token": "deprecated",
+      "count": 5
+    },
+    {
+      "token": "google",
+      "count": 5
+    },
+    {
+      "token": "in",
+      "count": 5
+    },
+    {
+      "token": "launching",
+      "count": 5
+    },
+    {
+      "token": "service",
+      "count": 5
+    },
+    {
+      "token": "12",
+      "count": 4
+    },
+    {
+      "token": "running",
+      "count": 4
+    },
+    {
+      "token": "user",
+      "count": 4
+    },
+    {
+      "token": "18",
+      "count": 3
+    },
+    {
+      "token": "20",
+      "count": 3
+    },
+    {
+      "token": "2021",
+      "count": 3
+    },
+    {
+      "token": "21",
+      "count": 3
+    },
+    {
+      "token": "access",
+      "count": 3
+    },
+    {
+      "token": "an",
+      "count": 3
+    },
+    {
+      "token": "available",
+      "count": 3
+    },
+    {
+      "token": "configuration",
+      "count": 3
+    },
+    {
+      "token": "identity",
+      "count": 3
+    },
+    {
+      "token": "installation",
+      "count": 3
+    },
+    {
+      "token": "longer",
+      "count": 3
+    },
+    {
+      "token": "no",
+      "count": 3
+    },
+    {
+      "token": "node",
+      "count": 3
+    },
+    {
+      "token": "of",
+      "count": 3
+    }
+  ]
+}

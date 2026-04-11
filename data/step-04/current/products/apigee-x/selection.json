@@ -1,20 +1,22 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T17:12:53.089Z",
+  "generated_at": "2026-04-10T15:02:10.159Z",
   "product_name": "Apigee X",
   "product_slug": "apigee-x",
   "step03_ranking_path": "data/step-03/current/products/apigee-x/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 136
   },
   "site_output_mode": "compact",
   "selected_source_count": 3,
-  "selected_sources_signature": "ac2fac6479b3958ba82de12b18672d361e6981215329020fb6af853d1c90f863",
+  "selected_sources_signature": "cfee8aadb290935d3456d9933130dd77adee1aca8a9920c0f3df70df3cb008e0",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -24,8 +26,9 @@
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
       "final_score": 90,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 30
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     },
     {
       "source_id": "site-docs-reference",
@@ -35,8 +38,9 @@
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
       "final_score": 100,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-iam-reference",
@@ -46,8 +50,9 @@
       "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
       "final_score": 90,
       "best_rank": 2,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     }
   ],
   "corpus_paths": {

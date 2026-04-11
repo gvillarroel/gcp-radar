@@ -1,0 +1,1882 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-10T01:24:40.067Z",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/apigee-integration.md",
+    "step04_product_dir": "data/step-04/current/products/apigee-integration"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 50,
+  "source_row_count": 23,
+  "feature_count": 44,
+  "covered_feature_count": 5,
+  "features_without_supporting_pages": 38,
+  "features": [
+    {
+      "latest_feature_date": "2023-10-10",
+      "feature_name": "IAM Conditions for Apigee Integration",
+      "deprecation_date": "",
+      "feature_summary": "Adds support for IAM Conditions to enable attribute-based access control on Apigee Integration resources.",
+      "keywords": [
+        "service-level condition binding",
+        "resource-level IAM conditions",
+        "attribute-based access control",
+        "condition expressions",
+        "IAM Conditions",
+        "Condition keys",
+        "IAM condition",
+        "ABAC"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds support for IAM Conditions to enable attribute-based access control on Apigee Integration resources.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-10-10",
+      "feature_name": "Integration designer detailed summary view",
+      "deprecation_date": "",
+      "feature_summary": "Adds the ability to view a detailed summary of an integration from the Integration designer.",
+      "keywords": [
+        "detailed summary view",
+        "Integration summary view",
+        "execution summary",
+        "summary panel",
+        "summary view",
+        "Designer summary",
+        "Integration designer"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds the ability to view a detailed summary of an integration from the Integration designer.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-10-10",
+      "feature_name": "Manifest XML data transformer function",
+      "deprecation_date": "",
+      "feature_summary": "Introduces a data transformer function that converts a JSON object into an XML string.",
+      "keywords": [
+        "Manifest XML",
+        "XML manifest",
+        "JSON/XML transformer",
+        "transformer function",
+        "XML string",
+        "JSON to XML",
+        "data transformer"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces a data transformer function that converts a JSON object into an XML string.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-10-10",
+      "feature_name": "Parse XML data transformer function",
+      "deprecation_date": "",
+      "feature_summary": "Introduces a data transformer function that parses an XML string into a JSON object.",
+      "keywords": [
+        "JSON object output",
+        "XML parsing",
+        "XML parser",
+        "Parse XML",
+        "parseXml",
+        "XML to JSON",
+        "data transformer"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Apigee API proxy design supports an **XML to JSON policy** that can be added as a policy step in a proxy flow (for example, the View XML Response conditional flow in an OpenAPI-derived proxy). This policy is explicitly applied to the response path, indicating it performs transformation of XML content into JSON-formatted output during proxy execution. The available evidence does not explicitly label this as a generic \"Parse XML\" function or provide full details of the parser behavior beyond this XML-to-JSON policy usage.",
+      "evidence_summary": "The cited Apigee tutorial provides direct evidence that an \"XML to JSON\" policy can be added and applied in response flows of API proxies, supporting XML parsing-to-JSON transformation functionality but not deeper implementation details.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "677388a19a78d71e417aa1002f811a2bda4e806ffcdd85805431bebb14ddd49a",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+          "title": "\"Creating an API proxy from an OpenAPI Specification \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_create-api-proxy-openapi-spec.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_create-api-proxy-openapi-spec.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "xml to json",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+          "title": "\"Creating an API proxy from an OpenAPI Specification \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_create-api-proxy-openapi-spec.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "xml to json",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Add an XML to JSON policy Next, you'll add the XML to JSON policy to the View XML Response conditional flow that was generated automatically when you created the API proxy from the OpenAPI Specification.",
+            "In the Add Policy Step dialog, click in the Select existing policy field and select XML to JSON-1 .",
+            "Add the XML to JSON policy to the View XML Response conditional flow in the API proxy.",
+            "The XML to JSON policy is applied to the response."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-22",
+      "feature_name": "Vertex AI - Predict task",
+      "deprecation_date": "",
+      "feature_summary": "Introduces a Vertex AI Predict task for executing online predictions against machine learning models.",
+      "keywords": [
+        "Vertex AI Predict task",
+        "online prediction",
+        "model endpoint",
+        "Vertex Predict",
+        "ML inference",
+        "Vertex AI task",
+        "Predict task",
+        "Predict"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces a Vertex AI Predict task for executing online predictions against machine learning models.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "b817688088571ae04851c39c2e3e9220686a17875fc1c0d1da7bd9e22528bc1e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+          "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "base_score": 36,
+          "matched_phrases": [
+            {
+              "phrase": "predict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "online prediction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "model endpoint",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "50d0dcb269e29243e9ea11cd29110818d46d6eeb9d6b152de099db23783b7299",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+          "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "online prediction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "model endpoint",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "predict",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-06-13",
+      "feature_name": "Cloud Scheduler trigger",
+      "deprecation_date": "",
+      "feature_summary": "The Cloud Scheduler trigger moved to general availability in Apigee Integration; Adds a preview Cloud Scheduler trigger that enables scheduling integration executions on defined intervals through managed Cloud Scheduler.",
+      "keywords": [
+        "Cron-style trigger",
+        "managed Cloud Scheduler",
+        "scheduled execution",
+        "Cloud Scheduler trigger",
+        "trigger configuration",
+        "Scheduler trigger",
+        "interval trigger"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Cloud Scheduler trigger moved to general availability in Apigee Integration; Adds a preview Cloud Scheduler trigger that enables scheduling integration executions on defined intervals through managed Cloud Scheduler.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-06-13",
+      "feature_name": "JavaScript task",
+      "deprecation_date": "",
+      "feature_summary": "The JavaScript task moved to general availability in Apigee Integration; Introduces a preview JavaScript task with a JavaScript editor so integrations can use custom snippets for complex data mapping and variable manipulation.",
+      "keywords": [
+        "JavaScript editor",
+        "custom snippets",
+        "variable manipulation",
+        "JavaScript integration task",
+        "JavaScript task",
+        "JS task",
+        "data mapping"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The JavaScript task in Apigee-integrated workflows is an integration task that runs custom JavaScript code and manipulates event parameters through `event.getParameter(...)` and `event.setParameter(...)`. In the cited tutorial, it is used for custom data enrichment logic (for example, augmenting API metadata using spec content), showing that the feature enables custom snippets for variable-level data transformation and preparation.",
+      "evidence_summary": "The cited page provides example JavaScript task scripts that demonstrate custom script execution and parameter manipulation, but it does not include explicit statements about GA/preview status.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "3e703dd92c3d26ed2f7b1fd0ced313fd6cf556dd506b86e39813793efc8a3e23",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+          "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "base_score": 38,
+          "matched_phrases": [
+            {
+              "phrase": "data mapping",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 11
+            },
+            {
+              "phrase": "javascript task",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "23d3fca619c36eca2336ede6e0db20b061ea172c3231d73959f2f9774c44be76",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+          "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "data mapping",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "javascript task",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+          "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "base_score": 34,
+          "final_score": 30,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page describes creating an Application Integration flow for custom curation, so it relates to integration capabilities generally, but it does not explicitly discuss a JavaScript task.",
+          "matched_phrases": [
+            {
+              "phrase": "data mapping",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "javascript task",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "JavaScript task (Enrich API metadata with spec contents) Script: / Processes and curates API metadata with spec contents. @param {object} event The event object containing API data and spec content. / function executeScript(event) { let apiMetadata = event.getParameter('apiMetadata'); let specContent = event.getParameter('specContent'); // Initialize curatedAPIMetadata directly from apiMetadata const curatedAPIMetadata = { ...apiMetadata }; // Construct the 'spec' object efficiently const spec = { displayName: \"open-api-spec\", specType: { enumValues: { values: [{ id: \"openapi\" }] } }, contents: { mimeType: \"application/yaml\", contents: specContent, }, }; // Create the specMetadata object const specMetadata = { // Ensure originalUpdateTime exists before assigning // provide a fallback if needed originalModifiedTime: curatedAPIMetadata.originalUpdateTime new Date().toISOString(), spec: spec, }; // Initialize or update the specs array within the first version // This assumes versions[0] always exists.",
+            "Add checks if it might not. if (!curatedAPIMetadata.versions curatedAPIMetadata.versions.length === 0) { curatedAPIMetadata.versions = [{ specs: [] }]; } else if (!curatedAPIMetadata.versions[0].specs) { curatedAPIMetadata.versions[0].specs = []; } curatedAPIMetadata.versions[0].specs.push(specMetadata); // Set the modified apiData parameter event.setParameter('curatedAPIMetadata', curatedAPIMetadata); } The script demonstrates how the API metadata is enriched using the parsed specContent output from the Data Mapping task.",
+            "JavaScript task (Do not enrich API metadata) Script: function executeScript(event) { // Retrieve the apiData parameter. let apiMetadata = event.getParameter('apiMetadata'); // Set the curated API metadata parameter same as API data. event.setParameter('curatedAPIMetadata', apiMetadata); } The script sets the curated API metadata parameter to be the same as the API data.",
+            "Data mapping task (Construct GCS request payload) Input: connectorInputPayload (Fetch spec from GCS) .SET PROPERTY( apiMetadata .GET PROPERTY(\"api\") .GET PROPERTY(\"displayName\") .TO STRING() .CONCAT(\".yaml\") .TO LOWERCASE() , \"ObjectFilePath\" ) Output: ConnectorInputPayload (Fetch spec from GCS) Constructs the input payload for ConnectorInputPayload ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-06-13",
+      "feature_name": "Suspend task",
+      "deprecation_date": "",
+      "feature_summary": "The Suspend task moved to general availability in Apigee Integration.",
+      "keywords": [
+        "suspend execution",
+        "flow suspension",
+        "resume integration",
+        "pause integration",
+        "Suspend task",
+        "Pause task",
+        "Hold task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Suspend task moved to general availability in Apigee Integration.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-06-13",
+      "feature_name": "VPC Service Controls for Apigee Integration",
+      "deprecation_date": "",
+      "feature_summary": "VPC Service Controls support for Apigee Integration moved to general availability; Adds support for VPC Service Controls to place Apigee Integration within a Google Cloud security perimeter.",
+      "keywords": [
+        "VPC Service Controls",
+        "perimeter enforcement",
+        "security perimeter",
+        "service perimeter",
+        "VPC SC",
+        "Apigee Integration perimeter",
+        "VSC"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "VPC Service Controls support for Apigee Integration moved to general availability; Adds support for VPC Service Controls to place Apigee Integration within a Google Cloud security perimeter.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "c1dcff9eb67a778fcd9a1e2529bfc2698a0153a738f11ab6afb25c70da7e7055",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote",
+          "title": "\"Step 8: Promote an archive to production \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-promote.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-promote.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "vsc",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        },
+        {
+          "page_id": "53d0fd08c2c251aeac825a8d17e3e18b33522822a3b7985a6f9db87fb06d5519",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee",
+          "title": "Step 7: Deploy to an Apigee environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-deploy-apigee.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-deploy-apigee.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "vsc",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        },
+        {
+          "page_id": "f211ea3a4c002b82525dc5321b395aef44e8f31cb07aa78c29d9c2d7978e7066",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy",
+          "title": "\"Step 3: Configure and deploy an environment \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-deploy.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-deploy.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "vsc",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        },
+        {
+          "page_id": "3b26521d4a312ed5dc7f2a94df05e83693b36c9942feffc61020395a3c6362e7",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-workspace",
+          "title": "Step 1: Create an Apigee workspace \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-create-workspace.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-create-workspace.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "vsc",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        },
+        {
+          "page_id": "d57e22f0e0f285a441c53e0d8dd611bbf92c70b2db28309b63ed15e1d44ecfa9",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy",
+          "title": "Step 2: Create an API proxy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-create-proxy.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-create-proxy.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "vsc",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        },
+        {
+          "page_id": "4dd5054560117a9f6caf9852ee5e5010831ae22833f0b559e460a0d5a7fb3329",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-test",
+          "title": "Step 4: Test your API \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-test.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-test.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "vsc",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "AI Platform - Prediction task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a new AI Platform - Prediction integration task in preview.",
+      "keywords": [
+        "AI Platform Prediction task",
+        "AI Platform predict",
+        "model prediction",
+        "predict request",
+        "AI Platform task",
+        "prediction task",
+        "Prediction"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a new AI Platform - Prediction integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "b817688088571ae04851c39c2e3e9220686a17875fc1c0d1da7bd9e22528bc1e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+          "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "prediction",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Cloud KMS - decrypt task",
+      "deprecation_date": "",
+      "feature_summary": "Adds an integration task to decrypt data using Cloud KMS in preview.",
+      "keywords": [
+        "ciphertext to plaintext",
+        "Cloud KMS decrypt task",
+        "KMS decrypt",
+        "KMS Decrypt",
+        "decrypt integration task",
+        "decrypt data",
+        "decrypt task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds an integration task to decrypt data using Cloud KMS in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Cloud KMS - encrypt task",
+      "deprecation_date": "",
+      "feature_summary": "Adds an integration task to encrypt data using Cloud KMS in preview.",
+      "keywords": [
+        "plaintext to ciphertext",
+        "Cloud KMS encrypt task",
+        "KMS encrypt",
+        "KMS Encrypt",
+        "encrypt integration task",
+        "encrypt data",
+        "encrypt task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds an integration task to encrypt data using Cloud KMS in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Dataflow - Create Job task",
+      "deprecation_date": "",
+      "feature_summary": "Adds an integration task to create a Dataflow job in preview.",
+      "keywords": [
+        "Dataflow create job action",
+        "Dataflow Create Job task",
+        "Create Dataflow job",
+        "Create Job task",
+        "Dataflow create",
+        "Create Job",
+        "Apigee Integration Dataflow task",
+        "createJob"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds an integration task to create a Dataflow job in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Doc AI - Batch Process task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Doc AI batch document processing integration task in preview.",
+      "keywords": [
+        "Doc AI Batch Process task",
+        "Doc AI batch processing",
+        "Document AI batch process",
+        "Batch Process integration task",
+        "DocAI batch",
+        "BatchProcess",
+        "Batch Process task",
+        "Batch Process"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Doc AI batch document processing integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Doc AI - Process task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Doc AI document processing integration task in preview.",
+      "keywords": [
+        "Doc AI document processing",
+        "Doc AI Process task",
+        "Doc AI process",
+        "Document AI process",
+        "Process document task",
+        "processText",
+        "Process task",
+        "Process"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The provided official Google Cloud excerpts only establish that Apigee tasks/policies are attached in request/response flows as sequential processing steps in an API proxy and can be monitored via policy-related latency and platform/container health metrics. Therefore, the “Doc AI - Process task” can be described only in general terms as an Apigee policy/task in the proxy processing pipeline, not as a documented Doc AI-specific capability in these excerpts. The evidence does not explicitly define its preview status, Doc AI input/output behavior, or configuration details.",
+      "evidence_summary": "These pages confirm Apigee policy flow placement and monitoring semantics, but they do not directly document the Doc AI Process task feature itself.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-attach-policy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/cluster-monitoring-guidelines"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "32804f0d048e561df9954ae3b86b5b654e8483189fe035672b656d3e19f3a5f4",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+          "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_service-extensions_extension-processor-quickstart.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_service-extensions_extension-processor-quickstart.md",
+          "base_score": 52,
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 73
+            }
+          ]
+        },
+        {
+          "page_id": "50d0dcb269e29243e9ea11cd29110818d46d6eeb9d6b152de099db23783b7299",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+          "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "3e703dd92c3d26ed2f7b1fd0ced313fd6cf556dd506b86e39813793efc8a3e23",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+          "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        },
+        {
+          "page_id": "0844a791204960f35d189b2356797d2a0d4b34765e05ab35192effaeb86dccbc",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-attach-policy",
+          "title": "Step 6: Attach a policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-attach-policy.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-attach-policy.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "a2daf8f2cd352f22695c72ff1096e26d171f9f3cd0e1e224c10c7682728fcb41",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+          "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_hybrid_v1.10_cluster-monitoring-guidelines.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_hybrid_v1.10_cluster-monitoring-guidelines.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "23bc5cdeb14ea360b1e7dc9dcab83f8fd99ae737c114befb179493cd2781e16b",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/cluster-monitoring-guidelines",
+          "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_hybrid_v1.11_cluster-monitoring-guidelines.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_hybrid_v1.11_cluster-monitoring-guidelines.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-attach-policy",
+          "title": "Step 6: Attach a policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-attach-policy.md",
+          "base_score": 24,
+          "final_score": 24,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "In the following steps, you create a new policy and attach it to your API proxy in the PreFlow response flow to ensure the policy is applied before any other processing takes place.",
+            "Proxy and target endpoints define a pipeline for request and response message processing referred to as request and response flows .",
+            "Policies are attached at different points in the request and response message flows as processing steps .",
+            "Flows are sequential stages along the API request processing path."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+          "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_hybrid_v1.10_cluster-monitoring-guidelines.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Cloud Monitoring dashboard MQL query : fetch apigee.googleapis.com/ProxyV2 metric 'apigee.googleapis.com/proxyv2/latencies percentile' filter (metric.percentile == 'p99') group by 1m, [value latencies percentile mean: mean(value.latencies percentile)] every 1m group by [metric.method, metric.percentile], [value latencies percentile mean percentile: percentile(value latencies percentile mean, 99)] Policy latencies percentile Use case : Use the policyv2/latencies percentile monitor the processing latency percentile (p50, p90, p95, and p99) of all Apigee policies.",
+            "Service Name Container Name Cassandra apigee-cassandra Message Processor(MP) apigee-runtime Synchronizer apigee-synchronizer Telemetry apigee-prometheus-app apigee-prometheus-proxy apigee-prometheus-agg apigee-stackdriver-exporter Containers / Pods Restart count Use case : The kubernetes.io/container/restart count system SLI metric provides the number of times a container has restarted.",
+            "An Alert threshold optimization and determination is an on-going process as it can change with the service and infrastructure usage."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/cluster-monitoring-guidelines",
+          "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_hybrid_v1.11_cluster-monitoring-guidelines.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "process",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Cloud Monitoring dashboard MQL query : fetch apigee.googleapis.com/ProxyV2 metric 'apigee.googleapis.com/proxyv2/latencies percentile' filter (metric.percentile == 'p99') group by 1m, [value latencies percentile mean: mean(value.latencies percentile)] every 1m group by [metric.method, metric.percentile], [value latencies percentile mean percentile: percentile(value latencies percentile mean, 99)] Policy latencies percentile Use case : Use the policyv2/latencies percentile monitor the processing latency percentile (p50, p90, p95, and p99) of all Apigee policies.",
+            "Service Name Container Name Cassandra apigee-cassandra Message Processor(MP) apigee-runtime Synchronizer apigee-synchronizer Telemetry apigee-prometheus-app apigee-prometheus-proxy apigee-prometheus-agg apigee-stackdriver-exporter Containers / Pods Restart count Use case : The kubernetes.io/container/restart count system SLI metric provides the number of times a container has restarted.",
+            "An Alert threshold optimization and determination is an on-going process as it can change with the service and infrastructure usage."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Document Get task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Document Get integration task in preview.",
+      "keywords": [
+        "Document retrieval action",
+        "Get document resource task",
+        "Document Get integration task",
+        "Document Get task",
+        "Get Document task",
+        "Document Get",
+        "Get document"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Document Get integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Drive - List task",
+      "deprecation_date": "",
+      "feature_summary": "Adds an integration task to list Drive resources in preview.",
+      "keywords": [
+        "Drive file listing task",
+        "List Drive resources",
+        "Drive List task",
+        "Drive list task",
+        "Apigee Integration Drive task",
+        "Drive List",
+        "List"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "No evidence in the provided Google Cloud documentation excerpts confirms a feature named \"Drive - List task.\" The cited pages only describe Apigee Integrations REST `list` methods for other resource types (`suspensions`, `authConfigs`, and `certificates`), which list matching resources and require corresponding IAM `*.list` permissions on the parent resource.",
+      "evidence_summary": "These pages define generic Apigee Integrations list endpoints and their IAM permissions, but provide no mention of a Google Drive list integration task.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/list",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/list",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/list"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "154d2a98c501fa09a436e45593fad3b635fb1e6c7ef36d1304099dd3d2808a0e",
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/list",
+          "title": "\"Method: projects.locations.products.integrations.executions.suspensions.list\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.integrations.executions.suspensions_list.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.integrations.executions.suspensions_list.md",
+          "base_score": 54,
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "dedc4b2c9c4a64de2f610d0ee8f9b2631172dbe955629ded0c32e6ae45fda372",
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/list",
+          "title": "\"Method: projects.locations.products.authConfigs.list \\_|\\_ Apigee \\_|\\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.authConfigs_list.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.authConfigs_list.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 8
+            }
+          ]
+        },
+        {
+          "page_id": "cf30a0b58ef9801f1c5c86c006a124e7a3d99189894bfe4c7a1ded5f7e87ff3a",
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/list",
+          "title": "\"Method: projects.locations.products.certificates.list \\_|\\_ Apigee \\_|\\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.certificates_list.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.certificates_list.md",
+          "base_score": 50,
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "23d3fca619c36eca2336ede6e0db20b061ea172c3231d73959f2f9774c44be76",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+          "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ]
+        },
+        {
+          "page_id": "3e703dd92c3d26ed2f7b1fd0ced313fd6cf556dd506b86e39813793efc8a3e23",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+          "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 12
+            }
+          ]
+        },
+        {
+          "page_id": "349dec0afb2acc9158084d59861df3a01d289fc08bdc19a5d370981ec4b0d7da",
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest",
+          "title": "Apigee Integrations API \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-api-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-api-reference\\pages\\docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.executions.suspensions/list",
+          "title": "\"Method: projects.locations.products.integrations.executions.suspensions.list\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.integrations.executions.suspensions_list.md",
+          "base_score": 54,
+          "final_score": 54,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "IAM Permissions Requires one of the following IAM permissions on the parent resource, depending on the resource type: integrations.apigeeSuspensions.list integrations.suspensions.list For more information, see the IAM documentation .",
+            "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.integrations.executions.suspensions.list Stay organized with collections Save and categorize content based on your preferences.",
+            "HTTP request Path parameters Query parameters Request body Response body Authorization Scopes IAM Permissions Lists suspensions associated with a specific execution.",
+            "Response body If successful, the response body contains an instance of ListSuspensionsResponse ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/list",
+          "title": "\"Method: projects.locations.products.authConfigs.list \\_|\\_ Apigee \\_|\\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.authConfigs_list.md",
+          "base_score": 50,
+          "final_score": 50,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 8
+            }
+          ],
+          "evidence_snippets": [
+            "If unspecified, defaults to 100. pageToken string The token returned in the previous response. filter string Filtering as supported in List filter syntax and usage . readMask string ( FieldMask format) The mask which specifies fields that need to be returned in the AuthConfig's response.",
+            "IAM Permissions Requires the following IAM permissions on the parent resource: integrations.apigeeAuthConfigs.list integrations.authConfigs.list integrations.securityAuthConfigs.list For more information, see the IAM documentation .",
+            "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.authConfigs.list Stay organized with collections Save and categorize content based on your preferences.",
+            "HTTP request Path parameters Query parameters Request body Response body Authorization Scopes IAM Permissions Lists all auth configs that match the filter."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/list",
+          "title": "\"Method: projects.locations.products.certificates.list \\_|\\_ Apigee \\_|\\_\\",
+          "source_id": "site-api-reference",
+          "markdown_path": "products/apigee-integration/corpus/site/site-api-reference/pages/docs.cloud.google.com_apigee_docs_reference_apis_integrations_rest_v1_projects.locations.products.certificates_list.md",
+          "base_score": 50,
+          "final_score": 50,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "list",
+              "title_hits": 1,
+              "url_hits": 1,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "If unspecified, defaults to 100. pageToken string The token returned in the previous response. filter string Filtering as supported in List filter syntax and usage . readMask string ( FieldMask format) The mask which specifies fields that need to be returned in the Certificate's response.",
+            "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.certificates.list Stay organized with collections Save and categorize content based on your preferences.",
+            "IAM Permissions Requires the following IAM permissions on the parent resource: integrations.apigeeCertificates.list integrations.certificates.list For more information, see the IAM documentation .",
+            "HTTP request Path parameters Query parameters Request body Response body Authorization Scopes IAM Permissions List all the certificates that match the filter."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Firestore - Batch Get task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Firestore batch get integration task in preview.",
+      "keywords": [
+        "Get multiple Firestore documents",
+        "Firestore batch get documents",
+        "Firestore batch read",
+        "Firestore Batch Get task",
+        "batchGet task",
+        "batchGet",
+        "Batch Get task",
+        "Batch Get"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Firestore batch get integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Firestore - Batch Write task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Firestore batch write integration task in preview.",
+      "keywords": [
+        "Write multiple Firestore documents",
+        "Firestore batch write documents",
+        "Firestore Batch Write task",
+        "Firestore batch write",
+        "Batch Write task",
+        "Batch Write",
+        "batchWrite task",
+        "batchWrite"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Firestore batch write integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Language - Annotate Text task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a language annotation integration task in preview.",
+      "keywords": [
+        "Natural Language annotateText",
+        "Language Annotate Text task",
+        "Text annotation integration task",
+        "language annotate",
+        "Annotate Text task",
+        "Annotate Text",
+        "annotateText"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a language annotation integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Language - Classify Text task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a language classification integration task in preview.",
+      "keywords": [
+        "Natural Language classifyText",
+        "Language Classify Text task",
+        "Text classification integration task",
+        "language classify",
+        "Classify Text task",
+        "Classify Text",
+        "classifyText"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a language classification integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Operation task",
+      "deprecation_date": "",
+      "feature_summary": "Adds an Operation integration task in preview.",
+      "keywords": [
+        "Long-running operation task",
+        "Async operation integration task",
+        "Operation polling task",
+        "Operation action task",
+        "Operation status",
+        "Poll Operation",
+        "Operation task",
+        "Operation"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In this documented Apigee workflow, an operation task is handled as a long-running operation: a command initiates an action and returns an operation ID with metadata such as state, and users poll that operation until it reaches completion. In the cited flow, deployment uses `gcloud beta apigee archives deploy` to start the operation and `gcloud beta apigee operations describe <OPERATION_ID>` to check status until the state indicates completion.",
+      "evidence_summary": "The page shows asynchronous operation handling (start + operation ID + polling status) for Apigee archive deployment, which partially aligns with an Operation task pattern but is not a full feature specification.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "c1dcff9eb67a778fcd9a1e2529bfc2698a0153a738f11ab6afb25c70da7e7055",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote",
+          "title": "\"Step 8: Promote an archive to production \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-promote.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-promote.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "operation status",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "b817688088571ae04851c39c2e3e9220686a17875fc1c0d1da7bd9e22528bc1e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+          "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ]
+        },
+        {
+          "page_id": "5215052227eeda0d8b715122dd4e5f3a0c6f3c1228af723b708a72b46d5dffb4",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart",
+          "title": "Get started with Apigee and MCP \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_apigee-mcp_apigee-mcp-quickstart.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_apigee-mcp_apigee-mcp-quickstart.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            }
+          ]
+        },
+        {
+          "page_id": "aac9c94b9e7236dab6904930c667c6ddd3ff47c2fdedea10ab0b2c2cd71d5dff",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+          "title": "Secure an API with OAuth 2.0 \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_secure-calls-your-api-through-oauth-20-client-credentials.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_secure-calls-your-api-through-oauth-20-client-credentials.md",
+          "base_score": 25,
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ]
+        },
+        {
+          "page_id": "53d0fd08c2c251aeac825a8d17e3e18b33522822a3b7985a6f9db87fb06d5519",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-deploy-apigee",
+          "title": "Step 7: Deploy to an Apigee environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-deploy-apigee.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-deploy-apigee.md",
+          "base_score": 25,
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        },
+        {
+          "page_id": "32804f0d048e561df9954ae3b86b5b654e8483189fe035672b656d3e19f3a5f4",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+          "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_service-extensions_extension-processor-quickstart.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_service-extensions_extension-processor-quickstart.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-promote",
+          "title": "\"Step 8: Promote an archive to production \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_local-development_vscode_tutorial-promote.md",
+          "base_score": 30,
+          "final_score": 26,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page is a deployment guide that briefly references long-running operations, but it does not describe an Operation integration task feature.",
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            },
+            {
+              "phrase": "operation status",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Run the following command to view all archive deployments in the prod environment: gcloud beta apigee archives list --environment=prod The following provides an example of the response: Using Apigee organization 'prod' ARCHIVE ID ENVIRONMENT DEPLOYED AT LABELS OPERATION STATUS vrytwbhso558oil53m prod 2021-04-20 21:20:53 release=052021.1 Deployed Congratulations!",
+            "Using Apigee organization 'prod' done: true metadata: '@type': type.googleapis.com/google.cloud.apigee.v1.OperationMetadata operationType: INSERT state: IN PROGRESS targetResourceName: uri name: organizations/prod/operations/ $OPERATION ID organization: prod response: '@type': type.googleapis.com/google.cloud.apigee.v1.CanaryEvaluation control: 1-5-0-20210319-071117-ghq74 endTime: '2021-03-20T06:15:44.329363950Z' metricLabels: env: test location: us-central1 name: uri startTime: '2021-03-20T06:14:44.306534584Z' treatment: 1-5-0-20210319-190954-if0wk verdict: NONE uuid: $OPERATION ID Repeat the previous step until state is set to FINISHED indicating that the archive depoloyment is complete.",
+            "In the Terminal tab in Apigee VS Code, navigate to the myapigeeworkspace directory. cd myapigeeworkspace Run the following command: gcloud beta apigee archives deploy --environment=prod --labels=release=052021.1 The following provides an example of the response: Using Apigee organization dev Waiting for operation [ $OPERATION ID ] to complete...⠹ Run the following command to check the status of the operation, replacing $OPERATION ID with the operation ID returned in the previous call: gcloud beta apigee operations describe $OPERATION ID The following provides an example of the response.",
+            "This triggers a long-running operation that can take several minutes to complete."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart",
+          "title": "Get started with Apigee and MCP \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_apigee-mcp_apigee-mcp-quickstart.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 13
+            }
+          ],
+          "evidence_snippets": [
+            "Add the following content to the file: mcp-quickstart-openapi.yaml --- openapi : 3.0.3 info : title : Cymbal Group Products API description : This is the official API for managing the artists for Cymbal Group Products. version : 1.0.0 servers : - url : https://cymbal.products.com description : Cymbal Group Production Server - url : https://internal.products.com description : Cymbal Group internal Server paths : /artists : get : description : Returns a list of artists operationId : listArtists parameters : - name : limit in : query description : Limits the number of items on a page schema : type : integer - name : offset in : query description : Specifies the page number of the artists to be displayed schema : type : integer responses : \"200\" : description : An array of artists content : application/json : schema : type : array items : $ref : \"#/components/schemas/Artist\" post : summary : Create a new artist operationId : createArtist tags : - artists requestBody : description : The artist to create. required : true content : application/json : schema : $ref : \"#/components/schemas/Artist\" responses : \"201\" : description : The newly created artist profile content : application/json : schema : $ref : \"#/components/schemas/Artist\" \"400\" : description : Invalid username supplied /artists/{username} : get : summary : Info for a specific artist operationId : showArtistByUsername tags : - artists parameters : - name : username in : path required : true description : The username of the artist to retrieve schema : type : string responses : \"200\" : description : Expected response to a valid request content : application/json : schema : $ref : \"#/components/schemas/Artist\" \"404\" : description : Artist not found components : securitySchemes : bearerAuth : type : http scheme : bearer oauth2 : type : oauth2 flows : authorizationCode : authorizationUrl : /oauth/authorize tokenUrl : /oauth/token scopes : artists.read : Grants read access artists.write : Grants write access schemas : Artist : type : object required : - id properties : id : type : string format : uuid description : Unique identifier for the artist Hostname matching requirement It is critical that the value of the hostname in the servers.url field of the OpenAPI specification is an exact match for the environment group hostname of the Apigee environment where the MCP Discovery Proxy is deployed.",
+            "Create an OpenAPI 3.0.x specification describing your API operations Before you create and deploy your MCP Discovery Proxy, you need to create an OpenAPI 3.0.x specification that describes the API operations that you want to expose as MCP tools.",
+            "The following sections describe the steps to create and deploy an MCP Discovery Proxy, create an API product, and list available tools: Create an OpenAPI 3.0.x specification describing your API operations.",
+            "MCP in Apigee supports the following OpenAPI versions: 3.0.0 3.0.1 3.0.2 3.0.3 This quickstart uses a sample OpenAPI 3.0.x specification with three API operations: GET /artists : Returns a list of artists."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+          "title": "Secure an API with OAuth 2.0 \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_secure-calls-your-api-through-oauth-20-client-credentials.md",
+          "base_score": 25,
+          "final_score": 25,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "operation",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ],
+          "evidence_snippets": [
+            "Click the GenerateAccessTokenClient policy in the Request pane: The following XML configuration is displayed: < OAuthV2 name = \"GenerateAccessTokenClient\" > < ! -- This policy generates an OAuth 2.0 access token using the client credentials grant type -- > < Operation>GenerateAccessToken < / Operation > < ! -- This is in milliseconds , so expire in an hour -- > < ExpiresIn>3600000 < / ExpiresIn > < SupportedGrantTypes > < ! -- This part is very important : most real OAuth 2.0 apps will want to use other grant types .",
+            "In this case it is important to NOT include the \"client credentials\" type because it allows a client to get access to a token with no user authentication -- > < GrantType>client credentials < / GrantType > < / SupportedGrantTypes > < GrantType>request . queryparam . grant type < / GrantType > < GenerateResponse / > < / OAuthV2 > The configuration includes the following: The <Operation> , which can be one of several predefined values, defines what the policy is going to do.",
+            "Click the Verify OAuth v2.0 Access Token icon in the right-hand pane and look at the XML below it in the text editor. <OAuthV2 async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"verify-oauth-v2-access-token\"> <DisplayName>Verify OAuth v2.0 Access Token</DisplayName> <Operation>VerifyAccessToken</Operation> </OAuthV2> Notice that the <Operation> is VerifyAccessToken .",
+            "The Operation defines what the policy is supposed to do."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Sheets - Append task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Sheets append integration task in preview.",
+      "keywords": [
+        "Spreadsheet append action",
+        "Google Sheets append",
+        "append values task",
+        "Sheets Append task",
+        "Sheets append",
+        "Append task",
+        "appendValues",
+        "append"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Sheets append integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Sheets - Batch Get task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a batch get integration task for Sheets in preview.",
+      "keywords": [
+        "Batch retrieve spreadsheet data",
+        "Google Sheets batchGet",
+        "Sheets Batch Get task",
+        "batchGet task",
+        "Sheets batch get",
+        "batchGet",
+        "Batch Get task",
+        "Batch Get"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a batch get integration task for Sheets in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Sheets - Get task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Sheets get integration task in preview.",
+      "keywords": [
+        "Sheet record retrieval",
+        "Read from Sheet",
+        "Read sheet task",
+        "Sheets connector task",
+        "Get records task",
+        "Sheets Get task",
+        "Sheets get",
+        "Get task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Sheets get integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Translate - Document Translate task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a document translation integration task in preview.",
+      "keywords": [
+        "Document translation connector",
+        "Batch document translate",
+        "Doc Translate task",
+        "Document translation task",
+        "Document Translate task",
+        "Translate Document task",
+        "Document translate"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a document translation integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Translate - Text task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a text translation integration task in preview.",
+      "keywords": [
+        "Text translator task",
+        "Text translation task",
+        "Translation text task",
+        "Text Translate task",
+        "Translate Text task",
+        "Text translate",
+        "Text task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a text translation integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-23",
+      "feature_name": "Workflows - Execute task",
+      "deprecation_date": "",
+      "feature_summary": "Adds a Workflows execute integration task in preview.",
+      "keywords": [
+        "Trigger workflow execution",
+        "Workflow connector task",
+        "Workflows Execute task",
+        "Execute workflow task",
+        "Run workflow task",
+        "Workflow execute",
+        "Execute task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a Workflows execute integration task in preview.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-22",
+      "feature_name": "Error catcher trigger",
+      "deprecation_date": "",
+      "feature_summary": "Introduces an Error Catcher trigger to handle failures in a trigger, task, or edge condition.",
+      "keywords": [
+        "Failure handling trigger",
+        "Error Catcher trigger",
+        "Error handler trigger",
+        "Catch integration error",
+        "Catcher trigger",
+        "Error catcher",
+        "On-error trigger"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces an Error Catcher trigger to handle failures in a trigger, task, or edge condition.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-22",
+      "feature_name": "Return task",
+      "deprecation_date": "",
+      "feature_summary": "Introduces a Return task to customize HTTP error-response messages during integration execution failures.",
+      "keywords": [
+        "Customize HTTP error response",
+        "Failure response customization",
+        "Execution failure return",
+        "Return task action",
+        "Return response",
+        "Error response task",
+        "Return task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces a Return task to customize HTTP error-response messages during integration execution failures.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-09",
+      "feature_name": "Cloud logs support for Connectors tasks",
+      "deprecation_date": "",
+      "feature_summary": "Adds cloud log visibility for failed Connectors tasks in Apigee Integration.",
+      "keywords": [
+        "Failed connectors task log",
+        "Cloud logs visibility",
+        "Connector task logs",
+        "Task execution logs",
+        "Cloud Logging for Connectors",
+        "Connector logs",
+        "Task logs"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds cloud log visibility for failed Connectors tasks in Apigee Integration.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-01",
+      "feature_name": "Expanded Apigee Integration regional availability",
+      "deprecation_date": "",
+      "feature_summary": "Makes Apigee Integration available in additional regions including Melbourne, Finland, Paris, Madrid, Doha, and Tel Aviv.",
+      "keywords": [
+        "Tel Aviv region",
+        "additional regions",
+        "supported regions",
+        "Melbourne region",
+        "region expansion",
+        "Finland region",
+        "Madrid region",
+        "Paris region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Makes Apigee Integration available in additional regions including Melbourne, Finland, Paris, Madrid, Doha, and Tel Aviv.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-04-03",
+      "feature_name": "Secret Manager - Access task",
+      "deprecation_date": "",
+      "feature_summary": "Introduces a Secret Manager Access task (preview) to retrieve secret versions from Secret Manager.",
+      "keywords": [
+        "Secret version retrieval",
+        "Secret Manager connector",
+        "Read secret version",
+        "Secret Manager Access task",
+        "Secret Access task",
+        "Access secret",
+        "Access task"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduces a Secret Manager Access task (preview) to retrieve secret versions from Secret Manager.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-02-06",
+      "feature_name": "Delete integration",
+      "deprecation_date": "",
+      "feature_summary": "Adds the ability to delete an entire integration and all associated versions in one operation.",
+      "keywords": [
+        "delete all versions",
+        "integration deletion action",
+        "delete integration and versions",
+        "delete all",
+        "remove integration versions",
+        "delete integration",
+        "remove integration"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds the ability to delete an entire integration and all associated versions in one operation.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-26",
+      "feature_name": "Test integrations without publishing",
+      "deprecation_date": "",
+      "feature_summary": "Enables testing an integration without publishing or creating a new version to validate input values and connection flow behavior.",
+      "keywords": [
+        "connection flow testing",
+        "test before publish",
+        "test integration without publishing",
+        "pre-publish test",
+        "test without publish",
+        "run integration test",
+        "validate input values",
+        "dry run"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Enables testing an integration without publishing or creating a new version to validate input values and connection flow behavior.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-11-04",
+      "feature_name": "US multi-region location deprecation",
+      "deprecation_date": "2022-11-10",
+      "feature_summary": "Deprecates the Apigee Integration US multi-region (us) location and directs new deployments to supported single regions; deprecated on 2022-11-10.",
+      "keywords": [
+        "deprecated on 2022-11-10",
+        "US multi-region deprecation",
+        "deprecate us multi-region",
+        "migrate from us location",
+        "unsupported us location",
+        "us location deprecation",
+        "single-region deployment",
+        "US multi-region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Deprecates the Apigee Integration US multi-region (us) location and directs new deployments to supported single regions; deprecated on 2022-11-10.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-09-01",
+      "feature_name": "Regional integration endpoints for Apigee proxies",
+      "deprecation_date": "",
+      "feature_summary": "Adds region support when creating integrations in proxies, allowing region-specified endpoints and requiring region configuration in SetIntegrationRequest.",
+      "keywords": [
+        "endpoint region configuration",
+        "regional endpoint selection",
+        "region-specified endpoint",
+        "SetIntegrationRequest region setting",
+        "regional integration endpoints",
+        "create integration in region",
+        "regional endpoints",
+        "region setting"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds region support when creating integrations in proxies, allowing region-specified endpoints and requiring region configuration in SetIntegrationRequest.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-09",
+      "feature_name": "Data Mapping array transformation functions",
+      "deprecation_date": "",
+      "feature_summary": "Adds new array transformation functions, including FILTER and FOR_EACH, for processing array-type variables in Data Mapping.",
+      "keywords": [
+        "array-type variable functions",
+        "array transformation function",
+        "array map function",
+        "Data Mapping FOR_EACH",
+        "FOR_EACH function",
+        "Data Mapping FILTER",
+        "FOR_EACH",
+        "FILTER function"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Available evidence shows Apigee integration supports a **For Each**-style list-processing step that iterates through an array/list field (for example, `apiMetadataList.apiMetadata`) and executes a sub-integration for each element. This demonstrates per-element array processing behavior consistent with a FOR_EACH-style transformation pattern, but the provided excerpt does not explicitly document a Data Mapping `FOR_EACH` or `FILTER` function implementation.",
+      "evidence_summary": "The cited Google Cloud Apigee API Hub page documents list iteration in a tutorial (for-each loop task), but it only partially overlaps with the claimed Data Mapping array transformation functions and provides no explicit mention of `FILTER`.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "3e703dd92c3d26ed2f7b1fd0ced313fd6cf556dd506b86e39813793efc8a3e23",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+          "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_ingest-azure-api-hub.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "for each",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "23d3fca619c36eca2336ede6e0db20b061ea172c3231d73959f2f9774c44be76",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+          "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-integration\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "relative_markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "for each",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+          "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-integration/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_tutorials_enrich-api-data.md",
+          "base_score": 24,
+          "final_score": 20,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page appears focused on end-to-end curation and enrichment setup rather than Data Mapping internals or new array transformation function capabilities like FILTER/FOR_EACH.",
+          "matched_phrases": [
+            {
+              "phrase": "for each",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "It also collates the response of each run in curatedAPIMetadataList , where each element of the array has the response from one particular run. /application-integration/docs/configure-private-trigger\">Private Trigger (Enrich each API with spec) Trigger ID: private trigger/test-curate-1 Private 1 Invokes the sub-integration for each element in apiMetaData .",
+            "For Each Loop Task (For Each API) List to iterate: apiData.apiMetadataList.apiMetadata Sub-integration details: Integration name: enrich-with-spec-yaml Trigger ID: private trigger/test-curate-1 Private 1 Iterates over the apiMetadata list and calls the sub-integration for each API resource."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-09",
+      "feature_name": "Data Mapping JSON subfield support",
+      "deprecation_date": "",
+      "feature_summary": "Adds support for subfield mapping of JSON variables in the Data Mapping task variable list.",
+      "keywords": [
+        "field-level mapping",
+        "map JSON subfields",
+        "JSON variable field mapping",
+        "subfield mapping for JSON",
+        "Data Mapping task variable list",
+        "JSON subfield mapping",
+        "JSON field mapping",
+        "subfield JSON support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds support for subfield mapping of JSON variables in the Data Mapping task variable list.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-07-09",
+      "feature_name": "Data Mapping nested functions",
+      "deprecation_date": "",
+      "feature_summary": "Adds nested function support to the Data Mapping task so one function can accept other functions as input parameters.",
+      "keywords": [
+        "nested function input parameters",
+        "nested functions in Data Mapping",
+        "Data Mapping function chaining",
+        "compose mapping functions",
+        "nested function support",
+        "nested functions",
+        "function as input",
+        "function chaining"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds nested function support to the Data Mapping task so one function can accept other functions as input parameters.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-06-23",
+      "feature_name": "Apigee Integration trials",
+      "deprecation_date": "",
+      "feature_summary": "Makes Apigee Integrations available in Apigee Evaluation orgs so users can try the feature without billing charges.",
+      "keywords": [
+        "no-charge trial org",
+        "try integrations without billing",
+        "integration evaluation org",
+        "Apigee Evaluation org",
+        "trial access in Apigee Integration",
+        "evaluation org",
+        "free trial",
+        "trial org"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Makes Apigee Integrations available in Apigee Evaluation orgs so users can try the feature without billing charges.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-06-23",
+      "feature_name": "SetIntegrationRequest policy updates",
+      "deprecation_date": "",
+      "feature_summary": "Updates SetIntegrationRequest to support ref attributes for parameter values and adds explicit handling for empty element values as null.",
+      "keywords": [
+        "null handling for empty values",
+        "empty element as null",
+        "reference attributes in SetIntegrationRequest",
+        "null empty-element",
+        "SetIntegrationRequest parameter values",
+        "ref attributes",
+        "ref attribute",
+        "SetIntegrationRequest policy"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Updates SetIntegrationRequest to support ref attributes for parameter values and adds explicit handling for empty element values as null.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-01-19",
+      "feature_name": "Connectors task filter clause",
+      "deprecation_date": "",
+      "feature_summary": "Adds a filter clause option to Connectors task operations to limit the amount of data processed during entity operations.",
+      "keywords": [
+        "Connectors entity filtering",
+        "filter clause option",
+        "Connectors task filter clause",
+        "filter clause in Connectors",
+        "limit data processed",
+        "entity operation filter",
+        "filter clause",
+        "entity filter"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds a filter clause option to Connectors task operations to limit the amount of data processed during entity operations.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-01-19",
+      "feature_name": "Upload and download integrations",
+      "deprecation_date": "",
+      "feature_summary": "Adds integration designer support for uploading and downloading integration definitions in JSON format.",
+      "keywords": [
+        "download integration definitions",
+        "upload integration definitions",
+        "Integration designer JSON import",
+        "Integration designer JSON export",
+        "integration JSON download",
+        "integration JSON upload",
+        "import integrations",
+        "export integrations"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Adds integration designer support for uploading and downloading integration definitions in JSON format.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    }
+  ]
+}

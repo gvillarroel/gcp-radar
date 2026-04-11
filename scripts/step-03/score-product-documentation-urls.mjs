@@ -18,7 +18,7 @@ const rounds = Number(process.env.GCP_RADAR_STEP03_ROUNDS || 3);
 const searchCount = Number(process.env.GCP_RADAR_STEP03_SEARCH_COUNT || 8);
 const maxProducts = Number(process.env.GCP_RADAR_STEP03_MAX_PRODUCTS || 0);
 const maxCandidatesForApi = Number(process.env.GCP_RADAR_STEP03_MAX_CANDIDATES_FOR_API || 18);
-const maxKeptTotal = Number(process.env.GCP_RADAR_STEP03_MAX_KEPT_TOTAL || 10);
+const maxKeptTotal = Number(process.env.GCP_RADAR_STEP03_MAX_KEPT_TOTAL || 14);
 const searchConcurrency = Number(process.env.GCP_RADAR_STEP03_SEARCH_CONCURRENCY || Math.min(6, Math.max(2, Math.floor((os.availableParallelism?.() ?? os.cpus().length) / 2))));
 const bxRequestTimeoutMs = Number(process.env.GCP_RADAR_STEP03_BX_REQUEST_TIMEOUT_MS || 90000);
 const bxMaxAttempts = Number(process.env.GCP_RADAR_STEP03_BX_MAX_ATTEMPTS || 3);
@@ -44,6 +44,76 @@ function hostnameFor(url) { try { return new URL(url).hostname.toLowerCase(); } 
 function pathnameFor(url) { try { return new URL(url).pathname.toLowerCase(); } catch { return ""; } }
 const isOfficialGoogleUrl = (url) => officialHosts.some((host) => hostnameFor(url) === host || hostnameFor(url).endsWith(`.${host}`));
 function parseProductMarkdown(markdown) { const heading = markdown.split(/\r?\n/).find((line) => line.startsWith("# ")); if (!heading) throw new Error("Product markdown is missing a top-level heading"); return heading.replace(/^#\s+/, "").trim(); }
+function parseStep02Markdown(markdown, productSlug) {
+  const productNameMatch = markdown.match(/^#\s+(.+)\r?$/m);
+  const rowCountMatch = markdown.match(/Source rows considered:\s+(\d+)/);
+  const featureCountMatch = markdown.match(/Unique features:\s+(\d+)/);
+  const lines = markdown.split(/\r?\n/);
+  const features = [];
+  for (const line of lines) {
+    const match = line.match(/^\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|$/);
+    if (!match || match[1] === "---" || match[1] === "Latest feature date") continue;
+    features.push({
+      latest_feature_date: match[1].trim(),
+      feature_name: match[2].replace(/\\\|/g, "|").trim(),
+      deprecation_date: match[3].trim(),
+      feature_summary: match[4].replace(/\\\|/g, "|").trim(),
+    });
+  }
+  return {
+    product_name: productNameMatch?.[1]?.trim() || productSlug,
+    product_slug: productSlug,
+    source_row_count: Number(rowCountMatch?.[1] || 0),
+    feature_count: Number(featureCountMatch?.[1] || features.length),
+    features,
+  };
+}
+function tokenize(text) { return normalizeText(text).split(" ").filter((token) => token.length >= 3); }
+function buildFeatureCoverageContext(step02) {
+  const features = Array.isArray(step02?.features) ? step02.features : [];
+  const phraseWeights = new Map();
+  const tokenWeights = new Map();
+  let userFacingSignals = 0;
+  let apiHeavySignals = 0;
+  for (const feature of features) {
+    const featureName = String(feature.feature_name || "").trim();
+    const featureSummary = String(feature.feature_summary || "").trim();
+    const combined = normalizeText(`${featureName} ${featureSummary}`);
+    if (!combined) continue;
+    if (/\b(api|sdk|rpc|rest|client librar|java|python|node\.?js|go|c\+\+|dotnet|auth|iam|permission)\b/.test(combined)) apiHeavySignals += 1;
+    if (/\b(console|guide|dataset|table|query|job|pipeline|index|feature|workspace|portal|runtime|cluster|transfer|search|dashboard|model|notebook|observability|security|governance|scripting|procedure|reservation)\b/.test(combined)) userFacingSignals += 1;
+    const phraseCandidates = [
+      featureName,
+      ...featureName.split(/[:(,-]/).map((part) => part.trim()),
+      ...featureSummary.split(/[.;]/).map((part) => part.trim()),
+    ];
+    for (const phrase of phraseCandidates) {
+      const normalizedPhrase = normalizeText(phrase);
+      if (normalizedPhrase.length < 12) continue;
+      if (/\b(general availability|preview|beta|alpha|deprecated|launch stage|google cloud)\b/.test(normalizedPhrase)) continue;
+      phraseWeights.set(normalizedPhrase, (phraseWeights.get(normalizedPhrase) || 0) + 1);
+    }
+    const uniqueTokens = new Set(tokenize(combined));
+    for (const token of uniqueTokens) tokenWeights.set(token, (tokenWeights.get(token) || 0) + 1);
+  }
+  const rankedPhrases = [...phraseWeights.entries()]
+    .sort((a, b) => b[1] - a[1] || b[0].length - a[0].length || a[0].localeCompare(b[0]))
+    .map(([phrase]) => phrase)
+    .filter((phrase) => phrase.split(" ").length >= 2)
+    .slice(0, 48);
+  const rankedTokens = [...tokenWeights.entries()]
+    .filter(([token, frequency]) => frequency <= Math.max(40, Math.ceil(features.length * 0.2)))
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([token]) => token)
+    .slice(0, 80);
+  return {
+    feature_count: Number(step02?.feature_count || features.length),
+    source_row_count: Number(step02?.source_row_count || 0),
+    top_phrases: rankedPhrases,
+    top_tokens: rankedTokens,
+    inventory_profile: apiHeavySignals > userFacingSignals * 1.15 ? "api_heavy" : "user_facing",
+  };
+}
 function buildProfile(name, slug, aliases = []) { const ignored = new Set(["google", "cloud", "platform", "service", "services", "documentation", "docs"]); const aliasTexts = aliases.map((alias) => normalizeText(alias)).filter(Boolean); const set = new Set([...normalizeText(name).split(" "), ...slug.replace(/-/g, " ").split(" "), ...aliasTexts.flatMap((alias) => alias.split(" "))]); return { name, slug, normalizedName: normalizeText(name), compactName: compactText(name), compactSlug: slug.replace(/-/g, ""), aliasTexts, aliasCompacts: aliasTexts.map(compactText), tokens: [...set].filter((t) => t.length >= 3 && !ignored.has(t)), familyRules: familyRulesFor(slug) }; }
 function pathMatchesRule(pathname, rule) { if (!rule) return false; if (typeof rule === "string") return pathname.startsWith(rule); return rule.test(pathname); }
 function matchesAnyRule(pathname, rules = []) { return rules.some((rule) => pathMatchesRule(pathname, rule)); }
@@ -221,6 +291,184 @@ const canonicalFamilies = {
       [/^\/calendar\/v3\/reference(?:\/|$)/, "api_reference"],
     ],
   },
+  "chat-api": {
+    preferredPaths: [
+      "/workspace/chat/api/reference",
+      "/workspace/chat/api/reference/rest",
+      "/workspace/chat/api/reference/rpc/google.chat.v1",
+      "/workspace/chat/authenticate-authorize",
+      "/workspace/chat/api/guides/auth",
+      "/workspace/chat/overview",
+    ],
+    forbiddenPaths: [
+      "/chronicle/",
+      "/gemini/",
+      "/contact-center/",
+      "/dialogflow/",
+      "/sap/",
+      "/looker/",
+      "/php/docs/reference/apps-chat/",
+      "/go/docs/reference/cloud.google.com/go/chat/",
+    ],
+    queryFamilies: [
+      () => 'site:developers.google.com/workspace/chat/api "Google Chat API" overview reference auth',
+      () => 'site:developers.google.com/workspace/chat/api/reference "Google Chat API"',
+      () => 'site:developers.google.com/workspace/chat/api/reference/rest "Google Chat API"',
+      () => 'site:developers.google.com/workspace/chat "authenticate authorize" "Google Chat API"',
+    ],
+    classifications: [
+      [/^\/workspace\/chat\/api\/reference$/, "product_root"],
+      [/^\/workspace\/chat\/overview$/, "product_root"],
+      [/^\/workspace\/chat\/api\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/workspace\/chat\/api\/reference\/rpc\/google\.chat\.v1(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/chat\/(?:authenticate-authorize|api\/guides\/auth)(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "drive-api": {
+    preferredPaths: [
+      "/workspace/drive/api/guides/about-sdk",
+      "/workspace/drive/api/reference/rest",
+      "/workspace/drive/api/reference/rest/v3",
+      "/workspace/drive/api/guides/api-specific-auth",
+    ],
+    forbiddenPaths: [
+      "/integration-connectors/",
+      "/application-integration/",
+      "/gemini/enterprise/docs/connectors/gdrive/",
+      "/apps-script/reference/drive",
+      "/resources/api-libraries/documentation/drive/",
+    ],
+    queryFamilies: [
+      () => 'site:developers.google.com/workspace/drive/api "Google Drive API" overview reference auth',
+      () => 'site:developers.google.com/workspace/drive/api/reference/rest/v3 "Google Drive API"',
+      () => 'site:developers.google.com/workspace/drive/api/guides/api-specific-auth "Google Drive API"',
+    ],
+    classifications: [
+      [/^\/workspace\/drive\/api\/guides\/about-sdk(?:\/|$)/, "product_root"],
+      [/^\/workspace\/drive\/api\/reference\/rest(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/drive\/api\/reference\/rest\/v3(?:\/|$)/, "api_reference"],
+      [/^\/workspace\/drive\/api\/guides\/api-specific-auth(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "earth-engine-data-catalog": {
+    preferredPaths: [
+      "/earth-engine/datasets/catalog",
+      "/earth-engine/datasets",
+      "/earth-engine/apidocs",
+      "/earth-engine/guides",
+    ],
+    forbiddenPaths: [
+      "/earth-engine/docs/data-catalog",
+      "/earth-engine/docs/data-catalog/release-notes",
+      "/earth-engine/datasets/catalog/",
+      "/earth-engine/datasets/tags/",
+      "/earth-engine/datasets/publisher",
+    ],
+    queryFamilies: [
+      () => 'site:developers.google.com/earth-engine/datasets/catalog "Earth Engine Data Catalog"',
+      () => 'site:developers.google.com/earth-engine/datasets "Earth Engine Data Catalog"',
+      () => 'site:developers.google.com/earth-engine/apidocs "Earth Engine"',
+    ],
+    classifications: [
+      [/^\/earth-engine\/datasets\/catalog(?:\/|$)/, "product_root"],
+      [/^\/earth-engine\/datasets(?:\/|$)/, "product_root"],
+      [/^\/earth-engine\/apidocs(?:\/|$)/, "product_reference"],
+      [/^\/earth-engine\/guides(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "cloud-run": {
+    preferredPaths: [
+      "/run/docs",
+      "/run/docs/overview/what-is-cloud-run",
+      "/run/docs/apis",
+      "/run/docs/reference/cloud-run-admin-api-overview",
+      "/run/docs/securing/managing-access",
+      "/iam/docs/roles-permissions/run",
+      "/python/docs/reference/run/latest",
+      "/java/docs/reference/google-cloud-run/latest/overview",
+    ],
+    forbiddenPaths: [
+      "/functions/docs",
+      "/eventarc/",
+      "/service-mesh/docs/cloud-run-api-reference",
+      "/deploy/docs/run-targets",
+      "/blog/",
+      "/discover/",
+      "/run/docs/host-mcp-servers",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/run/docs "Cloud Run documentation"',
+      () => 'site:docs.cloud.google.com/run/docs "Cloud Run" apis "managing access"',
+      () => 'site:docs.cloud.google.com/run/docs/reference "Cloud Run Admin API overview"',
+      () => 'site:docs.cloud.google.com/iam/docs/roles-permissions/run "Cloud Run"',
+      () => 'site:docs.cloud.google.com/python/docs/reference/run/latest "Cloud Run"',
+      () => 'site:docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/overview "Cloud Run"',
+    ],
+    classifications: [
+      [/^\/run\/docs$/, "product_root"],
+      [/^\/run\/docs\/overview\/what-is-cloud-run(?:\/|$)/, "product_root"],
+      [/^\/run\/docs\/apis(?:\/|$)/, "product_reference"],
+      [/^\/run\/docs\/reference\/cloud-run-admin-api-overview(?:\/|$)/, "api_reference"],
+      [/^\/run\/docs\/securing\/managing-access(?:\/|$)/, "iam_reference"],
+      [/^\/iam\/docs\/roles-permissions\/run(?:\/|$)/, "iam_reference"],
+      [/^\/python\/docs\/reference\/run\/latest(?:\/index\.html)?$/, "python_reference"],
+      [/^\/java\/docs\/reference\/google-cloud-run\/latest\/overview$/, "java_reference"],
+    ],
+  },
+  "cloud-vpn": {
+    preferredPaths: [
+      "/network-connectivity/docs/vpn",
+      "/network-connectivity/docs/vpn/apis",
+      "/network-connectivity/docs/vpn/concepts/overview",
+    ],
+    forbiddenPaths: [
+      "/distributed-cloud/edge/",
+      "/distributed-cloud/hosted/",
+      "/network-connectivity/docs/interconnect/",
+      "/network-connectivity/docs/router/",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/network-connectivity/docs/vpn "Cloud VPN"',
+      () => 'site:docs.cloud.google.com/network-connectivity/docs/vpn/apis "Cloud VPN"',
+      () => 'site:docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview "Cloud VPN"',
+    ],
+    classifications: [
+      [/^\/network-connectivity\/docs\/vpn(?:$|\/concepts\/overview$)/, "product_root"],
+      [/^\/network-connectivity\/docs\/vpn\/apis(?:\/|$)/, "product_reference"],
+      [/^\/network-connectivity\/docs\/vpn\/concepts\/best-practices(?:\/|$)/, "supporting_page"],
+    ],
+  },
+  "automl-translation": {
+    preferredPaths: [
+      "/translate/docs",
+      "/translate/docs/intro-to-v3",
+      "/translate/docs/reference/rpc",
+      "/translate/docs/access-control",
+      "/python/docs/reference/translation/latest",
+    ],
+    forbiddenPaths: [
+      "/translate/automl/docs/deprecations",
+      "/translate/docs/advanced/automl-evaluate",
+      "/translate/docs/advanced/automl-batch",
+      "/translate/docs/advanced/automl-beginner",
+      "/dotnet/docs/reference/google.cloud.translate.v3",
+      "/php/docs/reference/cloud-translate",
+    ],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/translate/docs/intro-to-v3 "AutoML Translation"',
+      () => 'site:docs.cloud.google.com/translate/docs "Cloud Translation - Advanced" "AutoML Translation"',
+      () => 'site:docs.cloud.google.com/translate/docs/reference/rpc "Cloud Translation"',
+      () => 'site:docs.cloud.google.com/translate/docs/access-control "Cloud Translation"',
+      () => 'site:docs.cloud.google.com/python/docs/reference/translation/latest "Cloud Translation"',
+    ],
+    classifications: [
+      [/^\/translate\/docs(?:$|\/intro-to-v3$)/, "product_root"],
+      [/^\/translate\/docs\/advanced\/(custom-translation-quickstart|automl-prepare|automl-models|automl-datasets|translate-documents)(?:\/|$)/, "product_reference"],
+      [/^\/translate\/docs\/reference\/rpc(?:\/|$)/, "api_reference"],
+      [/^\/translate\/docs\/access-control(?:\/|$)/, "iam_reference"],
+      [/^\/python\/docs\/reference\/translation\/latest(?:\/index\.html)?$/, "python_reference"],
+    ],
+  },
   "places-api": {
     preferredPaths: ["/maps/documentation/places/web-service", "/maps/documentation/places/web-service/overview", "/maps/documentation/places/web-service/op-overview", "/maps/documentation/places/web-service/reference/rest"],
     forbiddenPaths: ["/service-usage/", "/compute/", "/appengine/"],
@@ -264,17 +512,25 @@ const canonicalFamilies = {
     ],
   },
   "google-secops-siem": {
-    preferredPaths: ["/chronicle/docs/secops", "/chronicle/docs/onboard", "/chronicle/docs/reference/google-unified-security"],
-    forbiddenPaths: ["/apigee/", "/eventarc/", "/logging/", "/monitoring/"],
+    preferredPaths: [
+      "/chronicle/docs/secops/secops-overview",
+      "/chronicle/docs/reference/google-unified-security",
+      "/chronicle/docs/reference/feature-rbac-permissions-roles",
+      "/chronicle/docs/onboard/configure-cloud-authentication",
+    ],
+    forbiddenPaths: ["/apigee/", "/eventarc/", "/logging/", "/monitoring/", "/chronicle/docs/secops$"],
     queryFamilies: [
-      () => 'site:docs.cloud.google.com/chronicle/docs/secops "Google SecOps"',
-      () => 'site:docs.cloud.google.com/chronicle/docs/onboard "Google SecOps"',
-      () => 'site:docs.cloud.google.com/chronicle/docs/reports "Google SecOps"',
+      () => 'site:docs.cloud.google.com/chronicle/docs/secops "Google SecOps" overview',
+      () => 'site:docs.cloud.google.com/chronicle/docs/reference "Google SecOps" "google-unified-security" OR "feature-rbac-permissions-roles"',
+      () => 'site:docs.cloud.google.com/chronicle/docs/onboard "Google SecOps" authentication',
     ],
     classifications: [
-      [/^\/chronicle\/docs\/(?:secops|onboard)(?:$|\/)/, "product_root"],
+      [/^\/chronicle\/docs\/secops\/secops-overview(?:\/|$)/, "product_root"],
+      [/^\/chronicle\/docs\/secops(?:$|\/)/, "product_reference"],
       [/^\/chronicle\/docs\/(?:reports|administration)(?:$|\/)/, "supporting_page"],
       [/^\/chronicle\/docs\/reference\/google-unified-security(?:\/|$)/, "api_reference"],
+      [/^\/chronicle\/docs\/reference\/feature-rbac-permissions-roles(?:\/|$)/, "iam_reference"],
+      [/^\/chronicle\/docs\/onboard\/configure-cloud-authentication(?:\/|$)/, "iam_reference"],
     ],
   },
   "apigee-ui": {
@@ -447,17 +703,20 @@ const canonicalFamilies = {
   },
   "gke-enterprise": {
     preferredPaths: [
+      "/kubernetes-engine/enterprise/docs",
       "/kubernetes-engine/enterprise/docs/deployment-options",
       "/kubernetes-engine/enterprise/docs/version-and-upgrade-support",
       "/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
     ],
     forbiddenPaths: ["/kubernetes-engine/enterprise/docs/release-notes", "/kubernetes-engine/enterprise/knative-serving/docs", "/service-mesh/docs/ui-differences"],
     queryFamilies: [
+      () => 'site:docs.cloud.google.com/kubernetes-engine/enterprise/docs "GKE Enterprise"',
       () => 'site:docs.cloud.google.com/kubernetes-engine/enterprise/docs "GKE deployment options"',
       () => 'site:docs.cloud.google.com/kubernetes-engine/enterprise/docs "version and upgrade support" "cluster type"',
       () => 'site:docs.cloud.google.com/kubernetes-engine/enterprise/docs "GKE Enterprise" "common GKE user roles and tasks"',
     ],
     classifications: [
+      [/^\/kubernetes-engine\/enterprise\/docs$/, "product_root"],
       [/^\/kubernetes-engine\/enterprise\/docs\/deployment-options(?:\/|$)/, "product_root"],
       [/^\/kubernetes-engine\/enterprise\/docs\/version-and-upgrade-support(?:\/|$)/, "product_reference"],
       [/^\/kubernetes-engine\/enterprise\/docs\/concepts\/roles-tasks(?:\/|$)/, "iam_reference"],
@@ -537,6 +796,28 @@ const canonicalFamilies = {
       [/^\/chronicle\/docs\/soar\/marketplace-integrations(?:\/|$)/, "product_root"],
       [/^\/chronicle\/docs\/soar\/marketplace-integrations\/[^/]+(?:\/|$)/, "product_reference"],
       [/^\/chronicle\/docs\/secops\/google-secops-soar-toc(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "google-secops": {
+    preferredPaths: [
+      "/chronicle/docs/secops/secops-overview",
+      "/chronicle/docs",
+      "/chronicle/docs/secops/understand-the-secops-platform",
+      "/chronicle/docs/reference/google-secops-api-libraries-overview",
+      "/chronicle/docs/reference/authentication",
+    ],
+    forbiddenPaths: ["/chronicle/docs/administration", "/chronicle/docs/secops/google-secops-soar-toc", "/chronicle/docs/soar/"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/chronicle/docs/secops "Google SecOps overview"',
+      () => 'site:docs.cloud.google.com/chronicle/docs/reference "Google SecOps APIs and libraries overview" OR authentication',
+      () => 'site:docs.cloud.google.com/chronicle/docs "Google Security Operations" overview',
+    ],
+    classifications: [
+      [/^\/chronicle\/docs\/secops\/secops-overview(?:\/|$)/, "product_root"],
+      [/^\/chronicle\/docs(?:\/|$)/, "product_reference"],
+      [/^\/chronicle\/docs\/secops\/understand-the-secops-platform(?:\/|$)/, "product_reference"],
+      [/^\/chronicle\/docs\/reference\/google-secops-api-libraries-overview(?:\/|$)/, "api_reference"],
+      [/^\/chronicle\/docs\/reference\/authentication(?:\/|$)/, "iam_reference"],
     ],
   },
   "guest-environment": {
@@ -653,37 +934,66 @@ const canonicalFamilies = {
       [/^\/iam\/docs\/roles-permissions\/retail(?:\/|$)/, "iam_reference"],
     ],
   },
+  "bigquery": {
+    preferredPaths: [
+      "/bigquery/docs",
+      "/bigquery/docs/reference",
+      "/bigquery/docs/reference/rest",
+      "/bigquery/docs/release-notes",
+      "/bigquery/docs/admin-intro",
+      "/bigquery/docs/migration-intro",
+      "/bigquery/docs/dts-introduction",
+      "/bigquery/docs/pipeline-connection-page",
+      "/bigquery/docs/data-insights",
+      "/bigquery/docs/use-bigquery-migration-mcp",
+      "/bigquery/docs/migration-custom-org-policies",
+      "/bigquery/docs/routines",
+      "/bigquery/docs/reservations-workload-management",
+      "/bigquery/docs/access-control",
+    ],
+    forbiddenPaths: ["/bigquery/docs/reference/auditlogs/rest/", "/bigquery/docs/samples/", "/bigquery/docs/release-notes-archive"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/bigquery/docs "BigQuery"',
+      () => 'site:docs.cloud.google.com/bigquery/docs/reference "reference/rest" OR "APIs and reference"',
+      () => 'site:docs.cloud.google.com/bigquery/docs "release-notes" OR "admin-intro" OR routines OR reservations',
+      () => 'site:docs.cloud.google.com/bigquery/docs "migration service" "dts-introduction" "migration-intro"',
+      () => 'site:docs.cloud.google.com/bigquery/docs "Pipelines & Connections" "dataset insights" "migration service MCP"',
+    ],
+    classifications: [
+      [/^\/bigquery\/docs$/, "product_root"],
+      [/^\/bigquery\/docs\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/bigquery\/docs\/access-control(?:\/|$)/, "iam_reference"],
+      [/^\/bigquery\/docs\/(reference|release-notes|admin-intro|migration-intro|dts-introduction|pipeline-connection-page|data-insights|use-bigquery-migration-mcp|migration-custom-org-policies|routines|reservations-workload-management|procedures)(?:\/|$)/, "product_reference"],
+    ],
+  },
   "tasks-api": {
-    preferredPaths: ["/workspace/tasks", "/workspace/tasks/overview", "/workspace/tasks/reference/rest", "/tasks/reference/rest/v1/tasks", "/workspace/tasks/auth"],
-    forbiddenPaths: ["/workspace/tasks/release-notes", "/workspace/tasks/quickstart/"],
+    preferredPaths: ["/workspace/tasks/overview", "/workspace/tasks", "/workspace/tasks/reference/rest", "/workspace/tasks/auth"],
+    forbiddenPaths: ["/workspace/tasks/release-notes", "/workspace/tasks/quickstart/", "/tasks/reference/rest/v1/tasks"],
     queryFamilies: [
       () => 'site:developers.google.com/workspace/tasks "Google Tasks API"',
       () => 'site:developers.google.com/workspace/tasks overview "reference/rest"',
-      () => 'site:developers.google.com/tasks/reference/rest/v1/tasks "Google Tasks API"',
       () => 'site:developers.google.com/workspace/tasks auth scopes',
     ],
     classifications: [
       [/^\/workspace\/tasks$/, "product_root"],
       [/^\/workspace\/tasks\/overview(?:\/|$)/, "product_root"],
       [/^\/workspace\/tasks\/auth(?:\/|$)/, "iam_reference"],
-      [/^\/workspace\/tasks\/reference\/rest(?:\/|$)/, "api_reference"],
-      [/^\/tasks\/reference\/rest\/v1\/tasks(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/tasks\/reference\/rest(?:\/|$)/, "product_reference"],
     ],
   },
   "vault-api": {
-    preferredPaths: ["/vault", "/workspace/vault/guides", "/workspace/vault/reference/rest", "/vault/auth"],
-    forbiddenPaths: ["/workspace/vault/release-notes", "/workspace/vault/quickstart/"],
+    preferredPaths: ["/workspace/vault/guides", "/workspace/vault/reference/rest", "/workspace/vault/auth"],
+    forbiddenPaths: ["/workspace/vault/release-notes", "/workspace/vault/quickstart/", "/vault"],
     queryFamilies: [
       () => 'site:developers.google.com/workspace/vault "Vault API"',
       () => 'site:developers.google.com/workspace/vault/guides "Google Vault API Overview"',
       () => 'site:developers.google.com/workspace/vault/reference/rest "Google Vault API"',
-      () => 'site:developers.google.com/vault/auth "Vault API"',
+      () => 'site:developers.google.com/workspace/vault/auth "Vault API"',
     ],
     classifications: [
-      [/^\/vault$/, "product_root"],
       [/^\/workspace\/vault\/guides(?:\/|$)/, "product_root"],
-      [/^\/workspace\/vault\/reference\/rest(?:\/|$)/, "api_reference"],
-      [/^\/vault\/auth(?:\/|$)/, "iam_reference"],
+      [/^\/workspace\/vault\/reference\/rest(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/vault\/auth(?:\/|$)/, "iam_reference"],
     ],
   },
   "secure-source-manager": {
@@ -701,17 +1011,47 @@ const canonicalFamilies = {
     ],
   },
   "service-catalog": {
-    preferredPaths: ["/service-catalog/docs", "/service-catalog/docs/overview", "/service-catalog/docs/create-catalog", "/service-catalog/docs/view-and-launch"],
+    preferredPaths: ["/service-catalog/docs/overview", "/service-catalog/docs/concepts", "/service-catalog/docs/create-share-solutions", "/service-catalog/docs/access-control"],
     forbiddenPaths: ["/service-catalog/docs/release-notes", "/service-catalog/docs/glossary"],
     queryFamilies: [
       () => 'site:docs.cloud.google.com/service-catalog/docs "Service Catalog"',
-      () => 'site:docs.cloud.google.com/service-catalog/docs overview "create catalog"',
-      () => 'site:docs.cloud.google.com/service-catalog/docs "view and launch"',
+      () => 'site:docs.cloud.google.com/service-catalog/docs overview concepts',
+      () => 'site:docs.cloud.google.com/service-catalog/docs "create share solutions" OR "access-control"',
     ],
     classifications: [
-      [/^\/service-catalog\/docs$/, "product_root"],
       [/^\/service-catalog\/docs\/overview(?:\/|$)/, "product_root"],
-      [/^\/service-catalog\/docs\/(create-catalog|view-and-launch|share-catalog)(?:\/|$)/, "product_reference"],
+      [/^\/service-catalog\/docs\/concepts(?:\/|$)/, "product_reference"],
+      [/^\/service-catalog\/docs\/create-share-solutions(?:\/|$)/, "product_reference"],
+      [/^\/service-catalog\/docs\/access-control(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "sheets-api": {
+    preferredPaths: ["/workspace/sheets/api/guides/concepts", "/workspace/sheets/api/reference/rest", "/workspace/sheets/api/scopes"],
+    forbiddenPaths: ["/workspace/sheets/api/reference", "/workspace/sheets/api/quickstart/", "/workspace/sheets/api/samples/"],
+    queryFamilies: [
+      () => 'site:developers.google.com/workspace/sheets/api "Google Sheets API overview" OR "guides/concepts"',
+      () => 'site:developers.google.com/workspace/sheets/api "reference/rest" OR scopes',
+      () => 'site:developers.google.com/workspace/sheets/api/scopes "Google Sheets API"',
+    ],
+    classifications: [
+      [/^\/workspace\/sheets\/api\/guides\/concepts(?:\/|$)/, "product_root"],
+      [/^\/workspace\/sheets\/api\/reference\/rest(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/sheets\/api\/scopes(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "routes-api": {
+    preferredPaths: ["/maps/documentation/routes/overview", "/maps/documentation/routes/compute-route-over", "/maps/documentation/routes/reference/rest", "/maps/documentation/routes/get-api-key"],
+    forbiddenPaths: ["/network-connectivity/docs/vpn/", "/maps/documentation/routes/reference/rpc/", "/maps/documentation/routes/release-notes"],
+    queryFamilies: [
+      () => 'site:developers.google.com/maps/documentation/routes "Routes API" overview',
+      () => 'site:developers.google.com/maps/documentation/routes "compute routes overview" OR "reference/rest"',
+      () => 'site:developers.google.com/maps/documentation/routes "get-api-key"',
+    ],
+    classifications: [
+      [/^\/maps\/documentation\/routes\/overview(?:\/|$)/, "product_root"],
+      [/^\/maps\/documentation\/routes\/compute-route-over(?:\/|$)/, "product_reference"],
+      [/^\/maps\/documentation\/routes\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/maps\/documentation\/routes\/get-api-key(?:\/|$)/, "iam_reference"],
     ],
   },
   "looker-studio": {
@@ -732,33 +1072,64 @@ const canonicalFamilies = {
       [/^\/iam\/docs\/roles-permissions\/datastudio(?:\/|$)/, "iam_reference"],
     ],
   },
-  "gmail-api": {
-    preferredPaths: ["/workspace/gmail/api", "/workspace/gmail/api/guides/overview", "/workspace/gmail/api/reference", "/workspace/gmail/api/reference/rest", "/workspace/gmail/api/auth/scopes"],
-    forbiddenPaths: ["/release-notes", "/gemini/enterprise/docs/connectors/gmail/", "/resources/api-libraries/documentation/gmail/"],
+  "google-workspace-admin-sdk": {
+    preferredPaths: [
+      "/admin-sdk/overview",
+      "/admin-sdk/reference-overview",
+      "/admin-sdk/directory/reference/rest",
+      "/admin-sdk/reports/reference/rest",
+      "/admin-sdk/directory/v1/guides/authorizing",
+      "/admin-sdk/reports/auth",
+      "/admin-sdk/reports/v1/guides/authorizing",
+    ],
+    forbiddenPaths: ["/integration-connectors/", "/application-integration/", "/gemini/enterprise/docs/connectors/", "/resources/api-libraries/documentation/"],
     queryFamilies: [
-      () => 'site:developers.google.com/workspace/gmail/api "Gmail API"',
-      () => 'site:developers.google.com/workspace/gmail/api "reference/rest" "overview"',
-      () => 'site:developers.google.com/workspace/gmail/api auth scopes',
+      () => 'site:developers.google.com/admin-sdk "Admin SDK API overview" OR "Google Workspace Admin SDK"',
+      () => 'site:developers.google.com/admin-sdk "reference-overview" OR "directory/reference/rest" OR "reports/reference/rest"',
+      () => 'site:developers.google.com/admin-sdk "directory/v1/guides/authorizing" OR "reports/auth" OR "reports/v1/guides/authorizing"',
     ],
     classifications: [
-      [/^\/workspace\/gmail\/api$/, "product_root"],
+      [/^\/admin-sdk\/overview(?:\/|$)/, "product_root"],
+      [/^\/admin-sdk\/reference-overview(?:\/|$)/, "product_reference"],
+      [/^\/admin-sdk\/(directory|reports)\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/admin-sdk\/directory\/v1\/guides\/authorizing(?:\/|$)/, "iam_reference"],
+      [/^\/admin-sdk\/reports\/auth(?:\/|$)/, "iam_reference"],
+      [/^\/admin-sdk\/reports\/v1\/guides\/authorizing(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "gmail-api": {
+    preferredPaths: [
+      "/workspace/gmail/api/guides",
+      "/workspace/gmail/api/guides/overview",
+      "/workspace/gmail/api/reference/rest",
+      "/workspace/gmail/api/auth/scopes",
+      "/workspace/gmail/api/auth/web-server",
+    ],
+    forbiddenPaths: ["/release-notes", "/gemini/enterprise/docs/connectors/gmail/", "/resources/api-libraries/documentation/gmail/", "/workspace/gmail/api/reference$"],
+    queryFamilies: [
+      () => 'site:developers.google.com/workspace/gmail/api "Gmail API overview" OR guides',
+      () => 'site:developers.google.com/workspace/gmail/api "reference/rest" OR "Gmail API"',
+      () => 'site:developers.google.com/workspace/gmail/api "auth/scopes" OR "web-server"',
+    ],
+    classifications: [
+      [/^\/workspace\/gmail\/api\/guides(?:\/|$)/, "product_root"],
       [/^\/workspace\/gmail\/api\/guides\/overview(?:\/|$)/, "product_root"],
-      [/^\/workspace\/gmail\/api\/reference(?:\/|$)/, "product_reference"],
-      [/^\/workspace\/gmail\/api\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/workspace\/gmail\/api\/reference\/rest(?:\/|$)/, "product_reference"],
       [/^\/workspace\/gmail\/api\/auth\/scopes(?:\/|$)/, "iam_reference"],
+      [/^\/workspace\/gmail\/api\/auth\/web-server(?:\/|$)/, "iam_reference"],
     ],
   },
   "google-meet": {
-    preferredPaths: ["/workspace/meet/api/guides/overview", "/workspace/meet/api/reference", "/workspace/meet/api/reference/rest/v2", "/workspace/meet/api/guides/authenticate-authorize"],
-    forbiddenPaths: ["/release-notes", "/workspace/meet/add-ons/", "/workspace/meet/media-api/"],
+    preferredPaths: ["/workspace/meet/api/guides/overview", "/workspace/meet/api/reference/rest/v2", "/workspace/meet/api/guides/authenticate-authorize"],
+    forbiddenPaths: ["/release-notes", "/workspace/meet/add-ons/", "/workspace/meet/media-api/", "/go/docs/reference/cloud.google.com/go/apps/latest/meet/", "/workspace/meet/api/reference$"],
     queryFamilies: [
-      () => 'site:developers.google.com/workspace/meet/api "Google Meet API"',
-      () => 'site:developers.google.com/workspace/meet/api reference overview',
-      () => 'site:developers.google.com/workspace/meet/api auth scopes',
+      () => 'site:developers.google.com/workspace/meet/api "Google Meet REST API overview"',
+      () => 'site:developers.google.com/workspace/meet/api "reference/rest/v2" "Google Meet API"',
+      () => 'site:developers.google.com/workspace/meet/api "authenticate-authorize"',
     ],
     classifications: [
       [/^\/workspace\/meet\/api\/guides\/overview(?:\/|$)/, "product_root"],
-      [/^\/workspace\/meet\/api\/reference(?:\/rest\/v2)?(?:\/|$)/, "product_reference"],
+      [/^\/workspace\/meet\/api\/reference\/rest\/v2(?:\/|$)/, "product_reference"],
       [/^\/workspace\/meet\/api\/guides\/authenticate-authorize(?:\/|$)/, "iam_reference"],
     ],
   },
@@ -805,45 +1176,201 @@ const canonicalFamilies = {
     ],
   },
   "translation-hub": {
-    preferredPaths: ["/translation-hub/docs", "/translation-hub/docs/resources"],
+    preferredPaths: ["/translation-hub/docs", "/translation-hub/docs/resources", "/translate/docs/access-control"],
     forbiddenPaths: ["/deprecations", "/release-notes"],
     queryFamilies: [
       () => 'site:docs.cloud.google.com/translation-hub/docs "Translation Hub"',
       () => 'site:docs.cloud.google.com/translation-hub/docs resources "Translation Hub"',
+      () => 'site:docs.cloud.google.com/translate/docs/access-control "Translation Hub"',
     ],
     classifications: [
       [/^\/translation-hub\/docs$/, "product_root"],
       [/^\/translation-hub\/docs\/resources(?:\/|$)/, "product_reference"],
+      [/^\/translate\/docs\/access-control(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "unified-maintenance": {
+    preferredPaths: [
+      "/unified-maintenance/docs",
+      "/unified-maintenance/docs/overview",
+      "/unified-maintenance/docs/set-up-unified-maintenance",
+      "/unified-maintenance/docs/view-maintenance-api",
+      "/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+    ],
+    forbiddenPaths: ["/turn-off-logs-storage", "/configure-alerts-and-notifications"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/unified-maintenance/docs "Unified Maintenance"',
+      () => 'site:docs.cloud.google.com/unified-maintenance/docs "set up" "Unified Maintenance"',
+      () => 'site:docs.cloud.google.com/unified-maintenance/docs/reference/rpc "Unified Maintenance"',
+    ],
+    classifications: [
+      [/^\/unified-maintenance\/docs$/, "product_root"],
+      [/^\/unified-maintenance\/docs\/overview(?:\/|$)/, "product_root"],
+      [/^\/unified-maintenance\/docs\/(set-up-unified-maintenance|view-maintenance-api)(?:\/|$)/, "product_reference"],
+      [/^\/unified-maintenance\/docs\/reference\/rpc\/google\.cloud\.maintenance\.api\.v1(?:\/|$)/, "api_reference"],
+    ],
+  },
+  "vpc-service-controls": {
+    preferredPaths: [
+      "/vpc-service-controls/docs",
+      "/vpc-service-controls/docs/overview",
+      "/vpc-service-controls/docs/service-perimeters",
+      "/vpc-service-controls/docs/access-control",
+      "/vpc-service-controls/docs/configure-iam-roles",
+    ],
+    forbiddenPaths: ["/oracle/database/docs/configure-vpc-service-controls", "/application-integration/docs/vpc-service-controls", "/developer-connect/docs/vpc-service-controls", "/release-notes"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/vpc-service-controls/docs "VPC Service Controls"',
+      () => 'site:docs.cloud.google.com/vpc-service-controls/docs overview "service perimeter"',
+      () => 'site:docs.cloud.google.com/vpc-service-controls/docs "access-control" OR "configure-iam-roles"',
+    ],
+    classifications: [
+      [/^\/vpc-service-controls\/docs$/, "product_root"],
+      [/^\/vpc-service-controls\/docs\/overview(?:\/|$)/, "product_root"],
+      [/^\/vpc-service-controls\/docs\/service-perimeters(?:\/|$)/, "product_reference"],
+      [/^\/vpc-service-controls\/docs\/(access-control|configure-iam-roles)(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "video-intelligence-api": {
+    preferredPaths: [
+      "/video-intelligence/docs",
+      "/video-intelligence/docs/apis",
+      "/video-intelligence/docs/reference/api-overview",
+      "/video-intelligence/docs/reference/rest",
+      "/video-intelligence/docs/authentication",
+    ],
+    forbiddenPaths: ["/video-intelligence/docs/samples/", "/video-intelligence/docs/annotate-video-command-line"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/video-intelligence/docs "Video Intelligence API"',
+      () => 'site:docs.cloud.google.com/video-intelligence/docs/apis "Video Intelligence API"',
+      () => 'site:docs.cloud.google.com/video-intelligence/docs "reference/api-overview" OR "reference/rest" OR authentication',
+    ],
+    classifications: [
+      [/^\/video-intelligence\/docs$/, "product_root"],
+      [/^\/video-intelligence\/docs\/(apis|reference\/api-overview)(?:\/|$)/, "product_reference"],
+      [/^\/video-intelligence\/docs\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/video-intelligence\/docs\/authentication(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "app-engine-flexible-environment-node-js": {
+    preferredPaths: [
+      "/appengine/docs/flexible/overview",
+      "/appengine/docs/flexible/nodejs/runtime",
+      "/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml",
+      "/appengine/docs/flexible/nodejs/specifying-dependencies",
+      "/appengine/docs/flexible/nodejs/release-notes",
+      "/appengine/docs/flexible/nodejs/create-app",
+    ],
+    forbiddenPaths: ["/appengine/docs/standard/", "/appengine/docs/flexible/nodejs/quickstart/", "/appengine/docs/flexible/nodejs/how-requests-are-routed"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/appengine/docs/flexible/nodejs "Node.js runtime"',
+      () => 'site:docs.cloud.google.com/appengine/docs/flexible/nodejs "app.yaml" OR "specifying-dependencies"',
+      () => 'site:docs.cloud.google.com/appengine/docs/flexible/nodejs "release-notes"',
+    ],
+    classifications: [
+      [/^\/appengine\/docs\/flexible\/overview(?:\/|$)/, "product_root"],
+      [/^\/appengine\/docs\/flexible\/nodejs\/runtime(?:\/|$)/, "product_root"],
+      [/^\/appengine\/docs\/flexible\/nodejs\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app)(?:\/|$)/, "product_reference"],
+    ],
+  },
+  "apigee-hybrid": {
+    preferredPaths: [
+      "/apigee/docs/hybrid/v1.9/what-is-hybrid",
+      "/apigee/docs/hybrid/v1.9/config-prop-ref",
+      "/apigee/docs/hybrid/v1.16/install-before-begin",
+      "/apigee/docs/hybrid/release-notes",
+      "/apigee/docs/hybrid/v1.14/data-collection-with-data-residency",
+      "/apigee/docs/hybrid/v1.13/sa-about",
+      "/apigee/docs/hybrid/v1.9/enable-workload-identity",
+      "/apigee/docs/hybrid/v1.15/sa-authentication-methods",
+      "/apigee/docs/hybrid/v1.16/install-sa-authentication",
+    ],
+    forbiddenPaths: ["/apihub/", "/publish/", "/envoy-adapter/", "/apigee/docs/apihub/add-iam-conditions"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/apigee/docs/hybrid "What is Apigee hybrid"',
+      () => 'site:docs.cloud.google.com/apigee/docs/hybrid config-prop-ref install-before-begin release-notes',
+      () => 'site:docs.cloud.google.com/apigee/docs/hybrid sa-authentication-methods install-sa-authentication data-collection-with-data-residency',
+    ],
+    classifications: [
+      [/^\/apigee\/docs\/hybrid\/v[\d.]+\/what-is-hybrid(?:\/|$)/, "product_root"],
+      [/^\/apigee\/docs\/hybrid\/(release-notes|v[\d.]+\/config-prop-ref|v[\d.]+\/install-before-begin|v[\d.]+\/data-collection-with-data-residency)(?:\/|$)/, "product_reference"],
+      [/^\/apigee\/docs\/hybrid\/v[\d.]+\/(sa-about|enable-workload-identity|install-enable-control-plane-access|sa-authentication-methods|install-sa-authentication)(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "vertex-ai-search": {
+    preferredPaths: [
+      "/generative-ai-app-builder/docs",
+      "/generative-ai-app-builder/docs/builder-apis",
+      "/generative-ai-app-builder/docs/authentication",
+      "/generative-ai-app-builder/docs/data-source-access-control",
+    ],
+    forbiddenPaths: ["/retail/docs/apis", "/release-notes", "/agent-builder/"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/generative-ai-app-builder/docs "Vertex AI Search"',
+      () => 'site:docs.cloud.google.com/generative-ai-app-builder/docs "builder-apis" OR authentication',
+      () => 'site:docs.cloud.google.com/generative-ai-app-builder/docs "data source access control"',
+    ],
+    classifications: [
+      [/^\/generative-ai-app-builder\/docs$/, "product_root"],
+      [/^\/generative-ai-app-builder\/docs\/builder-apis(?:\/|$)/, "api_reference"],
+      [/^\/generative-ai-app-builder\/docs\/data-source-access-control(?:\/|$)/, "product_reference"],
+      [/^\/generative-ai-app-builder\/docs\/authentication(?:\/|$)/, "iam_reference"],
+    ],
+  },
+  "vertex-ai": {
+    preferredPaths: [
+      "/vertex-ai/docs",
+      "/vertex-ai/docs/start/introduction-unified-platform",
+      "/vertex-ai/docs/reference",
+      "/vertex-ai/docs/reference/rest",
+      "/vertex-ai/docs/general/access-control",
+      "/vertex-ai/docs/core-release-notes",
+      "/vertex-ai/docs/pipelines/introduction",
+    ],
+    forbiddenPaths: ["/generative-ai-app-builder/", "/vertex-ai/generative-ai/", "/agent-builder/"],
+    queryFamilies: [
+      () => 'site:docs.cloud.google.com/vertex-ai/docs "Vertex AI" introduction-unified-platform',
+      () => 'site:docs.cloud.google.com/vertex-ai/docs "Vertex AI" reference/rest access-control',
+      () => 'site:docs.cloud.google.com/vertex-ai/docs "Vertex AI" core-release-notes pipelines introduction',
+    ],
+    classifications: [
+      [/^\/vertex-ai\/docs$/, "product_root"],
+      [/^\/vertex-ai\/docs\/start\/introduction-unified-platform(?:\/|$)/, "product_root"],
+      [/^\/vertex-ai\/docs\/reference\/rest(?:\/|$)/, "api_reference"],
+      [/^\/vertex-ai\/docs\/general\/access-control(?:\/|$)/, "iam_reference"],
+      [/^\/vertex-ai\/docs\/(reference|core-release-notes|pipelines\/introduction)(?:\/|$)/, "product_reference"],
     ],
   },
   "vertex-ai-vision": {
-    preferredPaths: ["/vision-ai/docs", "/vision-ai/docs/overview", "/vision-ai/docs/build-app", "/vision-ai/docs/create-manage-streams", "/vision-ai/docs/reference/python"],
+    preferredPaths: ["/vision-ai/docs", "/vision-ai/docs/overview", "/vision-ai/docs/build-app", "/vision-ai/docs/create-manage-streams", "/vision-ai/docs/how-to", "/vision-ai/docs/warehouse-overview", "/vision-ai/docs/reference/python", "/vertex-ai/docs/general/access-control"],
     forbiddenPaths: ["/release-notes", "/warehouse-supported-regions"],
     queryFamilies: [
       () => 'site:docs.cloud.google.com/vision-ai/docs "Vertex AI Vision"',
-      () => 'site:docs.cloud.google.com/vision-ai/docs overview "build-app"',
-      () => 'site:docs.cloud.google.com/vision-ai/docs "create-manage-streams" OR "reference/python"',
+      () => 'site:docs.cloud.google.com/vision-ai/docs overview build-app',
+      () => 'site:docs.cloud.google.com/vision-ai/docs create-manage-streams how-to reference/python',
+      () => 'site:docs.cloud.google.com/vertex-ai/docs/general/access-control "Vertex AI Vision"',
     ],
     classifications: [
       [/^\/vision-ai\/docs$/, "product_root"],
       [/^\/vision-ai\/docs\/overview(?:\/|$)/, "product_root"],
-      [/^\/vision-ai\/docs\/(build-app|create-manage-streams|warehouse-overview)(?:\/|$)/, "product_reference"],
+      [/^\/vision-ai\/docs\/(build-app|create-manage-streams|how-to|warehouse-overview)(?:\/|$)/, "product_reference"],
+      [/^\/vertex-ai\/docs\/general\/access-control(?:\/|$)/, "iam_reference"],
       [/^\/vision-ai\/docs\/reference\/python(?:\/|$)/, "python_reference"],
     ],
   },
   "vertex-ai-workbench": {
-    preferredPaths: ["/vertex-ai/docs/workbench/introduction", "/vertex-ai/docs/workbench/notebook-solution", "/vertex-ai/docs/workbench/reference/libraries", "/vertex-ai/docs/workbench/reference", "/vertex-ai/docs/workbench/instances/iam"],
+    preferredPaths: ["/vertex-ai/docs/workbench/introduction", "/vertex-ai/docs/workbench/reference", "/vertex-ai/docs/workbench/reference/rest", "/vertex-ai/docs/workbench/instances/iam"],
     forbiddenPaths: ["/distributed-cloud/", "/codelabs", "/vertex-ai/docs/general/"],
     queryFamilies: [
       () => 'site:docs.cloud.google.com/vertex-ai/docs/workbench "Vertex AI Workbench"',
-      () => 'site:docs.cloud.google.com/vertex-ai/docs/workbench introduction "notebook-solution"',
-      () => 'site:docs.cloud.google.com/vertex-ai/docs/workbench/reference "libraries" OR "google.cloud.notebooks.v1"',
+      () => 'site:docs.cloud.google.com/vertex-ai/docs/workbench introduction "reference/rest"',
+      () => 'site:docs.cloud.google.com/vertex-ai/docs/workbench/reference "projects.locations.instances" OR "reference/rest"',
       () => 'site:cloud.google.com/vertex-ai-notebooks "Vertex AI Workbench"',
     ],
     classifications: [
       [/^\/vertex-ai\/docs\/workbench\/introduction(?:\/|$)/, "product_root"],
-      [/^\/vertex-ai\/docs\/workbench\/notebook-solution(?:\/|$)/, "product_reference"],
-      [/^\/vertex-ai\/docs\/workbench\/reference(?:\/libraries|\/rpc\/google\.cloud\.notebooks\.v1)?(?:\/|$)/, "product_reference"],
+      [/^\/vertex-ai\/docs\/workbench\/reference(?:\/|$)/, "product_reference"],
+      [/^\/vertex-ai\/docs\/workbench\/reference\/rest(?:\/|$)/, "api_reference"],
       [/^\/vertex-ai\/docs\/workbench\/instances\/iam(?:\/|$)/, "iam_reference"],
     ],
   },
@@ -1010,8 +1537,41 @@ function familyRulesFor(slug) {
   if (/^memorystore-for-valkey$/.test(s)) return make(["/memorystore/docs/valkey"], ["/eventarc/"], false);
   if (s === "google-workspace-events-api") return make(["/workspace/events"], [], true);
   if (s === "google-workspace-add-ons") return make(["/workspace/add-ons"], [], false);
-  if (s === "vertex-ai-agent-builder") return make(["/agent-builder/", "/vertex-ai/docs/reference/rest"], ["/generative-ai-app-builder/", "/retail/"], false);
-  if (/^app-engine-(?:standard|flexible)-environment-/.test(s)) return make(["/appengine/docs/standard/", "/appengine/docs/flexible/"], [], false);
+  if (s === "vertex-ai-agent-builder") return make(["/agent-builder/", "/agent-builder/authentication", "/agent-builder/agent-engine/manage/access", "/agent-builder/agent-engine/agent-identity", "/agent-builder/agent-development-kit/overview", "/agent-builder/agent-engine/develop/overview"], ["/generative-ai-app-builder/", "/retail/"], false);
+  if (/^app-engine-(?:standard|flexible)-environment-/.test(s)) {
+    const env = expectedAppEngineEnvironmentSegment(s);
+    const runtime = expectedAppEngineRuntimeSegment(s);
+    const runtimeSegments = expectedAppEngineRuntimeSegments(s);
+    const preferred = env
+      ? [
+        `/appengine/docs/${env}/overview`,
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/runtime`),
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/configuring-your-app-with-app-yaml`),
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/specifying-dependencies`),
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/release-notes`),
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/create-app`),
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/building-app`),
+        ...runtimeSegments.map((segment) => `/appengine/docs/${env}/${segment}/services/access`),
+      ].filter(Boolean)
+      : [];
+    if (runtime === "custom-runtimes" && env === "flexible") {
+      preferred.push(
+        "/appengine/docs/flexible/custom-runtimes/about-custom-runtimes",
+        "/appengine/docs/flexible/custom-runtimes/build",
+        "/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml",
+        "/appengine/docs/flexible/custom-runtimes/create-app",
+        "/appengine/docs/flexible/custom-runtimes/release-notes",
+      );
+    }
+    const forbidden = [];
+    if (env === "standard") forbidden.push("/appengine/docs/flexible/");
+    if (env === "flexible") forbidden.push("/appengine/docs/standard/");
+    if (runtime && runtime !== "custom-runtimes" && runtimeSegments.length > 0) {
+      const allowGroup = runtimeSegments.map((segment) => segment.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
+      forbidden.push(new RegExp(`^/appengine/docs/${env}/(?!overview(?:/|$)|apis(?:/|$)|(?:${allowGroup})(?:/|$))[^/]+/`));
+    }
+    return make(preferred, forbidden, false);
+  }
   if (/^anthos-clusters-on-(aws|azure)/.test(s)) return make(["/kubernetes-engine/multi-cloud/docs/aws", "/kubernetes-engine/multi-cloud/docs/azure", "/kubernetes-engine/multi-cloud/docs/reference/rest"], [], false);
   if (/^earth-engine-(data-catalog|javascript-client-library|python-client-library|server|code-editor)$/.test(s)) return make(["/earth-engine/", "/earth-engine/guides", "/earth-engine/apidocs", "/earth-engine/docs/data-catalog"], [], false);
   return make([], [], false);
@@ -1025,6 +1585,36 @@ function expectedAppEngineRuntimeSegment(productSlug) {
   if (raw === "net") return "dotnet";
   if (raw === "custom-runtimes") return "custom-runtimes";
   return raw.replace(/-/g, "");
+}
+function expectedAppEngineRuntimeSegments(productSlug) {
+  const env = expectedAppEngineEnvironmentSegment(productSlug);
+  const runtime = expectedAppEngineRuntimeSegment(productSlug);
+  if (!runtime) return [];
+  if (env === "standard") {
+    if (runtime === "java") return ["java", "java-gen2"];
+    if (runtime === "php") return ["php", "php-gen2"];
+    if (runtime === "python") return ["python", "python3", "python27"];
+    if (runtime === "go") return ["go"];
+  }
+  if (env === "flexible") {
+    if (runtime === "python") return ["python"];
+    if (runtime === "go") return ["go"];
+    if (runtime === "nodejs") return ["nodejs"];
+    if (runtime === "ruby") return ["ruby"];
+    if (runtime === "php") return ["php"];
+    if (runtime === "java") return ["java"];
+    if (runtime === "custom-runtimes") return ["custom-runtimes"];
+  }
+  return [runtime];
+}
+function matchesExpectedAppEngineRuntime(productSlug, runtimeSegment) {
+  if (!runtimeSegment) return false;
+  return expectedAppEngineRuntimeSegments(productSlug).includes(runtimeSegment);
+}
+function expectedAppEngineEnvironmentSegment(productSlug) {
+  if (/^app-engine-standard-environment-/.test(productSlug)) return "standard";
+  if (/^app-engine-flexible-environment-/.test(productSlug)) return "flexible";
+  return "";
 }
 function escapeQueryPhrase(value) { return String(value || "").replace(/"/g, '\\"').trim(); }
 function buildSearchTerms(productName, productSlug) {
@@ -1282,11 +1872,26 @@ function buildSearchTerms(productName, productSlug) {
     terms.add("Vertex AI Agent Engine");
     terms.add("Agent Builder");
     terms.add("Agent Engine");
+    terms.add("agent identity");
+  }
+  if (/^unified-maintenance$/i.test(productSlug)) {
+    terms.add("Unified Maintenance");
+    terms.add("maintenance api");
+  }
+  if (/^video-intelligence-api$/i.test(productSlug)) {
+    terms.add("Video Intelligence API");
+    terms.add("Cloud Video Intelligence API");
+  }
+  if (/^vpc-service-controls$/i.test(productSlug)) {
+    terms.add("VPC Service Controls");
+    terms.add("service perimeter");
   }
   if (/^google-workspace-admin-sdk$/i.test(productSlug)) {
     terms.add("Google Workspace Admin SDK");
     terms.add("Admin SDK");
     terms.add("Google Admin SDK");
+    terms.add("Directory API");
+    terms.add("Reports API");
   }
   if (/^google-workspace-marketplace-api$/i.test(productSlug)) {
     terms.add("Google Workspace Marketplace API");
@@ -1398,10 +2003,34 @@ function buildSearchTerms(productName, productSlug) {
       if (/standard/.test(productSlug)) terms.add(`App Engine standard ${runtime}`);
       if (/flexible/.test(productSlug)) terms.add(`App Engine flexible ${runtime}`);
     }
+    if (/flexible-environment-/.test(productSlug)) {
+      terms.add("app.yaml");
+      terms.add("release notes");
+      terms.add("specifying dependencies");
+      terms.add("configuring your app");
+    }
   }
   return [...terms].filter(Boolean);
 }
-function buildDynamicQueryFamilies(productName, productSlug) {
+function buildCoverageQueryFamilies(productName, coverage) {
+  const phrases = Array.isArray(coverage?.top_phrases) ? coverage.top_phrases.slice(0, 6) : [];
+  const families = [];
+  if (phrases.length > 0) {
+    families.push(["feature_guides", phrases.slice(0, 3).map((phrase) => () => `site:docs.cloud.google.com "${productName}" "${phrase}"`)]);
+  }
+  if (phrases.length > 3) {
+    families.push(["feature_guides_developers", phrases.slice(3, 6).map((phrase) => () => `site:developers.google.com "${productName}" "${phrase}"`)]);
+  }
+  if (Number(coverage?.feature_count || 0) >= 40) {
+    families.push(["release_notes_focus", [
+      () => `site:docs.cloud.google.com "${productName}" "release notes"`,
+      () => `site:docs.cloud.google.com "${productName}" "release-notes"`,
+      () => `site:docs.cloud.google.com "${productName}" "preview" "general availability"`,
+    ]]);
+  }
+  return families;
+}
+function buildDynamicQueryFamilies(productName, productSlug, coverage = null) {
   const terms = buildSearchTerms(productName, productSlug);
   const first = terms[0] || productName;
   const mapTerms = terms.map(escapeQueryPhrase);
@@ -1412,6 +2041,7 @@ function buildDynamicQueryFamilies(productName, productSlug) {
   ];
   const canonical = canonicalFamilyFor(productSlug);
   const families = canonical?.queryFamilies ? [["canonical_docs", canonical.queryFamilies], ...baseQueryFamilies] : [...baseQueryFamilies];
+  families.push(...buildCoverageQueryFamilies(productName, coverage));
   families.push(["developers_docs", [
     () => mapTerms.slice(0, 2).map((term) => `site:developers.google.com \"${term}\" official documentation`).join(" OR "),
     () => mapTerms.slice(0, 2).map((term) => `site:developers.google.com \"${term}\" reference`).join(" OR "),
@@ -1653,9 +2283,11 @@ function buildDynamicQueryFamilies(productName, productSlug) {
   }
   if (/^automl-translation$/.test(productSlug)) {
     families.push(["automl_translation_docs", [
-      () => 'site:docs.cloud.google.com/translate "AutoML Translation" "Cloud Translation - Advanced"',
+      () => 'site:docs.cloud.google.com/translate/docs/intro-to-v3 "AutoML Translation" "Cloud Translation - Advanced"',
+      () => 'site:docs.cloud.google.com/translate/docs "AutoML Translation" "Cloud Translation - Advanced"',
       () => 'site:docs.cloud.google.com/translate/docs/advanced "custom translation model" "Translate documents"',
       () => 'site:docs.cloud.google.com/translate/docs "Cloud Translation API" "api-overview"',
+      () => 'site:docs.cloud.google.com/translate/docs/access-control "Cloud Translation"',
       () => 'site:docs.cloud.google.com/iam/docs/roles-permissions cloudtranslate automl',
     ]]);
   }
@@ -1714,13 +2346,13 @@ function buildDynamicQueryFamilies(productName, productSlug) {
   if (/^vertex-ai-agent-builder$/.test(productSlug)) {
     families.push(["vertex_ai_agent_builder_docs", [
       () => 'site:docs.cloud.google.com/agent-builder "Vertex AI Agent Builder"',
-      () => 'site:docs.cloud.google.com/agent-builder "Vertex AI Agent Engine" overview',
-      () => 'site:docs.cloud.google.com/agent-builder access control "agent builder"',
+      () => 'site:docs.cloud.google.com/agent-builder "Vertex AI Agent Engine" overview manage access',
+      () => 'site:docs.cloud.google.com/agent-builder authentication "agent identity"',
     ]]);
     families.push(["vertex_ai_agent_builder_reference_docs", [
+      () => 'site:docs.cloud.google.com/agent-builder/reference "Agent Builder"',
       () => 'site:docs.cloud.google.com/vertex-ai/docs/reference/rest reasoningEngines "Vertex AI"',
-      () => 'site:docs.cloud.google.com/vertex-ai/docs/reference/rest sessions reasoningEngines',
-      () => 'site:docs.cloud.google.com/vertex-ai/docs/reference/rest "ReasoningEngine"',
+      () => 'site:docs.cloud.google.com/vertex-ai/docs/reference/rest "projects.locations.reasoningEngines"',
     ]]);
   }
   if (/^anthos-config-management$/.test(productSlug)) {
@@ -1801,9 +2433,19 @@ function buildDynamicQueryFamilies(productName, productSlug) {
       () => `site:docs.cloud.google.com/appengine \"${escapeQueryPhrase(first)}\" access control`,
     ]]);
     families.push(["app_engine_reference_docs", [
-      () => /standard/.test(productSlug) ? 'site:docs.cloud.google.com/appengine/docs/standard apis "APIs & Reference"' : 'site:docs.cloud.google.com/appengine/docs/flexible apis "APIs & Reference"',
-      () => /standard/.test(productSlug) ? 'site:docs.cloud.google.com/appengine/docs/standard apis runtime' : 'site:docs.cloud.google.com/appengine/docs/flexible apis runtime',
-      () => /standard/.test(productSlug) ? 'site:docs.cloud.google.com/appengine/docs/standard "apis and reference"' : 'site:docs.cloud.google.com/appengine/docs/flexible "apis and reference"',
+      () => {
+        const runtime = productSlug.match(/(?:standard|flexible)-environment-(.+)$/)?.[1]?.replace(/-/g, " ");
+        const env = /standard/.test(productSlug) ? "standard" : /flexible/.test(productSlug) ? "flexible" : "";
+        return runtime && env ? `site:docs.cloud.google.com/appengine/docs/${env} \"${runtime}\" \"app.yaml\" OR runtime OR \"release-notes\"` : `site:docs.cloud.google.com/appengine/docs/${env} runtime "release-notes"`;
+      },
+      () => {
+        const runtime = productSlug.match(/(?:standard|flexible)-environment-(.+)$/)?.[1]?.replace(/-/g, " ");
+        const env = /standard/.test(productSlug) ? "standard" : /flexible/.test(productSlug) ? "flexible" : "";
+        return runtime && env ? `site:docs.cloud.google.com/appengine/docs/${env} \"${runtime}\" \"specifying-dependencies\" OR \"configuring-your-app-with-app-yaml\" OR create-app` : `site:docs.cloud.google.com/appengine/docs/${env} overview`;
+      },
+      () => /standard/.test(productSlug)
+        ? 'site:docs.cloud.google.com/appengine/docs/standard runtime "release-notes" OR "app.yaml"'
+        : 'site:docs.cloud.google.com/appengine/docs/flexible runtime "release-notes" OR "app.yaml"',
     ]]);
   }
   if (/anthos-/.test(productSlug)) {
@@ -1919,7 +2561,105 @@ function buildDynamicQueryFamilies(productName, productSlug) {
   return families;
 }
 function inferHints(candidates, profile) { const pick = (vals) => { const m = new Map(); for (const v of vals.filter(Boolean)) m.set(v, (m.get(v) || 0) + 1); return [...m.entries()].sort((a, b) => slugSimilarity(b[0], profile) - slugSimilarity(a[0], profile) || b[1] - a[1] || a[0].localeCompare(b[0]))[0]?.[0] || ""; }; return { dominantDocFamily: pick(candidates.map((c) => pathnameFor(c.url).match(/^\/([^/]+)\/docs(?:\/|$)/)?.[1] || "")), dominantPythonSlug: pick(candidates.map((c) => pathnameFor(c.url).match(/^\/python\/docs\/reference\/([^/]+)\//)?.[1] || "")), dominantJavaSlug: pick(candidates.map((c) => pathnameFor(c.url).match(/^\/java\/docs\/reference\/([^/]+)\//)?.[1] || "")) }; }
-function pathScore(url) { const p = pathnameFor(url); let s = 0; if (/\/docs$/.test(p)) s += 34; if (/\/docs\/(introduction|overview|concepts|reference|apis|access-control)$/.test(p)) s += 30; if (/\/docs\/(about-[^/]+|architecture-overview|developer-overview)$/.test(p)) s += 16; if (/\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34; if (/\/roles-permissions\//.test(p)) s += 30; if (/\/python\/docs\/reference\/[^/]+\/latest(?:\/index\.html)?$/.test(p)) s += 28; if (/^\/python\/[^/]+\/latest(?:\/index\.html)?$/.test(p)) s += 26; if (/\/java\/docs\/reference\/[^/]+\/latest\/overview$/.test(p)) s += 28; if (/\/docs\/reference$/.test(p)) s += 20; if (/\/docs\/reference\/libraries$/.test(p)) s += 12; if (/^\/workspace\/[^/]+\/api(?:\/reference)?$/.test(p)) s += 30; if (/^\/workspace\/[^/]+\/api\/guides\/[^/]+$/.test(p)) s += 26; if (/^\/workspace\/[^/]+\/api\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34; if (/^\/workspace\/[^/]+\/api\/v3\/reference(?:\/[^/]+)?$/.test(p)) s += 34; if (/^\/workspace\/marketplace(?:\/overview)?$/.test(p)) s += 34; if (/^\/workspace\/events$/.test(p)) s += 36; if (/^\/workspace\/events\/reference\/rest\/v1$/.test(p)) s += 34; if (/^\/workspace\/events\/guides\/(auth|libraries)$/.test(p)) s += 28; if (/^\/workspace\/add-ons(?:\/overview)?$/.test(p)) s += 36; if (/^\/workspace\/add-ons\/reference$/.test(p)) s += 34; if (/^\/admin-sdk\/(overview|reference-overview)$/.test(p)) s += 34; if (/^\/admin-sdk\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34; if (/^\/admin-sdk\/[^/]+\/v1\/guides$/.test(p)) s += 30; if (/^\/games\/services$/.test(p)) s += 34; if (/^\/games\/services\/reference$/.test(p) || /^\/games\/services\/publishing\/api$/.test(p) || /^\/games\/services\/web\/api\/rest$/.test(p)) s += 32; if (/^\/maps\/documentation\/[^/]+$/.test(p)) s += 30; if (/^\/maps\/documentation\/[^/]+\/overview$/.test(p)) s += 30; if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)$/.test(p)) s += 32; if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/overview$/.test(p)) s += 32; if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/reference$/.test(p)) s += 30; if (/^\/maps\/documentation\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34; if (/^\/maps\/documentation\/places\/web-service$/.test(p)) s += 36; if (/^\/earth-engine(?:\/guides)?$/.test(p) || /^\/earth-engine\/apidocs$/.test(p)) s += 28; if (/^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)$/.test(p)) s += 32; if (/^\/product-registry\/overview$/.test(p)) s += 34; if (/^\/container-optimized-os\/docs$/.test(p)) s += 34; if (/^\/container-optimized-os\/docs\/concepts$/.test(p) || /^\/container-optimized-os\/docs\/concepts\/features-and-benefits$/.test(p)) s += 32; if (/^\/vision\/product-search\/docs$/.test(p)) s += 34; if (/^\/vision\/product-search\/docs\/libraries$/.test(p)) s += 30; if (/^\/chronicle\/docs\/soar\/marketplace\/using-the-marketplace$/.test(p) || /^\/chronicle\/docs\/soar\/marketplace-integrations$/.test(p)) s += 32; if (/^\/chronicle\/docs\/(?:secops|onboard)$/.test(p)) s += 36; if (/^\/appengine\/docs\/standard\/overview$/.test(p) || /^\/appengine\/docs\/flexible\/overview$/.test(p)) s += 34; if (/^\/appengine\/docs\/(standard|flexible)\/apis$/.test(p) || /^\/appengine\/docs\/admin-api\/apis$/.test(p)) s += 34; if (/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/runtime$/.test(p)) s += 30; if (/^\/appengine\/docs\/(standard|flexible)\/custom-runtimes\/about-custom-runtimes$/.test(p)) s += 32; if (/^\/sql\/docs\/(mysql|postgres|sqlserver)$/.test(p)) s += 36; if (/^\/sql\/docs\/(mysql|postgres|sqlserver)\/apis$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api$/.test(p)) s += 34; if (/^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api\/rest$/.test(p)) s += 34; if (/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)$/.test(p)) s += 36; if (/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/apis$/.test(p)) s += 34; if (/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/reference\/rest$/.test(p)) s += 34; if (/^\/memorystore\/docs\/redis\/memorystore-for-redis-overview$/.test(p)) s += 34; if (/^\/domains\/docs$/.test(p) || /^\/hub\/docs$/.test(p) || /^\/marketplace\/docs\/partners$/.test(p)) s += 36; if (/^\/network-connectivity\/docs\/(interconnect|router|vpn)$/.test(p)) s += 36; if (/^\/network-connectivity\/docs\/(interconnect|router|vpn)\/(apis|reference\/apis)$/.test(p)) s += 34; if (/^\/network-connectivity\/docs\/(interconnect|router|vpn)\/concepts\/overview$/.test(p)) s += 34; if (/^\/kubernetes-engine\/multi-cloud\/docs\/attached$/.test(p)) s += 34; if (/^\/kubernetes-engine\/multi-cloud\/docs\/attached\/(eks|aks)\/concepts\/overview$/.test(p)) s += 32; if (/^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)$/.test(p)) s += 34; if (/^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/apis$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/reference\/rest$/.test(p)) s += 34; if (/^\/kubernetes-engine\/multi-cloud\/docs\/aws\/concepts\/architecture$/.test(p)) s += 32; if (/^\/kubernetes-engine\/multi-cloud\/docs\/azure\/concepts\/requirements$/.test(p)) s += 32; if (/^\/kubernetes-engine\/config-sync\/docs$/.test(p)) s += 36; if (/^\/kubernetes-engine\/config-sync\/docs\/overview$/.test(p)) s += 34; if (/^\/kubernetes-engine\/config-sync\/docs\/reference\/[^/]+$/.test(p)) s += 30; if (/^\/service-mesh\/docs$/.test(p)) s += 34; if (/^\/service-mesh\/docs\/overview$/.test(p)) s += 32; if (/^\/agent-builder\/overview$/.test(p) || /^\/agent-builder\/agent-engine\/overview$/.test(p)) s += 34; if (/^\/apigee\/docs\/api-platform\/analytics\/analytics-reference$/.test(p) || /^\/apigee\/docs\/reference\/apis\/apigee\/rest\/v1\/organizations\.analytics/.test(p)) s += 34; if (/^\/apigee\/docs\/api-platform\/monetization\/overview$/.test(p)) s += 34; if (/^\/apigee\/docs\/api-platform\/publish\/intro-portals$/.test(p)) s += 34; if (/^\/apigee\/docs\/api-platform\/publish\/portal\/build-integrated-portal$/.test(p)) s += 30; if (/^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/concepts$/.test(p)) s += 34; if (/^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/reference$/.test(p)) s += 30; if (/\/docs\/reference\/[^/]+\/rest$/.test(p)) s -= 18; if (/\/docs\/reference\/rest\/.+/.test(p)) s -= 32; if (/\/python\/docs\/reference\/[^/]+\/latest\/.+/.test(p)) s -= 28; if (/^\/python\/[^/]+\/latest\/.+/.test(p)) s -= 24; if (/\/java\/docs\/reference\/[^/]+\/latest\/(?!overview$).+/.test(p)) s -= 32; if (/\/(class-|package-|proto-|types?\/)/.test(p)) s -= 26; if (/\/support\//.test(p) || /\/blog\//.test(p) || /\/sdk\/gcloud\/reference\//.test(p)) s -= 40; if (/\/docs\/how-to$/.test(p) || /\/how-to\//.test(p) || /\/get-started/.test(p) || /\/quickstart/.test(p)) s -= 24; if (/bigquery-web-ui|create-billing-account/.test(p)) s -= 24; if (/\/samples?\//.test(p) || /\/tutorial/.test(p) || /\/release-notes$/.test(p)) s -= 18; const n = p.split("/").filter(Boolean).length; if (n <= 2) s += 10; if (n >= 6 && !/^\/workspace\/[^/]+\/api\//.test(p) && !/^\/workspace\/events/.test(p) && !/^\/workspace\/add-ons/.test(p) && !/^\/maps\/documentation\/[^/]+\//.test(p) && !/^\/appengine\/docs\//.test(p) && !/^\/sql\/docs\//.test(p) && !/^\/memorystore\/docs\//.test(p) && !/^\/network-connectivity\/docs\//.test(p) && !/^\/kubernetes-engine\/multi-cloud\/docs\/(attached|aws|azure|reference)/.test(p) && !/^\/kubernetes-engine\/config-sync\//.test(p) && !/^\/apigee\/docs\/api-platform\//.test(p) && !/^\/apigee\/docs\/reference\/apis\//.test(p) && !/^\/earth-engine\/docs\//.test(p) && !/^\/earth-engine\/apidocs/.test(p) && !/^\/admin-sdk\//.test(p) && !/^\/vision\/product-search\//.test(p) && !/^\/chronicle\/docs\/soar\//.test(p) && !/^\/agent-builder\//.test(p)) s -= 18; return s; }
+function pathScore(url) {
+  const p = pathnameFor(url);
+  let s = 0;
+  if (/\/docs$/.test(p)) s += 34;
+  if (/\/docs\/(introduction|overview|concepts|reference|apis|access-control)$/.test(p)) s += 30;
+  if (/\/docs\/(about-[^/]+|architecture-overview|developer-overview)$/.test(p)) s += 16;
+  if (/\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34;
+  if (/\/roles-permissions\//.test(p)) s += 30;
+  if (/\/python\/docs\/reference\/[^/]+\/latest(?:\/index\.html)?$/.test(p)) s += 28;
+  if (/^\/python\/[^/]+\/latest(?:\/index\.html)?$/.test(p)) s += 26;
+  if (/\/java\/docs\/reference\/[^/]+\/latest\/overview$/.test(p)) s += 28;
+  if (/\/docs\/reference$/.test(p)) s += 20;
+  if (/\/docs\/reference\/libraries$/.test(p)) s += 12;
+  if (/^\/workspace\/[^/]+\/api(?:\/reference)?$/.test(p)) s += 30;
+  if (/^\/workspace\/[^/]+\/api\/guides\/[^/]+$/.test(p)) s += 26;
+  if (/^\/workspace\/[^/]+\/api\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34;
+  if (/^\/workspace\/[^/]+\/api\/v3\/reference(?:\/[^/]+)?$/.test(p)) s += 34;
+  if (/^\/workspace\/marketplace(?:\/overview)?$/.test(p)) s += 34;
+  if (/^\/workspace\/events$/.test(p)) s += 36;
+  if (/^\/workspace\/events\/reference\/rest\/v1$/.test(p)) s += 34;
+  if (/^\/workspace\/events\/guides\/(auth|libraries)$/.test(p)) s += 28;
+  if (/^\/workspace\/add-ons(?:\/overview)?$/.test(p)) s += 36;
+  if (/^\/workspace\/add-ons\/reference$/.test(p)) s += 34;
+  if (/^\/admin-sdk\/(overview|reference-overview)$/.test(p)) s += 34;
+  if (/^\/admin-sdk\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34;
+  if (/^\/admin-sdk\/[^/]+\/v1\/guides$/.test(p)) s += 30;
+  if (/^\/games\/services$/.test(p)) s += 34;
+  if (/^\/games\/services\/reference$/.test(p) || /^\/games\/services\/publishing\/api$/.test(p) || /^\/games\/services\/web\/api\/rest$/.test(p)) s += 32;
+  if (/^\/maps\/documentation\/[^/]+$/.test(p)) s += 30;
+  if (/^\/maps\/documentation\/[^/]+\/overview$/.test(p)) s += 30;
+  if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)$/.test(p)) s += 32;
+  if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/overview$/.test(p)) s += 32;
+  if (/^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/reference$/.test(p)) s += 30;
+  if (/^\/maps\/documentation\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p)) s += 34;
+  if (/^\/maps\/documentation\/places\/web-service$/.test(p)) s += 36;
+  if (/^\/earth-engine(?:\/guides)?$/.test(p) || /^\/earth-engine\/apidocs$/.test(p)) s += 28;
+  if (/^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)$/.test(p)) s += 32;
+  if (/^\/product-registry\/overview$/.test(p)) s += 34;
+  if (/^\/container-optimized-os\/docs$/.test(p)) s += 34;
+  if (/^\/container-optimized-os\/docs\/concepts$/.test(p) || /^\/container-optimized-os\/docs\/concepts\/features-and-benefits$/.test(p)) s += 32;
+  if (/^\/vision\/product-search\/docs$/.test(p)) s += 34;
+  if (/^\/vision\/product-search\/docs\/libraries$/.test(p)) s += 30;
+  if (/^\/chronicle\/docs\/soar\/marketplace\/using-the-marketplace$/.test(p) || /^\/chronicle\/docs\/soar\/marketplace-integrations$/.test(p)) s += 32;
+  if (/^\/chronicle\/docs\/(?:secops|onboard)$/.test(p)) s += 36;
+  if (/^\/appengine\/docs\/standard\/overview$/.test(p) || /^\/appengine\/docs\/flexible\/overview$/.test(p)) s += 34;
+  if (/^\/appengine\/docs\/(standard|flexible)\/apis$/.test(p) || /^\/appengine\/docs\/admin-api\/apis$/.test(p)) s += 34;
+  if (/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/runtime$/.test(p)) s += 30;
+  if (/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app|building-app|services\/access|upgrade-[^/]+runtime|customizing-the-python-runtime)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/appengine\/docs\/flexible\/custom-runtimes\/(about-custom-runtimes|build|configuring-your-app-with-app-yaml|create-app|release-notes)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/appengine\/docs\/(standard|flexible)\/apis(?:\/|$)/.test(p)) s -= 26;
+  if (/^\/agent-builder\/(agent-development-kit\/overview|agent-engine\/develop\/overview|release-notes)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/vision-ai\/docs\/(build-app|create-manage-streams|how-to|warehouse-overview)(?:\/|$)/.test(p)) s += 34;
+  if (/^\/sql\/docs\/(mysql|postgres|sqlserver)$/.test(p)) s += 36;
+  if (/^\/sql\/docs\/(mysql|postgres|sqlserver)\/apis$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api$/.test(p)) s += 34;
+  if (/^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api\/rest$/.test(p)) s += 34;
+  if (/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)$/.test(p)) s += 36;
+  if (/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/apis$/.test(p)) s += 34;
+  if (/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/reference\/rest$/.test(p)) s += 34;
+  if (/^\/memorystore\/docs\/redis\/memorystore-for-redis-overview$/.test(p)) s += 34;
+  if (/^\/domains\/docs$/.test(p) || /^\/hub\/docs$/.test(p) || /^\/marketplace\/docs\/partners$/.test(p)) s += 36;
+  if (/^\/network-connectivity\/docs\/(interconnect|router|vpn)$/.test(p)) s += 36;
+  if (/^\/network-connectivity\/docs\/(interconnect|router|vpn)\/(apis|reference\/apis)$/.test(p)) s += 34;
+  if (/^\/network-connectivity\/docs\/(interconnect|router|vpn)\/concepts\/overview$/.test(p)) s += 34;
+  if (/^\/kubernetes-engine\/multi-cloud\/docs\/attached$/.test(p)) s += 34;
+  if (/^\/kubernetes-engine\/multi-cloud\/docs\/attached\/(eks|aks)\/concepts\/overview$/.test(p)) s += 32;
+  if (/^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)$/.test(p)) s += 34;
+  if (/^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/apis$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/reference\/rest$/.test(p)) s += 34;
+  if (/^\/kubernetes-engine\/multi-cloud\/docs\/aws\/concepts\/architecture$/.test(p)) s += 32;
+  if (/^\/kubernetes-engine\/multi-cloud\/docs\/azure\/concepts\/requirements$/.test(p)) s += 32;
+  if (/^\/kubernetes-engine\/config-sync\/docs$/.test(p)) s += 36;
+  if (/^\/kubernetes-engine\/config-sync\/docs\/overview$/.test(p)) s += 34;
+  if (/^\/kubernetes-engine\/config-sync\/docs\/reference\/[^/]+$/.test(p)) s += 30;
+  if (/^\/service-mesh\/docs$/.test(p)) s += 34;
+  if (/^\/service-mesh\/docs\/overview$/.test(p)) s += 32;
+  if (/^\/agent-builder\/overview$/.test(p) || /^\/agent-builder\/agent-engine\/overview$/.test(p)) s += 34;
+  if (/^\/vertex-ai\/docs\/start\/introduction-unified-platform$/.test(p) || /^\/vertex-ai\/docs\/core-release-notes$/.test(p) || /^\/vertex-ai\/docs\/pipelines\/introduction$/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/analytics\/analytics-reference$/.test(p) || /^\/apigee\/docs\/reference\/apis\/apigee\/rest\/v1\/organizations\.analytics/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/monetization\/overview$/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/publish\/intro-portals$/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/publish\/portal\/build-integrated-portal$/.test(p)) s += 30;
+  if (/^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/concepts$/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/reference$/.test(p)) s += 30;
+  if (/^\/apigee\/docs\/hybrid\/(release-notes|v[\d.]+\/config-prop-ref|v[\d.]+\/install-before-begin|v[\d.]+\/data-collection-with-data-residency)$/.test(p)) s += 34;
+  if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/(sa-about|enable-workload-identity|sa-authentication-methods|install-sa-authentication)$/.test(p)) s += 30;
+  if (/\/docs\/reference\/[^/]+\/rest$/.test(p)) s -= 18;
+  if (/\/docs\/reference\/rest\/.+/.test(p)) s -= 32;
+  if (/\/python\/docs\/reference\/[^/]+\/latest\/.+/.test(p)) s -= 28;
+  if (/^\/python\/[^/]+\/latest\/.+/.test(p)) s -= 24;
+  if (/\/java\/docs\/reference\/[^/]+\/latest\/(?!overview$).+/.test(p)) s -= 32;
+  if (/\/(class-|package-|proto-|types?\/)/.test(p)) s -= 26;
+  if (/\/support\//.test(p) || /\/blog\//.test(p) || /\/sdk\/gcloud\/reference\//.test(p)) s -= 40;
+  if (/\/docs\/how-to$/.test(p) || /\/how-to\//.test(p) || /\/get-started/.test(p) || /\/quickstart/.test(p)) s -= 24;
+  if (/bigquery-web-ui|create-billing-account/.test(p)) s -= 24;
+  if (/\/samples?\//.test(p) || /\/tutorial/.test(p) || /\/release-notes$/.test(p)) s -= 18;
+  const n = p.split("/").filter(Boolean).length;
+  if (n <= 2) s += 10;
+  if (n >= 6 && !/^\/workspace\/[^/]+\/api\//.test(p) && !/^\/workspace\/events/.test(p) && !/^\/workspace\/add-ons/.test(p) && !/^\/maps\/documentation\/[^/]+\//.test(p) && !/^\/appengine\/docs\//.test(p) && !/^\/sql\/docs\//.test(p) && !/^\/memorystore\/docs\//.test(p) && !/^\/network-connectivity\/docs\//.test(p) && !/^\/kubernetes-engine\/multi-cloud\/docs\/(attached|aws|azure|reference)/.test(p) && !/^\/kubernetes-engine\/config-sync\//.test(p) && !/^\/apigee\/docs\/api-platform\//.test(p) && !/^\/apigee\/docs\/reference\/apis\//.test(p) && !/^\/earth-engine\/docs\//.test(p) && !/^\/earth-engine\/apidocs/.test(p) && !/^\/admin-sdk\//.test(p) && !/^\/vision\/product-search\//.test(p) && !/^\/chronicle\/docs\/soar\//.test(p) && !/^\/agent-builder\//.test(p)) s -= 18;
+  return s;
+}
 function crawlabilityScore(candidate, profile) {
   const p = pathnameFor(candidate.url);
   const familyRules = profile.familyRules || familyRulesFor(profile.slug);
@@ -1943,11 +2683,35 @@ function crawlabilityScore(candidate, profile) {
   return s;
 }
 function keywordScore(candidate, productName, intent) { const h = normalizeText(`${candidate.title} ${candidate.description} ${candidate.url}`); let s = 0; for (const token of normalizeText(productName).split(" ").filter((t) => t.length >= 3).slice(0, 6)) if (h.includes(token)) s += 8; if (h.includes(normalizeText(productName))) s += 18; if (h.includes("documentation")) s += 10; if (h.includes("overview")) s += 8; if (h.includes("reference")) s += 12; if (h.includes("api")) s += 8; if (h.includes("roles and permissions")) s += 18; if (h.includes("access control")) s += 14; if (h.includes("iam")) s += 10; if (h.includes("client libraries")) s += 16; if (h.includes("python")) s += intent === "python_client" ? 18 : 2; if (h.includes("java")) s += intent === "java_client" ? 18 : 2; if (h.includes("gateway api") && !normalizeText(productName).includes("gateway api")) s -= 40; if (/migration api|reservation api|data policy api|analytics hub api/.test(h)) s -= 16; if (/release notes|\bpricing\b|\btutorials?\b|\bsamples?\b|\bblog\b/.test(h)) s -= 18; return s; }
-function affinityScore(candidate, profile, hints) { const p = pathnameFor(candidate.url); const h = normalizeText(`${candidate.title} ${candidate.description} ${candidate.url}`); const compact = compactText(h); const familyRules = profile.familyRules || familyRulesFor(profile.slug); let s = familyRuleScore(candidate.url, familyRules); if (h.includes(profile.normalizedName)) s += 24; if (compact.includes(profile.compactName)) s += 12; if (compact.includes(profile.compactSlug)) s += 10; for (const alias of profile.aliasTexts.slice(0, 8)) if (alias && h.includes(alias)) s += 16; for (const alias of profile.aliasCompacts.slice(0, 8)) if (alias && compact.includes(alias)) s += 8; for (const token of profile.tokens.slice(0, 8)) if (h.includes(token)) s += 6; const doc = p.match(/^\/([^/]+)\/docs(?:\/|$)/)?.[1] || ""; const py = p.match(/^\/python\/docs\/reference\/([^/]+)\//)?.[1] || ""; const ja = p.match(/^\/java\/docs\/reference\/([^/]+)\//)?.[1] || ""; const appEngineRuntimeSegment = p.match(/^\/appengine\/docs\/(?:standard|flexible)\/([^/]+)/)?.[1] || ""; const expectedAppEngineRuntime = expectedAppEngineRuntimeSegment(profile.slug); if (hints.dominantDocFamily && doc) s += doc === hints.dominantDocFamily ? 22 : -28; if (expectedAppEngineRuntime && appEngineRuntimeSegment && !["overview", "apis"].includes(appEngineRuntimeSegment)) s += appEngineRuntimeSegment === expectedAppEngineRuntime ? 26 : -42; if (py) { const sim = slugSimilarity(py, profile); s += Math.min(28, Math.max(-40, sim - 20)); if (hints.dominantPythonSlug) s += py === hints.dominantPythonSlug ? 18 : -26; } if (ja) { const sim = slugSimilarity(ja, profile); s += Math.min(28, Math.max(-40, sim - 20)); if (hints.dominantJavaSlug) s += ja === hints.dominantJavaSlug ? 18 : -26; } if (hostnameFor(candidate.url) === "cloud.google.com") s -= 12; if (hostnameFor(candidate.url) === "googleapis.dev") s -= 8; if (/console\.cloud\.google\.com/.test(candidate.url)) s -= 40; return s; }
-function deterministicScore(candidate, productName, profile, hints) { const best = candidate.intent_hits[0] || ""; const raw = 18 + (hostnameFor(candidate.url) === "docs.cloud.google.com" ? 28 : hostnameFor(candidate.url) === "cloud.google.com" ? 10 : hostnameFor(candidate.url) === "developers.google.com" ? 8 : hostnameFor(candidate.url) === "googleapis.dev" ? 6 : 0) + pathScore(candidate.url) + crawlabilityScore(candidate, profile) + keywordScore(candidate, productName, best) + affinityScore(candidate, profile, hints) + (candidate.round_hits.length * 4) + (candidate.query_hits.length * 2) - ((candidate.best_rank - 1) * 3); return Math.max(0, Math.min(100, raw)); }
-function classify(candidate, productName, profile, hints) { const p = pathnameFor(candidate.url); const h = normalizeText(`${candidate.title} ${candidate.description} ${candidate.url}`); const py = p.match(/^\/python\/docs\/reference\/([^/]+)\//)?.[1] || p.match(/^\/python\/([^/]+)\//)?.[1] || ""; const ja = p.match(/^\/java\/docs\/reference\/([^/]+)\//)?.[1] || ""; const familyRules = profile.familyRules || familyRulesFor(profile.slug); const familyScore = familyRuleScore(candidate.url, familyRules); const preferredFamily = matchesAnyRule(p, familyRules.preferredPaths || []); const forbiddenFamily = matchesAnyRule(p, familyRules.forbiddenPaths || []); const canonical = canonicalClassification(profile.slug, p); let c = canonical || "supporting_page"; if (/release notes|\bblog\b/.test(h) || /\/support\//.test(p)) c = "irrelevant"; else if (!canonical && (/^\/kubernetes-engine\/config-sync\/docs\/concepts\/architecture(?:\/|$)/.test(p) || /^\/workspace\/marketplace\/(enable-configure-sdk|use-analytics|create-listing|manage-app-listing|how-to-publish|about-app-review|get-featured|configure-oauth-consent-screen|list-multiple-app-integrations)(?:\/|$)/.test(p) || /^\/chronicle\/docs\/secops\/understand-the-secops-platform(?:\/|$)/.test(p))) c = "supporting_page"; else if (!canonical && (/\/docs\/how-to$/.test(p) || /\/how-to\//.test(p) || (/\/get-started/.test(p) && !/^\/apigee\/docs\/api-platform\/get-started\/what-apigee$/.test(p)) || /\/quickstart/.test(p) || (/\/reference\/rest\/.+/.test(p) && !/^\/workspace\/events\/reference\/rest\/v1$/.test(p) && !/^\/vertex-ai\/docs\/reference\/rest\/v1(?:beta1)?\/projects\.locations\.reasoningEngines/.test(p) && !/^\/kubernetes-engine\/docs\/add-on\/backup-for-gke\/reference\/rest\/v1\//.test(p)))) c = "supporting_page"; else if (!canonical && (/\/reference\/rest(?:\/[^/]+)?$/.test(p) || /^\/workspace\/[^/]+\/api\/v3\/reference(?:\/[^/]+)?$/.test(p) || /^\/calendar\/v3\/reference(?:\/[^/]+)?$/.test(p) || /^\/admin-sdk\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p) || /^\/games\/services\/web\/api\/rest$/.test(p) || /^\/chronicle\/docs\/reference\/[^/]+$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/reference\/rest$/.test(p) || /^\/workspace\/events\/reference\/rest\/v1$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api\/rest$/.test(p) || /^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/reference\/rest$/.test(p) || /^\/vertex-ai\/docs\/reference\/rest$/.test(p) || /^\/marketplace\/docs\/partners\/commerce-procurement-api\/reference\/rest$/.test(p) || /^\/apigee\/docs\/reference\/apis\/apigee\/rest\/v1\/organizations\.analytics/.test(p) || /^\/iam\/docs\/reference\/rest$/.test(p) || /^\/database-migration\/docs\/reference\/rest$/.test(p) || /^\/apigee\/docs\/reference\/apis\/integrations\/rest$/.test(p) || /^\/kubernetes-engine\/docs\/add-on\/backup-for-gke\/reference\/rest\/v1\//.test(p))) c = "api_reference"; else if (!canonical && (/^\/domains\/docs$/.test(p) || /^\/hub\/docs$/.test(p) || /^\/marketplace\/docs\/partners$/.test(p) || /^\/network-connectivity\/docs\/(interconnect|router|vpn)$/.test(p) || /^\/network-connectivity\/docs\/(interconnect|router|vpn)\/concepts\/overview$/.test(p) || /^\/iam\/docs$/.test(p) || /^\/iam\/docs\/overview$/.test(p) || /^\/assured-workloads\/access-transparency\/docs\/overview$/.test(p) || /^\/endpoints\/docs\/openapi$/.test(p) || /^\/endpoints\/docs\/openapi\/about-cloud-endpoints$/.test(p) || /^\/apigee\/docs\/api-platform\/get-started\/what-apigee$/.test(p) || /^\/apigee\/docs\/api-platform\/security\/api-security$/.test(p) || /^\/apigee\/docs\/hybrid\/[^/]+\/what-is-hybrid$/.test(p) || /^\/apigee\/docs\/apihub\/getting-started-apihub$/.test(p) || /^\/product-registry\/overview$/.test(p) || /^\/docs\/buildpacks$/.test(p) || /^\/docs\/buildpacks\/overview$/.test(p) || /^\/docs\/quotas$/.test(p) || /^\/docs\/quotas\/overview$/.test(p) || /^\/database-migration\/docs$/.test(p) || /^\/config-connector\/docs$/.test(p) || /^\/config-connector\/docs\/overview$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs\/overview$/.test(p) || /^\/kubernetes-engine\/docs\/add-on\/backup-for-gke$/.test(p) || /^\/service-mesh\/docs$/.test(p) || /^\/service-mesh\/docs\/overview$/.test(p) || /^\/apigee\/docs\/api-platform\/integration\/using-application-integration$/.test(p) || /^\/apigee\/docs\/api-platform\/apigee-kubernetes\/apigee-apim-operator-install$/.test(p))) c = "product_root"; else if (!canonical && (/\/roles-permissions\//.test(p) || h.includes("roles and permissions") || h.includes("access control") || h.includes("iam") || /^\/workspace\/events\/guides\/auth$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/azure\/concepts\/requirements$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/reference\/api-permissions$/.test(p) || /^\/apigee\/docs\/api-platform\/security\/iam\/iam-overview$/.test(p))) c = "iam_reference"; else if (!canonical && ((/\/python\/docs\/reference\/[^/]+\/latest(?:\/index\.html)?$/.test(p) || /^\/python\/[^/]+\/latest(?:\/index\.html)?$/.test(p)) && slugSimilarity(py, profile) >= 40)) c = "python_reference"; else if (!canonical && /\/java\/docs\/reference\/[^/]+\/latest\/overview$/.test(p) && slugSimilarity(ja, profile) >= 40) c = "java_reference"; else if (!canonical && (/\/docs\/(reference|apis)$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/apis$/.test(p) || /^\/workspace\/[^/]+\/api\/reference(?:\/rest(?:\/[^/]+)?)?$/.test(p) || /^\/workspace\/marketplace\/reference\/rest(?:\/[^/]+)?$/.test(p) || /^\/workspace\/add-ons\/reference$/.test(p) || /^\/admin-sdk\/reference-overview$/.test(p) || /^\/games\/services\/reference$/.test(p) || /^\/games\/services\/publishing\/api$/.test(p) || /^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/reference$/.test(p) || /^\/earth-engine\/apidocs$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)\/(apis|admin-api)$/.test(p) || /^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/apis$/.test(p) || /^\/network-connectivity\/docs\/(interconnect|vpn)\/apis$/.test(p) || /^\/network-connectivity\/docs\/router\/reference\/apis$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/apis$/.test(p) || /^\/kubernetes-engine\/config-sync\/docs\/reference\/[^/]+$/.test(p) || /^\/apigee\/docs\/api-platform\/analytics\/analytics-reference$/.test(p) || /^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/reference$/.test(p) || /^\/apigee\/docs\/apihub\/reference(?:\/[^/]+)?$/.test(p) || /^\/iam\/docs\/apis$/.test(p) || /^\/endpoints\/docs\/openapi\/openapi-overview$/.test(p) || /^\/apigee\/docs\/api-platform\/reference\/manage-security-add-on$/.test(p) || /^\/apigee\/docs\/hybrid\/[^/]+\/(helm-reference|cli-reference)$/.test(p) || /^\/apigee\/docs\/apihub\/(apis-intro|specs-intro|versions-intro)$/.test(p) || /^\/apigee\/docs\/api-platform\/monetization\/manage-rate-plans$/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/portal\/publish-apis$/.test(p) || /^\/docs\/buildpacks\/(builders|build-application|use-a-specific-builder)$/.test(p) || /^\/docs\/quotas\/(apis|api-overview)$/.test(p) || /^\/config-connector\/docs\/reference\/overview$/.test(p) || /^\/config-connector\/docs\/concepts\/resources$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs\/reference\/roles-permissions$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs\/manage-resources$/.test(p) || /^\/kubernetes-engine\/docs\/add-on\/backup-for-gke\/reference\/rest\/v1\//.test(p) || /^\/service-mesh\/docs\/(cloud-run-api-reference|service-routing\/xds-control-plane-apis)$/.test(p) || /^\/database-migration\/docs\/reference\/rest$/.test(p) || /^\/apigee\/docs\/reference\/apis\/integrations\/rest$/.test(p) || /^\/apigee\/docs\/api-platform\/apigee-kubernetes\/apigee-apim-operator-before-you-begin$/.test(p) || /apis and reference/.test(h))) c = "product_reference"; else if (!canonical && (/^\/apigee\/docs\/apihub\/[^/]+$/.test(p) || /^\/apigee\/docs\/api-platform\/analytics(?:\/[^/]+)?$/.test(p) || /^\/chronicle\/docs\/secops(?:\/[^/]+)?$/.test(p) || /^\/chronicle\/docs\/onboard(?:\/[^/]+)?$/.test(p) || /^\/chronicle\/docs\/[^/]+$/.test(p) || /\/docs$/.test(p) || /\/docs\/(introduction|overview|concepts|about-[^/]+)$/.test(p) || /^\/workspace\/[^/]+\/api(?:\/guides\/[^/]+)?$/.test(p) || /^\/workspace\/marketplace(?:\/overview)?$/.test(p) || /^\/workspace\/events$/.test(p) || /^\/workspace\/add-ons(?:\/overview)?$/.test(p) || /^\/admin-sdk\/overview$/.test(p) || /^\/admin-sdk\/[^/]+\/v1\/guides$/.test(p) || /^\/games\/services$/.test(p) || /^\/maps\/documentation\/[^/]+(?:\/overview)?$/.test(p) || /^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)(?:\/overview)?$/.test(p) || /^\/earth-engine(?:\/guides)?$/.test(p) || /^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)$/.test(p) || /^\/container-optimized-os\/docs$/.test(p) || /^\/container-optimized-os\/docs\/concepts(?:\/features-and-benefits)?$/.test(p) || /^\/vision\/product-search\/docs$/.test(p) || /^\/vision\/product-search\/docs\/libraries$/.test(p) || /^\/chronicle\/docs\/soar\/marketplace\/using-the-marketplace$/.test(p) || /^\/chronicle\/docs\/soar\/marketplace-integrations$/.test(p) || /^\/appengine\/docs\/admin-api\/overview$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/overview$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/[^/]+\/runtime$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/custom-runtimes\/about-custom-runtimes$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)$/.test(p) || /^\/memorystore\/docs\/(redis|memcached|valkey|cluster)$/.test(p) || /^\/memorystore\/docs\/redis\/memorystore-for-redis-overview$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/attached$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/attached\/(eks|aks)\/concepts\/overview$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)$/.test(p) || /^\/kubernetes-engine\/config-sync\/docs$/.test(p) || /^\/kubernetes-engine\/config-sync\/docs\/overview$/.test(p) || /^\/agent-builder\/overview$/.test(p) || /^\/agent-builder\/agent-engine\/overview$/.test(p) || /^\/apigee\/docs\/api-platform\/monetization\/overview$/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/intro-portals$/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/portal\/build-integrated-portal$/.test(p) || /^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/concepts$/.test(p))) c = "product_root"; if (forbiddenFamily && c !== "irrelevant") c = "irrelevant"; else if (familyRules.strict && !preferredFamily && c !== "irrelevant") c = "supporting_page"; const score = deterministicScore(candidate, productName, profile, hints); return { classification: c, score, family_score: familyScore, family_preferred: preferredFamily, family_forbidden: forbiddenFamily, parent_page_likelihood: Math.max(0, Math.min(5, Math.round(score / 20))), product_match: Math.max(0, Math.min(5, Math.round((affinityScore(candidate, profile, hints) + 20) / 16))), coverage_value: Math.max(0, Math.min(5, Math.round((pathScore(candidate.url) + 30) / 16))), keep: score >= 74 && !["irrelevant", "supporting_page"].includes(c) && familyScore >= 0, rationale: "Fallback heuristic scoring was used because API scoring was unavailable." }; }
-function classifyWithOverrides(candidate, productName, profile, hints) {
-  const scored = classify(candidate, productName, profile, hints);
+function affinityScore(candidate, profile, hints) { const p = pathnameFor(candidate.url); const h = normalizeText(`${candidate.title} ${candidate.description} ${candidate.url}`); const compact = compactText(h); const familyRules = profile.familyRules || familyRulesFor(profile.slug); let s = familyRuleScore(candidate.url, familyRules); if (h.includes(profile.normalizedName)) s += 24; if (compact.includes(profile.compactName)) s += 12; if (compact.includes(profile.compactSlug)) s += 10; for (const alias of profile.aliasTexts.slice(0, 8)) if (alias && h.includes(alias)) s += 16; for (const alias of profile.aliasCompacts.slice(0, 8)) if (alias && compact.includes(alias)) s += 8; for (const token of profile.tokens.slice(0, 8)) if (h.includes(token)) s += 6; const doc = p.match(/^\/([^/]+)\/docs(?:\/|$)/)?.[1] || ""; const py = p.match(/^\/python\/docs\/reference\/([^/]+)\//)?.[1] || ""; const ja = p.match(/^\/java\/docs\/reference\/([^/]+)\//)?.[1] || ""; const appEngineEnvironmentSegment = p.match(/^\/appengine\/docs\/(standard|flexible)\//)?.[1] || ""; const appEngineRuntimeSegment = p.match(/^\/appengine\/docs\/(?:standard|flexible)\/([^/]+)/)?.[1] || ""; const expectedAppEngineRuntime = expectedAppEngineRuntimeSegment(profile.slug); const expectedAppEngineEnvironment = expectedAppEngineEnvironmentSegment(profile.slug); if (hints.dominantDocFamily && doc) s += doc === hints.dominantDocFamily ? 22 : -28; if (expectedAppEngineEnvironment && appEngineEnvironmentSegment) s += appEngineEnvironmentSegment === expectedAppEngineEnvironment ? 26 : -56; if (expectedAppEngineRuntime && appEngineRuntimeSegment && !["overview", "apis", "release-notes"].includes(appEngineRuntimeSegment)) s += matchesExpectedAppEngineRuntime(profile.slug, appEngineRuntimeSegment) ? 26 : -52; if (expectedAppEngineRuntime && /\/release-notes(?:\/|$)/.test(p)) s += expectedAppEngineRuntimeSegments(profile.slug).some((segment) => p.includes(`/${segment}/release-notes`)) ? 30 : -50; if (py) { const sim = slugSimilarity(py, profile); s += Math.min(28, Math.max(-40, sim - 20)); if (hints.dominantPythonSlug) s += py === hints.dominantPythonSlug ? 18 : -26; } if (ja) { const sim = slugSimilarity(ja, profile); s += Math.min(28, Math.max(-40, sim - 20)); if (hints.dominantJavaSlug) s += ja === hints.dominantJavaSlug ? 18 : -26; } if (hostnameFor(candidate.url) === "cloud.google.com") s -= 12; if (hostnameFor(candidate.url) === "googleapis.dev") s -= 8; if (/console\.cloud\.google\.com/.test(candidate.url)) s -= 40; return s; }
+function featureCoverageScore(candidate, coverage) {
+  if (!coverage) return { score: 0, matched_phrases: [], matched_tokens: [], user_facing_alignment: 0 };
+  const text = normalizeText(`${candidate.title} ${candidate.description} ${candidate.url}`);
+  const pathText = pathnameFor(candidate.url);
+  const matchedPhrases = [];
+  for (const phrase of coverage.top_phrases.slice(0, 24)) {
+    if (text.includes(phrase)) matchedPhrases.push(phrase);
+  }
+  const matchedTokens = [];
+  for (const token of coverage.top_tokens.slice(0, 40)) {
+    if (text.includes(token)) matchedTokens.push(token);
+  }
+  let score = Math.min(40, matchedPhrases.length * 12) + Math.min(24, matchedTokens.length * 3);
+  if (/\/docs\/(guides?|concepts|how-to|configuration|manage|workloads|queries|features|sql|search|tables|models|transfers|notebooks|clusters|pipelines|security|governance|architecture|developer-overview)/.test(pathText)) score += 12;
+  if (/\/(python|java)\/docs\/reference\//.test(pathText) || /\/reference\/rest(?:\/.+)?$/.test(pathText)) score -= coverage.inventory_profile === "user_facing" ? 16 : 4;
+  if (/\/release-notes(?:\/|$)/.test(pathText) && Number(coverage.feature_count || 0) >= 40) score += 20;
+  const userFacingAlignment = coverage.inventory_profile === "user_facing" && (/\/docs\/(guides?|concepts|how-to|configuration|manage|workloads|queries|features|sql|search|tables|models|transfers|notebooks|clusters|pipelines|security|governance|architecture|developer-overview)/.test(pathText) || /\/release-notes(?:\/|$)/.test(pathText)) ? 1 : 0;
+  return {
+    score,
+    matched_phrases: matchedPhrases.slice(0, 6),
+    matched_tokens: matchedTokens.slice(0, 8),
+    user_facing_alignment: userFacingAlignment,
+  };
+}
+function deterministicScore(candidate, productName, profile, hints, coverage = null) { const best = candidate.intent_hits[0] || ""; const coverageScore = featureCoverageScore(candidate, coverage).score; const raw = 18 + (hostnameFor(candidate.url) === "docs.cloud.google.com" ? 28 : hostnameFor(candidate.url) === "cloud.google.com" ? 10 : hostnameFor(candidate.url) === "developers.google.com" ? 8 : hostnameFor(candidate.url) === "googleapis.dev" ? 6 : 0) + pathScore(candidate.url) + crawlabilityScore(candidate, profile) + keywordScore(candidate, productName, best) + affinityScore(candidate, profile, hints) + coverageScore + (candidate.round_hits.length * 4) + (candidate.query_hits.length * 2) - ((candidate.best_rank - 1) * 3); return Math.max(0, Math.min(100, raw)); }
+function classify(candidate, productName, profile, hints, coverage = null) { const p = pathnameFor(candidate.url); const h = normalizeText(`${candidate.title} ${candidate.description} ${candidate.url}`); const py = p.match(/^\/python\/docs\/reference\/([^/]+)\//)?.[1] || p.match(/^\/python\/([^/]+)\//)?.[1] || ""; const ja = p.match(/^\/java\/docs\/reference\/([^/]+)\//)?.[1] || ""; const familyRules = profile.familyRules || familyRulesFor(profile.slug); const familyScore = familyRuleScore(candidate.url, familyRules); const preferredFamily = matchesAnyRule(p, familyRules.preferredPaths || []); const forbiddenFamily = matchesAnyRule(p, familyRules.forbiddenPaths || []); const canonical = canonicalClassification(profile.slug, p); const releaseNotesPreferred = Number(coverage?.feature_count || 0) >= 40 && /\/release-notes(?:\/|$)/.test(p); let c = canonical || "supporting_page"; if ((/\bblog\b/.test(h) || /\/support\//.test(p)) && !releaseNotesPreferred) c = "irrelevant"; else if (releaseNotesPreferred) c = "product_reference"; else if (!canonical && (/^\/kubernetes-engine\/config-sync\/docs\/concepts\/architecture(?:\/|$)/.test(p) || /^\/workspace\/marketplace\/(enable-configure-sdk|use-analytics|create-listing|manage-app-listing|how-to-publish|about-app-review|get-featured|configure-oauth-consent-screen|list-multiple-app-integrations)(?:\/|$)/.test(p) || /^\/chronicle\/docs\/secops\/understand-the-secops-platform(?:\/|$)/.test(p))) c = "supporting_page"; else if (!canonical && (/\/docs\/how-to$/.test(p) || /\/how-to\//.test(p) || (/\/get-started/.test(p) && !/^\/apigee\/docs\/api-platform\/get-started\/what-apigee$/.test(p)) || /\/quickstart/.test(p) || (/\/reference\/rest\/.+/.test(p) && !/^\/workspace\/events\/reference\/rest\/v1$/.test(p) && !/^\/vertex-ai\/docs\/reference\/rest\/v1(?:beta1)?\/projects\.locations\.reasoningEngines/.test(p) && !/^\/kubernetes-engine\/docs\/add-on\/backup-for-gke\/reference\/rest\/v1\//.test(p)))) c = "supporting_page"; else if (!canonical && (/\/reference\/rest(?:\/[^/]+)?$/.test(p) || /^\/workspace\/[^/]+\/api\/v3\/reference(?:\/[^/]+)?$/.test(p) || /^\/calendar\/v3\/reference(?:\/[^/]+)?$/.test(p) || /^\/admin-sdk\/[^/]+\/reference\/rest(?:\/[^/]+)?$/.test(p) || /^\/games\/services\/web\/api\/rest$/.test(p) || /^\/chronicle\/docs\/reference\/[^/]+$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/reference\/rest$/.test(p) || /^\/workspace\/events\/reference\/rest\/v1$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api\/rest$/.test(p) || /^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/reference\/rest$/.test(p) || /^\/vertex-ai\/docs\/reference\/rest$/.test(p) || /^\/marketplace\/docs\/partners\/commerce-procurement-api\/reference\/rest$/.test(p) || /^\/apigee\/docs\/reference\/apis\/apigee\/rest\/v1\/organizations\.analytics/.test(p) || /^\/iam\/docs\/reference\/rest$/.test(p) || /^\/database-migration\/docs\/reference\/rest$/.test(p) || /^\/apigee\/docs\/reference\/apis\/integrations\/rest$/.test(p) || /^\/kubernetes-engine\/docs\/add-on\/backup-for-gke\/reference\/rest\/v1\//.test(p))) c = "api_reference"; else if (!canonical && (/^\/domains\/docs$/.test(p) || /^\/hub\/docs$/.test(p) || /^\/marketplace\/docs\/partners$/.test(p) || /^\/network-connectivity\/docs\/(interconnect|router|vpn)$/.test(p) || /^\/network-connectivity\/docs\/(interconnect|router|vpn)\/concepts\/overview$/.test(p) || /^\/iam\/docs$/.test(p) || /^\/iam\/docs\/overview$/.test(p) || /^\/assured-workloads\/access-transparency\/docs\/overview$/.test(p) || /^\/endpoints\/docs\/openapi$/.test(p) || /^\/endpoints\/docs\/openapi\/about-cloud-endpoints$/.test(p) || /^\/apigee\/docs\/api-platform\/get-started\/what-apigee$/.test(p) || /^\/apigee\/docs\/api-platform\/security\/api-security$/.test(p) || /^\/apigee\/docs\/hybrid\/[^/]+\/what-is-hybrid$/.test(p) || /^\/apigee\/docs\/apihub\/getting-started-apihub$/.test(p) || /^\/product-registry\/overview$/.test(p) || /^\/docs\/buildpacks$/.test(p) || /^\/docs\/buildpacks\/overview$/.test(p) || /^\/docs\/quotas$/.test(p) || /^\/docs\/quotas\/overview$/.test(p) || /^\/database-migration\/docs$/.test(p) || /^\/config-connector\/docs$/.test(p) || /^\/config-connector\/docs\/overview$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs\/overview$/.test(p) || /^\/kubernetes-engine\/docs\/add-on\/backup-for-gke$/.test(p) || /^\/service-mesh\/docs$/.test(p) || /^\/service-mesh\/docs\/overview$/.test(p) || /^\/apigee\/docs\/api-platform\/integration\/using-application-integration$/.test(p) || /^\/apigee\/docs\/api-platform\/apigee-kubernetes\/apigee-apim-operator-install$/.test(p))) c = "product_root"; else if (!canonical && (/\/roles-permissions\//.test(p) || h.includes("roles and permissions") || h.includes("access control") || h.includes("iam") || /^\/workspace\/events\/guides\/auth$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/azure\/concepts\/requirements$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/reference\/api-permissions$/.test(p) || /^\/apigee\/docs\/api-platform\/security\/iam\/iam-overview$/.test(p))) c = "iam_reference"; else if (!canonical && ((/\/python\/docs\/reference\/[^/]+\/latest(?:\/index\.html)?$/.test(p) || /^\/python\/[^/]+\/latest(?:\/index\.html)?$/.test(p)) && slugSimilarity(py, profile) >= 40)) c = "python_reference"; else if (!canonical && /\/java\/docs\/reference\/[^/]+\/latest\/overview$/.test(p) && slugSimilarity(ja, profile) >= 40) c = "java_reference"; else if (!canonical && (/\/docs\/(reference|apis)$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/apis$/.test(p) || /^\/workspace\/[^/]+\/api\/reference(?:\/rest(?:\/[^/]+)?)?$/.test(p) || /^\/workspace\/marketplace\/reference\/rest(?:\/[^/]+)?$/.test(p) || /^\/workspace\/add-ons\/reference$/.test(p) || /^\/admin-sdk\/reference-overview$/.test(p) || /^\/games\/services\/reference$/.test(p) || /^\/games\/services\/publishing\/api$/.test(p) || /^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)\/reference$/.test(p) || /^\/earth-engine\/apidocs$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)\/(apis|admin-api)$/.test(p) || /^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/apis$/.test(p) || /^\/network-connectivity\/docs\/(interconnect|vpn)\/apis$/.test(p) || /^\/network-connectivity\/docs\/router\/reference\/apis$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/apis$/.test(p) || /^\/kubernetes-engine\/config-sync\/docs\/reference\/[^/]+$/.test(p) || /^\/apigee\/docs\/api-platform\/analytics\/analytics-reference$/.test(p) || /^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/reference$/.test(p) || /^\/apigee\/docs\/apihub\/reference(?:\/[^/]+)?$/.test(p) || /^\/iam\/docs\/apis$/.test(p) || /^\/endpoints\/docs\/openapi\/openapi-overview$/.test(p) || /^\/apigee\/docs\/api-platform\/reference\/manage-security-add-on$/.test(p) || /^\/apigee\/docs\/hybrid\/[^/]+\/(helm-reference|cli-reference)$/.test(p) || /^\/apigee\/docs\/apihub\/(apis-intro|specs-intro|versions-intro)$/.test(p) || /^\/apigee\/docs\/api-platform\/monetization\/manage-rate-plans$/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/portal\/publish-apis$/.test(p) || /^\/docs\/buildpacks\/(builders|build-application|use-a-specific-builder)$/.test(p) || /^\/docs\/quotas\/(apis|api-overview)$/.test(p) || /^\/config-connector\/docs\/reference\/overview$/.test(p) || /^\/config-connector\/docs\/concepts\/resources$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs\/reference\/roles-permissions$/.test(p) || /^\/kubernetes-engine\/config-controller\/docs\/manage-resources$/.test(p) || /^\/kubernetes-engine\/docs\/add-on\/backup-for-gke\/reference\/rest\/v1\//.test(p) || /^\/service-mesh\/docs\/(cloud-run-api-reference|service-routing\/xds-control-plane-apis)$/.test(p) || /^\/database-migration\/docs\/reference\/rest$/.test(p) || /^\/apigee\/docs\/reference\/apis\/integrations\/rest$/.test(p) || /^\/apigee\/docs\/api-platform\/apigee-kubernetes\/apigee-apim-operator-before-you-begin$/.test(p) || /apis and reference/.test(h))) c = "product_reference"; else if (!canonical && (/^\/apigee\/docs\/apihub\/[^/]+$/.test(p) || /^\/apigee\/docs\/api-platform\/analytics(?:\/[^/]+)?$/.test(p) || /^\/chronicle\/docs\/secops(?:\/[^/]+)?$/.test(p) || /^\/chronicle\/docs\/onboard(?:\/[^/]+)?$/.test(p) || /^\/chronicle\/docs\/[^/]+$/.test(p) || /\/docs$/.test(p) || /\/docs\/(introduction|overview|concepts|about-[^/]+)$/.test(p) || /^\/workspace\/[^/]+\/api(?:\/guides\/[^/]+)?$/.test(p) || /^\/workspace\/marketplace(?:\/overview)?$/.test(p) || /^\/workspace\/events$/.test(p) || /^\/workspace\/add-ons(?:\/overview)?$/.test(p) || /^\/admin-sdk\/overview$/.test(p) || /^\/admin-sdk\/[^/]+\/v1\/guides$/.test(p) || /^\/games\/services$/.test(p) || /^\/maps\/documentation\/[^/]+(?:\/overview)?$/.test(p) || /^\/maps\/documentation\/[^/]+\/(android-sdk|ios-sdk)(?:\/overview)?$/.test(p) || /^\/earth-engine(?:\/guides)?$/.test(p) || /^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)$/.test(p) || /^\/container-optimized-os\/docs$/.test(p) || /^\/container-optimized-os\/docs\/concepts(?:\/features-and-benefits)?$/.test(p) || /^\/vision\/product-search\/docs$/.test(p) || /^\/vision\/product-search\/docs\/libraries$/.test(p) || /^\/chronicle\/docs\/soar\/marketplace\/using-the-marketplace$/.test(p) || /^\/chronicle\/docs\/soar\/marketplace-integrations$/.test(p) || /^\/appengine\/docs\/admin-api\/overview$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/overview$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/[^/]+\/runtime$/.test(p) || /^\/appengine\/docs\/(standard|flexible)\/custom-runtimes\/about-custom-runtimes$/.test(p) || /^\/sql\/docs\/(mysql|postgres|sqlserver)$/.test(p) || /^\/memorystore\/docs\/(redis|memcached|valkey|cluster)$/.test(p) || /^\/memorystore\/docs\/redis\/memorystore-for-redis-overview$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/attached$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/attached\/(eks|aks)\/concepts\/overview$/.test(p) || /^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)$/.test(p) || /^\/kubernetes-engine\/config-sync\/docs$/.test(p) || /^\/kubernetes-engine\/config-sync\/docs\/overview$/.test(p) || /^\/agent-builder\/overview$/.test(p) || /^\/agent-builder\/agent-engine\/overview$/.test(p) || /^\/apigee\/docs\/api-platform\/monetization\/overview$/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/intro-portals$/.test(p) || /^\/apigee\/docs\/api-platform\/publish\/portal\/build-integrated-portal$/.test(p) || /^\/apigee\/docs\/api-platform\/envoy-adapter\/[^/]+\/concepts$/.test(p))) c = "product_root"; if (forbiddenFamily && c !== "irrelevant") c = "irrelevant"; else if (familyRules.strict && !preferredFamily && c !== "irrelevant") c = "supporting_page"; const score = deterministicScore(candidate, productName, profile, hints, coverage); const featureCoverage = featureCoverageScore(candidate, coverage); return { classification: c, score, family_score: familyScore, family_preferred: preferredFamily, family_forbidden: forbiddenFamily, parent_page_likelihood: Math.max(0, Math.min(5, Math.round(score / 20))), product_match: Math.max(0, Math.min(5, Math.round((affinityScore(candidate, profile, hints) + 20) / 16))), coverage_value: Math.max(0, Math.min(5, Math.round((featureCoverage.score + pathScore(candidate.url) + 30) / 20))), matched_feature_phrases: featureCoverage.matched_phrases, matched_feature_tokens: featureCoverage.matched_tokens, keep: score >= 74 && !["irrelevant", "supporting_page"].includes(c) && familyScore >= 0, rationale: featureCoverage.matched_phrases.length > 0 ? `Matched Step 2 features: ${featureCoverage.matched_phrases.join(", ")}` : "Fallback heuristic scoring was used because API scoring was unavailable." }; }
+function classifyWithOverrides(candidate, productName, profile, hints, coverage = null) {
+  const scored = classify(candidate, productName, profile, hints, coverage);
   const p = pathnameFor(candidate.url);
   const slug = String(profile?.slug || "").toLowerCase();
   if (slug === "access-transparency") {
@@ -1990,6 +2754,55 @@ function classifyWithOverrides(candidate, productName, profile, hints) {
   if (slug === "agent-assist") {
     if (/^\/agent-assist\/docs\/(basics|backend-basics|quotas|generative-knowledge-assist|ui-modules-ai-coach-documentation)$/.test(p)) {
       scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "chat-api") {
+    if (/^\/workspace\/chat\/api\/reference$/.test(p) || /^\/workspace\/chat\/overview$/.test(p)) {
+      scored.classification = "product_root";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/workspace\/chat\/api\/reference\/rpc\/google\.chat\.v1(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/workspace\/chat\/(?:authenticate-authorize|api\/guides\/auth)(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    }
+  }
+  if (slug === "cloud-run") {
+    if (/^\/run\/docs$/.test(p) || /^\/run\/docs\/overview\/what-is-cloud-run(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/run\/docs\/apis(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/run\/docs\/reference\/cloud-run-admin-api-overview(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/run\/docs\/securing\/managing-access(?:\/|$)/.test(p) || /^\/iam\/docs\/roles-permissions\/run(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    }
+  }
+  if (slug === "gke-enterprise") {
+    if (/^\/kubernetes-engine\/enterprise\/docs$/.test(p) || /^\/kubernetes-engine\/enterprise\/docs\/deployment-options(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/kubernetes-engine\/enterprise\/docs\/version-and-upgrade-support(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/kubernetes-engine\/enterprise\/docs\/concepts\/roles-tasks(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.family_forbidden = false;
       scored.keep = true;
     }
   }
@@ -2042,8 +2855,14 @@ function classifyWithOverrides(candidate, productName, profile, hints) {
     }
   }
   if (slug === "automl-translation") {
-    if (/^\/translate\/docs\/(overview|api-overview|intro-to-v3|translate-text)$/.test(p) || /^\/translate\/docs\/advanced\/(translate-documents|custom-translation-quickstart|automl-prepare|automl-models|automl-datasets)$/.test(p)) {
+    if (/^\/translate\/docs(?:\/intro-to-v3)?$/.test(p) || /^\/translate\/docs\/(overview|api-overview|translate-text)$/.test(p)) {
       scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/translate\/docs\/advanced\/(translate-documents|custom-translation-quickstart|automl-prepare|automl-models|automl-datasets)$/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/translate\/docs\/reference\/api-overview$/.test(p)) {
+      scored.classification = "product_reference";
       scored.keep = true;
     } else if (/^\/translate\/docs\/reference\/rpc$/.test(p)) {
       scored.classification = "api_reference";
@@ -2051,6 +2870,9 @@ function classifyWithOverrides(candidate, productName, profile, hints) {
     } else if (/^\/translate\/docs\/access-control$/.test(p) || /^\/iam\/docs\/roles-permissions\/(cloudtranslate|automl)$/.test(p)) {
       scored.classification = "iam_reference";
       scored.keep = true;
+    } else if (/^\/translate\/docs\/advanced\/automl-beginner$/.test(p) || /^\/dotnet\/docs\/reference\/google\.cloud\.translate\.v3\//.test(p) || /^\/php\/docs\/reference\/cloud-translate\//.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
     }
   }
   if (slug === "contact-center-ai-insights") {
@@ -2065,6 +2887,227 @@ function classifyWithOverrides(candidate, productName, profile, hints) {
       scored.keep = true;
     }
   }
+  if (slug === "drive-api") {
+    if (/^\/workspace\/drive\/api\/guides\/about-sdk(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/drive\/api\/reference\/rest\/v3(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/drive\/api\/guides\/api-specific-auth(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/drive\/api\/reference(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "gmail-api") {
+    if (/^\/workspace\/gmail\/api\/guides(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/gmail\/api\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/gmail\/api\/auth\/(scopes|web-server)(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/gmail\/api\/reference(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "sheets-api") {
+    if (/^\/workspace\/sheets\/api\/guides\/concepts(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/sheets\/api\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/sheets\/api\/scopes(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/sheets\/api\/reference(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "tasks-api") {
+    if (/^\/workspace\/tasks\/overview(?:\/|$)/.test(p) || /^\/workspace\/tasks$/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/tasks\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/tasks\/auth(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/tasks\/reference\/rest\/v1\/tasks(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "vault-api") {
+    if (/^\/workspace\/vault\/guides(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/vault\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/vault\/auth(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/vault(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "google-meet") {
+    if (/^\/workspace\/meet\/api\/guides\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/workspace\/meet\/api\/reference\/rest\/v2(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/workspace\/meet\/api\/guides\/authenticate-authorize(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/go\/docs\/reference\/cloud\.google\.com\/go\/apps\/latest\/meet\/apiv2(?:\/|$)/.test(p) || /^\/workspace\/meet\/api\/reference(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "google-secops") {
+    if (/^\/chronicle\/docs\/secops\/secops-overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/secops\/understand-the-secops-platform(?:\/|$)/.test(p) || /^\/chronicle\/docs$/.test(p)) {
+      scored.classification = "product_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/reference\/google-secops-api-libraries-overview(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/reference\/authentication(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/onboard(?:\/|$)/.test(p) || /^\/chronicle\/docs\/administration(?:\/|$)/.test(p) || /^\/chronicle\/docs\/secops(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "google-workspace-admin-sdk") {
+    if (/^\/admin-sdk\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/admin-sdk\/reference-overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/admin-sdk\/(directory|reports)\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/admin-sdk\/(directory\/v1\/guides\/authorizing|reports\/auth|reports\/v1\/guides\/authorizing)(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/integration-connectors\/docs\/connectors\/gsc_admin_sdk\/configure(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "google-secops-siem") {
+    if (/^\/chronicle\/docs\/secops\/secops-overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/reference\/google-unified-security(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/reference\/feature-rbac-permissions-roles(?:\/|$)/.test(p) || /^\/chronicle\/docs\/onboard\/configure-cloud-authentication(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.family_forbidden = false;
+      scored.keep = true;
+    } else if (/^\/chronicle\/docs\/secops(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "service-catalog") {
+    if (/^\/service-catalog\/docs\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/service-catalog\/docs\/(concepts|create-share-solutions)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/service-catalog\/docs\/access-control(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/service-catalog\/docs\/(create-catalog|view-and-launch)(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "routes-api") {
+    if (/^\/maps\/documentation\/routes\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/maps\/documentation\/routes\/compute-route-over(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/maps\/documentation\/routes\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/maps\/documentation\/routes\/get-api-key(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/network-connectivity\/docs\/vpn\/(?:apis|reference)(?:\/|$)/.test(p) || /^\/maps\/documentation\/routes\/reference\/rpc(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "vertex-ai-search") {
+    if (/^\/generative-ai-app-builder\/docs$/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/generative-ai-app-builder\/docs\/data-source-access-control(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/generative-ai-app-builder\/docs\/builder-apis(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/generative-ai-app-builder\/docs\/authentication(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/generative-ai-app-builder\/docs\/(about-generic-search|access-control|release-notes)(?:\/|$)/.test(p) || /^\/retail\/docs\/apis(?:\/|$)/.test(p) || /^\/agent-builder\/(?:overview|agent-engine\/overview)(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "vertex-ai-workbench") {
+    if (/^\/vertex-ai\/docs\/workbench\/introduction(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/vertex-ai\/docs\/workbench\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/vertex-ai\/docs\/workbench\/reference(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/vertex-ai\/docs\/workbench\/instances\/iam(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/vertex-ai\/docs\/workbench\/(notebook-solution|reference\/libraries)(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
   if (slug === "cloud-product-registry-api") {
     if (/^\/product-registry$/.test(p)) {
       scored.classification = "product_root";
@@ -2074,6 +3117,172 @@ function classifyWithOverrides(candidate, productName, profile, hints) {
       scored.keep = true;
     } else if (/^\/product-registry\/overview$/.test(p)) {
       scored.classification = "iam_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "bigquery") {
+    if (/^\/bigquery\/docs$/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/bigquery\/docs\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+    } else if (/^\/bigquery\/docs\/access-control(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/^\/bigquery\/docs\/reference\/libraries(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    } else if (/^\/bigquery\/docs\/(reference|release-notes|admin-intro|migration-intro|dts-introduction|pipeline-connection-page|data-insights|use-bigquery-migration-mcp|migration-custom-org-policies|routines|reservations-workload-management|procedures)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/bigquery\/docs\/reference\/auditlogs\/rest(?:\/|$)/.test(p) || /^\/bigquery\/docs\/release-notes-archive(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "app-engine-flexible-environment-node-js") {
+    if (/^\/appengine\/docs\/flexible\/overview(?:\/|$)/.test(p) || /^\/appengine\/docs\/flexible\/nodejs\/runtime(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/flexible\/nodejs\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    }
+  }
+  if (slug === "apigee-hybrid") {
+    if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/what-is-hybrid(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/hybrid\/(release-notes|v[\d.]+\/config-prop-ref|v[\d.]+\/install-before-begin|v[\d.]+\/data-collection-with-data-residency)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/apigee\/docs\/hybrid\/v[\d.]+\/(sa-about|enable-workload-identity|install-enable-control-plane-access)(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+    } else if (/\/apigee\/docs\/apihub\/add-iam-conditions(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "vertex-ai") {
+    if (/^\/vertex-ai\/docs$/.test(p) || /^\/vertex-ai\/docs\/start\/introduction-unified-platform(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/vertex-ai\/docs\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = "api_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/vertex-ai\/docs\/general\/access-control(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/vertex-ai\/docs\/(reference|core-release-notes|pipelines\/introduction)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/(generative-ai-app-builder|vertex-ai\/generative-ai)\//.test(p)) {
+      scored.classification = "irrelevant";
+      scored.keep = false;
+    }
+  }
+  if (slug === "vertex-ai-agent-builder") {
+    if (/^\/agent-builder\/(overview|agent-engine\/overview)(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/agent-builder\/(agent-development-kit\/overview|agent-engine\/develop\/overview|release-notes)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/agent-builder\/(authentication|agent-engine\/manage\/access|agent-engine\/agent-identity)(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    }
+  }
+  if (slug === "vertex-ai-vision") {
+    if (/^\/vision-ai\/docs$/.test(p) || /^\/vision-ai\/docs\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/vision-ai\/docs\/(build-app|create-manage-streams|how-to|warehouse-overview)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/vision-ai\/docs\/reference\/python(?:\/|$)/.test(p)) {
+      scored.classification = "python_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    } else if (/^\/vertex-ai\/docs\/general\/access-control(?:\/|$)/.test(p)) {
+      scored.classification = "iam_reference";
+      scored.keep = true;
+      scored.family_forbidden = false;
+    }
+  }
+  if (/^app-engine-(?:standard|flexible)-environment-/.test(slug)) {
+    const env = expectedAppEngineEnvironmentSegment(slug);
+    const pathEnv = p.match(/^\/appengine\/docs\/(standard|flexible)\//)?.[1] || "";
+    const runtimeSegment = p.match(/^\/appengine\/docs\/(?:standard|flexible)\/([^/]+)/)?.[1] || "";
+    if (pathEnv && env && pathEnv === env && runtimeSegment && !["overview", "apis"].includes(runtimeSegment) && !matchesExpectedAppEngineRuntime(slug, runtimeSegment)) {
+      scored.classification = "irrelevant";
+      scored.keep = false;
+    } else if (pathEnv && env && pathEnv === env && matchesExpectedAppEngineRuntime(slug, runtimeSegment)) {
+      if (/\/runtime(?:\/|$)/.test(p)) {
+        scored.classification = "product_root";
+        scored.keep = true;
+      } else if (/\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app|building-app|services\/access|upgrade-[^/]+runtime)(?:\/|$)/.test(p)) {
+        scored.classification = "product_reference";
+        scored.keep = true;
+      }
+    }
+  }
+  if (/^app-engine-flexible-environment-(go|java|net|php|python)$/i.test(slug)) {
+    if (/^\/appengine\/docs\/flexible\/overview(?:\/|$)/.test(p) || (/^\/appengine\/docs\/flexible\/([^/]+)\/runtime(?:\/|$)/.test(p) && matchesExpectedAppEngineRuntime(slug, p.match(/^\/appengine\/docs\/flexible\/([^/]+)\/runtime(?:\/|$)/)?.[1] || ""))) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if ((/^\/appengine\/docs\/flexible\/([^/]+)\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app|customizing-the-python-runtime)(?:\/|$)/.test(p) && matchesExpectedAppEngineRuntime(slug, p.match(/^\/appengine\/docs\/flexible\/([^/]+)\//)?.[1] || ""))) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/flexible\/apis(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (/^app-engine-standard-environment-(go|java|node-js|php|python|ruby)$/i.test(slug)) {
+    if (/^\/appengine\/docs\/standard\/overview(?:\/|$)/.test(p) || (/^\/appengine\/docs\/standard\/([^/]+)\/runtime(?:\/|$)/.test(p) && matchesExpectedAppEngineRuntime(slug, p.match(/^\/appengine\/docs\/standard\/([^/]+)\/runtime(?:\/|$)/)?.[1] || ""))) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if ((/^\/appengine\/docs\/standard\/([^/]+)\/(configuring-your-app-with-app-yaml|specifying-dependencies|release-notes|create-app|building-app|services\/access|upgrade-[^/]+runtime)(?:\/|$)/.test(p) && matchesExpectedAppEngineRuntime(slug, p.match(/^\/appengine\/docs\/standard\/([^/]+)\//)?.[1] || ""))) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/standard\/apis(?:\/|$)/.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "app-engine-flexible-environment-custom-runtimes") {
+    if (/^\/appengine\/docs\/flexible\/custom-runtimes\/about-custom-runtimes(?:\/|$)/.test(p) || /^\/appengine\/docs\/flexible\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/flexible\/custom-runtimes\/(build|configuring-your-app-with-app-yaml|create-app|release-notes)(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/flexible\/(dotnet|go|java|nodejs|php|python|ruby)\//.test(p)) {
+      scored.classification = "supporting_page";
+      scored.keep = false;
+    }
+  }
+  if (slug === "app-engine-admin-api") {
+    if (/^\/appengine\/docs\/admin-api\/overview(?:\/|$)/.test(p)) {
+      scored.classification = "product_root";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/admin-api\/(apis|reference)(?:\/|$)/.test(p) || /^\/appengine\/docs\/admin-api\/reference\/rest(?:\/|$)/.test(p)) {
+      scored.classification = /^\/appengine\/docs\/admin-api\/reference\/rest(?:\/|$)/.test(p) ? "api_reference" : "product_reference";
+      scored.keep = true;
+    } else if (/^\/appengine\/docs\/admin-api\/audit-logging(?:\/|$)/.test(p)) {
+      scored.classification = "product_reference";
       scored.keep = true;
     }
   }
@@ -2103,12 +3312,12 @@ function classifyWithOverrides(candidate, productName, profile, hints) {
   }
   return scored;
 }
-function addDerivedParents(candidates) { const map = new Map(candidates.map((c) => [c.url, c])); for (const candidate of candidates) { const p = pathnameFor(candidate.url); const host = hostnameFor(candidate.url) || "docs.cloud.google.com"; const urls = []; const py = p.match(/^\/python\/docs\/reference\/([^/]+)\/latest\/.+/); if (py) urls.push(`https://${host}/python/docs/reference/${py[1]}/latest`); const pyAlt = p.match(/^\/python\/([^/]+)\/latest\/.+/); if (pyAlt) urls.push(`https://${host}/python/${pyAlt[1]}/latest`); const ja = p.match(/^\/java\/docs\/reference\/([^/]+)\/latest\/.+/); if (ja) urls.push(`https://${host}/java/docs/reference/${ja[1]}/latest/overview`); const rest = p.match(/^\/([^/]+)\/docs\/reference\/rest\/.+/); if (rest) urls.push(`https://docs.cloud.google.com/${rest[1]}/docs/reference/rest`); const sub = p.match(/^\/([^/]+)\/docs\/reference\/[^/]+\/rest$/); if (sub) urls.push(`https://docs.cloud.google.com/${sub[1]}/docs/reference`); const workbenchRpc = p.match(/^\/vertex-ai\/docs\/workbench\/reference\/rpc\/.+/); if (workbenchRpc) urls.push(`https://${host}/vertex-ai/docs/workbench/reference`); const sqlAdmin = p.match(/^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api\/rest(?:\/.+)?$/); if (sqlAdmin) { urls.push(`https://${host}/sql/docs/${sqlAdmin[1]}`); urls.push(`https://${host}/sql/docs/${sqlAdmin[1]}/apis`); urls.push(`https://${host}/sql/docs/${sqlAdmin[1]}/admin-api`); } const memorystoreRest = p.match(/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/reference\/rest(?:\/.+)?$/); if (memorystoreRest) { urls.push(`https://${host}/memorystore/docs/${memorystoreRest[1]}`); urls.push(`https://${host}/memorystore/docs/${memorystoreRest[1]}/apis`); } const networkApis = p.match(/^\/network-connectivity\/docs\/(interconnect|vpn)\/apis$/); if (networkApis) { urls.push(`https://${host}/network-connectivity/docs/${networkApis[1]}`); urls.push(`https://${host}/network-connectivity/docs/${networkApis[1]}/concepts/overview`); } const networkRouterApis = p.match(/^\/network-connectivity\/docs\/router\/reference\/apis$/); if (networkRouterApis) { urls.push(`https://${host}/network-connectivity/docs/router`); urls.push(`https://${host}/network-connectivity/docs/router/concepts/overview`); } if (/^\/domains\/docs\/(apis|reference\/rest|access-control)$/.test(p)) urls.push(`https://${host}/domains/docs`); if (/^\/marketplace\/docs\/partners\/commerce-procurement-api\/reference\/rest$/.test(p)) urls.push(`https://${host}/marketplace/docs/partners`); const workspaceRest = p.match(/^\/workspace\/([^/]+)\/api\/reference\/rest(?:\/[^/]+)?$/); if (workspaceRest) { urls.push(`https://developers.google.com/workspace/${workspaceRest[1]}/api/reference`); urls.push(`https://developers.google.com/workspace/${workspaceRest[1]}/api`); urls.push(`https://developers.google.com/workspace/${workspaceRest[1]}/api/guides/overview`); } const workspaceV3 = p.match(/^\/workspace\/([^/]+)\/api\/v3\/reference(?:\/[^/]+)?$/); if (workspaceV3) { urls.push(`https://developers.google.com/workspace/${workspaceV3[1]}/api/v3/reference`); urls.push(`https://developers.google.com/workspace/${workspaceV3[1]}/api`); urls.push(`https://developers.google.com/workspace/${workspaceV3[1]}/api/guides/overview`); } if (/^\/workspace\/events\/reference\/rest\/v1$/.test(p)) { urls.push("https://developers.google.com/workspace/events"); urls.push("https://developers.google.com/workspace/events/guides/auth"); urls.push("https://developers.google.com/workspace/events/guides/libraries"); } if (/^\/workspace\/add-ons\/reference$/.test(p)) { urls.push("https://developers.google.com/workspace/add-ons"); urls.push("https://developers.google.com/workspace/add-ons/overview"); } const workspaceMarketplaceRest = p.match(/^\/workspace\/marketplace\/reference\/rest(?:\/[^/]+)?$/); if (workspaceMarketplaceRest) { urls.push("https://developers.google.com/workspace/marketplace/overview"); urls.push("https://developers.google.com/workspace/marketplace"); } const adminRest = p.match(/^\/admin-sdk\/([^/]+)\/reference\/rest(?:\/[^/]+)?$/); if (adminRest) { urls.push(`https://developers.google.com/admin-sdk/reference-overview`); urls.push(`https://developers.google.com/admin-sdk/overview`); } const adminGuides = p.match(/^\/admin-sdk\/([^/]+)\/v1\/guides(?:\/.+)?$/); if (adminGuides) urls.push(`https://developers.google.com/admin-sdk/overview`); const gamesApi = p.match(/^\/games\/services\/(publishing\/api|web\/api\/rest)$/); if (gamesApi) { urls.push(`https://developers.google.com/games/services`); urls.push(`https://developers.google.com/games/services/reference`); } const mapsRest = p.match(/^\/maps\/documentation\/([^/]+)\/reference\/rest$/); if (mapsRest) { urls.push(`https://developers.google.com/maps/documentation/${mapsRest[1]}`); urls.push(`https://developers.google.com/maps/documentation/${mapsRest[1]}/overview`); } const mapsMobile = p.match(/^\/maps\/documentation\/([^/]+)\/(android-sdk|ios-sdk)(?:\/.+)?$/); if (mapsMobile) { urls.push(`https://developers.google.com/maps/documentation/${mapsMobile[1]}/${mapsMobile[2]}`); urls.push(`https://developers.google.com/maps/documentation/${mapsMobile[1]}/${mapsMobile[2]}/overview`); urls.push(`https://developers.google.com/maps/documentation/${mapsMobile[1]}/${mapsMobile[2]}/reference`); } const earthEngineLibrary = p.match(/^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)\/.+/); if (earthEngineLibrary) urls.push(`https://developers.google.com/earth-engine/docs/${earthEngineLibrary[1]}`); if (/^\/earth-engine\/apidocs\/.+/.test(p)) { urls.push(`https://developers.google.com/earth-engine/apidocs`); urls.push(`https://developers.google.com/earth-engine/guides`); } if (/^\/earth-engine\/datasets\//.test(p)) urls.push(`https://developers.google.com/earth-engine/docs/data-catalog`); if (/^\/container-optimized-os\/docs\/.+/.test(p)) urls.push(`https://${host}/container-optimized-os/docs`); if (/^\/vision\/product-search\/docs\/.+/.test(p)) urls.push(`https://${host}/vision/product-search/docs`); if (/^\/chronicle\/docs\/soar\/marketplace-integrations\/.+/.test(p)) urls.push(`https://${host}/chronicle/docs/soar/marketplace-integrations`); if (/^\/chronicle\/docs\/(?:secops|onboard|reports|administration)\/.+/.test(p)) { const root = p.split("/").slice(0, 4).join("/"); urls.push(`https://${host}${root}`); } const appEngineRuntime = p.match(/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/(runtime|create-app|configuring-your-app-with-app-yaml|building-app|services\/access|specifying-dependencies|upgrade-[^/]+)$/); if (appEngineRuntime) { urls.push(`https://${host}/appengine/docs/${appEngineRuntime[1]}/overview`); urls.push(`https://${host}/appengine/docs/${appEngineRuntime[1]}/apis`); } const appEngineLegacyJava = p.match(/^\/appengine\/docs\/legacy\/standard\/java\/javadoc\//); if (appEngineLegacyJava) urls.push(`https://${host}/appengine/docs/legacy/standard/java`); const multicloudRest = p.match(/^\/kubernetes-engine\/multi-cloud\/docs\/reference\/rest\/.+/); if (multicloudRest) urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/reference/rest`); const multicloudFamily = p.match(/^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/.+/); if (multicloudFamily) { urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/${multicloudFamily[1]}`); urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/${multicloudFamily[1]}/apis`); urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/reference/rest`); } if (/^\/agent-builder\/agent-engine\/(manage\/access|agent-identity|set-up|memory-bank\/iam-conditions)$/.test(p)) { urls.push(`https://${host}/agent-builder/overview`); urls.push(`https://${host}/agent-builder/agent-engine/overview`); } if (/^\/vertex-ai\/docs\/reference\/rest\/v1(?:beta1)?\/projects\.locations\.reasoningEngines/.test(p)) urls.push(`https://${host}/vertex-ai/docs/reference/rest`); if (/^\/apigee\/docs\/reference\/apis\/apigee\/rest\/v1\/organizations\.analytics/.test(p)) urls.push(`https://${host}/apigee/docs/api-platform/analytics/analytics-reference`); if (/^\/product-registry\/overview$/.test(p)) { urls.push(`https://${host}/product-registry`); urls.push(`https://${host}/product-registry/reference/cloudproductregistry-api/rest`); } if (/^\/product-registry\/reference\/cloudproductregistry-api\/rest(?:\/.+)?$/.test(p)) { urls.push(`https://${host}/product-registry`); urls.push(`https://${host}/product-registry/overview`); urls.push(`https://${host}/product-registry/reference/cloudproductregistry-api/rest`); } if (/^\/contact-center\/insights\/docs\/reference\/rest(?:\/.+)?$/.test(p)) { urls.push(`https://${host}/contact-center/insights/docs`); urls.push(`https://${host}/contact-center/ccai-platform/docs/conversational-insights`); } for (const url of urls.map(normalizeUrl)) if (!map.has(url)) map.set(url, { ...candidate, url }); } return [...map.values()]; }
+ function addDerivedParents(candidates) { const map = new Map(candidates.map((c) => [c.url, c])); for (const candidate of candidates) { const p = pathnameFor(candidate.url); const host = hostnameFor(candidate.url) || "docs.cloud.google.com"; const urls = []; const py = p.match(/^\/python\/docs\/reference\/([^/]+)\/latest\/.+/); if (py) urls.push(`https://${host}/python/docs/reference/${py[1]}/latest`); const pyAlt = p.match(/^\/python\/([^/]+)\/latest\/.+/); if (pyAlt) urls.push(`https://${host}/python/${pyAlt[1]}/latest`); const ja = p.match(/^\/java\/docs\/reference\/([^/]+)\/latest\/.+/); if (ja) urls.push(`https://${host}/java/docs/reference/${ja[1]}/latest/overview`); const rest = p.match(/^\/([^/]+)\/docs\/reference\/rest\/.+/); if (rest) urls.push(`https://docs.cloud.google.com/${rest[1]}/docs/reference/rest`); const sub = p.match(/^\/([^/]+)\/docs\/reference\/[^/]+\/rest$/); if (sub) urls.push(`https://docs.cloud.google.com/${sub[1]}/docs/reference`); const workbenchRpc = p.match(/^\/vertex-ai\/docs\/workbench\/reference\/rpc\/.+/); if (workbenchRpc) urls.push(`https://${host}/vertex-ai/docs/workbench/reference`); const sqlAdmin = p.match(/^\/sql\/docs\/(mysql|postgres|sqlserver)\/admin-api\/rest(?:\/.+)?$/); if (sqlAdmin) { urls.push(`https://${host}/sql/docs/${sqlAdmin[1]}`); urls.push(`https://${host}/sql/docs/${sqlAdmin[1]}/apis`); urls.push(`https://${host}/sql/docs/${sqlAdmin[1]}/admin-api`); } const memorystoreRest = p.match(/^\/memorystore\/docs\/(redis|memcached|valkey|cluster)\/reference\/rest(?:\/.+)?$/); if (memorystoreRest) { urls.push(`https://${host}/memorystore/docs/${memorystoreRest[1]}`); urls.push(`https://${host}/memorystore/docs/${memorystoreRest[1]}/apis`); } const networkApis = p.match(/^\/network-connectivity\/docs\/(interconnect|vpn)\/apis$/); if (networkApis) { urls.push(`https://${host}/network-connectivity/docs/${networkApis[1]}`); urls.push(`https://${host}/network-connectivity/docs/${networkApis[1]}/concepts/overview`); } const networkRouterApis = p.match(/^\/network-connectivity\/docs\/router\/reference\/apis$/); if (networkRouterApis) { urls.push(`https://${host}/network-connectivity/docs/router`); urls.push(`https://${host}/network-connectivity/docs/router/concepts/overview`); } if (/^\/domains\/docs\/(apis|reference\/rest|access-control)$/.test(p)) urls.push(`https://${host}/domains/docs`); if (/^\/marketplace\/docs\/partners\/commerce-procurement-api\/reference\/rest$/.test(p)) urls.push(`https://${host}/marketplace/docs/partners`); const workspaceRest = p.match(/^\/workspace\/([^/]+)\/api\/reference\/rest(?:\/[^/]+)?$/); if (workspaceRest) { urls.push(`https://developers.google.com/workspace/${workspaceRest[1]}/api/reference`); urls.push(`https://developers.google.com/workspace/${workspaceRest[1]}/api`); urls.push(`https://developers.google.com/workspace/${workspaceRest[1]}/api/guides/overview`); } const workspaceV3 = p.match(/^\/workspace\/([^/]+)\/api\/v3\/reference(?:\/[^/]+)?$/); if (workspaceV3) { urls.push(`https://developers.google.com/workspace/${workspaceV3[1]}/api/v3/reference`); urls.push(`https://developers.google.com/workspace/${workspaceV3[1]}/api`); urls.push(`https://developers.google.com/workspace/${workspaceV3[1]}/api/guides/overview`); } if (/^\/workspace\/chat\/api\/reference(?:\/rest(?:\/|$)|$)/.test(p)) { urls.push("https://developers.google.com/workspace/chat/api/reference"); urls.push("https://developers.google.com/workspace/chat/api/reference/rest"); urls.push("https://developers.google.com/workspace/chat/authenticate-authorize"); } if (/^\/workspace\/events\/reference\/rest\/v1$/.test(p)) { urls.push("https://developers.google.com/workspace/events"); urls.push("https://developers.google.com/workspace/events/guides/auth"); urls.push("https://developers.google.com/workspace/events/guides/libraries"); } if (/^\/workspace\/add-ons\/reference$/.test(p)) { urls.push("https://developers.google.com/workspace/add-ons"); urls.push("https://developers.google.com/workspace/add-ons/overview"); } const workspaceMarketplaceRest = p.match(/^\/workspace\/marketplace\/reference\/rest(?:\/[^/]+)?$/); if (workspaceMarketplaceRest) { urls.push("https://developers.google.com/workspace/marketplace/overview"); urls.push("https://developers.google.com/workspace/marketplace"); } const adminRest = p.match(/^\/admin-sdk\/([^/]+)\/reference\/rest(?:\/[^/]+)?$/); if (adminRest) { urls.push(`https://developers.google.com/admin-sdk/reference-overview`); urls.push(`https://developers.google.com/admin-sdk/overview`); } const adminGuides = p.match(/^\/admin-sdk\/([^/]+)\/v1\/guides(?:\/.+)?$/); if (adminGuides) urls.push(`https://developers.google.com/admin-sdk/overview`); const gamesApi = p.match(/^\/games\/services\/(publishing\/api|web\/api\/rest)$/); if (gamesApi) { urls.push(`https://developers.google.com/games/services`); urls.push(`https://developers.google.com/games/services/reference`); } const mapsRest = p.match(/^\/maps\/documentation\/([^/]+)\/reference\/rest$/); if (mapsRest) { urls.push(`https://developers.google.com/maps/documentation/${mapsRest[1]}`); urls.push(`https://developers.google.com/maps/documentation/${mapsRest[1]}/overview`); } const mapsMobile = p.match(/^\/maps\/documentation\/([^/]+)\/(android-sdk|ios-sdk)(?:\/.+)?$/); if (mapsMobile) { urls.push(`https://developers.google.com/maps/documentation/${mapsMobile[1]}/${mapsMobile[2]}`); urls.push(`https://developers.google.com/maps/documentation/${mapsMobile[1]}/${mapsMobile[2]}/overview`); urls.push(`https://developers.google.com/maps/documentation/${mapsMobile[1]}/${mapsMobile[2]}/reference`); } const earthEngineLibrary = p.match(/^\/earth-engine\/docs\/(data-catalog|js-client-lib|python-client-lib)\/.+/); if (earthEngineLibrary) urls.push(`https://developers.google.com/earth-engine/docs/${earthEngineLibrary[1]}`); if (/^\/earth-engine\/apidocs\/.+/.test(p)) { urls.push(`https://developers.google.com/earth-engine/apidocs`); urls.push(`https://developers.google.com/earth-engine/guides`); } if (/^\/earth-engine\/datasets\//.test(p)) urls.push(`https://developers.google.com/earth-engine/docs/data-catalog`); if (/^\/container-optimized-os\/docs\/.+/.test(p)) urls.push(`https://${host}/container-optimized-os/docs`); if (/^\/vision\/product-search\/docs\/.+/.test(p)) urls.push(`https://${host}/vision/product-search/docs`); if (/^\/chronicle\/docs\/soar\/marketplace-integrations\/.+/.test(p)) urls.push(`https://${host}/chronicle/docs/soar/marketplace-integrations`); if (/^\/chronicle\/docs\/(?:secops|onboard|reports|administration)\/.+/.test(p)) { const root = p.split("/").slice(0, 4).join("/"); urls.push(`https://${host}${root}`); } const appEngineRuntime = p.match(/^\/appengine\/docs\/(standard|flexible)\/[^/]+\/(runtime|create-app|configuring-your-app-with-app-yaml|building-app|services\/access|specifying-dependencies|upgrade-[^/]+)$/); if (appEngineRuntime) { urls.push(`https://${host}/appengine/docs/${appEngineRuntime[1]}/overview`); urls.push(`https://${host}/appengine/docs/${appEngineRuntime[1]}/apis`); } const appEngineLegacyJava = p.match(/^\/appengine\/docs\/legacy\/standard\/java\/javadoc\//); if (appEngineLegacyJava) urls.push(`https://${host}/appengine/docs/legacy/standard/java`); if (/^\/run\/docs\/reference\/cloud-run-admin-api-overview(?:\/|$)/.test(p) || /^\/run\/docs\/securing\/managing-access(?:\/|$)/.test(p)) { urls.push(`https://${host}/run/docs`); urls.push(`https://${host}/run/docs/apis`); } const multicloudRest = p.match(/^\/kubernetes-engine\/multi-cloud\/docs\/reference\/rest\/.+/); if (multicloudRest) urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/reference/rest`); const multicloudFamily = p.match(/^\/kubernetes-engine\/multi-cloud\/docs\/(aws|azure)\/.+/); if (multicloudFamily) { urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/${multicloudFamily[1]}`); urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/${multicloudFamily[1]}/apis`); urls.push(`https://${host}/kubernetes-engine/multi-cloud/docs/reference/rest`); } if (/^\/kubernetes-engine\/enterprise\/docs(?:\/.+)?/.test(p)) { urls.push(`https://${host}/kubernetes-engine/enterprise/docs`); urls.push(`https://${host}/kubernetes-engine/enterprise/docs/version-and-upgrade-support`); urls.push(`https://${host}/kubernetes-engine/enterprise/docs/concepts/roles-tasks`); } if (/^\/agent-builder\/agent-engine\/(manage\/access|agent-identity|set-up|memory-bank\/iam-conditions)$/.test(p)) { urls.push(`https://${host}/agent-builder/overview`); urls.push(`https://${host}/agent-builder/agent-engine/overview`); } if (/^\/vertex-ai\/docs\/reference\/rest\/v1(?:beta1)?\/projects\.locations\.reasoningEngines/.test(p)) urls.push(`https://${host}/vertex-ai/docs/reference/rest`); if (/^\/apigee\/docs\/reference\/apis\/apigee\/rest\/v1\/organizations\.analytics/.test(p)) urls.push(`https://${host}/apigee/docs/api-platform/analytics/analytics-reference`); if (/^\/product-registry\/overview$/.test(p)) { urls.push(`https://${host}/product-registry`); urls.push(`https://${host}/product-registry/reference/cloudproductregistry-api/rest`); } if (/^\/product-registry\/reference\/cloudproductregistry-api\/rest(?:\/.+)?$/.test(p)) { urls.push(`https://${host}/product-registry`); urls.push(`https://${host}/product-registry/overview`); urls.push(`https://${host}/product-registry/reference/cloudproductregistry-api/rest`); } if (/^\/contact-center\/insights\/docs\/reference\/rest(?:\/.+)?$/.test(p)) { urls.push(`https://${host}/contact-center/insights/docs`); urls.push(`https://${host}/contact-center/ccai-platform/docs/conversational-insights`); } for (const url of urls.map(normalizeUrl)) if (!map.has(url)) map.set(url, { ...candidate, url }); } return [...map.values()]; }
 async function runBxSearch(query) { let last = null; for (let attempt = 1; attempt <= bxMaxAttempts; attempt += 1) { try { const { stdout } = await execFileAsync("bx", ["web", query, "--count", String(searchCount)], { windowsHide: true, maxBuffer: 1024 * 1024 * 64, timeout: bxRequestTimeoutMs }); return JSON.parse(stdout.trim() || "{}"); } catch (error) { last = error; if (attempt < bxMaxAttempts) await sleep(bxRetryDelayMs * attempt); } } throw last; }
 async function mapWithConcurrency(items, concurrency, worker) { let next = 0; async function runner() { while (next < items.length) { const i = next; next += 1; await worker(items[i], i); } } await Promise.all(Array.from({ length: Math.max(1, Math.min(concurrency, items.length || 1)) }, () => runner())); }
-async function discoverProduct(productName, productSlug) {
+async function discoverProduct(productName, productSlug, coverage = null) {
   const profile = buildProfile(productName, productSlug, buildSearchTerms(productName, productSlug));
-  const queryFamilies = buildDynamicQueryFamilies(productName, productSlug);
+  const queryFamilies = buildDynamicQueryFamilies(productName, productSlug, coverage);
   const jobs = [];
   for (let roundIndex = 0; roundIndex < rounds; roundIndex += 1) for (const [intent, variants] of queryFamilies) jobs.push({ round: roundIndex + 1, intent, query: variants[roundIndex % variants.length](productName) });
   const searchRuns = [];
@@ -2134,12 +3343,41 @@ async function discoverProduct(productName, productSlug) {
   });
   const preliminary = addDerivedParents([...candidateMap.values()]).filter((c) => !/codelabs\.developers\.google\.com/.test(c.url)).map((c) => ({ ...c, consistency_score: Math.round((c.round_hits.length / rounds) * 100) }));
   const hints = inferHints(preliminary, profile);
-  const candidates = preliminary.map((c) => ({ ...c, product_fit_score: affinityScore(c, profile, hints), deterministic_score: deterministicScore(c, productName, profile, hints) })).sort((a, b) => b.deterministic_score - a.deterministic_score || b.product_fit_score - a.product_fit_score || b.consistency_score - a.consistency_score || a.url.localeCompare(b.url));
+  const candidates = preliminary.map((c) => ({ ...c, product_fit_score: affinityScore(c, profile, hints), feature_coverage: featureCoverageScore(c, coverage), deterministic_score: deterministicScore(c, productName, profile, hints, coverage) })).sort((a, b) => b.deterministic_score - a.deterministic_score || b.product_fit_score - a.product_fit_score || b.consistency_score - a.consistency_score || a.url.localeCompare(b.url));
   return { profile, hints, candidates, searchRuns: searchRuns.sort((a, b) => a.round - b.round || a.intent.localeCompare(b.intent)) };
 }
-function applyKeepBudget(scored) { const budgets = new Map([["product_root", 2], ["product_reference", 1], ["api_reference", 2], ["iam_reference", 2], ["python_reference", 1], ["java_reference", 1], ["supporting_page", 1]]); const usage = new Map(); let kept = 0; return scored.map((item) => { const cls = item.api_score.classification; const pathText = pathnameFor(item.url); const familyScore = Number(item.api_score.family_score || 0); const supportingAllowed = cls !== "supporting_page" || (item.final_score >= 90 && /\/docs\/(about-[^/]+|architecture-overview|developer-overview|concepts)$/.test(pathText) && !/\/(python|java)\/docs\/reference\//.test(pathText) && !/\/reference\/rest\/.+/.test(pathText)); const canKeep = item.keep && familyScore >= 0 && supportingAllowed && kept < maxKeptTotal && (usage.get(cls) || 0) < (budgets.get(cls) || 0); if (canKeep) { kept += 1; usage.set(cls, (usage.get(cls) || 0) + 1); } return { ...item, keep: canKeep }; }); }
-function buildMarkdown(productName, items) { const lines = [`# ${productName} Step 03 URL Ranking`, "", "This file lists the official Google documentation URLs selected and scored for this product.", "", "| Final score | Keep | Classification | URL | Query coverage | Rationale |", "| ---: | --- | --- | --- | ---: | --- |"];
-  for (const item of items) lines.push(`| ${item.final_score} | ${item.keep ? "yes" : "no"} | ${item.api_score.classification} | ${item.url.replace(/\|/g, "\\|")} | ${item.query_hits.length} | ${String(item.api_score.rationale || "").replace(/\|/g, "\\|")} |`);
+function applyKeepBudget(scored, coverage = null) {
+  const mediumFeatureInventory = Number(coverage?.feature_count || 0) >= 40;
+  const highFeatureInventory = Number(coverage?.feature_count || 0) >= 80;
+  const veryHighFeatureInventory = Number(coverage?.feature_count || 0) >= 250;
+  const keepLimit = Math.max(maxKeptTotal, highFeatureInventory ? 12 : 10, veryHighFeatureInventory ? 16 : 0);
+  const budgets = new Map([
+    ["product_root", veryHighFeatureInventory ? 4 : highFeatureInventory ? 3 : 2],
+    ["product_reference", veryHighFeatureInventory ? 5 : highFeatureInventory ? 4 : mediumFeatureInventory ? 2 : 1],
+    ["api_reference", highFeatureInventory ? 3 : 2],
+    ["iam_reference", 2],
+    ["python_reference", coverage?.inventory_profile === "api_heavy" ? 2 : 1],
+    ["java_reference", coverage?.inventory_profile === "api_heavy" ? 2 : 1],
+    ["supporting_page", highFeatureInventory ? 3 : 1],
+  ]);
+  const usage = new Map();
+  let kept = 0;
+  return scored.map((item) => {
+    const cls = item.api_score.classification;
+    const pathText = pathnameFor(item.url);
+    const familyScore = Number(item.api_score.family_score || 0);
+    const supportingAllowed = cls !== "supporting_page" || (item.final_score >= 90 && /\/docs\/(about-[^/]+|architecture-overview|developer-overview|concepts|features|configuration|manage|queries|models|clusters|pipelines|security|governance)$/.test(pathText) && !/\/(python|java)\/docs\/reference\//.test(pathText) && !/\/reference\/rest\/.+/.test(pathText));
+    const featureAligned = (item.api_score.matched_feature_phrases || []).length > 0 || (item.api_score.matched_feature_tokens || []).length >= 2;
+    const canKeep = item.keep && familyScore >= 0 && supportingAllowed && kept < keepLimit && (((usage.get(cls) || 0) < (budgets.get(cls) || 0)) || (featureAligned && cls === "supporting_page" && (usage.get(cls) || 0) < ((budgets.get(cls) || 0) + 1)));
+    if (canKeep) {
+      kept += 1;
+      usage.set(cls, (usage.get(cls) || 0) + 1);
+    }
+    return { ...item, keep: canKeep };
+  });
+}
+function buildMarkdown(productName, items, coverage = null) { const lines = [`# ${productName} Step 03 URL Ranking`, "", "This file lists the official Google documentation URLs selected and scored for this product.", coverage ? `Step 2 feature inventory: ${coverage.feature_count} features, profile: ${coverage.inventory_profile.replace(/_/g, " ")}.` : "", "", "| Final score | Keep | Classification | URL | Query coverage | Feature overlap | Rationale |", "| ---: | --- | --- | --- | ---: | --- | --- |"];
+  for (const item of items) lines.push(`| ${item.final_score} | ${item.keep ? "yes" : "no"} | ${item.api_score.classification} | ${item.url.replace(/\|/g, "\\|")} | ${item.query_hits.length} | ${(item.api_score.matched_feature_phrases || []).slice(0, 2).join(", ").replace(/\|/g, "\\|")} | ${String(item.api_score.rationale || "").replace(/\|/g, "\\|")} |`);
   return `${lines.join("\n")}\n`;
 }
 async function fileExists(filePath) { try { await access(filePath); return true; } catch { return false; } }
@@ -2150,7 +3388,7 @@ async function resolveInputProductsDir() {
 }
 const readJson = async (filePath) => JSON.parse(await readFile(filePath, "utf8"));
 const writeJson = async (filePath, value) => writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
-function buildIndexEntryFromRanking(ranking, productDir) { const scored = Array.isArray(ranking.scored_urls) ? ranking.scored_urls : []; const kept = scored.filter((x) => x.keep); const classes = new Set(kept.map((x) => x.api_score?.classification || "")); return { product_name: ranking.product_name, product_slug: ranking.product_slug, ranked_url_count: scored.length, kept_url_count: kept.length, has_product_root: classes.has("product_root"), has_product_reference: classes.has("product_reference") || classes.has("api_reference") || classes.has("python_reference") || classes.has("java_reference"), has_iam_doc: classes.has("iam_reference"), top_urls: kept.slice(0, 10).map((x) => ({ url: x.url, final_score: x.final_score, classification: x.api_score?.classification || "" })), output_path: path.relative(process.cwd(), path.join(productDir, "ranking.json")).replace(/\\/g, "/") }; }
+function buildIndexEntryFromRanking(ranking, productDir) { const scored = Array.isArray(ranking.scored_urls) ? ranking.scored_urls : []; const kept = scored.filter((x) => x.keep); const classes = new Set(kept.map((x) => x.api_score?.classification || "")); return { product_name: ranking.product_name, product_slug: ranking.product_slug, feature_count: Number(ranking.step02_feature_inventory?.feature_count || 0), ranked_url_count: scored.length, kept_url_count: kept.length, has_product_root: classes.has("product_root"), has_product_reference: classes.has("product_reference") || classes.has("api_reference") || classes.has("python_reference") || classes.has("java_reference"), has_iam_doc: classes.has("iam_reference"), top_urls: kept.slice(0, 10).map((x) => ({ url: x.url, final_score: x.final_score, classification: x.api_score?.classification || "", matched_feature_phrases: x.api_score?.matched_feature_phrases || [] })), output_path: path.relative(process.cwd(), path.join(productDir, "ranking.json")).replace(/\\/g, "/") }; }
 async function readSupplementalProducts() {
   if (!await fileExists(supplementalProductsFile)) return [];
   return (await readFile(supplementalProductsFile, "utf8"))
@@ -2168,8 +3406,10 @@ async function main() {
   const step02Products = await Promise.all(productFiles.map(async (fileName) => {
     const product_slug = fileName.replace(/\.md$/, "");
     const step02Path = path.join(resolvedInputProductsDir, fileName);
-    const product_name = parseProductMarkdown(await readFile(step02Path, "utf8"));
-    return { product_name, product_slug, step02_source_path: step02Path };
+    const step02Markdown = await readFile(step02Path, "utf8");
+    const parsed = parseStep02Markdown(step02Markdown, product_slug);
+    const product_name = parseProductMarkdown(step02Markdown);
+    return { product_name, product_slug, step02_source_path: step02Path, step02_inventory: buildFeatureCoverageContext(parsed) };
   }));
   const canonicalStep02Products = step02Products.filter((item) => !(item.product_slug === "index" && /step 02 product feature markdown/i.test(item.product_name)));
   const mergedProducts = [...canonicalStep02Products];
@@ -2196,17 +3436,18 @@ async function main() {
       const existing = await readJson(rankingPath).catch(() => null);
       if (existing?.product_slug === productSlug) { indexProducts.push(buildIndexEntryFromRanking(existing, productDir)); continue; }
     }
-    const discovered = await discoverProduct(productName, productSlug);
+    const coverage = product.step02_inventory || null;
+    const discovered = await discoverProduct(productName, productSlug, coverage);
     const top = discovered.candidates.slice(0, maxCandidatesForApi);
     const scoredTop = top.map((candidate) => {
-      const api_score = classifyWithOverrides(candidate, productName, discovered.profile, discovered.hints);
+      const api_score = classifyWithOverrides(candidate, productName, discovered.profile, discovered.hints, coverage);
       return { ...candidate, api_score, product_fit_score: affinityScore(candidate, discovered.profile, discovered.hints), final_score: Math.round((candidate.deterministic_score * 0.85) + (candidate.consistency_score * 0.15)), keep: api_score.keep };
     });
     const tail = discovered.candidates.slice(maxCandidatesForApi).map((candidate) => {
-      const api_score = classifyWithOverrides(candidate, productName, discovered.profile, discovered.hints);
+      const api_score = classifyWithOverrides(candidate, productName, discovered.profile, discovered.hints, coverage);
       return { ...candidate, api_score: { ...api_score, rationale: "Heuristic tail scoring was applied outside the API-ranked set." }, product_fit_score: affinityScore(candidate, discovered.profile, discovered.hints), final_score: Math.round((candidate.deterministic_score * 0.85) + (candidate.consistency_score * 0.15)), keep: api_score.keep };
     });
-    const allScored = applyKeepBudget([...scoredTop, ...tail].sort((a, b) => b.final_score - a.final_score || b.product_fit_score - a.product_fit_score || b.consistency_score - a.consistency_score || a.url.localeCompare(b.url)));
+    const allScored = applyKeepBudget([...scoredTop, ...tail].sort((a, b) => b.final_score - a.final_score || b.product_fit_score - a.product_fit_score || b.consistency_score - a.consistency_score || a.url.localeCompare(b.url)), coverage);
     await writeJson(rankingPath, {
       schema_version: schemaVersion,
       generated_at: new Date().toISOString(),
@@ -2217,6 +3458,7 @@ async function main() {
       search_count: searchCount,
       reprocess_requested: reprocess,
       pi_model: piAvailable ? piModel : "",
+      step02_feature_inventory: coverage,
       dominant_doc_family: discovered.hints.dominantDocFamily,
       dominant_python_slug: discovered.hints.dominantPythonSlug,
       dominant_java_slug: discovered.hints.dominantJavaSlug,
@@ -2224,8 +3466,8 @@ async function main() {
       search_runs: discovered.searchRuns,
       scored_urls: allScored,
     });
-    await writeFile(path.join(productDir, "ranking.md"), buildMarkdown(productName, allScored.slice(0, 25)));
-    indexProducts.push(buildIndexEntryFromRanking({ product_name: productName, product_slug: productSlug, scored_urls: allScored }, productDir));
+    await writeFile(path.join(productDir, "ranking.md"), buildMarkdown(productName, allScored.slice(0, 25), coverage));
+    indexProducts.push(buildIndexEntryFromRanking({ product_name: productName, product_slug: productSlug, scored_urls: allScored, step02_feature_inventory: coverage }, productDir));
   }
   await writeJson(indexFile, {
     schema_version: schemaVersion,

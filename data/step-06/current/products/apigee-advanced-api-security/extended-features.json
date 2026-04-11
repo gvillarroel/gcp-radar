@@ -1,0 +1,2553 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T20:05:29.862Z",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/apigee-advanced-api-security.md",
+    "step04_product_dir": "data/step-04/current/products/apigee-advanced-api-security"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 6,
+    "max_definition_pages": 3
+  },
+  "corpus_page_count": 63,
+  "source_row_count": 47,
+  "feature_count": 59,
+  "covered_feature_count": 12,
+  "features_without_supporting_pages": 47,
+  "features": [
+    {
+      "latest_feature_date": "2026-03-17",
+      "feature_name": "Abuse Detection VPC-SC support",
+      "deprecation_date": "",
+      "feature_summary": "Advanced API Security Abuse Detection now fully supports VPC Service Controls customers, including operation with the Advanced Anomaly Detection model and exclusion list handling.",
+      "keywords": [
+        "VPC Service Controls",
+        "vpc service controls",
+        "VPC-SC integration",
+        "VPC-SC perimeter",
+        "VPC-SC",
+        "exclusion list handling",
+        "Advanced Anomaly Detection model",
+        "Abuse Detection"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "VPC Service Controls support for Apigee Integration is the ability to define a Google Cloud security perimeter around the Apigee Integration service. In the provided release-note excerpt, this VPC Service Controls support is described as a preview feature for Apigee Integration, but no evidence is provided confirming any Abuse Detection–specific VPC-SC behavior.",
+      "evidence_summary": "The cited page confirms preview-level VPC Service Controls support for Apigee Integration, but does not provide evidence for Abuse Detection VPC-SC support, Advanced Anomaly Detection interaction, exclusion list handling, or the March 17, 2026 date.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/integration/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "abuse detection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "70abcd5e1e13b622658bc56416864844db9247496ed464bca908c09018bb6daa",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/integration/release-notes",
+          "title": "Apigee Integration release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-platform_integration_release-notes.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_integration_release-notes.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "vpc service controls",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/integration/release-notes",
+          "title": "Apigee Integration release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_integration_release-notes.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "vpc service controls",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "June 13, 2023 Feature The following preview features are now generally available (GA) : Suspend task JavaScript task Cloud Scheduler trigger VPC service controls for Apigee Integration May 23, 2023 Feature New tasks for Google Cloud services The following new integration tasks are available in preview : AI Platform - Prediction Cloud KMS - encrypt Cloud KMS - decrypt Dataflow - Create Job Drive - List Doc AI - Batch Process Doc AI - Process Doc AI - Operation Firestore - Batch Get Firestore - Batch Write Firestore - Document Get Language - Annotate Text Language - Classify Text Sheets - Append Sheets - Batch Get Sheets - Get Translate - Document Translate - Text Workflows - Execute May 22, 2023 Feature Return task The Return task lets you customize the error messages corresponding to the HTTP response codes that are returned during an integration execution failure.",
+            "Feature Support for VPC Service Controls (Preview) VPC Service Controls lets you define a security perimeter around the Apigee Integration Google Cloud service.",
+            "For more information, see Set up VPC Service Controls for Apigee Integration ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2026-03-10",
+      "feature_name": "Risk Assessment v2 monitoring conditions",
+      "deprecation_date": "",
+      "feature_summary": "Monitoring conditions in Risk Assessment v2 are now generally available.",
+      "keywords": [
+        "monitoring condition setup",
+        "RA v2 monitoring",
+        "RA v2 conditions",
+        "condition configuration",
+        "monitoring conditions",
+        "risk assessment conditions",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "In Apigee Advanced API Security, Risk Assessment v2 monitoring conditions are configurable security monitoring entries in the API Hub Risk assessment area that define what security conditions to evaluate. They can be managed across multiple Apigee organizations and gateways, and can be listed, viewed, and managed by scope (organization, gateway, security profile) via the API Hub console and the securityMonitoringConditions REST API. The operations and dependencies documented for this feature include creating, updating, deleting, and listing conditions, plus viewing condition metrics and integrating with Cloud Monitoring alerts.",
+      "evidence_summary": "The cited pages provide API-level and console guidance for monitoring-condition lifecycle operations and role requirements for Risk Assessment v2 security monitoring conditions in Apigee.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "9f6290d44088156caed162212aa3247b6d1696a61794fcf47f9a33e0d84f1df7",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway",
+          "title": "\"Manage monitoring conditions for multiple Apigee organizations and gateways\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-iam-reference/pages/docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "base_score": 48,
+          "matched_phrases": [
+            {
+              "phrase": "monitoring conditions",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 26
+            },
+            {
+              "phrase": "condition configuration",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e7a6660a43cc1f7e61e54b99864d270962fe601ac71616febdd821e016e8ec89",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+          "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "risk assessment v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway",
+          "title": "\"Manage monitoring conditions for multiple Apigee organizations and gateways\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-iam-reference/pages/docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "base_score": 48,
+          "final_score": 66,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is explicitly about creating, listing, and managing monitoring conditions for Apigee Advanced API Security in API Hub and includes required roles and Cloud Monitoring integration relevant to risk assessment.",
+          "matched_phrases": [
+            {
+              "phrase": "monitoring conditions",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 26
+            },
+            {
+              "phrase": "condition configuration",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Console To view the list of existing monitoring condition configurations, go to the API hub > Risk assessment page and select the Monitoring conditions tab.",
+            "REST To view the list of configured monitoring conditions, make a GET request to the securityMonitoringConditions API. curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB\" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" To view the list of monitoring conditions for a specific gateway, send a GET request as follows: curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB&filter=api hub gateway%3D GATEWAY ID \" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" To view the list of monitoring conditions for a specific security profile, send a GET request as follows: curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB&filter=profile%3D PROFILE ID \" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" To see details on a specific monitoring condition, use the following GET request: curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions/ CONDITION ID ?risk assessment type=API HUB\" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project.",
+            "In addition to the IAM roles and permissions, if you will be managing monitoring conditions and alerts, you must have the additional permissions or follow the steps for managing monitoring conditions and alerts described in Required roles for risk assessment Learn about Cloud Monitoring features and functionality.",
+            "Home Documentation Application development Apigee Guides Send feedback Manage monitoring conditions for multiple Apigee organizations and gateways Stay organized with collections Save and categorize content based on your preferences."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+          "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "base_score": 24,
+          "final_score": 32,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page includes guidance for managing monitoring conditions and security posture over time, supporting the monitoring-conditions concept though it does not explicitly confirm GA status.",
+          "matched_phrases": [
+            {
+              "phrase": "monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "IAM roles and permissions To use Advanced API Security, you must have the following IAM roles and permissions: IAM roles Permissions Description API Security Admin ( roles/apigee.securityAdmin ) apigee.securityProfilesV2.create apigee.securityProfilesV2.delete apigee.securityProfilesV2.update apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to create, update, delete, get, and list security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.create apigee.securityMonitoringConditions.delete apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list apigee.securityMonitoringConditions.update Provides permissions to create, delete, get, list, and update security monitoring conditions.",
+            "To configure and use security monitoring conditions and alerts in Cloud Monitoring: Action(s) Required roles or steps List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin For information about granting IAM roles, see Grant or revoke multiple IAM roles using the Google Cloud console .",
+            "API Security Viewer ( roles/apigee.securityViewer ) apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to get, list, and view security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list Provides permissions to get and list security monitoring conditions.",
+            "To learn about managing security monitoring conditions and alerts, see Manage monitoring conditions for multiple Apigee organizations and gateways ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "risk assessment v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "For example, you can use Terraform to configure: Risk Assessment v2 security profiles Risk Assessment v2 security monitoring conditions Abuse detection exclusion lists Security actions For information on the currently supported functionality, see the Apigee section of the Terraform Registry .",
+            "Risk Assessment Task Required Role(s) Create, update, or delete a custom security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Attach or detach a security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) View security scores Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List all security profiles or get a profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Create, update, or delete a security monitoring condition Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring conditions Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin Required roles and permissions for abuse detection The table below shows the required roles and permissions to perform tasks related to abuse detection ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2026-02-03",
+      "feature_name": "Multiple condition types per security action",
+      "deprecation_date": "",
+      "feature_summary": "A single security action can now include multiple condition types, such as IP addresses and ASN numbers, when configured through the API.",
+      "keywords": [
+        "API-based security action",
+        "multiple condition types",
+        "multi-condition security action",
+        "IP and ASN conditions",
+        "ASN condition",
+        "IP address condition",
+        "security action conditions",
+        "security action"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "A single security action can now include multiple condition types, such as IP addresses and ASN numbers, when configured through the API.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "507009597634ab51cc4ea02acda462bd50ae2b2d018925073caf847357f0f882",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs",
+          "title": "Security reports overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2026-01-12",
+      "feature_name": "Terraform management of Abuse Detection exclusion lists",
+      "deprecation_date": "",
+      "feature_summary": "Terraform support was added to create and manage Abuse Detection exclusion lists for excluding safe CIDR ranges or IP addresses from incident reporting.",
+      "keywords": [
+        "IaC for exclusion lists",
+        "safe CIDR ranges",
+        "manage exclusion lists",
+        "Terraform provider",
+        "Abuse Detection exclusion list",
+        "create exclusion list",
+        "safe IP addresses",
+        "Terraform support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Terraform support was added to create and manage Abuse Detection exclusion lists for excluding safe CIDR ranges or IP addresses from incident reporting.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-12-17",
+      "feature_name": "Risk Assessment V2 custom security profile type field",
+      "deprecation_date": "",
+      "feature_summary": "The API for creating and updating Risk Assessment v2 custom security profiles now accepts an optional risk_assessment_type field to indicate Apigee/Hybrid or API Hub multi-gateway scope.",
+      "keywords": [
+        "profile scope field",
+        "Apigee/Hybrid scope",
+        "update custom profile",
+        "risk_assessment_type field",
+        "create custom profile",
+        "custom profile type",
+        "custom security profile",
+        "risk_assessment_type"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The API for creating and updating Risk Assessment v2 custom security profiles now accepts an optional risk_assessment_type field to indicate Apigee/Hybrid or API Hub multi-gateway scope.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "9f6290d44088156caed162212aa3247b6d1696a61794fcf47f9a33e0d84f1df7",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway",
+          "title": "\"Manage monitoring conditions for multiple Apigee organizations and gateways\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-iam-reference/pages/docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "risk assessment type",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-12-17",
+      "feature_name": "Risk Assessment v2 general availability",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 reached general availability.",
+      "keywords": [
+        "general",
+        "reached",
+        "availability",
+        "assessment",
+        "risk",
+        "v2"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Risk Assessment v2 reached general availability.",
+      "evidence_summary": "Fallback definition because synthesis failed.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/release-notes"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 56,
+          "matched_phrases": [
+            {
+              "phrase": "assessment",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "risk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "e7a6660a43cc1f7e61e54b99864d270962fe601ac71616febdd821e016e8ec89",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+          "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "base_score": 55,
+          "matched_phrases": [
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "assessment",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "risk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "04c9e089f3b73bdaed7f95d7d58763fe96e427309d1d3862f39f0ef7f4097e59",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/release-notes",
+          "title": "Apigee Integrated Portal release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-platform_publish_portal_release-notes.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_publish_portal_release-notes.md",
+          "base_score": 55,
+          "matched_phrases": [
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "availability",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "9f6290d44088156caed162212aa3247b6d1696a61794fcf47f9a33e0d84f1df7",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway",
+          "title": "\"Manage monitoring conditions for multiple Apigee organizations and gateways\\",
+          "source_id": "site-iam-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-iam-reference\\pages\\docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-iam-reference/pages/docs.cloud.google.com_apigee_docs_apihub_manage-monitoring-conditions-multi-gateway.md",
+          "base_score": 42,
+          "matched_phrases": [
+            {
+              "phrase": "assessment",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 26
+            },
+            {
+              "phrase": "risk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 25
+            }
+          ]
+        },
+        {
+          "page_id": "2b5482ac15b2d4e1504bdfe298e8f5a357665a77eb97cc28958b02d4f245c084",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security",
+          "title": "Overview of Advanced API Security \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security.md",
+          "base_score": 40,
+          "matched_phrases": [
+            {
+              "phrase": "assessment",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "risk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "a2daf8f2cd352f22695c72ff1096e26d171f9f3cd0e1e224c10c7682728fcb41",
+          "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+          "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_hybrid_v1.10_cluster-monitoring-guidelines.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_hybrid_v1.10_cluster-monitoring-guidelines.md",
+          "base_score": 35,
+          "matched_phrases": [
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 57
+            },
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "availability",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+          "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "base_score": 55,
+          "final_score": 63,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page documents risk assessment capabilities in Advanced API Security across multiple Apigee organizations/environments/gateways, but it does not state this is Risk Assessment v2 or its general-availability status.",
+          "matched_phrases": [
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "assessment",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "risk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "IAM roles and permissions To use Advanced API Security, you must have the following IAM roles and permissions: IAM roles Permissions Description API Security Admin ( roles/apigee.securityAdmin ) apigee.securityProfilesV2.create apigee.securityProfilesV2.delete apigee.securityProfilesV2.update apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to create, update, delete, get, and list security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.create apigee.securityMonitoringConditions.delete apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list apigee.securityMonitoringConditions.update Provides permissions to create, delete, get, list, and update security monitoring conditions.",
+            "API Security Viewer ( roles/apigee.securityViewer ) apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to get, list, and view security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list Provides permissions to get and list security monitoring conditions.",
+            "Key capabilities Advanced API Security offers the following capabilities when you enable it for your API hub instance: Risk assessment across multiple Apigee organizations, environments, and gateways: assess the security scores for a specific API or for all APIs across all of its deployments in multiple Apigee organizations, environments, and gateways to get a comprehensive understanding of its risk profile.",
+            "Leveraging API hub's plugins and curation capabilities, Advanced API Security offers an unified view that lets you monitor risks, compare configurations, and ensure consistent security standards across your entire API ecosystem."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 56,
+          "final_score": 52,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page confirms the presence of risk assessment operations in Advanced API Security but does not mention v2 or any general-availability milestone.",
+          "matched_phrases": [
+            {
+              "phrase": "assessment",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "risk",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "For example, you can use Terraform to configure: Risk Assessment v2 security profiles Risk Assessment v2 security monitoring conditions Abuse detection exclusion lists Security actions For information on the currently supported functionality, see the Apigee section of the Terraform Registry .",
+            "Risk Assessment Task Required Role(s) Create, update, or delete a custom security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Attach or detach a security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) View security scores Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List all security profiles or get a profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Create, update, or delete a security monitoring condition Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring conditions Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin Required roles and permissions for abuse detection The table below shows the required roles and permissions to perform tasks related to abuse detection .",
+            "Security Report Task Required Role(s) Enable or disable Advanced API Security Apigee Organization Admin ( roles/apigee.admin ) Create reports Apigee Organization Admin ( roles/apigee.admin ) Apigee Security Admin ( roles/apigee.securityAdmin ) View reports Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Security Admin ( roles/apigee.securityAdmin ) Required roles for risk assessment The table below shows the required roles to perform tasks related to risk assessment .",
+            "Next steps Once you have enabled Advanced API Security, see: Security reports Risk assessment Abuse detection Security alerts Security actions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/release-notes",
+          "title": "Apigee Integrated Portal release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_publish_portal_release-notes.md",
+          "base_score": 55,
+          "final_score": 51,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "general",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "availability",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Feature This release includes the general availability (GA) of integrated portal APIs which allow you to manage your integrated portal APIs and reference documentation using API calls.",
+            "Feature This release includes general improvements to performance and availability.",
+            "Feature This release includes general improvements to performance and availability.",
+            "Feature This release includes general improvements to performance and availability."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-17",
+      "feature_name": "Risk Assessment v2 SanitizeModelResponse policy support",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 now supports the SanitizeModelResponse policy in assessments.",
+      "keywords": [
+        "SanitizeModelResponse policy",
+        "SanitizeModelResponse",
+        "SMR policy",
+        "policy type",
+        "assessment policy",
+        "policy support",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "The feature is support for configuring and using the `SanitizeModelResponse` policy in Apigee, which is shown as attachable to a target endpoint `Response PreFlow` to process LLM responses after model-armor handling. The policy is configured via attributes such as `TemplateName` and can be enabled or disabled with the `enabled` flag, indicating operational control over model response sanitization behavior. The provided documentation does not explicitly state “Risk Assessment v2,” so that mapping is implied rather than directly confirmed in the excerpt.",
+      "evidence_summary": "The cited Google Cloud page documents how to use, configure, and disable the `SanitizeModelResponse` policy in Apigee Model Armor flows, but does not explicitly name Risk Assessment v2 in the provided text.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "50d0dcb269e29243e9ea11cd29110818d46d6eeb9d6b152de099db23783b7299",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+          "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "sanitizemodelresponse",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "sanitizemodelresponse policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+          "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "base_score": 32,
+          "final_score": 40,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page discusses using Model Armor policies to sanitize model responses from LLMs, but does not mention Risk Assessment v2 or how the policies apply specifically to assessments.",
+          "matched_phrases": [
+            {
+              "phrase": "sanitizemodelresponse",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 9
+            },
+            {
+              "phrase": "sanitizemodelresponse policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "The following example shows how to use the {system.region.name} variable in the TemplateName attribute of the SanitizeModelResponse policy.",
+            "The SanitizeModelResponse policy is attached with the default target endpoint Response PreFlow .",
+            "This region name can be used to identify the correct Model Armor template to use for that instance For example: <SanitizeModelResponse async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/ {system.region.name} /templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> Model Armor response processing You can add additional processing logic after the Model Armor policy processes the LLM response.",
+            "Disable a Model Armor policy To disable the Model Armor policy, set the enabled attribute to false , as shown in the following example: <SanitizeModelResponse async=\"false\" continueOnError=\"false\" enabled=\"false\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> You can edit policy content in the Google Cloud console."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-17",
+      "feature_name": "Risk Assessment v2 SanitizeUserPrompt policy support",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 now supports the SanitizeUserPrompt policy in assessments.",
+      "keywords": [
+        "SanitizeUserPrompt policy",
+        "SUP policy",
+        "SanitizeUserPrompt",
+        "policy type",
+        "assessment policy",
+        "policy support",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "The SanitizeUserPrompt policy in Apigee’s Model Armor workflow is configured as a proxy policy (shown attached in the default request flow) with XML parameters so user prompt content is sent to Model Armor for processing against a selected template. The page also shows extracting sanitization results from the policy response and using RaiseFault to return a custom Model Armor error response. The provided excerpt does not explicitly state that this is in Risk Assessment v2, so that association is not directly evidenced here.",
+      "evidence_summary": "The cited page provides practical configuration details for the SanitizeUserPrompt policy in Apigee API proxy flows, including attachment location, policy syntax, response field extraction, and fault handling.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "50d0dcb269e29243e9ea11cd29110818d46d6eeb9d6b152de099db23783b7299",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+          "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "base_score": 32,
+          "matched_phrases": [
+            {
+              "phrase": "sanitizeuserprompt",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "sanitizeuserprompt policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+          "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-model-armor-policies.md",
+          "base_score": 32,
+          "final_score": 40,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "It explicitly describes policy-based sanitization of user prompts for LLM traffic, yet it does not explicitly tie this capability to Risk Assessment v2 assessment workflows.",
+          "matched_phrases": [
+            {
+              "phrase": "sanitizeuserprompt",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            },
+            {
+              "phrase": "sanitizeuserprompt policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "To implement this example, add the SanitizeUserPrompt policy to your API proxy request flow.",
+            "The SanitizeUserPrompt policy is attached with the default proxy endpoint RequestPreFlow .",
+            "The following example shows the configuration for the ExtractVariables policy: <ExtractVariables enabled=\"true\" continueOnError=\"false\" async=\"false\" name=\"ExtractFieldFromMaResponse\"> <FaultRules/> <Properties/> <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables> <VariablePrefix>sdp</VariablePrefix> <JSONPayload> <Variable type=\"string\" name=\"info type\"> <JSONPath>$.sanitizationResult.filterResults[1].sdpFilterResult.inspectResult.findings[0].infoType</JSONPath> </Variable> </JSONPayload> <Source>SanitizeUserPrompt.sanitize-response.response.content</Source> </ExtractVariables> Add a Model Armor response error code and error message with the RaiseFault policy You can add Model Armor template metadata to customize the error code and error message that is raised by the Model Armor policy.",
+            "The sample policy shown below uses all default parameters: <SanitizeUserPrompt async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> </SanitizeUserPrompt> When you call your API proxy, the input from the prompt is automatically extracted and passed on to Model Armor and processed according to the parameters of your Model Armor template."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-17",
+      "feature_name": "Risk Assessment v2 SemanticCacheLookup policy support",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 now supports the SemanticCacheLookup policy in assessments.",
+      "keywords": [
+        "cache lookup policy",
+        "SemanticCacheLookup policy",
+        "SCL policy",
+        "SemanticCacheLookup",
+        "assessment policy",
+        "policy support",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "In Apigee, the SemanticCacheLookup policy is a request-flow policy that extracts the user prompt from incoming traffic and converts it into an embedding via the Text embeddings API to perform a semantic cache lookup. The policy can be used with default values and is documented as being attached to proxy request flows, while SemanticCachePopulate is attached to response flows for complementary semantic caching behavior. The provided excerpt does not directly confirm integration with Risk Assessment v2 assessments, so that specific feature linkage is only weakly supported.",
+      "evidence_summary": "The page describes how SemanticCacheLookup works (prompt-to-embedding conversion and request-flow attachment) and how it is paired with SemanticCachePopulate, but it does not explicitly tie this to Risk Assessment v2.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b817688088571ae04851c39c2e3e9220686a17875fc1c0d1da7bd9e22528bc1e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+          "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "semanticcachelookup",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "semanticcachelookup policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+          "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_api-platform_tutorials_using-semantic-caching-policies.md",
+          "base_score": 34,
+          "final_score": 34,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "semanticcachelookup",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "semanticcachelookup policy",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "When the proxy receives a request, the SemanticCacheLookup policy extracts the user prompt from the request and converts the prompt into a numerical representation using the Text embeddings API.",
+            "Edit the policies: SemanticCacheLookup policy: Remove the <UserPromptSource> element to use the default value.",
+            "SemanticCacheLookup and SemanticCachePopulate policies containing default values are already attached to the proxy request and response flows.",
+            "The SemanticCacheLookup and SemanticCachePopulate policies attach to the request and response flows, respectively, of an Apigee API proxy."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-12-17",
+      "feature_name": "Risk Assessment v2 VerifyIAM policy support",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 now supports the VerifyIAM policy in assessments.",
+      "keywords": [
+        "IAM verification policy",
+        "IAM verify policy",
+        "VerifyIAM policy",
+        "VerifyIAM",
+        "assessment policy",
+        "policy support",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 now supports the VerifyIAM policy in assessments.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-10-02",
+      "feature_name": "Abuse Detection exclusion lists",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection now supports creating and managing multiple exclusion lists to exclude safe traffic from future incident reports.",
+      "keywords": [
+        "safe CIDR ranges",
+        "exclude safe traffic",
+        "multiple exclusion lists",
+        "traffic exclusions",
+        "safe IP addresses",
+        "exclusion lists",
+        "exclusion list",
+        "Abuse Detection"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection now supports creating and managing multiple exclusion lists to exclude safe traffic from future incident reports.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 36,
+          "matched_phrases": [
+            {
+              "phrase": "abuse detection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "abuse detection exclusion lists",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "exclusion lists",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "exclusion list",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-19",
+      "feature_name": "Security action status indicators in UI",
+      "deprecation_date": "",
+      "feature_summary": "The security actions UI now shows status icons and an expired marker for enabled, disabled, paused, and expired security actions.",
+      "keywords": [
+        "action state markers",
+        "status indicators",
+        "expired marker",
+        "status icons",
+        "disabled security action",
+        "paused security action",
+        "security action state",
+        "enabled security action"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The security actions UI now shows status icons and an expired marker for enabled, disabled, paused, and expired security actions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-09-18",
+      "feature_name": "Abuse Detection incident model quality improvements",
+      "deprecation_date": "",
+      "feature_summary": "The Abuse Detection incident model was improved for lower noise and higher accuracy in incident detection.",
+      "keywords": [
+        "false-positive reduction",
+        "lower noise incidents",
+        "noise filtering",
+        "higher detection accuracy",
+        "incident model quality",
+        "incident model tuning",
+        "incident detection precision",
+        "Abuse Detection incident model"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Abuse Detection incident model was improved for lower noise and higher accuracy in incident detection.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-08-25",
+      "feature_name": "Abuse Detection anomaly incident detail view",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection incidents now provide richer anomaly details, including why traffic was flagged, time context, charts, and links to Google Cloud Logging.",
+      "keywords": [
+        "why traffic was flagged",
+        "anomaly detail charts",
+        "Cloud Logging links",
+        "time context in incidents",
+        "incident investigation view",
+        "incident detail view",
+        "Abuse Detection anomaly incident",
+        "anomaly incident details"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection incidents now provide richer anomaly details, including why traffic was flagged, time context, charts, and links to Google Cloud Logging.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-08-11",
+      "feature_name": "Improved abuse incident IP detail performance",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection now loads IP address-specific incident detail information faster for high-traffic IPs.",
+      "keywords": [
+        "IP incident detail speed",
+        "high-traffic IP performance",
+        "faster IP incident lookup",
+        "IP detail loading",
+        "abuse incident IP detail",
+        "incident IP address details",
+        "IP-specific incident data"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection now loads IP address-specific incident detail information faster for high-traffic IPs.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-08-06",
+      "feature_name": "Shadow API Discovery for any Google Cloud project",
+      "deprecation_date": "",
+      "feature_summary": "Shadow API Discovery can now be configured and run in any Google Cloud project, with centralized viewing and comparison of discovered APIs against API Hub catalogs.",
+      "keywords": [
+        "Shadow API Discovery any Google Cloud project",
+        "compare discovered APIs with API Hub",
+        "run Shadow API Discovery in project",
+        "project-scoped Shadow API Discovery",
+        "cross-project Shadow API Discovery",
+        "API Hub catalog comparison",
+        "centralized discovered API view",
+        "cross-project API discovery"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Shadow API Discovery can now be configured and run in any Google Cloud project, with centralized viewing and comparison of discovered APIs against API Hub catalogs.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-08-04",
+      "feature_name": "Advanced API Security Terraform configuration",
+      "deprecation_date": "",
+      "feature_summary": "Terraform support has been expanded to configure Advanced API Security settings such as add-on enablement, risk assessment profiles, IP address resolution, and security actions in a declarative workflow.",
+      "keywords": [
+        "Terraform add-on enablement",
+        "declarative security configuration",
+        "IP address resolution Terraform",
+        "IaC configuration",
+        "Terraform Apigee Advanced API Security",
+        "risk assessment profiles Terraform",
+        "Advanced API Security Terraform",
+        "security actions Terraform"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Terraform support has been expanded to configure Advanced API Security settings such as add-on enablement, risk assessment profiles, IP address resolution, and security actions in a declarative workflow.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-07-14",
+      "feature_name": "Advanced API Security security actions edit/delete",
+      "deprecation_date": "",
+      "feature_summary": "Existing security actions can now be edited and deleted through either the Apigee Console UI or the Apigee Management APIs.",
+      "keywords": [
+        "delete security actions",
+        "security action delete",
+        "Apigee Management API security action",
+        "security actions Apigee Console",
+        "edit security actions",
+        "security action edit",
+        "security action management"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Existing security actions can now be edited and deleted through either the Apigee Console UI or the Apigee Management APIs.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-07-01",
+      "feature_name": "Abuse Detection AppGroups visibility",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection now surfaces AppGroups and AppGroup app context in incidents and detected traffic when that grouping information is present in request traffic.",
+      "keywords": [
+        "AppGroup app context",
+        "app group context",
+        "AppGroup visibility",
+        "detected traffic AppGroup",
+        "incidents with AppGroup",
+        "AppGroups in incidents",
+        "Abuse Detection AppGroups"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection now surfaces AppGroups and AppGroup app context in incidents and detected traffic when that grouping information is present in request traffic.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-06-16",
+      "feature_name": "Abuse Detection API address drill-down",
+      "deprecation_date": "",
+      "feature_summary": "The detected traffic view in Abuse Detection now includes preview support for drilling down into API address details for investigated abuse events.",
+      "keywords": [
+        "investigated abuse event API address",
+        "Abuse Detection API address drill-down",
+        "API address drilldown",
+        "API address detail view",
+        "drill-down API address",
+        "incident API address view",
+        "API address preview"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The detected traffic view in Abuse Detection now includes preview support for drilling down into API address details for investigated abuse events.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-06-04",
+      "feature_name": "Abuse Detection advanced anomaly detection model",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection now uses a new customer-specific Vertex AI anomaly detection model with traffic-data training, replacing the previous model without API or UI changes.",
+      "keywords": [
+        "customer-specific Vertex AI model",
+        "custom Vertex AI anomaly model",
+        "Vertex AI anomaly detection",
+        "no API or UI changes",
+        "traffic-data trained model",
+        "Abuse Detection advanced anomaly model",
+        "new anomaly model",
+        "advanced anomaly model"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection now uses a new customer-specific Vertex AI anomaly detection model with traffic-data training, replacing the previous model without API or UI changes.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-05-27",
+      "feature_name": "Advanced API Security runtime region expansion",
+      "deprecation_date": "",
+      "feature_summary": "Advanced API Security runtime availability has been expanded to include the africa-south1 (Johannesburg) region.",
+      "keywords": [
+        "runtime availability africa-south1",
+        "africa-south1 runtime",
+        "region expansion announcement",
+        "Johannesburg region rollout",
+        "AFRICA-SOUTH1 support",
+        "Advanced API Security runtime region",
+        "Johannesburg region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Advanced API Security runtime availability has been expanded to include the africa-south1 (Johannesburg) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-05-20",
+      "feature_name": "Abuse Detection incident raw data view",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection incident reports now provide raw underlying data, including fields such as client IP, API proxy, and developer app, for deeper investigation.",
+      "keywords": [
+        "raw underlying incident data",
+        "raw incident fields",
+        "developer app field",
+        "Abuse Detection incident raw data",
+        "incident raw data view",
+        "underlying data view",
+        "client IP field",
+        "API proxy field"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection incident reports now provide raw underlying data, including fields such as client IP, API proxy, and developer app, for deeper investigation.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-25",
+      "feature_name": "Risk Assessment v2 monitoring alerts",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 preview adds alerting on security monitoring conditions so changes in security scores can trigger Cloud Monitoring alerts.",
+      "keywords": [
+        "Cloud Monitoring alert on risk score",
+        "RA v2 alerts",
+        "security monitoring condition alert",
+        "security monitoring alerts",
+        "risk score alerting",
+        "risk score changes",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 preview adds alerting on security monitoring conditions so changes in security scores can trigger Cloud Monitoring alerts.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-03-25",
+      "feature_name": "Risk Assessment v2 security monitoring conditions",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 preview adds security monitoring conditions to map proxies or environments to security profiles for ongoing security score monitoring.",
+      "keywords": [
+        "ongoing risk score tracking",
+        "proxy to security profile mapping",
+        "monitoring condition mapping",
+        "RA v2 monitoring conditions",
+        "security condition mapping",
+        "security monitoring conditions",
+        "security score monitoring",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "Risk Assessment v2 security monitoring conditions is a configuration component of Apigee Advanced API Security that supports creating, updating, deleting, and viewing monitoring conditions for Risk Assessment workloads, as part of security profile management. The documented operations for this feature also include viewing associated condition metrics and using Cloud Monitoring roles to create/update/delete or view security alerts tied to those metrics.",
+      "evidence_summary": "These pages identify RA v2 security monitoring conditions as a supported Apigee Advanced API Security feature with explicit task-level permissions and operational prerequisites, including condition lifecycle APIs and required Cloud Monitoring roles for condition metrics and alerts.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "e7a6660a43cc1f7e61e54b99864d270962fe601ac71616febdd821e016e8ec89",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+          "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "security monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        },
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "security monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "risk assessment v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "risk assessment v2 security monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+          "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_apihub_advanced-api-security-multi-gateway.md",
+          "base_score": 26,
+          "final_score": 34,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "It discusses monitoring conditions, alerts, and security posture tracking for API deployments, which is relevant context for monitoring conditions tied to risk/security assessment workflows, though without explicit Risk Assessment v2 or preview wording.",
+          "matched_phrases": [
+            {
+              "phrase": "security monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "IAM roles and permissions To use Advanced API Security, you must have the following IAM roles and permissions: IAM roles Permissions Description API Security Admin ( roles/apigee.securityAdmin ) apigee.securityProfilesV2.create apigee.securityProfilesV2.delete apigee.securityProfilesV2.update apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to create, update, delete, get, and list security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.create apigee.securityMonitoringConditions.delete apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list apigee.securityMonitoringConditions.update Provides permissions to create, delete, get, list, and update security monitoring conditions.",
+            "To configure and use security monitoring conditions and alerts in Cloud Monitoring: Action(s) Required roles or steps List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin For information about granting IAM roles, see Grant or revoke multiple IAM roles using the Google Cloud console .",
+            "API Security Viewer ( roles/apigee.securityViewer ) apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to get, list, and view security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list Provides permissions to get and list security monitoring conditions.",
+            "To learn about managing security monitoring conditions and alerts, see Manage monitoring conditions for multiple Apigee organizations and gateways ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 24,
+          "final_score": 24,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "security monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "risk assessment v2",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "risk assessment v2 security monitoring conditions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "For example, you can use Terraform to configure: Risk Assessment v2 security profiles Risk Assessment v2 security monitoring conditions Abuse detection exclusion lists Security actions For information on the currently supported functionality, see the Apigee section of the Terraform Registry .",
+            "Risk Assessment Task Required Role(s) Create, update, or delete a custom security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Attach or detach a security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) View security scores Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List all security profiles or get a profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Create, update, or delete a security monitoring condition Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring conditions Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin Required roles and permissions for abuse detection The table below shows the required roles and permissions to perform tasks related to abuse detection ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-03-07",
+      "feature_name": "Advanced API Security data obfuscation",
+      "deprecation_date": "",
+      "feature_summary": "Data obfuscation support is now available for Advanced API Security use cases, including Apigee API Analytics-related protection.",
+      "keywords": [
+        "obfuscation for analytics payloads",
+        "sensitive data redaction",
+        "payload redaction",
+        "PII masking",
+        "API Analytics obfuscation",
+        "data obfuscation",
+        "data masking"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Apigee data masking, in the documented PCI configuration context, is a feature that prevents sensitive data from being displayed during a Debug session in both the Apigee UI Debug tool and backend Debug (API). The documentation also states that this masking is not applied to places like log files, cache, or analytics, so it is a debug-facing obfuscation mechanism rather than end-to-end redaction across all data stores.",
+      "evidence_summary": "The referenced page documents debug-session-only data masking behavior and explicitly limits its scope, but does not confirm broader Advanced API Security data obfuscation use cases beyond this context.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/pci-configuration-guide"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "62575248df12daf76fd3ded34fdcce3855fc86d49a42a499c6b62adb268cc259",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/pci-configuration-guide",
+          "title": "PCI Configuration Guide for Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-platform_reference_pci-configuration-guide.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_reference_pci-configuration-guide.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "data masking",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/pci-configuration-guide",
+          "title": "PCI Configuration Guide for Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_reference_pci-configuration-guide.md",
+          "base_score": 30,
+          "final_score": 30,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "data masking",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ],
+          "evidence_snippets": [
+            "PCI Requirement Section Requirement 3: Protect stored account data Data masking Requirement 3: Protect stored account data Data storage Requirement 4: Protect cardholder data with strong cryptography during transmission over open, public networks TLS configuration Requirement 4: Protect cardholder data with strong cryptography during transmission over open, public networks Data encryption Requirement 7: Restrict access to system components and cardholder data by business need to know Use/Authorizations Requirement 8: Identify users and authenticate access to system components Complex password requirements or SAML Requirement 10: Log and monitor all access to system components and cardholder data Audit trail Requirement 11: Test security of systems and networks regularly Endpoint scanning To obtain a PCI Data Security Standard Attestation of Compliance (AOC), please visit Google Compliance Report Manager or contact your Apigee sales team.",
+            "Data masking Data masking prevents the display of sensitive data during a Debug session only, both in the Debug tool (Apigee UI) and in the backend by Debug (Apigee API).",
+            "Data masking does NOT prevent the data from being visible in places such as log files, the cache, and analytics.",
+            "Details of how to set up masking are available at Data masking and hiding ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-01-13",
+      "feature_name": "Shadow API Discovery latency optimization",
+      "deprecation_date": "",
+      "feature_summary": "Shadow API Discovery has been improved to remove its prior latency impact on load balancers during enablement.",
+      "keywords": [
+        "load balancer impact reduction",
+        "Shadow API latency improvement",
+        "Discovery latency reduction",
+        "latency optimization",
+        "enablement latency",
+        "shadow discovery enablement",
+        "Shadow API Discovery"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Shadow API Discovery has been improved to remove its prior latency impact on load balancers during enablement.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "f3445ce7a98e56df33441ed1be6502f545e5cd183d3fa2d380fe09c06c53c744",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+          "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_api-observation-overview.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_api-observation-overview.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "shadow api discovery",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-01-07",
+      "feature_name": "Abuse Detection API key drill-down",
+      "deprecation_date": "",
+      "feature_summary": "Abuse Detection preview now supports API key drill-down details so detected abuse can be analyzed by the API key involved.",
+      "keywords": [
+        "key-level abuse analysis",
+        "drill down by API key",
+        "API key investigation",
+        "API-key drilldown",
+        "API key drill-down",
+        "abuse incident detail",
+        "Abuse Detection"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse Detection preview now supports API key drill-down details so detected abuse can be analyzed by the API key involved.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 28,
+          "matched_phrases": [
+            {
+              "phrase": "abuse detection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-01-06",
+      "feature_name": "Client IP address resolution UI in environments",
+      "deprecation_date": "",
+      "feature_summary": "The Apigee Console now displays environment-level client IP address resolution settings for easier configuration visibility.",
+      "keywords": [
+        "environment-level client IP",
+        "environment IP settings",
+        "client IP address resolution",
+        "client IP resolution UI",
+        "IP resolution settings",
+        "environment view",
+        "environment UI",
+        "Apigee Console"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The Apigee Console now displays environment-level client IP address resolution settings for easier configuration visibility.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-12-20",
+      "feature_name": "Environment-level client IP address resolution",
+      "deprecation_date": "",
+      "feature_summary": "Apigee Advanced API Security adds environment-specific configuration for deriving client IP from X-Forwarded-For so security actions can use resolved client IP and expose it in analytics and flow variables.",
+      "keywords": [
+        "flow variable client IP",
+        "environment-level client IP resolution",
+        "analytics resolved client IP",
+        "security actions from resolved IP",
+        "resolved IP in analytics",
+        "client IP derivation",
+        "resolved client IP",
+        "XFF client IP"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Apigee Advanced API Security supports including `ax resolved client ip` as a report/query dimension in security reports, so report results can be generated with analytics segmented by resolved client IP. The security reports endpoint is explicitly environment-scoped (`/organizations/{ORG}/environments/{ENV}/securityReports/...`), indicating this resolved-client-IP analytics behavior is available at environment context. The provided evidence does not directly confirm flow-variable or policy-level resolution configuration behavior.",
+      "evidence_summary": "The page provides examples of security report query templates and results showing the `ax resolved client ip` dimension, plus an environment-scoped API path for fetching report data.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-reports-api"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "e8c358e0c070d34f8aa35e43056aaf45dc1d71848ccb2aa051962dd8b6e506b5",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-reports-api",
+          "title": "Manage security reports using the API \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_security-reports-api.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_security-reports-api.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "resolved client ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "507009597634ab51cc4ea02acda462bd50ae2b2d018925073caf847357f0f882",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs",
+          "title": "Security reports overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "resolved client ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-reports-api",
+          "title": "Manage security reports using the API \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_security-reports-api.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "resolved client ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "In this example, the status is \"completed\" , so you can view the report's results. { \"self\": \"/organizations/sense-staging-test/environments/local/securityReports/bd2f4fe0-a906-44c2-8dcb-2c618e4b565d\", \"state\": \"completed\", \"created\": \"2022-06-27T13:00:25-07:00\", \"updated\": \"2022-06-27T13:01:08-07:00\", \"result\": { \"self\": \"/organizations/sense-staging-test/environments/local/securityReports/bd2f4fe0-a906-44c2-8dcb-2c618e4b565d/result\", \"expires\": \"2022-07-04T13:01:08-07:00\" }, \"resultRows\": \"848\", \"resultFileSize\": \"5.10 KB\", \"executionTime\": \"43 seconds\", \"queryParams\": { \"metrics\": [ \"name:bot,func:count distinct,alias:count distinct bot,op:,val:\", \"name:bot traffic,func:sum,alias:sum bot traffic,op:,val:\" ], \"dimensions\": [ \"ax resolved client ip\" ], \"startTimestamp\": \"2022-06-20T20:00:25.098237292Z\", \"endTimestamp\": \"2022-06-27T20:00:25.098237292Z\", \"mimeType\": \"json\", \"timeUnit\": \"minute\" }, \"displayName\": \"Sample Query Bot\" } Get the report To download the security report, send a request like the following: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /environments/ ENV /securityReports/ REPORT ID /result\" \\ -X GET -O -J \\ -H \"Authorization: Bearer $TOKEN\" where REPORT ID is the report ID.",
+            "An example of a query template is shown below. { \"dimensions\": [ \"ax resolved client ip\", ], \"metrics\": [ { \"aggregation function\": \"count distinct\", \"name\": \"bot\" }, { \"aggregation function\": \"sum\", \"name\": \"bot traffic\" }, ], \"groupByTimeUnit\": \"minute\", \"timeRange\": \"last7days\" } The query has the following parameters: Metrics: bot .",
+            "Dimension: ax resolved client ip ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-11-14",
+      "feature_name": "Abuse Detection incident IP address drill-down",
+      "deprecation_date": "",
+      "feature_summary": "Advanced API Security Abuse Detection incidents now include preview functionality to drill down and view incident details by source IP address.",
+      "keywords": [
+        "drill down by source IP",
+        "source IP incident view",
+        "incident IP drilldown",
+        "source IP address",
+        "incident details by IP",
+        "incident drill-down",
+        "Abuse Detection incidents"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Advanced API Security Abuse Detection incidents now include preview functionality to drill down and view incident details by source IP address.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-10-08",
+      "feature_name": "Risk Assessment v2 custom security profiles",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 gains support for creating custom security profiles with unique combinations of checks and weights.",
+      "keywords": [
+        "profile check combinations",
+        "security check weights",
+        "configurable security checks",
+        "custom profile creation",
+        "custom RA profile",
+        "weighted checks",
+        "custom security profiles",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 gains support for creating custom security profiles with unique combinations of checks and weights.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-10-08",
+      "feature_name": "Risk Assessment v2 multi-profile proxy assessment",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 enables proxy risk scoring across multiple security profiles.",
+      "keywords": [
+        "assess proxy against profiles",
+        "multi-profile proxy assessment",
+        "proxy multi-profile assessment",
+        "multi-profile scoring",
+        "multiple security profiles",
+        "proxy risk scoring",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 enables proxy risk scoring across multiple security profiles.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-10-08",
+      "feature_name": "Risk Assessment v2 new assessment checks",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 adds additional assessment checks that can be used in proxy risk scoring.",
+      "keywords": [
+        "proxy risk check set",
+        "security check additions",
+        "new RA checks",
+        "additional risk checks",
+        "new assessment checks",
+        "Risk Assessment v2 checks"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 adds additional assessment checks that can be used in proxy risk scoring.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-10-08",
+      "feature_name": "Risk Assessment v2 profile switching",
+      "deprecation_date": "",
+      "feature_summary": "Users can switch between security profiles in Risk Assessment v2 to compare scoring differences.",
+      "keywords": [
+        "scoring difference comparison",
+        "RA profile switch",
+        "compare profile scores",
+        "switch security profiles",
+        "profile comparison",
+        "profile switching",
+        "Risk Assessment v2"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Users can switch between security profiles in Risk Assessment v2 to compare scoring differences.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-09-10",
+      "feature_name": "Proxy-specific security actions",
+      "deprecation_date": "",
+      "feature_summary": "Security actions can now be scoped to one or more specific proxies in Advanced API Security.",
+      "keywords": [
+        "proxy-scoped security action",
+        "security actions per proxy",
+        "assign action to proxy",
+        "targeted security actions",
+        "targeted security action",
+        "scope security actions",
+        "proxy-specific security actions"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security actions can now be scoped to one or more specific proxies in Advanced API Security.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-08-13",
+      "feature_name": "Risk Assessment v2 percentage score display",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 displays risk score as a percentage, where 100% represents full alignment with the selected security profile.",
+      "keywords": [
+        "risk score shown as percent",
+        "score display format",
+        "100% alignment score",
+        "security profile alignment",
+        "risk score percentage",
+        "RA v2",
+        "Risk Assessment v2",
+        "risk score %"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 displays risk score as a percentage, where 100% represents full alignment with the selected security profile.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-08-13",
+      "feature_name": "Risk Assessment v2 public preview",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 is introduced in public preview for Apigee Advanced API Security.",
+      "keywords": [
+        "Risk Assessment v2 rollout",
+        "Risk Assessment v2 release",
+        "public preview availability",
+        "Risk Assessment v2 beta",
+        "Risk Assessment v2 public preview",
+        "RA v2 preview"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 is introduced in public preview for Apigee Advanced API Security.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-08-13",
+      "feature_name": "Risk Assessment v2 score calculation performance improvements",
+      "deprecation_date": "",
+      "feature_summary": "Risk Assessment v2 improves score reliability with faster score calculations using recent proxy data.",
+      "keywords": [
+        "RA v2 scoring speed",
+        "Risk Assessment v2 score calculation",
+        "score calculation performance",
+        "score computation performance",
+        "recent proxy data scoring",
+        "faster score updates",
+        "risk scoring latency",
+        "score reliability"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk Assessment v2 improves score reliability with faster score calculations using recent proxy data.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-08-05",
+      "feature_name": "Shadow API Discovery tagging",
+      "deprecation_date": "",
+      "feature_summary": "Shadow API Discovery in preview now supports tags to label and organize API observation results.",
+      "keywords": [
+        "tagging shadow API results",
+        "API observation tags",
+        "tagged API findings",
+        "observation tags",
+        "SAD tags",
+        "Shadow API Discovery labels",
+        "Shadow API Discovery tags"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Shadow API Discovery in preview now supports tags to label and organize API observation results.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-07-26",
+      "feature_name": "Advanced API Security data residency",
+      "deprecation_date": "",
+      "feature_summary": "Advanced API Security now supports configuring regional data residency for stored security data to meet compliance requirements.",
+      "keywords": [
+        "store security data by region",
+        "regional data residency",
+        "data location controls",
+        "data location setting",
+        "regional residency",
+        "data residency configuration",
+        "security data region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Advanced API Security now supports configuring regional data residency for stored security data to meet compliance requirements.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-06-27",
+      "feature_name": "Generative AI abuse incident summaries",
+      "deprecation_date": "",
+      "feature_summary": "A preview feature adds generative AI-powered summaries and recommendations for Abuse Detection incidents.",
+      "keywords": [
+        "Generative AI abuse summaries",
+        "AI-powered abuse summary",
+        "automated incident recap",
+        "gen AI abuse incidents",
+        "Abuse Detection incident summary",
+        "AI abuse summary",
+        "abuse incident recommendations"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "A preview feature adds generative AI-powered summaries and recommendations for Abuse Detection incidents.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-06-17",
+      "feature_name": "Shadow API Discovery no-P4SA setup requirement",
+      "deprecation_date": "",
+      "feature_summary": "Shadow API Discovery preview can be enabled without creating separate Private Google Access (P4SA) permissions.",
+      "keywords": [
+        "enable without Private Google Access",
+        "P4SA requirement removed",
+        "P4SA-free setup",
+        "no-private Google access",
+        "no-P4SA Shadow API Discovery",
+        "Shadow API Discovery without P4SA",
+        "P4SA permissions"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Shadow API Discovery preview can be enabled without creating separate Private Google Access (P4SA) permissions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-05-29",
+      "feature_name": "Shadow API Discovery preview",
+      "deprecation_date": "",
+      "feature_summary": "Advanced API Security introduces Shadow API Discovery in preview to identify undocumented shadow APIs in existing infrastructure.",
+      "keywords": [
+        "discover undocumented APIs",
+        "undocumented API discovery",
+        "preview feature",
+        "SAD preview",
+        "Shadow API Discovery preview",
+        "shadow API discovery",
+        "shadow API detection"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Shadow API Discovery is an Apigee Advanced API Security capability that underpins API observations by using automated discovery to find and catalog APIs—including both known and unknown APIs—into a unified managed view. It is included with the paid Apigee Advanced API Security add-on, and usage may incur Apigee usage charges. The provided evidence does not explicitly confirm preview status, so that specific lifecycle detail is not independently verified here.",
+      "evidence_summary": "The page states that API observations in API hub relies on Apigee Shadow API Discovery and describes that capability as automated discovery that catalogs all APIs, while also noting it is part of the paid Apigee Advanced API Security add-on.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "f3445ce7a98e56df33441ed1be6502f545e5cd183d3fa2d380fe09c06c53c744",
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+          "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_apigee_docs_apihub_api-observation-overview.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_api-observation-overview.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "shadow api discovery",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+          "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-root/pages/docs.cloud.google.com_apigee_docs_apihub_api-observation-overview.md",
+          "base_score": 30,
+          "final_score": 38,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page identifies API observations as evolving from and relying on Apigee Shadow API Discovery and notes its Pre-GA status as part of Apigee Advanced API Security.",
+          "matched_phrases": [
+            {
+              "phrase": "shadow api discovery",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "Evolving from the Shadow API Discovery feature in Apigee, API observations in API hub uses automated discovery processes to find and catalog all your APIs—both known and unknown—into a single, unified, and managed view.",
+            "However, since API observations in API hub leverages Shadow API discovery, which is part of the Apigee Advanced API Security add-on, you can incur charges related to your Apigee usage.",
+            "Note: API observations in API hub relies on the Apigee Shadow API Discovery feature, which is included as part of the paid Apigee Advanced API Security add-on .",
+            "API observations in API hub relies on the Apigee Shadow API Discovery feature, which is included as part of the paid Apigee Advanced API Security add-on ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2024-05-14",
+      "feature_name": "Security action rule support for ASN conditions",
+      "deprecation_date": "",
+      "feature_summary": "Security action rules now support Autonomous System Number (ASN) as a condition type.",
+      "keywords": [
+        "Autonomous System Number condition",
+        "ASN-based rule match",
+        "security action AS number",
+        "AS number rule",
+        "security action rule ASN",
+        "ASN condition type",
+        "ASN condition"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security action rules now support Autonomous System Number (ASN) as a condition type.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-05-14",
+      "feature_name": "Security action rule support for HTTP method conditions",
+      "deprecation_date": "",
+      "feature_summary": "Security action rules now support HTTP methods as a condition type.",
+      "keywords": [
+        "GET POST rule match",
+        "request method matching",
+        "security action rule HTTP method",
+        "method-based rule condition",
+        "HTTP method condition",
+        "HTTP verb condition",
+        "method condition"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security action rules now support HTTP methods as a condition type.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-05-14",
+      "feature_name": "Security action rule support for region code conditions",
+      "deprecation_date": "",
+      "feature_summary": "Security action rules now support region codes as a condition type.",
+      "keywords": [
+        "geolocation rule match",
+        "security action rule region code",
+        "region-based rule condition",
+        "region code condition type",
+        "country/region condition",
+        "geo condition",
+        "region condition"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security action rules now support region codes as a condition type.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-05-09",
+      "feature_name": "Security action rule CIDR support for IPv4",
+      "deprecation_date": "",
+      "feature_summary": "Security action rules now support CIDR range specification when matching IPv4 addresses.",
+      "keywords": [
+        "IPv4 address range match",
+        "IPv4 CIDR range",
+        "CIDR range condition",
+        "CIDR rule matching",
+        "CIDR block rule",
+        "CIDR IPv4",
+        "security action rule CIDR"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security action rules now support CIDR range specification when matching IPv4 addresses.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-03-04",
+      "feature_name": "Security action condition types",
+      "deprecation_date": "",
+      "feature_summary": "Security actions can now be triggered by additional condition types, including API keys, API products, access tokens, developers, developer apps, and user agents for finer-grained traffic handling.",
+      "keywords": [
+        "user agent condition",
+        "security action trigger conditions",
+        "access token condition",
+        "developer app condition",
+        "API product condition",
+        "API key condition",
+        "condition matching",
+        "developer condition"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security actions can now be triggered by additional condition types, including API keys, API products, access tokens, developers, developer apps, and user agents for finer-grained traffic handling.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-01-16",
+      "feature_name": "Abuse detection model training on customer data",
+      "deprecation_date": "",
+      "feature_summary": "Apigee now supports optional training of abuse-detection machine learning models on a customer’s own data to improve incident-detection accuracy.",
+      "keywords": [
+        "tenant-specific model training",
+        "on-demand model training",
+        "train abuse model",
+        "customer data training",
+        "training data for abuse detection",
+        "abuse detection model training",
+        "custom model training",
+        "customer-data model"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Apigee now supports optional training of abuse-detection machine learning models on a customer’s own data to improve incident-detection accuracy.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-12-13",
+      "feature_name": "Risk assessment security score performance",
+      "deprecation_date": "",
+      "feature_summary": "Risk assessment security score loading has been optimized through server-side score caching for faster UI rendering.",
+      "keywords": [
+        "server-side score cache",
+        "score loading optimization",
+        "risk score render speed",
+        "UI security score refresh",
+        "security score caching",
+        "score caching",
+        "risk score performance",
+        "risk assessment security score"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Risk assessment security score loading has been optimized through server-side score caching for faster UI rendering.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-12-13",
+      "feature_name": "Security incident archiving",
+      "deprecation_date": "",
+      "feature_summary": "Users can archive security incidents to remove them from the main incident list while retaining them for later review via unarchive.",
+      "keywords": [
+        "hide incident from main list",
+        "incident retention view",
+        "archived list",
+        "security incident archive",
+        "archived incidents",
+        "unarchive incident",
+        "archive incident",
+        "incident archive"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Users can archive security incidents to remove them from the main incident list while retaining them for later review via unarchive.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-12-06",
+      "feature_name": "Security action quick-create access in security views",
+      "deprecation_date": "",
+      "feature_summary": "Security action creation links were added directly in Abuse detection and Risk assessment views to create actions in the currently viewed context.",
+      "keywords": [
+        "quick-create security action",
+        "Abuse detection quick create",
+        "Risk assessment quick create",
+        "security view action link",
+        "in-view action creation",
+        "create security action from view",
+        "quick create",
+        "in-context security action"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Security action creation links were added directly in Abuse detection and Risk assessment views to create actions in the currently viewed context.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-11-01",
+      "feature_name": "Custom security profiles in Apigee UI",
+      "deprecation_date": "",
+      "feature_summary": "Customers can create and edit custom security profiles in the Apigee UI to define which security categories contribute to risk scoring.",
+      "keywords": [
+        "risk score contribution settings",
+        "security scoring categories",
+        "edit security profile",
+        "create security profile",
+        "custom security profile",
+        "security score profile",
+        "security profile UI",
+        "custom profiles"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Customers can create and edit custom security profiles in the Apigee UI to define which security categories contribute to risk scoring.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-10-06",
+      "feature_name": "Security Actions",
+      "deprecation_date": "",
+      "feature_summary": "Security Actions are available to define automated responses to detected traffic, including deny, flag, and allow actions based on configured conditions.",
+      "keywords": [
+        "automated security response",
+        "condition-based security action",
+        "allow security action",
+        "deny security action",
+        "flag security action",
+        "automated action",
+        "Security Actions",
+        "security action"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "Security Actions in Apigee Advanced API Security are configurable security action settings used by the API security features to represent enforcement outcomes, with documented action values including ALLOW, DENY, and FLAG. The documentation indicates these are managed via security action configurations, and access is role-gated (for example, creation/editing/deletion and viewing/listing of actions are tied to specific Apigee IAM roles). Evidence in these excerpts does not fully describe the complete rule-creation workflow or full condition logic, but it does confirm supported action outcomes and associated management permissions.",
+      "evidence_summary": "The cited pages provide role requirements for security action configuration tasks and show that security actions are reported with the explicit values ALLOW, DENY, and FLAG.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 46,
+          "matched_phrases": [
+            {
+              "phrase": "security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "security actions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "507009597634ab51cc4ea02acda462bd50ae2b2d018925073caf847357f0f882",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs",
+          "title": "Security reports overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "flag security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 46,
+          "final_score": 42,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "It references monitoring alerts and incidents, but it does not document configuring or executing security actions.",
+          "matched_phrases": [
+            {
+              "phrase": "security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            },
+            {
+              "phrase": "security actions",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ],
+          "evidence_snippets": [
+            "Security Action Task Required Role(s) Create, edit, or delete security action configurations Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) View or list security actions Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Check the state of enforcement Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Note: To make the API calls described in the following sections, you need to obtain an OAuth 2.0 access token , which is passed with the calls.",
+            "Abuse Detection Task Required Role(s) and Permission(s) View incidents in the Abuse detection UI Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) View incident generative AI Insights cloudaicompanion.instances.generateText permission Opt an organization in or out of machine learning models for abuse detection apigee.securitySettings.update permission Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Required roles for security actions The table below shows the required roles to perform tasks related to security actions .",
+            "Next steps Once you have enabled Advanced API Security, see: Security reports Risk assessment Abuse detection Security alerts Security actions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+            "For example, you can use Terraform to configure: Risk Assessment v2 security profiles Risk Assessment v2 security monitoring conditions Abuse detection exclusion lists Security actions For information on the currently supported functionality, see the Apigee section of the Terraform Registry ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs",
+          "title": "Security reports overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_security-report-jobs.md",
+          "base_score": 34,
+          "final_score": 30,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "The page explains how security reports identify suspicious API traffic and mentions using report findings to block attacks, but it does not define configurable security actions or their behavior.",
+          "matched_phrases": [
+            {
+              "phrase": "security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "flag security action",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Possibly values are ALLOW , DENY , or FLAG . security action name The name of the security action. security action headers Headers that you can use to query for a flag security action.",
+            "See Example: Get details for a specific incident . incident id only works with the following metrics: bot bot traffic response size security action The security action."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-27",
+      "feature_name": "Advanced API Security alerting",
+      "deprecation_date": "",
+      "feature_summary": "Advanced API Security alerting enables incident and score-related notifications through Google Cloud Monitoring channels such as email.",
+      "keywords": [
+        "email alert notification",
+        "Cloud Monitoring notification channels",
+        "incident alert notifications",
+        "security incident notification",
+        "AAS alerting",
+        "security score alerts",
+        "Advanced API Security alerting",
+        "security alerting"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Advanced API Security alerting enables incident and score-related notifications through Google Cloud Monitoring channels such as email.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-08-25",
+      "feature_name": "Custom security profiles API management",
+      "deprecation_date": "",
+      "feature_summary": "Security profiles can be created through the security scores API for custom security scoring categories, with score views available in the UI.",
+      "keywords": [
+        "security profile REST endpoint",
+        "custom security score categories API",
+        "create custom security profile API",
+        "score views in UI and API",
+        "security scores API",
+        "security profile API",
+        "scores API",
+        "security profiles API"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In Apigee Advanced API Security, custom security profiles are a managed entity for risk assessment workflows, and users can create, update, delete, list/get, attach, and detach them. The feature also includes viewing security scores and security monitoring conditions, with access controlled by specific Apigee IAM roles such as Apigee Security Admin, Organization Admin, Security Viewer, and related roles. Evidence for API endpoint behavior is limited to role/task descriptions, so endpoint mechanics are not fully specified in the provided excerpt.",
+      "evidence_summary": "The page excerpt provides a permissions matrix for security-profile and security-score related tasks, confirming which IAM roles are required for create/update/delete and view/list operations.",
+      "source_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "security profile api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "security scores api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "scores api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 24,
+          "final_score": 32,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page explicitly lists create/update/delete operations for custom security profiles and profile retrieval permissions, which helps define profile management controls.",
+          "matched_phrases": [
+            {
+              "phrase": "security profile api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "security scores api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "scores api",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Risk Assessment Task Required Role(s) Create, update, or delete a custom security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Attach or detach a security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) View security scores Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List all security profiles or get a profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Create, update, or delete a security monitoring condition Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring conditions Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin Required roles and permissions for abuse detection The table below shows the required roles and permissions to perform tasks related to abuse detection ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2023-04-20",
+      "feature_name": "Detected Traffic view",
+      "deprecation_date": "",
+      "feature_summary": "A dedicated Detected Traffic view was added to show API traffic from detected bots and related abuse signals.",
+      "keywords": [
+        "bot traffic signals",
+        "detected bot traffic",
+        "abuse signals in UI",
+        "bot traffic view",
+        "Detected Traffic view",
+        "detected traffic view",
+        "Detected Traffic"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "A dedicated Detected Traffic view was added to show API traffic from detected bots and related abuse signals.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-03-23",
+      "feature_name": "Abuse detection",
+      "deprecation_date": "",
+      "feature_summary": "Abuse detection entered public preview to surface security incidents using machine learning, including Advanced Anomaly Detection and Advanced API Scraper detection rules.",
+      "keywords": [
+        "Advanced API Scraper",
+        "AAD",
+        "Advanced Anomaly Detection",
+        "public preview",
+        "abuse detection incidents",
+        "abuse detection rules",
+        "abuse detection preview",
+        "Abuse detection"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Abuse detection entered public preview to surface security incidents using machine learning, including Advanced Anomaly Detection and Advanced API Scraper detection rules.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "90e8b1cb4216b97c43d21babc2fed96ebfc1476148cfa2ea5366fefb9d544f6e",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+          "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-security_enable-security.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "abuse detection",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "04c9e089f3b73bdaed7f95d7d58763fe96e427309d1d3862f39f0ef7f4097e59",
+          "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/release-notes",
+          "title": "Apigee Integrated Portal release notes \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\apigee-advanced-api-security\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_apigee_docs_api-platform_publish_portal_release-notes.md",
+          "relative_markdown_path": "products/apigee-advanced-api-security/corpus/site/site-docs-reference/pages/docs.cloud.google.com_apigee_docs_api-platform_publish_portal_release-notes.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "public preview",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    }
+  ]
+}

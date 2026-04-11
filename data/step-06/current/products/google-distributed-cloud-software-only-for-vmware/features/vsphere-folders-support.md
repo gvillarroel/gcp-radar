@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:32.726Z"
+product_name: "Google Distributed Cloud (software only) for VMware"
+product_slug: "google-distributed-cloud-software-only-for-vmware"
+feature_name: "vSphere folders support"
+feature_slug: "vsphere-folders-support"
+latest_feature_date: "2021-03-25"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "vsphere"
+  - "folders"
+  - "anthos"
+  - "clusters"
+  - "on"
+  - "vmware"
+  - "can"
+  - "be"
+---
+
+# vSphere folders support
+
+Product: Google Distributed Cloud (software only) for VMware
+Coverage: NONE
+
+## Step 02 Summary
+
+Anthos clusters on VMware can be installed in vSphere folders to reduce the permissions required for the vSphere user.
+
+## Extended Definition
+
+Anthos clusters on VMware can be installed in vSphere folders to reduce the permissions required for the vSphere user.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

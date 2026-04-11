@@ -1,19 +1,22 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T21:53:14.778Z",
+  "generated_at": "2026-04-10T20:41:02.594Z",
   "product_name": "Cloud Hub",
   "product_slug": "cloud-hub",
   "step03_ranking_path": "data/step-03/current/products/cloud-hub/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
+      "docs_reference",
       "iam_reference"
-    ]
+    ],
+    "feature_count": 1
   },
   "site_output_mode": "compact",
-  "selected_source_count": 2,
-  "selected_sources_signature": "995ed8eaaf9839921c5f60a89e481650d8c16a057e6261e0a7f6e23ae1cf1214",
+  "selected_source_count": 3,
+  "selected_sources_signature": "51470af4dc3bed130d0fdc787a4f0a23001bd27339297831404ad76b84d04307",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -23,19 +26,33 @@
       "url": "https://docs.cloud.google.com/hub/docs",
       "final_score": 100,
       "best_rank": 2,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 30
+    },
+    {
+      "source_id": "site-docs-reference",
+      "product_slug": "cloud-hub",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://docs.cloud.google.com/hub/docs/home",
+      "final_score": 100,
+      "best_rank": 6,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 20
     },
     {
       "source_id": "site-iam-reference",
       "product_slug": "cloud-hub",
       "family": "iam_reference",
       "classification": "iam_reference",
-      "url": "https://docs.cloud.google.com/hub/docs/deployments",
-      "final_score": 95,
-      "best_rank": 2,
+      "url": "https://docs.cloud.google.com/hub/docs/maintenance",
+      "final_score": 90,
+      "best_rank": 3,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 20
     }
   ],
   "corpus_paths": {

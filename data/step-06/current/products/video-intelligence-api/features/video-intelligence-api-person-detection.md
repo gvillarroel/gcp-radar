@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:28:07.640Z"
+product_name: "Video Intelligence API"
+product_slug: "video-intelligence-api"
+feature_name: "Video Intelligence API Person Detection"
+feature_slug: "video-intelligence-api-person-detection"
+latest_feature_date: "2021-05-04"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "video"
+  - "intelligence"
+  - "api"
+  - "person"
+  - "detection"
+  - "detects"
+  - "people"
+  - "in"
+---
+
+# Video Intelligence API Person Detection
+
+Product: Video Intelligence API
+Coverage: NONE
+
+## Step 02 Summary
+
+Detects people in video content and identifies person attributes and 2D facial landmarks.
+
+## Extended Definition
+
+Detects people in video content and identifies person attributes and 2D facial landmarks.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

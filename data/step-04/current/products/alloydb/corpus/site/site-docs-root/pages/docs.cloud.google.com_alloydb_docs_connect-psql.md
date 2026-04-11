@@ -75,6 +75,10 @@ Retain the default values in the Advanced section.
 Click Create .
 After the VM is created, connect to the Compute Engine VM you created using SSH.
 Install the psql client tool
+To install the psql client tool on your client host, see
+Install the psql client tool .
+If you are using a Compute Engine VM as your client host, follow these
+steps to connect to your VM and install psql :
 Connect to the Compute Engine VM you created using SSH.
 By default, SSH connections to Compute Engine VMs use Identity-Aware Proxy.
 Depending on your organization's networking policies, you might need to
@@ -130,6 +134,6 @@ What's next
 Learn about other ways to connect to AlloyDB .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-09 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-09 UTC."],[],[]]

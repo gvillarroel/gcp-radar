@@ -1,0 +1,41 @@
+---
+title: "LanguageSettings \_|\_ Gmail \_|\_ Google for Developers"
+url: https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings
+knowledge_key: corpus
+source_id: site-docs-reference
+source_type: site
+entrypoint: https://developers.google.com/workspace/gmail/api/reference/rest
+source_metadata:
+  url: https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings
+  title: "LanguageSettings \_|\_ Gmail \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Google Workspace
+Gmail
+Reference
+Send feedback
+LanguageSettings
+Stay organized with collections
+Save and categorize content based on your preferences.
+JSON representation
+Language settings for an account. These settings correspond to the "Language settings" feature in the web interface.
+JSON representation
+{
+"displayLanguage" : string
+}
+Fields
+displayLanguage
+string
+The language to display Gmail in, formatted as an RFC 3066 Language Tag (for example en-GB , fr or ja for British English, French, or Japanese respectively).
+The set of languages supported by Gmail evolves over time, so please refer to the "Language" dropdown in the Gmail settings for all available options, as described in the language settings help article . For a table of sample values, see Manage language settings .
+Not all Gmail clients can display the same set of languages. In the case that a user's display language is not available for use on a particular client, said client automatically chooses to display in the closest supported variant (or a reasonable default).
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-03-25 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-03-25 UTC."],[],[]]

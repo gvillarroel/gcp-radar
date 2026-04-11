@@ -1,0 +1,367 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T20:03:23.569Z",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager",
+  "feature_count": 23,
+  "uncovered_feature_count": 13,
+  "uncovered_features": [
+    {
+      "latest_feature_date": "2024-10-03",
+      "feature_name": "Context-aware app allowlist access bindings",
+      "feature_summary": "Access bindings can now map specific applications to access levels so context-aware access can be scoped per application.",
+      "keywords": [
+        "context-aware access binding rule",
+        "app allowlist access binding",
+        "context-aware app allowlist",
+        "context-aware app binding",
+        "application-specific access binding",
+        "app id in access level",
+        "access levels per app",
+        "allowlist access bindings"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-02-17",
+      "feature_name": "Individual VPC network membership in VPC Service Controls perimeters",
+      "feature_summary": "You can add individual VPC networks as members of a VPC Service Controls perimeter instead of requiring the entire host project; Access Context Manager preview support allows adding individual VPC networks as members of a perimeter instead of an entire host project.",
+      "keywords": [
+        "replace host project with VPC network",
+        "individual VPC network membership",
+        "add VPC network to perimeter",
+        "VPC network perimeter member",
+        "VPC-SC perimeter members",
+        "VPC network member",
+        "individual VPC membership",
+        "service perimeter membership"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-02-17",
+      "feature_name": "Ingress rules for individual VPC networks",
+      "feature_summary": "VPC Service Controls perimeters now support ingress rules that authorize access for individual VPC networks; VPC Service Controls preview adds ingress rules that authorize specific individual VPC networks to access a perimeter.",
+      "keywords": [
+        "VPC-SC ingress network rule",
+        "service perimeter ingress by network",
+        "perimeter ingress network configuration",
+        "authorize specific VPC network",
+        "individual VPC network ingress rules",
+        "network-based ingress access",
+        "network ingress rule",
+        "VPC SC individual ingress"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-04-22",
+      "feature_name": "Egress rules for VPC Service Controls",
+      "feature_summary": "VPC Service Controls now support egress rules for controlling outbound service access.",
+      "keywords": [
+        "egress destination restrictions",
+        "egress rule configuration",
+        "VPC-SC egress policy",
+        "VPC-SC egress",
+        "service perimeter egress rules",
+        "VPC Service Controls egress",
+        "outbound perimeter access",
+        "egress policies"
+      ]
+    },
+    {
+      "latest_feature_date": "2021-04-22",
+      "feature_name": "Ingress rules for VPC Service Controls",
+      "feature_summary": "VPC Service Controls now support ingress rules for access control.",
+      "keywords": [
+        "ingress source restrictions",
+        "ingress rule configuration",
+        "VPC-SC ingress policy",
+        "VPC-SC ingress",
+        "service perimeter ingress rules",
+        "VPC Service Controls ingress",
+        "service perimeter ingress",
+        "perimeter ingress access"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-10-22",
+      "feature_name": "Mobile device access-level attributes in Access Context Manager",
+      "feature_summary": "Access levels now evaluate additional mobile request attributes, including Storage encryption status, admin approval requirement, and corp-owned device requirement.",
+      "keywords": [
+        "Storage encryption status",
+        "admin approval required",
+        "mobile device attributes",
+        "device-based access level",
+        "mobile access attributes",
+        "corp-owned device",
+        "device attributes",
+        "Access Context Manager device context"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-06-30",
+      "feature_name": "Service perimeter dry run mode",
+      "feature_summary": "Service perimeters now support dry run mode, allowing perimeter changes to be tested before enforcement.",
+      "keywords": [
+        "enforcement off dry run",
+        "VPC-SC dry run mode",
+        "perimeter dry-run testing",
+        "dry run evaluation",
+        "service perimeter dry run",
+        "simulate perimeter changes",
+        "dry run mode",
+        "perimeter simulation"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-02-25",
+      "feature_name": "Access Context Manager mobile access level support",
+      "feature_summary": "Access Context Manager added beta support for creating access levels that target iOS and Android devices.",
+      "keywords": [
+        "target Android devices in access levels",
+        "target iOS devices in access levels",
+        "create access level for Android",
+        "create access level for iOS",
+        "mobile device access level support",
+        "iOS/Android access level",
+        "mobile access levels",
+        "mobile access level"
+      ]
+    },
+    {
+      "latest_feature_date": "2020-01-06",
+      "feature_name": "Access Context Manager v1beta API",
+      "feature_summary": "The Access Context Manager v1beta API was deprecated; deprecated on July 2020.",
+      "keywords": [
+        "v1beta API deprecation",
+        "v1beta endpoint support",
+        "v1beta migration",
+        "Access Context Manager API versions",
+        "Access Context Manager v1beta API",
+        "deprecated v1beta",
+        "v1beta API",
+        "v1beta"
+      ]
+    },
+    {
+      "latest_feature_date": "2019-03-19",
+      "feature_name": "Access Context Manager require corp-owned device attribute",
+      "feature_summary": "The Require corp owned device device-policy access-level attribute became available in Access Context Manager.",
+      "keywords": [
+        "managed corporate device condition",
+        "corporate-owned device attribute",
+        "corporate-owned device",
+        "access level corp owned device",
+        "Require corp-owned device",
+        "device-policy corp owned",
+        "corp-owned device attribute",
+        "corp-owned"
+      ]
+    },
+    {
+      "latest_feature_date": "2019-03-19",
+      "feature_name": "Access Context Manager require verified Chrome OS attribute",
+      "feature_summary": "The Require verified Chrome OS device-policy access-level attribute became available in Access Context Manager.",
+      "keywords": [
+        "verified Chrome OS condition",
+        "Chrome OS verification attribute",
+        "access level Chrome OS verified",
+        "Require verified Chrome OS",
+        "verified Chrome OS device",
+        "Chrome OS verified",
+        "device-policy Chrome OS",
+        "verified ChromeOS"
+      ]
+    },
+    {
+      "latest_feature_date": "2019-03-19",
+      "feature_name": "Access level Regions attribute",
+      "feature_summary": "The Regions access-level attribute became available in Access Context Manager.",
+      "keywords": [
+        "location region restriction",
+        "access level region condition",
+        "region-based access level",
+        "regions condition",
+        "region condition",
+        "Regions access-level attribute",
+        "access context manager regions",
+        "regions attribute"
+      ]
+    },
+    {
+      "latest_feature_date": "2018-06-01",
+      "feature_name": "Access Context Manager closed beta launch",
+      "feature_summary": "Access Context Manager launched in closed beta.",
+      "keywords": [
+        "closed beta availability",
+        "private beta launch",
+        "closed beta release",
+        "closed beta launch",
+        "Access Context Manager closed beta",
+        "private beta",
+        "closed beta",
+        "Access Context Manager beta"
+      ]
+    }
+  ],
+  "top_missing_tokens": [
+    {
+      "token": "access",
+      "count": 12
+    },
+    {
+      "token": "context",
+      "count": 9
+    },
+    {
+      "token": "manager",
+      "count": 8
+    },
+    {
+      "token": "in",
+      "count": 6
+    },
+    {
+      "token": "now",
+      "count": 6
+    },
+    {
+      "token": "support",
+      "count": 6
+    },
+    {
+      "token": "level",
+      "count": 5
+    },
+    {
+      "token": "service",
+      "count": 5
+    },
+    {
+      "token": "the",
+      "count": 5
+    },
+    {
+      "token": "controls",
+      "count": 4
+    },
+    {
+      "token": "for",
+      "count": 4
+    },
+    {
+      "token": "vpc",
+      "count": 4
+    },
+    {
+      "token": "attribute",
+      "count": 3
+    },
+    {
+      "token": "available",
+      "count": 3
+    },
+    {
+      "token": "became",
+      "count": 3
+    },
+    {
+      "token": "device",
+      "count": 3
+    },
+    {
+      "token": "levels",
+      "count": 3
+    },
+    {
+      "token": "perimeter",
+      "count": 3
+    },
+    {
+      "token": "perimeters",
+      "count": 3
+    },
+    {
+      "token": "rules",
+      "count": 3
+    },
+    {
+      "token": "to",
+      "count": 3
+    },
+    {
+      "token": "and",
+      "count": 2
+    },
+    {
+      "token": "be",
+      "count": 2
+    },
+    {
+      "token": "beta",
+      "count": 2
+    },
+    {
+      "token": "can",
+      "count": 2
+    },
+    {
+      "token": "corp",
+      "count": 2
+    },
+    {
+      "token": "individual",
+      "count": 2
+    },
+    {
+      "token": "ingress",
+      "count": 2
+    },
+    {
+      "token": "mobile",
+      "count": 2
+    },
+    {
+      "token": "networks",
+      "count": 2
+    },
+    {
+      "token": "owned",
+      "count": 2
+    },
+    {
+      "token": "policy",
+      "count": 2
+    },
+    {
+      "token": "preview",
+      "count": 2
+    },
+    {
+      "token": "require",
+      "count": 2
+    },
+    {
+      "token": "specific",
+      "count": 2
+    },
+    {
+      "token": "that",
+      "count": 2
+    },
+    {
+      "token": "2020",
+      "count": 1
+    },
+    {
+      "token": "add",
+      "count": 1
+    },
+    {
+      "token": "added",
+      "count": 1
+    },
+    {
+      "token": "adding",
+      "count": 1
+    }
+  ]
+}

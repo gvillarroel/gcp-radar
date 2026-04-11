@@ -1,0 +1,57 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T21:05:36.421Z"
+product_name: "App Engine flexible environment Node.js"
+product_slug: "app-engine-flexible-environment-node-js"
+feature_name: "App Engine managed VMs rebranded to App Engine flexible environment"
+feature_slug: "app-engine-managed-vms-rebranded-to-app-engine-flexible-environment"
+latest_feature_date: "2016-03-24"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/appengine/docs/flexible/nodejs/release-notes"
+keywords:
+  - "formerly App Engine Managed VMs"
+  - "Managed VMs renamed"
+  - "GAE Managed VMs"
+  - "App Engine flexible environment rename"
+  - "managed VMs to flexible environment"
+  - "App Engine Managed VMs"
+  - "Managed VM"
+---
+
+# App Engine managed VMs rebranded to App Engine flexible environment
+
+Product: App Engine flexible environment Node.js
+Coverage: LOW
+
+## Step 02 Summary
+
+The product name App Engine Managed VMs was changed to App Engine flexible environment.
+
+## Extended Definition
+
+The product name App Engine Managed VMs was changed to App Engine flexible environment.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/appengine/docs/flexible/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/flexible/nodejs/release-notes)
+
+## Supporting Pages
+
+### "App Engine flexible environment for Node.js release notes \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/flexible/nodejs/release-notes](https://docs.cloud.google.com/appengine/docs/flexible/nodejs/release-notes)
+- Source ID: `site-docs-reference-2`
+- Final score: 22
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- March 24, 2016 Feature App Engine Managed VMs is renamed to App Engine flexible environment .
+- February 03, 2016 Feature Container construction choices for Managed VMs The gcloud preview app deploy (and mvn gcloud:deploy ) commands upload your artifacts to our servers and build a container to deploy your app to the Managed VM environment.
+

@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T19:26:07.578Z"
+product_name: "Chat API"
+product_slug: "chat-api"
+feature_name: "Message quoting support"
+feature_slug: "message-quoting-support"
+latest_feature_date: "2025-08-12"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages"
+  - "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+  - "https://developers.google.com/workspace/chat/create-messages"
+keywords:
+  - "quoting"
+  - "creating"
+  - "supports"
+  - "messages"
+  - "message"
+  - "chat"
+  - "api"
+  - "now"
+---
+
+# Message quoting support
+
+Product: Chat API
+Coverage: LOW
+
+## Step 02 Summary
+
+Chat API now supports creating messages with quoted content and updating messages to remove quotes.
+
+## Extended Definition
+
+Chat API now supports creating messages with quoted content and updating messages to remove quotes.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages)
+- [https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1](https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1)
+- [https://developers.google.com/workspace/chat/create-messages](https://developers.google.com/workspace/chat/create-messages)
+
+## Supporting Pages
+
+### REST Resource: spaces.messages \_|\_ Google Chat \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages)
+- Source ID: `site-docs-root-2`
+- Final score: 212
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Developers can leverage the Chat API's methods to programmatically create, update, and manage messages and their interactions.
+- The API only supports reading messages with GMAIL MESSAGE rich links.
+- Resource: Message JSON representation Card JSON representation CardHeader JSON representation ImageStyle Section JSON representation WidgetMarkup JSON representation TextParagraph JSON representation Image JSON representation OnClick JSON representation FormAction JSON representation ActionParameter JSON representation OpenLink JSON representation KeyValue JSON representation Icon Button JSON representation TextButton JSON representation ImageButton JSON representation CardAction JSON representation CardWithId JSON representation Card JSON representation CardHeader JSON representation ImageType Section JSON representation Widget JSON representation TextParagraph JSON representation TextSyntax Image JSON representation OnClick JSON representation Action JSON representation ActionParameter JSON representation LoadIndicator Interaction OpenLink JSON representation OpenAs OnClose OverflowMenu JSON representation OverflowMenuItem JSON representation Icon JSON representation MaterialIcon JSON representation DecoratedText JSON representation VerticalAlignment Button JSON representation Color JSON representation Type SwitchControl JSON representation ControlType ButtonList JSON representation TextInput JSON representation Type Suggestions JSON representation SuggestionItem JSON representation Validation JSON representation InputType HostAppDataSourceMarkup JSON representation ChatClientDataSourceMarkup JSON representation SpaceDataSource JSON representation WorkflowDataSourceMarkup JSON representation Type SelectionInput JSON representation SelectionType SelectionItem JSON representation PlatformDataSource JSON representation CommonDataSource DataSourceConfig JSON representation DateTimePicker JSON representation DateTimePickerType Divider Grid JSON representation GridItem JSON representation ImageComponent JSON representation ImageCropStyle JSON representation ImageCropType BorderStyle JSON representation BorderType GridItemLayout Columns JSON representation Column JSON representation HorizontalSizeStyle HorizontalAlignment VerticalAlignment Widgets JSON representation ChipList JSON representation Layout Chip JSON representation Carousel JSON representation CarouselCard JSON representation NestedWidget JSON representation Visibility EventAction JSON representation Trigger JSON representation CommonWidgetAction JSON representation UpdateVisibilityAction JSON representation CollapseControl JSON representation DividerStyle CardAction JSON representation CardFixedFooter JSON representation DisplayStyle ExpressionData JSON representation Condition JSON representation ExpressionDataCondition JSON representation ConditionType Annotation JSON representation AnnotationType UserMentionMetadata JSON representation Type SlashCommandMetadata JSON representation Type RichLinkMetadata JSON representation RichLinkType DriveLinkData JSON representation ChatSpaceLinkData JSON representation MeetSpaceLinkData JSON representation Type HuddleStatus CalendarEventLinkData JSON representation CustomEmojiMetadata JSON representation Thread JSON representation ActionResponse JSON representation ResponseType DialogAction JSON representation Dialog JSON representation ActionStatus JSON representation Code UpdatedWidget JSON representation SelectionItems JSON representation SlashCommand JSON representation MatchedUrl JSON representation EmojiReactionSummary JSON representation DeletionMetadata JSON representation DeletionType QuotedMessageMetadata JSON representation QuoteType QuotedMessageSnapshot JSON representation ForwardedMetadata JSON representation AttachedGif JSON representation AccessoryWidget JSON representation Methods Resource: Message A message in a Google Chat space.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-20 UTC."],[],["Google Chat messages, represented by the Message resource, contain various components like text, cards, and annotations.
+
+### Package google.chat.v1 \_|\_ Google Chat \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1](https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1)
+- Source ID: `site-docs-reference`
+- Final score: 196
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Supports the following types of authentication with an authorization scope appropriate for reading the requested data: App authentication with administrator approval with one of the following authorization scopes: https://www.googleapis.com/auth/chat.app.spaces https://www.googleapis.com/auth/chat.app.spaces.readonly https://www.googleapis.com/auth/chat.app.messages.readonly https://www.googleapis.com/auth/chat.app.memberships https://www.googleapis.com/auth/chat.app.memberships.readonly User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.spaces.readonly https://www.googleapis.com/auth/chat.spaces https://www.googleapis.com/auth/chat.messages.readonly https://www.googleapis.com/auth/chat.messages https://www.googleapis.com/auth/chat.messages.reactions.readonly https://www.googleapis.com/auth/chat.messages.reactions https://www.googleapis.com/auth/chat.memberships.readonly https://www.googleapis.com/auth/chat.memberships To get an event, the authenticated caller must be a member of the space.
+- Supports the following types of authentication with an authorization scope appropriate for reading the requested data: App authentication with administrator approval with one of the following authorization scopes: https://www.googleapis.com/auth/chat.app.spaces https://www.googleapis.com/auth/chat.app.spaces.readonly https://www.googleapis.com/auth/chat.app.messages.readonly https://www.googleapis.com/auth/chat.app.memberships https://www.googleapis.com/auth/chat.app.memberships.readonly User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.spaces.readonly https://www.googleapis.com/auth/chat.spaces https://www.googleapis.com/auth/chat.messages.readonly https://www.googleapis.com/auth/chat.messages https://www.googleapis.com/auth/chat.messages.reactions.readonly https://www.googleapis.com/auth/chat.messages.reactions https://www.googleapis.com/auth/chat.memberships.readonly https://www.googleapis.com/auth/chat.memberships To list events, the authenticated caller must be a member of the space.
+- Supports the following types of authentication : App authentication with the authorization scope: https://www.googleapis.com/auth/chat.bot User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.messages.create https://www.googleapis.com/auth/chat.messages https://www.googleapis.com/auth/chat.import (import mode spaces only) Chat attributes the message sender differently depending on the type of authentication that you use in your request.
+- Supports the following types of authentication : App authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.bot : When using this authorization scope, this method returns details about a message the Chat app has access to, like direct messages and slash commands that invoke the Chat app. https://www.googleapis.com/auth/chat.app.messages.readonly with administrator approval .
+
+### Send a message using the Google Chat API \_|\_ Google for Developers
+
+- URL: [https://developers.google.com/workspace/chat/create-messages](https://developers.google.com/workspace/chat/create-messages)
+- Source ID: `site-docs-root`
+- Final score: 184
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The following code shows how to create a message that quotes another message: Node.js import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' ]; // This sample shows how to create a message that quotes another message. async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES ); // Initialize request argument(s) const request = { // TODO(developer): Replace SPACE NAME . parent : 'spaces/ SPACE NAME ' , message : { text : 'I am responding to a quoted message!' , // quotedMessageMetadata lets chat apps respond to a message by quoting it. quotedMessageMetadata : { // TODO(developer): Replace QUOTED MESSAGE NAME // and QUOTED MESSAGE LAST UPDATE TIME. name : ' QUOTED MESSAGE NAME ' , lastUpdateTime : ' QUOTED MESSAGE LAST UPDATE TIME ' } } }; // Make the request const response = await chatClient . createMessage ( request ); // Handle the response console . log ( response ); } main (). catch ( console . error ); Python from authentication utils import create client with user credentials from google.apps import chat v1 as google chat from google.protobuf.timestamp pb2 import Timestamp SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' ] This sample shows how to create a message that quotes another message. def create message quote message (): '''Creates a message that quotes another message.''' Create a client client = create client with user credentials ( SCOPES ) Create a timestamp from the RFC-3339 string.
+- Relies on the OAuth2 scope 'https://www.googleapis.com/auth/chat.messages.create' referenced in the manifest file (appsscript.json). / function createMessageQuoteMessage () { // Initialize request argument(s) // TODO(developer): Replace SPACE NAME here. const parent = 'spaces/ SPACE NAME ' ; const message = { // The text content of the message. text : 'I am responding to a quoted message!' , // quotedMessageMetadata lets chat apps respond to a message by quoting it. // // TODO(developer): Replace QUOTED MESSAGE NAME // and QUOTED MESSAGE LAST UPDATE TIME . quotedMessageMetadata : { name : ' QUOTED MESSAGE NAME ' , lastUpdateTime : ' QUOTED MESSAGE LAST UPDATE TIME ' , } }; // Make the request const response = Chat .
+- I created this message by calling ' + 'the Chat API \' s messages.create() method.' , "cards v2" : [{ "card" : { "header" : { "title" : 'About this message' , "image url" : 'https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/info/default/24px.svg' }, "sections" : [{ "header" : "Contents" , "widgets" : [{ "text paragraph" : { "text" : '🔡 <b>Text</b> which can include ' + 'hyperlinks 🔗, emojis 😄🎉, and @mentions 🗣️.' }}, { "text paragraph" : { "text" : '🖼️ A <b>card</b> to display visual elements' + 'and request information such as text 🔤, ' + 'dates and times 📅, and selections ☑️.' }}, { "text paragraph" : { "text" : '👉🔘 An <b>accessory widget</b> which adds ' + 'a button to the bottom of a message.' }} ]}, { "header" : "What's next" , "collapsible" : True , "widgets" : [{ "text paragraph" : { "text" : "❤️ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.reactions/create'>Add a reaction</a>." }}, { "text paragraph" : { "text" : "🔄 <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/patch'>Update</a> " + "or ❌ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/delete'>delete</a> " + "the message." } }] } ] }}], "accessory widgets" : [{ "button list" : { "buttons" : [{ "text" : 'View documentation' , "icon" : { "material icon" : { "name" : 'link' }}, "on click" : { "open link" : { "url" : 'https://developers.google.com/workspace/chat/create-messages' }} }]}}] } ) Make the request response = client . create message ( request ) Handle the response print ( response ) create message with app cred () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateMessageAppCred.java View on GitHub import com.google.apps.card.v1.Button ; import com.google.apps.card.v1.ButtonList ; import com.google.apps.card.v1.Card ; import com.google.apps.card.v1.Icon ; import com.google.apps.card.v1.MaterialIcon ; import com.google.apps.card.v1.OnClick ; import com.google.apps.card.v1.OpenLink ; import com.google.apps.card.v1.TextParagraph ; import com.google.apps.card.v1.Widget ; import com.google.apps.card.v1.Card.CardHeader ; import com.google.apps.card.v1.Card.Section ; import com.google.chat.v1.AccessoryWidget ; import com.google.chat.v1.CardWithId ; import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateMessageRequest ; import com.google.chat.v1.Message ; // This sample shows how to create message with app credential. public class CreateMessageAppCred { public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithAppCredentials ()) { CreateMessageRequest .
+- I created this message by calling " + "the Chat API\'s messages.create() method." ) . addCardsV2 ( CardWithId . newBuilder (). setCard ( Card . newBuilder () . setHeader ( CardHeader . newBuilder () . setTitle ( "About this message" ) . setImageUrl ( "https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/info/default/24px.svg" )) . addSections ( Section . newBuilder () . setHeader ( "Contents" ) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( "🔡 <b>Text</b> which can include " + "hyperlinks 🔗, emojis 😄🎉, and @mentions 🗣️." ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( "🖼️ A <b>card</b> to display visual elements " + "and request information such as text 🔤, " + "dates and times 📅, and selections ☑️." ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( "👉🔘 An <b>accessory widget</b> which adds " + "a button to the bottom of a message." )))) . addSections ( Section . newBuilder () . setHeader ( "What's next" ) . setCollapsible ( true ) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( "❤️ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.reactions/create'>Add a reaction</a>." ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( "🔄 <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/patch'>Update</a> " + "or ❌ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/delete'>delete</a> " + "the message." )))))) . addAccessoryWidgets ( AccessoryWidget . newBuilder () . setButtonList ( ButtonList . newBuilder () . addButtons ( Button . newBuilder () . setText ( "View documentation" ) . setIcon ( Icon . newBuilder () . setMaterialIcon ( MaterialIcon . newBuilder (). setName ( "link" ))) . setOnClick ( OnClick . newBuilder () . setOpenLink ( OpenLink . newBuilder () . setUrl ( "https://developers.google.com/workspace/chat/create-messages" ))))))); Message response = chatServiceClient . createMessage ( request . build ()); System . out . println ( JsonFormat . printer (). print ( response )); } } } Apps Script chat/advanced-service/Main.gs View on GitHub / This sample shows how to create message with app credential It relies on the OAuth2 scope 'https://www.googleapis.com/auth/chat.bot' used by service accounts. / function createMessageAppCred () { // Initialize request argument(s) // TODO(developer): Replace SPACE NAME here. const parent = "spaces/SPACE NAME" ; const message = { text : "👋🌎 Hello world!
+

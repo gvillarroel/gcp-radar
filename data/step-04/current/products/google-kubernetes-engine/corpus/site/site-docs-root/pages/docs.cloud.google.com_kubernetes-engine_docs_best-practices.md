@@ -1,0 +1,129 @@
+---
+title: "Best practices for GKE \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google Cloud\
+  \ Documentation"
+url: https://docs.cloud.google.com/kubernetes-engine/docs/best-practices
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/kubernetes-engine/docs
+source_metadata:
+  url: https://docs.cloud.google.com/kubernetes-engine/docs/best-practices
+  title: "Best practices for GKE \_|\_ Google Kubernetes Engine (GKE) \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Application hosting
+Google Kubernetes Engine (GKE)
+Guides
+Send feedback
+Best practices for GKE
+Stay organized with collections
+Save and categorize content based on your preferences.
+Autopilot
+Standard
+This document provides a consolidated overview of best practices for designing,
+building, and operating applications on Google Kubernetes Engine (GKE).
+Following these recommendations helps you optimize for cost, performance,
+security, and reliability. Each entry links to more detailed documentation for
+specific topics.
+Select your GKE category:
+AI and ML workloads
+Cost optimization
+Databases
+Networking
+Operations
+Reliability and scalability
+Security
+Or, search for a best practice:
+Category
+Best practices
+Summary
+AI and ML workloads
+Optimize
+AI/ML workload efficiency
+Maximize resource efficiency for AI/ML tasks on GKE.
+AI and ML workloads
+Inference
+workloads
+Run machine learning inference workloads on GKE.
+AI and ML workloads
+Autoscale
+LLM inference with GPUs
+Automatically scale large language model (LLM) inference using GPUs
+on GKE.
+AI and ML workloads
+Autoscale
+LLM inference with TPUs
+Automatically scale large language model (LLM) inference using TPUs
+on GKE.
+AI and ML workloads
+Optimize
+LLM inference with GPUs
+Optimize LLM inference with GPUs on GKE.
+AI and ML workloads
+Batch
+processing platform
+Build and operate a batch processing platform on GKE.
+Cost optimization
+Run
+cost-effective Kubernetes applications
+Reduce the operational costs of Kubernetes applications on GKE.
+Databases
+Database
+options
+Choose and manage database solutions for GKE
+applications.
+Networking
+Networking
+Configure and manage network connectivity for GKE.
+Operations
+Upgrading
+clusters
+Learn how to perform smooth and reliable GKE cluster upgrades.
+Operations
+CI/CD
+for GKE
+Implement continuous integration and delivery pipelines for GKE
+applications.
+Reliability and scalability
+Scalability
+Learn principles and techniques for scaling applications on GKE.
+Reliability and scalability
+Plan
+for scalability
+Learn strategies for designing scalable GKE environments.
+Reliability and scalability
+Plan
+large GKE clusters
+Learn how to architect and manage large-scale GKE clusters.
+Reliability and scalability
+Best practices for running HPC workloads
+Best practices to optimize running high performance computing (HPC) workloads on GKE.
+Reliability and scalability
+Plan
+large workloads
+Deploy and manage resource-intensive applications.
+Security
+Harden
+your GKE cluster
+Enhance the GKE security posture of your GKE clusters.
+Security
+Plan RBAC
+policies
+Define role-based access control to manage permissions.
+Security
+Enterprise
+multi-tenancy
+Run multiple tenants securely on a single GKE
+cluster.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

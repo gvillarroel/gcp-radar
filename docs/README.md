@@ -1,233 +1,109 @@
-# gcp-radar User Manual
+# gcp-radar Documentation
+
+## What This Project Is
 
-## Overview
-
-`gcp-radar` is a research and data-construction repository for building a structured, evidence-backed map of Google Cloud Platform products and features.
-
-The project is designed to answer a practical question:
-
-How can GCP product intelligence be collected, normalized, validated, and represented in a way that stays traceable to official Google evidence?
-
-The repository does not treat informal summaries as final truth. Its purpose is to build durable, machine-readable project artifacts that can be audited back to authoritative Google sources.
-
-## Project Goals
-
-The long-term goal is to produce structured product and feature cards that capture:
-
-- product identity
-- feature identity
-- lifecycle status and dates
-- relationships between products and features
-- security capabilities
-- IAM roles and permissions when explicitly documented
-- evidence links and supporting documentation
-- validated source-of-truth feature documentation
-- final radar reports
-
-Each important fact should eventually be attributable to source evidence.
-
-## Source Policy
-
-Only official Google sources are authoritative for final product intelligence in this repository.
-
-Authoritative examples include:
-
-- Google Cloud product documentation
-- Google Cloud release notes
-- official product pages
-- official IAM documentation
-- official security documentation
-- official Google datasets or catalogs when relevant
-
-Non-official sources may be used for orientation only. They must not be treated as final evidence unless an official Google source confirms the same claim.
-
-## Workflow Summary
-
-The repository is organized as a stage-based workflow.
-
-The current intended flow is:
-
-1. discover GCP products and features from official sources
-2. segregate those findings into stable per-product product and feature inventories
-3. discover and score the best official Google documentation URLs for each product
-4. clean and curate the documentation selected from those Step 03 rankings before deep research
-5. extract the current IAM role and permission inventory with `gcloud` and
-   materialize it into reusable JSON outputs with optional Parquet exports
-6. validate extracted facts against source evidence
-7. organize validated documentation in `artifacts/`
-8. generate final reports in `radar/`
-9. capture reusable knowledge and improve the skills that support the workflow
-
-This workflow is intentionally explicit so that scripts, data outputs, and validation steps remain easy to audit.
-
-For the strategy that has emerged from the implemented stages so far, see
-[Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md).
-
-## Repository Layout
-
-The repository uses a canonical structure defined by accepted ADRs.
-
-- `docs/` stores canonical user-facing documentation
-- `.specs/` stores workflow specifications and architecture decisions
-- `artifacts/` stores validated source-of-truth documentation organized by product and feature
-- `radar/` stores final report outputs
-- `data/` stores canonical machine-readable project artifacts
-- `knowledge/` stores reusable validated research findings
-- `scripts/` stores executable workflow stages
-- `skills/` stores repository-specific skills
-- `evaluations/` stores evaluation and Skill Arena artifacts
-
-## Step-Oriented Conventions
-
-Workflow logic and data are both organized by numbered stages.
-
-Examples:
-
-- `scripts/step-01/`
-- `scripts/step-02/`
-- `scripts/step-03/`
-- `data/step-01/`
-- `data/step-02/`
-- `data/step-03/`
-
-The `step-XX` naming pattern is used so directories sort predictably as the workflow grows.
-
-## What Belongs in Each Area
-
-### docs
-
-Use `docs/` for stable, human-readable, canonical project documentation.
-
-This file, `docs/README.md`, is the official user manual for the repository.
-
-### .specs
-
-Use `.specs/specs.md` for the current workflow definition and project rules.
-
-Use `.specs/ADRs/` to record important decisions such as structure, workflow design, data models, source policy, and evaluation strategy.
-
-### data
-
-Use `data/` for canonical machine-readable artifacts produced by the workflow.
-
-Expected contents include raw captures, normalized outputs, intermediate artifacts, validation outputs, and generated cards.
-
-This directory is not the final source of truth for validated feature documentation.
-
-Validated documentation should be promoted into `artifacts/`, and final reports should be generated into `radar/`.
-
-### artifacts
-
-Use `artifacts/` for validated source-of-truth documentation.
-
-Expected structure:
-
-- one folder per Google product
-- within each product, one folder per feature
-- within each feature, the validated documentation for that feature
-
-This content is the authoritative source used to generate final reports.
-
-### radar
-
-Use `radar/` for final report outputs.
-
-Final reports should be generated from the validated content stored in `artifacts/`.
-
-### knowledge
-
-Use `knowledge/` for reusable research findings that should survive beyond a single execution.
-
-Examples include terminology notes, source inventories, naming conventions, lifecycle interpretation guidance, and extraction heuristics.
-
-### scripts
-
-Use `scripts/` for executable workflow stages, primarily implemented with `zx`.
-
-Scripts should be aligned to the same numbered stages used in `data/`.
-
-### skills
-
-Use `skills/` for repository-specific skills that support discovery, extraction, validation, and card construction.
-
-### evaluations
-
-Use `evaluations/` for Skill Arena benchmarks, comparison outputs, evolution results, and evaluation notes.
-
-## Current Project State
-
-The repository is no longer only a structural scaffold.
-
-As of April 9, 2026, the implemented workflow reaches:
-
-- Step 01 incremental release-note acquisition into a canonical local Parquet snapshot
-- Step 02 per-product feature segregation from release notes
-- Step 03 official URL discovery and ranking
-- Step 04 per-product documentation corpus capture with `know`
-- Step 05 a first `gcloud`-backed IAM inventory extraction
-- Step 06 a first corpus-backed feature-definition prototype
-
-The current limiting factor is not the absence of pipeline stages, but uneven
-catalog completion across the middle stages, especially Step 03 seed quality
-and Step 04 corpus capture reliability. See
-[Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md) for
-the detailed state and current priorities.
-
-## Documentation Rules
-
-All project documentation must be written in English.
-
-All directory names must be lowercase.
-
-When documentation changes the workflow, storage model, evaluation methodology, or source policy, the change should also be reflected in `.specs/specs.md` and, when material, recorded as an ADR.
-
-Documentation should remain:
-
-- concise
-- factual
-- explicit about evidence versus assumptions
-- aligned with accepted ADRs
-
-## Local Secrets
-
-Do not store API keys, access tokens, or credential files in tracked repository
-files.
-
-For local execution, keep secrets only in your Windows user environment profile.
-Typical examples include:
-
-- `OPENAI_API_KEY`
-- `BRAVE_API_KEY`
-- `GOOGLE_API_KEY`
-- `GOOGLE_CLOUD_PROJECT`
-- `GOOGLE_APPLICATION_CREDENTIALS`
-
-The repository includes `.env.example` only as a variable-name reference.
-Real secret values must stay outside version control.
-
-## Reading Order
-
-If you are new to the repository, read the documents in this order:
-
-1. `AGENTS.md`
-2. `.specs/specs.md`
-3. relevant ADRs in `.specs/ADRs/`
-4. relevant entries in `knowledge/`
-5. this manual and the README files inside the stage directories you plan to work on
-
-## Intended Audience
-
-This repository is intended for:
-
-- contributors building extraction or validation scripts
-- agents working within the repository workflow
-- reviewers checking whether outputs remain evidence-backed
-- future maintainers who need to understand how data moves through the pipeline
-
-## What This Manual Covers
-
-This manual explains the repository's purpose, scope, layout, and operating model.
-
-Detailed implementation choices such as card schemas, evidence schemas, and
-script interfaces should be documented through future ADRs and stage-specific
-documentation as those decisions become concrete.
+`gcp-radar` builds a traceable map of Google Cloud products and features from
+official Google documentation only.
+
+The repository is not a notes collection. It is a staged evidence pipeline
+that:
+
+- discovers products and feature signals
+- finds the right official documentation roots and references
+- captures product-specific documentation corpora
+- extracts structured feature definitions and evidence
+- promotes validated outputs into durable artifacts and final reports
+
+The target result is a catalog where every important claim can be traced back
+to real Google documentation, and where duplicated or weak evidence can be
+reduced over time.
+
+## Why It Exists
+
+Google Cloud product information is spread across release notes, product docs,
+API docs, IAM references, client-library docs, and host families such as
+`docs.cloud.google.com` and `developers.google.com`.
+
+Without a staged process, that information becomes:
+
+- hard to audit
+- hard to normalize
+- easy to duplicate
+- easy to contaminate across neighboring products
+
+`gcp-radar` exists to turn that fragmented documentation surface into a
+repeatable, machine-readable, evidence-backed research system.
+
+## Core Principles
+
+- Only official Google sources are authoritative.
+- Every stage should leave machine-readable outputs behind.
+- Broad crawlable documentation roots are usually more valuable than deep leaf
+  pages.
+- Coverage feedback from later stages must improve earlier stages.
+- Documentation in this repository must remain explicit about evidence,
+  assumptions, and limitations.
+
+## Documentation Map
+
+Use the documents in this order:
+
+1. [Project Workflow Spec](C:/Users/villa/dev/gcp-radar/.specs/specs.md)
+2. [Pipeline Detail](C:/Users/villa/dev/gcp-radar/docs/pipeline.md)
+3. [Repository Map](C:/Users/villa/dev/gcp-radar/docs/repository-map.md)
+4. [Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md)
+
+## End-to-End Flow
+
+```mermaid
+flowchart TD
+    A["Official Google release notes and product docs"] --> B["Step 01: Acquire source snapshots"]
+    B --> C["Step 02: Segregate per-product feature inventories"]
+    C --> D["Step 03: Rank official documentation roots and references"]
+    D --> E["Step 04: Capture product corpora with know"]
+    E --> F["Step 05: Extract IAM inventory with gcloud"]
+    E --> G["Step 06: Generate extended feature definitions"]
+    F --> H["Validation and evidence consolidation"]
+    G --> H
+    H --> I["Artifacts by product and feature"]
+    I --> J["Radar reports"]
+    G -. coverage feedback .-> D
+    G -. coverage feedback .-> E
+```
+
+## Current Operational Shape
+
+The pipeline is already implemented through the middle stages. The practical
+challenge is no longer “whether a stage exists”, but whether the selected
+documentation for each product is broad, clean, and strong enough to support
+high feature coverage in Step 06.
+
+The most important current operating loop is:
+
+1. improve Step 03 URL discovery and classification
+2. rerun Step 04 corpus capture for targeted products
+3. measure uncovered features in Step 06
+4. push that feedback back into Step 03 and Step 04
+
+That loop is what steadily reduces unsupported or duplicate feature
+definitions.
+
+## Documentation Set In `docs/`
+
+- [Pipeline Detail](C:/Users/villa/dev/gcp-radar/docs/pipeline.md)
+  Explains each workflow step, inputs, outputs, and feedback loops.
+- [Repository Map](C:/Users/villa/dev/gcp-radar/docs/repository-map.md)
+  Explains what belongs in each top-level area and how to navigate the repo.
+- [Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md)
+  Captures the current implementation state and lessons learned from actual
+  runs.
+
+## When To Read What
+
+- If you need project intent, read this file.
+- If you need stage-by-stage execution logic, read
+  [Pipeline Detail](C:/Users/villa/dev/gcp-radar/docs/pipeline.md).
+- If you need to understand where files belong, read
+  [Repository Map](C:/Users/villa/dev/gcp-radar/docs/repository-map.md).
+- If you need the latest implementation lessons, read
+  [Strategy So Far](C:/Users/villa/dev/gcp-radar/docs/strategy-so-far.md).

@@ -1,0 +1,136 @@
+---
+title: "ListGroupStatsResponse \_|\_ Error Reporting \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/error-reporting/reference/rest/v1beta1/ListGroupStatsResponse
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/error-reporting/reference
+source_metadata:
+  url: https://docs.cloud.google.com/error-reporting/reference/rest/v1beta1/ListGroupStatsResponse
+  title: "ListGroupStatsResponse \_|\_ Error Reporting \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Technology areas
+Google Cloud Observability
+Error Reporting
+Reference
+Send feedback
+ListGroupStatsResponse
+Stay organized with collections
+Save and categorize content based on your preferences.
+JSON representation
+ErrorGroupStats
+JSON representation
+TimedCount
+JSON representation
+Contains a set of requested error group stats.
+JSON representation
+{
+"errorGroupStats" : [
+{
+object ( ErrorGroupStats )
+}
+] ,
+"nextPageToken" : string ,
+"timeRangeBegin" : string
+}
+Fields
+errorGroupStats[]
+object ( ErrorGroupStats )
+The error group stats which match the given request.
+nextPageToken
+string
+If non-empty, more results are available. Pass this token, along with the same query parameters as the first request, to view the next page of results.
+timeRangeBegin
+string ( Timestamp format)
+The timestamp specifies the start time to which the request was restricted. The start time is set based on the requested time range. It may be adjusted to a later time if a project has exceeded the storage quota and older data has been deleted.
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+ErrorGroupStats
+Data extracted for a specific group based on certain filter criteria, such as a given time period and/or service filter.
+JSON representation
+{
+"group" : {
+object ( ErrorGroup )
+} ,
+"count" : string ,
+"affectedUsersCount" : string ,
+"timedCounts" : [
+{
+object ( TimedCount )
+}
+] ,
+"firstSeenTime" : string ,
+"lastSeenTime" : string ,
+"affectedServices" : [
+{
+object ( ServiceContext )
+}
+] ,
+"numAffectedServices" : integer ,
+"representative" : {
+object ( ErrorEvent )
+}
+}
+Fields
+group
+object ( ErrorGroup )
+Group data that is independent of the filter criteria.
+count
+string ( int64 format)
+Approximate total number of events in the given group that match the filter criteria.
+affectedUsersCount
+string ( int64 format)
+Approximate number of affected users in the given group that match the filter criteria. Users are distinguished by data in the ErrorContext of the individual error events, such as their login name or their remote IP address in case of HTTP requests. The number of affected users can be zero even if the number of errors is non-zero if no data was provided from which the affected user could be deduced. Users are counted based on data in the request context that was provided in the error report. If more users are implicitly affected, such as due to a crash of the whole service, this is not reflected here.
+timedCounts[]
+object ( TimedCount )
+Approximate number of occurrences over time. Timed counts returned by ListGroups are guaranteed to be:
+Inside the requested time interval
+Non-overlapping, and
+Ordered by ascending time.
+firstSeenTime
+string ( Timestamp format)
+Approximate first occurrence that was ever seen for this group and which matches the given filter criteria, ignoring the timeRange that was specified in the request.
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+lastSeenTime
+string ( Timestamp format)
+Approximate last occurrence that was ever seen for this group and which matches the given filter criteria, ignoring the timeRange that was specified in the request.
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+affectedServices[]
+object ( ServiceContext )
+Service contexts with a non-zero error count for the given filter criteria. This list can be truncated if multiple services are affected. Refer to numAffectedServices for the total count.
+numAffectedServices
+integer
+The total number of services with a non-zero error count for the given filter criteria.
+representative
+object ( ErrorEvent )
+An arbitrary event that is chosen as representative for the whole group. The representative event is intended to be used as a quick preview for the whole group. Events in the group are usually sufficiently similar to each other such that showing an arbitrary representative provides insight into the characteristics of the group as a whole.
+TimedCount
+The number of errors in a given time period. All numbers are approximate since the error events are sampled before counting them.
+JSON representation
+{
+"count" : string ,
+"startTime" : string ,
+"endTime" : string
+}
+Fields
+count
+string ( int64 format)
+Approximate number of occurrences in the given time period.
+startTime
+string ( Timestamp format)
+Start of the time period to which count refers (included).
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+endTime
+string ( Timestamp format)
+End of the time period to which count refers (excluded).
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: "2014-10-02T15:01:23Z" , "2014-10-02T15:01:23.045123456Z" or "2014-10-02T15:01:23+05:30" .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-09-12 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-09-12 UTC."],[],[]]

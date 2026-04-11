@@ -1,0 +1,758 @@
+---
+title: "Resolve errors \_|\_ Google Drive \_|\_ Google for Developers"
+url: https://developers.google.com/workspace/drive/api/guides/handle-errors
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://developers.google.com/workspace/drive/api/guides/about-sdk
+source_metadata:
+  url: https://developers.google.com/workspace/drive/api/guides/handle-errors
+  title: "Resolve errors \_|\_ Google Drive \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Google Workspace
+Google Drive
+Guides
+Send feedback
+Resolve errors
+Stay organized with collections
+Save and categorize content based on your preferences.
+The Google Drive API returns two levels of error information:
+HTTP error codes and header messages.
+A JSON object in the response body with additional details that can help you
+determine how to handle the error.
+Google Drive apps should catch and handle all errors that might be encountered
+when using the REST API. This guide provides instructions about how to resolve
+specific Drive API errors.
+HTTP status code summary
+Error code
+Description
+200 - OK
+The request is successful (this is the standard response for successful HTTP requests).
+400 - Bad Request
+The request cannot be fulfilled due to a client error in the request.
+401 - Unauthorized
+The request contains invalid credentials.
+403 - Forbidden
+The request was received and understood, but the user doesn't have permission to perform the request.
+404 - Not Found
+The requested page couldn't be found.
+429 - Too Many Requests
+Too many requests to the API.
+500, 502, 503, 504 - Server Errors
+Unexpected error arises while processing the request.
+400 errors
+These errors mean that the request was unacceptable, often due to a missing
+required parameter.
+badRequest
+This error can occur from any one of the following issues in your code:
+A required field or parameter hasn't been provided.
+The value supplied or a combination of provided fields is invalid.
+You tried to add a duplicate parent to a Drive file.
+You tried to add a parent that would create a cycle in the directory graph.
+Note: This list isn't exhaustive, other cases can cause a 400 error.
+The following JSON sample is a representation of this error:
+{
+"error" : {
+"code" : 400 ,
+"errors" : [
+{
+"domain" : "global" ,
+"location" : "orderBy" ,
+"locationType" : "parameter" ,
+"message" : "Sorting is not supported for queries with fullText terms. Results are always in descending relevance order." ,
+"reason" : "badRequest"
+}
+],
+"message" : "Sorting is not supported for queries with fullText terms. Results are always in descending relevance order."
+}
+}
+To fix this error, check the message field and adjust your code accordingly.
+illegalKeepForeverModification
+This error occurs when trying to set a blob file revision marked as "Keep
+Forever" to false . The following JSON sample is a representation of this
+error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "illegalKeepForeverModification" ,
+"message" : "Bad Request. Cannot update a revision to false that is marked as keepForever."
+}
+],
+"code" : 400 ,
+"message" : "Bad Request. Cannot update a revision to false that is marked as keepForever."
+}
+}
+To fix this error, permanently delete a blob file revision to remove the "Keep
+Forever" setting.
+invalidSharingRequest
+This error occurs for several reasons. To determine the cause, evaluate the
+reason field of the returned JSON. This error most commonly occurs because:
+Sharing succeeded, but the notification email wasn't correctly delivered.
+The Access Control List (ACL) change isn't allowed for this user.
+The message field indicates the actual error.
+Share succeeded, but the notification email wasn't correctly delivered
+The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "invalidSharingRequest" ,
+"message" : "Bad Request. User message: \"Sorry, the items were successfully shared but emails could not be sent to email@domain.com.\""
+}
+],
+"code" : 400 ,
+"message" : "Bad Request"
+}
+}
+To fix this error, inform the user (sharer) they were unable to share because
+the notification email couldn't be sent to the destination email address. The
+user should make sure they have the correct email address and that it can
+receive email.
+The ACL change isn't allowed for this user
+The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "invalidSharingRequest" ,
+"message" : "Bad Request. User message: \"ACL change not allowed.\""
+}
+],
+"code" : 400 ,
+"message" : "Bad Request"
+}
+}
+To fix this error, check the sharing
+settings of the Google Workspace
+domain to which the file belongs. The settings might prohibit sharing outside of
+the domain or sharing a shared drive might not be permitted.
+401 errors
+These errors mean the request doesn't contain a valid access token.
+authError
+This error occurs when the access token that you're using is either expired or
+invalid. This error can also be caused by missing authorization for the
+requested scopes. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "authError" ,
+"message" : "Invalid Credentials" ,
+"locationType" : "header" ,
+"location" : "Authorization" ,
+}
+],
+"code" : 401 ,
+"message" : "Invalid Credentials"
+}
+}
+To fix this error, refresh the access token using the long-lived refresh token.
+If this fails, direct the user through the OAuth flow, as described in Choose
+Google Drive API scopes .
+fileNotDownloadable
+This error occurs when you try to use the revisions.get method with the
+alt=media URL parameter on a Google Workspace document. The following JSON
+sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "fileNotDownloadable" ,
+"message" : "Only files with binary content can be downloaded. Use Export with Docs Editors files."
+}
+],
+"code" : 403 ,
+"message" : "Only files with binary content can be downloaded. Use Export with Docs Editors files."
+}
+}
+To fix this error, try any of the following:
+Remove the alt=media URL parameter if you want to view the metadata of a
+particular revision, such as the mimetype.
+Use the files.export method to export Google Workspace document byte
+content. For more information, see Export Google Workspace document
+content .
+403 errors
+These errors mean that a usage limit has been exceeded or the user doesn't have
+the correct privileges. To determine the cause, evaluate the reason field of
+the returned JSON.
+For information about Drive API limits, refer to Usage limits . For information about Drive folder
+limits, refer to File and folder limits .
+activeItemCreationLimitExceeded
+An activeItemCreationLimitExceeded error occurs when the limit for the number
+of items created per account has been exceeded. Each user can have up to 500
+million items created by an account. For more information, see User-item
+limit .
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "activeItemCreationLimitExceeded" ,
+"message" : "This account has exceeded the creation limit of 500 million items. To create more items, permanently delete some items."
+}
+],
+"code" : 403 ,
+"message" : "This account has exceeded the creation limit of 500 million items. To create more items, permanently delete some items."
+}
+}
+To fix this error:
+Inform the user that Drive prevents accounts from creating
+more than 500 million items.
+If the user must create items in this same account, instruct them to
+permanently delete some objects. Otherwise, they can use a different account
+that already meets the requirement.
+appNotAuthorizedToFile
+This error occurs when your app isn't on the ACL for the file. This error
+prevents the user from opening the file with your app. The following JSON sample
+is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "appNotAuthorizedToFile" ,
+"message" : "The user has not granted the app {appId} {verb} access to the file {fileId}."
+}
+],
+"code" : 403 ,
+"message" : "The user has not granted the app {appId} {verb} access to the file {fileId}."
+}
+}
+To fix this error, try any of the following:
+Open the Google Drive picker
+and prompt the user to open the file.
+Instruct the user to open the file using the Open with context menu in the Drive
+UI of your app.
+Use the files.get method to check the
+isAppAuthorized field on the files resource
+to verify that your app created or opened the file.
+cannotModifyInheritedTeamDrivePermission
+This error occurs when a user tries to modify the inherited permissions of an
+item within a shared drive. Inherited permissions can't be removed from an item
+in a shared drive. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "cannotModifyInheritedTeamDrivePermission" ,
+"message" : "Cannot update or delete an inherited permission on a shared drive item."
+}
+],
+"code" : 403 ,
+"message" : "Cannot update or delete an inherited permission on a shared drive item."
+}
+}
+To fix this error, a user must adjust the permissions on the direct or indirect
+parent item from which they were inherited. For more information, see How
+permissions work . You can
+also retrieve the permissions resource to
+see whether the permissions on this shared drive item are inherited or applied
+directly.
+dailyLimitExceeded
+This error occurs when the API limit for your project was reached. The following
+JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "usageLimits" ,
+"reason" : "dailyLimitExceeded" ,
+"message" : "Daily Limit Exceeded"
+}
+],
+"code" : 403 ,
+"message" : "Daily Limit Exceeded"
+}
+}
+This error appears when the application's owner has set a quota limit to cap
+usage of a particular resource. To fix this error, remove any usage caps for
+the "Queries per day"
+quota .
+domainPolicy
+This error occurs when the policy for the user's domain doesn't allow access to
+Drive by your app. The following JSON sample is a representation
+of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "domainPolicy" ,
+"message" : "The domain administrators have disabled Drive apps."
+}
+],
+"code" : 403 ,
+"message" : "The domain administrators have disabled Drive apps."
+}
+}
+To fix this error:
+Inform the user that the domain doesn't allow your app to access files in
+Drive.
+Instruct the user to contact the domain administrator to request access for
+your app.
+downloadRestrictedForRevision
+This error occurs when the user cannot download a blob file revision. The
+following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "download_restricted_for_revision" ,
+"message" : "This revision cannot be downloaded by the authenticated user."
+}
+],
+"code" : 403 ,
+"message" : "This revision cannot be downloaded by the authenticated user."
+}
+}
+To fix this error, inform the user that the only way to download blob file
+revisions is if they're marked as "Keep Forever". For more information, see
+Specify revisions to save from auto
+delete .
+fileNotExportable
+This error occurs when the user attempts to export a Google Vids file. The
+following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "fileNotExportable" ,
+"message" : "Google Vids does not support files.export. Use files.download with Vids files."
+}
+],
+"code" : 403 ,
+"message" : "Google Vids does not support files.export. Use files.download with Vids files."
+}
+}
+To fix this error, inform the user that Google Vids files must be downloaded
+with the files.download method, as the files.export method isn't supported.
+For more information, see Download and export files .
+fileOwnerNotMemberOfTeamDrive
+This error occurs when attempting to move a file into a shared drive and the
+file owner isn't a member. The following JSON sample is a representation of this
+error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "fileOwnerNotMemberOfTeamDrive" ,
+"message" : "Cannot move a file into a shared drive as a writer when the owner of the file is not a member of that shared drive."
+}
+],
+"code" : 403 ,
+"message" : "Cannot move a file into a shared drive as a writer when the owner of the file is not a member of that shared drive."
+}
+}
+To fix this error:
+Add the member to the shared drive with role=owner . For more information,
+see Share files, folders, and drives .
+Add the file to the shared drive. For more information, see Create and
+populate folders .
+fileWriterTeamDriveMoveInDisabled
+This error occurs when a domain administrator hasn't allowed users with
+role=writer to move items into a shared drive. The user attempting to move the
+items has fewer permissions than allowed on the destination shared drive. The
+following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "fileWriterTeamDriveMoveInDisabled" ,
+"message" : "The domain administrator has not allowed writers to move items into a shared drive."
+}
+],
+"code" : 403 ,
+"message" : "The domain administrator has not allowed writers to move items into a shared drive."
+}
+}
+To fix this error, use the same administrator user account on both the source
+and destination shared drives.
+insufficientFilePermissions
+This error occurs when the user doesn't have write access to a file, and your
+app is attempting to modify the file. The following JSON sample is a
+representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "insufficientFilePermissions" ,
+"message" : "The user does not have sufficient permissions for file {fileId}."
+}
+],
+"code" : 403 ,
+"message" : "The user does not have sufficient permissions for file {fileId}."
+}
+}
+To fix this error, instruct the user to contact the file's owner and request
+edit access. You can also check user access levels in the metadata retrieved by
+the files.get method and display a read-only
+UI when permissions are missing.
+myDriveHierarchyDepthLimitExceeded
+A myDriveHierarchyDepthLimitExceeded error occurs when the limit for the
+number of nested folder levels has been exceeded. A user's My
+Drive can't contain more than 100 levels of nested folders. For
+more information, see Folder-depth limit .
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "myDriveHierarchyDepthLimitExceeded" ,
+"message" : "Your My Drive can't contain more than 100 levels of folders. For details, see https://developers.google.com/workspace/drive/api/guides/handle-errors#nested-folder-levels."
+}
+],
+"code" : 403 ,
+"message" : "Your My Drive can't contain more than 100 levels of folders. For details, see https://developers.google.com/workspace/drive/api/guides/handle-errors#nested-folder-levels."
+}
+}
+To fix this error:
+Inform the user that Drive prevents placing folders more than
+100 levels deep.
+If the user must create another nested folder, instruct them to reorganize
+the intended parent folder to be fewer than 100 levels deep or use a
+different parent folder that already meets the requirement.
+numChildrenInNonRootLimitExceeded
+This error occurs when the limit for a folder's number of children (folders,
+files, and shortcuts) has been exceeded. There's a 500,000 item limit for
+folders, files, and shortcuts directly in a folder. Items nested in subfolders
+don't count against this 500,000 item limit. For more information on
+Drive folder limits, refer to Folder limits in
+Google Drive .
+The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "numChildrenInNonRootLimitExceeded" ,
+"message" : "The limit for this folder's number of children (files and folders) has been exceeded."
+}
+],
+"code" : 403 ,
+"message" : "The limit for this folder's number of children (files and folders) has been exceeded."
+}
+}
+To fix this error, try any of the following:
+Inform the user that Drive prevents folders with more than
+500,000 items.
+If the user must add more items to the full folder, instruct them to
+reorganize the folder to contain fewer than 500,000 items or use a similar
+folder that already contains fewer items.
+rateLimitExceeded
+This error occurs when the project's rate limit has been reached. This limit
+varies depending on the type of request. The following JSON sample is a
+representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "usageLimits" ,
+"message" : "Rate Limit Exceeded" ,
+"reason" : "rateLimitExceeded" ,
+}
+],
+"code" : 403 ,
+"message" : "Rate Limit Exceeded"
+}
+}
+To fix this error, try any of the following:
+Raise the per-user quota in the Google Cloud project. For more information,
+request a quota increase .
+Batch requests to bundle
+multiple API calls into one HTTP request.
+Use exponential backoff to retry the
+request.
+sharingRateLimitExceeded
+This error occurs when the user reaches a sharing limit and is often linked with
+an email limit. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"message" : "Rate limit exceeded. User message: \"These item(s) could not be shared because a rate limit was exceeded: filename" ,
+"reason" : "sharingRateLimitExceeded" ,
+}
+],
+"code" : 403 ,
+"message" : "Rate Limit Exceeded"
+}
+}
+To fix this error:
+Don't send emails when sharing large amounts of files.
+If one user is making numerous requests on behalf of many users of a
+Google Workspace account, consider a service account with domain-wide
+delegation using the
+quotaUser
+parameter .
+storageQuotaExceeded
+This error occurs when the user reaches their storage limit. The following JSON
+sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"message" : "The user's Drive storage quota has been exceeded." ,
+"reason" : "storageQuotaExceeded" ,
+}
+],
+"code" : 403 ,
+"message" : "The user's Drive storage quota has been exceeded."
+}
+}
+To fix this error:
+Review your Drive account storage limits. For more
+information, refer to Google Workspace storage and upload
+limits .
+Manage your storage in Drive, Gmail &
+Google Photos .
+Buy more Google storage .
+Note: Service accounts don't have storage quota and can't own any files.
+Instead, they must upload files and folders into shared drives, or use OAuth 2.0
+to upload items on behalf of a human user.
+teamDriveFileLimitExceeded
+This error occurs when a user attempts to exceed the strict item limit on a
+shared drive. Each folder in a user's shared drive has a limit of 500,000 items,
+including files, folders, and shortcuts. This limit is based on item count, not
+storage use. For more information, see Shared drive limits in
+Google Drive .
+The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "teamDriveFileLimitExceeded" ,
+"message" : "The file limit for this shared drive has been exceeded."
+}
+],
+"code" : 403 ,
+"message" : "The file limit for this shared drive has been exceeded."
+}
+}
+To fix this error, reduce the number of items in the shared drive. Shared drives
+with too many files might be difficult to organize and search.
+teamDriveHierarchyTooDeep
+A teamDriveHierarchyTooDeep error occurs when the limit for the number of
+shared drive nested folder levels has been exceeded. A user's shared drive can't
+contain more than 100 levels of nested folders. For more information, see
+Folder-depth limit .
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "teamDriveHierarchyTooDeep" ,
+"message" : "The shared drive hierarchy depth will exceed the limit."
+}
+],
+"code" : 403 ,
+"message" : "The shared drive hierarchy depth will exceed the limit."
+}
+}
+To fix this error:
+Inform the user that shared drives prevents placing folders more than
+100 levels deep.
+If the user must create another nested folder, instruct them to reorganize
+the intended parent folder to be fewer than 100 levels deep or use a
+different parent folder that already meets the requirement.
+teamDriveMembershipRequired
+This error occurs when a user attempts to access a shared drive in which they're
+not a member. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "teamDriveMembershipRequired" ,
+"message" : "The attempted action requires shared drive membership."
+}
+],
+"code" : 403 ,
+"message" : "The attempted action requires shared drive membership."
+}
+}
+To fix this error, try any of the following:
+Ask the manager of the shared drive to add you with the appropriate
+permissions for the action you must perform.
+Review Drive's roles and
+permissions to learn who can access and manage
+shared drives. Additional information about access levels can also be found
+at Create a shared
+drive .
+teamDrivesFolderMoveInNotSupported
+This error occurs when a user attempts to move a folder from My
+Drive into a shared drive. The following JSON sample is a
+representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "teamDrivesFolderMoveInNotSupported" ,
+"message" : "Moving folders into shared drives is not supported."
+}
+],
+"code" : 403 ,
+"message" : "Moving folders into shared drives is not supported."
+}
+}
+To fix this error, try any of the following:
+Move the individual items from the folder into a shared drive using the
+Drive API. Set the supportsAllDrives=true parameter to denote the
+support of both My Drive and shared drives.
+If you must move the folder into a shared drive, use the
+Drive UI. For more information, see Move folders into shared
+drives as an admin .
+teamDrivesParentLimit
+This error occurs when a user attempts to add more than one parent to an item in
+a shared drive. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "teamDrivesParentLimit" ,
+"message" : "A shared drive item must have exactly one parent."
+}
+],
+"code" : 403 ,
+"message" : "A shared drive item must have exactly one parent."
+}
+}
+To fix this error, use Drive shortcuts to add multiple links to a
+file. Although a shortcut can only have one parent, a shortcut file can be
+copied to the additional locations. For more information, see Create a shortcut
+to a Drive file .
+UrlLeaseLimitExceeded
+This error occurs when trying to save Google Play game data through your
+application. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "usageLimits" ,
+"reason" : "UrlLeaseLimitExceeded" ,
+"message" : "Too many pending uploads for this snapshot. Please finish or cancel some before creating more."
+}
+],
+"code" : 403 ,
+"message" : "Too many pending uploads for this snapshot. Please finish or cancel some before creating more."
+}
+}
+To fix this error, complete or cancel any uploads for a snapshot before creating
+more.
+userRateLimitExceeded
+This error occurs when the per-user limit has been reached. This might be a
+limit from the Google Cloud console or a limit from the Drive
+backend. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "usageLimits" ,
+"reason" : "userRateLimitExceeded" ,
+"message" : "User Rate Limit Exceeded"
+}
+],
+"code" : 403 ,
+"message" : "User Rate Limit Exceeded"
+}
+}
+To fix this error, try any of the following:
+Raise the per-user quota in the Google Cloud project. For more information,
+request a quota increase .
+If one user is making numerous requests on behalf of many users of a
+Google Workspace account, consider a service account with domain-wide
+delegation using the
+quotaUser
+parameter .
+Use exponential backoff to retry the
+request.
+For information about Drive API limits, refer to Usage limits .
+404 errors
+These errors mean that the requested resource isn't accessible or doesn't exist.
+notFound
+This error occurs when the user doesn't have read access to a file, or the file
+doesn't exist. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "global" ,
+"reason" : "notFound" ,
+"message" : "File not found {fileId}"
+}
+],
+"code" : 404 ,
+"message" : "File not found: {fileId}"
+}
+}
+To fix this error:
+If the file is located in a shared drive, and you're using the
+files.get method, make sure the
+supportsAllDrives query parameter is set to true .
+Inform the user that they don't have read access to the file or the file
+doesn't exist.
+Instruct the user to contact the file's owner and request permission to the
+file.
+429 errors
+These errors mean that too many requests were sent to the API too quickly.
+rateLimitExceeded
+This error occurs when the user has sent too many requests in a given amount of
+time. The following JSON sample is a representation of this error:
+{
+"error" : {
+"errors" : [
+{
+"domain" : "usageLimits" ,
+"reason" : "rateLimitExceeded" ,
+"message" : "Rate Limit Exceeded"
+}
+],
+"code" : 429 ,
+"message" : "Rate Limit Exceeded" s
+}
+}
+To fix this error, use exponential backoff
+to retry the request.
+500, 502, 503, 504 errors
+These errors occur when an unexpected server error arises while processing the
+request. Various issues can cause these errors, including a request's timing
+overlapping with another request or a request for an unsupported action, such as
+attempting to update permissions for a single page in Google Sites instead of
+the entire site.
+The following is a list of 5xx errors:
+500 Backend error
+502 Bad Gateway
+503 Service Unavailable
+504 Gateway Timeout
+To fix this error, use exponential backoff
+to retry the request.
+Related topics
+Improve performance
+Troubleshoot authentication and authorization issues
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-01 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],[]]

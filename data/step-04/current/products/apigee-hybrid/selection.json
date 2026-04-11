@@ -1,20 +1,21 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T16:55:10.325Z",
+  "generated_at": "2026-04-11T20:12:19.635Z",
   "product_name": "Apigee hybrid",
   "product_slug": "apigee-hybrid",
   "step03_ranking_path": "data/step-03/current/products/apigee-hybrid/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
-      "docs_reference",
-      "iam_reference"
-    ]
+      "docs_reference"
+    ],
+    "feature_count": 62
   },
   "site_output_mode": "compact",
-  "selected_source_count": 3,
-  "selected_sources_signature": "13b6143e53238801a1a2b6c3abde524aa9148e9e9438fcb138dbd8ae59a98534",
+  "selected_source_count": 2,
+  "selected_sources_signature": "588f29b22bd5fb2eced523fc3d2a67044fb635262bff5b78da470b8ba936bca5",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -24,30 +25,23 @@
       "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 30
+      "max_pages": 36
     },
     {
       "source_id": "site-docs-reference",
       "product_slug": "apigee-hybrid",
       "family": "docs_reference",
       "classification": "product_reference",
-      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.11/helm-reference",
-      "final_score": 95,
-      "best_rank": 2,
+      "url": "https://docs.cloud.google.com/apigee/docs/hybrid/release-notes",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [
+        "apigee hybrid v1"
+      ],
       "max_depth": 1,
-      "max_pages": 20
-    },
-    {
-      "source_id": "site-iam-reference",
-      "product_slug": "apigee-hybrid",
-      "family": "iam_reference",
-      "classification": "iam_reference",
-      "url": "https://docs.cloud.google.com/apigee/docs/apihub/iam-roles",
-      "final_score": 95,
-      "best_rank": 3,
-      "max_depth": 1,
-      "max_pages": 20
+      "max_pages": 26
     }
   ],
   "corpus_paths": {

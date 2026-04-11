@@ -1,0 +1,107 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T10:59:26.817Z"
+product_name: "Dataflow"
+product_slug: "dataflow"
+feature_name: "Flex Template private registry images"
+feature_slug: "flex-template-private-registry-images"
+latest_feature_date: "2022-05-13"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/using-flex-templates"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub"
+  - "https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.flex_templates_service.FlexTemplatesServiceAsyncClient"
+  - "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse"
+keywords:
+  - "flex"
+  - "template"
+  - "private"
+  - "registry"
+  - "images"
+  - "let"
+  - "dataflow"
+  - "use"
+---
+
+# Flex Template private registry images
+
+Product: Dataflow
+Coverage: LOW
+
+## Step 02 Summary
+
+Flex Template private registry images let Dataflow use Flex Template container images from private registries.
+
+## Extended Definition
+
+Flex Template private registry images let Dataflow use Flex Template container images from private registries.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/dataflow/docs/guides/templates/using-flex-templates](https://docs.cloud.google.com/dataflow/docs/guides/templates/using-flex-templates)
+- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub)
+- [https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.flex_templates_service.FlexTemplatesServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.flex_templates_service.FlexTemplatesServiceAsyncClient)
+- [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse)
+
+## Supporting Pages
+
+### "Build and run an example Flex Template \_|\_ Cloud Dataflow \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/using-flex-templates](https://docs.cloud.google.com/dataflow/docs/guides/templates/using-flex-templates)
+- Source ID: `site-docs-root`
+- Final score: 224
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin roles/artifactregistry.writer gcloud projects remove-iam-policy-binding PROJECT ID \ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Use Flex Templates to package a Dataflow pipeline .
+- This command updates your Docker configuration, so that you can connect with Artifact Registry to push images. gcloud auth configure-docker LOCATION -docker.pkg.dev Flex Templates can also use images stored in private registries.
+- LOCATION : the location PROJECT ID : the Google Cloud project ID REPOSITORY : the name of the Artifact Registry repository that you created earlier Run the Flex Template In this step, you use the template to run a Dataflow job.
+- Java gcloud dataflow flex-template build gs:// BUCKET NAME /getting started-java.json \ --image-gcr-path " LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY /getting-started-java:latest" \ --sdk-language "JAVA" \ --flex-template-base-image JAVA17 \ --metadata-file "metadata.json" \ --jar "target/flex-template-getting-started-1.0.jar" \ --env FLEX TEMPLATE JAVA MAIN CLASS = "com.example.dataflow.FlexTemplateGettingStarted" Replace the following: BUCKET NAME : the name of the Cloud Storage bucket that you created earlier LOCATION : the location PROJECT ID : the Google Cloud project ID REPOSITORY : the name of the Artifact Registry repository that you created earlier Python gcloud dataflow flex-template build gs:// BUCKET NAME /getting started-py.json \ --image-gcr-path " LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY /getting-started-python:latest" \ --sdk-language "PYTHON" \ --flex-template-base-image "PYTHON3" \ --metadata-file "metadata.json" \ --py-path "." \ --env "FLEX TEMPLATE PYTHON PY FILE=getting started.py" \ --env "FLEX TEMPLATE PYTHON REQUIREMENTS FILE=requirements.txt" Replace the following: BUCKET NAME : the name of the Cloud Storage bucket that you created earlier LOCATION : the location PROJECT ID : the Google Cloud project ID REPOSITORY : the name of the Artifact Registry repository that you created earlier Go gcloud dataflow flex-template build gs:// BUCKET NAME /samples/dataflow/templates/wordcount-go.json \ --image-gcr-path " LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY /dataflow/wordcount-go:latest" \ --sdk-language "GO" \ --flex-template-base-image "GO" \ --metadata-file "metadata.json" \ --go-binary-path = "." \ --env "FLEX TEMPLATE GO BINARY=wordcount" Replace the following: BUCKET NAME : the name of the Cloud Storage bucket that you created earlier.
+
+### "Bigtable change streams to Pub/Sub template \_|\_ Cloud Dataflow \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub)
+- Source ID: `site-api-reference`
+- Final score: 198
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- ReadOptions . class }, skipOptions = { "bigtableReadAppProfile" , "bigtableAdditionalRetryCodes" , "bigtableRpcAttemptTimeoutMs" , "bigtableRpcTimeoutMs" }, documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub" , flexContainerName = "googlecloud-to-googlecloud" , contactInformation = "https://cloud.google.com/support" , streaming = true , supportsAtLeastOnce = true ) public final class BigtableChangeStreamsToPubSub { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToPubSub . class ); private static final String USE RUNNER V2 EXPERIMENT = "use runner v2" ; private static final TupleTag<FailsafeElement<String , String >> INVALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( "invalidMods" ) {}; private static final TupleTag<FailsafeElement<String , String >> VALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( "validMods" ) {}; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( "Starting to replicate change records from Cloud Bigtable change streams to PubSub" ); BigtableChangeStreamsToPubSubOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamsToPubSubOptions . class ); run ( options ); } private static void validateOptions ( BigtableChangeStreamsToPubSubOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( "dlqRetryMinutes must be positive." ); } if ( options . getDlqMaxRetries () < 0 ) { throw new IllegalArgumentException ( "dlqMaxRetries cannot be negative." ); } if ( options . getBigtableReadChangeStreamTimeoutMs () != null && options . getBigtableReadChangeStreamTimeoutMs () < = 0 ) { throw new IllegalArgumentException ( "bigtableReadChangeStreamTimeoutMs must be greater than 0." ); } } private static void setOptions ( BigtableChangeStreamsToPubSubOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.
+- WriteDLQ . newBuilder () . withDlqDirectory ( dlqManager . getSevereDlqDirectoryWithDateTime ()) . withTmpDirectory ( dlqManager . getSevereDlqDirectory () + "tmp/" ) . setIncludePaneInfo ( true ) . build ()); return pipeline . run (); } private static PubSubDestination newPubSubDestination ( BigtableChangeStreamsToPubSubOptions options , Topic topic ) { return new PubSubDestination ( getPubSubProjectId ( options ), options . getPubSubTopic (), topic , options . getMessageFormat (), options . getMessageEncoding (), options . getUseBase64Rowkeys (), options . getUseBase64ColumnQualifiers (), options . getUseBase64Values (), options . getStripValues ()); } private static Instant toInstant ( Timestamp timestamp ) { if ( timestamp == null ) { return null ; } else { return Instant . ofEpochMilli ( timestamp . getSeconds () 1000 + timestamp . getNanos () / 1000000 ); } } private static DeadLetterQueueManager buildDlqManager ( BigtableChangeStreamsToPubSubOptions options ) { String tempLocation = options . as ( DataflowPipelineOptions . class ). getTempLocation (). endsWith ( "/" ) ? options . as ( DataflowPipelineOptions . class ). getTempLocation () : options . as ( DataflowPipelineOptions . class ). getTempLocation () + "/" ; String dlqDirectory = options . getDlqDirectory (). isEmpty () ? tempLocation + "dlq/" : options . getDlqDirectory (); LOG . info ( "DLQ directory: {}" , dlqDirectory ); return DeadLetterQueueManager . create ( dlqDirectory , options . getDlqMaxRetries ()); } private static String getBigtableCharset ( BigtableChangeStreamsToPubSubOptions options ) { return StringUtils . isEmpty ( options . getBigtableChangeStreamCharset ()) ? "UTF-8" : options . getBigtableChangeStreamCharset (); } private static String getBigtableProjectId ( BigtableChangeStreamsToPubSubOptions options ) { return StringUtils . isEmpty ( options . getBigtableReadProjectId ()) ? options . getProject () : options . getBigtableReadProjectId (); } private static String getPubSubProjectId ( BigtableChangeStreamsToPubSubOptions options ) { return StringUtils . isEmpty ( options . getPubSubProjectId ()) ? options . getProject () : options . getPubSubProjectId (); } private static Boolean validateSchema ( Topic topic , BigtableChangeStreamsToPubSubOptions options , BigtableSource source ) throws Exception { String messageFormatPath = topic . getSchemaSettings (). getSchema (); if ( topic . getSchemaSettings (). getSchema (). isEmpty ()) { validateIncompatibleEncoding ( options ); LOG . info ( "Topic has no schema configured, pipeline will use message format: {}, message encoding: {}" , options . getMessageFormat (), options . getMessageEncoding ()); return true ; } else { SchemaName schemaName = SchemaName . parse ( topic . getSchemaSettings (). getSchema ()); Schema schema ; try ( SchemaServiceClient schemaServiceClient = SchemaServiceClient . create ()) { schema = schemaServiceClient . getSchema ( schemaName ); } options . setMessageEncoding ( toMessageEncoding ( topic . getSchemaSettings (). getEncoding ())); Schema .
+- POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { "launch parameter" : { "jobName" : " JOB NAME " , "containerSpecGcsPath" : "gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to PubSub" , "parameters" : { "bigtableReadInstanceId" : " BIGTABLE INSTANCE ID " , "bigtableReadTableId" : " BIGTABLE TABLE ID " , "bigtableChangeStreamAppProfile" : " BIGTABLE APPLICATION PROFILE ID " , "pubSubTopic" : " PUBSUB TOPIC " } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
+- In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \ --region = REGION NAME \ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to PubSub \ --parameters \ bigtableReadInstanceId = BIGTABLE INSTANCE ID , \ bigtableReadTableId = BIGTABLE TABLE ID , \ bigtableChangeStreamAppProfile = BIGTABLE APPLICATION PROFILE ID , \ pubSubTopic = PUBSUB TOPIC Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
+
+### "Class FlexTemplatesServiceAsyncClient (0.13.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.flex_templates_service.FlexTemplatesServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/dataflow/latest/google.cloud.dataflow_v1beta3.services.flex_templates_service.FlexTemplatesServiceAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 190
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- If none is provided, then the first transport in the registry is used. launch flex template launch flex template ( request : typing .
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataflow v1beta3 async def sample launch flex template(): Create a client client = dataflow v1beta3 .
+- These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment. transport Optional[Union[str,FlexTemplatesServiceTransport,Callable[..., FlexTemplatesServiceTransport]]] The transport to use, or a Callable that constructs and returns a new transport to use.
+- A request to launch a Cloud Dataflow job from a FlexTemplate. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.
+
+### "BigQuery to Clickhouse template \_|\_ Cloud Dataflow \_|\_ Google Cloud\
+
+- URL: [https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse](https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse)
+- Source ID: `site-api-reference`
+- Final score: 186
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- BATCH , displayName = "BigQuery to ClickHouse" , description = "The BigQuery to ClickHouse template is a batch pipeline that ingests data from a BigQuery table into ClickHouse table. " + "The template can either read the entire table or read specific records using a supplied query." , optionsClass = BigQueryToClickHouseOptions . class , skipOptions = { "javascriptTextTransformReloadIntervalMinutes" , "pythonExternalTextTransformGcsPath" , "pythonExternalTextTransformFunctionName" }, flexContainerName = "bigquery-to-clickhouse" , documentation = "https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-clickhouse" , contactInformation = "https://cloud.google.com/support" , preview = true , requirements = { "The source BigQuery table must exist." , "The ClickHouse target table must exist prior running." , "This ClickHouse target table must have the exact same column names as the the source table/query." }) public class BigQueryToClickHouse { private static final Logger log = LoggerFactory . getLogger ( BigQueryToClickHouse . class ); / Main entry point for pipeline execution. @param args Command line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); BigQueryToClickHouseOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigQueryToClickHouseOptions . class ); run ( options ); } / Runs the pipeline with the supplied options. @param options The execution parameters to the pipeline. @return The result of the pipeline execution. / private static PipelineResult run ( BigQueryToClickHouseOptions options ) { try { checkArgument ( ! options . getJdbcUrl (). isEmpty (), "The ClickHouse JDBC url must have the following template: jdbc:clickhouse://host:port/schema" ); checkArgument ( ! options . getClickHouseTable (). isEmpty (), "ClickHouse target table name is empty.
+- POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { "launch parameter" : { "jobName" : " JOB NAME " , "parameters" : { "jdbcUrl" : " JDBC URL " , "clickHouseUsername" : " CLICKHOUSE USERNAME " , "clickHouseTable" : " CLICKHOUSE TABLE " }, "containerSpecGcsPath" : "gs://dataflow-templates- LOCATION / VERSION /flex/BigQuery to Clickhouse" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
+- In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \ --project = PROJECT ID \ --region = REGION NAME \ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/BigQuery to Clickhouse \ --parameters \ jdbcUrl = JDBC URL , \ clickHouseUsername = CLICKHOUSE USERNAME , \ clickHouseTable = CLICKHOUSE TABLE Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.
+- Write clickHouseWriter = ClickHouseIO . write ( clickHouseJDBCURL , options . getClickHouseTable ()); if ( options . getMaxInsertBlockSize () != null ) { clickHouseWriter . withMaxInsertBlockSize ( options . getMaxInsertBlockSize ()); } if ( options . getInsertDistributedSync () != null ) { clickHouseWriter . withInsertDistributedSync ( options . getInsertDistributedSync ()); } if ( options . getInsertQuorum () != null ) { clickHouseWriter . withInsertQuorum ( options . getInsertQuorum ()); } if ( options . getInsertDeduplicate () != null ) { clickHouseWriter . withInsertDeduplicate ( options . getInsertDeduplicate ()); } if ( options . getMaxRetries () != null ) { clickHouseWriter . withMaxRetries ( options . getMaxRetries ()); } // Step 3: Write data to ClickHouse rows . apply ( "Write to ClickHouse" , clickHouseWriter ); return pipeline . run (); } catch ( Exception e ) { log . error ( "Error occurred during the BigQuery to ClickHouse template execution: " , e ); throw new RuntimeException ( e ); } } } class TableRowToBeamRowFn extends DoFn<TableRow , Row > { private Map<String , TableSchema .
+

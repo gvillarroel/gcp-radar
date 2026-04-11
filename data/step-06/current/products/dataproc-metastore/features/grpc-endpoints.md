@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T10:49:01.298Z"
+product_name: "Dataproc Metastore"
+product_slug: "dataproc-metastore"
+feature_name: "gRPC endpoints"
+feature_slug: "grpc-endpoints"
+latest_feature_date: "2023-05-31"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+  - "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+keywords:
+  - "grpc"
+  - "endpoints"
+  - "provide"
+  - "based"
+  - "access"
+  - "to"
+  - "dataproc"
+  - "metastore"
+---
+
+# gRPC endpoints
+
+Product: Dataproc Metastore
+Coverage: LOW
+
+## Step 02 Summary
+
+GRPC endpoints provide gRPC-based access to Dataproc Metastore services; gRPC endpoints provide gRPC-based access to Dataproc Metastore services.
+
+## Extended Definition
+
+GRPC endpoints provide gRPC-based access to Dataproc Metastore services; gRPC endpoints provide gRPC-based access to Dataproc Metastore services.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient)
+
+## Supporting Pages
+
+### "Class DataprocMetastoreFederationAsyncClient (1.22.0) \_|\_ Python client\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 292
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Returns Type Description DataprocMetastoreFederationAsyncClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- Returns Type Description DataprocMetastoreFederationAsyncClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info.
+- Home Documentation Developer tools Python Client libraries Send feedback Class DataprocMetastoreFederationAsyncClient (1.22.0) Stay organized with collections Save and categorize content based on your preferences.
+- DataprocMetastoreFederationTransport , ], ] ] = "grpc asyncio" , client options : typing .
+
+### "Class DataprocMetastoreAsyncClient (1.22.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
+- Source ID: `site-python-reference`
+- Final score: 288
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Returns Type Description DataprocMetastoreAsyncClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- Returns Type Description DataprocMetastoreAsyncClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info.
+- Home Documentation Developer tools Python Client libraries Send feedback Class DataprocMetastoreAsyncClient (1.22.0) Stay organized with collections Save and categorize content based on your preferences.
+- DataprocMetastoreTransport , ], ] ] = "grpc asyncio" , client options : typing .
+
+### "Class DataprocMetastoreFederationClient (1.22.0) \_|\_ Python client libraries\
+
+- URL: [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient)
+- Source ID: `site-python-reference`
+- Final score: 284
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Returns Type Description DataprocMetastoreFederationClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.
+- Returns Type Description DataprocMetastoreFederationClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info.
+- Home Documentation Developer tools Python Client libraries Send feedback Class DataprocMetastoreFederationClient (1.22.0) Stay organized with collections Save and categorize content based on your preferences.
+- It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample create federation(): Create a client client = metastore v1.
+

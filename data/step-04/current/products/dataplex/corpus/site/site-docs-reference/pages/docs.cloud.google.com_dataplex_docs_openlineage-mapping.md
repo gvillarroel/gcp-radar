@@ -1,5 +1,5 @@
 ---
-title: "OpenLineage mapping \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "OpenLineage mapping \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/openlineage-mapping
 knowledge_key: corpus
 source_id: site-docs-reference
@@ -7,18 +7,18 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/reference
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/openlineage-mapping
-  title: "OpenLineage mapping \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "OpenLineage mapping \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Reference
 Send feedback
 OpenLineage mapping
@@ -69,12 +69,12 @@ requestId
 Defined by the method user
 FQN mapping
 The following table provides examples of OpenLineage namespace and name
-pairs for various systems, and their equivalent Dataplex Universal Catalog
+pairs for various systems, and their equivalent Knowledge Catalog (formerly Dataplex Universal Catalog)
 fully qualified names (FQN):
 System
 OpenLineage namespace
 OpenLineage name
-Dataplex Universal Catalog FQN
+Knowledge Catalog FQN
 Athena
 awsathena://athena.{region_name}.amazonaws.com
 {catalog}
@@ -182,7 +182,7 @@ snowflake:{accountName}.{databaseId}.{schemaId}.{tableId}
 Spanner
 spanner://{projectId}:{instanceId}
 {database}.{schema}.{table}
-Supported in Dataplex Universal Catalog, but not supported in Data lineage
+Supported in Knowledge Catalog, but not supported in Data lineage
 Trino
 trino://{host}:{port}
 {catalog}
@@ -251,7 +251,7 @@ fully qualified names.
 System
 OpenLineage namespace
 OpenLineage name
-Dataplex Universal Catalog FQN
+Knowledge Catalog FQN
 Custom FQN
 custom
 {some reference}
@@ -271,6 +271,6 @@ Explore the Data Lineage API .
 Learn how to view lineage information .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

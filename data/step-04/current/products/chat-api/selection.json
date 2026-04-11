@@ -1,17 +1,85 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-07T23:16:17.493Z",
+  "generated_at": "2026-04-10T19:01:40.651Z",
   "product_name": "Chat API",
   "product_slug": "chat-api",
   "step03_ranking_path": "data/step-03/current/products/chat-api/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
-    "families": []
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
+    "families": [
+      "docs_root",
+      "docs_reference",
+      "api_reference",
+      "iam_reference"
+    ],
+    "feature_count": 90
   },
   "site_output_mode": "compact",
-  "selected_source_count": 0,
-  "selected_sources_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "selected_sources": [],
+  "selected_source_count": 5,
+  "selected_sources_signature": "b3c82ee9fc155bf62f27e12610396862b275f8765849ddc0a393b448e0c71733",
+  "selected_sources": [
+    {
+      "source_id": "site-docs-root",
+      "product_slug": "chat-api",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://developers.google.com/workspace/chat/overview",
+      "final_score": 100,
+      "best_rank": 3,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "chat-api",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://developers.google.com/workspace/chat/api/reference",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-reference",
+      "product_slug": "chat-api",
+      "family": "docs_reference",
+      "classification": "product_reference",
+      "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+      "final_score": 95,
+      "best_rank": 2,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 26
+    },
+    {
+      "source_id": "site-api-reference",
+      "product_slug": "chat-api",
+      "family": "api_reference",
+      "classification": "api_reference",
+      "url": "https://developers.google.com/workspace/chat/api/reference/rest",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 26
+    },
+    {
+      "source_id": "site-iam-reference",
+      "product_slug": "chat-api",
+      "family": "iam_reference",
+      "classification": "iam_reference",
+      "url": "https://developers.google.com/workspace/chat/authenticate-authorize",
+      "final_score": 90,
+      "best_rank": 8,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 26
+    }
+  ],
   "corpus_paths": {
     "product_dir": "data/step-04/current/products/chat-api",
     "know_store_dir": "data/step-04/current/products/chat-api/corpus",

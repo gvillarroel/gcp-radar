@@ -1,0 +1,45 @@
+---
+title: "Prerequisites overview \_|\_ GKE on Azure \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/prerequisites
+knowledge_key: corpus
+source_id: site-docs-root-2
+source_type: site
+entrypoint: https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/azure?hl=en
+source_metadata:
+  url: https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/azure/how-to/prerequisites
+  title: "Prerequisites overview \_|\_ GKE on Azure \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+The product described by this documentation, GKE on Azure, is now in maintenance mode and will be shut down on March 17, 2027.
+Home
+Documentation
+Application hosting
+Google Kubernetes Engine (GKE)
+GKE on Azure
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Prerequisites overview
+Before creating any clusters or node pools, you need to perform the following steps
+to install tools and create resources in Azure:
+Configure the Google Cloud CLI
+Configure the Azure CLI
+Create an Azure virtual network
+Configure your firewall
+Create an Azure resource group
+Create an Azure AD application
+Create Azure role assignments
+Create a client certificate
+Create an SSH key pair
+What's next
+Quickstart
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

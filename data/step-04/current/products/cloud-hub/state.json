@@ -1,12 +1,31 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T21:53:14.779Z",
+  "generated_at": "2026-04-10T20:41:02.595Z",
   "product_name": "Cloud Hub",
   "product_slug": "cloud-hub",
-  "selected_sources_signature": "995ed8eaaf9839921c5f60a89e481650d8c16a057e6261e0a7f6e23ae1cf1214",
-  "selected_source_count": 2,
-  "key_created": true,
+  "selected_sources_signature": "51470af4dc3bed130d0fdc787a4f0a23001bd27339297831404ad76b84d04307",
+  "selected_source_count": 3,
+  "key_created": false,
   "crawl4ai_available": false,
+  "feature_inventory": {
+    "feature_count": 1,
+    "top_phrases": [
+      "cost optimization in cloud hub"
+    ],
+    "top_tokens": [
+      "cost",
+      "optimization",
+      "cloud",
+      "hub",
+      "provides",
+      "visibility",
+      "into",
+      "active",
+      "assist",
+      "recommendations"
+    ],
+    "inventory_profile": "user_facing"
+  },
   "single_page_fallback_detected": false,
   "limitation": "",
   "skipped_sync": false,
@@ -16,16 +35,45 @@
     "deleted": [],
     "added": [
       "https://docs.cloud.google.com/hub/docs",
-      "https://docs.cloud.google.com/hub/docs/deployments"
+      "https://docs.cloud.google.com/hub/docs/home",
+      "https://docs.cloud.google.com/hub/docs/maintenance"
     ],
-    "changed": [],
+    "changed": [
+      "https://docs.cloud.google.com/hub/docs",
+      "https://docs.cloud.google.com/hub/docs/maintenance"
+    ],
     "sync_urls": [
       "https://docs.cloud.google.com/hub/docs",
-      "https://docs.cloud.google.com/hub/docs/deployments"
+      "https://docs.cloud.google.com/hub/docs/home",
+      "https://docs.cloud.google.com/hub/docs/maintenance"
     ]
   },
-  "registered_source_count": 2,
+  "source_failures": {},
+  "registered_source_count": 3,
   "corpus_page_summaries": [
+    {
+      "source_id": "site-docs-reference",
+      "page_count": 16,
+      "urls": [
+        "https://docs.cloud.google.com/hub/docs/home",
+        "https://docs.cloud.google.com/hub/docs",
+        "https://docs.cloud.google.com/hub/docs/access-control",
+        "https://docs.cloud.google.com/hub/docs/app-project-views",
+        "https://docs.cloud.google.com/hub/docs/application-centric-google-cloud",
+        "https://docs.cloud.google.com/hub/docs/deployments",
+        "https://docs.cloud.google.com/hub/docs/health",
+        "https://docs.cloud.google.com/hub/docs/maintenance",
+        "https://docs.cloud.google.com/hub/docs/optimize",
+        "https://docs.cloud.google.com/hub/docs/overview",
+        "https://docs.cloud.google.com/hub/docs/quotas-reservations",
+        "https://docs.cloud.google.com/hub/docs/resources",
+        "https://docs.cloud.google.com/hub/docs/security",
+        "https://docs.cloud.google.com/hub/docs/setup-cloud-hub",
+        "https://docs.cloud.google.com/hub/docs/support",
+        "https://docs.cloud.google.com/hub/docs/troubleshooting"
+      ],
+      "compact_output": true
+    },
     {
       "source_id": "site-docs-root",
       "page_count": 5,
@@ -40,20 +88,21 @@
     },
     {
       "source_id": "site-iam-reference",
-      "page_count": 15,
+      "page_count": 16,
       "urls": [
-        "https://docs.cloud.google.com/hub/docs/deployments",
+        "https://docs.cloud.google.com/hub/docs/maintenance",
         "https://docs.cloud.google.com/hub/docs",
         "https://docs.cloud.google.com/hub/docs/access-control",
         "https://docs.cloud.google.com/hub/docs/app-project-views",
         "https://docs.cloud.google.com/hub/docs/application-centric-google-cloud",
+        "https://docs.cloud.google.com/hub/docs/deployments",
         "https://docs.cloud.google.com/hub/docs/health",
         "https://docs.cloud.google.com/hub/docs/home",
-        "https://docs.cloud.google.com/hub/docs/maintenance",
         "https://docs.cloud.google.com/hub/docs/optimize",
         "https://docs.cloud.google.com/hub/docs/overview",
         "https://docs.cloud.google.com/hub/docs/quotas-reservations",
         "https://docs.cloud.google.com/hub/docs/resources",
+        "https://docs.cloud.google.com/hub/docs/security",
         "https://docs.cloud.google.com/hub/docs/setup-cloud-hub",
         "https://docs.cloud.google.com/hub/docs/support",
         "https://docs.cloud.google.com/hub/docs/troubleshooting"
@@ -61,6 +110,50 @@
       "compact_output": true
     }
   ],
+  "corpus_health": {
+    "status": "healthy",
+    "checks": {
+      "min_page_count": {
+        "actual": 37,
+        "expected": 6,
+        "passed": true
+      },
+      "min_unique_url_count": {
+        "actual": 17,
+        "expected": 5,
+        "passed": true
+      },
+      "source_family_diversity": {
+        "actual": 3,
+        "expected": 2,
+        "passed": true
+      },
+      "lexical_overlap": {
+        "actual": 10,
+        "expected": 6,
+        "passed": true,
+        "matched_tokens": [
+          "cost",
+          "optimization",
+          "cloud",
+          "hub",
+          "active",
+          "assist",
+          "recommendations",
+          "provides",
+          "visibility",
+          "into"
+        ],
+        "matched_phrases": [
+          "cost optimization in cloud hub"
+        ]
+      }
+    },
+    "total_corpus_pages": 37,
+    "unique_url_count": 17,
+    "matched_feature_token_count": 10,
+    "matched_feature_phrase_count": 1
+  },
   "corpus_paths": {
     "product_dir": "data/step-04/current/products/cloud-hub",
     "know_store_dir": "data/step-04/current/products/cloud-hub/corpus",

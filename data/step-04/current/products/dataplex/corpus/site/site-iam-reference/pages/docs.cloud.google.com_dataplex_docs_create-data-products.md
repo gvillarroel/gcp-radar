@@ -1,5 +1,5 @@
 ---
-title: "Create data products \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "Create data products \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/create-data-products
 knowledge_key: corpus
 source_id: site-iam-reference
@@ -7,18 +7,18 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs/iam-and-access-control
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/create-data-products
-  title: "Create data products \_|\_ Dataplex Universal Catalog \_|\_ Google Cloud\
-    \ Documentation"
+  title: "Create data products \_|\_ Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
 Create data products
@@ -33,7 +33,7 @@ Pre-GA products and features are available "as is" and might have limited suppor
 For more information, see the
 launch stage descriptions .
 This document is intended for data product owners who want to create and
-configure data products in Dataplex Universal Catalog.
+configure data products in Knowledge Catalog (formerly Dataplex Universal Catalog).
 For more information about the architecture and key concepts of
 data products, see About data products .
 Before you begin
@@ -93,7 +93,7 @@ For the data product consumers to search for, view, and request access to
 data products, as a data product owner, you must ensure the data product is
 discoverable. To do this, grant the data product consumers the following
 IAM roles on the data product:
-Search for data products and access them in Dataplex Universal Catalog Search:
+Search for data products and access them in Knowledge Catalog Search:
 Dataplex Data Product Consumer ( dataplex.dataProductsConsumer )
 Read-only access to view data product definitions and metadata:
 Dataplex Data Product Viewer ( dataplex.dataProductsViewer )
@@ -132,7 +132,7 @@ To create and configure a data product, complete the steps in the following
 sections:
 Create a data product
 Console
-In the Google Cloud console, go to the Dataplex Universal Catalog Data products page.
+In the Google Cloud console, go to the Knowledge Catalog Data products page.
 Go to Data products
 Click Create .
 In the Create data products pane, enter the following details:
@@ -459,7 +459,7 @@ how often data is updated or delivered, ensuring a predictable flow from
 data producer to data consumer. For example: Weekly
 PROJECT_ID : the ID of your Google Cloud project
 where the API call is being made
-LOCATION : the region of the Dataplex Universal Catalog
+LOCATION : the region of the Knowledge Catalog
 service endpoint you are calling (for example, us-central1 )
 DATA_PRODUCT_PROJECT_NUMBER : the project number where the
 data product resource is located
@@ -473,7 +473,7 @@ Identifying projects .
 Terraform
 Contracts are modeled as
 aspects on the data product.
-To manage a contract, you must manage the underlying Dataplex Universal Catalog
+To manage a contract, you must manage the underlying Knowledge Catalog
 entry. Because Terraform doesn't automatically discover existing aspects, you
 must first import the
 google_dataplex_entry .
@@ -499,7 +499,7 @@ provider = google-beta
 Replace the following:
 DATA_PRODUCT_PROJECT_NUMBER : the project number
 where the data product resource is located
-LOCATION : the region of the Dataplex Universal Catalog
+LOCATION : the region of the Knowledge Catalog
 service endpoint you are calling (for example, us-central1 )
 DATA_PRODUCT_ID : the ID of your data product
 REFRESH_FREQUENCY : the agreed-upon schedule for
@@ -544,13 +544,13 @@ Replace the following:
 ASPECT_PROJECT_ID : the ID of your Google Cloud
 project where the aspect is created
 ASPECT_LOCATION : the region of the
-Dataplex Universal Catalog service endpoint where the aspect is created
+Knowledge Catalog service endpoint where the aspect is created
 (for example, us-central1 )
 ASPECT_NAME : the name of the aspect you want to
 attach to the data product
 PROJECT_ID : the ID of your Google Cloud project
 where the API call is being made
-LOCATION : the region of the Dataplex Universal Catalog
+LOCATION : the region of the Knowledge Catalog
 service endpoint you are calling (for example, us-central1 )
 DATA_PRODUCT_PROJECT_NUMBER : the project number
 where the data product resource is located
@@ -558,7 +558,7 @@ DATA_PRODUCT_LOCATION : the location of the data
 product resource
 DATA_PRODUCT_ID : the ID of your data product
 Terraform
-To manage aspects, you must manage the underlying Dataplex Universal Catalog entry.
+To manage aspects, you must manage the underlying Knowledge Catalog entry.
 Because Terraform doesn't automatically discover existing aspects, you must
 first import the
 google_dataplex_entry .
@@ -582,13 +582,13 @@ provider = google-beta
 Replace the following:
 DATA_PRODUCT_PROJECT_NUMBER : the project number
 where the data product resource is located
-LOCATION : the region of the Dataplex Universal Catalog
+LOCATION : the region of the Knowledge Catalog
 service endpoint you are calling (for example, us-central1 )
 DATA_PRODUCT_ID : the ID of your data product
 ASPECT_PROJECT_NUMBER : the Google Cloud project
 number where the aspect is created
 ASPECT_LOCATION : the region of the
-Dataplex Universal Catalog service endpoint where the aspect is created
+Knowledge Catalog service endpoint where the aspect is created
 (for example, us-central1 )
 ASPECT_NAME : the name of the aspect you want to
 attach to the data product
@@ -598,7 +598,7 @@ Add documentation
 Documentation provides the essential context for consumers to understand and
 use a data product effectively. You can include rich-text details such as user
 guides, sample SQL queries, and business logic descriptions to help users
-generate insights from the underlying assets. In Dataplex Universal Catalog,
+generate insights from the underlying assets. In Knowledge Catalog,
 documentation is managed through the overview system aspect.
 To add documentation for the data product, follow these steps:
 Console
@@ -607,7 +607,7 @@ edit Edit next to
 Documentation .
 Type in the content in the rich-text editor.
 Click Save .
-The newly created data product appears on the Dataplex Universal Catalog
+The newly created data product appears on the Knowledge Catalog
 Data products page.
 REST
 Documentation is modeled as
@@ -634,7 +634,7 @@ curl -X PATCH \
 Replace the following:
 PROJECT_ID : the ID of your Google Cloud project
 where the API call is being made
-LOCATION : the region of the Dataplex Universal Catalog
+LOCATION : the region of the Knowledge Catalog
 service endpoint you are calling (for example, us-central1 )
 DATA_PRODUCT_PROJECT_NUMBER : the project number
 where the data product resource is located
@@ -646,7 +646,7 @@ attach to the data product
 Terraform
 Documentation is modeled as
 aspects on the data product.
-To manage documentation, you must manage the underlying Dataplex Universal Catalog
+To manage documentation, you must manage the underlying Knowledge Catalog
 entry. Because Terraform doesn't automatically discover existing aspects, you
 must first import the
 google_dataplex_entry .
@@ -672,7 +672,7 @@ provider = google-beta
 Replace the following:
 DATA_PRODUCT_PROJECT_NUMBER : the project number
 where the data product resource is located
-LOCATION : the region of the Dataplex Universal Catalog
+LOCATION : the region of the Knowledge Catalog
 service endpoint you are calling (for example, us-central1 )
 DATA_PRODUCT_ID : the ID of your data product
 DOCUMENTATION : the content that you want to
@@ -686,6 +686,6 @@ As a data consumer, learn how to
 request access to data products .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

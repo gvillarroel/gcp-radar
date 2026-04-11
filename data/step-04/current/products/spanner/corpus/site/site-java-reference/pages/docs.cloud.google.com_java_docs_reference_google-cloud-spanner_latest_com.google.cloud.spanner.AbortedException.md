@@ -1,0 +1,139 @@
+---
+title: "Exception AbortedException (6.111.1) \_|\_ Java client libraries \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AbortedException
+knowledge_key: corpus
+source_id: site-java-reference
+source_type: site
+entrypoint: https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/overview
+source_metadata:
+  url: https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AbortedException
+  title: "Exception AbortedException (6.111.1) \_|\_ Java client libraries \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Developer tools
+Java
+Client libraries
+Send feedback
+Exception AbortedException (6.111.1)
+Stay organized with collections
+Save and categorize content based on your preferences.
+6.111.1 (latest)
+6.111.0
+6.108.0
+6.107.0
+6.103.0
+6.102.1
+6.101.1
+6.100.0
+6.99.0
+6.98.1
+6.97.1
+6.96.1
+6.95.1
+6.94.0
+6.93.0
+6.89.0
+6.88.0
+6.87.0
+6.86.0
+6.85.0
+6.83.0
+6.82.0
+6.80.1
+6.79.0
+6.77.0
+6.74.1
+6.72.0
+6.71.0
+6.69.0
+6.68.0
+6.66.0
+6.65.1
+6.62.0
+6.60.0
+6.58.0
+6.57.0
+6.56.0
+6.55.0
+6.54.0
+6.53.0
+6.52.1
+6.51.0
+6.50.1
+6.49.0
+6.25.1
+6.24.0
+6.23.4
+6.22.0
+6.21.2
+6.20.0
+6.19.1
+6.18.0
+6.17.4
+6.14.1
+public class AbortedException extends SpannerException
+Exception thrown by Cloud Spanner when an operation detects that a transaction has aborted. This
+type of error has its own subclass since it is often necessary to handle aborted differently to
+other types of errors, most typically by retrying the transaction.
+Inherited Members
+com.google.cloud.BaseServiceException.equals(java.lang.Object)
+com.google.cloud.BaseServiceException.getCode()
+com.google.cloud.BaseServiceException.getDebugInfo()
+com.google.cloud.BaseServiceException.getLocation()
+com.google.cloud.BaseServiceException.hashCode()
+com.google.cloud.BaseServiceException.isRetryable()
+com.google.cloud.BaseServiceException.isRetryable(boolean,java.io.IOException)
+com.google.cloud.BaseServiceException.isRetryable(java.lang.Integer,java.lang.String,boolean,java.util.Set<com.google.cloud.BaseServiceException.Error>)
+com.google.cloud.BaseServiceException.translate(com.google.cloud.RetryHelper.RetryHelperException)
+com.google.cloud.BaseServiceException.translate(java.util.concurrent.ExecutionException)
+SpannerException.getDomain()
+SpannerException.getErrorCode()
+SpannerException.getErrorDetails()
+SpannerException.getMessage()
+SpannerException.getMetadata()
+SpannerException.getPostgreSQLErrorCode()
+SpannerException.getReason()
+SpannerException.getRequestId()
+SpannerException.getRetryDelayInMillis()
+SpannerException.toString()
+Object.clone()
+Object.finalize()
+Object.getClass()
+Object.notify()
+Object.notifyAll()
+Object.wait()
+Object.wait(long)
+Object.wait(long,int)
+Throwable.addSuppressed(Throwable)
+Throwable.fillInStackTrace()
+Throwable.getCause()
+Throwable.getLocalizedMessage()
+Throwable.getStackTrace()
+Throwable.getSuppressed()
+Throwable.initCause(Throwable)
+Throwable.printStackTrace()
+Throwable.printStackTrace(PrintStream)
+Throwable.printStackTrace(PrintWriter)
+Throwable.setStackTrace(StackTraceElement[])
+Methods
+isEmulatorOnlySupportsOneTransactionException()
+public boolean isEmulatorOnlySupportsOneTransactionException ()
+Returns true if this aborted exception was returned by the emulator, and was caused by another
+transaction already being active on the emulator.
+Returns
+Type
+Description
+boolean
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-03-14 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-03-14 UTC."],[],[]]

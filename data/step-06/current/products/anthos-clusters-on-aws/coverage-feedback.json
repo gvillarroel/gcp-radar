@@ -1,0 +1,658 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:58:55.354Z",
+  "product_name": "Anthos clusters on AWS",
+  "product_slug": "anthos-clusters-on-aws",
+  "feature_count": 51,
+  "uncovered_feature_count": 33,
+  "uncovered_features": [
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "admin-groups flag in create and update APIs",
+      "feature_summary": "The create and update APIs now support an admin-groups flag to designate cluster administrator groups without manual RBAC policy application.",
+      "keywords": [
+        "manual RBAC policy application",
+        "admin-groups flag",
+        "cluster administrator groups",
+        "cluster admin groups",
+        "CreateCluster API",
+        "UpdateCluster API",
+        "admin-groups",
+        "admin groups"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-09-06",
+      "feature_name": "Node auto repair",
+      "feature_summary": "Node auto repair is added to continuously monitor node health in each node pool; Node auto repair is available in preview, enabling continuous monitoring of node health in node pools.",
+      "keywords": [
+        "automatic node health checks",
+        "unhealthy node replacement",
+        "node self-repair",
+        "node pool auto repair",
+        "Node auto repair",
+        "node auto-repair",
+        "node health monitoring",
+        "auto-repair"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Control plane metrics export",
+      "feature_summary": "Monitoring is improved by exporting metrics for control-plane components.",
+      "keywords": [
+        "component metrics export",
+        "control plane observability",
+        "control-plane telemetry",
+        "metrics endpoint",
+        "CP metrics",
+        "control plane monitoring",
+        "control plane metrics",
+        "control-plane metrics"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Kubernetes resource metadata export to Google Cloud",
+      "feature_summary": "Kubernetes resource metadata can be sent to Google Cloud Platform for improved UI and cluster metrics, requiring the Config Monitoring for Ops API.",
+      "keywords": [
+        "Google Cloud UI metrics enrichment",
+        "Config Monitoring for Ops API",
+        "resource metadata sync",
+        "resource metadata export",
+        "cluster metadata visibility",
+        "metadata export to Google Cloud",
+        "metadata sync",
+        "Kubernetes metadata export"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Per-node-pool subnet security group ingress",
+      "feature_summary": "Control-plane ingress is restricted to node-pool subnet IP ranges on TCP 443 and 8123 instead of VPC-wide rules.",
+      "keywords": [
+        "VPC-wide ingress rule removal",
+        "per-node-pool subnet ingress",
+        "TCP 443 and 8123",
+        "security group ingress rules",
+        "control-plane ingress restriction",
+        "restricted control-plane ingress",
+        "node-pool subnet ingress",
+        "node pool subnet CIDR"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-05-04",
+      "feature_name": "Ubuntu 22.04 OS image",
+      "feature_summary": "Anthos on AWS node pools can use Ubuntu 22.04 as the default OS image.",
+      "keywords": [
+        "Linux OS image",
+        "Ubuntu Jammy",
+        "Ubuntu 22.04",
+        "node pool OS image",
+        "Ubuntu image support",
+        "22.04 LTS",
+        "Ubuntu22.04",
+        "default node image"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-04-05",
+      "feature_name": "Supported Kubernetes versions",
+      "feature_summary": "Anthos clusters on AWS now support launching with Kubernetes versions 1.23.16-gke.2800, 1.24.10-gke.1200, and 1.25.6-gke.1600; Anthos clusters on AWS now support launching with Kubernetes versions 1.23.16-gke.200, 1.24.9-gke.2000, and 1.25.5-gke.2000.",
+      "keywords": [
+        "Kubernetes 1.24.10-gke.1200",
+        "Kubernetes 1.23.16-gke.2800",
+        "Kubernetes 1.23.16-gke.200",
+        "Kubernetes 1.25.6-gke.1600",
+        "Kubernetes 1.25.5-gke.2000",
+        "Kubernetes 1.24.9-gke.2000",
+        "supported K8s versions",
+        "version list"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-02-01",
+      "feature_name": "containerd runtime upgrade",
+      "feature_summary": "The containerd container runtime is upgraded to version 1.6.12.",
+      "keywords": [
+        "container runtime upgrade",
+        "runtime component update",
+        "containerd runtime",
+        "CRI runtime",
+        "node runtime version",
+        "containerd 1.6.12",
+        "containerd 1.6"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Cloud Monitoring control plane metrics ingestion for Anthos clusters on AWS",
+      "feature_summary": "Google Cloud Monitoring now ingests control-plane metrics from kube-apiserver, kube-scheduler, kube-controller-manager, and etcd as a preview feature.",
+      "keywords": [
+        "control-plane metrics ingestion",
+        "kube-controller-manager metrics",
+        "Cloud Monitoring control plane metrics",
+        "kube-apiserver metrics",
+        "kube-scheduler metrics",
+        "preview control plane metrics",
+        "control-plane metrics preview",
+        "monitoring control-plane"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Dynamic AWS node pool tag updates",
+      "feature_summary": "Anthos clusters on AWS now support dynamically updating AWS node pool tags via required autoscaling and EC2 permissions.",
+      "keywords": [
+        "required autoscaling permissions",
+        "dynamic tag synchronization",
+        "autoscaling tag updates",
+        "required EC2 permissions",
+        "dynamic node pool tag updates",
+        "node-pool tag updates",
+        "node pool tags"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "gke-token-manager",
+      "feature_summary": "A new gke-token-manager component was added to generate tokens for control-plane components.",
+      "keywords": [
+        "control-plane token generation",
+        "control-plane component tokens",
+        "token manager component",
+        "generate tokens",
+        "gke-token-manager",
+        "GKE token manager",
+        "token-manager"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Google Group-based RBAC access for Anthos clusters on AWS",
+      "feature_summary": "Administrators can grant AWS cluster access to all members of a Google Group by assigning the required RBAC permission to that group.",
+      "keywords": [
+        "Google Group permission mapping",
+        "group-based RBAC access",
+        "RoleBinding for Google Group",
+        "GCP Group RBAC",
+        "cluster access for Google Group",
+        "Anthos on AWS RBAC group",
+        "Google Group access",
+        "Google Group RBAC"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Kubernetes 1.22 support removal",
+      "feature_summary": "Kubernetes 1.22 versions are no longer supported for Anthos clusters on AWS; deprecated on 2022-12-15.",
+      "keywords": [
+        "Kubernetes 1.22 end-of-life",
+        "K8s 1.22 removal",
+        "version support policy",
+        "1.22 support dropped",
+        "deprecated on 2022-12-15",
+        "supported Kubernetes versions",
+        "Kubernetes 1.22 deprecated",
+        "Anthos on AWS 1.22"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Kubernetes v1.25 API deprecations",
+      "feature_summary": "Kubernetes 1.25 in Anthos clusters on AWS deprecates several Kubernetes APIs; deprecated on 2022-12-15.",
+      "keywords": [
+        "K8s 1.25 API changes",
+        "API deprecation list",
+        "v1.25 API deprecations",
+        "Anthos on AWS 1.25 API changes",
+        "API removals in 1.25",
+        "Kubernetes 1.25 migration",
+        "deprecated APIs in Kubernetes 1.25"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-12-15",
+      "feature_name": "Managed Service for Prometheus workload metrics ingest to Cloud Monarch",
+      "feature_summary": "Workload metrics can be uploaded to Cloud Monarch using managed collection in Google Managed Service for Prometheus, with this capability upgraded to GA.",
+      "keywords": [
+        "MSP Monarch ingest",
+        "workload metrics ingest",
+        "Prometheus-to-Monarch",
+        "Managed Service for Prometheus",
+        "metrics ingestion GA",
+        "Prometheus ingest",
+        "managed metrics collection",
+        "Cloud Monarch"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Arm node pools in Anthos clusters on AWS",
+      "feature_summary": "Creating Arm architecture node pools is now available as a preview feature in Anthos clusters on AWS.",
+      "keywords": [
+        "Anthos AWS ARM architecture",
+        "create ARM node pool",
+        "arm architecture",
+        "ARM64 nodes",
+        "arm64 node pool",
+        "ARM node pools",
+        "ARM preview"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Cloud Console management for Anthos clusters on AWS",
+      "feature_summary": "Anthos clusters on AWS can now be updated, upgraded, and deleted through the Google Cloud console.",
+      "keywords": [
+        "console-based cluster lifecycle",
+        "update Anthos clusters in console",
+        "upgrade cluster in console",
+        "Anthos AWS management UI",
+        "UI cluster operations",
+        "in-console lifecycle",
+        "console management",
+        "delete Anthos cluster"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Cloud Monitoring support for Windows node pools in Anthos on AWS",
+      "feature_summary": "Anthos clusters on AWS now support Cloud Monitoring for Windows node pools starting in Kubernetes version 1.24 and later.",
+      "keywords": [
+        "Cloud Monitoring for Windows node pools",
+        "Kubernetes 1.24+ Windows monitoring",
+        "Windows workload metrics",
+        "Windows node pool monitoring",
+        "Windows node metrics",
+        "Anthos on AWS Cloud Monitoring",
+        "Windows monitoring"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Control plane tag updates on Kubernetes 1.24+ clusters",
+      "feature_summary": "Anthos Clusters on AWS now supports updating control plane tags for Kubernetes clusters running version 1.24 or later.",
+      "keywords": [
+        "cp tag update",
+        "Kubernetes 1.24+ tag update",
+        "update control plane tags",
+        "control plane tag patch",
+        "control-plane tagging",
+        "cluster control plane metadata",
+        "control plane tags"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Google Cloud Managed Service for Prometheus availability",
+      "feature_summary": "Google Cloud Managed Service for Prometheus became available as an invite-only private preview on Anthos clusters on AWS for managed Prometheus-based monitoring and alerting.",
+      "keywords": [
+        "invite-only private preview",
+        "invite-only MSP",
+        "managed Prometheus availability",
+        "MSP private preview",
+        "Managed Service for Prometheus",
+        "prometheus alerting",
+        "prometheus-based monitoring",
+        "Anthos on AWS observability"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-09-29",
+      "feature_name": "Kubernetes 1.21 support in Anthos clusters on AWS",
+      "feature_summary": "Anthos Clusters on AWS no longer supports Kubernetes 1.21 versions; deprecated on 2022-09-29.",
+      "keywords": [
+        "deprecated on 2022-09-29",
+        "K8s 1.21 removal",
+        "v1.21 deprecation",
+        "1.21 support removed",
+        "unsupported 1.21",
+        "Kubernetes 1.21 deprecated",
+        "Anthos on AWS 1.21"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Cloud Audit Logs for clusters",
+      "feature_summary": "Cluster Cloud Audit Logs became available and enabled by default for Kubernetes 1.23 and higher clusters.",
+      "keywords": [
+        "cluster-level audit logging",
+        "audit logging enabled by default",
+        "audit log integration",
+        "control plane audit logs",
+        "Cloud Audit Logging",
+        "cluster audit logs",
+        "Cloud Audit Logs",
+        "Kubernetes 1.23 and higher"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Disable profiling endpoint by default",
+      "feature_summary": "In Kubernetes 1.23.7-gke.1300, the profiling endpoint (/debug/pprof) is disabled by default in kube-scheduler and kube-controller-manager.",
+      "keywords": [
+        "disable profiling endpoint",
+        "pprof disabled by default",
+        "profiling endpoint",
+        "/debug/pprof",
+        "kube-controller-manager",
+        "kube-scheduler",
+        "pprof",
+        "1.23.7-gke.1300"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Instance Metadata Service emulator",
+      "feature_summary": "Kubernetes 1.23.7-gke.1300 added an Instance Metadata Service (IMDS) emulator.",
+      "keywords": [
+        "Instance Metadata Service emulator",
+        "metadata service emulation",
+        "Instance Metadata Service",
+        "metadata service emulator",
+        "IMDS emulator",
+        "1.23.7-gke.1300",
+        "IMDS"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Kubernetes 1.23 cluster launch support",
+      "feature_summary": "Anthos on AWS added the ability to launch Kubernetes 1.23 clusters.",
+      "keywords": [
+        "create clusters with Kubernetes 1.23",
+        "cluster launch version 1.23",
+        "launch Kubernetes 1.23 clusters",
+        "cluster provisioning 1.23",
+        "supported Kubernetes 1.23",
+        "Kubernetes v1.23",
+        "1.23 cluster support",
+        "1.23.x support"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "Strong cryptographic ciphers for control plane components",
+      "feature_summary": "Kubernetes 1.23.7-gke.1300 updated kube-apiserver and kubelet to use only strong cryptographic ciphers.",
+      "keywords": [
+        "strong cryptographic ciphers",
+        "strong ciphers",
+        "cipher suites",
+        "cipher configuration",
+        "control plane TLS",
+        "kube-apiserver",
+        "1.23.7-gke.1300",
+        "kubelet"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-07-13",
+      "feature_name": "VolumeSnapshot v1beta1 API deprecation",
+      "feature_summary": "A future 1.23 release is slated to stop serving VolumeSnapshot v1beta1 APIs, with migration to VolumeSnapshot v1 recommended; deprecated on 2022-07-13.",
+      "keywords": [
+        "migrate from v1beta1 to v1",
+        "snapshot API deprecation",
+        "snapshot API migration",
+        "deprecated on 2022-07-13",
+        "deprecated VolumeSnapshot v1beta1 API",
+        "VolumeSnapshot v1beta1",
+        "VolumeSnapshot v1",
+        "v1beta1"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Asynchronous boot error visibility in long-running operations",
+      "feature_summary": "Most common asynchronous cluster and nodepool boot errors can now be viewed in the long-running operation error field.",
+      "keywords": [
+        "long-running operation error field",
+        "LRO error details",
+        "async boot error",
+        "asynchronous boot errors",
+        "nodepool boot errors",
+        "cluster create operation",
+        "cluster boot errors",
+        "LRO errors"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Custom logging parameters on cluster creation",
+      "feature_summary": "New Kubernetes 1.22 clusters can now be configured with custom logging parameters at creation time.",
+      "keywords": [
+        "logging parameters at creation",
+        "custom logging parameters",
+        "custom logging config",
+        "cluster creation logging",
+        "cluster logging settings",
+        "custom logs",
+        "logging configuration",
+        "1.22 cluster logging"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Dedicated host node pools (preview)",
+      "feature_summary": "Anthos on AWS added a preview capability to configure nodes to run on dedicated hosts.",
+      "keywords": [
+        "dedicated host mode",
+        "host-backed nodes",
+        "node pools on dedicated hosts",
+        "dedicated host node pools",
+        "dedicated host pools",
+        "dedicated hosts",
+        "dedicated host",
+        "preview feature"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Expanded cluster and node pool configuration updates",
+      "feature_summary": "Cluster updates now support more configuration fields, including control plane security group IDs, proxy settings, node pool SSH settings, root volume, and encryption settings.",
+      "keywords": [
+        "node pool root volume settings",
+        "expand cluster update options",
+        "encryption settings update",
+        "cluster update configuration fields",
+        "root volume update",
+        "proxy settings in cluster updates",
+        "node pool SSH settings",
+        "cluster update fields"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Kubernetes 1.22 deprecated v1beta1 API removals",
+      "feature_summary": "Kubernetes 1.22 removes support for several deprecated v1beta1 APIs and requires workloads to migrate to stable v1 APIs; deprecated on 2022-04-13.",
+      "keywords": [
+        "release note v1beta1 deprecations",
+        "unsupported v1beta1 API objects",
+        "K8s 1.22 API removals",
+        "migrate workloads to v1 APIs",
+        "Kubernetes API version compatibility",
+        "deprecated API versions removed",
+        "Kubernetes 1.22 v1beta1 API removal",
+        "remove v1beta1 APIs"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-13",
+      "feature_name": "Windows node pool image type preview",
+      "feature_summary": "A preview feature allows selecting Windows as the node pool image type when creating node pools on Kubernetes 1.22.8.",
+      "keywords": [
+        "create node pool with Windows image",
+        "Windows node pool image type",
+        "Windows nodes in node pools",
+        "node pool image type preview",
+        "Windows image type",
+        "1.22.8 Windows nodes",
+        "node pool OS image",
+        "preview for Windows node pools"
+      ]
+    }
+  ],
+  "top_missing_tokens": [
+    {
+      "token": "on",
+      "count": 20
+    },
+    {
+      "token": "and",
+      "count": 15
+    },
+    {
+      "token": "anthos",
+      "count": 15
+    },
+    {
+      "token": "aws",
+      "count": 15
+    },
+    {
+      "token": "clusters",
+      "count": 15
+    },
+    {
+      "token": "kubernetes",
+      "count": 15
+    },
+    {
+      "token": "for",
+      "count": 14
+    },
+    {
+      "token": "to",
+      "count": 13
+    },
+    {
+      "token": "now",
+      "count": 11
+    },
+    {
+      "token": "the",
+      "count": 10
+    },
+    {
+      "token": "in",
+      "count": 9
+    },
+    {
+      "token": "node",
+      "count": 9
+    },
+    {
+      "token": "support",
+      "count": 9
+    },
+    {
+      "token": "cluster",
+      "count": 8
+    },
+    {
+      "token": "23",
+      "count": 7
+    },
+    {
+      "token": "can",
+      "count": 7
+    },
+    {
+      "token": "cloud",
+      "count": 7
+    },
+    {
+      "token": "control",
+      "count": 7
+    },
+    {
+      "token": "is",
+      "count": 7
+    },
+    {
+      "token": "plane",
+      "count": 7
+    },
+    {
+      "token": "google",
+      "count": 6
+    },
+    {
+      "token": "monitoring",
+      "count": 6
+    },
+    {
+      "token": "pools",
+      "count": 6
+    },
+    {
+      "token": "preview",
+      "count": 6
+    },
+    {
+      "token": "2022",
+      "count": 5
+    },
+    {
+      "token": "22",
+      "count": 5
+    },
+    {
+      "token": "added",
+      "count": 5
+    },
+    {
+      "token": "as",
+      "count": 5
+    },
+    {
+      "token": "be",
+      "count": 5
+    },
+    {
+      "token": "deprecated",
+      "count": 5
+    },
+    {
+      "token": "gke",
+      "count": 5
+    },
+    {
+      "token": "pool",
+      "count": 5
+    },
+    {
+      "token": "api",
+      "count": 4
+    },
+    {
+      "token": "apis",
+      "count": 4
+    },
+    {
+      "token": "available",
+      "count": 4
+    },
+    {
+      "token": "by",
+      "count": 4
+    },
+    {
+      "token": "metrics",
+      "count": 4
+    },
+    {
+      "token": "with",
+      "count": 4
+    },
+    {
+      "token": "12",
+      "count": 3
+    },
+    {
+      "token": "1300",
+      "count": 3
+    }
+  ]
+}

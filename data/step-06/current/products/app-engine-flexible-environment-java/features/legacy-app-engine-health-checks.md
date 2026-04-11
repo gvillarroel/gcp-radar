@@ -1,0 +1,43 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T19:43:43.858Z"
+product_name: "App Engine flexible environment Java"
+product_slug: "app-engine-flexible-environment-java"
+feature_name: "Legacy App Engine health checks"
+feature_slug: "legacy-app-engine-health-checks"
+latest_feature_date: "2017-09-18"
+deprecation_date: "2018-09-30"
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "legacy health check deprecate"
+  - "health check deprecations"
+  - "health check migration"
+  - "legacy health check"
+  - "legacy health checks"
+  - "health checks deprecation"
+  - "App Engine deprecated checks"
+---
+
+# Legacy App Engine health checks
+
+Product: App Engine flexible environment Java
+Coverage: NONE
+
+## Step 02 Summary
+
+Legacy health checks were deprecated and set to be unavailable after the stated removal date; deprecated on 2018-09-30.
+
+## Extended Definition
+
+Legacy health checks were deprecated and set to be unavailable after the stated removal date; deprecated on 2018-09-30.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

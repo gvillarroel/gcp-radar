@@ -1,0 +1,2974 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:44:02.733Z",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net",
+  "inputs": {
+    "step02_markdown_path": "data/step-02/current/app-engine-flexible-environment-net.md",
+    "step04_product_dir": "data/step-04/current/products/app-engine-flexible-environment-net"
+  },
+  "thresholds": {
+    "min_base_score": 18,
+    "min_final_score": 20,
+    "max_candidate_pages": 5,
+    "max_definition_pages": 2
+  },
+  "corpus_page_count": 46,
+  "source_row_count": 63,
+  "feature_count": 72,
+  "covered_feature_count": 16,
+  "features_without_supporting_pages": 56,
+  "features": [
+    {
+      "latest_feature_date": "2026-02-18",
+      "feature_name": "App Engine flexible environment .NET 10 runtime support",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment added General Availability support for the .NET 10 runtime; App Engine flexible environment added preview support for the .NET 10 runtime.",
+      "keywords": [
+        "GA .NET 10",
+        ".NET 10 runtime support",
+        "preview .NET 10",
+        "dotnet10",
+        ".NET 10 runtime",
+        "runtime in app.yaml",
+        ".NET 10",
+        "App Engine .NET runtime"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In App Engine flexible environment, the .NET runtime can be configured to use runtime version \"10\" via `app.yaml` settings (`runtime: aspnetcore`, `runtime config` / `runtime version: \"10\"`, and related fields such as `operating system: \"ubuntu24\"` in the documented example). The runtime stack is responsible for installing the app code and dependencies and running the app, and Google’s documentation states that .NET 10 in this environment is built using buildpacks. Based on the provided excerpt, this indicates explicit support for .NET 10 configuration in App Engine flexible, though lifecycle stage (for example GA vs. preview) is not shown in the snippet.",
+      "evidence_summary": "The referenced Google Cloud documentation page gives the canonical `app.yaml` form for selecting .NET runtime version 10 and describes that App Engine flexible’s .NET runtime installs dependencies and runs the app using buildpacks.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "a833f44b477607cd31387abbbb7a159c8b841ddfee44b5a9c517bbb65a782a99",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+          "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_runtime.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_runtime.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": ".net 10",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+          "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_runtime.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page documents using .NET 10 (example config and target framework guidance) and links to runtime support details, but does not explicitly state GA/preview rollout status.",
+          "matched_phrases": [
+            {
+              "phrase": ".net 10",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : \"10\" operating system : \"ubuntu24\" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.",
+            "The .NET runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment. .NET versions .NET 10 is built using buildpacks ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-20",
+      "feature_name": "App Engine flexible environment TLS 1.2+ and secure cipher suites",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment made TLS version 1.2 and later, with a secure cipher-suite set, generally available.",
+      "keywords": [
+        "secure cipher suites",
+        "secure TLS policy",
+        "TLS version minimum",
+        "TLS settings",
+        "TLS 1.2 only",
+        "TLS v1.2+",
+        "TLS 1.2 and later",
+        "App Engine flexible TLS"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environment made TLS version 1.2 and later, with a secure cipher-suite set, generally available.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2025-08-07",
+      "feature_name": "App Engine flexible environment TLS 1.1-and-earlier support",
+      "deprecation_date": "March 2025",
+      "feature_summary": "Support for TLS versions 1.1 and earlier in App Engine flexible environment is deprecated, with a recommendation to migrate to TLS 1.2 and later; deprecated on March 2025.",
+      "keywords": [
+        "March 2025 deprecation",
+        "TLS legacy protocols",
+        "TLS 1.1 and earlier",
+        "TLS 1.1-and-earlier",
+        "TLS legacy",
+        "TLS deprecation",
+        "deprecated TLS",
+        "TLS 1.1 support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Support for TLS versions 1.1 and earlier in App Engine flexible environment is deprecated, with a recommendation to migrate to TLS 1.2 and later; deprecated on March 2025.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-07-30",
+      "feature_name": "App Engine console filtering by runtime lifecycle stages",
+      "deprecation_date": "",
+      "feature_summary": "The App Engine page in Google Cloud Console can filter versions by runtime lifecycle stage and display warnings for versions approaching or past end of support.",
+      "keywords": [
+        "filter by runtime lifecycle stage",
+        "lifecycle stage filter",
+        "versions nearing end of support",
+        "end-of-support warnings",
+        "runtime lifecycle status",
+        "support-stage filter",
+        "runtime stage filter",
+        "App Engine versions page"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The App Engine page in Google Cloud Console can filter versions by runtime lifecycle stage and display warnings for versions approaching or past end of support.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2024-01-10",
+      "feature_name": "App Engine flexible environment .NET 8 runtime support",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment announced General Availability of the .NET 8 runtime; App Engine flexible environment added preview support for the .NET 8 runtime.",
+      "keywords": [
+        "ASP.NET Core 8",
+        "GA .NET 8",
+        "dotnet8",
+        "runtime in app.yaml",
+        "preview .NET 8",
+        "App Engine flexible .NET",
+        "runtime availability",
+        ".NET 8 runtime"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environment announced General Availability of the .NET 8 runtime; App Engine flexible environment added preview support for the .NET 8 runtime.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-05-12",
+      "feature_name": "App Engine flexible environment .NET 6 runtime support",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment added General Availability support for the .NET 6 runtime, requiring an operating system version to be specified in app.yaml; App Engine flexible environment added preview support for the .NET 6 runtime, requiring an operating system version to be specified in app.yaml.",
+      "keywords": [
+        "OS version in app.yaml",
+        "runtime configuration",
+        "GA .NET 6",
+        "dotnet6",
+        "App Engine flexible .NET 6",
+        "preview .NET 6",
+        "App Engine .NET 6",
+        ".NET 6 runtime"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environment added General Availability support for the .NET 6 runtime, requiring an operating system version to be specified in app.yaml; App Engine flexible environment added preview support for the .NET 6 runtime, requiring an operating system version to be specified in app.yaml.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2023-03-24",
+      "feature_name": "Internal-only SSH access for App Engine flexible instances",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment now supports SSH login to instances that use only internal IP addresses.",
+      "keywords": [
+        "SSH login without external IP",
+        "no-public-IP SSH",
+        "SSH for internal IP instances",
+        "internal IP addresses only",
+        "internal-only SSH",
+        "internal SSH access",
+        "private SSH",
+        "flexible instances SSH"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environment now supports SSH login to instances that use only internal IP addresses.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2022-12-13",
+      "feature_name": "App-level default service account configuration",
+      "deprecation_date": "",
+      "feature_summary": "App Engine now allows any configured service account in the Cloud project to be used as the app-level default service account when creating or updating applications.",
+      "keywords": [
+        "create or update application",
+        "application-level default account",
+        "application default service account",
+        "configure app default SA",
+        "app-level default service account",
+        "default service account for app",
+        "app-level SA",
+        "default SA"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "App Engine flexible environment lets you assign an app-level default service account when you create an app or later update it, using `gcloud app create --service-account` or `gcloud app update --service-account`, and the account may be any service account in the Cloud project. If a service has no per-version service account configured, Google Cloud uses the app-level default account for that app, and previously deployed versions only switch to the new app-level default after they are redeployed.",
+      "evidence_summary": "The cited documentation pages describe how to set and change the app-level default service account, its fallback behavior, and its effect on service/version identity at deploy time.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "5d7700ffceb4b697892419316c03ed57e1c9ffaa4ba74a75b4f4b614231062dd",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+          "title": "\"Configure App Engine service accounts \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "app-level default service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ]
+        },
+        {
+          "page_id": "59f92463cdd5ad54778875af1726c5cdc100742e5ba26396344f1fe4e6367864",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+          "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "app-level default service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+          "title": "\"Configure App Engine service accounts \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "base_score": 30,
+          "final_score": 48,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "It clearly describes app-level default service accounts, their defaults, and how to assign a different service account via console, CLI, or API.",
+          "matched_phrases": [
+            {
+              "phrase": "app-level default service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 16
+            }
+          ],
+          "evidence_snippets": [
+            "To create a your App Engine application and assign an app-level default service account, you can use one of the following: gcloud Run the gcloud app create command: gcloud app create --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Replace: SERVICE ACCOUNT NAME with the name of the service account that you created.",
+            "All previously deployed versions will not use the new app-level default service account until you re-deploy that version. gcloud Run the gcloud app update command. gcloud app update --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com Replace: SERVICE ACCOUNT NAME with the name of the service account that you created.",
+            "There are two types of service accounts in App Engine and any service account in your Cloud project can be assigned to act as either the app-level default or per-version service account: App-level default service account - This service account is used for all of your deployed services when you don't configure a \"per-version service account\".",
+            "Update the app-level default service account for your app To update the app-level default service account for your application, you can use one of the following to assign a new service account: Important: Only versions deployed after the update will use the new app-level default service account."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+          "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "base_score": 30,
+          "final_score": 26,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "app-level default service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "App-level default service account : If you don't configure a per-version service account, Google Cloud uses the app-level default service account for all of your deployed services.",
+            "If you don't assign an app-level default service account, Google Cloud uses the auto-created App Engine default service account ( PROJECT ID @appspot.gserviceaccount.com ).",
+            "For example, if a version requires permissions that differ from the app-level default service account, you can assign a service account that is specific to that version.",
+            "You assign the app-level default service account when you create the app."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-11-09",
+      "feature_name": "Internal IP mode for App Engine flexible instances",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment added General Availability of setting IP mode to internal for instances.",
+      "keywords": [
+        "internal IP only mode",
+        "set instance IP mode",
+        "IP mode setting",
+        "IP mode internal",
+        "internal IP mode",
+        "internal mode",
+        "App Engine flexible networking",
+        "internal IP"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "App Engine flexible environment services can be configured to run in an internal-only networking mode, which prevents the service from using an external IP address and keeps it limited to its internal IP. By default, a flexible service is provisioned with both an internal IP and an ephemeral external IP, and switching to internal-only operation requires explicit service configuration, including using a private-internal setup; outbound internet access in that state must be provided via Cloud NAT if required.",
+      "evidence_summary": "The cited App Engine flexible documentation page states that services can be limited to internal IP only, describes the default dual IP behavior, and explains how to expose only internal IP while using Cloud NAT for external egress.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "0aa1c9ac10927227d8d945bb86b77e1b8471f96d7c620d28ca6c08bb1051c850",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+          "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "internal ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+          "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "base_score": 30,
+          "final_score": 48,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page directly describes using an internal IP mode for flexible instances and the required network prerequisites such as Private Google Access and Shared VPC configuration.",
+          "matched_phrases": [
+            {
+              "phrase": "internal ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "If your service does not require an external IP address, you can prevent your service from sending requests to resources on the internet and reduce costs by limiting your service to using only its internal IP address.",
+            "Send external requests without an external IP address If your service sends requests to the internet but you want to limit it to using only its internal IP address, you can use Cloud NAT to create a gateway.",
+            "By default, flexible environment services receive both an internal IP address and an ephemeral external IP address when they are first deployed.",
+            "This page shows the required configuration for exposing an App Engine flexible environment service only on its internal IP address."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-05-23",
+      "feature_name": "Disable external ephemeral IP addresses for App Engine Flexible Environment services",
+      "deprecation_date": "",
+      "feature_summary": "App Engine Flexible Environment now supports disabling external ephemeral IP addresses for its services.",
+      "keywords": [
+        "disable external ephemeral IP",
+        "external ephemeral IP address",
+        "no external ephemeral IP",
+        "ephemeral IP off",
+        "ephemeral external IP",
+        "external IP disabled",
+        "App Engine flexible services"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "This feature in App Engine flexible environment allows services to disable their default ephemeral external IP addresses while still running with an internal IP address. Disabling the ephemeral external IP is intended for private/internal-oriented deployments, but services that need access to custom domains must rely on Cloud NAT, since the ephemeral external IP is what normally enables requests to custom domains and internet resources.",
+      "evidence_summary": "The cited page directly states how App Engine flexible services are provisioned with both internal and ephemeral external IPs by default, and how disabling the external ephemeral IP changes external access behavior with Cloud NAT requirements.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "0aa1c9ac10927227d8d945bb86b77e1b8471f96d7c620d28ca6c08bb1051c850",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+          "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "ephemeral external ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "9498af451ba7cfeaa75bf9f186307c32cf29484ee73aefe72e4afbb2c4799ff1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml",
+          "title": "\"app.yaml Configuration File \\_|\\_ App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "ephemeral external ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+          "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "base_score": 30,
+          "final_score": 48,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The documentation explicitly explains how to deploy flexible environment services without ephemeral external IPs and the operational implications of disabling them.",
+          "matched_phrases": [
+            {
+              "phrase": "ephemeral external ip",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": [
+            "Limitations Disabling ephemeral external IP addresses has the following limitations: Services with custom domains: To send requests to App Engine services with custom domains you must configure Cloud NAT .",
+            "The ephemeral external IP address allows your service to send requests to App Engine services with custom domains, and resources on the internet.",
+            "By default, flexible environment services receive both an internal IP address and an ephemeral external IP address when they are first deployed.",
+            "Your service can send external requests through the Cloud NAT gateway without using the default ephemeral external IP addresses."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2022-05-18",
+      "feature_name": "Specify a user-managed service account per App Engine version",
+      "deprecation_date": "",
+      "feature_summary": "You can now specify a user-managed service account for each App Engine version during deployment; Deployments can specify a user-managed service account for each App Engine version, enabling per-version privilege separation.",
+      "keywords": [
+        "user-managed service account per version",
+        "deploy version with service account",
+        "version-level service account",
+        "per-version service account",
+        "per-version SA",
+        "user-managed SA",
+        "App Engine version settings",
+        "version service account"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "In App Engine flexible environment, you can configure a **per-version service account** so that a specific deployed version of a service uses that account as its runtime identity. This is an explicit alternative to the app-level default service account, which is used only when no per-version service account is configured. The per-version option allows identity/principal selection at the version level rather than globally.",
+      "evidence_summary": "The cited pages define both app-level and per-version service accounts and state that App Engine uses per-version service accounts as the identity for specific versions, with app-level default applying only when no per-version account is set.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "5d7700ffceb4b697892419316c03ed57e1c9ffaa4ba74a75b4f4b614231062dd",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+          "title": "\"Configure App Engine service accounts \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "per-version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "59f92463cdd5ad54778875af1726c5cdc100742e5ba26396344f1fe4e6367864",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+          "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "per-version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+          "title": "\"Configure App Engine service accounts \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "base_score": 34,
+          "final_score": 52,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page explicitly defines per-version service accounts, explains why to use them, and states you can assign a specific service account when deploying a version.",
+          "matched_phrases": [
+            {
+              "phrase": "per-version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "There are two types of service accounts in App Engine and any service account in your Cloud project can be assigned to act as either the app-level default or per-version service account: App-level default service account - This service account is used for all of your deployed services when you don't configure a \"per-version service account\".",
+            "Per-version service account - A service account configured as the identity for a specific version of your deployed service."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+          "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "base_score": 34,
+          "final_score": 30,
+          "rerank_relevance": "WEAK",
+          "rerank_rationale": "Fallback relevance because reranking failed.",
+          "matched_phrases": [
+            {
+              "phrase": "per-version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            },
+            {
+              "phrase": "version service account",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Specifying a service account App Engine lets you use two types of service accounts: Per-version service account : A service account configured as the identity for a specific version of your deployed service.",
+            "App-level default service account : If you don't configure a per-version service account, Google Cloud uses the app-level default service account for all of your deployed services.",
+            "If you remove Editor role from the App Engine default service account, or if you are using a per-version service account, make sure to grant the service account these roles."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2021-06-14",
+      "feature_name": "App Engine regional expansion (us-west1",
+      "deprecation_date": "",
+      "feature_summary": "App Engine added availability in the us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan) regions.",
+      "keywords": [
+        "new supported regions",
+        "App Engine regional expansion",
+        "asia-southeast1 region",
+        "us-west1 region",
+        "asia-east1 region",
+        "Singapore region",
+        "regional availability",
+        "Oregon region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine added availability in the us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan) regions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2021-06-14",
+      "feature_name": "asia-east1)",
+      "deprecation_date": "",
+      "feature_summary": "App Engine added availability in the us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan) regions.",
+      "keywords": [
+        "App Engine regional availability list",
+        "App Engine region us-west1 and asia-southeast1",
+        "Taiwan (asia-east1) support",
+        "App Engine available in asia-east1",
+        "App Engine region availability",
+        "Taiwan region",
+        "asia-east1",
+        "asia east1"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine added availability in the us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan) regions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2021-06-14",
+      "feature_name": "asia-southeast1",
+      "deprecation_date": "",
+      "feature_summary": "App Engine added availability in the us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan) regions.",
+      "keywords": [
+        "App Engine regional rollout",
+        "App Engine available in asia-southeast1",
+        "App Engine availability in Singapore",
+        "region expansion singapore",
+        "SEA1",
+        "App Engine region availability",
+        "Singapore region",
+        "asia-southeast1"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine added availability in the us-west1 (Oregon), asia-southeast1 (Singapore), and asia-east1 (Taiwan) regions.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2021-04-13",
+      "feature_name": "App Engine regional expansion to europe-central2",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the europe-central2 region (Warsaw).",
+      "keywords": [
+        "App Engine region rollout europe-central2",
+        "App Engine available in europe-central2",
+        "europe-central2 region availability",
+        "Warsaw region support",
+        "europe-central2",
+        "Poland region",
+        "Warsaw",
+        "App Engine regional expansion"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the europe-central2 region (Warsaw).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-09-25",
+      "feature_name": "Network ingress controls for App Engine",
+      "deprecation_date": "",
+      "feature_summary": "App Engine now supports network ingress controls to restrict incoming traffic to VPC-originated requests or traffic through Cloud Load Balancing.",
+      "keywords": [
+        "VPC-originated requests only",
+        "Cloud Load Balancing ingress path",
+        "incoming traffic restrictions",
+        "restrict incoming traffic",
+        "allowed ingress traffic",
+        "App Engine network ingress controls",
+        "network ingress setting",
+        "ingress controls"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Network ingress controls for App Engine in the flexible environment are an App Engine security feature that lets you restrict inbound traffic to the app, thereby limiting which incoming requests are accepted.",
+      "evidence_summary": "The cited Google Cloud documentation confirms that App Engine flexible supports ingress controls to restrict inbound traffic, but the provided excerpt does not include explicit details about VPC-only or Cloud Load Balancing-specific restriction modes.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "159069d8cf21ea88ec6624f69eb7455ef9fbfd0c401b904a6d66021b898a2e29",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+          "title": "\"Overview of app security \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_application-security.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_application-security.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "ingress controls",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+          "title": "\"Overview of app security \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_application-security.md",
+          "base_score": 18,
+          "final_score": 26,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The page discusses inbound request security (HTTPS, access control, and firewall), which is related to ingress control, but does not clearly detail VPC-or-Load-Balancer-restricted ingress behavior.",
+          "matched_phrases": [
+            {
+              "phrase": "ingress controls",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2020-07-08",
+      "feature_name": "External HTTP(S) Load Balancing support via Serverless NEGs",
+      "deprecation_date": "",
+      "feature_summary": "App Engine now supports external HTTP(S) Load Balancing through Serverless Network Endpoint Groups.",
+      "keywords": [
+        "App Engine integration with external HTTPS load balancer",
+        "Serverless Network Endpoint Groups",
+        "external HTTP(S) Load Balancing",
+        "Cloud Load Balancing App Engine backend",
+        "external HTTPS LB",
+        "App Engine and Serverless NEG",
+        "Serverless NEGs",
+        "Serverless NEG"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "App Engine now supports external HTTP(S) Load Balancing through Serverless Network Endpoint Groups.",
+      "evidence_summary": "Fallback definition because synthesis failed.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "36eb3d67a9ab82d672ad8e34e42ff4ec15692dfe2c4e3790ea90485de9b967fa",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed",
+          "title": "\"How requests are routed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_how-requests-are-routed.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_how-requests-are-routed.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "serverless neg",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed",
+          "title": "\"How requests are routed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_how-requests-are-routed.md",
+          "base_score": 20,
+          "final_score": 20,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "serverless neg",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Targeted routing fails when the Serverless NEG doesn't specify service, version, or a tag, and routing relies on the rules you specify in the dispatch.yaml file.",
+            "If the Serverless NEG specifies a service, version, or a tag, the load balancer doesn't interfere or interact with routing rules in your dispatch.yaml file.",
+            "The dispatch.yaml rules are not evaluated until a serverless NEG directs traffic to App Engine."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2020-06-08",
+      "feature_name": "App Engine regional expansion to asia-southeast2",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the asia-southeast2 region (Jakarta).",
+      "keywords": [
+        "App Engine regional expansion asia-southeast2",
+        "App Engine new region rollout",
+        "App Engine available in asia-southeast2",
+        "asia-southeast2 region availability",
+        "Jakarta region support",
+        "asia-southeast2",
+        "Jakarta"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the asia-southeast2 region (Jakarta).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-05-14",
+      "feature_name": "Fine-grained App Engine billing analysis with labels and BigQuery",
+      "deprecation_date": "",
+      "feature_summary": "App Engine now supports labeling services and exporting billing data to BigQuery to analyze resource-level billing usage.",
+      "keywords": [
+        "export billing data to BigQuery",
+        "cost analysis with labels",
+        "BigQuery billing analysis",
+        "BigQuery billing export",
+        "labelled App Engine resources",
+        "resource-level billing usage",
+        "cost labels",
+        "App Engine billing labels"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine now supports labeling services and exporting billing data to BigQuery to analyze resource-level billing usage.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-04-20",
+      "feature_name": "App Engine regional expansion to us-west4",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the us-west4 region (Las Vegas, NV).",
+      "keywords": [
+        "Las Vegas region support",
+        "App Engine regional expansion us-west4",
+        "Las Vegas region",
+        "App Engine available in us-west4",
+        "us-west4 region availability",
+        "App Engine in us-west4",
+        "us-west4",
+        "NV region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the us-west4 region (Las Vegas, NV).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-03-13",
+      "feature_name": "App Engine regional expansion to asia-northeast3",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the asia-northeast3 region (Seoul).",
+      "keywords": [
+        "App Engine regional expansion asia-northeast3",
+        "App Engine new region Seoul",
+        "App Engine available in asia-northeast3",
+        "asia-northeast3 region availability",
+        "Seoul region support",
+        "asia-northeast3",
+        "Seoul"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the asia-northeast3 region (Seoul).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-03-06",
+      "feature_name": "App Engine regional expansion to us-west3",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the us-west3 region (Salt Lake City, Utah).",
+      "keywords": [
+        "Salt Lake City region support",
+        "Salt Lake City",
+        "App Engine regional expansion us-west3",
+        "App Engine available in us-west3",
+        "us-west3 region availability",
+        "App Engine in us-west3",
+        "SLC",
+        "us-west3"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the us-west3 region (Salt Lake City, Utah).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2020-02-11",
+      "feature_name": "App Engine region-aware app URLs",
+      "deprecation_date": "",
+      "feature_summary": "App Engine now supports app hostnames that include a region identifier (PROJECT_ID.REGION_ID.r.appspot.com) to improve request routing and reliability.",
+      "keywords": [
+        "PROJECT_ID.REGION_ID.r.appspot.com",
+        "region identifier in App Engine hostnames",
+        "region-aware app hostnames",
+        "region-aware hostnames",
+        "region-aware app URLs",
+        "regional App Engine hostname",
+        "regional app URL"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine now supports app hostnames that include a region identifier (PROJECT_ID.REGION_ID.r.appspot.com) to improve request routing and reliability.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2019-04-18",
+      "feature_name": "App Engine availability in asia-northeast2",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the asia-northeast2 (Osaka, Japan) region.",
+      "keywords": [
+        "App Engine regional expansion asia-northeast2",
+        "App Engine available in asia-northeast2",
+        "asia-northeast2 region availability",
+        "Osaka region support",
+        "App Engine in Osaka",
+        "asia-northeast2",
+        "Osaka"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the asia-northeast2 (Osaka, Japan) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2019-04-15",
+      "feature_name": "App Engine availability in europe-west6",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the europe-west6 (Zurich, Switzerland) region.",
+      "keywords": [
+        "eu-west6 (Zurich)",
+        "App Engine flexible environment europe-west6",
+        "Zurich region availability",
+        "europe-west6 region",
+        "App Engine region launch",
+        "App Engine in Zurich",
+        "Switzerland region",
+        "regional availability for App Engine"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the europe-west6 (Zurich, Switzerland) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2019-04-09",
+      "feature_name": "Cloud Tasks general availability",
+      "deprecation_date": "",
+      "feature_summary": "Cloud Tasks is now generally available for scheduling asynchronous background work outside user requests.",
+      "keywords": [
+        "asynchronous background tasks",
+        "tasks outside user requests",
+        "background task processing",
+        "background work processing",
+        "task queue for App Engine",
+        "Cloud Tasks GA",
+        "enqueue task",
+        "task queues"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Cloud Tasks is now generally available for scheduling asynchronous background work outside user requests.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2019-03-04",
+      "feature_name": "Cloud Scheduler general availability",
+      "deprecation_date": "",
+      "feature_summary": "Cloud Scheduler is now generally available for configuring scheduled execution of work (cron jobs).",
+      "keywords": [
+        "recurring task scheduling",
+        "configure schedules in Google Cloud",
+        "cron-style execution",
+        "cron job execution",
+        "Cloud Scheduler GA",
+        "scheduled jobs",
+        "job scheduler",
+        "managed cron"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Cloud Scheduler is now generally available for configuring scheduled execution of work (cron jobs).",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2018-10-22",
+      "feature_name": "App Engine availability in asia-east2",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the asia-east2 (Hong Kong) region.",
+      "keywords": [
+        "Hong Kong (asia-east2)",
+        "App Engine region launch asia-east2",
+        "Hong Kong region availability",
+        "App Engine in Hong Kong",
+        "asia-east2 (HK)",
+        "App Engine flexible environment asia-east2",
+        "asia-east2 region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the asia-east2 (Hong Kong) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2018-07-10",
+      "feature_name": "App Engine availability in us-west2",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the us-west2 (Los Angeles) region.",
+      "keywords": [
+        "Los Angeles (us-west2)",
+        "Los Angeles region availability",
+        "App Engine in Los Angeles",
+        "region launch us-west2",
+        "us-west2 (LAX)",
+        "App Engine flexible environment us-west2",
+        "us-west2 region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the us-west2 (Los Angeles) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2018-05-04",
+      "feature_name": "Debian 8 Jessie base image deprecation for App Engine flexible environment",
+      "deprecation_date": "2018-05-30",
+      "feature_summary": "The App Engine flexible environment is being migrated from Debian 8 Jessie to an Ubuntu 16.04 base OS, with opt-out possible by pinning to Debian 8; deprecated on 2018-05-30.",
+      "keywords": [
+        "Ubuntu 16.04 base image",
+        "Ubuntu 16.04 migration",
+        "legacy base image migration",
+        "deprecation date 2018-05-30",
+        "Debian 8 Jessie deprecation",
+        "App Engine flexible base OS",
+        "pin to Debian 8",
+        "Jessie migration"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The App Engine flexible environment is being migrated from Debian 8 Jessie to an Ubuntu 16.04 base OS, with opt-out possible by pinning to Debian 8; deprecated on 2018-05-30.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2018-01-10",
+      "feature_name": "App Engine availability in northamerica-northeast1",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the northamerica-northeast1 (Montreal, Canada) region.",
+      "keywords": [
+        "region launch northamerica-northeast1",
+        "northamerica-northeast1 (Montreal)",
+        "App Engine flexible environment northamerica-northeast1",
+        "NA Northeast 1",
+        "northamerica-northeast1 region",
+        "Montreal region availability",
+        "App Engine in Montreal"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the northamerica-northeast1 (Montreal, Canada) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-12-14",
+      "feature_name": "App Engine deployment with IAM roles and service accounts",
+      "deprecation_date": "",
+      "feature_summary": "Access control documentation was updated for deploying App Engine apps using predefined IAM roles and service accounts.",
+      "keywords": [
+        "predefined IAM roles for deployment",
+        "IAM role requirements",
+        "App Engine deployment IAM roles",
+        "IAM-based App Engine deployment",
+        "deploying App Engine app with service account",
+        "service account for App Engine deploy",
+        "App Engine deploy permissions",
+        "service-account deployment"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Access control documentation was updated for deploying App Engine apps using predefined IAM roles and service accounts.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-10-31",
+      "feature_name": "App Engine availability in asia-south1",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the asia-south1 (Mumbai, India) region.",
+      "keywords": [
+        "region launch asia-south1",
+        "Mumbai (asia-south1)",
+        "App Engine flexible environment asia-south1",
+        "Mumbai region availability",
+        "asia-south1 region",
+        "south asia region",
+        "App Engine in Mumbai"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the asia-south1 (Mumbai, India) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-10-11",
+      "feature_name": "App Engine firewall",
+      "deprecation_date": "",
+      "feature_summary": "App Engine Firewall was announced as generally available; The App Engine firewall entered beta release.",
+      "keywords": [
+        "App Engine network ingress restrictions",
+        "firewall feature for App Engine",
+        "App Engine firewall settings",
+        "App Engine firewall rules",
+        "ingress firewall",
+        "AE Firewall",
+        "App Engine Firewall beta",
+        "App Engine Firewall"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "In App Engine flexible environment, the App Engine firewall is an ingress filtering feature that uses an ordered list of rules to allow or deny requests to an app from specific IP addresses or ranges. It is used to restrict traffic, including blocking abusive or malicious sources, and therefore helps protect applications from undesirable or abusive requests. Creating or modifying firewall rules requires an App Engine IAM role with those privileges (examples shown in the docs include App Engine Admin, Editor, or Owner), and forwarded-port traffic is a documented exception because it bypasses the App Engine firewall.",
+      "evidence_summary": "The cited pages describe firewall rule creation and operation (ordered allow/deny IP-based rules, protective purpose, and IAM requirements) and note the documented port-forwarding bypass behavior.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/application-security"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "912d53171a02cf34b1e25908ab51be095191824a33408513dc5fa5b05121a3db",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+          "title": "\"Creating App Engine firewall rules \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_creating-firewalls.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_creating-firewalls.md",
+          "base_score": 70,
+          "matched_phrases": [
+            {
+              "phrase": "app engine firewall",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "app engine firewall rules",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "159069d8cf21ea88ec6624f69eb7455ef9fbfd0c401b904a6d66021b898a2e29",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+          "title": "\"Overview of app security \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_application-security.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_application-security.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "app engine firewall",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+          "title": "\"Creating App Engine firewall rules \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_creating-firewalls.md",
+          "base_score": 70,
+          "final_score": 70,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "app engine firewall",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            },
+            {
+              "phrase": "app engine firewall rules",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.",
+            "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences.",
+            "Understanding App Engine firewall rules An App Engine firewall consists of an ordered list of rules that can allow or deny access from the specified IP address or range to your app.",
+            "Note: If you set up port forwarding , remember that all requests through that forwarded port bypass the App Engine firewall."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/application-security",
+          "title": "\"Overview of app security \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_application-security.md",
+          "base_score": 24,
+          "final_score": 42,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page is an official App Engine security overview that explicitly introduces the App Engine firewall as a core security control, making it directly relevant for defining and documenting this feature.",
+          "matched_phrases": [
+            {
+              "phrase": "app engine firewall",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.",
+            "App Engine firewall The App Engine firewall enables you to control access to your App Engine app through a set of rules that can either allow or deny requests from the specified ranges of IP addresses."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-10-05",
+      "feature_name": "App Engine flexible environment .NET Core support",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment added general availability for .NET Core, including Docker images for .NET Core 1.0, 1.1, and 2.0.",
+      "keywords": [
+        "supported runtimes .NET Core 1.0",
+        "supported runtimes .NET Core 1.1",
+        "supported runtimes .NET Core 2.0",
+        "Docker images for .NET Core",
+        "ASP.NET Core on App Engine",
+        "Flex .NET Core",
+        "App Engine flexible environment .NET Core",
+        "App Engine .NET Core support"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environment added general availability for .NET Core, including Docker images for .NET Core 1.0, 1.1, and 2.0.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-10-02",
+      "feature_name": "Default gzip compression for App Engine flexible responses",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environment now serves responses with gzip compression by default after redeploying an app.",
+      "keywords": [
+        "gzip responses after redeploy",
+        "automatic gzip compression",
+        "HTTP response compression",
+        "compressed responses in App Engine",
+        "default gzip compression",
+        "default response gzip",
+        "auto gzip",
+        "App Engine flexible responses"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environment now serves responses with gzip compression by default after redeploying an app.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-09-26",
+      "feature_name": "App Engine flexible instance billing granularity",
+      "deprecation_date": "",
+      "feature_summary": "Instance billing for App Engine flexible environment was changed from per-minute to per-second increments, with minimum billed resource usage reduced from 10 minutes to 1 minute.",
+      "keywords": [
+        "per-second billing for instances",
+        "per-second instance billing",
+        "minute billing granularity",
+        "billing interval reduction",
+        "1-minute minimum billing",
+        "minimum billed usage",
+        "second-based billing",
+        "instance billing increments"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Instance billing for App Engine flexible environment was changed from per-minute to per-second increments, with minimum billed resource usage reduced from 10 minutes to 1 minute.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-09-18",
+      "feature_name": "Legacy health checks",
+      "deprecation_date": "2018-09-30",
+      "feature_summary": "Legacy health checks are no longer available after the stated deprecation date; deprecated on 2018-09-30.",
+      "keywords": [
+        "deprecation date 2018-09-30",
+        "remove legacy health checks",
+        "legacy health check deprecation",
+        "old health checks",
+        "deprecated legacy health checks",
+        "legacy health checks",
+        "legacy checks"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Legacy health checks are no longer available after the stated deprecation date; deprecated on 2018-09-30.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-09-18",
+      "feature_name": "Updated health checks as default",
+      "deprecation_date": "",
+      "feature_summary": "Updated health checks became the default for new App Engine projects, with upgrade supported via gcloud app update --split-health-checks.",
+      "keywords": [
+        "gcloud app update --split-health-checks",
+        "updated health checks for new projects",
+        "health checks default setting",
+        "split health checks",
+        "new default health checks",
+        "updated health checks default",
+        "split checks"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Updated health checks became the default for new App Engine projects, with upgrade supported via gcloud app update --split-health-checks.",
+      "evidence_summary": "Fallback definition because synthesis failed.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "9498af451ba7cfeaa75bf9f186307c32cf29484ee73aefe72e4afbb2c4799ff1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml",
+          "title": "\"app.yaml Configuration File \\_|\\_ App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "split health checks",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        },
+        {
+          "page_id": "d3d3ac03d3602bd5124b05ca5615e70ba091cebdf75030b351306c08d4c7d40b",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+          "title": "\"How instances are managed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_how-instances-are-managed.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_how-instances-are-managed.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "split health checks",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+          "title": "\"How instances are managed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_how-instances-are-managed.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "split health checks",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ],
+          "evidence_snippets": [
+            "If you need to extend the default behavior of split health checks to your application, you can customize the app.yaml file to configure two types of health checks: Liveness checks detect that a VM instance and its container are running.",
+            "Learn more about split health check behaviors in the Migrating to Split Health Checks guide.",
+            "By default, these health checks are enabled and are known as split health checks ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-09-13",
+      "feature_name": "Custom domain mapping APIs and gcloud commands",
+      "deprecation_date": "",
+      "feature_summary": "Custom domain mapping became generally available via gcloud commands and Admin API methods such as apps.authorizedDomains.list.",
+      "keywords": [
+        "apps.authorizedDomains.list",
+        "gcloud app domain-mappings",
+        "domain mapping API",
+        "custom domain API access",
+        "custom domain mappings",
+        "custom domain command",
+        "DomainMappings API"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Custom domain mapping became generally available via gcloud commands and Admin API methods such as apps.authorizedDomains.list.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-09-13",
+      "feature_name": "Custom domain mappings with existing SSL certificates",
+      "deprecation_date": "",
+      "feature_summary": "Existing custom domain mappings and SSL certificates continue to function as expected, with an option to upgrade to managed SSL certificates.",
+      "keywords": [
+        "bring your own SSL certificate",
+        "existing custom domain mappings",
+        "self-managed certs",
+        "user-managed SSL certificates",
+        "existing SSL certificates",
+        "upgrade to managed SSL",
+        "BYO SSL"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Existing custom domain mappings and SSL certificates continue to function as expected, with an option to upgrade to managed SSL certificates.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-09-13",
+      "feature_name": "Managed SSL certificates for custom domains",
+      "deprecation_date": "",
+      "feature_summary": "Managed SSL certificates can be used for custom domains, with automatic provisioning, renewal, and revocation when the domain is removed.",
+      "keywords": [
+        "certificate revocation on domain removal",
+        "automatic certificate renewal",
+        "automatic SSL provisioning",
+        "managed certificate for custom domain",
+        "automated SSL",
+        "managed certs",
+        "managed SSL certificates"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Managed SSL certificates can be used for custom domains, with automatic provisioning, renewal, and revocation when the domain is removed.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-09-05",
+      "feature_name": "App Engine availability in southamerica-east1",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the southamerica-east1 (São Paulo, Brazil) region.",
+      "keywords": [
+        "service launch southamerica-east1",
+        "location southamerica-east1",
+        "south america east1",
+        "App Engine region availability southamerica-east1",
+        "sao paulo",
+        "southamerica-east1",
+        "São Paulo region"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the southamerica-east1 (São Paulo, Brazil) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-08-01",
+      "feature_name": "App Engine availability in europe-west3",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the europe-west3 (Frankfurt, Germany) region.",
+      "keywords": [
+        "service launch europe-west3",
+        "location europe-west3",
+        "App Engine region availability europe-west3",
+        "eu-west3",
+        "Frankfurt region",
+        "Frankfurt",
+        "europe-west3"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the europe-west3 (Frankfurt, Germany) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-07-18",
+      "feature_name": "App Engine availability in australia-southeast1",
+      "deprecation_date": "",
+      "feature_summary": "App Engine became available in the australia-southeast1 (Sydney, Australia) region.",
+      "keywords": [
+        "service launch australia-southeast1",
+        "location australia-southeast1",
+        "App Engine region availability australia-southeast1",
+        "australia-southeast1",
+        "au-southeast1",
+        "Sydney region",
+        "Sydney"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine became available in the australia-southeast1 (Sydney, Australia) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-07-12",
+      "feature_name": "Updated App Engine health checks",
+      "deprecation_date": "",
+      "feature_summary": "The App Engine flexible environment now supports separate checks for instance liveliness and readiness through updated beta health checks.",
+      "keywords": [
+        "separate liveness and readiness checks",
+        "instance readiness check",
+        "instance liveness check",
+        "liveness/readiness checks",
+        "flexible environment updated health checks",
+        "beta health checks",
+        "beta checks"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The App Engine flexible environment now supports separate checks for instance liveliness and readiness through updated beta health checks.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-06-06",
+      "feature_name": "App Engine flexible environment in europe-west2",
+      "deprecation_date": "",
+      "feature_summary": "App Engine is now available in the europe-west2 (London) region.",
+      "keywords": [
+        "location europe-west2",
+        "App Engine region availability europe-west2",
+        "eu-west2",
+        "flexible environment in europe-west2",
+        "London region",
+        "London",
+        "europe-west2"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine is now available in the europe-west2 (London) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-06-06",
+      "feature_name": "Custom domains and SSL certificate management via Admin API and gcloud",
+      "deprecation_date": "",
+      "feature_summary": "Beta support was added in the Admin API and gcloud CLI for creating and managing custom domains and SSL certificates.",
+      "keywords": [
+        "gcloud app domain-mappings",
+        "Admin API custom domains",
+        "gcloud SSL management",
+        "custom domain management",
+        "apps.domainMappings",
+        "gcloud app ssl-certificates",
+        "domain and SSL API"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Beta support was added in the Admin API and gcloud CLI for creating and managing custom domains and SSL certificates.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "346cca870166e26a6bcfdf75c55991cd09e18a6bac16c6671a8eca2a5624114d",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/audit-logging",
+          "title": "\"App Engine audit logging information \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_audit-logging.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_audit-logging.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "apps.domainmappings",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 3
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-05-09",
+      "feature_name": "App Engine flexible environment in us-east4",
+      "deprecation_date": "",
+      "feature_summary": "App Engine is now available in the us-east4 (North Virginia) region.",
+      "keywords": [
+        "US East (N. Virginia)",
+        "deploy to us-east4",
+        "supported locations",
+        "north virginia",
+        "us-east-4",
+        "us-east4",
+        "App Engine flexible environment region",
+        "region availability"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine is now available in the us-east4 (North Virginia) region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-03-28",
+      "feature_name": "App Engine flexible environment in europe-west",
+      "deprecation_date": "",
+      "feature_summary": "The App Engine flexible environment became available in the europe-west region.",
+      "keywords": [
+        "supported regions",
+        "europe-west region",
+        "europe-west",
+        "Europe West",
+        "App Engine flexible environment region",
+        "regional availability"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The App Engine flexible environment became available in the europe-west region.",
+      "evidence_summary": "Fallback definition because synthesis failed.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b59445f4b5b5e4ad5bed1c0dd855e4b793a017e318cfe7c0063c6a16999bb2a3",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+          "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "europe-west",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "app engine flexible environment region",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "cedf14da76b86d78ef9a9745a36228867f9b9fb9d600dabcde8281d277b92164",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+          "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_custom-runtimes_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_custom-runtimes_create-app.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "europe-west",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "app engine flexible environment region",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "65888befa3ed22a2f166a33047a81a5142c7c98e985c5daf8fc802df23929aa1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+          "title": "\"Quickstart: Create a Go app in the App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "base_score": 22,
+          "matched_phrases": [
+            {
+              "phrase": "europe-west",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "app engine flexible environment region",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+          "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_custom-runtimes_create-app.md",
+          "base_score": 22,
+          "final_score": 22,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "europe-west",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "app engine flexible environment region",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Note: Two locations, which are called europe-west and us-central in App Engine commands and in the Google Cloud console, are called europe-west1 and us-central1 , respectively, elsewhere in Google documentation.",
+            "Create a custom runtime app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": ".NET Core runtime for App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "The .NET Core runtime entered beta for the App Engine flexible environment.",
+      "keywords": [
+        "ASP.NET Core",
+        "beta release",
+        "dotnet runtime",
+        ".NET Core runtime",
+        "dotnet",
+        "App Engine flexible environment runtime",
+        ".NET Core",
+        "runtime support"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The .NET Core runtime entered beta for the App Engine flexible environment.",
+      "evidence_summary": "Fallback definition because synthesis failed.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b59445f4b5b5e4ad5bed1c0dd855e4b793a017e318cfe7c0063c6a16999bb2a3",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+          "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "base_score": 64,
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 6
+            },
+            {
+              "phrase": ".net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "asp.net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "a833f44b477607cd31387abbbb7a159c8b841ddfee44b5a9c517bbb65a782a99",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+          "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_runtime.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_runtime.md",
+          "base_score": 40,
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 2
+            },
+            {
+              "phrase": "asp.net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": ".net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "runtime support",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "fc70609e3795c11f8a7aa761cab1405e479a822022d0f3554fa2f3f2b0832889",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/customizing-the-dotnet-runtime",
+          "title": "\"Customizing the .NET Runtime \\_|\\_ App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_customizing-the-dotnet-runtime.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_customizing-the-dotnet-runtime.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 2,
+              "body_hits": 0
+            }
+          ]
+        },
+        {
+          "page_id": "f1cc3b85a104e44a8d98a76596cdab0fe9b5fadfc39750b4c0b03c84e38aeeb9",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml",
+          "title": "\"Configuring your app with app.yaml \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_configuring-your-app-with-app-yaml.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_configuring-your-app-with-app-yaml.md",
+          "base_score": 24,
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "eac2baed9cf2ff43c19b2485ea0639a83b15d1af45da5c42c42cfe8d1dab8aa7",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/specifying-dependencies",
+          "title": "\"Specifying dependencies \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_specifying-dependencies.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_specifying-dependencies.md",
+          "base_score": 20,
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 0
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+          "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "base_score": 64,
+          "final_score": 72,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "The quickstart is specifically for creating a .NET app on App Engine flexible environment and explains how to set the .NET runtime version in app.yaml, which is useful context for runtime support even though it does not mention beta status.",
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 6
+            },
+            {
+              "phrase": ".net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            },
+            {
+              "phrase": "asp.net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "The Hello World app is similar to the app created by Visual Studio when an empty ASP.NET core app is created.",
+            "Images are available for ASP.NET Core apps written for .NET Core 1.0, 1.1, 2.0 and 2.1.",
+            "Change to the directory that contains the sample code. cd dotnet-docs-samples/appengine/flexible/HelloWorld Run Hello World on your local machine Run the following commands from the dotnet-docs-samples/appengine/flexible/HelloWorld/HelloWorld.Sample directory: dotnet restore dotnet run In your web browser, go to http://localhost:5000 .",
+            "For more information, see: https://cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml manual scaling : instances : 1 resources : cpu : 1 memory gb : 0.5 disk size gb : 10 env variables : The in My Greeting will be translated to a : by ASP.NET."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+          "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_runtime.md",
+          "base_score": 40,
+          "final_score": 58,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "This page is the official App Engine flexible .NET runtime documentation and defines how to configure and run .NET apps in that environment.",
+          "matched_phrases": [
+            {
+              "phrase": "dotnet",
+              "title_hits": 0,
+              "url_hits": 1,
+              "body_hits": 2
+            },
+            {
+              "phrase": "asp.net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": ".net core",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            },
+            {
+              "phrase": "runtime support",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "For more information, see Migrate from ASP.NET Core 3.1 to 6.0 .",
+            "To deploy your .NET app, run the following commands from the root directory where your app resides: dotnet restore dotnet publish -c Release gcloud app deploy Support for other .NET runtimes If you need to use a .NET version that isn't supported , you can create a custom runtime and select a valid base image with the .NET version you need.",
+            "For the full list of supported .NET versions, and their corresponding Ubuntu version, see the Runtime support schedule ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "App Engine flexible environment generally available",
+      "deprecation_date": "",
+      "feature_summary": "The App Engine flexible environment reached general availability with a 99.95% SLA.",
+      "keywords": [
+        "99.95% SLA",
+        "service-level agreement",
+        "production availability",
+        "App Engine flexible environment generally available",
+        "GA",
+        "Generally Available",
+        "General Availability"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "App Engine flexible environment authentication guidance indicates that recommended user authentication for flexible apps is to use Identity Platform, which is described as a CIAM service with enterprise authentication capabilities (including MFA, OIDC, and SAML SSO) and a 99.95% SLA. The provided evidence supports this identity-platform-backed auth feature and SLA context, but it does not directly confirm a separate App Engine flexible environment general availability announcement.",
+      "evidence_summary": "The cited page confirms Identity Platform is recommended for App Engine flexible authentication and states Identity Platform features and SLA, but it does not explicitly document App Engine flexible environment GA status or launch timing.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "3511c434b768fef4984406bcf283db046483108192ab486f43019ec662ac0e78",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+          "title": "\"Authenticating users \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_authenticating-users.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_authenticating-users.md",
+          "base_score": 34,
+          "matched_phrases": [
+            {
+              "phrase": "ga",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "99.95 sla",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ]
+        },
+        {
+          "page_id": "346cca870166e26a6bcfdf75c55991cd09e18a6bac16c6671a8eca2a5624114d",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/audit-logging",
+          "title": "\"App Engine audit logging information \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_audit-logging.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_audit-logging.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "ga",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 29
+            }
+          ]
+        },
+        {
+          "page_id": "9498af451ba7cfeaa75bf9f186307c32cf29484ee73aefe72e4afbb2c4799ff1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml",
+          "title": "\"app.yaml Configuration File \\_|\\_ App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "ga",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "5d7700ffceb4b697892419316c03ed57e1c9ffaa4ba74a75b4f4b614231062dd",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configure-service-accounts",
+          "title": "\"Configure App Engine service accounts \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configure-service-accounts.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "ga",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            }
+          ]
+        },
+        {
+          "page_id": "0aa1c9ac10927227d8d945bb86b77e1b8471f96d7c620d28ca6c08bb1051c850",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+          "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_disable-external-ip.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "ga",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 8
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+          "title": "\"Authenticating users \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_authenticating-users.md",
+          "base_score": 34,
+          "final_score": 34,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "ga",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 5
+            },
+            {
+              "phrase": "99.95 sla",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 1
+            }
+          ],
+          "evidence_snippets": [
+            "Identity Platform Identity Platform is a customer identity and access management (CIAM) platform that lets organizations customize identity and authentication for user sign-up and sign-in in their applications.",
+            "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.",
+            "The recommended method when starting a new project, so you can use the capabilities of Identity Platform as well as the legacy features from Firebase Authentication .",
+            "It offers enterprise features including multi-factor authentication, OIDC and SAML SSO support, multi-tenancy, 99.95% SLA, and more."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "Go runtime on App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "Go applications can run on the App Engine flexible environment.",
+      "keywords": [
+        "Go language support",
+        "deploy Go app",
+        "run Go applications",
+        "Golang",
+        "App Engine flexible environment runtime",
+        "Go on App Engine",
+        "runtime: go",
+        "Go runtime"
+      ],
+      "coverage_status": "HIGH",
+      "extended_definition": "The Go runtime on App Engine flexible environment is the managed runtime that executes Go applications in App Engine Flex, installing the app’s code and dependencies and running it in that environment. It is enabled by specifying a Go runtime in `app.yaml` (for example `runtime: go1.15` with `env: flex`), which selects the requested major/minor Go version and the latest available patch release in that track (for example, 1.15.15). If a needed Go version is not supported by the built-in runtime, a custom runtime with a suitable base image can be used instead.",
+      "evidence_summary": "The quickstart page shows a Go sample workflow for App Engine flexible (including app.yaml-based configuration), while the runtime page defines the Go runtime’s role, versioning behavior, and custom-runtime fallback.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/go/runtime"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "a136e04f11b37c2f4844411238df850444764b628d513296883e29cc5e6f4cf5",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/runtime",
+          "title": "\"The Go runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_go_runtime.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_runtime.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "go runtime",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "65888befa3ed22a2f166a33047a81a5142c7c98e985c5daf8fc802df23929aa1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+          "title": "\"Quickstart: Create a Go app in the App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "golang",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "go runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "0d9aa4511707bc7086218e7c8c8994921c32f51de17f80251c0d95b4f0f26b81",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/configuring-your-app-with-app-yaml",
+          "title": "\"Configuring your app with app.yaml \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_go_configuring-your-app-with-app-yaml.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_configuring-your-app-with-app-yaml.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "go runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        },
+        {
+          "page_id": "59f92463cdd5ad54778875af1726c5cdc100742e5ba26396344f1fe4e6367864",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+          "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "golang",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+          "title": "\"Quickstart: Create a Go app in the App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "base_score": 26,
+          "final_score": 44,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The document is explicitly a Go quickstart for App Engine Flexible Environment and explains how to deploy Go workloads by specifying runtime version and OS in app.yaml.",
+          "matched_phrases": [
+            {
+              "phrase": "golang",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            },
+            {
+              "phrase": "go runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ],
+          "evidence_snippets": [
+            "Clone the Hello World sample app repository to your local machine. git clone https : //github.com/GoogleCloudPlatform/golang-samples Change to the directory that contains the sample code. cd golang - samples / appengine flexible / helloworld Run Hello World on your local machine To run the Hello World app on your local computer: Start a local web server. go run . go In your web browser, enter the following address: http://localhost:8080 If you are using Cloud Shell, in the toolbar, click Web Preview and select Preview on port 8080 instead.",
+            "For more information, see: https://docs.cloud.google.com/appengine/docs/flexible/go/configuring-your-app-with-app-yaml manual scaling : instances : 1 resources : cpu : 1 memory gb : 0.5 disk size gb : 10 For more information on how the Go runtime works, see The Go runtime ."
+          ]
+        },
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/runtime",
+          "title": "\"The Go runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_runtime.md",
+          "base_score": 44,
+          "final_score": 44,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "go runtime",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": [
+            "Choosing the go runtime version go1.15 in your app.yaml file results in the latest version of 1.15 available, for example, 1.15.15. runtime : go1 .15 env : flex Support for other Go runtimes If you need to use a Go version that isn't supported , you can create a custom runtime and select a valid base image with the Go version you need.",
+            "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The Go runtime Stay organized with collections Save and categorize content based on your preferences.",
+            "The Go runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment.",
+            "Extending the runtime For instructions on how to extend and customize the Go runtime, read the Go runtime builder on GitHub ."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "Java runtime on App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "Java applications can run on the App Engine flexible environment.",
+      "keywords": [
+        "Java language support",
+        "deploy Java app",
+        "App Engine flexible environment runtime",
+        "JVM",
+        "Java applications",
+        "Java on App Engine",
+        "runtime: java",
+        "Java runtime"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "The Java runtime in the App Engine flexible environment is a runtime option that uses runtime-specific Java project file organization. For Java on the flexible environment, configuration is provided in YAML format, and the exact file layout depends on the specific Java runtime variant used.",
+      "evidence_summary": "The cited App Engine flexible configuration page indicates Java is supported as a runtime and that Java deployments use YAML configuration files with runtime-dependent file organization.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "7be8104a8942c895d1416c28e4e55f5e313b5361ccd6de715c071966a2fb467a",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files",
+          "title": "\"Structuring web services in App Engine \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_configuration-files.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configuration-files.md",
+          "base_score": 26,
+          "matched_phrases": [
+            {
+              "phrase": "java runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files",
+          "title": "\"Structuring web services in App Engine \\_|\\_ App Engine flexible environment\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_configuration-files.md",
+          "base_score": 26,
+          "final_score": 26,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "java runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 4
+            }
+          ],
+          "evidence_snippets": [
+            "Note: For the Java runtime, the file organization depends on which Java runtime you are using.",
+            "For the Java runtime , configuration files are in the YAML format.",
+            "See the appropriate Java runtime developer guide for details."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "Node.js runtime on App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "Node.js applications can run on the App Engine flexible environment.",
+      "keywords": [
+        "deploy Node.js",
+        "Node.js applications",
+        "Node.js support",
+        "Node.js runtime",
+        "runtime: nodejs",
+        "node runtime",
+        "NodeJS",
+        "App Engine flexible environment runtime"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Node.js applications can run on the App Engine flexible environment.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "PHP 7 runtime for App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "The PHP 7 runtime entered beta in the App Engine flexible environment.",
+      "keywords": [
+        "PHP applications",
+        "PHP 7 support",
+        "PHP 7 runtime",
+        "runtime: php",
+        "PHP 7",
+        "App Engine flexible environment runtime",
+        "PHP7",
+        "beta"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The PHP 7 runtime entered beta in the App Engine flexible environment.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "Python runtime on App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "Python applications can run on the App Engine flexible environment.",
+      "keywords": [
+        "deploy Python app",
+        "Python runtime support",
+        "App Engine flexible environment runtime",
+        "Python applications",
+        "Python on App Engine",
+        "Python support",
+        "runtime: python",
+        "Python runtime"
+      ],
+      "coverage_status": "MEDIUM",
+      "extended_definition": "App Engine flexible environment supports a Python runtime that is configured through the `app.yaml` file using flexible settings (`env: flex`) and runtime-specific Python settings, including the Python runtime version. When using Python, the app configuration includes an `entrypoint` command (for example, a `gunicorn` command) that tells App Engine how to start the application process.",
+      "evidence_summary": "The official `app.yaml` reference confirms Python-specific flexible runtime configuration fields and startup requirements but delegates detailed runtime/version specifics to the separate Python runtime documentation.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "9498af451ba7cfeaa75bf9f186307c32cf29484ee73aefe72e4afbb2c4799ff1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml",
+          "title": "\"app.yaml Configuration File \\_|\\_ App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "base_score": 30,
+          "matched_phrases": [
+            {
+              "phrase": "python runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/reference/app-yaml",
+          "title": "\"app.yaml Configuration File \\_|\\_ App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_reference_app-yaml.md",
+          "base_score": 30,
+          "final_score": 48,
+          "rerank_relevance": "STRONG",
+          "rerank_rationale": "The page defines how to set the runtime in app.yaml, including Python runtime and Python runtime version/OS configuration details for App Engine flexible.",
+          "matched_phrases": [
+            {
+              "phrase": "python runtime",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 10
+            }
+          ],
+          "evidence_snippets": [
+            "For example, if you want to forward TCP traffic from port 2222 : In the network settings of your app.yaml , include: network : forwarded ports : - 2222/tcp If you use the Python runtime, modify the app.yaml to include: entrypoint: gunicorn -b :$PORT -b :2222 main:app Specify a firewall rule in the Google Cloud console or using gcloud compute firewall-rules create to allow traffic from any source ( 0.0.0.0/0 ) and from tcp:2222 .",
+            "For example, to skip files whose names end in .bak , add a skip files section like the following: skip files : - ^. \\.bak$ Runtime-specific settings See the Python runtime page to learn more about specifying a Python interpreter using the runtime config settings.",
+            "See the supported versions and the default values on the Python runtimes page. env: flex Required: Select the flexible environment. entrypoint The command to start your application.",
+            "For more information and an example, see Python runtime and Configuring your app with app.yaml . runtime config Specifies the Python runtime version."
+          ]
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2017-03-09",
+      "feature_name": "Ruby runtime on App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "Ruby applications can run on the App Engine flexible environment.",
+      "keywords": [
+        "deploy Ruby app",
+        "Ruby language",
+        "App Engine flexible environment runtime",
+        "Ruby applications",
+        "Ruby on App Engine",
+        "Ruby support",
+        "runtime: ruby",
+        "Ruby runtime"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Ruby applications can run on the App Engine flexible environment.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-12-06",
+      "feature_name": "Use env:true for new App Engine flexible applications",
+      "deprecation_date": "",
+      "feature_summary": "New App Engine flexible applications are required to use env:true in app.yaml instead of vm:true, with existing applications expected to migrate later.",
+      "keywords": [
+        "set env true",
+        "replace vm:true",
+        "use env:true",
+        "flexible environment config",
+        "environment setting",
+        "env:true",
+        "new applications",
+        "vm:true"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "New App Engine flexible applications are required to use env:true in app.yaml instead of vm:true, with existing applications expected to migrate later.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "App Engine in Asia-Northeast1 region",
+      "deprecation_date": "",
+      "feature_summary": "App Engine is now available in the Asia-Northeast1 region.",
+      "keywords": [
+        "deploy in asia-northeast1",
+        "supported regions",
+        "asia-northeast-1",
+        "Tokyo region",
+        "Tokyo",
+        "App Engine flexible environment region",
+        "Asia-Northeast1",
+        "regional availability"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine is now available in the Asia-Northeast1 region.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "Custom machine types for App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environments gained support for custom machine types.",
+      "keywords": [
+        "app.yaml resources.memory_gb",
+        "flexible environment custom machine type",
+        "app.yaml resources.cpu",
+        "custom machine types",
+        "app.yaml custom VM resources",
+        "custom instance specs",
+        "custom VM size",
+        "machineType"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environments gained support for custom machine types.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "Go App Engine package replacement",
+      "deprecation_date": "2016-11-15",
+      "feature_summary": "The legacy Go App Engine package is deprecated for flexible environment users in favor of cloud.google.com/go packages; deprecated on 2016-11-15.",
+      "keywords": [
+        "google.golang.org/appengine package",
+        "legacy google.golang.org/appengine",
+        "deprecate Go App Engine legacy package",
+        "Go package replacement for App Engine",
+        "cloud go package migration",
+        "go_appengine package",
+        "Go modules for App Engine",
+        "cloud.google.com/go"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The legacy Go App Engine package is deprecated for flexible environment users in favor of cloud.google.com/go packages; deprecated on 2016-11-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [
+        {
+          "page_id": "59f92463cdd5ad54778875af1726c5cdc100742e5ba26396344f1fe4e6367864",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+          "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_access-control.md",
+          "base_score": 18,
+          "matched_phrases": [
+            {
+              "phrase": "cloud.google.com/go",
+              "title_hits": 0,
+              "url_hits": 0,
+              "body_hits": 2
+            }
+          ]
+        }
+      ],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "java-compat runtime deprecation",
+      "deprecation_date": "2016-11-15",
+      "feature_summary": "The java-compat runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "java-compat runtime end of support",
+        "Java compatibility runtime",
+        "App Engine flexible java-compat",
+        "java7-compat",
+        "java-compat deprecation",
+        "java-compat runtime",
+        "2016-11-15 deprecation",
+        "java-compat"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The java-compat runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "jetty9-compat runtime deprecation",
+      "deprecation_date": "2016-11-15",
+      "feature_summary": "The jetty9-compat runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "Jetty 9 compatibility runtime",
+        "jetty9-compat deprecation",
+        "jetty9-compat runtime",
+        "App Engine flexible jetty9",
+        "jetty9-compat",
+        "2016-11-15 deprecation",
+        "jetty9"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The jetty9-compat runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "Modern networking stack with higher throughput",
+      "deprecation_date": "",
+      "feature_summary": "The App Engine flexible environment adopted a modernized networking stack that improves throughput.",
+      "keywords": [
+        "networking stack modernization",
+        "throughput networking update",
+        "modernized networking stack",
+        "higher network throughput",
+        "App Engine flexible networking stack",
+        "network stack upgrade",
+        "modern networking"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The App Engine flexible environment adopted a modernized networking stack that improves throughput.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "Multi-zonal deployments for App Engine flexible environment",
+      "deprecation_date": "",
+      "feature_summary": "App Engine flexible environments gained support for multi-zonal deployment.",
+      "keywords": [
+        "App Engine flex multi-zonal",
+        "deploy across zones",
+        "multi-zonal deployments",
+        "multi-zone deployments",
+        "zonal distribution",
+        "multi-zonal",
+        "multi-zone"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "App Engine flexible environments gained support for multi-zonal deployment.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "python-compat runtime deprecation",
+      "deprecation_date": "2016-11-15",
+      "feature_summary": "The python-compat runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "Python compatibility runtime",
+        "App Engine flexible python-compat",
+        "python-compat deprecation",
+        "python-compat runtime",
+        "python compat runtime",
+        "2016-11-15 deprecation",
+        "python-compat"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The python-compat runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "python27 runtime deprecation",
+      "deprecation_date": "2016-11-15",
+      "feature_summary": "The python27 runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "keywords": [
+        "App Engine flexible python27",
+        "python27 deprecation",
+        "python27 runtime",
+        "2016-11-15 deprecation",
+        "python27",
+        "Python 2.7 runtime",
+        "python 2.7"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The python27 runtime was deprecated in the App Engine flexible environment; deprecated on 2016-11-15.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-11-15",
+      "feature_name": "Select flexible environment with env:flex in app.yaml",
+      "deprecation_date": "",
+      "feature_summary": "The App Engine flexible environment can be selected in app.yaml using env:flex instead of vm:true.",
+      "keywords": [
+        "replace vm:true with env:flex",
+        "flex env setting",
+        "app.yaml env: flex",
+        "flexible environment declaration",
+        "App Engine environment selector",
+        "env:flex",
+        "env flex",
+        "vm:true"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "The App Engine flexible environment can be selected in app.yaml using env:flex instead of vm:true.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-05-02",
+      "feature_name": "App Engine Flexible Environment Ruby Runtime",
+      "deprecation_date": "",
+      "feature_summary": "Added support for the Ruby runtime in App Engine Flexible Environment.",
+      "keywords": [
+        "App Engine flex Ruby runtime",
+        "Ruby language support",
+        "flexible environment Ruby",
+        "Ruby runtime support",
+        "Ruby on App Engine",
+        "runtime: ruby",
+        "Ruby runtime"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Added support for the Ruby runtime in App Engine Flexible Environment.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    },
+    {
+      "latest_feature_date": "2016-03-24",
+      "feature_name": "App Engine Flexible Environment",
+      "deprecation_date": "",
+      "feature_summary": "Renamed App Engine Managed VMs to App Engine Flexible Environment.",
+      "keywords": [
+        "App Engine flexible environment name change",
+        "Managed VMs rebrand",
+        "Managed VMs rename",
+        "App Engine Flex rename",
+        "renamed to Flexible Environment",
+        "App Engine Managed VMs",
+        "Flexible Environment rename",
+        "Managed VMs"
+      ],
+      "coverage_status": "LOW",
+      "extended_definition": "Renamed App Engine Managed VMs to App Engine Flexible Environment.",
+      "evidence_summary": "Fallback definition because synthesis failed.",
+      "source_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible"
+      ],
+      "candidate_pages": [
+        {
+          "page_id": "b59445f4b5b5e4ad5bed1c0dd855e4b793a017e318cfe7c0063c6a16999bb2a3",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+          "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_dotnet_create-app.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "65888befa3ed22a2f166a33047a81a5142c7c98e985c5daf8fc802df23929aa1",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+          "title": "\"Quickstart: Create a Go app in the App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-root\\pages\\docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ]
+        },
+        {
+          "page_id": "fb24872bef8c15c77cf8e14decf417eac40b3cc19014b6a55272c1f38486f656",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible",
+          "title": "App Engine flexible environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "87b7e55c6e9320fd621012043a8ae5d58b5c1beaf17cf778d8a6e076ab5da345",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/overview",
+          "title": "App Engine flexible environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible_overview.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_overview.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ]
+        },
+        {
+          "page_id": "bd1765e694b7d20d7f8a80d7edc3fc5ace8d41dfc0a41f6c3f3c034181bcc88b",
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/resources",
+          "title": "Resources \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "C:\\Users\\villa\\dev\\gcp-radar\\data\\step-04\\current\\products\\app-engine-flexible-environment-net\\corpus\\site\\site-docs-reference\\pages\\docs.cloud.google.com_appengine_docs_flexible_resources.md",
+          "relative_markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible_resources.md",
+          "base_score": 44,
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 9
+            }
+          ]
+        }
+      ],
+      "supporting_pages": [
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible/go/create-app",
+          "title": "\"Quickstart: Create a Go app in the App Engine flexible environment \\_|\\_\\",
+          "source_id": "site-docs-root",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-root/pages/docs.cloud.google.com_appengine_docs_flexible_go_create-app.md",
+          "base_score": 44,
+          "final_score": 52,
+          "rerank_relevance": "MODERATE",
+          "rerank_rationale": "This page is an official quickstart for deploying an app on App Engine Flexible Environment, but it is focused on setup steps rather than a full feature specification.",
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 7
+            }
+          ],
+          "evidence_snippets": []
+        },
+        {
+          "url": "https://docs.cloud.google.com/appengine/docs/flexible",
+          "title": "App Engine flexible environment \\_|\\_ Google Cloud Documentation",
+          "source_id": "site-docs-reference",
+          "markdown_path": "products/app-engine-flexible-environment-net/corpus/site/site-docs-reference/pages/docs.cloud.google.com_appengine_docs_flexible.md",
+          "base_score": 44,
+          "final_score": 44,
+          "rerank_relevance": "",
+          "rerank_rationale": "",
+          "matched_phrases": [
+            {
+              "phrase": "app engine flexible environment",
+              "title_hits": 1,
+              "url_hits": 0,
+              "body_hits": 6
+            }
+          ],
+          "evidence_snippets": []
+        }
+      ]
+    },
+    {
+      "latest_feature_date": "2016-02-03",
+      "feature_name": "App Engine Container Build Options",
+      "deprecation_date": "",
+      "feature_summary": "Introduced selectable remote container construction methods for App Engine flexible deployments, including default transient Compute Engine VM builds and Cloud Build-based builds.",
+      "keywords": [
+        "Cloud Build-based builds",
+        "Container Build Options",
+        "container build backend",
+        "remote container build",
+        "container build method",
+        "Compute Engine VM builds",
+        "app.yaml build options",
+        "Cloud Build integration"
+      ],
+      "coverage_status": "NONE",
+      "extended_definition": "Introduced selectable remote container construction methods for App Engine flexible deployments, including default transient Compute Engine VM builds and Cloud Build-based builds.",
+      "evidence_summary": "",
+      "source_links": [],
+      "candidate_pages": [],
+      "supporting_pages": []
+    }
+  ]
+}

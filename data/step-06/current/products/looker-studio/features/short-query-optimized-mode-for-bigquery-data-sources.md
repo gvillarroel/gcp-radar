@@ -1,0 +1,59 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:40.978Z"
+product_name: "Looker Studio"
+product_slug: "looker-studio"
+feature_name: "Short query optimized mode for BigQuery data sources"
+feature_slug: "short-query-optimized-mode-for-bigquery-data-sources"
+latest_feature_date: "2025-07-17"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/looker-studio/docs/release-notes"
+keywords:
+  - "short"
+  - "query"
+  - "optimized"
+  - "mode"
+  - "for"
+  - "sources"
+  - "the"
+  - "connector"
+---
+
+# Short query optimized mode for BigQuery data sources
+
+Product: Looker Studio
+Coverage: LOW
+
+## Step 02 Summary
+
+The BigQuery connector can use short query optimized mode so quick BigQuery queries return immediate results instead of creating a job.
+
+## Extended Definition
+
+The BigQuery connector can use short query optimized mode so quick BigQuery queries return immediate results instead of creating a job.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
+
+## Supporting Pages
+
+### Looker Studio release notes | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/looker-studio/docs/release-notes](https://docs.cloud.google.com/looker-studio/docs/release-notes)
+- Source ID: `site-docs-root`
+- Final score: 32
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Looker Studio release notes Google Cloud Documentation Source URL: https://docs.cloud.google.com/looker-studio/docs/release-notes The Looker connector can now connect to a private IP (private services access) only Looker (Google Cloud core) instance or to a private IP (Private Service Connect) Looker (Google Cloud core) instance using the Looker instance ID. ...
+- This token allows API users to paginate forwards and backwards through the result set. ...
+- For Looker Studio Pro subscriptions that are created on or after June 3, 2025, Gemini in Looker is enabled automatically.
+- The Assets: search API endpoint now includes a previousPageToken attribute in its response.
+

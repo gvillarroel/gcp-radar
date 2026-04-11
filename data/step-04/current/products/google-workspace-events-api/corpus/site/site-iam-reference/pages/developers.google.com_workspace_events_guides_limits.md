@@ -1,0 +1,128 @@
+---
+title: "Usage limits \_|\_ Google Workspace \_|\_ Google for Developers"
+url: https://developers.google.com/workspace/events/guides/limits
+knowledge_key: corpus
+source_id: site-iam-reference
+source_type: site
+entrypoint: https://developers.google.com/workspace/events/guides/auth
+source_metadata:
+  url: https://developers.google.com/workspace/events/guides/limits
+  title: "Usage limits \_|\_ Google Workspace \_|\_ Google for Developers"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Google Workspace
+Guides
+Send feedback
+Usage limits
+Stay organized with collections
+Save and categorize content based on your preferences.
+Page Summary
+outlined_flag
+Google Workspace Events API uses quotas and limitations to ensure fair usage and system performance, resulting in a 429: Too many requests error if exceeded.
+Per-project quotas limit the rate of API calls, with separate limits for reads/writes per minute and reads/writes per minute per user, as detailed in the provided table.
+Upon encountering quota errors, utilize an exponential backoff algorithm with increasing wait times between retries to avoid excessive load.
+Consider requesting a quota increase via the Google Cloud console if your project's resource usage necessitates higher limits.
+Because the Google Workspace Events API is a shared service, we apply quotas and
+limitations to make sure that it's used fairly by all users and to protect the
+overall performance of Google Workspace.
+If you exceed a quota, you'll receive a 429: Too many requests HTTP status
+code response. Additional rate limit checks on the
+Google Workspace Events API backend might also generate the same error
+response. If this error happens, use an
+exponential backoff algorithm
+and try again later. As long as you stay within the per-minute quotas listed in
+the following tables, there's no limit to the number of requests you can make
+per day.
+Per-project quotas
+Per-project quotas limit the rate of queries for a Google Cloud project, and thus
+apply to a single app calling the specified Google Workspace Events API
+methods for each quota.
+The following table details per-project query limits. You can also find
+these limits on the Quotas page in the
+Google Cloud console.
+Per-project Quota
+Google Workspace Events API methods
+Limit
+Writes per minute
+Subscriptions.create
+Subscriptions.patch
+Subscriptions.delete
+Subscriptions.reactivate
+600
+Writes per minute per user
+Subscriptions.create
+Subscriptions.patch
+Subscriptions.delete
+Subscriptions.reactivate
+100
+Reads per minute
+Subscriptions.get
+Subscriptions.list
+600
+Reads per minute per user
+Subscriptions.get
+Subscriptions.list
+100
+Resolve time-based quota errors
+For all time-based errors (maximum of N requests per X minutes), we recommend
+your code catches the exception and uses a truncated exponential backoff to make sure your
+devices don't generate excessive load.
+Exponential backoff is a standard error handling strategy for network applications. An
+exponential backoff algorithm retries requests using exponentially increasing wait times
+between requests, up to a maximum backoff time. If requests are still unsuccessful, it's
+important that the delays between requests increase over time until the request is successful.
+Example algorithm
+An exponential backoff algorithm retries requests exponentially, increasing the wait time
+between retries up to a maximum backoff time. For example:
+Make a request to Google Workspace Events API.
+If the request fails, wait 1 + random_number_milliseconds and retry
+the request.
+If the request fails, wait 2 + random_number_milliseconds and retry
+the request.
+If the request fails, wait 4 + random_number_milliseconds and retry
+the request.
+And so on, up to a maximum_backoff time.
+Continue waiting and retrying up to some maximum number of retries, but don't increase the wait
+period between retries.
+where:
+The wait time is min(((2^n)+random_number_milliseconds), maximum_backoff) ,
+with n incremented by 1 for each iteration (request).
+random_number_milliseconds is a random number of milliseconds less than or
+equal to 1,000. This helps to avoid cases in which many clients are synchronized by
+some situation and all retry at once, sending requests in synchronized
+waves. The value of random_number_milliseconds is recalculated after each
+retry request.
+maximum_backoff is typically 32 or 64 seconds. The appropriate value
+depends on the use case.
+The client can continue retrying after it has reached the maximum_backoff time.
+Retries after this point don't need to continue increasing backoff time. For
+example, if a client uses a maximum_backoff time of 64 seconds, then after reaching
+this value, the client can retry every 64 seconds. At some point,
+clients should be prevented from retrying indefinitely.
+The wait time between retries and the number of retries depend on your use case
+and network conditions.
+Request a per-project quota increase
+Depending on your project's resource usage, you might want to request a quota
+adjustment. API calls by a service account are considered to be using a
+single account. Applying for an adjusted quota doesn't guarantee approval. Quota adjustment
+requests that would significantly increase the quota value can take longer to be approved.
+Not all projects have the same quotas. As you increasingly use Google Cloud over
+time, your quota values might need to increase. If you expect a notable upcoming
+increase in usage, you can proactively
+request quota adjustments
+from the Quotas page
+in the Google Cloud console.
+To learn more, see the following resources:
+About quota adjustments
+View your current quota usage and limits
+Request a higher quota limit
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-01 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-01 UTC."],[],["The Google Workspace Events API enforces per-project quotas to ensure fair usage and performance. Exceeding quotas results in a `429` error, requiring an exponential backoff retry strategy. Per-minute limits for `Subscriptions` methods are: 600 writes/reads, and 100 writes/reads per user. The exponential backoff algorithm involves retrying requests with increasing wait times, calculated as `min(((2^n)+random_number_milliseconds), maximum_backoff)`. Users can request quota increases through the Google Cloud console.\n"]]

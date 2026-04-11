@@ -1,5 +1,5 @@
 ---
-title: "Access data insights in Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "Access data insights in Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/data-insights
 knowledge_key: corpus
 source_id: site-docs-root
@@ -7,32 +7,33 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/data-insights
-  title: "Access data insights in Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+  title: "Access data insights in Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
-Access data insights in Dataplex Universal Catalog
+Access data insights in Knowledge Catalog
 Stay organized with collections
 Save and categorize content based on your preferences.
 When exploring a new, unfamiliar table, data analysts often face the cold-start
 problem of how to get started writing queries. The problem can involve
 uncertainties about the data structure and key patterns in the data.
-Data insights automatically
+Knowledge Catalog (formerly Dataplex Universal Catalog) data insights automatically
 generates descriptions, relationship graphs, and SQL queries from your table and
 dataset metadata. This information helps you quickly understand data structure,
 content, and relationships without extensive manual setup. To
 investigate further, you can ask follow-up questions in
 data canvas .
-The Dataplex Universal Catalog data insights feature offers an automated way to
+The data insights feature offers an automated way to
 explore and understand your data. This helps you uncover patterns, assess data
 quality, and perform statistical analysis.
 Note: To provide feedback on this feature, email
@@ -45,7 +46,7 @@ First
 set up Gemini in BigQuery ,
 then
 generate insights in BigQuery .
-After you generate insights, you can view them in Dataplex Universal Catalog.
+After you generate insights, you can view them in Knowledge Catalog.
 Note: Dataset insights are only available in BigQuery Studio.
 Note : Gemini in BigQuery is part
 of Gemini for Google Cloud and doesn't support the
@@ -160,8 +161,8 @@ InternetService ,
 Gender ,
 PaymentMethod ;
 View insights
-To view insights for a BigQuery table, use Dataplex Universal Catalog Search.
-In the Google Cloud console, go to the Dataplex Universal Catalog Search page.
+To view insights for a BigQuery table, use Knowledge Catalog Search.
+In the Google Cloud console, go to the Knowledge Catalog Search page.
 Go to Search
 Search for a BigQuery table that you want to view insights for.
 In the search results, click the table to open its entry page.
@@ -193,6 +194,6 @@ Learn how to generate a data profiling scan .
 Learn how to write queries with Gemini assistance in BigQuery .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

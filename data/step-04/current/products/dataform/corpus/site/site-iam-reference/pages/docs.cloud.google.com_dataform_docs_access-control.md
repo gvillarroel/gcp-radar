@@ -454,6 +454,119 @@ dataform. workspaces. setIamPolicy
 dataform.workspaces.writeFile
 resourcemanager.projects.get
 resourcemanager.projects.list
+Dataform Editor
+( roles/ dataform.editor )
+Edit access to Workspaces and Read-only access to Repositories.
+dataform.commentThreads.get
+dataform.commentThreads.list
+dataform.comments.get
+dataform.comments.list
+dataform.compilationResults.*
+dataform. compilationResults. create
+dataform. compilationResults. get
+dataform. compilationResults. list
+dataform. compilationResults. query
+dataform.config.get
+dataform.folders.get
+dataform.folders.getIamPolicy
+dataform.folders.queryContents
+dataform.locations.*
+dataform.locations.get
+dataform.locations.list
+dataform.operations.get
+dataform.operations.list
+dataform.releaseConfigs.get
+dataform.releaseConfigs.list
+dataform. repositories. computeAccessTokenStatus
+dataform. repositories. fetchHistory
+dataform. repositories. fetchRemoteBranches
+dataform.repositories.get
+dataform. repositories. getIamPolicy
+dataform.repositories.list
+dataform. repositories. queryDirectoryContents
+dataform.repositories.readFile
+dataform.teamFolders.get
+dataform. teamFolders. getIamPolicy
+dataform.workflowConfigs.get
+dataform.workflowConfigs.list
+dataform.workflowInvocations.*
+dataform. workflowInvocations. cancel
+dataform. workflowInvocations. create
+dataform. workflowInvocations. delete
+dataform. workflowInvocations. get
+dataform. workflowInvocations. list
+dataform. workflowInvocations. query
+dataform.workspaces.commit
+dataform.workspaces.create
+dataform.workspaces.delete
+dataform. workspaces. fetchFileDiff
+dataform. workspaces. fetchFileGitStatuses
+dataform. workspaces. fetchGitAheadBehind
+dataform.workspaces.get
+dataform. workspaces. getIamPolicy
+dataform. workspaces. installNpmPackages
+dataform.workspaces.list
+dataform. workspaces. makeDirectory
+dataform. workspaces. moveDirectory
+dataform.workspaces.moveFile
+dataform.workspaces.pull
+dataform.workspaces.push
+dataform. workspaces. queryDirectoryContents
+dataform.workspaces.readFile
+dataform. workspaces. removeDirectory
+dataform.workspaces.removeFile
+dataform.workspaces.reset
+dataform. workspaces. searchFiles
+dataform.workspaces.writeFile
+resourcemanager.projects.get
+resourcemanager.projects.list
+Dataform Viewer
+( roles/ dataform.viewer )
+Read-only access to all Dataform resources.
+dataform.commentThreads.get
+dataform.commentThreads.list
+dataform.comments.get
+dataform.comments.list
+dataform. compilationResults. get
+dataform. compilationResults. list
+dataform. compilationResults. query
+dataform.config.get
+dataform.folders.get
+dataform.folders.getIamPolicy
+dataform.folders.queryContents
+dataform.locations.*
+dataform.locations.get
+dataform.locations.list
+dataform.operations.get
+dataform.operations.list
+dataform.releaseConfigs.get
+dataform.releaseConfigs.list
+dataform. repositories. computeAccessTokenStatus
+dataform. repositories. fetchHistory
+dataform. repositories. fetchRemoteBranches
+dataform.repositories.get
+dataform. repositories. getIamPolicy
+dataform.repositories.list
+dataform. repositories. queryDirectoryContents
+dataform.repositories.readFile
+dataform.teamFolders.get
+dataform. teamFolders. getIamPolicy
+dataform.workflowConfigs.get
+dataform.workflowConfigs.list
+dataform. workflowInvocations. get
+dataform. workflowInvocations. list
+dataform. workflowInvocations. query
+dataform. workspaces. fetchFileDiff
+dataform. workspaces. fetchFileGitStatuses
+dataform. workspaces. fetchGitAheadBehind
+dataform.workspaces.get
+dataform. workspaces. getIamPolicy
+dataform.workspaces.list
+dataform. workspaces. queryDirectoryContents
+dataform.workspaces.readFile
+dataform. workspaces. searchFiles
+resourcemanager.projects.get
+resourcemanager.projects.list
 Code Commenter
 Beta
 ( roles/ dataform.codeCommenter )
@@ -668,81 +781,6 @@ dataform.workspaces.list
 dataform. workspaces. queryDirectoryContents
 dataform.workspaces.readFile
 dataform. workspaces. searchFiles
-resourcemanager.projects.get
-resourcemanager.projects.list
-Dataform Editor
-( roles/ dataform.editor )
-Edit access to Workspaces and Read-only access to Repositories.
-dataform.commentThreads.get
-dataform.commentThreads.list
-dataform.comments.get
-dataform.comments.list
-dataform.compilationResults.*
-dataform. compilationResults. create
-dataform. compilationResults. get
-dataform. compilationResults. list
-dataform. compilationResults. query
-dataform.config.get
-dataform.folders.get
-dataform.folders.getIamPolicy
-dataform.folders.queryContents
-dataform.locations.*
-dataform.locations.get
-dataform.locations.list
-dataform.operations.get
-dataform.operations.list
-dataform.releaseConfigs.get
-dataform.releaseConfigs.list
-dataform. repositories. computeAccessTokenStatus
-dataform. repositories. fetchHistory
-dataform. repositories. fetchRemoteBranches
-dataform.repositories.get
-dataform. repositories. getIamPolicy
-dataform.repositories.list
-dataform. repositories. queryDirectoryContents
-dataform.repositories.readFile
-dataform.teamFolders.get
-dataform. teamFolders. getIamPolicy
-dataform.workflowConfigs.get
-dataform.workflowConfigs.list
-dataform.workflowInvocations.*
-dataform. workflowInvocations. cancel
-dataform. workflowInvocations. create
-dataform. workflowInvocations. delete
-dataform. workflowInvocations. get
-dataform. workflowInvocations. list
-dataform. workflowInvocations. query
-dataform.workspaces.commit
-dataform.workspaces.create
-dataform.workspaces.delete
-dataform. workspaces. fetchFileDiff
-dataform. workspaces. fetchFileGitStatuses
-dataform. workspaces. fetchGitAheadBehind
-dataform.workspaces.get
-dataform. workspaces. getIamPolicy
-dataform. workspaces. installNpmPackages
-dataform.workspaces.list
-dataform. workspaces. makeDirectory
-dataform. workspaces. moveDirectory
-dataform.workspaces.moveFile
-dataform.workspaces.pull
-dataform.workspaces.push
-dataform. workspaces. queryDirectoryContents
-dataform.workspaces.readFile
-dataform. workspaces. removeDirectory
-dataform.workspaces.removeFile
-dataform.workspaces.reset
-dataform. workspaces. searchFiles
-dataform.workspaces.writeFile
-resourcemanager.projects.get
-resourcemanager.projects.list
-Dataform Service Agent
-( roles/ dataform.serviceAgent )
-Gives permission for the Dataform API to access a secret from Secret Manager
-Warning: Do not grant service agent roles to any principals except
-service agents .
-dataform. compilationResults. create
-dataform. workflowInvocations. create
 resourcemanager.projects.get
 resourcemanager.projects.list
 Team Folder Commenter
@@ -980,51 +1018,17 @@ dataform.workspaces.readFile
 dataform. workspaces. searchFiles
 resourcemanager.projects.get
 resourcemanager.projects.list
-Dataform Viewer
-( roles/ dataform.viewer )
-Read-only access to all Dataform resources.
-dataform.commentThreads.get
-dataform.commentThreads.list
-dataform.comments.get
-dataform.comments.list
-dataform. compilationResults. get
-dataform. compilationResults. list
-dataform. compilationResults. query
-dataform.config.get
-dataform.folders.get
-dataform.folders.getIamPolicy
-dataform.folders.queryContents
-dataform.locations.*
-dataform.locations.get
-dataform.locations.list
-dataform.operations.get
-dataform.operations.list
-dataform.releaseConfigs.get
-dataform.releaseConfigs.list
-dataform. repositories. computeAccessTokenStatus
-dataform. repositories. fetchHistory
-dataform. repositories. fetchRemoteBranches
-dataform.repositories.get
-dataform. repositories. getIamPolicy
-dataform.repositories.list
-dataform. repositories. queryDirectoryContents
-dataform.repositories.readFile
-dataform.teamFolders.get
-dataform. teamFolders. getIamPolicy
-dataform.workflowConfigs.get
-dataform.workflowConfigs.list
-dataform. workflowInvocations. get
-dataform. workflowInvocations. list
-dataform. workflowInvocations. query
-dataform. workspaces. fetchFileDiff
-dataform. workspaces. fetchFileGitStatuses
-dataform. workspaces. fetchGitAheadBehind
-dataform.workspaces.get
-dataform. workspaces. getIamPolicy
-dataform.workspaces.list
-dataform. workspaces. queryDirectoryContents
-dataform.workspaces.readFile
-dataform. workspaces. searchFiles
+Service agent roles
+Service agent roles should only be granted to service agents .
+Role
+Permissions
+Dataform Service Agent
+( roles/ dataform.serviceAgent )
+Gives permission for the Dataform API to access a secret from Secret Manager
+Warning: Do not grant service agent roles to any principals except
+service agents .
+dataform. compilationResults. create
+dataform. workflowInvocations. create
 resourcemanager.projects.get
 resourcemanager.projects.list
 Custom Dataform roles
@@ -1412,6 +1416,6 @@ To learn more about granting granular permissions to BigQuery
 datasets, see Controlling access to datasets .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

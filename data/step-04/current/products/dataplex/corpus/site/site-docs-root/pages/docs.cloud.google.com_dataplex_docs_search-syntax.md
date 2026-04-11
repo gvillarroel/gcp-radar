@@ -1,5 +1,5 @@
 ---
-title: "Search syntax for Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+title: "Search syntax for Knowledge Catalog \_|\_ Google Cloud Documentation"
 url: https://docs.cloud.google.com/dataplex/docs/search-syntax
 knowledge_key: corpus
 source_id: site-docs-root
@@ -7,25 +7,26 @@ source_type: site
 entrypoint: https://docs.cloud.google.com/dataplex/docs
 source_metadata:
   url: https://docs.cloud.google.com/dataplex/docs/search-syntax
-  title: "Search syntax for Dataplex Universal Catalog \_|\_ Google Cloud Documentation"
+  title: "Search syntax for Knowledge Catalog \_|\_ Google Cloud Documentation"
   fetched_via: http_bfs
   content_scope: primary
   content_type: text/html; charset=utf-8
   status_code: 200
 ---
 
+As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog. The API, client library, CLI, and IAM names remain unchanged.
 Home
 Documentation
 Data analytics
-Dataplex Universal Catalog
+Knowledge Catalog
 Guides
 Send feedback
-Search syntax for Dataplex Universal Catalog
+Search syntax for Knowledge Catalog
 Stay organized with collections
 Save and categorize content based on your preferences.
-This document describes the syntax for both Dataplex Universal Catalog keyword search as
-well as natural language AI searches.
-Dataplex Universal Catalog lets you discover, centrally catalog, manage, and understand
+This document describes the syntax for both Knowledge Catalog (formerly Dataplex Universal Catalog)
+keyword search as well as natural language AI searches.
+Knowledge Catalog lets you discover, centrally catalog, manage, and understand
 your organization's data. To efficiently find specific data assets within your
 data catalog, you can use powerful search queries. The syntax for search queries
 includes:
@@ -38,10 +39,10 @@ Logical operators: How to combine multiple search criteria using AND and OR to
 create complex queries. By understanding this syntax, you can quickly locate the
 data you need.
 Before you begin
-Understand Dataplex Universal Catalog entry groups, entries, entry links, aspects,
+Understand Knowledge Catalog entry groups, entries, entry links, aspects,
 entry types, entry link types, and aspect types. See
-About metadata management in Dataplex Universal Catalog .
-Dataplex Universal Catalog offers two search modes: keyword search and natural
+About metadata management in Knowledge Catalog .
+Knowledge Catalog offers two search modes: keyword search and natural
 language search.
 Keyword search lets you find resources using specific keywords, filters, and a
 defined syntax.
@@ -49,15 +50,15 @@ Natural language search leverages AI to understand semantic search queries. It
 lets you find resources using everyday language, eliminating the need for
 complex syntax.
 This document covers syntax for both keyword and natural language search.
-To launch a Dataplex Universal Catalog search query in the
-Google Cloud console, go to the Dataplex Universal Catalog Search page and
-select Dataplex Universal Catalog as the search platform.
+To launch a Knowledge Catalog search query in the
+Google Cloud console, go to the Knowledge Catalog Search page and
+select Knowledge Catalog as the search platform.
 Go to Search
 For more information, see
-Search for resources in Dataplex Universal Catalog .
+Search for resources in Knowledge Catalog .
 Free-text search
 You can find assets by entering a term or phrase without any specific syntax.
-Dataplex Universal Catalog performs a broad search by matching your query
+Knowledge Catalog performs a broad search by matching your query
 against several metadata fields, including the following:
 Name, display name, or description of a resource
 Type of a resource
@@ -93,7 +94,7 @@ Keyword search
 The predicate keys type , system , location , and orgid support only the
 exact match ( = ) qualifier, not the substring qualifier ( : ). For example,
 type=foo or orgid=number .
-Dataplex Universal Catalog supports the following qualifiers for keyword search:
+Knowledge Catalog supports the following qualifiers for keyword search:
 Qualifier
 Description
 name:x
@@ -198,7 +199,7 @@ Natural language search
 The predicate keys type , system , location , and description , and aspect
 search (excluding has ) support only the exact match ( = ) qualifier, not the
 substring qualifier ( : ). For example, type=foo .
-Dataplex Universal Catalog supports the following qualifiers for natural
+Knowledge Catalog supports the following qualifiers for natural
 language search:
 Qualifier
 Description
@@ -415,12 +416,12 @@ qualified predicates except for label in keyword
 search.
 What's next
 Learn how to search for resources
-in Dataplex Universal Catalog
-Learn more about metadata management in Dataplex Universal Catalog .
+in Knowledge Catalog
+Learn more about metadata management in Knowledge Catalog .
 Learn how to enrich entries and entry links with metadata by using aspects .
 Learn how to manage entries and ingest custom sources .
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-08 UTC.
+Last updated 2026-04-10 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-10 UTC."],[],[]]

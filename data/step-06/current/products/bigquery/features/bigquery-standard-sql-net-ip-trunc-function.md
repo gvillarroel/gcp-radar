@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:05.303Z"
+generated_at: "2026-04-10T13:25:38.918Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery Standard SQL NET.IP_TRUNC function"

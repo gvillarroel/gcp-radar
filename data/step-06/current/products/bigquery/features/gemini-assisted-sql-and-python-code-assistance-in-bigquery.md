@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:04.946Z"
+generated_at: "2026-04-10T13:25:38.565Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Gemini-assisted SQL and Python code assistance in BigQuery"

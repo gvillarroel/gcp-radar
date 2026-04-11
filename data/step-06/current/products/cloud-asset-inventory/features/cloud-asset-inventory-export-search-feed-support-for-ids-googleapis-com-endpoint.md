@@ -1,0 +1,91 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T19:56:38.756Z"
+product_name: "Cloud Asset Inventory"
+product_slug: "cloud-asset-inventory"
+feature_name: "Cloud Asset Inventory Export/Search/Feed support for ids.googleapis.com/Endpoint"
+feature_slug: "cloud-asset-inventory-export-search-feed-support-for-ids-googleapis-com-endpoint"
+latest_feature_date: "2022-08-11"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/asset-inventory/docs/export-bigquery"
+  - "https://docs.cloud.google.com/asset-inventory/docs/export-cloud-storage"
+  - "https://docs.cloud.google.com/asset-inventory/docs/query-assets-with-sql"
+keywords:
+  - "asset"
+  - "inventory"
+  - "export"
+  - "search"
+  - "feed"
+  - "for"
+  - "ids"
+  - "googleapis"
+---
+
+# Cloud Asset Inventory Export/Search/Feed support for ids.googleapis.com/Endpoint
+
+Product: Cloud Asset Inventory
+Coverage: LOW
+
+## Step 02 Summary
+
+Cloud Asset Inventory added ids.googleapis.com/Endpoint to ExportAssets, BatchGetAssetsHistory, Feed, SearchAllResources, and SearchAllIamPolicies.
+
+## Extended Definition
+
+Cloud Asset Inventory added ids.googleapis.com/Endpoint to ExportAssets, BatchGetAssetsHistory, Feed, SearchAllResources, and SearchAllIamPolicies.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/asset-inventory/docs/export-bigquery](https://docs.cloud.google.com/asset-inventory/docs/export-bigquery)
+- [https://docs.cloud.google.com/asset-inventory/docs/export-cloud-storage](https://docs.cloud.google.com/asset-inventory/docs/export-cloud-storage)
+- [https://docs.cloud.google.com/asset-inventory/docs/query-assets-with-sql](https://docs.cloud.google.com/asset-inventory/docs/query-assets-with-sql)
+
+## Supporting Pages
+
+### "Export asset metadata to BigQuery \_|\_ Cloud Asset Inventory \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/asset-inventory/docs/export-bigquery](https://docs.cloud.google.com/asset-inventory/docs/export-bigquery)
+- Source ID: `site-docs-reference`
+- Final score: 240
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ "X-Goog-User-Project" = " BILLING PROJECT ID " ; "Authorization" = "Bearer $cred" } $body = @" { "contentType": "RESOURCE", "readTime": "2024-01-30T00:00:00Z", "outputConfig": { "bigqueryDestination": { "dataset": "projects/ my-project /datasets/ my-dataset ", "table": " my-table ", "force": true } } } "@ Invoke-WebRequest -Method POST -Headers $headers -ContentType : "application/json; charset=utf-8" -Body $body -Uri "https://cloudasset.googleapis.com/v1/projects/ my-project :exportAssets" Select-Object -Expand Content Example response { "name" : "projects/000000000000/operations/ExportAssets/RESOURCE/00000000000000000000000000000000" , "metadata" : { "@type" : "type.googleapis.com/google.cloud.asset.v1.ExportAssetsRequest" , "parent" : "projects/000000000000" , "readTime" : "2024-01-30T00:00:00Z" , "contentType" : "RESOURCE" , "outputConfig" : { "bigqueryDestination" : { "dataset" : "projects/my-project/datasets/my-dataset" , "table" : "my-table" , "force" : true } } } } Go To learn how to install and use the client library for Cloud Asset Inventory, see Cloud Asset Inventory client libraries .
+- Example Run the following command to export your resource metadata as it was on January 30, 2024, in the my-project project, to the BigQuery table my-table . gcloud asset export \ --project = projects/ my-project \ --content-type = resource \ --snapshot-time = " 2024-01-30 " \ --bigquery-table = projects/ my-project /datasets/ my-dataset /tables/ my-table \ --partition-key = my-partition-key \ --output-bigquery-force REST HTTP method and URL: POST https://cloudasset.googleapis.com/v1/ SCOPE PATH :exportAssets Headers: X-Goog-User-Project: BILLING PROJECT ID Request JSON body: { "assetTypes" : [ " ASSET TYPE 1 " , " ASSET TYPE 2 " , "..." ], "contentType" : " CONTENT TYPE " , "relationshipTypes" : [ " RELATIONSHIP TYPE 1 " , " RELATIONSHIP TYPE 2 " , "..." ], "readTime" : " SNAPSHOT TIME " , "outputConfig" : { "bigqueryDestination" : { "dataset" : "projects/ BIGQUERY PROJECT ID /datasets/ DATASET ID " , "table" : " TABLE NAME " , "partitionSpec" : { "partitionKey" : " PARTITION KEY " }, "force" : true , } } } Provide the following values: SCOPE PATH : Use one of the following values: The allowed values are: projects/ PROJECT ID , where PROJECT ID is the ID of the project that has the asset metadata you want to export. projects/ PROJECT NUMBER , where PROJECT NUMBER is the number of the project that has the asset metadata you want to export.
+- Example Run the following command to export your resource metadata as it was on January 30, 2024, in the my-project project, to multiple BigQuery tables that have my-table as a prefix. gcloud asset export \ --project = my-project \ --content-type = resource \ --snapshot-time = " 2024-01-30 " \ --bigquery-table = projects/ my-project /datasets/ my-dataset /tables/ my-table \ --per-asset-type \ --output-bigquery-force REST HTTP method and URL: POST https://cloudasset.googleapis.com/v1/ SCOPE PATH :exportAssets Headers: X-Goog-User-Project: BILLING PROJECT ID Request JSON body: { "assetTypes" : [ " ASSET TYPE 1 " , " ASSET TYPE 2 " , "..." ], "contentType" : " CONTENT TYPE " , "readTime" : " SNAPSHOT TIME " , "outputConfig" : { "bigqueryDestination" : { "dataset" : "projects/ BIGQUERY PROJECT ID /datasets/ DATASET ID " , "table" : " TABLE NAME " , "force" : true , "separateTablesPerAssetType" : true } } } Provide the following values: SCOPE PATH : Use one of the following values: The allowed values are: projects/ PROJECT ID , where PROJECT ID is the ID of the project that has the asset metadata you want to export. projects/ PROJECT NUMBER , where PROJECT NUMBER is the number of the project that has the asset metadata you want to export.
+- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const dataSet = 'projects/project id/datasets/dataset id'; // const table = 'mytable'; const { AssetServiceClient } = require ( ' @google-cloud/asset ' ); const client = new AssetServiceClient (); async function exportAssetsBigquery () { const projectId = await client . getProjectId (); const projectResource = client . projectPath ( projectId ); const dataset = dataSet ; const request = { parent : projectResource , outputConfig : { bigqueryDestination : { dataset : projects/ ${ projectId } / ${ dataset } , table : table , force : true , }, }, }; // Handle the operation using the promise pattern. const [ operation ] = await client . exportAssets ( request ); // Operation#promise starts polling for the completion of the operation. const [ result ] = await operation . promise (); // Do things with with the response. console . log ( result ); } exportAssetsBigquery (); Python To learn how to install and use the client library for Cloud Asset Inventory, see Cloud Asset Inventory client libraries .
+
+### "Export asset metadata to Cloud Storage \_|\_ Cloud Asset Inventory \_|\_\
+
+- URL: [https://docs.cloud.google.com/asset-inventory/docs/export-cloud-storage](https://docs.cloud.google.com/asset-inventory/docs/export-cloud-storage)
+- Source ID: `site-docs-reference`
+- Final score: 236
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ "X-Goog-User-Project" = " BILLING PROJECT ID " ; "Authorization" = "Bearer $cred" } $body = @" { "contentType": "RESOURCE", "readTime": "2024-01-30T00:00:00Z", "outputConfig": { "gcsDestination": { "uri": "gs:// my-bucket / my-file " } } } "@ Invoke-WebRequest -Method POST -Headers $headers -ContentType : "application/json; charset=utf-8" -Body $body -Uri "https://cloudasset.googleapis.com/v1/projects/ my-project :exportAssets" Select-Object -Expand Content Example response { "name" : "projects/000000000000/operations/ExportAssets/RESOURCE/00000000000000000000000000000000" , "metadata" : { "@type" : "type.googleapis.com/google.cloud.asset.v1.ExportAssetsRequest" , "parent" : "projects/000000000000" , "readTime" : "2024-01-30T00:00:00Z" , "contentType" : "RESOURCE" , "outputConfig" : { "gcsDestination" : { "uri" : "gs://my-bucket/export.txt" } } } } C# To learn how to install and use the client library for Cloud Asset Inventory, see Cloud Asset Inventory client libraries .
+- For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const dumpFilePath = 'gs://my-bucket/my-assets.txt'; // const contentType = 'RESOURCE'; const { AssetServiceClient } = require ( ' @google-cloud/asset ' ); const client = new AssetServiceClient (); async function exportAssets () { const projectId = await client . getProjectId (); const projectResource = projects/ ${ projectId } ; // TODO(developer): choose the dump file path // const dumpFilePath = 'Dump file path, e.g.: gs://<my bucket>/<my asset file>' const request = { parent : projectResource , contentType : contentType , outputConfig : { gcsDestination : { uri : dumpFilePath , }, }, }; // Handle the operation using the promise pattern. const [ operation ] = await client . exportAssets ( request ); // Operation#promise starts polling for the completion of the operation. const [ result ] = await operation . promise (); // Do things with with the response. console . log ( result ); } exportAssets (). catch ( err = > { throw err ; }); PHP To learn how to install and use the client library for Cloud Asset Inventory, see Cloud Asset Inventory client libraries .
+- OutputConfig () output config . gcs destination . uri = dump file path request options = { "parent" : parent , "output config" : output config } if content type is not None : request options [ "content type" ] = content type response = client . export assets ( request = request options ) print ( response . result ()) Ruby To learn how to install and use the client library for Cloud Asset Inventory, see Cloud Asset Inventory client libraries .
+- Home Documentation Security Cloud Asset Inventory Guides Send feedback Export asset metadata to Cloud Storage Stay organized with collections Save and categorize content based on your preferences.
+
+### Query assets with SQL \_|\_ Cloud Asset Inventory \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/asset-inventory/docs/query-assets-with-sql](https://docs.cloud.google.com/asset-inventory/docs/query-assets-with-sql)
+- Source ID: `site-docs-root`
+- Final score: 226
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ "X-Goog-User-Project" = " BILLING PROJECT ID " ; "Authorization" = "Bearer $cred" } $body = @" { "statement": " SELECT name, assetType FROM compute googleapis com Instance LIMIT 2", "outputConfig": { "bigqueryDestination": { "dataset": "projects/ my-project /datasets/ my-dataset ", "table": " my-table ", "writeDisposition": "WRITE TRUNCATE" } } } "@ Invoke-WebRequest -Method POST -Headers $headers -ContentType : "application/json; charset=utf-8" -Body $body ` -Uri "https://cloudasset.googleapis.com/v1/projects/ my-project :queryAssets" Select-Object -Expand Content Additional SQL query examples The following code samples show specific SQL queries you can use to search for assets, to help you construct your own queries.
+- Example Run the following command to get the names and asset types of the first two Compute Engine instances in the my-project project, and export the results to the my-table BigQuery table in the my-project project, overwriting the entire table if it already exists. gcloud asset query \ --project = my-project \ --statement = " SELECT name, assetType FROM compute googleapis com Instance LIMIT 2" \ --bigquery-table = projects/ my-project /datasets/ my-dataset /tables/ my-table \ --write-disposition = "write-truncate" REST HTTP method and URL: POST https://cloudasset.googleapis.com/v1/ SCOPE PATH :queryAssets Headers: X-Goog-User-Project: BILLING PROJECT ID Request JSON body: { "statement" : " SQL SELECT QUERY " , "outputConfig" : { "bigqueryDestination" : { "dataset" : "projects/ BIGQUERY PROJECT ID /datasets/ DATASET ID " , "table" : " TABLE NAME " , "writeDisposition" : " WRITE METHOD " } }, "pageSize" : " PAGE SIZE " } Provide the following values: SCOPE PATH : Use one of the following values: The allowed values are: projects/ PROJECT ID , where PROJECT ID is the ID of the project that has the asset metadata you want to export with an SQL query. projects/ PROJECT NUMBER , where PROJECT NUMBER is the number of the project that has the asset metadata you want to export with an SQL query.
+- Similarly, f and v are used in the rows array instead of fields and value to keep responses as small as possible. { "jobReference" : "0000000000000000000000000000000000000000000000000000000000000000" , "done" : true , "queryResult" : { "rows" : [ { "f" : [ { "v" : "//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/instance-1" } , { "v" : "compute.googleapis.com/Instance" } ] } , { "f" : [ { "v" : "//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/instance-2" } , { "v" : "compute.googleapis.com/Instance" } ] } ], "schema" : { "fields" : [ { "field" : "name" , "type" : "STRING" , "mode" : "NULLABLE" , "fields" : [] } , { "field" : "assetType" , "type" : "STRING" , "mode" : "NULLABLE" , "fields" : [] } ] } , "nextPageToken" : "" , "totalRows" : "1" } } Unfinished job response If you set a timeout in your request, the query is performed asynchronously and you are sent a response that indicates the job is unfinished ( "done": false ).
+- If the job has finished, then the queryResult object is populated with the appropriate data, and the results are listed afterward. done: true jobReference: 0000000000000000000000000000000000000000000000000000000000000000 queryResult: nextPageToken: '' totalRows: '2' name: //compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/instance-1 assetType: compute.googleapis.com/Instance name: //compute.googleapis.com/projects/my-project/zones/us-central1-c/instances/instance-2 assetType: compute.googleapis.com/Instance Unfinished job response If you set a timeout in your request, the query is performed asynchronously and you are sent a response that indicates the job is unfinished ( done: false ).
+

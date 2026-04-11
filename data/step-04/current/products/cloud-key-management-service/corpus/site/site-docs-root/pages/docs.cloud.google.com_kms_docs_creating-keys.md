@@ -8,222 +8,21 @@ entrypoint: https://docs.cloud.google.com/kms/docs
 source_metadata:
   url: https://docs.cloud.google.com/kms/docs/creating-keys
   title: "Create a key \_|\_ Cloud Key Management Service \_|\_ Google Cloud Documentation"
-  fetched_via: browser_cdp
-  cdp_url: http://127.0.0.1:9222
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
 ---
 
-Create a key | Cloud Key Management Service | Google Cloud Documentation
-Skip to main content
-Technology areas
-close
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Cross-product tools
-close
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-More
-/
-Console
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-Google Developer Program View your saved pages and finish your Google Developer Profile setup here.
-Cloud KMS
-Start free
-Overview
-Guides
-Reference
-Samples
-Resources
-More
-Technology areas
-More
-Overview
-Guides
-Reference
-Samples
-Resources
-Cross-product tools
-More
-Console
-Discover
-Product overview
-Protection levels
-Overview
-Cloud HSM overview
-Single-tenant Cloud HSM overview
-Cloud EKM overview
-Reference architectures for Cloud EKM
-CMEK overview
-Cloud KMS with Autokey
-Compatible services
-Cloud HSM for Google Workspace
-Locations
-Get started
-Cloud KMS resources
-Key purposes and algorithms
-Separation of duties
-Create and use encryption keys
-CMEK best practices
-Create and manage Single-tenant Cloud HSM instances
-Create keys
-Automate key creation
-Autokey overview
-Enable Autokey
-Create a resource with Autokey
-Create a key ring
-Create a key
-Import keys
-About key import
-Key wrapping
-Format a key for import
-Manually wrap a key for import
-Configure OpenSSL for manual key wrapping
-Wrap a key using OpenSSL
-Set up automatic key wrapping
-Import a key version
-Verify an imported key version
-Create external keys
-Set up Cloud EKM over the internet
-Create an EKM connection
-Create an external Key
-Control access
-Manage IAM roles
-Use Organization Policy Contraints
-Create custom organization policy constraints for Cloud KMS
-CMEK organization policies
-Control key destruction
-Secure data using keys
-Key APIs
-Use gRPC
-Access the API
-Sort and filter API list results
-Generate random bytes
-Use Cloud KMS keys in Google Cloud
-Encrypt and decrypt data
-Envelope encryption
-Additional authenticated data
-Asymmetric encryption
-Encrypt and decrypt data with a symmetric key
-Encrypt and decrypt data with a raw symmetric key
-Encrypt and decrypt data with an asymmetric key
-Verify end-to-end data integrity
-Encrypt application data
-Set up client-side encryption with Tink
-Onboard to Cloud HSM for Google Workspace
-Sign and validate data
-Digital signatures
-Create and validate signatures
-MAC signatures
-Create and validate MAC signatures
-Share secrets using key encapsulation mechanisms
-Key encapsulation mechanisms
-Encapsulate and decapsulate using KEMs
-Manage keys
-Resource consistency
-Key version states
-View keys and key details
-View keys by project
-View encryption metrics
-View key usage
-Get a Cloud KMS resource ID
-Retrieve a public key
-Attest a Cloud HSM key
-Label a key
-Create and manage tags
-Enable and disable a key version
-Destroy and restore a key version
-Delete Cloud KMS resources
-Rotate keys
-About key rotation
-Rotate a key
-Re-encrypt data
-Update external key reference
-Monitor
-Using Cloud Audit Logging
-Cloud KMS Inventory Service audit logging
-Monitor state changes
-Monitor and adjust quotas
-Use Cloud Monitoring
-Monitor EKM usage
-Troubleshoot
-Troubleshoot failed imports
-Troubleshoot EKM via VPC errors
-AI and ML
-Application development
-Application hosting
-Compute
-Data analytics and pipelines
-Databases
-Distributed, hybrid, and multicloud
-Industry solutions
-Migration
-Networking
-Observability and monitoring
-Security
-Storage
-Access and resources management
-Costs and usage management
-Infrastructure as code
-SDK, languages, frameworks, and tools
-On this page
-Before you begin Required roles
-Create a symmetric encryption key Create a symmetric encryption key with custom automatic rotation
-Set the duration of the 'scheduled for destruction' state
-Create an asymmetric key Create an asymmetric decryption key
-Create an asymmetric signing key
-Create a KEM key
-Retrieve the public key
-Convert a public key to JWK format
-Control access to asymmetric keys
-Create a MAC signing key
-What's next
 Home
 Documentation
 Security
 Cloud KMS
 Guides
-Was this helpful?
 Send feedback
 Create a key
 Stay organized with collections
 Save and categorize content based on your preferences.
-On this page
-Before you begin Required roles
-Create a symmetric encryption key Create a symmetric encryption key with custom automatic rotation
-Set the duration of the 'scheduled for destruction' state
-Create an asymmetric key Create an asymmetric decryption key
-Create an asymmetric signing key
-Create a KEM key
-Retrieve the public key
-Convert a public key to JWK format
-Control access to asymmetric keys
-Create a MAC signing key
-What's next
 This page shows how to create a key in Cloud KMS. A key can be a
 symmetric or asymmetric encryption key, an asymmetric signing key, or a MAC
 signing key.
@@ -250,15 +49,8 @@ Cloud KMS locations .
 To create a key ring, see Create a key
 ring .
 Optional: To use the gcloud CLI, prepare your environment.
-In one of the following development environments, set up the gcloud CLI:
-Cloud Shell : to use an online terminal with the gcloud CLI
-already set up, activate Cloud Shell.
-Activate Cloud Shell on this page
-Local shell : to use a local development environment,
-install and
-initialize the gcloud CLI.
-If you're using an external identity provider (IdP), you must first
-sign in to the gcloud CLI with your federated identity .
+In the Google Cloud console, activate Cloud Shell.
+Activate Cloud Shell
 Required roles
 To get the permissions that
 you need to create keys,
@@ -299,8 +91,7 @@ maintenance and key version destruction. To protect your Cloud KMS
 resources, this role should only be assigned to individuals responsible for key
 administration.
 Create a symmetric encryption key
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the Key Management page.
 Go to Key Management
 Click the name of the key ring for which you will create a key.
@@ -315,6 +106,7 @@ For Key material , select Generated key .
 For Purpose , select Symmetric encrypt/decrypt .
 Accept the default values for Rotation period and Starting on .
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 To create a software or Multi-tenant Cloud HSM key, use the kms keys create
@@ -352,6 +144,7 @@ Create and manage a Single-tenant Cloud HSM
 instance .
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -380,6 +173,7 @@ CryptoKey result = client . CreateCryptoKey ( keyRingName , id , key );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -420,6 +214,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -462,6 +257,7 @@ System . out . printf ( "Created symmetric key %s%n" , createdKey . getName ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -492,6 +288,7 @@ console . log ( `Created symmetric key: ${ key . name } ` );
 return key ;
 }
 return createKeySymmetricEncryptDecrypt ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -525,6 +322,7 @@ $createdKey = $client->createCryptoKey($createCryptoKeyRequest);
 printf('Created symmetric key: %s' . PHP_EOL, $createdKey->getName());
 return $createdKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -562,6 +360,7 @@ request = { "parent" : key_ring_name , "crypto_key_id" : key_id , "crypto_key" :
 )
 print ( f "Created symmetric key: { created_key . name } " )
 return created_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -585,6 +384,7 @@ algorithm : :GOOGLE_SYMMETRIC_ENCRYPTION
 # Call the API.
 created_key = client . create_crypto_key parent : key_ring_name , crypto_key_id : id , crypto_key : key
 puts "Created symmetric key: #{ created_key . name } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -632,8 +432,7 @@ period , which is the time between the automatic creation of
 new key versions. You can also independently specify the next rotation time,
 so that the next rotation happens earlier or later than one rotation period from
 now.
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 When you use the Google Cloud console to create a key, Cloud KMS sets the
 rotation period and next rotation time automatically. You can choose to use
 the default values or specify different values.
@@ -645,6 +444,7 @@ For Starting on , select the date when you want the first automatic
 rotation to happen. You can leave Starting on at its default value to
 start the first automatic rotation one key rotation period from when you
 create the key.
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys create KEY_NAME \
@@ -668,6 +468,7 @@ period from when you run the command. For more information, see
 CryptoKey.nextRotationTime .
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -708,6 +509,7 @@ CryptoKey result = client . CreateCryptoKey ( keyRingName , id , key );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -760,6 +562,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -812,6 +615,7 @@ System . out . printf ( "Created key with rotation schedule %s%n" , createdKey .
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -850,6 +654,7 @@ console . log ( `Created rotating key: ${ key . name } ` );
 return key ;
 }
 return createKeyRotationSchedule ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -892,6 +697,7 @@ $createdKey = $client->createCryptoKey($createCryptoKeyRequest);
 printf('Created key with rotation: %s' . PHP_EOL, $createdKey->getName());
 return $createdKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 import time
@@ -934,6 +740,7 @@ request = { "parent" : key_ring_name , "crypto_key_id" : key_id , "crypto_key" :
 )
 print ( f "Created labeled key: { created_key . name } " )
 return created_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -965,6 +772,7 @@ seconds : ( Time . now + ( 60 * 60 * 24 )) . to_i
 # Call the API.
 created_key = client . create_crypto_key parent : key_ring_name , crypto_key_id : id , crypto_key : key
 puts "Created rotating key: #{ created_key . name } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1006,8 +814,7 @@ value defined by organization policies. For more information, see Control
 key destruction .
 To create a key which uses a custom duration for the scheduled for destruction
 state, use the following steps:
-Console gcloud
-More
+Console
 In the Google Cloud console, go to the Key Management page.
 Go to Key Management
 Click the name of the key ring for which you will create a key.
@@ -1018,6 +825,7 @@ In Duration of 'scheduled for destruction' state , choose the number of
 days the key will remain scheduled for destruction before being
 permanently destroyed.
 Click Create key .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys create KEY_NAME \
@@ -1052,8 +860,7 @@ When you first create the key, the initial key version has a state of
 Pending generation . When the state changes to Enabled , you can use
 the key. To learn more about key version states, see Key version
 states .
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the Key Management page.
 Go to Key Management
 Click the name of the key ring for which you will create a key.
@@ -1069,6 +876,7 @@ For Purpose , select Asymmetric decrypt .
 For Algorithm , select 3072 bit RSA - OAEP Padding - SHA256 Digest .
 You can change this value on future key versions.
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys create KEY_NAME \
@@ -1094,6 +902,7 @@ you want to create the key:
 --crypto-key-backend "projects/ INSTANCE_PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE_NAME "
 For information on all flags and possible values, run the command with the
 `--help` flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -1128,6 +937,7 @@ CryptoKey result = client . CreateCryptoKey ( keyRingName , id , key );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -1172,6 +982,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -1218,6 +1029,7 @@ System . out . printf ( "Created asymmetric key %s%n" , createdKey . getName ())
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1251,6 +1063,7 @@ console . log ( `Created asymmetric key: ${ key . name } ` );
 return key ;
 }
 return createKeyAsymmetricDecrypt ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -1289,6 +1102,7 @@ $createdKey = $client->createCryptoKey($createCryptoKeyRequest);
 printf('Created asymmetric decryption key: %s' . PHP_EOL, $createdKey->getName());
 return $createdKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 import datetime
@@ -1334,6 +1148,7 @@ request = { "parent" : key_ring_name , "crypto_key_id" : key_id , "crypto_key" :
 )
 print ( f "Created asymmetric decrypt key: { created_key . name } " )
 return created_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -1361,6 +1176,7 @@ seconds : 24 * 60 * 60
 # Call the API.
 created_key = client . create_crypto_key parent : key_ring_name , crypto_key_id : id , crypto_key : key
 puts "Created asymmetric decryption key: #{ created_key . name } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1397,8 +1213,7 @@ When you first create the key, the initial key version has a state of
 Pending generation . When the state changes to Enabled , you can use
 the key. To learn more about key version states, see Key version
 states .
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the Key Management page.
 Go to Key Management
 Click the name of the key ring for which you will create a key.
@@ -1414,6 +1229,7 @@ For Purpose , select Asymmetric sign .
 For Algorithm , select Elliptic Curve P-256 - SHA256 Digest . You can
 change this value on future key versions.
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys create KEY_NAME \
@@ -1438,6 +1254,7 @@ Single-tenant Cloud HSM instance where you want to create the key:
 --crypto-key-backend "projects/ INSTANCE_PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE_NAME "
 For information on all flags and possible values, run the command with the
 `--help` flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -1472,6 +1289,7 @@ CryptoKey result = client . CreateCryptoKey ( keyRingName , id , key );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -1516,6 +1334,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -1561,6 +1380,7 @@ System . out . printf ( "Created asymmetric key %s%n" , createdKey . getName ())
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1594,6 +1414,7 @@ console . log ( `Created asymmetric key: ${ key . name } ` );
 return key ;
 }
 return createKeyAsymmetricSign ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -1632,6 +1453,7 @@ $createdKey = $client->createCryptoKey($createCryptoKeyRequest);
 printf('Created asymmetric signing key: %s' . PHP_EOL, $createdKey->getName());
 return $createdKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 import datetime
@@ -1677,6 +1499,7 @@ request = { "parent" : key_ring_name , "crypto_key_id" : key_id , "crypto_key" :
 )
 print ( f "Created asymmetric signing key: { created_key . name } " )
 return created_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -1704,6 +1527,7 @@ seconds : 24 * 60 * 60
 # Call the API.
 created_key = client . create_crypto_key parent : key_ring_name , crypto_key_id : id , crypto_key : key
 puts "Created asymmetric signing key: #{ created_key . name } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1740,8 +1564,7 @@ When you first create the key, the initial key version has a state of
 Pending generation . When the state changes to Enabled , you can use
 the key. To learn more about key version states, see Key version
 states .
-gcloud API
-More
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 gcloud kms keys create KEY_NAME \
@@ -1758,6 +1581,7 @@ example, ml-kem-768 . For a list of supported key encapsulation algorithms, see 
 algorithms .
 For information on all flags and possible values, run the command with the
 --help flag.
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -1786,8 +1610,7 @@ Considerations and Textual Encoding of Subject Public
 Key Info .
 To download the public key for an existing asymmetric key version, follow these
 steps:
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the Key Management page.
 Go to Key Management
 Click the name of the key ring that contains the asymmetric key for which
@@ -1807,6 +1630,7 @@ the form:
 KEY_RING - KEY_NAME - KEY_VERSION .pub
 Each portion of the filename is separated by a hyphen, for example
 ringname-keyname-version.pub .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 Note: The gcloud kms keys versions get-public-key command must be run from
@@ -1830,6 +1654,7 @@ OUTPUT_FILE_PATH : the path where you want to save the
 public key file—for example, public-key.pub .
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -1847,6 +1672,7 @@ PublicKey result = client . GetPublicKey ( keyVersionName );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -1902,6 +1728,7 @@ return fmt . Errorf ( "failed to parse public key: %w" , err )
 fmt . Fprintf ( w , "Retrieved public key: %v\n" , publicKey )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKeyVersionName ;
@@ -1938,6 +1765,7 @@ System . out . printf ( "Public key: %s%n" , publicKey . getPem ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -1977,6 +1805,7 @@ console . log ( `Public key pem: ${ publicKey . pem } ` );
 return publicKey ;
 }
 return getPublicKey ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -1999,6 +1828,7 @@ $publicKey = $client->getPublicKey($getPublicKeyRequest);
 printf('Public key: %s' . PHP_EOL, $publicKey->getPem());
 return $publicKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -2048,6 +1878,7 @@ An int representing the CRC32C checksum of the provided bytes.
 import crcmod # type: ignore
 crc32c_fun = crcmod . predefined . mkPredefinedCrcFun ( "crc-32c" )
 return crc32c_fun ( data )
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -2069,6 +1900,7 @@ crypto_key_version : version_id
 # Call the API.
 public_key = client . get_public_key name : key_version_name
 puts "Public key: #{ public_key . pem } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -2124,8 +1956,7 @@ which are different from IEEE-P1363 encoded signatures that
 are often used in JSON-based implementations. Caution: We don't recommend using these third-party libraries for anything
 other than JWK conversion.
 To convert a public key to JWK format, follow these steps:
-Go Java Python
-More
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -2188,6 +2019,7 @@ fmt . Fprintf ( w , "The public key in JWK format: " )
 json . NewEncoder ( w ). Encode ( jwkKey )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKeyVersionName ;
@@ -2228,6 +2060,7 @@ System . out . println ( jwk . toJSONString ());
 }
 }
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 from google.cloud import kms
@@ -2290,8 +2123,7 @@ is required for signature validation.
 Learn about permissions and roles in Cloud KMS release at
 Permissions and roles .
 Create a MAC signing key
-Console gcloud C# Go Java Node.js PHP Python Ruby API
-More
+Console
 In the Google Cloud console, go to the Key Management page.
 Go to Key Management
 Click the name of the key ring for which you will create a key.
@@ -2307,6 +2139,7 @@ For Purpose , select MAC signing/verification .
 Optional: for Algorithm , select an HMAC signing
 algorithm .
 Click Create .
+gcloud
 To use Cloud KMS on the command line, first
 Install or upgrade to the latest version of Google Cloud CLI .
 To create a software or Multi-tenant Cloud HSM key, use the kms keys
@@ -2348,6 +2181,7 @@ Create and manage a Single-tenant Cloud HSM
 instance .
 For information on all flags and possible values, run the command with the
 --help flag.
+C#
 To run this code, first set up a C# development environment and
 install the Cloud KMS C# SDK .
 using Google.Cloud.Kms.V1 ;
@@ -2382,6 +2216,7 @@ CryptoKey result = client . CreateCryptoKey ( keyRingName , id , key );
 return result ;
 }
 }
+Go
 To run this code, first set up a Go development environment and
 install the Cloud KMS Go SDK .
 import (
@@ -2425,6 +2260,7 @@ return fmt . Errorf ( "failed to create key: %w" , err )
 fmt . Fprintf ( w , "Created key: %s\n" , result . Name )
 return nil
 }
+Java
 To run this code, first set up a Java development environment and
 install the Cloud KMS Java SDK .
 import com.google.cloud.kms.v1. CryptoKey ;
@@ -2467,6 +2303,7 @@ System . out . printf ( "Created mac key %s%n" , createdKey . getName ());
 }
 }
 }
+Node.js
 To run this code, first set up a Node.js development environment and
 install the Cloud KMS Node.js SDK .
 //
@@ -2500,6 +2337,7 @@ console . log ( `Created mac key: ${ key . name } ` );
 return key ;
 }
 return createKeyMac ();
+PHP
 To run this code, first learn about using PHP on Google Cloud and
 install the Cloud KMS PHP SDK .
 use Google\Cloud\Kms\V1\Client\KeyManagementServiceClient;
@@ -2538,6 +2376,7 @@ $createdKey = $client->createCryptoKey($createCryptoKeyRequest);
 printf('Created mac key: %s' . PHP_EOL, $createdKey->getName());
 return $createdKey;
 }
+Python
 To run this code, first set up a Python development environment and
 install the Cloud KMS Python SDK .
 import datetime
@@ -2580,6 +2419,7 @@ request = { "parent" : key_ring_name , "crypto_key_id" : key_id , "crypto_key" :
 )
 print ( f "Created mac key: { created_key . name } " )
 return created_key
+Ruby
 To run this code, first set up a Ruby development environment and
 install the Cloud KMS Ruby SDK .
 # TODO(developer): uncomment these values before running the sample.
@@ -2603,6 +2443,7 @@ algorithm : :HMAC_SHA256
 # Call the API.
 created_key = client . create_crypto_key parent : key_ring_name , crypto_key_id : id , crypto_key : key
 puts "Created mac key: #{ created_key . name } "
+API
 These examples use curl as an HTTP client
 to demonstrate using the API. For more information about access control, see
 Accessing the Cloud KMS API .
@@ -2649,59 +2490,8 @@ signatures .
 Learn about Encrypting and decrypting data with an RSA
 key .
 Learn about Retrieving a public key .
-Was this helpful?
 Send feedback
 Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
-Last updated 2026-04-02 UTC.
+Last updated 2026-04-08 UTC.
 Need to tell us more?
-[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-02 UTC."],[],[]]
-Products and pricing
-See all products
-Google Cloud pricing
-Google Cloud Marketplace
-Contact sales
-Support
-Community forums
-Support
-Release Notes
-System status
-Resources
-GitHub
-Getting Started with Google Cloud
-Code samples
-Cloud Architecture Center
-Training and Certification
-Engage
-Blog
-Events
-X (Twitter)
-Google Cloud on YouTube
-Google Cloud Tech on YouTube
-About Google
-Privacy
-Site terms
-Google Cloud terms
-Manage cookies
-Our third decade of climate action: join us
-Sign up for the Google Cloud newsletter
-Subscribe
-English
-Deutsch
-Español
-Español – América Latina
-Français
-Indonesia
-Italiano
-Português
-Português – Brasil
-中文 – 简体
-中文 – 繁體
-日本語
-한국어
-close
-Welcome to Cloud Shell
-Cloud Shell is a development environment that you can use in the browser:
-Activate Cloud Shell to explore Google Cloud with a terminal and an editor
-Start a free trial to get $300 in free credits
-Activate Cloud Shell
-Start a free trial
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

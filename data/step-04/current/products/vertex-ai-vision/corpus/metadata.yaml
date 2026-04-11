@@ -1,0 +1,51 @@
+version: 1
+name: corpus
+created_at: '2026-04-10T00:35:39+00:00'
+updated_at: '2026-04-11T21:19:50+00:00'
+commands:
+  list_sources: know list sources --key corpus
+  sync: know sync --key corpus
+  export: know export --key corpus
+sources:
+- type: site
+  id: site-docs-root
+  title: https://docs.cloud.google.com/vision-ai/docs
+  created_at: '2026-04-11T20:40:21+00:00'
+  updated_at: '2026-04-11T21:17:20+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vision-ai/docs --key
+    corpus --compact
+  delete_command: know del --key corpus site-docs-root
+  config:
+    url: https://docs.cloud.google.com/vision-ai/docs
+    max_depth: 1
+    max_pages: 30
+    compact_output: true
+  last_synced_at: '2026-04-11T21:17:20+00:00'
+- type: site
+  id: site-docs-reference
+  title: https://docs.cloud.google.com/vision-ai/docs/build-app
+  created_at: '2026-04-11T20:40:21+00:00'
+  updated_at: '2026-04-11T21:18:33+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vision-ai/docs/build-app
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-reference
+  config:
+    url: https://docs.cloud.google.com/vision-ai/docs/build-app
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T21:18:33+00:00'
+- type: site
+  id: site-python-reference
+  title: https://docs.cloud.google.com/vision-ai/docs/reference/python/visionai/python
+  created_at: '2026-04-11T20:40:22+00:00'
+  updated_at: '2026-04-11T21:19:50+00:00'
+  update_command: know sync site https://docs.cloud.google.com/vision-ai/docs/reference/python/visionai/python
+    --key corpus --compact
+  delete_command: know del --key corpus site-python-reference
+  config:
+    url: https://docs.cloud.google.com/vision-ai/docs/reference/python/visionai/python
+    max_depth: 1
+    max_pages: 20
+    compact_output: true
+  last_synced_at: '2026-04-11T21:19:50+00:00'

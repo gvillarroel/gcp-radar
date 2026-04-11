@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T21:44:03.377Z"
+product_name: "App Engine standard environment Java"
+product_slug: "app-engine-standard-environment-java"
+feature_name: "Local development server support for -Xbootclasspath/p"
+feature_slug: "local-development-server-support-for-xbootclasspath-p"
+latest_feature_date: "2017-09-25"
+deprecation_date: "2017-09-25"
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "bootstrap classpath prepend"
+  - "local development server JVM option"
+  - "dev_appserver JVM flag"
+  - "bootclasspath prepend"
+  - "JVM -Xbootclasspath"
+  - "Java startup flag"
+  - "bootclasspath/p support"
+  - "-Xbootclasspath/p"
+---
+
+# Local development server support for -Xbootclasspath/p
+
+Product: App Engine standard environment Java
+Coverage: NONE
+
+## Step 02 Summary
+
+The local development server no longer supports using the -Xbootclasspath/p JVM option; deprecated on 2017-09-25.
+
+## Extended Definition
+
+The local development server no longer supports using the -Xbootclasspath/p JVM option; deprecated on 2017-09-25.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

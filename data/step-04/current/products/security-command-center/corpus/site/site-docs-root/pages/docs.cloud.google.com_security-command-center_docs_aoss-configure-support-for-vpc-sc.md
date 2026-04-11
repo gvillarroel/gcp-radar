@@ -1,0 +1,125 @@
+---
+title: "Configure Assured OSS support for VPC Service Controls \_|\_ Security Command\
+  \ Center \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/security-command-center/docs/aoss-configure-support-for-vpc-sc
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/security-command-center/docs
+source_metadata:
+  url: https://docs.cloud.google.com/security-command-center/docs/aoss-configure-support-for-vpc-sc
+  title: "Configure Assured OSS support for VPC Service Controls \_|\_ Security Command\
+    \ Center \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Security
+Security Command Center
+Guides
+Send feedback
+Configure Assured OSS support for VPC Service Controls
+Stay organized with collections
+Save and categorize content based on your preferences.
+Enterprise service tier
+If you enable Assured Open Source Software (Assured OSS) within a VPC Service Controls service
+perimeter, you must configure egress rules.
+This document applies to the premium tier of
+Assured OSS only.
+For more information, see Configuring egress
+policies .
+Before you begin
+Make sure that you have the required roles to configure
+VPC Service Controls at the
+organization level.
+Make sure that you know the following information:
+The service account that you used to set up Assured OSS.
+The Artifact Registry service agent
+that was created automatically when you set up Assured OSS.
+The user account that set up Assured OSS.
+Configure the egress rule when downloading binaries
+Complete this task for your Artifact Registry repositories and for the
+Google Cloud resources that initiate downloads (for example,
+Compute Engine VMs).
+Configure the following egress rule:
+- egressFrom :
+identities :
+- serviceAccount : ASSURED_OSS_EMAIL_ADDRESS
+- serviceAccount : ARTIFACT_REPOSITORY_EMAIL_ADDRESS
+- serviceAccount : OTHER_SERVICE_ACCOUNT_EMAIL_ADDRESS
+- USER_GROUP
+egressTo :
+operations :
+- methodSelectors :
+- method : artifactregistry.googleapis.com/GoRead
+- method : artifactregistry.googleapis.com/MavenRead
+- method : artifactregistry.googleapis.com/NPMRead
+- method : artifactregistry.googleapis.com/PythonRead
+serviceName : artifactregistry.googleapis.com
+resources :
+- projects/855934472549
+- projects/107114433875
+Replace the following:
+ASSURED_OSS_EMAIL_ADDRESS : the email address of the
+service account that you specified when you set up Assured OSS.
+ARTIFACT_REGISTRY_EMAIL_ADDRESS : the email
+address of the Artifact Registry service agent.
+OTHER_SERVICE_ACCOUNT_EMAIL_ADDRESS : the email
+addresses of other service accounts that require access to the open source
+packages.
+USER_GROUP : the groups that require
+access to the open source packages. For example, group:my-group@example.com
+or user:alex@example.com .
+Configure the egress rule when accessing security metadata from the Assured OSS bucket
+Complete this task for the user account and service account that you used to
+set up Assured OSS.
+Configure the following egress rule:
+- egressFrom :
+identities :
+- serviceAccount : ASSURED_OSS_EMAIL_ADDRESS
+- user : ASSURED_OSS_USER_EMAIL_ADDRESS
+egressTo :
+operations :
+- methodSelectors :
+- method : google.storage.objects.get
+- method : google.storage.objects.list
+serviceName : storage.googleapis.com
+resources :
+- projects/107114433875
+Replace the following:
+ASSURED_OSS_EMAIL_ADDRESS : the email address of the
+service account that you specified when you set up Assured OSS.
+ASSURED_OSS_USER_EMAIL_ADDRESS : the email
+address of the user account that you used to set up Assured OSS.
+Configure the egress rule when setting up Pub/Sub notifications
+Complete this task to set up Pub/Sub notifications for
+Assured OSS .
+Create the following egress rule:
+- egressFrom :
+- serviceAccount : ASSURED_OSS_EMAIL_ADDRESS
+- user : ASSURED_OSS_USER_EMAIL_ADDRESS
+egressTo :
+operations :
+- methodSelectors :
+- method : Subscriber.CreateSubscription
+serviceName : pubsub.googleapis.com
+resources :
+- projects/107114433875
+Replace the following:
+ASSURED_OSS_EMAIL_ADDRESS : the email address of the
+service account that you specified when you set up Assured OSS.
+ASSURED_OSS_USER_EMAIL_ADDRESS : the email
+address of the user account that you used to set up Assured OSS.
+After you configure the subscription, you can remove this egress rule.
+What's next
+Learn more about configuring egress policies .
+Enable Security Command Center with VPC Service Controls .
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

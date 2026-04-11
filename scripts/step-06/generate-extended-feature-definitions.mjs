@@ -35,6 +35,7 @@ const keywordBatchSize = Number(process.env.GCP_RADAR_STEP06_KEYWORD_BATCH_SIZE 
 const definitionConcurrency = Number(process.env.GCP_RADAR_STEP06_DEFINITION_CONCURRENCY || Math.min(6, Math.max(2, Math.floor((os.availableParallelism?.() ?? os.cpus().length) * 0.4))));
 const piModel = process.env.GCP_RADAR_STEP06_PI_MODEL || "openai-codex/gpt-5.3-codex-spark";
 const piRequestTimeoutMs = Number(process.env.GCP_RADAR_STEP06_PI_REQUEST_TIMEOUT_MS || 300000);
+const disablePi = process.env.GCP_RADAR_STEP06_DISABLE_PI === "1";
 const productFilter = (process.env.GCP_RADAR_STEP06_PRODUCTS || "")
   .split(",")
   .map((value) => value.trim().toLowerCase())
@@ -80,6 +81,8 @@ const definitionSystemPrompt = [
   "- evidence_summary must be one short sentence describing what the cited pages contribute.",
 ].join(" ");
 
+let cacheWriteQueue = Promise.resolve();
+
 function hashValue(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
 }
@@ -107,7 +110,25 @@ async function readJson(filePath, fallback) {
 }
 
 async function writeJson(filePath, value) {
-  await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
+  await mkdir(path.dirname(filePath), { recursive: true });
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
+      return;
+    } catch (error) {
+      lastError = error;
+      if (attempt < 3) {
+        await new Promise((resolve) => setTimeout(resolve, 50 * attempt));
+      }
+    }
+  }
+  throw lastError;
+}
+
+function writeJsonQueued(filePath, value) {
+  cacheWriteQueue = cacheWriteQueue.then(() => writeJson(filePath, value));
+  return cacheWriteQueue;
 }
 
 async function hasPi() {
@@ -475,6 +496,21 @@ function phraseSpecificityScore(phrase, phraseDocumentFrequency) {
 async function ensureKeywords(productName, features, keywordCache, phraseDocumentFrequency) {
   const uncached = features.filter((feature) => !keywordCache[keywordCacheKey(productName, feature)]);
 
+  if (disablePi) {
+    for (const feature of uncached) {
+      keywordCache[keywordCacheKey(productName, feature)] = {
+        prompt_version: keywordPromptVersion,
+        feature_name: feature.feature_name,
+        keyword_phrases: fallbackKeywords(feature).keyword_phrases,
+        generic_terms_to_avoid: [],
+      };
+    }
+    if (uncached.length > 0) {
+      await writeJsonQueued(keywordCacheFile, keywordCache);
+    }
+    return;
+  }
+
   for (const batch of chunk(uncached, keywordBatchSize)) {
     const prompt = JSON.stringify({
       product_name: productName,
@@ -524,7 +560,7 @@ async function ensureKeywords(productName, features, keywordCache, phraseDocumen
       };
     }
 
-    await writeJson(keywordCacheFile, keywordCache);
+    await writeJsonQueued(keywordCacheFile, keywordCache);
   }
 }
 
@@ -635,6 +671,14 @@ function extractEvidenceSnippets(page, keywordEntry) {
 }
 
 async function rerankPageCompetition(productName, page, featureSet, rerankCache) {
+  if (disablePi) {
+    return featureSet.map((feature) => ({
+      feature_name: feature.feature_name,
+      relevance: "MODERATE",
+      rationale: "Fast mode kept the lexical match without page-level LLM reranking.",
+    }));
+  }
+
   const cacheKey = rerankCacheKey(productName, page, featureSet);
   if (rerankCache[cacheKey]) {
     return rerankCache[cacheKey];
@@ -665,7 +709,7 @@ async function rerankPageCompetition(productName, page, featureSet, rerankCache)
   }
 
   rerankCache[cacheKey] = Array.isArray(response) ? response : [];
-  await writeJson(rerankCacheFile, rerankCache);
+  await writeJsonQueued(rerankCacheFile, rerankCache);
   return rerankCache[cacheKey];
 }
 
@@ -700,6 +744,17 @@ async function mapWithConcurrency(items, concurrency, worker) {
 }
 
 async function generateDefinition(productName, feature, supportingPages, definitionCache, keywordEntry) {
+  if (disablePi) {
+    return {
+      extended_definition: feature.feature_summary,
+      coverage_status: supportingPages.length >= 2 ? "MEDIUM" : supportingPages.length === 1 ? "LOW" : "NONE",
+      source_links: supportingPages.map((page) => page.url).filter(Boolean),
+      evidence_summary: supportingPages.length > 0
+        ? `Fast-mode lexical matching selected ${supportingPages.length} supporting page(s) from the Step 04 corpus.`
+        : "No supporting pages passed the Step 06 ranking thresholds.",
+    };
+  }
+
   const cacheKey = definitionCacheKey(productName, feature, supportingPages);
   if (definitionCache[cacheKey]) {
     return definitionCache[cacheKey];
@@ -734,7 +789,7 @@ async function generateDefinition(productName, feature, supportingPages, definit
   }
 
   definitionCache[cacheKey] = response;
-  await writeJson(definitionCacheFile, definitionCache);
+  await writeJsonQueued(definitionCacheFile, definitionCache);
   return definitionCache[cacheKey];
 }
 
@@ -881,6 +936,33 @@ async function writeFeatureFiles(product, featureFilesDir, features) {
   }
 }
 
+function buildCoverageFeedback(product, features) {
+  const uncovered = features.filter((feature) => feature.coverage_status === "NONE");
+  const tokenCounts = new Map();
+  for (const feature of uncovered) {
+    const tokens = new Set(tokenize(`${feature.feature_name} ${feature.feature_summary}`));
+    for (const token of tokens) tokenCounts.set(token, (tokenCounts.get(token) || 0) + 1);
+  }
+  return {
+    schema_version: schemaVersion,
+    generated_at: new Date().toISOString(),
+    product_name: product.product_name,
+    product_slug: product.product_slug,
+    feature_count: features.length,
+    uncovered_feature_count: uncovered.length,
+    uncovered_features: uncovered.slice(0, 200).map((feature) => ({
+      latest_feature_date: feature.latest_feature_date,
+      feature_name: feature.feature_name,
+      feature_summary: feature.feature_summary,
+      keywords: feature.keywords,
+    })),
+    top_missing_tokens: [...tokenCounts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 40)
+      .map(([token, count]) => ({ token, count })),
+  };
+}
+
 async function processProduct(productSlug, caches) {
   const step02 = await loadStep02Product(productSlug);
   const corpusPages = await loadCorpusPages(productSlug);
@@ -889,6 +971,7 @@ async function processProduct(productSlug, caches) {
   const stateDir = path.join(stateProductsDir, productSlug);
   const outputJsonFile = path.join(outputDir, "extended-features.json");
   const outputMarkdownFile = path.join(outputDir, "extended-features.md");
+  const coverageFeedbackFile = path.join(outputDir, "coverage-feedback.json");
   const stateFile = path.join(stateDir, "state.json");
 
   await mkdir(outputDir, { recursive: true });
@@ -917,6 +1000,7 @@ async function processProduct(productSlug, caches) {
         output_files: {
           json: path.relative(process.cwd(), outputJsonFile).replace(/\\/g, "/"),
           markdown: path.relative(process.cwd(), outputMarkdownFile).replace(/\\/g, "/"),
+          coverage_feedback: path.relative(process.cwd(), coverageFeedbackFile).replace(/\\/g, "/"),
           feature_files_dir: path.relative(process.cwd(), featureFilesDir).replace(/\\/g, "/"),
         },
         feature_file_count: normalizedFeatures.length,
@@ -928,7 +1012,7 @@ async function processProduct(productSlug, caches) {
         corpus_page_count: 0,
         feature_count: normalizedFeatures.length,
         covered_feature_count: normalizedFeatures.filter((feature) => feature.coverage_status !== "NONE").length,
-        uncovered_feature_count: normalizedFeatures.filter((feature) => (feature.reranked_pages || []).length === 0).length,
+        uncovered_feature_count: normalizedFeatures.filter((feature) => feature.coverage_status === "NONE").length,
         output_json: path.relative(process.cwd(), outputJsonFile).replace(/\\/g, "/"),
         output_markdown: path.relative(process.cwd(), outputMarkdownFile).replace(/\\/g, "/"),
         feature_files_dir: path.relative(process.cwd(), featureFilesDir).replace(/\\/g, "/"),
@@ -1087,8 +1171,10 @@ async function processProduct(productSlug, caches) {
       supporting_pages: feature.reranked_pages,
     })),
   };
+  const coverageFeedback = buildCoverageFeedback(step02, featureRecords);
 
   await writeJson(outputJsonFile, payload);
+  await writeJson(coverageFeedbackFile, coverageFeedback);
   await writeFile(outputMarkdownFile, buildMarkdown(step02, featureRecords), "utf8");
   await writeFeatureFiles(step02, featureFilesDir, featureRecords);
   await writeJson(stateFile, {
@@ -1106,6 +1192,7 @@ async function processProduct(productSlug, caches) {
     output_files: {
       json: path.relative(process.cwd(), outputJsonFile).replace(/\\/g, "/"),
       markdown: path.relative(process.cwd(), outputMarkdownFile).replace(/\\/g, "/"),
+      coverage_feedback: path.relative(process.cwd(), coverageFeedbackFile).replace(/\\/g, "/"),
       feature_files_dir: path.relative(process.cwd(), featureFilesDir).replace(/\\/g, "/"),
     },
     feature_file_count: featureRecords.length,
@@ -1117,7 +1204,7 @@ async function processProduct(productSlug, caches) {
     corpus_page_count: corpusPages.length,
     feature_count: featureRecords.length,
     covered_feature_count: payload.covered_feature_count,
-    uncovered_feature_count: payload.features_without_supporting_pages,
+    uncovered_feature_count: featureRecords.filter((feature) => feature.coverage_status === "NONE").length,
     output_json: path.relative(process.cwd(), outputJsonFile).replace(/\\/g, "/"),
     output_markdown: path.relative(process.cwd(), outputMarkdownFile).replace(/\\/g, "/"),
     feature_files_dir: path.relative(process.cwd(), featureFilesDir).replace(/\\/g, "/"),
@@ -1136,7 +1223,7 @@ async function listProductSlugs() {
 async function main() {
   await ensureDirectories();
 
-  if (!(await hasPi())) {
+  if (!disablePi && !(await hasPi())) {
     throw new Error("pi is required for Step 06 enrichment but is not available in PATH");
   }
 
@@ -1159,6 +1246,7 @@ async function main() {
   await writeJson(keywordCacheFile, keywordCache);
   await writeJson(rerankCacheFile, rerankCache);
   await writeJson(definitionCacheFile, definitionCache);
+  await cacheWriteQueue;
   await writeJson(indexFile, {
     schema_version: schemaVersion,
     generated_at: new Date().toISOString(),

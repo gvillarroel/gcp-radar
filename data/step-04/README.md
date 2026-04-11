@@ -30,3 +30,15 @@ Operational note:
 
 These outputs are still intermediate workflow data.
 They are the local documentation corpus used by later extraction and validation stages, not yet validated source-of-truth artifacts.
+
+## What We Learned
+
+The current Step 04 runs have established a few practical rules:
+
+- Step 04 failures are often seed-quality problems, not crawler-capacity problems
+- broad roots plus narrow reference seeds work better than a single "best" URL
+- products on Google developer hosts can sync successfully, but they are more sensitive to bad intermediate hub pages than `docs.cloud.google.com`
+- preserving `source_failures`, `selected_sources_signature`, and `corpus_health` makes it possible to improve the pipeline incrementally without losing reproducibility
+- a successful sync is not enough by itself; the captured corpus must still be checked for breadth, diversity, and feature-token overlap before Step 06 consumes it
+
+In practice, Step 04 should be treated as corpus curation with capture state, not only as a scraping stage.

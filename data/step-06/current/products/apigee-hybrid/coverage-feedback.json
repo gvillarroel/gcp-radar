@@ -1,0 +1,433 @@
+{
+  "schema_version": "step-06-extended-feature-definitions-v1",
+  "generated_at": "2026-04-11T19:33:10.233Z",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_count": 62,
+  "uncovered_feature_count": 18,
+  "uncovered_features": [
+    {
+      "latest_feature_date": "2025-10-12",
+      "feature_name": "SanitizeModelResponse policy",
+      "feature_summary": "Apigee Hybrid supports the SanitizeModelResponse policy for LLM/GenAI workloads to sanitize responses from large language models.",
+      "keywords": [
+        "model response sanitization",
+        "sanitized model response",
+        "response sanitization policy",
+        "LLM output filtering",
+        "SanitizeModelResponse policy",
+        "SMR policy",
+        "GenAI policy"
+      ]
+    },
+    {
+      "latest_feature_date": "2025-10-12",
+      "feature_name": "SanitizeUserPrompt policy",
+      "feature_summary": "Apigee Hybrid supports the SanitizeUserPrompt policy for LLM/GenAI workloads to sanitize incoming prompts and reduce prompt-injection and jailbreak risks.",
+      "keywords": [
+        "prompt injection protection",
+        "user prompt sanitization",
+        "prompt sanitization policy",
+        "jailbreak mitigation",
+        "GenAI input policy",
+        "SanitizeUserPrompt policy",
+        "SUP policy"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-12-16",
+      "feature_name": "Apigee Hybrid analytics and debug data pipeline",
+      "feature_summary": "Introduces a new analytics and debug data pipeline that allows hybrid runtime components to write data directly to the control plane.",
+      "keywords": [
+        "write analytics data to control plane",
+        "control-plane analytics pipeline",
+        "analytics and debug data pipeline",
+        "debug payload delivery",
+        "control-plane ingestion",
+        "analytics pipeline configuration",
+        "runtime data pipeline",
+        "debug pipeline"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-12-16",
+      "feature_name": "Upgrade backup guardrails",
+      "feature_summary": "Adds guardrail checks that verify backups are enabled and completed before an Apigee Hybrid upgrade can proceed.",
+      "keywords": [
+        "upgrade blocked without backup",
+        "pre-upgrade backup validation",
+        "upgrade preflight check",
+        "backup readiness validation",
+        "backup completed check",
+        "backup enabled check",
+        "backup precheck",
+        "upgrade guardrails"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-10-04",
+      "feature_name": "Apigee Hybrid analytics and debug data pipeline for data residency",
+      "feature_summary": "Requires data residency-enabled hybrid organizations on v1.13.x to use the new control-plane analytics and debug data pipeline and enables it through control plane access and overrides configuration.",
+      "keywords": [
+        "pipeline enabled by control plane access",
+        "v1.13.x pipeline requirement",
+        "control-plane analytics pipeline",
+        "residency-aware pipeline",
+        "data residency debug pipeline",
+        "data residency organization",
+        "residency analytics pipeline",
+        "residency overrides configuration"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-10-04",
+      "feature_name": "Automatic Cassandra credential rotation in HashiCorp Vault",
+      "feature_summary": "Adds support for automatic rotation of Cassandra credentials when credentials are stored in HashiCorp Vault.",
+      "keywords": [
+        "auto Cassandra creds rotation",
+        "automated secret rotation",
+        "vault secret refresh",
+        "automatic Cassandra credential rotation",
+        "Vault-based Cassandra credentials",
+        "HashiCorp Vault integration",
+        "Cassandra credentials rotation",
+        "Vault Cassandra rotation"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-08-23",
+      "feature_name": "Apigee Operator namespace placement",
+      "feature_summary": "Moves the Apigee Operator to run in the same Kubernetes namespace as other hybrid components instead of the apigee-system namespace.",
+      "keywords": [
+        "operator namespace relocation",
+        "operator namespace move",
+        "co-located operator",
+        "same namespace as hybrid components",
+        "Apigee Operator namespace",
+        "runtime components namespace",
+        "apigee-system namespace"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-08-23",
+      "feature_name": "Apigee-watcher leader election",
+      "feature_summary": "Enables leader election for the apigee-watcher component to coordinate runtime behavior with a single active replica set.",
+      "keywords": [
+        "apigee-watcher leader election",
+        "leader election coordination",
+        "single active replica set",
+        "watcher active replica",
+        "runtime watcher leadership",
+        "watcher leader",
+        "leader watcher"
+      ]
+    },
+    {
+      "latest_feature_date": "2024-04-17",
+      "feature_name": "Hybrid proxy and target endpoint monitoring metrics suite",
+      "feature_summary": "Apigee hybrid 1.12 adds a new set of metrics for monitoring both proxies and target endpoints.",
+      "keywords": [
+        "target endpoint metrics suite",
+        "target endpoint metrics",
+        "endpoint monitoring",
+        "proxy and target endpoints",
+        "monitoring metrics suite",
+        "proxy endpoint metrics",
+        "proxy metrics",
+        "Apigee Hybrid 1.12"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-11-17",
+      "feature_name": "Hybrid cluster management via Helm or apigeectl",
+      "feature_summary": "Starting in v1.11.0, Apigee hybrid supports installing and managing clusters using either Helm or apigeectl, but not both simultaneously.",
+      "keywords": [
+        "mutually exclusive install methods",
+        "installing via Helm",
+        "Helm install",
+        "installing via apigeectl",
+        "Helm or apigeectl",
+        "apigeectl install",
+        "cluster management"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-06-30",
+      "feature_name": "Pre-install cluster readiness check job for Apigee hybrid",
+      "feature_summary": "Starting in v1.10, Apigee hybrid provides a pre-install Cluster Check Kubernetes job to validate cluster readiness before runtime installation.",
+      "keywords": [
+        "pre-install cluster check",
+        "pre-install validation",
+        "readiness check job",
+        "preinstall check",
+        "Cluster Check job",
+        "runtime installation precheck",
+        "cluster readiness"
+      ]
+    },
+    {
+      "latest_feature_date": "2023-02-01",
+      "feature_name": "Custom Apigee Ingress access log formats",
+      "feature_summary": "Apigee hybrid introduced custom log formats for Apigee Ingress access logs to support configurable log output.",
+      "keywords": [
+        "log format customization",
+        "custom access log format",
+        "configurable log output",
+        "access log customization",
+        "custom log fields",
+        "custom ingress logs",
+        "Apigee Ingress logs"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-08-22",
+      "feature_name": "Apigee hybrid Kubernetes version support (1.23)",
+      "feature_summary": "Apigee hybrid 1.8 added support for Kubernetes version 1.23 on supported platforms.",
+      "keywords": [
+        "release notes 1.23",
+        "Kubernetes 1.23 compatibility",
+        "K8s 1.23",
+        "supported Kubernetes versions",
+        "Kubernetes version 1.23",
+        "platform version support",
+        "Kubernetes 1.23 support",
+        "v1.23 support"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-08-22",
+      "feature_name": "apigeectl --verbose option",
+      "feature_summary": "The apigeectl --verbose option has been deprecated and superseded by the --v verbosity option; deprecated on 2022-08-22.",
+      "keywords": [
+        "deprecation date 2022-08-22",
+        "old log verbosity flag",
+        "legacy verbose flag",
+        "legacy verbose option",
+        "--verbose flag",
+        "apigeectl --verbose",
+        "deprecated --verbose",
+        "replaced by --v"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-08-22",
+      "feature_name": "KVM pagination",
+      "feature_summary": "KVM CRUD APIs in Apigee hybrid gained pagination support for key value map operations.",
+      "keywords": [
+        "key value map pagination",
+        "key value map APIs",
+        "KVM list operations",
+        "paginated KVM APIs",
+        "KVM CRUD APIs",
+        "paged KVM responses",
+        "KVM page support",
+        "KVM pagination"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-18",
+      "feature_name": "GraphQL policy JSON payload support",
+      "feature_summary": "The GraphQL policy now supports JSON-encoded payloads.",
+      "keywords": [
+        "GraphQL request payload",
+        "JSON-encoded payload",
+        "GraphQL JSON",
+        "policy payload format",
+        "JSON payload support",
+        "GraphQL payload",
+        "GraphQL policy"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-18",
+      "feature_name": "MessageLogging Cloud Logging support",
+      "feature_summary": "Apigee hybrid v1.7.0 adds Cloud Logging support to the MessageLogging policy element.",
+      "keywords": [
+        "MessageLogging with Cloud Logging",
+        "Cloud Logging destination",
+        "MessageLogging cloud logs",
+        "Cloud Logging integration",
+        "logging policy configuration",
+        "Cloud Logging support",
+        "MessageLogging policy"
+      ]
+    },
+    {
+      "latest_feature_date": "2022-04-18",
+      "feature_name": "mTLS for Cassandra client-node communication",
+      "feature_summary": "Apigee hybrid now supports mTLS between Cassandra clients (MART, Sync, and MP) and Cassandra nodes.",
+      "keywords": [
+        "mTLS between Cassandra clients and nodes",
+        "MART/Sync/MP TLS",
+        "Cassandra client-node communication",
+        "client-node TLS",
+        "MART Cassandra mTLS",
+        "Sync Cassandra mTLS",
+        "MP Cassandra mTLS",
+        "Cassandra mTLS"
+      ]
+    }
+  ],
+  "top_missing_tokens": [
+    {
+      "token": "apigee",
+      "count": 15
+    },
+    {
+      "token": "hybrid",
+      "count": 14
+    },
+    {
+      "token": "for",
+      "count": 11
+    },
+    {
+      "token": "the",
+      "count": 9
+    },
+    {
+      "token": "to",
+      "count": 9
+    },
+    {
+      "token": "and",
+      "count": 8
+    },
+    {
+      "token": "support",
+      "count": 6
+    },
+    {
+      "token": "in",
+      "count": 5
+    },
+    {
+      "token": "supports",
+      "count": 5
+    },
+    {
+      "token": "adds",
+      "count": 4
+    },
+    {
+      "token": "policy",
+      "count": 4
+    },
+    {
+      "token": "v1",
+      "count": 4
+    },
+    {
+      "token": "kubernetes",
+      "count": 3
+    },
+    {
+      "token": "new",
+      "count": 3
+    },
+    {
+      "token": "of",
+      "count": 3
+    },
+    {
+      "token": "on",
+      "count": 3
+    },
+    {
+      "token": "runtime",
+      "count": 3
+    },
+    {
+      "token": "access",
+      "count": 2
+    },
+    {
+      "token": "analytics",
+      "count": 2
+    },
+    {
+      "token": "apigeectl",
+      "count": 2
+    },
+    {
+      "token": "are",
+      "count": 2
+    },
+    {
+      "token": "before",
+      "count": 2
+    },
+    {
+      "token": "both",
+      "count": 2
+    },
+    {
+      "token": "cassandra",
+      "count": 2
+    },
+    {
+      "token": "cluster",
+      "count": 2
+    },
+    {
+      "token": "components",
+      "count": 2
+    },
+    {
+      "token": "control",
+      "count": 2
+    },
+    {
+      "token": "data",
+      "count": 2
+    },
+    {
+      "token": "debug",
+      "count": 2
+    },
+    {
+      "token": "enabled",
+      "count": 2
+    },
+    {
+      "token": "enables",
+      "count": 2
+    },
+    {
+      "token": "genai",
+      "count": 2
+    },
+    {
+      "token": "llm",
+      "count": 2
+    },
+    {
+      "token": "now",
+      "count": 2
+    },
+    {
+      "token": "pipeline",
+      "count": 2
+    },
+    {
+      "token": "plane",
+      "count": 2
+    },
+    {
+      "token": "sanitize",
+      "count": 2
+    },
+    {
+      "token": "set",
+      "count": 2
+    },
+    {
+      "token": "starting",
+      "count": 2
+    },
+    {
+      "token": "that",
+      "count": 2
+    }
+  ]
+}

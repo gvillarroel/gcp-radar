@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T06:59:23+00:00'
-updated_at: '2026-04-09T06:59:25+00:00'
+updated_at: '2026-04-10T22:36:05+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -10,78 +10,84 @@ sources:
 - type: site
   id: site-docs-root
   title: https://docs.cloud.google.com/scheduler/docs
-  created_at: '2026-04-09T06:59:23+00:00'
-  updated_at: '2026-04-09T06:59:23+00:00'
+  created_at: '2026-04-10T22:28:43+00:00'
+  updated_at: '2026-04-10T22:29:43+00:00'
   update_command: know sync site https://docs.cloud.google.com/scheduler/docs --key
     corpus --compact
   delete_command: know del --key corpus site-docs-root
   config:
     url: https://docs.cloud.google.com/scheduler/docs
     max_depth: 1
-    max_pages: 0
+    max_pages: 30
     compact_output: true
+  last_synced_at: '2026-04-10T22:29:43+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/workflows/docs/overview
-  created_at: '2026-04-09T06:59:24+00:00'
-  updated_at: '2026-04-09T06:59:24+00:00'
+  created_at: '2026-04-10T22:28:44+00:00'
+  updated_at: '2026-04-10T22:31:02+00:00'
   update_command: know sync site https://docs.cloud.google.com/workflows/docs/overview
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
     url: https://docs.cloud.google.com/workflows/docs/overview
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-10T22:31:02+00:00'
 - type: site
   id: site-api-reference
   title: https://docs.cloud.google.com/scheduler/docs/reference/rest
-  created_at: '2026-04-09T06:59:24+00:00'
-  updated_at: '2026-04-09T06:59:24+00:00'
+  created_at: '2026-04-10T22:28:44+00:00'
+  updated_at: '2026-04-10T22:32:14+00:00'
   update_command: know sync site https://docs.cloud.google.com/scheduler/docs/reference/rest
     --key corpus --compact
   delete_command: know del --key corpus site-api-reference
   config:
     url: https://docs.cloud.google.com/scheduler/docs/reference/rest
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-10T22:32:14+00:00'
 - type: site
   id: site-iam-reference
-  title: https://docs.cloud.google.com/scheduler/docs/access-control
-  created_at: '2026-04-09T06:59:24+00:00'
-  updated_at: '2026-04-09T06:59:24+00:00'
-  update_command: know sync site https://docs.cloud.google.com/scheduler/docs/access-control
+  title: https://docs.cloud.google.com/iam/docs/roles-permissions/cloudscheduler
+  created_at: '2026-04-10T22:28:45+00:00'
+  updated_at: '2026-04-10T22:33:35+00:00'
+  update_command: know sync site https://docs.cloud.google.com/iam/docs/roles-permissions/cloudscheduler
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
-    url: https://docs.cloud.google.com/scheduler/docs/access-control
+    url: https://docs.cloud.google.com/iam/docs/roles-permissions/cloudscheduler
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-10T22:33:35+00:00'
 - type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest
-  created_at: '2026-04-09T06:59:25+00:00'
-  updated_at: '2026-04-09T06:59:25+00:00'
+  created_at: '2026-04-10T22:28:45+00:00'
+  updated_at: '2026-04-10T22:34:47+00:00'
   update_command: know sync site https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
   config:
     url: https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-10T22:34:47+00:00'
 - type: site
   id: site-java-reference
   title: https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/overview
-  created_at: '2026-04-09T06:59:25+00:00'
-  updated_at: '2026-04-09T06:59:25+00:00'
+  created_at: '2026-04-10T22:28:46+00:00'
+  updated_at: '2026-04-10T22:36:05+00:00'
   update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/overview
     --key corpus --compact
   delete_command: know del --key corpus site-java-reference
   config:
     url: https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/overview
     max_depth: 1
-    max_pages: 0
+    max_pages: 20
     compact_output: true
+  last_synced_at: '2026-04-10T22:36:05+00:00'

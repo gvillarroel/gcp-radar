@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T12:40:58.376Z"
+product_name: "Earth Engine Data Catalog"
+product_slug: "earth-engine-data-catalog"
+feature_name: "MCD18A1.062 Surface Radiation"
+feature_slug: "mcd18a1-062-surface-radiation"
+latest_feature_date: "2025-02-11"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://developers.google.com/earth-engine/datasets/tags/climate"
+  - "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_NRT_DAILY"
+  - "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_REP_DAILY"
+keywords:
+  - "mcd18a1"
+  - "062"
+  - "surface"
+  - "radiation"
+  - "daily"
+  - "and"
+  - "hourly"
+  - "dataset"
+---
+
+# MCD18A1.062 Surface Radiation
+
+Product: Earth Engine Data Catalog
+Coverage: LOW
+
+## Step 02 Summary
+
+A daily and 3-hourly surface radiation dataset.
+
+## Extended Definition
+
+A daily and 3-hourly surface radiation dataset.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
+- [https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_NRT_DAILY](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_NRT_DAILY)
+- [https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_REP_DAILY](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_REP_DAILY)
+
+## Supporting Pages
+
+### "Datasets tagged climate in Earth Engine \_|\_ Earth Engine Data Catalog\
+
+- URL: [https://developers.google.com/earth-engine/datasets/tags/climate](https://developers.google.com/earth-engine/datasets/tags/climate)
+- Source ID: `site-docs-root`
+- Final score: 170
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The Multivariate Adaptive Constructed Analogs (MACA) method is a statistical downscaling method which utilizes a training dataset (i.e. a meteorological observation dataset) to remove historical biases and match spatial patterns … climate conus geophysical idaho maca monthly MCD18A1.062 Surface Radiation Daily/3-Hour The MCD18A1 Version 6.2 is a Moderate Resolution Imaging Spectroradiometer (MODIS) Terra and Aqua combined Downward Shortwave Radiation (DSR) gridded Level 3 product produced daily at 1 kilometer pixel resolution with estimates of DSR every 3 hours.
+- It couples an atmospheric radiative transfer model and artificial neural network with forcings from MODIS atmospheric products to generate 5-km daily products. … climate evapotranspiration gpp modis-derived par radiation CFSR: Climate Forecast System Reanalysis The National Centers for Environmental Prediction (NCEP) Climate Forecast System Reanalysis (CFSR) was designed and executed as a global, high-resolution, coupled atmosphere-ocean-land surface-sea ice system to provide the best estimate of the state of these coupled domains over the 32-year period of record from January … climate daylight flux forecast geophysical ncep CFSV2: NCEP Climate Forecast System Version 2, 6-Hourly Products Harmonized The National Centers for Environmental Prediction (NCEP) Climate Forecast System (CFS) is a fully coupled model representing the interaction between the Earth's atmosphere, oceans, land, and sea ice.
+- The drought indices provided include the standardized precipitation index (SPI), the evaporative drought demand index (EDDI), the standardized precipitation evapotranspiration index (SPEI), the Palmer Drought Severity Index (PDSI) and Palmer … climate conus crop drought evapotranspiration geophysical GRIDMET: University of Idaho Gridded Surface Meteorological Dataset The Gridded Surface Meteorological dataset provides high spatial resolution ( 4-km) daily surface fields of temperature, precipitation, winds, humidity and radiation across the contiguous United States from 1979.
+- DSR is incident solar radiation over land surfaces … climate par radiation MCD18C2.062 Photosynthetically Active Radiation Daily 3-Hour The MCD18C2 Version 6.2 is a Moderate Resolution Imaging Spectroradiometer (MODIS) Terra and Aqua combined Photosynthetically Active Radiation (PAR) gridded Level 3 product produced daily at 0.05 degree (5,600 meters at the equator) resolution with estimates of PAR every 3 hours.
+
+### "Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density\
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_NRT_DAILY](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_NRT_DAILY)
+- Source ID: `site-docs-root-2`
+- Final score: 160
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This product is generated by blending observations from multiple … COPERNICUS/MARINE/GLOBAL SEA SURFACE/NRT DAILY, copernicus,marine,oceans 2023-01-01T00:00:00Z/2026-04-04T12:00:00Z -90 -180 90 180 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+- Filter . date ( '2025-03-01' , '2025-06-01' )); var NRT = dataset . select ( 'dos' ); var NRTVis = { min : 1020.41 , max : 1027.596 , palette : [ "040613" , "121328" , "3F59A5" , "3E80C0" , "3EADCB" , "8CCBD6" , "EAFDFD" ], }; Map . setCenter ( 71 , 52 , 2 ); Map . addLayer ( NRT , NRTVis , 'DOS' ); Open in Code Editor Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Near Real Time Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
+- Highlights and key features of the licence are provided in this document License Citations Citations: Copernicus Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density: Global Ocean Satellite and In-Situ Observations, CNR (Rome, Italy) is providing daily Sea Surface Salinity and Sea Surface Density analyses. doi:10.48670/moi-00051 Explore with Earth Engine Important: Earth Engine is a platform for petabyte-scale scientific analysis and visualization of geospatial datasets, both for public benefit and for business and government users.
+- Dataset Availability 2023-01-01T00:00:00Z–2026-04-04T12:00:00Z Dataset Producer Copernicus Earth Engine Snippet ee.ImageCollection("COPERNICUS/MARINE/GLOBAL SEA SURFACE/NRT DAILY") open in new Cadence 1 Day Tags copernicus marine oceans Description Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
+
+### "Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density\
+
+- URL: [https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_REP_DAILY](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_MARINE_GLOBAL_SEA_SURFACE_REP_DAILY)
+- Source ID: `site-docs-root-2`
+- Final score: 160
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This product is generated by blending observations from multiple … COPERNICUS/MARINE/GLOBAL SEA SURFACE/REP DAILY, copernicus,marine,oceans 1993-01-01T00:00:00Z/2024-12-15T12:00:00Z -90 -180 90 180 Google Earth Engine https://developers.google.com/earth-engine/datasets Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+- Filter . date ( '2023-12-16' , '2023-12-17' )); var SOS = dataset . select ( 'sos' ); var SOSVis = { min : 27.869 , max : 36.981 , palette : [ "040613" , "121328" , "3F59A5" , "3E80C0" , "3EADCB" , "8CCBD6" , "EAFDFD" ], }; Map . setCenter ( 71 , 52 , 2 ); Map . addLayer ( SOS , SOSVis , 'SOS' ); Open in Code Editor Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density : Daily, Multi-Year Reprocessed Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
+- Highlights and key features of the licence are provided in this document License Citations Citations: Copernicus Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density: Global Ocean Satellite and In-Situ Observations, CNR (Rome, Italy) is providing daily Sea Surface Salinity and Sea Surface Density analyses. doi:10.48670/moi-00051 Explore with Earth Engine Important: Earth Engine is a platform for petabyte-scale scientific analysis and visualization of geospatial datasets, both for public benefit and for business and government users.
+- Dataset Availability 1993-01-01T00:00:00Z–2024-12-15T12:00:00Z Dataset Producer Copernicus Earth Engine Snippet ee.ImageCollection("COPERNICUS/MARINE/GLOBAL SEA SURFACE/REP DAILY") open in new Cadence 1 Day Tags copernicus marine oceans Description Multi Observation Global Ocean Sea Surface Salinity and Sea Surface Density is an oceanographic product that provides daily, global, and gap-free Level-4 (L4) analyses of Sea Surface Salinity (SSS) and Sea Surface Density (SSD) at a high resolution of 1/8 degree.
+

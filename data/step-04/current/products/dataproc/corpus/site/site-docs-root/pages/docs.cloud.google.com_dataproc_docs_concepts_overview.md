@@ -1,0 +1,94 @@
+---
+title: "Managed Service for Apache Spark cluster deployment overview \_|\_ Google\
+  \ Cloud Documentation"
+url: https://docs.cloud.google.com/dataproc/docs/concepts/overview
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/dataproc/docs
+source_metadata:
+  url: https://docs.cloud.google.com/dataproc/docs/concepts/overview
+  title: "Managed Service for Apache Spark cluster deployment overview \_|\_ Google\
+    \ Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Home
+Documentation
+Data analytics
+Managed Service for Apache Spark
+Guides
+Send feedback
+Managed Service for Apache Spark cluster deployment overview
+Stay organized with collections
+Save and categorize content based on your preferences.
+"Managed Service for Apache Spark" is the new
+name for the product formerly known as "Dataproc on Compute Engine" (cluster deployment) and
+"Google Cloud Serverless for Apache Spark" (serverless deployment).
+Managed Service for Apache Spark cluster deployment mode lets you take advantage of open
+source data tools for batch processing, querying, streaming, and machine learning.
+Managed Service for Apache Spark automation helps you create clusters quickly, manage them easily, and save
+money by turning clusters off when you don't need them. With less time and money spent on
+administration, you can focus on your jobs and your data.
+Advantages of Managed Service for Apache Spark cluster deployment mode
+When compared to traditional, on-premises products and competing cloud
+services, Managed Service for Apache Spark has a number of unique advantages for clusters of
+three to hundreds of nodes:
+Low cost — Managed Service for Apache Spark is
+priced at only 1 cent per virtual CPU in your cluster per hour, on
+top of the other Cloud Platform resources you use. In addition to this
+low price, Managed Service for Apache Spark clusters can include
+preemptible instances that have lower
+compute prices, reducing your costs even further. Instead of rounding
+your usage up to the nearest hour, Managed Service for Apache Spark charges you only for
+what you really use with second-by-second billing and a low,
+one-minute-minimum billing period.
+Super fast — Without using Managed Service for Apache Spark, it can take
+from five to 30 minutes to create Spark and Hadoop clusters on-premises
+or through IaaS providers. By comparison, Managed Service for Apache Spark clusters are
+quick to start, scale, and shutdown, with each of these operations taking
+90 seconds or less, on average. This means you can spend less time
+waiting for clusters and more hands-on time working with your data.
+Integrated — Managed Service for Apache Spark has built-in integration with
+other Google Cloud Platform services, such as
+BigQuery ,
+Cloud Storage ,
+Cloud Bigtable ,
+Cloud Logging , and
+Cloud Monitoring , so you have more than just
+a Spark or Hadoop cluster—you have a complete data platform. For
+example, you can use Managed Service for Apache Spark to effortlessly ETL terabytes of raw
+log data directly into BigQuery for business reporting.
+Managed — Use Spark and Hadoop clusters without the
+assistance of an administrator or special software. You can easily
+interact with clusters and Spark or Hadoop jobs through the
+Google Cloud console, the Cloud SDK, or the Managed Service for Apache Spark REST
+API. When you're done with a cluster, you can simply turn it off, so you
+don’t spend money on an idle cluster. You won’t need to worry about
+losing data, because Managed Service for Apache Spark is integrated with
+Cloud Storage , BigQuery , and
+Cloud Bigtable .
+Simple and familiar — You don't need to learn new tools
+or APIs to use Managed Service for Apache Spark, making it easy to move existing projects
+into Managed Service for Apache Spark without redevelopment. Spark, Hadoop, Pig, and Hive
+are frequently updated, so you can be productive faster.
+What's included in Managed Service for Apache Spark cluster deployment mode?
+For a list of the open source (Hadoop, Spark, Hive, and Pig) and Google Cloud
+connector versions supported by
+Managed Service for Apache Spark, see the
+Managed Service for Apache Spark cluster image version lists .
+Getting started
+To quickly get started, see the Managed Service for Apache Spark
+quickstarts. You can access Managed Service for Apache Spark cluster deployment mode in the following ways:
+Through the REST API
+Using the Cloud SDK
+Using the Google Cloud console
+Through the Cloud Client Libraries
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-04-08 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]

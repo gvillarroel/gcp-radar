@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T08:01:02+00:00'
-updated_at: '2026-04-09T08:01:05+00:00'
+updated_at: '2026-04-10T23:48:44+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -10,65 +10,84 @@ sources:
 - type: site
   id: site-docs-root
   title: https://docs.cloud.google.com/trace/docs
-  created_at: '2026-04-09T08:01:03+00:00'
-  updated_at: '2026-04-09T08:01:03+00:00'
+  created_at: '2026-04-10T23:38:12+00:00'
+  updated_at: '2026-04-10T23:39:41+00:00'
   update_command: know sync site https://docs.cloud.google.com/trace/docs --key corpus
     --compact
   delete_command: know del --key corpus site-docs-root
   config:
     url: https://docs.cloud.google.com/trace/docs
     max_depth: 1
-    max_pages: 0
+    max_pages: 36
     compact_output: true
+  last_synced_at: '2026-04-10T23:39:41+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/trace/docs/overview
+  created_at: '2026-04-10T23:38:12+00:00'
+  updated_at: '2026-04-10T23:41:54+00:00'
+  update_command: know sync site https://docs.cloud.google.com/trace/docs/overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/trace/docs/overview
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-10T23:41:54+00:00'
 - type: site
   id: site-docs-reference
   title: https://docs.cloud.google.com/trace/docs/reference
-  created_at: '2026-04-09T08:01:03+00:00'
-  updated_at: '2026-04-09T08:01:03+00:00'
+  created_at: '2026-04-10T23:38:13+00:00'
+  updated_at: '2026-04-10T23:43:35+00:00'
   update_command: know sync site https://docs.cloud.google.com/trace/docs/reference
     --key corpus --compact
   delete_command: know del --key corpus site-docs-reference
   config:
     url: https://docs.cloud.google.com/trace/docs/reference
     max_depth: 1
-    max_pages: 0
+    max_pages: 26
     compact_output: true
+  last_synced_at: '2026-04-10T23:43:35+00:00'
 - type: site
   id: site-iam-reference
-  title: https://docs.cloud.google.com/trace/docs/iam
-  created_at: '2026-04-09T08:01:04+00:00'
-  updated_at: '2026-04-09T08:01:04+00:00'
-  update_command: know sync site https://docs.cloud.google.com/trace/docs/iam --key
-    corpus --compact
+  title: https://docs.cloud.google.com/monitoring/access-control
+  created_at: '2026-04-10T23:38:13+00:00'
+  updated_at: '2026-04-10T23:45:16+00:00'
+  update_command: know sync site https://docs.cloud.google.com/monitoring/access-control
+    --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
-    url: https://docs.cloud.google.com/trace/docs/iam
+    url: https://docs.cloud.google.com/monitoring/access-control
     max_depth: 1
-    max_pages: 0
+    max_pages: 26
     compact_output: true
+  last_synced_at: '2026-04-10T23:45:16+00:00'
 - type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest
-  created_at: '2026-04-09T08:01:04+00:00'
-  updated_at: '2026-04-09T08:01:04+00:00'
+  created_at: '2026-04-10T23:38:14+00:00'
+  updated_at: '2026-04-10T23:47:01+00:00'
   update_command: know sync site https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
   config:
     url: https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest
     max_depth: 1
-    max_pages: 0
+    max_pages: 26
     compact_output: true
+  last_synced_at: '2026-04-10T23:47:01+00:00'
 - type: site
   id: site-java-reference
   title: https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/overview
-  created_at: '2026-04-09T08:01:05+00:00'
-  updated_at: '2026-04-09T08:01:05+00:00'
+  created_at: '2026-04-10T23:38:15+00:00'
+  updated_at: '2026-04-10T23:48:44+00:00'
   update_command: know sync site https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/overview
     --key corpus --compact
   delete_command: know del --key corpus site-java-reference
   config:
     url: https://docs.cloud.google.com/java/docs/reference/google-cloud-trace/latest/overview
     max_depth: 1
-    max_pages: 0
+    max_pages: 26
     compact_output: true
+  last_synced_at: '2026-04-10T23:48:44+00:00'

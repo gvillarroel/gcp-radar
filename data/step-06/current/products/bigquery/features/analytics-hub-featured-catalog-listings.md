@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:04.874Z"
+generated_at: "2026-04-10T13:25:38.508Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "Analytics Hub featured catalog listings"

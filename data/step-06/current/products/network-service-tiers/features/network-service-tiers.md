@@ -1,0 +1,89 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T19:50:16.323Z"
+product_name: "Network Service Tiers"
+product_slug: "network-service-tiers"
+feature_name: "Network Service Tiers"
+feature_slug: "network-service-tiers"
+latest_feature_date: "2019-03-28"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/network-tiers/docs/overview"
+  - "https://docs.cloud.google.com/network-tiers/docs/set-network-tier"
+  - "https://docs.cloud.google.com/network-tiers/docs/apis"
+keywords:
+  - "network"
+  - "tiers"
+  - "lets"
+  - "you"
+  - "choose"
+  - "between"
+  - "standard"
+  - "and"
+---
+
+# Network Service Tiers
+
+Product: Network Service Tiers
+Coverage: LOW
+
+## Step 02 Summary
+
+Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing; Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing.
+
+## Extended Definition
+
+Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing; Network Service Tiers lets you choose between Standard and Premium tiers for Google Cloud network traffic pricing and routing.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/network-tiers/docs/overview](https://docs.cloud.google.com/network-tiers/docs/overview)
+- [https://docs.cloud.google.com/network-tiers/docs/set-network-tier](https://docs.cloud.google.com/network-tiers/docs/set-network-tier)
+- [https://docs.cloud.google.com/network-tiers/docs/apis](https://docs.cloud.google.com/network-tiers/docs/apis)
+
+## Supporting Pages
+
+### Network Service Tiers overview \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-tiers/docs/overview](https://docs.cloud.google.com/network-tiers/docs/overview)
+- Source ID: `site-docs-reference`
+- Final score: 234
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Google Cloud Premium Tier Standard Tier Routing Traffic between the internet and your application travels within the Google Cloud network to reach users Uses peering, ISP, or transit networks to reach users Security Traffic is protected on Google Cloud's backbone until the last mile Comparable to other public clouds Networking features Supports all Google Cloud networking features Supports a foundational feature set including Cloud NAT, Regional external Application Load Balancer, and External passthrough Network Load Balancer Pricing Premium Tier pricing is at parity with other public cloud providers Standard Tier pricing is cost-effective and at parity with other cloud providers SLA 99.99% uptime 99.9% uptime Outbound data transfer pricing for each of the Network Service Tiers is different.
+- Network Service Tiers overview Network Service Tiers lets you optimize connectivity between systems on the internet and your Google Cloud instances.
+- To use Standard Tier with a classic Application Load Balancer or a classic proxy Network Load Balancer, you must decide upon a single Google Cloud region, and then use a regional external IP address and a regional forwarding rule , both configured for Standard Tier, to point to the appropriate target HTTP(S) proxy, target SSL proxy, or target TCP proxy.
+- Premium Tier and Standard Tier summary Premium Tier Standard Tier Use case Performance optimized Global network Global network services Cost optimized Regional network Regional network services Network Routing Inbound: Traffic across the globe enters Google's global network at a location near your user.
+
+### "Quickstart: Set the network tier \_|\_ Network Service Tiers \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/network-tiers/docs/set-network-tier](https://docs.cloud.google.com/network-tiers/docs/set-network-tier)
+- Source ID: `site-docs-reference`
+- Final score: 220
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- This example sets the tier to STANDARD . resource "google compute instance template" "template" { project = var.project id # Replace this with your project ID in quotes name = "template" machine type = "e2-medium" disk { source image = "debian-cloud/debian-10" boot = true } network interface { network = "default" access config { network tier = "STANDARD" } } } Setting up NAT using IP addresses from a specific network tier When you create a Cloud NAT gateway, Google Cloud lets you assign IP addresses from both Standard Tier and Premium Tier.
+- Click Done , and then click Update . gcloud gcloud compute forwarding-rules create my-standard-tier-regional-rule \ --load-balancing-scheme= SCHEME \ --network-tier STANDARD \ --address my-standard-tier-ip-address \ --region REGION \ --ports PORTS \ [--target-http-proxy= TARGET HTTP PROXY \ --target-https-proxy= TARGET HTTPS PROXY \ --target-ssl-proxy= TARGET SSL PROXY \ --target-tcp-proxy= TARGET TCP PROXY \ --target-pool= TARGET POOL \ --target-instance= TARGET INSTANCE ] Replace the following: SCHEME : the load balancing scheme of the load balancer REGION : the region where you are creating the forwarding rule TARGET HTTP PROXY or TARGET HTTPS PROXY or TARGET SSL PROXY or TARGET TCP PROXY or TARGET POOL or TARGET INSTANCE : the appropriate target for the rule, depending on which target flag you specified For other command-line flags, see gcloud compute forwarding-rules .
+- If you don't specify a network tier but do specify an IP address, Google Cloud returns an error if the network tier of the IP address does not match the project default tier. gcloud gcloud compute instances add-access-config INSTANCE NAME \ --network-interface INTERFACE NAME ; default="nic0" \ --access-config-name= ACCESS CONFIG NAME ; default="external-nat" \ --address= IP ADDRESS \ --network-tier PREMIUM STANDARD Replace the following: INSTANCE NAME : the name of the instance INTERFACE NAME : the name of the interface; default is nic0 (the name of the default interface on the instance) ACCESS CONFIG NAME : the name of the access configuration for the interface IP ADDRESS : the URL of the IP address resource, if you are specifying an IP address Note: If you do not specify a network-tier , the instance is created in the project default tier.
+- API POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /forwardingRules { "name": "my-standard-tier-regional-rule", "networkTier": "STANDARD", "IPAddress": "https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /addresses/my-standard-tier-ip-address", "IPProtocol": "tcp", "target": "https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /targetPools/ TARGET POOL " } Replace the following: PROJECT ID : your project ID REGION : the region where you are creating the forwarding rule TARGET HTTP PROXY or TARGET HTTPS PROXY or TARGET SSL PROXY or TARGET TCP PROXY or TARGET POOL or TARGET INSTANCE : the appropriate target for the rule, depending on which target flag you specified Terraform You can use a Terraform resource to set the network tier for a forwarding rule.
+
+### APIs and reference \_|\_ Network Service Tiers \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/network-tiers/docs/apis](https://docs.cloud.google.com/network-tiers/docs/apis)
+- Source ID: `site-docs-reference`
+- Final score: 186
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Regional external forwarding rules can use either Standard or Premium Tier. gcloud API Instances Used to create and modify VM instances in your VPC network. gcloud API Instance templates Used to create and modify instance templates.
+- Regional external IP addresses can use either Standard or Premium Tier. gcloud API Forwarding rules Used to create, edit, and manage forwarding rules in your Virtual Private Cloud (VPC) network.
+- Home Documentation Networking Network Service Tiers Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.
+- The Network Service Tiers APIs and gcloud commands are part of Compute Engine. gcloud CLI and API reference Addresses Used to create, edit, and manage internal and external IP address resources that can be assigned to virtual machine (VM) instances and forwarding rules for load balancers.
+

@@ -1,6 +1,6 @@
 {
   "schema_version": "step-03-url-score-v1",
-  "generated_at": "2026-04-08T21:56:41.163Z",
+  "generated_at": "2026-04-11T18:28:05.816Z",
   "product_name": "Sheets API",
   "product_slug": "sheets-api",
   "step02_source_path": "data/step-02/current/sheets-api.md",
@@ -8,6 +8,39 @@
   "search_count": 8,
   "reprocess_requested": true,
   "pi_model": "",
+  "step02_feature_inventory": {
+    "feature_count": 2,
+    "source_row_count": 2,
+    "top_phrases": [
+      "google sheets api smart chips support",
+      "google sheets api v3",
+      "the google sheets api now supports creating updating and reading google drive and people smart chips",
+      "google sheets api v3 was turned down"
+    ],
+    "top_tokens": [
+      "api",
+      "google",
+      "sheets",
+      "2021",
+      "and",
+      "chips",
+      "creating",
+      "deprecated",
+      "down",
+      "drive",
+      "now",
+      "people",
+      "reading",
+      "smart",
+      "support",
+      "supports",
+      "the",
+      "turned",
+      "updating",
+      "was"
+    ],
+    "inventory_profile": "api_heavy"
+  },
   "dominant_doc_family": "workflows",
   "dominant_python_slug": "",
   "dominant_java_slug": "",
@@ -19,6 +52,26 @@
       "query": "site:docs.cloud.google.com \"Sheets API\" \"reference/rest\"",
       "official_result_count": 0,
       "results": []
+    },
+    {
+      "round": 1,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/sheets/api \"Google Sheets API overview\" OR \"guides/concepts\"",
+      "official_result_count": 2,
+      "results": [
+        {
+          "title": "Google Sheets API Overview | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/concepts",
+          "description": "Sheet1!R[3]C[1] refers to the cell that is three rows below and one column to the right of the current cell. ... A defined cell or range of cells with a custom name to simplify references throughout an application. A FilterView resource represents a named range. ... A defined cell or range of cells that cannot be modified. A ProtectedRange resource represents a protected range. To learn about developing with Google Workspace APIs...",
+          "rank": 1
+        },
+        {
+          "title": "Read & write cell values | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/values",
+          "description": "The Google Sheets API provides the spreadsheets.values resource to enable the reading and writing of values. This page describes the basics of using the spreadsheets.values resource. If you need to insert rows or update the formatting and other properties in a sheet, you must use the spreadsheets.batchUpdate method described in Update spreadsheets.",
+          "rank": 2
+        }
+      ]
     },
     {
       "round": 1,
@@ -57,22 +110,43 @@
           "rank": 5
         },
         {
-          "title": "Sheets.Spreadsheets (Google Sheets API v4 (Rev. 612) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest/com/google/api/services/sheets/v4/Sheets.Spreadsheets.html",
-          "description": "Multiple ranges can be specified. Limiting the range will return only the portions of the spreadsheet that intersect the requested ranges. Ranges are specified using A1 notation. Create a request for the method &quot;spreadsheets.get&quot;. This request holds the parameters needed by the sheets server.",
-          "rank": 6
-        },
-        {
           "title": "Use Google Sheets as your application's reporting tool | Google Codelabs",
           "url": "https://codelabs.developers.google.com/codelabs/sheets-api",
           "description": "Read the Google Sheets API developer documentation.",
+          "rank": 6
+        },
+        {
+          "title": "Sheets.Spreadsheets (Google Sheets API v4 (Rev. 612) 1.25.0)",
+          "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest/com/google/api/services/sheets/v4/Sheets.Spreadsheets.html",
+          "description": "Multiple ranges can be specified. Limiting the range will return only the portions of the spreadsheet that intersect the requested ranges. Ranges are specified using A1 notation. Create a request for the method &quot;spreadsheets.get&quot;. This request holds the parameters needed by the sheets server.",
           "rank": 7
         },
         {
-          "title": "Overview (Google Sheets API v4 (Rev. 612) 1.25.0)",
-          "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest",
-          "description": "JavaScript is disabled on your browser · Frame Alert · This document is designed to be viewed using the frames feature. If you see this message, you are using a non-frame-capable web client. Link to Non-frame version",
+          "title": "Sheet operations | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/samples/sheet",
+          "description": "Specifying the userEnteredValue field without a corresponding value is interpreted as an instruction to clear values in the range. This setting can be used with other fields as well. For example, changing the fields value to userEnteredFormat removes all formatting supported by the Sheets API from the sheet, but leaves the cell values unaltered.",
           "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Sheets API\" \"google sheets api smart chips support\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 1,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Sheets API\" \"google sheets api v3 was turned down\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+          "description": "Important: The Google Sheets API v3 was turned down on <strong>August 2, 2021</strong>. Use this guide to migrate to Sheets API v4.",
+          "rank": 1
         }
       ]
     },
@@ -162,6 +236,62 @@
     },
     {
       "round": 2,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes",
+      "official_result_count": 8,
+      "results": [
+        {
+          "title": "Method: spreadsheets.values.get | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/get",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it! Returns a range of values from a spreadsheet. The caller must specify the spreadsheet ID and a range. GET https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range} The URL uses gRPC Transcoding syntax.",
+          "rank": 1
+        },
+        {
+          "title": "Method: spreadsheets.get | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/get",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it! Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned.",
+          "rank": 2
+        },
+        {
+          "title": "Method: spreadsheets.values.clear | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/clear",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · JSON representation · Authorization scopes · Try it! Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of ...",
+          "rank": 3
+        },
+        {
+          "title": "REST Resource: spreadsheets | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets",
+          "description": "The data source refresh scopes.",
+          "rank": 4
+        },
+        {
+          "title": "Choose Google Sheets API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/scopes",
+          "description": "To define the level of access granted ... authorization scopes. <strong>An authorization scope is an OAuth 2.0 URI string that contains the Google Workspace app name, what kind of data it accesses, and the level of access</strong>....",
+          "rank": 5
+        },
+        {
+          "title": "Method: spreadsheets.getByDataFilter | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/getByDataFilter",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Request body · JSON representation · Response body · Authorization scopes · Try it! Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from spreadsheets.get in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter.",
+          "rank": 6
+        },
+        {
+          "title": "Method: spreadsheets.values.update | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/update",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it! <strong>Sets values in a range of a spreadsheet</strong>. The caller must specify the spreadsheet ID, range, ...",
+          "rank": 7
+        },
+        {
+          "title": "Method: spreadsheets.sheets.copyTo | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.sheets/copyTo",
+          "description": "Reference · Send feedback · HTTP request · Path parameters · Request body · JSON representation · Response body · Authorization scopes · Try it! Copies a single sheet from a spreadsheet to another spreadsheet. Returns the properties of the newly created sheet.",
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
       "official_result_count": 8,
@@ -203,16 +333,37 @@
           "rank": 6
         },
         {
-          "title": "Standard Query Parameters | Google Sheets | Google for Developers",
-          "url": "https://developers.google.com/sheets/api/reference/query-parameters",
-          "description": "Reference · Send feedback · Query parameters that apply to all Google Sheets API operations are documented at System Parameters. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-          "rank": 7
-        },
-        {
           "title": "Install client libraries | Google Sheets | Google for Developers",
           "url": "https://developers.google.com/workspace/sheets/api/guides/libraries",
           "description": "This page contains information about getting started with the Google Sheets API by using the Google API Client Library for Python (v1/v2). For more information, see the following documentation: Browse the PyDoc reference for the Google Sheets API.",
+          "rank": 7
+        },
+        {
+          "title": "Standard Query Parameters | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/sheets/api/reference/query-parameters",
+          "description": "Reference · Send feedback · Query parameters that apply to all Google Sheets API operations are documented at System Parameters. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
           "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Sheets API\" \"google sheets api v3\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 2,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Sheets API\" \"google sheets api v3 was turned down\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+          "description": "Important: The Google Sheets API v3 was turned down on <strong>August 2, 2021</strong>. Use this guide to migrate to Sheets API v4.",
+          "rank": 1
         }
       ]
     },
@@ -255,15 +406,15 @@
           "rank": 3
         },
         {
-          "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
-          "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
-          "rank": 4
-        },
-        {
           "title": "Sheets - Get task | Application Integration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-integration/docs/gcp-tasks/configure-sheets-get-task",
           "description": "It <strong>allows you to create and edit online spreadsheets with real-time collaboration functionality</strong>. Ensure that you perform the following tasks in your Google Cloud project before configuring the Sheets - Get task: Enable the Google Sheets API ...",
+          "rank": 4
+        },
+        {
+          "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
+          "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
+          "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
           "rank": 5
         },
         {
@@ -302,6 +453,20 @@
     },
     {
       "round": 3,
+      "intent": "canonical_docs",
+      "query": "site:developers.google.com/workspace/sheets/api/scopes \"Google Sheets API\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Choose Google Sheets API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/scopes",
+          "description": "Note that Sheets API scopes are applied to a spreadsheet file and cannot be limited to a specific sheet. To prevent modification of a sheet, use a ProtectedRange to define a cell or range of cells that cannot be edited.",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "round": 3,
       "intent": "developers_docs",
       "query": "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview",
       "official_result_count": 8,
@@ -331,28 +496,49 @@
           "rank": 4
         },
         {
-          "title": "Overview | Sheets API v3 | Google Developers",
-          "url": "https://developers.google.com/sheets/api/v3/?hl=vi",
-          "description": "The Google Sheets API v3 (formerly called the Google Spreadsheets API) <strong>lets you develop client applications that read and modify worksheets and data in Google Sheets</strong>.",
+          "title": "Choose Google Sheets API scopes | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/scopes",
+          "description": "Note that Sheets API scopes are applied to a spreadsheet file and cannot be limited to a specific sheet. To prevent modification of a sheet, use a ProtectedRange to define a cell or range of cells that cannot be edited.",
           "rank": 5
+        },
+        {
+          "title": "Overview | Sheets API v3 | Google Developers",
+          "url": "https://developers.google.com/sheets/api/v3",
+          "description": "The Google Sheets API v3 (formerly called the Google Spreadsheets API) <strong>lets you develop client applications that read and modify worksheets and data in Google Sheets</strong>.",
+          "rank": 6
         },
         {
           "title": "Sheets (Google Sheets API v4 (Rev. 612) 1.25.0)",
           "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest/com/google/api/services/sheets/v4/Sheets.html",
           "description": "initialize in class com.google.api.client.googleapis.services.AbstractGoogleClient · Throws: java.io.IOException · public Sheets.Spreadsheets spreadsheets() <strong>An accessor for creating requests from the Spreadsheets collection</strong>. The typical use is: Sheets sheets = new Sheets(...); Sheets.Spr...",
-          "rank": 6
-        },
-        {
-          "title": "Sheet operations | Google Sheets | Google for Developers",
-          "url": "https://developers.google.com/workspace/sheets/api/samples/sheet",
-          "description": "The Google Sheets API <strong>lets you create, clear, copy, and delete sheets, and also control their properties</strong>.",
           "rank": 7
         },
         {
-          "title": "Use Google Sheets as your application's reporting tool | Google Codelabs",
-          "url": "https://codelabs.developers.google.com/codelabs/sheets-api",
-          "description": "In this codelab, you&#x27;ll learn how you can use Google Sheets as a custom-reporting tool for your users. You&#x27;ll modify a sample order tracking application to export to a spreadsheet and then build visualizations using the Google Sheets API.",
+          "title": "Read & write cell values | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/sheets/api/guides/values",
+          "description": "Spreadsheets can have multiple sheets, with each sheet having any number of rows or columns. A cell is a location at the intersection of a particular row and column, and might contain a data value. The Google Sheets API provides the spreadsheets.values resource to enable the reading and writing of values.",
           "rank": 8
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides",
+      "query": "site:docs.cloud.google.com \"Sheets API\" \"the google sheets api now supports creating updating and reading google drive and people smart chips\"",
+      "official_result_count": 0,
+      "results": []
+    },
+    {
+      "round": 3,
+      "intent": "feature_guides_developers",
+      "query": "site:developers.google.com \"Sheets API\" \"google sheets api v3 was turned down\"",
+      "official_result_count": 1,
+      "results": [
+        {
+          "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
+          "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+          "description": "Important: The Google Sheets API v3 was turned down on <strong>August 2, 2021</strong>. Use this guide to migrate to Sheets API v4.",
+          "rank": 1
         }
       ]
     },
@@ -377,7 +563,7 @@
         {
           "title": "Sheets - Append task | Application Integration | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/application-integration/docs/gcp-tasks/configure-sheets-append-task",
-          "description": "Enable the Google Sheets API (sheets.googleapis.com). ... Create an authentication profile. Application Integration uses an authentication profile to connect to an authentication endpoint for the Sheets - Append task. For information about granting additional roles or permissions to a service account, see Granting, changing, and revoking access.",
+          "description": "Enable the Google Sheets API (sheets.googleapis.com). ... Create an authentication profile. Application Integration uses an authentication profile to connect to an authentication endpoint for the Sheets - Append task. For information about granting additional roles or permissions to a service ...",
           "rank": 3
         },
         {
@@ -399,7 +585,7 @@
       "round": 3,
       "intent": "product_docs",
       "query": "site:docs.cloud.google.com \"Sheets API\" Google Cloud introduction reference",
-      "official_result_count": 5,
+      "official_result_count": 4,
       "results": [
         {
           "title": "Google Sheets API Connector Overview | Workflows | Google Cloud Documentation",
@@ -420,16 +606,10 @@
           "rank": 3
         },
         {
-          "title": "Sheets - Get task | Application Integration | Google Cloud Documentation",
-          "url": "https://docs.cloud.google.com/application-integration/docs/gcp-tasks/configure-sheets-get-task",
-          "description": "Ensure that you perform the following tasks in your Google Cloud project before configuring the Sheets - Get task: Enable the Google Sheets API (<strong>sheets.googleapis.com</strong>).",
-          "rank": 4
-        },
-        {
           "title": "Connected Sheets quick link | Looker | Google Cloud Documentation",
           "url": "https://docs.cloud.google.com/looker/docs/connected-sheets-quicklink",
           "description": "Perform the following steps to enable the Google Sheets API: <strong>In the Google Cloud console navigation menu, go to APIs &amp; Services &gt; Library and open the Google Sheets API</strong>.",
-          "rank": 5
+          "rank": 4
         }
       ]
     },
@@ -442,6 +622,65 @@
     }
   ],
   "scored_urls": [
+    {
+      "title": "Google Sheets API Overview | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/guides/concepts",
+      "description": "Sheet1!R[3]C[1] refers to the cell that is three rows below and one column to the right of the current cell. ... A defined cell or range of cells with a custom name to simplify references throughout an application. A FilterView resource represents a named range. ... A defined cell or range of cells that cannot be modified. A ProtectedRange resource represents a protected range. To learn about developing with Google Workspace APIs...",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"Google Sheets API overview\" OR \"guides/concepts\"",
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_root",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": true
+    },
     {
       "title": "Google Sheets API Connector Overview | Workflows | Google Cloud Documentation",
       "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/sheets/Overview",
@@ -464,17 +703,33 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 152,
+      "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -482,16 +737,73 @@
       "keep": false
     },
     {
-      "title": "Google Sheets API Overview | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/guides/concepts",
-      "description": "Sheet1!R[3]C[1] refers to the cell that is three rows below and one column to the right of the current cell. ... A defined cell or range of cells with a custom name to simplify references throughout an application. A FilterView resource represents a named range. ... A defined cell or range of cells that cannot be modified. A ProtectedRange resource represents a protected range. To learn about developing with Google Workspace APIs...",
+      "title": "Google Sheets API | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api",
+      "description": "<strong>Reads and writes Google Sheets</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the ...",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+      "description": "Important: The Google Sheets API v3 was turned down on <strong>August 2, 2021</strong>. Use this guide to migrate to Sheets API v4.",
       "rank": 1,
       "query_hits": [
-        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
-        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
-        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+        "site:developers.google.com \"Sheets API\" \"google sheets api v3 was turned down\"",
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
       ],
       "intent_hits": [
+        "feature_guides_developers",
         "developers_docs"
       ],
       "round_hits": [
@@ -501,96 +813,111 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 48,
+        "matched_phrases": [
+          "google sheets api v3",
+          "google sheets api v3 was turned down"
+        ],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "2021",
+          "down",
+          "the",
+          "turned",
+          "was"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Google Sheets API | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/reference",
-      "description": "<strong>Reads and writes Google Sheets</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the ...",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
-        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
-        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
-        "classification": "product_reference",
+        "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 100,
-      "keep": true
-    },
-    {
-      "title": "Google Sheets API | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/reference/rest",
-      "description": "<strong>Reads and writes Google Sheets</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the ...",
-      "rank": 2,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
-        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
-        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 1,
-      "consistency_score": 100,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "api_reference",
-        "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 5,
-        "keep": true,
+        "matched_feature_phrases": [
+          "google sheets api v3",
+          "google sheets api v3 was turned down"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "2021",
+          "down",
+          "the",
+          "turned",
+          "was"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: google sheets api v3, google sheets api v3 was turned down"
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Sheets API | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/guides/overview",
+      "description": "<strong>Reads and writes Google Sheets</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the ...",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
       "final_score": 100,
-      "keep": true
+      "keep": false
     },
     {
       "title": "Sheets - Append task | Application Integration | Google Cloud Documentation",
@@ -614,54 +941,35 @@
       ],
       "best_rank": 3,
       "consistency_score": 100,
-      "product_fit_score": 102,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 100,
-      "keep": false
-    },
-    {
-      "title": "Sheets - Get task | Application Integration | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/application-integration/docs/gcp-tasks/configure-sheets-get-task",
-      "description": "Ensure that you perform the following tasks in your Google Cloud project before configuring the Sheets - Get task: Enable the Google Sheets API (sheets.googleapis.com).",
-      "rank": 4,
-      "query_hits": [
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview",
-        "site:docs.cloud.google.com \"Sheets API\" Google Cloud introduction reference"
-      ],
-      "intent_hits": [
-        "product_docs"
-      ],
-      "round_hits": [
-        1,
-        2,
-        3
-      ],
-      "best_rank": 4,
-      "consistency_score": 100,
-      "product_fit_score": 102,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -690,18 +998,95 @@
       ],
       "best_rank": 1,
       "consistency_score": 100,
-      "product_fit_score": 102,
+      "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
         "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Google Sheets API | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest",
+      "description": "<strong>Reads and writes Google Sheets</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the ...",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 100,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 5,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": true,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
@@ -729,22 +1114,156 @@
       ],
       "best_rank": 2,
       "consistency_score": 100,
-      "product_fit_score": 58,
+      "product_fit_score": 30,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
-        "product_match": 5,
+        "product_match": 3,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 100,
       "keep": false
+    },
+    {
+      "title": "Google Sheets API | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference",
+      "description": "<strong>Reads and writes Google Sheets</strong>. ... To call this service, we recommend that you use the Google-provided client libraries. If your application needs to use your own libraries to call this service, use the following information when you make the ...",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation",
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference",
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1,
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 100,
+      "product_fit_score": -18,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 5,
+        "product_match": 0,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 100,
+      "keep": false
+    },
+    {
+      "title": "Choose Google Sheets API scopes | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/scopes",
+      "description": "To define the level of access granted ... authorization scopes. <strong>An authorization scope is an OAuth 2.0 URI string that contains the Google Workspace app name, what kind of data it accesses, and the level of access</strong>....",
+      "rank": 5,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes",
+        "site:developers.google.com/workspace/sheets/api/scopes \"Google Sheets API\"",
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "canonical_docs",
+        "developers_docs"
+      ],
+      "round_hits": [
+        2,
+        3
+      ],
+      "best_rank": 1,
+      "consistency_score": 67,
+      "product_fit_score": 172,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "iam_reference",
+        "score": 100,
+        "family_score": 42,
+        "family_preferred": true,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 95,
+      "keep": true
     },
     {
       "title": "Query a BigQuery dataset and write the results to a Sheet spreadsheet using connectors | Workflows | Google Cloud Documentation",
@@ -764,17 +1283,37 @@
       ],
       "best_rank": 6,
       "consistency_score": 67,
-      "product_fit_score": 152,
+      "product_fit_score": 124,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -799,17 +1338,33 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 130,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -834,17 +1389,33 @@
       ],
       "best_rank": 3,
       "consistency_score": 67,
-      "product_fit_score": 130,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -852,10 +1423,10 @@
       "keep": false
     },
     {
-      "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
-      "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
-      "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
-      "rank": 7,
+      "title": "Sheets - Get task | Application Integration | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/application-integration/docs/gcp-tasks/configure-sheets-get-task",
+      "description": "Ensure that you perform the following tasks in your Google Cloud project before configuring the Sheets - Get task: Enable the Google Sheets API (sheets.googleapis.com).",
+      "rank": 4,
       "query_hits": [
         "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
         "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview"
@@ -869,17 +1440,35 @@
       ],
       "best_rank": 4,
       "consistency_score": 67,
-      "product_fit_score": 58,
+      "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
@@ -902,17 +1491,37 @@
       ],
       "best_rank": 4,
       "consistency_score": 33,
-      "product_fit_score": 130,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -935,50 +1544,35 @@
       ],
       "best_rank": 3,
       "consistency_score": 33,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 1,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Overview (Google Sheets API v4 (Rev. 612) 1.25.0)",
-      "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest",
-      "description": "JavaScript is disabled on your browser · Frame Alert · This document is designed to be viewed using the frames feature. If you see this message, you are using a non-frame-capable web client. Link to Non-frame version",
-      "rank": 8,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        1
-      ],
-      "best_rank": 8,
-      "consistency_score": 33,
-      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -989,7 +1583,7 @@
       "title": "Sheets.Spreadsheets (Google Sheets API v4 (Rev. 612) 1.25.0)",
       "url": "https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest/com/google/api/services/sheets/v4/Sheets.Spreadsheets.html",
       "description": "Multiple ranges can be specified. Limiting the range will return only the portions of the spreadsheet that intersect the requested ranges. Ranges are specified using A1 notation. Create a request for the method &quot;spreadsheets.get&quot;. This request holds the parameters needed by the sheets server.",
-      "rank": 6,
+      "rank": 7,
       "query_hits": [
         "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation"
       ],
@@ -999,19 +1593,37 @@
       "round_hits": [
         1
       ],
-      "best_rank": 6,
+      "best_rank": 7,
       "consistency_score": 33,
-      "product_fit_score": 130,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1034,17 +1646,88 @@
       ],
       "best_rank": 5,
       "consistency_score": 33,
-      "product_fit_score": 130,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 0,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Read & write cell values | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/sheets/api/guides/values",
+      "description": "Spreadsheets can have multiple sheets, with each sheet having any number of rows or columns. A cell is a location at the intersection of a particular row and column, and might contain a data value. The Google Sheets API provides the spreadsheets.values resource to enable the reading and writing of values.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        3
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "reading",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "reading",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1055,72 +1738,6 @@
       "title": "Standard Query Parameters | Google Sheets | Google for Developers",
       "url": "https://developers.google.com/sheets/api/reference/query-parameters",
       "description": "Reference · Send feedback · Query parameters that apply to all Google Sheets API operations are documented at System Parameters. Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 7,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 7,
-      "consistency_score": 33,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Overview | Sheets API v3 | Google Developers",
-      "url": "https://developers.google.com/sheets/api/v3/?hl=vi",
-      "description": "The Google Sheets API v3 (formerly called the Google Spreadsheets API) <strong>lets you develop client applications that read and modify worksheets and data in Google Sheets</strong>.",
-      "rank": 5,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        3
-      ],
-      "best_rank": 5,
-      "consistency_score": 33,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "supporting_page",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 2,
-        "keep": false,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Install client libraries | Google Sheets | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/guides/libraries",
-      "description": "This page contains information about getting started with the Google Sheets API by using the Google API Client Library for Python (v1/v2). For more information, see the following documentation: Browse the PyDoc reference for the Google Sheets API.",
       "rank": 8,
       "query_hits": [
         "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
@@ -1133,83 +1750,37 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
       },
-      "final_score": 90,
-      "keep": true
-    },
-    {
-      "title": "Migrate from Sheets API v3 | Google Sheets | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
-      "description": "For more information about the resources available in the Sheets v4 API, see the API Reference.",
-      "rank": 6,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 6,
-      "consistency_score": 33,
-      "product_fit_score": 130,
-      "deterministic_score": 100,
-      "api_score": {
-        "classification": "product_root",
-        "score": 100,
-        "family_score": 0,
-        "family_preferred": false,
-        "family_forbidden": false,
-        "parent_page_likelihood": 5,
-        "product_match": 5,
-        "coverage_value": 4,
-        "keep": true,
-        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
-      },
-      "final_score": 90,
-      "keep": false
-    },
-    {
-      "title": "Python quickstart | Google Sheets | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/quickstart/python",
-      "description": "Sheets API reference documentation · Google APIs Client for Python documentation · Google Sheets API PyDoc documentation · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
-      "rank": 3,
-      "query_hits": [
-        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
-      ],
-      "intent_hits": [
-        "developers_docs"
-      ],
-      "round_hits": [
-        2
-      ],
-      "best_rank": 3,
-      "consistency_score": 33,
-      "product_fit_score": 130,
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 0,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1217,10 +1788,10 @@
       "keep": false
     },
     {
-      "title": "Sheet operations | Google Sheets | Google for Developers",
-      "url": "https://developers.google.com/workspace/sheets/api/samples/sheet",
-      "description": "The Google Sheets API <strong>lets you create, clear, copy, and delete sheets, and also control their properties</strong>.",
-      "rank": 7,
+      "title": "Overview | Sheets API v3 | Google Developers",
+      "url": "https://developers.google.com/sheets/api/v3",
+      "description": "The Google Sheets API v3 (formerly called the Google Spreadsheets API) <strong>lets you develop client applications that read and modify worksheets and data in Google Sheets</strong>.",
+      "rank": 6,
       "query_hits": [
         "site:developers.google.com \"Sheets API\" overview OR site:developers.google.com \"sheets api\" overview"
       ],
@@ -1230,19 +1801,149 @@
       "round_hits": [
         3
       ],
-      "best_rank": 7,
+      "best_rank": 6,
       "consistency_score": 33,
-      "product_fit_score": 130,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 27,
+        "matched_phrases": [
+          "google sheets api v3"
+        ],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
-        "coverage_value": 1,
+        "coverage_value": 3,
+        "matched_feature_phrases": [
+          "google sheets api v3"
+        ],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Matched Step 2 features: google sheets api v3"
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Install client libraries | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/guides/libraries",
+      "description": "This page contains information about getting started with the Google Sheets API by using the Google API Client Library for Python (v1/v2). For more information, see the following documentation: Browse the PyDoc reference for the Google Sheets API.",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 3,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
+      },
+      "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Read & write cell values | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/guides/values",
+      "description": "The Google Sheets API provides the spreadsheets.values resource to enable the reading and writing of values. This page describes the basics of using the spreadsheets.values resource. If you need to insert rows or update the formatting and other properties in a sheet, you must use the spreadsheets.batchUpdate method described in Update spreadsheets.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"Google Sheets API overview\" OR \"guides/concepts\""
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 102,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "reading",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 100,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 100,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 5,
+        "product_match": 5,
+        "coverage_value": 4,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "reading",
+          "the"
+        ],
         "keep": false,
         "rationale": "Fallback heuristic scoring was used because API scoring was unavailable."
       },
@@ -1265,21 +1966,459 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 102,
+      "product_fit_score": 74,
+      "feature_coverage": {
+        "score": 12,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
       "deterministic_score": 100,
       "api_score": {
         "classification": "supporting_page",
         "score": 100,
-        "family_score": 0,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
         "parent_page_likelihood": 5,
         "product_match": 5,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
       "final_score": 90,
+      "keep": false
+    },
+    {
+      "title": "Method: spreadsheets.values.get | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/get",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it! Returns a range of values from a spreadsheet. The caller must specify the spreadsheet ID and a range. GET https://sheets.googleapis.com/v4/spreadsheets/{spreadsheetId}/values/{range} The URL uses gRPC Transcoding syntax.",
+      "rank": 1,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 1,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 85,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 85,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 77,
+      "keep": false
+    },
+    {
+      "title": "Method: spreadsheets.get | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/get",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it! Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned.",
+      "rank": 2,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 2,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the",
+          "turned"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 82,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 82,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the",
+          "turned"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 75,
+      "keep": false
+    },
+    {
+      "title": "Method: spreadsheets.values.clear | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/clear",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Request body · Response body · JSON representation · Authorization scopes · Try it! Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of ...",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 11,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 79,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 79,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 72,
+      "keep": false
+    },
+    {
+      "title": "Connector for Google Sheets | Workflows | Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/workflows/docs/samples/workflows-connector-sheets",
+      "description": "# This workflow demonstrates how to use the Google Sheets connector: # Create, update, get, and delete a Google Sheets spreadsheet # Expected output: &quot;SUCCESS&quot; - init: assign: - createRange: &quot;A20&quot; # example range - getRange: &quot;A1:B4&quot; # example range - row: values: - {&quot;userEnteredFormat&quot;: {&quot;backgroundColor&quot;: {&quot;red&quot;: 0, &quot;green&quot;:1, &quot;blue&quot;:0, &quot;alpha&quot;:1}}} - start1: sheetId: 0 rowIndex: 2 columnIndex: 0 - request1: rows: - ${row} fields: userEnteredFormat.backgroundColor start: ${start1} - driveScope: https://www.googleapis.com/auth/drive - create_spreadsheet: call: googleapis.sheets.v4.spreadsheets",
+      "rank": 7,
+      "query_hits": [
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud documentation",
+        "site:docs.cloud.google.com \"Sheets API\" Google Cloud docs overview"
+      ],
+      "intent_hits": [
+        "product_docs"
+      ],
+      "round_hits": [
+        1,
+        2
+      ],
+      "best_rank": 5,
+      "consistency_score": 67,
+      "product_fit_score": 30,
+      "feature_coverage": {
+        "score": 18,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "drive",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 72,
+      "api_score": {
+        "classification": "supporting_page",
+        "score": 72,
+        "family_score": -28,
+        "family_preferred": false,
+        "family_forbidden": false,
+        "parent_page_likelihood": 4,
+        "product_match": 3,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "drive",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 71,
+      "keep": false
+    },
+    {
+      "title": "REST Resource: spreadsheets | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets",
+      "description": "The data source refresh scopes.",
+      "rank": 4,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 4,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 73,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 73,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 4,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 67,
+      "keep": false
+    },
+    {
+      "title": "Method: spreadsheets.getByDataFilter | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/getByDataFilter",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Request body · JSON representation · Response body · Authorization scopes · Try it! Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from spreadsheets.get in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter.",
+      "rank": 6,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 6,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 67,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 67,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 3,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 62,
+      "keep": false
+    },
+    {
+      "title": "Method: spreadsheets.values.update | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/update",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Query parameters · Request body · Response body · Authorization scopes · Try it! <strong>Sets values in a range of a spreadsheet</strong>. The caller must specify the spreadsheet ID, range, ...",
+      "rank": 7,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 7,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 64,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 64,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 3,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 59,
+      "keep": false
+    },
+    {
+      "title": "Method: spreadsheets.sheets.copyTo | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.sheets/copyTo",
+      "description": "Reference · Send feedback · HTTP request · Path parameters · Request body · JSON representation · Response body · Authorization scopes · Try it! Copies a single sheet from a spreadsheet to another spreadsheet. Returns the properties of the newly created sheet.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com/workspace/sheets/api \"reference/rest\" OR scopes"
+      ],
+      "intent_hits": [
+        "canonical_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": 52,
+      "feature_coverage": {
+        "score": 8,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 61,
+      "api_score": {
+        "classification": "product_reference",
+        "score": 61,
+        "family_score": -78,
+        "family_preferred": true,
+        "family_forbidden": true,
+        "parent_page_likelihood": 3,
+        "product_match": 5,
+        "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "the"
+        ],
+        "keep": true,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 57,
       "keep": false
     },
     {
@@ -1298,21 +2437,143 @@
       ],
       "best_rank": 8,
       "consistency_score": 33,
-      "product_fit_score": 2,
-      "deterministic_score": 51,
+      "product_fit_score": -26,
+      "feature_coverage": {
+        "score": 9,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "google",
+          "sheets",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 32,
       "api_score": {
         "classification": "supporting_page",
-        "score": 51,
-        "family_score": 0,
+        "score": 32,
+        "family_score": -28,
         "family_preferred": false,
         "family_forbidden": false,
-        "parent_page_likelihood": 3,
-        "product_match": 1,
+        "parent_page_likelihood": 2,
+        "product_match": 0,
         "coverage_value": 2,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "google",
+          "sheets",
+          "the"
+        ],
         "keep": false,
         "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
       },
-      "final_score": 48,
+      "final_score": 32,
+      "keep": false
+    },
+    {
+      "title": "Python quickstart | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/quickstart/python",
+      "description": "Sheets API reference documentation · Google APIs Client for Python documentation · Google Sheets API PyDoc documentation · Send feedback · Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.",
+      "rank": 3,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" reference OR site:developers.google.com \"sheets api\" reference"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        2
+      ],
+      "best_rank": 3,
+      "consistency_score": 33,
+      "product_fit_score": -18,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "and",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
+      "keep": false
+    },
+    {
+      "title": "Sheet operations | Google Sheets | Google for Developers",
+      "url": "https://developers.google.com/workspace/sheets/api/samples/sheet",
+      "description": "Specifying the userEnteredValue field without a corresponding value is interpreted as an instruction to clear values in the range. This setting can be used with other fields as well. For example, changing the fields value to userEnteredFormat removes all formatting supported by the Sheets API from the sheet, but leaves the cell values unaltered.",
+      "rank": 8,
+      "query_hits": [
+        "site:developers.google.com \"Sheets API\" official documentation OR site:developers.google.com \"sheets api\" official documentation"
+      ],
+      "intent_hits": [
+        "developers_docs"
+      ],
+      "round_hits": [
+        1
+      ],
+      "best_rank": 8,
+      "consistency_score": 33,
+      "product_fit_score": -18,
+      "feature_coverage": {
+        "score": 15,
+        "matched_phrases": [],
+        "matched_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "support",
+          "the"
+        ],
+        "user_facing_alignment": 0
+      },
+      "deterministic_score": 0,
+      "api_score": {
+        "classification": "irrelevant",
+        "score": 0,
+        "family_score": -148,
+        "family_preferred": false,
+        "family_forbidden": true,
+        "parent_page_likelihood": 0,
+        "product_match": 0,
+        "coverage_value": 1,
+        "matched_feature_phrases": [],
+        "matched_feature_tokens": [
+          "api",
+          "google",
+          "sheets",
+          "support",
+          "the"
+        ],
+        "keep": false,
+        "rationale": "Heuristic tail scoring was applied outside the API-ranked set."
+      },
+      "final_score": 5,
       "keep": false
     }
   ]

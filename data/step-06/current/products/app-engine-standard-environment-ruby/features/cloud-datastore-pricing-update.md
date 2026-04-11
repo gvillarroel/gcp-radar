@@ -1,0 +1,90 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-11T20:26:39.376Z"
+product_name: "App Engine standard environment Ruby"
+product_slug: "app-engine-standard-environment-ruby"
+feature_name: "Cloud Datastore pricing update"
+feature_slug: "cloud-datastore-pricing-update"
+latest_feature_date: "2016-07-01"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/datastore"
+  - "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml"
+  - "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+keywords:
+  - "pricing"
+  - "model"
+  - "update"
+  - "datastore"
+  - "introduced"
+  - "that"
+  - "new"
+  - "is"
+---
+
+# Cloud Datastore pricing update
+
+Product: App Engine standard environment Ruby
+Coverage: LOW
+
+## Step 02 Summary
+
+Cloud Datastore introduced a new pricing model that is now in effect.
+
+## Extended Definition
+
+Cloud Datastore introduced a new pricing model that is now in effect.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/datastore](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/datastore)
+- [https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml](https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml)
+- [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
+
+## Supporting Pages
+
+### "Package google.golang.org/appengine/v2/datastore (v2.0.6) \_|\_ App Engine\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/datastore](https://docs.cloud.google.com/appengine/docs/standard/go/reference/services/bundled/latest/datastore)
+- Source ID: `site-docs-reference`
+- Final score: 120
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- The valid types are: // - int64 // - bool // - string // - float64 // - ByteString // - Key // - time.Time // - appengine.BlobKey // - appengine.GeoPoint // - []byte (up to 1 megabyte in length) // - Entity (representing a nested struct) // This set is smaller than the set of valid struct field types that the // datastore can load and save.
+- Key type Key struct { // contains filtered or unexported fields } Key represents the datastore key for a stored entity, and is immutable. func DecodeKey func DecodeKey ( encoded string ) ( Key , error ) DecodeKey decodes a key from the opaque representation returned by Encode. func NewIncompleteKey func NewIncompleteKey ( c context .
+- Queries are immutable, and are either created by calling NewQuery, or derived from an existing query by calling a method like Filter or Order that returns a new query value.
+- New ( "datastore: concurrent transaction" ) ErrConcurrentTransaction is returned when a transaction is rolled back due to a conflict with a concurrent transaction.
+
+### "Configure Datastore indexes with index.yaml \_|\_ App Engine standard environment\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml](https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml)
+- Source ID: `site-docs-reference`
+- Final score: 116
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- When you are sure that old indexes are no longer needed, you can delete them from App Engine as follows: gcloud datastore indexes cleanup index.yaml Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- When you are testing in your local environment, you can use the gcloud emulator command to start a service that emulates Datastore before you run your app: gcloud beta emulators datastore start --data-dir DATA-DIR Use the --data-dir flag to specify the directory where the auto-generated index.yaml file will appear.
+- All the automatically generated index definitions will appear in the file below the following line: AUTOGENERATED All index definitions above this line are considered to be under manual control, and are not updated by the development web server.
+
+### "appengine-web.xml reference \_|\_ App Engine standard environment \_|\_\
+
+- URL: [https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml](https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml)
+- Source ID: `site-docs-reference`
+- Final score: 98
+- Re-rank relevance: N/A
+
+Evidence snippets:
+- Note that the scheduler might spawn a new instance before the actual maximum number of requests is reached.
+- The appengine-web.xml file can define environment variables that are set when the application is running. <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> To avoid conflicts with your local environment, the development server does not set environment variables based on this file, and requires that the local environment have these variables already set to matching values. export DEFAULT ENCODING = "UTF-8" dev appserver war When deployed to App Engine, the environment is created with these variables already set.
+- Need to tell us more? [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-04-08 UTC."],[],[]]
+- The appengine-web.xml file can define system properties and environment variables that are set when the application is running. <system-properties> <property name="myapp.maximum-message-length" value="140" /> <property name="myapp.notify-every-n-signups" value="1000" /> <property name="myapp.notify-url" value="http://www.example.com/signupnotify" /> </system-properties> <env-variables> <env-var name="DEFAULT ENCODING" value="UTF-8" /> </env-variables> Optional.
+

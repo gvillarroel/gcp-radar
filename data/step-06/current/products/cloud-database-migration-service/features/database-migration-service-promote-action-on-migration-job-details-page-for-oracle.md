@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T21:10:29.961Z"
+product_name: "Cloud Database Migration Service"
+product_slug: "cloud-database-migration-service"
+feature_name: "Database Migration Service Promote action on migration job details page for Oracle"
+feature_slug: "database-migration-service-promote-action-on-migration-job-details-page-for-oracle"
+latest_feature_date: "2024-06-17"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs"
+  - "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
+  - "https://docs.cloud.google.com/database-migration/docs/custom-constraints"
+keywords:
+  - "database"
+  - "migration"
+  - "promote"
+  - "action"
+  - "on"
+  - "job"
+  - "details"
+  - "page"
+---
+
+# Database Migration Service Promote action on migration job details page for Oracle
+
+Product: Cloud Database Migration Service
+Coverage: LOW
+
+## Step 02 Summary
+
+Database Migration Service now allows users to finalize heterogeneous Oracle migrations by using the Promote action directly on the migration job details page.
+
+## Extended Definition
+
+Database Migration Service now allows users to finalize heterogeneous Oracle migrations by using the Promote action directly on the migration job details page.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
+- [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
+- [https://docs.cloud.google.com/database-migration/docs/custom-constraints](https://docs.cloud.google.com/database-migration/docs/custom-constraints)
+
+## Supporting Pages
+
+### "MCP Tools Reference: datamigration \_|\_ Database Migration Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/list_migration_jobs)
+- Source ID: `site-api-reference`
+- Final score: 288
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- SqlServerHomogeneousMigrationJobConfig JSON representation { "backupFilePattern" : string , "databaseBackups" : [ { object ( SqlServerDatabaseBackup ) } ] , "useDiffBackup" : boolean , "promoteWhenReady" : boolean , "dagConfig" : { object ( SqlServerDagConfig ) } } Fields backupFilePattern string Required.
+- MigrationJob JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "displayName" : string , "state" : enum ( State ) , "phase" : enum ( Phase ) , "type" : enum ( Type ) , "dumpPath" : string , "dumpFlags" : { object ( DumpFlags ) } , "source" : string , "destination" : string , "duration" : string , "error" : { object ( Status ) } , "sourceDatabase" : { object ( DatabaseType ) } , "destinationDatabase" : { object ( DatabaseType ) } , "endTime" : string , "conversionWorkspace" : { object ( ConversionWorkspaceInfo ) } , "filter" : string , "cmekKeyName" : string , "performanceConfig" : { object ( PerformanceConfig ) } , "postgresHomogeneousConfig" : { object ( PostgresHomogeneousConfig ) } , "sqlserverHomogeneousMigrationJobConfig" : { object ( SqlServerHomogeneousMigrationJobConfig ) } , "dumpType" : enum ( DumpType ) , "objectsConfig" : { object ( MigrationJobObjectsConfig ) } , "purpose" : enum ( Purpose ) , "originalMigrationName" : string , // Union field connectivity can be only one of the following: "reverseSshConnectivity" : { object ( ReverseSshConnectivity ) } , "vpcPeeringConnectivity" : { object ( VpcPeeringConnectivity ) } , "staticIpConnectivity" : { object ( StaticIpConnectivity ) } // End of list of possible types for union field connectivity . // Union field config can be only one of the following: "oracleToPostgresConfig" : { object ( OracleToPostgresConfig ) } , "sqlserverToPostgresConfig" : { object ( SqlServerToPostgresConfig ) } , "postgresToSqlserverConfig" : { object ( PostgresToSqlServerConfig ) } // End of list of possible types for union field config . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. createTime string ( Timestamp format) Output only.
+- Curl Request curl --location 'https://datamigration.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "list migration jobs", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema Request message for 'ListMigrationJobs' request.
+- For example: { create time after: 2025-10-02T10:15:33Z create time before: 2025-10-03T00:00:00Z display name: hr running: true page size: 80 } will return up to 80 migration jobs that were created on or after 2025-10-02T10:15:33 UTC and before 2025-10-03T00:00:00 UTC and have hr in their display name and are currently running.
+
+### "MCP Tools Reference: datamigration \_|\_ Database Migration Service \_|\_\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job](https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job)
+- Source ID: `site-api-reference`
+- Final score: 272
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- SqlServerHomogeneousMigrationJobConfig JSON representation { "backupFilePattern" : string , "databaseBackups" : [ { object ( SqlServerDatabaseBackup ) } ] , "useDiffBackup" : boolean , "promoteWhenReady" : boolean , "dagConfig" : { object ( SqlServerDagConfig ) } } Fields backupFilePattern string Required.
+- MigrationJob JSON representation { "name" : string , "createTime" : string , "updateTime" : string , "labels" : { string : string , ... } , "displayName" : string , "state" : enum ( State ) , "phase" : enum ( Phase ) , "type" : enum ( Type ) , "dumpPath" : string , "dumpFlags" : { object ( DumpFlags ) } , "source" : string , "destination" : string , "duration" : string , "error" : { object ( Status ) } , "sourceDatabase" : { object ( DatabaseType ) } , "destinationDatabase" : { object ( DatabaseType ) } , "endTime" : string , "conversionWorkspace" : { object ( ConversionWorkspaceInfo ) } , "filter" : string , "cmekKeyName" : string , "performanceConfig" : { object ( PerformanceConfig ) } , "postgresHomogeneousConfig" : { object ( PostgresHomogeneousConfig ) } , "sqlserverHomogeneousMigrationJobConfig" : { object ( SqlServerHomogeneousMigrationJobConfig ) } , "dumpType" : enum ( DumpType ) , "objectsConfig" : { object ( MigrationJobObjectsConfig ) } , "purpose" : enum ( Purpose ) , "originalMigrationName" : string , // Union field connectivity can be only one of the following: "reverseSshConnectivity" : { object ( ReverseSshConnectivity ) } , "vpcPeeringConnectivity" : { object ( VpcPeeringConnectivity ) } , "staticIpConnectivity" : { object ( StaticIpConnectivity ) } // End of list of possible types for union field connectivity . // Union field config can be only one of the following: "oracleToPostgresConfig" : { object ( OracleToPostgresConfig ) } , "sqlserverToPostgresConfig" : { object ( SqlServerToPostgresConfig ) } , "postgresToSqlserverConfig" : { object ( PostgresToSqlServerConfig ) } // End of list of possible types for union field config . // Union field satisfies pzs can be only one of the following: "satisfiesPzs" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: "satisfiesPzi" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. createTime string ( Timestamp format) Output only.
+- Curl Request curl --location 'https://datamigration.googleapis.com/mcp' \ --header 'content-type: application/json' \ --header 'accept: application/json, text/event-stream' \ --data '{ "method": "tools/call", "params": { "name": "get migration job", "arguments": { // provide these details according to the tool' s MCP specification } } , "jsonrpc" : "2.0" , "id" : 1 } ' Input Schema Request message for 'GetMigrationJob' request.
+- SourceObjectIdentifier JSON representation { "database" : string , "schema" : string , "table" : string , "type" : enum ( MigrationJobObjectType ) } Fields database string Optional.
+
+### "Create custom organization policy constraints \_|\_ Database Migration Service\
+
+- URL: [https://docs.cloud.google.com/database-migration/docs/custom-constraints](https://docs.cloud.google.com/database-migration/docs/custom-constraints)
+- Source ID: `site-docs-root-2`
+- Final score: 256
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Resource Field datamigration.googleapis.com/ConnectionProfile resource.alloydb.clusterId resource.alloydb.settings.databaseVersion resource.alloydb.settings.encryptionConfig.kmsKeyName resource.alloydb.settings.initialUser.user resource.alloydb.settings.primaryInstanceSettings.databaseFlags resource.alloydb.settings.primaryInstanceSettings.instanceNetworkConfig.authorizedExternalNetworks.cidrRange resource.alloydb.settings.primaryInstanceSettings.instanceNetworkConfig.enableOutboundPublicIp resource.alloydb.settings.primaryInstanceSettings.instanceNetworkConfig.enablePublicIp resource.alloydb.settings.primaryInstanceSettings.machineConfig.cpuCount resource.alloydb.settings.primaryInstanceSettings.machineConfig.machineType resource.alloydb.settings.vpcNetwork resource.cloudsql.settings.activationPolicy resource.cloudsql.settings.autoStorageIncrease resource.cloudsql.settings.availabilityType resource.cloudsql.settings.cmekKeyName resource.cloudsql.settings.collation resource.cloudsql.settings.databaseFlags resource.cloudsql.settings.databaseVersion resource.cloudsql.settings.databaseVersionName resource.cloudsql.settings.dataCacheConfig.dataCacheEnabled resource.cloudsql.settings.dataDiskProvisionedIops resource.cloudsql.settings.dataDiskProvisionedThroughput resource.cloudsql.settings.dataDiskSizeGb resource.cloudsql.settings.dataDiskType resource.cloudsql.settings.edition resource.cloudsql.settings.ipConfig.allocatedIpRange resource.cloudsql.settings.ipConfig.authorizedNetworks.expireTime resource.cloudsql.settings.ipConfig.authorizedNetworks.label resource.cloudsql.settings.ipConfig.authorizedNetworks.ttl resource.cloudsql.settings.ipConfig.authorizedNetworks.value resource.cloudsql.settings.ipConfig.enableIpv4 resource.cloudsql.settings.ipConfig.privateNetwork resource.cloudsql.settings.ipConfig.requireSsl resource.cloudsql.settings.secondaryZone resource.cloudsql.settings.sourceId resource.cloudsql.settings.storageAutoResizeLimit resource.cloudsql.settings.tier resource.cloudsql.settings.zone resource.displayName resource.mysql.cloudSqlId resource.mysql.host resource.mysql.port resource.mysql.ssl.sslFlags resource.mysql.ssl.type resource.mysql.username resource.name resource.oracle.forwardSshConnectivity.hostname resource.oracle.forwardSshConnectivity.port resource.oracle.forwardSshConnectivity.username resource.oracle.host resource.oracle.oracleAsmConfig.asmService resource.oracle.oracleAsmConfig.hostname resource.oracle.oracleAsmConfig.port resource.oracle.oracleAsmConfig.ssl.sslFlags resource.oracle.oracleAsmConfig.ssl.type resource.oracle.oracleAsmConfig.username resource.oracle.port resource.oracle.privateConnectivity.privateConnection resource.oracle.ssl.sslFlags resource.oracle.ssl.type resource.oracle.username resource.postgresql.alloydbClusterId resource.postgresql.cloudSqlId resource.postgresql.database resource.postgresql.host resource.postgresql.port resource.postgresql.privateServiceConnectConnectivity.serviceAttachment resource.postgresql.ssl.sslFlags resource.postgresql.ssl.type resource.postgresql.username resource.provider resource.role resource.sqlserver.backups.gcsBucket resource.sqlserver.backups.gcsPrefix resource.sqlserver.cloudSqlId resource.sqlserver.cloudSqlProjectId resource.sqlserver.database resource.sqlserver.dbmPort resource.sqlserver.forwardSshConnectivity.hostname resource.sqlserver.forwardSshConnectivity.port resource.sqlserver.forwardSshConnectivity.username resource.sqlserver.host resource.sqlserver.port resource.sqlserver.privateConnectivity.privateConnection resource.sqlserver.privateServiceConnectConnectivity.serviceAttachment resource.sqlserver.ssl.sslFlags resource.sqlserver.ssl.type resource.sqlserver.username resource.state datamigration.googleapis.com/ConversionWorkspace resource.destination.engine resource.destination.version resource.destinationProvider resource.displayName resource.globalSettings resource.name resource.source.engine resource.source.version resource.sourceProvider datamigration.googleapis.com/MigrationJob resource.cmekKeyName resource.conversionWorkspace.commitId resource.conversionWorkspace.name resource.destination resource.destinationDatabase.engine resource.destinationDatabase.provider resource.displayName resource.dumpFlags.dumpFlags.name resource.dumpFlags.dumpFlags.value resource.dumpPath resource.dumpType resource.filter resource.name resource.objectsConfig.sourceObjectsConfig.objectConfigs.objectIdentifier.database resource.objectsConfig.sourceObjectsConfig.objectConfigs.objectIdentifier.schema resource.objectsConfig.sourceObjectsConfig.objectConfigs.objectIdentifier.table resource.objectsConfig.sourceObjectsConfig.objectConfigs.objectIdentifier.type resource.objectsConfig.sourceObjectsConfig.objectsSelectionType resource.oracleToPostgresConfig.oracleSourceConfig.binaryLogParser.logFileDirectories.archivedLogDirectory resource.oracleToPostgresConfig.oracleSourceConfig.binaryLogParser.logFileDirectories.onlineLogDirectory resource.oracleToPostgresConfig.oracleSourceConfig.cdcStartPosition resource.oracleToPostgresConfig.oracleSourceConfig.maxConcurrentCdcConnections resource.oracleToPostgresConfig.oracleSourceConfig.maxConcurrentFullDumpConnections resource.oracleToPostgresConfig.oracleSourceConfig.skipFullDump resource.oracleToPostgresConfig.postgresDestinationConfig.maxConcurrentConnections resource.oracleToPostgresConfig.postgresDestinationConfig.transactionTimeout resource.performanceConfig.dumpParallelLevel resource.reverseSshConnectivity.vm resource.reverseSshConnectivity.vmIp resource.reverseSshConnectivity.vmPort resource.reverseSshConnectivity.vpc resource.source resource.sourceDatabase.engine resource.sourceDatabase.provider resource.sqlserverHomogeneousMigrationJobConfig.backupFilePattern resource.sqlserverHomogeneousMigrationJobConfig.dagConfig.linkedServer resource.sqlserverHomogeneousMigrationJobConfig.dagConfig.sourceAg resource.sqlserverHomogeneousMigrationJobConfig.databaseBackups.database resource.sqlserverHomogeneousMigrationJobConfig.databaseBackups.encryptionOptions.certPath resource.sqlserverHomogeneousMigrationJobConfig.promoteWhenReady resource.sqlserverHomogeneousMigrationJobConfig.useDiffBackup resource.sqlserverToPostgresConfig.postgresDestinationConfig.maxConcurrentConnections resource.sqlserverToPostgresConfig.postgresDestinationConfig.transactionTimeout resource.sqlserverToPostgresConfig.sqlserverSourceConfig.cdcStartPosition resource.sqlserverToPostgresConfig.sqlserverSourceConfig.maxConcurrentCdcConnections resource.sqlserverToPostgresConfig.sqlserverSourceConfig.maxConcurrentFullDumpConnections resource.sqlserverToPostgresConfig.sqlserverSourceConfig.skipFullDump resource.state resource.type resource.vpcPeeringConnectivity.vpc datamigration.googleapis.com/PrivateConnection resource.displayName resource.name resource.pscInterfaceConfig.networkAttachment resource.vpcPeeringConfig.subnet resource.vpcPeeringConfig.vpcName What's next Learn more about Organization Policy Service .
+- Before you begin, make note of the following: Your organization ID A project ID Create the constraint Save the following file as constraint-dms-migrationjob-type.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictDmsMigrationJobType resourceTypes : - datamigration.googleapis.com/MigrationJob methodTypes : - CREATE - UPDATE condition : "resource.type != 'CONTINUOUS'" actionType : DENY displayName : Restrict migration job type description : All new migration jobs must be of type CONTINUOUS This defines a constraint where every new or updated migration job must have a type equal to CONTINUOUS .
+- Description Constraint syntax Restrict migration job type Ensures all new migration jobs are continuous. name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictDmsMigrationJobType resourceTypes : - datamigration.googleapis.com/MigrationJob methodTypes : - CREATE - UPDATE condition : "resource.type != 'CONTINUOUS'" actionType : DENY displayName : Restrict migration job type description : All new migration jobs must be of type CONTINUOUS Restrict connection profile engines Ensures only PostgreSQL connection profiles can be created.
+- This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: datamigration.googleapis.com/ConnectionProfile datamigration.googleapis.com/ConversionWorkspace datamigration.googleapis.com/MigrationJob datamigration.googleapis.com/PrivateConnection To learn more about Organization Policy, see Custom organization policies .
+

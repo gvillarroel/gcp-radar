@@ -1,22 +1,24 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-09T16:04:44.815Z",
+  "generated_at": "2026-04-10T14:20:36.889Z",
   "product_name": "AlloyDB",
   "product_slug": "alloydb",
   "step03_ranking_path": "data/step-03/current/products/alloydb/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "api_reference",
       "iam_reference",
       "python_reference",
       "java_reference"
-    ]
+    ],
+    "feature_count": 228
   },
   "site_output_mode": "compact",
-  "selected_source_count": 5,
-  "selected_sources_signature": "1a8d435ffa2a2262c1af80ada0d8582a757a42f706c76e1d67941413edfca355",
+  "selected_source_count": 6,
+  "selected_sources_signature": "83c841f9a8064d17ae2f2343ee9675006122baa75a6ec7032628682bd6907d3a",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -26,8 +28,21 @@
       "url": "https://docs.cloud.google.com/alloydb/docs",
       "final_score": 100,
       "best_rank": 2,
-      "max_depth": 1,
-      "max_pages": 30
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "alloydb",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 42
     },
     {
       "source_id": "site-api-reference",
@@ -37,8 +52,9 @@
       "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest",
       "final_score": 95,
       "best_rank": 5,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-iam-reference",
@@ -48,8 +64,9 @@
       "url": "https://docs.cloud.google.com/alloydb/docs/dataplex-catalog-integration",
       "final_score": 95,
       "best_rank": 4,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-python-reference",
@@ -59,8 +76,9 @@
       "url": "https://docs.cloud.google.com/python/docs/reference/alloydb/latest",
       "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     },
     {
       "source_id": "site-java-reference",
@@ -70,8 +88,9 @@
       "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-alloydb-connectors/latest/overview",
       "final_score": 95,
       "best_rank": 1,
-      "max_depth": 1,
-      "max_pages": 20
+      "matched_feature_phrases": [],
+      "max_depth": 2,
+      "max_pages": 32
     }
   ],
   "corpus_paths": {

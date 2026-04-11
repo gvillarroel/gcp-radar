@@ -1,6 +1,6 @@
 ---
 schema_version: "step-06-extended-feature-definitions-v1"
-generated_at: "2026-04-07T23:52:05.118Z"
+generated_at: "2026-04-10T13:25:38.719Z"
 product_name: "BigQuery"
 product_slug: "bigquery"
 feature_name: "BigQuery ODBC driver Private Service Connect support"

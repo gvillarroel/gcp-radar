@@ -1,0 +1,67 @@
+---
+title: "Cloud Source Repositories API \_|\_ Google Cloud Documentation"
+url: https://docs.cloud.google.com/source-repositories/docs/reference/rpc
+knowledge_key: corpus
+source_id: site-docs-root
+source_type: site
+entrypoint: https://docs.cloud.google.com/source-repositories/docs
+source_metadata:
+  url: https://docs.cloud.google.com/source-repositories/docs/reference/rpc
+  title: "Cloud Source Repositories API \_|\_ Google Cloud Documentation"
+  fetched_via: http_bfs
+  content_scope: primary
+  content_type: text/html; charset=utf-8
+  status_code: 200
+---
+
+Effective June 17, 2024, Cloud Source Repositories isn't available to new customers. For alternative source hosting options, Secure Source Manager is a regionally deployed, single tenant, managed source code repository hosted on Google Cloud.
+If your organization hasn't previously used Cloud Source Repositories, you can't enable the API or use Cloud Source Repositories. New projects not connected to an organization can't enable the Cloud Source Repositories API. Organizations that have used Cloud Source Repositories prior to June 17, 2024 are not affected by this change.
+Home
+Documentation
+Application development
+Cloud Source Repositories
+Reference
+Send feedback
+Cloud Source Repositories API
+Stay organized with collections
+Save and categorize content based on your preferences.
+Accesses source code repositories hosted by Google.
+Service: sourcerepo.googleapis.com
+The Service name sourcerepo.googleapis.com is needed to create RPC client stubs.
+google.devtools.sourcerepo.v1.SourceRepo
+Methods
+CreateRepo
+Creates a repo in the given project with the given name.
+DeleteRepo
+Deletes a repo.
+GetIamPolicy
+Gets the IAM policy policy for a resource.
+GetProjectConfig
+Returns the Cloud Source Repositories configuration of the project.
+GetRepo
+Returns information about a repo.
+ListRepos
+Returns all repos belonging to a project.
+SetIamPolicy
+Sets the IAM policy on the specified resource.
+SyncRepo
+Synchronize a connected repo.
+TestIamPermissions
+Returns permissions that a caller has on the specified resource.
+UpdateProjectConfig
+Updates the Cloud Source Repositories configuration of the project.
+UpdateRepo
+Updates information about a repo.
+google.iam.v1.IAMPolicy
+Methods
+GetIamPolicy
+Gets the access control policy for a resource.
+SetIamPolicy
+Sets the access control policy on the specified resource.
+TestIamPermissions
+Returns permissions that a caller has on the specified resource.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License . For details, see the Google Developers Site Policies . Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-06-27 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Hard to understand","hardToUnderstand","thumb-down"],["Incorrect information or sample code","incorrectInformationOrSampleCode","thumb-down"],["Missing the information/samples I need","missingTheInformationSamplesINeed","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2025-06-27 UTC."],[],[]]

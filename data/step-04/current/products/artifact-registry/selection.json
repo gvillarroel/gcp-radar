@@ -1,21 +1,25 @@
 {
   "schema_version": "step-04-know-corpus-v1",
-  "generated_at": "2026-04-08T05:59:29.978Z",
+  "generated_at": "2026-04-10T17:45:54.552Z",
   "product_name": "Artifact Registry",
   "product_slug": "artifact-registry",
   "step03_ranking_path": "data/step-03/current/products/artifact-registry/ranking.json",
   "source_selection_strategy": {
-    "type": "one-best-url-per-family",
+    "type": "coverage-aware-multi-seed-per-family",
+    "broadened_retry": false,
     "families": [
       "docs_root",
       "docs_reference",
       "api_reference",
-      "iam_reference"
-    ]
+      "iam_reference",
+      "python_reference",
+      "java_reference"
+    ],
+    "feature_count": 75
   },
   "site_output_mode": "compact",
-  "selected_source_count": 4,
-  "selected_sources_signature": "fe2650e8751f9bbe38b6df2ded6fda87b417ce0d7a4f833760d67120c1f738e4",
+  "selected_source_count": 7,
+  "selected_sources_signature": "de9bcd7ef15d5f31a5e44320b133dd228bf383f4bf11ee64de35950eae6c754a",
   "selected_sources": [
     {
       "source_id": "site-docs-root",
@@ -25,19 +29,33 @@
       "url": "https://docs.cloud.google.com/artifact-registry/docs",
       "final_score": 100,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 36
+    },
+    {
+      "source_id": "site-docs-root-2",
+      "product_slug": "artifact-registry",
+      "family": "docs_root",
+      "classification": "product_root",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 36
     },
     {
       "source_id": "site-docs-reference",
       "product_slug": "artifact-registry",
       "family": "docs_reference",
       "classification": "product_reference",
-      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/reference",
       "final_score": 100,
       "best_rank": 3,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-api-reference",
@@ -45,21 +63,47 @@
       "family": "api_reference",
       "classification": "api_reference",
       "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
-      "final_score": 93,
-      "best_rank": 4,
+      "final_score": 95,
+      "best_rank": 3,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
     },
     {
       "source_id": "site-iam-reference",
       "product_slug": "artifact-registry",
       "family": "iam_reference",
       "classification": "iam_reference",
-      "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/artifactregistry",
-      "final_score": 97,
+      "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "final_score": 95,
       "best_rank": 1,
+      "matched_feature_phrases": [],
       "max_depth": 1,
-      "max_pages": 0
+      "max_pages": 26
+    },
+    {
+      "source_id": "site-python-reference",
+      "product_slug": "artifact-registry",
+      "family": "python_reference",
+      "classification": "python_reference",
+      "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest",
+      "final_score": 95,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 26
+    },
+    {
+      "source_id": "site-java-reference",
+      "product_slug": "artifact-registry",
+      "family": "java_reference",
+      "classification": "java_reference",
+      "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/overview",
+      "final_score": 100,
+      "best_rank": 1,
+      "matched_feature_phrases": [],
+      "max_depth": 1,
+      "max_pages": 26
     }
   ],
   "corpus_paths": {

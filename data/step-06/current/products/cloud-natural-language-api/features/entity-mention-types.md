@@ -1,0 +1,92 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T23:00:15.649Z"
+product_name: "Cloud Natural Language API"
+product_slug: "cloud-natural-language-api"
+feature_name: "Entity Mention Types"
+feature_slug: "entity-mention-types"
+latest_feature_date: "2016-11-15"
+deprecation_date: ""
+coverage_status: "LOW"
+source_links:
+  - "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment"
+  - "https://docs.cloud.google.com/natural-language/docs/basics"
+  - "https://docs.cloud.google.com/natural-language/docs/analyzing-entities"
+keywords:
+  - "entity"
+  - "mention"
+  - "types"
+  - "analysis"
+  - "returns"
+  - "for"
+  - "both"
+  - "proper"
+---
+
+# Entity Mention Types
+
+Product: Cloud Natural Language API
+Coverage: LOW
+
+## Step 02 Summary
+
+Entity Analysis returns entity mention types for both proper nouns and common nouns.
+
+## Extended Definition
+
+Entity Analysis returns entity mention types for both proper nouns and common nouns.
+
+## Evidence Summary
+
+Fallback definition because synthesis failed.
+
+## Source Links
+
+- [https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment](https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment)
+- [https://docs.cloud.google.com/natural-language/docs/basics](https://docs.cloud.google.com/natural-language/docs/basics)
+- [https://docs.cloud.google.com/natural-language/docs/analyzing-entities](https://docs.cloud.google.com/natural-language/docs/analyzing-entities)
+
+## Supporting Pages
+
+### "Analyzing Entity Sentiment \_|\_ Cloud Natural Language API \_|\_ Google\
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment](https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment)
+- Source ID: `site-docs-root`
+- Final score: 152
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- The API currently supports proper noun mentions. for mention in entity . mentions : print ( f "Mention text: { mention . text . content } " ) Get the mention type, e.g.
+- The API currently supports proper noun mentions. for mention in entity . mentions : print ( f "Mention text: { mention . text . content } " ) Get the mention type, e.g.
+- EntityMention mention : entity . getMentionsList ()) { System . out . printf ( "Begin offset: %d\n" , mention . getText (). getBeginOffset ()); System . out . printf ( "Content: %s\n" , mention . getText (). getContent ()); System . out . printf ( "Magnitude: %.3f\n" , mention . getSentiment (). getMagnitude ()); System . out . printf ( "Sentiment score : %.3f\n" , mention . getSentiment (). getScore ()); System . out . printf ( "Type: %s\n\n" , mention . getType ()); } } } Node.js To learn how to install and use the client library for Natural Language, see Natural Language client libraries .
+- EntityMention mention : entity . getMentionsList ()) { System . out . printf ( "Begin offset: %d\n" , mention . getText (). getBeginOffset ()); System . out . printf ( "Content: %s\n" , mention . getText (). getContent ()); System . out . printf ( "Magnitude: %.3f\n" , mention . getSentiment (). getMagnitude ()); System . out . printf ( "Sentiment score : %.3f\n" , mention . getSentiment (). getScore ()); System . out . printf ( "Type: %s\n\n" , mention . getType ()); } } } Node.js To learn how to install and use the client library for Natural Language, see Natural Language client libraries .
+
+### Natural Language API Basics \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/basics](https://docs.cloud.google.com/natural-language/docs/basics)
+- Source ID: `site-docs-root`
+- Final score: 152
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- Entity sentiment analysis inspects the given text for known entities (proper nouns and common nouns), returns information about those entities, and identifies the prevailing emotional opinion of the entity within the text, especially to determine a writer's attitude toward the entity as positive, negative, or neutral.
+- An Entity Sentiment Analysis request returns a response containing the entities that were found in the document content, a mentions entry for each time the entity is mentioned, and the numerical score and magnitude values for each mention, as described in Interpreting sentiment analysis values .
+- The score and magnitude values for an entity can be 0 , if there was low sentiment in the text, resulting in a magnitude of 0, or the sentiment is mixed, resulting in a score of 0. { "entities" : [ { "name" : "R&B music" , "type" : "WORK OF ART" , "metadata" : {}, "salience" : 0.5306305 , "mentions" : [ { "text" : { "content" : "R&B music" , "beginOffset" : 7 }, "type" : "COMMON" , "sentiment" : { "magnitude" : 0.9 , "score" : 0.9 } } ], "sentiment" : { "magnitude" : 0.9 , "score" : 0.9 } }, { "name" : "Marvin Gaye" , "type" : "PERSON" , "metadata" : { "mid" : "/m/012z8 " , "wikipedia url" : "http://en.wikipedia.org/wiki/Marvin Gaye" }, "salience" : 0.21584158 , "mentions" : [ { "text" : { "content" : "Marvin Gaye" , "beginOffset" : 18 }, "type" : "PROPER" , "sentiment" : { "magnitude" : 0.4 , "score" : 0.4 } }, { "text" : { "content" : "Marvin Gaye" , "beginOffset" : 138 }, "type" : "PROPER" , "sentiment" : { "magnitude" : 0.2 , "score" : - 0.2 } } ], "sentiment" : { "magnitude" : 0.6 , "score" : 0.1 } }, ... ], "language" : "en" } For an example, see Analyzing Entity Sentiment .
+- Lawrence" , "beginOffset" : 77 }, "type" : "PROPER" , "probability" : 0.853 } ] }, { "name" : "film" , "type" : "WORK OF ART" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "film" , "beginOffset" : 129 }, "type" : "COMMON" , "probability" : 0.805 } ] }, { "name" : "film biography" , "type" : "WORK OF ART" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "film biography" , "beginOffset" : 37 }, "type" : "COMMON" , "probability" : 0.876 } ] } ], "languageCode" : "en" , "languageSupported" : true } Note that the Natural Language API returns entities for "Lawrence of Arabia" (the film) and "T.E.
+
+### Analyzing Entities \_|\_ Cloud Natural Language API \_|\_ Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/natural-language/docs/analyzing-entities](https://docs.cloud.google.com/natural-language/docs/analyzing-entities)
+- Source ID: `site-docs-root`
+- Final score: 140
+- Re-rank relevance: WEAK
+- Re-rank rationale: Fallback relevance because reranking failed.
+
+Evidence snippets:
+- To perform entity analysis on a file in Cloud Storage, use the gcloud command line tool and use the --content-file flag to identify the file path that contains the content to analyze: gcloud ml language analyze-entities --content-file=gs:// YOUR BUCKET NAME / YOUR FILE NAME If the request is successful, the server returns a response in JSON format: { "entities" : [ { "name" : "October 7" , "type" : "DATE" , "metadata" : { "month" : "10" , "day" : "7" }, "mentions" : [ { "text" : { "content" : "October 7" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600" , "type" : "NUMBER" , "metadata" : { "value" : "1600" }, "mentions" : [ { "text" : { "content" : "1600" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "7" , "type" : "NUMBER" , "metadata" : { "value" : "7" }, "mentions" : [ { "text" : { "content" : "7" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600 Pennsylvania Ave NW, Washington, DC" , "type" : "ADDRESS" , "metadata" : { "locality" : "Washington" , "narrow region" : "District of Columbia" , "street name" : "Pennsylvania Avenue Northwest" , "street number" : "1600" , "broad region" : "District of Columbia" , "country" : "US" }, "mentions" : [ { "text" : { "content" : "1600 Pennsylvania Ave NW, Washington, DC" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600 Pennsylvania Ave NW" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "1600 Pennsylvania Ave NW" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.901 } ] }, { "name" : "President" , "type" : "PERSON" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "President" , "beginOffset" : - 1 }, "type" : "COMMON" , "probability" : 0.941 } ] }, { "name" : "Trump" , "type" : "PERSON" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "Trump" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.948 } ] }, { "name" : "Washington, DC" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "Washington, DC" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.92 } ] }, { "name" : "White House" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "White House" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.785 } ] } ], "languageCode" : "en" , "languageSupported" : true } The entities array contains Entity objects representing the detected entities, which include information such as the entity name and type.
+- To perform entity analysis, use the gcloud CLI and use the --content flag to identify the content to analyze: gcloud ml language analyze-entities --content="President Trump will speak from the White House, located at 1600 Pennsylvania Ave NW, Washington, DC, on October 7." If the request is successful, the server returns a response in JSON format: { "entities" : [ { "name" : "Trump" , "type" : "PERSON" , "metadata" : { "mid" : "/m/0cqt90" , "wikipedia url" : "https://en.wikipedia.org/wiki/Donald Trump" }, "salience" : 0.7936003 , "mentions" : [ { "text" : { "content" : "Trump" , "beginOffset" : 10 }, "type" : "PROPER" }, { "text" : { "content" : "President" , "beginOffset" : 0 }, "type" : "COMMON" } ] }, { "name" : "White House" , "type" : "LOCATION" , "metadata" : { "mid" : "/m/081sq" , "wikipedia url" : "https://en.wikipedia.org/wiki/White House" }, "salience" : 0.09172433 , "mentions" : [ { "text" : { "content" : "White House" , "beginOffset" : 36 }, "type" : "PROPER" } ] }, { "name" : "Pennsylvania Ave NW" , "type" : "LOCATION" , "metadata" : { "mid" : "/g/1tgb87cq" }, "salience" : 0.085507184 , "mentions" : [ { "text" : { "content" : "Pennsylvania Ave NW" , "beginOffset" : 65 }, "type" : "PROPER" } ] }, { "name" : "Washington, DC" , "type" : "LOCATION" , "metadata" : { "mid" : "/m/0rh6k" , "wikipedia url" : "https://en.wikipedia.org/wiki/Washington, D.C." }, "salience" : 0.029168168 , "mentions" : [ { "text" : { "content" : "Washington, DC" , "beginOffset" : 86 }, "type" : "PROPER" } ] } { "name" : "1600 Pennsylvania Ave NW, Washington, DC" , "type" : "ADDRESS" , "metadata" : { "country" : "US" , "sublocality" : "Fort Lesley J.
+- If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format: { "entities" : [ { "name" : "October 7" , "type" : "DATE" , "metadata" : { "month" : "10" , "day" : "7" }, "mentions" : [ { "text" : { "content" : "October 7" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600" , "type" : "NUMBER" , "metadata" : { "value" : "1600" }, "mentions" : [ { "text" : { "content" : "1600" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "7" , "type" : "NUMBER" , "metadata" : { "value" : "7" }, "mentions" : [ { "text" : { "content" : "7" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600 Pennsylvania Ave NW, Washington, DC" , "type" : "ADDRESS" , "metadata" : { "locality" : "Washington" , "narrow region" : "District of Columbia" , "street name" : "Pennsylvania Avenue Northwest" , "street number" : "1600" , "broad region" : "District of Columbia" , "country" : "US" }, "mentions" : [ { "text" : { "content" : "1600 Pennsylvania Ave NW, Washington, DC" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600 Pennsylvania Ave NW" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "1600 Pennsylvania Ave NW" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.901 } ] }, { "name" : "President" , "type" : "PERSON" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "President" , "beginOffset" : - 1 }, "type" : "COMMON" , "probability" : 0.941 } ] }, { "name" : "Trump" , "type" : "PERSON" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "Trump" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.948 } ] }, { "name" : "Washington, DC" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "Washington, DC" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.92 } ] }, { "name" : "White House" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "White House" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.785 } ] } ], "languageCode" : "en" , "languageSupported" : true } The entities array contains Entity objects representing the detected entities, which include information such as the entity name and type. gcloud Refer to the analyze-entities command for complete details.
+- If the request is successful, the server returns a 200 OK HTTP status code and the response in JSON format: { "entities" : [ { "name" : "October 7" , "type" : "DATE" , "metadata" : { "month" : "10" , "day" : "7" }, "mentions" : [ { "text" : { "content" : "October 7" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600" , "type" : "NUMBER" , "metadata" : { "value" : "1600" }, "mentions" : [ { "text" : { "content" : "1600" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "7" , "type" : "NUMBER" , "metadata" : { "value" : "7" }, "mentions" : [ { "text" : { "content" : "7" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600 Pennsylvania Ave NW, Washington, DC" , "type" : "ADDRESS" , "metadata" : { "locality" : "Washington" , "narrow region" : "District of Columbia" , "street name" : "Pennsylvania Avenue Northwest" , "street number" : "1600" , "broad region" : "District of Columbia" , "country" : "US" }, "mentions" : [ { "text" : { "content" : "1600 Pennsylvania Ave NW, Washington, DC" , "beginOffset" : - 1 }, "type" : "TYPE UNKNOWN" , "probability" : 1 } ] }, { "name" : "1600 Pennsylvania Ave NW" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "1600 Pennsylvania Ave NW" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.901 } ] }, { "name" : "President" , "type" : "PERSON" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "President" , "beginOffset" : - 1 }, "type" : "COMMON" , "probability" : 0.941 } ] }, { "name" : "Trump" , "type" : "PERSON" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "Trump" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.948 } ] }, { "name" : "Washington, DC" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "Washington, DC" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.92 } ] }, { "name" : "White House" , "type" : "LOCATION" , "metadata" : {}, "mentions" : [ { "text" : { "content" : "White House" , "beginOffset" : - 1 }, "type" : "PROPER" , "probability" : 0.785 } ] } ], "languageCode" : "en" , "languageSupported" : true } The entities array contains Entity objects representing the detected entities, which include information such as the entity name and type. gcloud Refer to the analyze-entities command for complete details.
+

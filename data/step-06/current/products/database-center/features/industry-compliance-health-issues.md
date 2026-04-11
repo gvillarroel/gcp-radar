@@ -1,0 +1,88 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:06.484Z"
+product_name: "Database Center"
+product_slug: "database-center"
+feature_name: "Industry compliance health issues"
+feature_slug: "industry-compliance-health-issues"
+latest_feature_date: "2024-07-16"
+deprecation_date: ""
+coverage_status: "MEDIUM"
+source_links:
+  - "https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues"
+  - "https://docs.cloud.google.com/database-center/docs/performance"
+  - "https://docs.cloud.google.com/database-center/docs/set-up-database-center"
+keywords:
+  - "industry"
+  - "compliance"
+  - "health"
+  - "issues"
+  - "database"
+  - "center"
+  - "supports"
+  - "for"
+---
+
+# Industry compliance health issues
+
+Product: Database Center
+Coverage: MEDIUM
+
+## Step 02 Summary
+
+Database Center supports industry compliance health issues for AlloyDB for PostgreSQL and selected Cloud SQL engines.
+
+## Extended Definition
+
+Database Center supports industry compliance health issues for AlloyDB for PostgreSQL and selected Cloud SQL engines.
+
+## Evidence Summary
+
+Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus.
+
+## Source Links
+
+- [https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues](https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues)
+- [https://docs.cloud.google.com/database-center/docs/performance](https://docs.cloud.google.com/database-center/docs/performance)
+- [https://docs.cloud.google.com/database-center/docs/set-up-database-center](https://docs.cloud.google.com/database-center/docs/set-up-database-center)
+
+## Supporting Pages
+
+### View and filter database health issues | Database Center | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues](https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues)
+- Source ID: `site-docs-root`
+- Final score: 186
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- View and filter database health issues Database Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues Go to the Database Center page in the Google Cloud console. ...
+
+### View the performance of your database fleet | Database Center | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/database-center/docs/performance](https://docs.cloud.google.com/database-center/docs/performance)
+- Source ID: `site-docs-root`
+- Final score: 156
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- View the performance of your database fleet Database Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/database-center/docs/performance Pre-GA features are available &quot;as is&quot; and might have limited support.
+- Database Center provides performance information about your fleet resources to help you maintain your database fleet.
+- For more information, see the launch stage descriptions.
+
+### Set up Database Center | Google Cloud Documentation
+
+- URL: [https://docs.cloud.google.com/database-center/docs/set-up-database-center](https://docs.cloud.google.com/database-center/docs/set-up-database-center)
+- Source ID: `site-docs-root`
+- Final score: 136
+- Re-rank relevance: MODERATE
+- Re-rank rationale: Fast mode kept the lexical match without page-level LLM reranking.
+
+Evidence snippets:
+- Set up Database Center Google Cloud Documentation Source URL: https://docs.cloud.google.com/database-center/docs/set-up-database-center You can grant IAM permissions for an entire Google Cloud project to a principal on the IAM page of the Google Cloud console.
+- Adding permissions at the project level grants the IAM permissions to a principal for all the instances, clusters, or databases in the project.
+- To use Database Center, you need to grant specific Identity and Access Management permissions to your principals.
+- For more information on principals, see Principals.
+

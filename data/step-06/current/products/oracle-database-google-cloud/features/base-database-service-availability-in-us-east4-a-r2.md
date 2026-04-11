@@ -1,0 +1,44 @@
+---
+schema_version: "step-06-extended-feature-definitions-v1"
+generated_at: "2026-04-10T05:27:49.417Z"
+product_name: "Oracle Database@Google Cloud"
+product_slug: "oracle-database-google-cloud"
+feature_name: "Base Database Service availability in us-east4-a-r2"
+feature_slug: "base-database-service-availability-in-us-east4-a-r2"
+latest_feature_date: "2025-12-18"
+deprecation_date: ""
+coverage_status: "NONE"
+source_links:
+  - ""
+keywords:
+  - "base"
+  - "database"
+  - "availability"
+  - "in"
+  - "us"
+  - "east4"
+  - "r2"
+  - "is"
+---
+
+# Base Database Service availability in us-east4-a-r2
+
+Product: Oracle Database@Google Cloud
+Coverage: NONE
+
+## Step 02 Summary
+
+Base Database Service is available in the us-east4-a-r2 location.
+
+## Extended Definition
+
+Base Database Service is available in the us-east4-a-r2 location.
+
+## Source Links
+
+No supporting official source links were selected.
+
+## Supporting Pages
+
+No supporting pages passed the Step 06 ranking thresholds.
+

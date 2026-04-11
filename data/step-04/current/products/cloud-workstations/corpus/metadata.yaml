@@ -1,7 +1,7 @@
 version: 1
 name: corpus
 created_at: '2026-04-09T08:31:30+00:00'
-updated_at: '2026-04-09T08:31:31+00:00'
+updated_at: '2026-04-11T00:12:44+00:00'
 commands:
   list_sources: know list sources --key corpus
   sync: know sync --key corpus
@@ -10,39 +10,56 @@ sources:
 - type: site
   id: site-docs-root
   title: https://docs.cloud.google.com/workstations/docs
-  created_at: '2026-04-09T08:31:31+00:00'
-  updated_at: '2026-04-09T08:31:31+00:00'
+  created_at: '2026-04-11T00:06:01+00:00'
+  updated_at: '2026-04-11T00:07:14+00:00'
   update_command: know sync site https://docs.cloud.google.com/workstations/docs --key
     corpus --compact
   delete_command: know del --key corpus site-docs-root
   config:
     url: https://docs.cloud.google.com/workstations/docs
     max_depth: 1
-    max_pages: 0
+    max_pages: 36
     compact_output: true
+  last_synced_at: '2026-04-11T00:07:14+00:00'
+- type: site
+  id: site-docs-root-2
+  title: https://docs.cloud.google.com/workstations/docs/overview
+  created_at: '2026-04-11T00:06:02+00:00'
+  updated_at: '2026-04-11T00:09:29+00:00'
+  update_command: know sync site https://docs.cloud.google.com/workstations/docs/overview
+    --key corpus --compact
+  delete_command: know del --key corpus site-docs-root-2
+  config:
+    url: https://docs.cloud.google.com/workstations/docs/overview
+    max_depth: 1
+    max_pages: 36
+    compact_output: true
+  last_synced_at: '2026-04-11T00:09:29+00:00'
 - type: site
   id: site-iam-reference
   title: https://docs.cloud.google.com/workstations/docs/access-control
-  created_at: '2026-04-09T08:31:31+00:00'
-  updated_at: '2026-04-09T08:31:31+00:00'
+  created_at: '2026-04-11T00:06:03+00:00'
+  updated_at: '2026-04-11T00:11:06+00:00'
   update_command: know sync site https://docs.cloud.google.com/workstations/docs/access-control
     --key corpus --compact
   delete_command: know del --key corpus site-iam-reference
   config:
     url: https://docs.cloud.google.com/workstations/docs/access-control
     max_depth: 1
-    max_pages: 0
+    max_pages: 26
     compact_output: true
+  last_synced_at: '2026-04-11T00:11:06+00:00'
 - type: site
   id: site-python-reference
   title: https://docs.cloud.google.com/python/docs/reference/workstations/latest
-  created_at: '2026-04-09T08:31:31+00:00'
-  updated_at: '2026-04-09T08:31:31+00:00'
+  created_at: '2026-04-11T00:06:03+00:00'
+  updated_at: '2026-04-11T00:12:44+00:00'
   update_command: know sync site https://docs.cloud.google.com/python/docs/reference/workstations/latest
     --key corpus --compact
   delete_command: know del --key corpus site-python-reference
   config:
     url: https://docs.cloud.google.com/python/docs/reference/workstations/latest
     max_depth: 1
-    max_pages: 0
+    max_pages: 26
     compact_output: true
+  last_synced_at: '2026-04-11T00:12:44+00:00'
